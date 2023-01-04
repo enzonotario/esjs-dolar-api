@@ -12,6 +12,7 @@ export default defineConfig({
     // https://github.com/cyco130/vavite
     vavite({
       serverEntry: './src/app.esjs',
+      reloadOn: "static-deps-change",
     }),
   ],
   resolve: {

@@ -1,12 +1,14 @@
 importar express desde 'express';
 importar httpDevServer desde 'vavite/http-dev-server';
-importar inicio desde './rutas/inicio.esjs'
-importar estado desde './rutas/estado.esjs'
+importar inicio desde '@/rutas/inicio.esjs'
+importar estado desde '@/rutas/estado.esjs'
+importar _casa desde '@/rutas/dolar/_casa.esjs'
 
 const app = express();
 
 app.get('/', inicio);
 app.get('/estado', estado);
+app.get('/dolar/:casa', _casa)
 
 si (httpDevServer) {
 	httpDevServer.on('request', app);

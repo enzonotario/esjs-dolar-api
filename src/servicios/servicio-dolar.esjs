@@ -1,0 +1,21 @@
+importar axios desde 'axios'
+
+exportar asincrono funcion obtenerDolares() {
+    intentar {
+        const respuesta = esperar axios.get('https://www.dolarsi.com/api/api.php?type=dolar')
+        
+        retornar respuesta.data
+    } capturar (error) {
+        console.error(error)
+    }
+}
+
+exportar asincrono funcion obtenerDolarPorCasa(casa) {
+    const dolares = esperar obtenerDolares()
+
+    const dolarPorCasa = dolares.buscar(
+        dolar => dolar.casa.nombre.convertirAMinusculas().incluye(casa.convertirAMinusculas())
+    )
+
+    retornar dolarPorCasa
+}
