@@ -1,0 +1,141 @@
+{
+  "openapi": "3.0.0",
+  "x-stoplight": {
+    "id": "6hf5i0fusa9fv"
+  },
+  "info": {
+    "title": "Dólar API Argentina",
+    "version": "1.0",
+    "description": "API para las diferentes cotizaciones de Dólar en Argentina",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dolar-api-argentina.vercel.app/",
+      "description": "Producción"
+    },
+    {
+      "url": "http://localhost:3000",
+      "description": "Local"
+    }
+  ],
+  "paths": {
+    "/dolar/oficial": {
+      "get": {
+        "summary": "Dólar Oficial",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Cotización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-dolar-oficial"
+      }
+    },
+    "/dolar/blue": {
+      "get": {
+        "summary": "Dólar Blue",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Cotización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-blue"
+      },
+      "parameters": []
+    },
+    "/dolar/mayorista": {
+      "get": {
+        "summary": "Dólar Mayorista",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Cotización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-mayorista"
+      },
+      "parameters": []
+    },
+    "/dolar/bcra": {
+      "get": {
+        "summary": "Dólar BCRA",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Cotización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-bcra"
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "RespuestaCotizacion": {
+        "title": "RespuestaCotizacion",
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "description": "En formato ISO 8601"
+          },
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "fecha",
+          "compra",
+          "venta"
+        ],
+        "x-stoplight": {
+          "id": "8bde14884f4bd"
+        },
+        "x-examples": {
+          "Example 1": {
+            "fecha": "2023-01-01T12:00:00.000Z",
+            "compra": 123.99,
+            "venta": 132.99
+          }
+        }
+      }
+    }
+  }
+}

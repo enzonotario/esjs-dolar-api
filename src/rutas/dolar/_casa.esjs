@@ -18,7 +18,7 @@ exportar porDefecto asincrono funcion (req, res) {
     
     res.json({
         fecha: crear Fecha(),
-        compra: dolar.casa.compra,
-        venta: dolar.casa.venta,
+        compra: Numero(dolar.casa.compra.reemplazar(/,/g, '.')),
+        venta: Numero(dolar.casa.venta.reemplazar(/,/g, '.')),
     })
 }

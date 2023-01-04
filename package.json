@@ -12,6 +12,7 @@
     "@es-js/vite-plugin-esjs": "^0.0.7",
     "axios": "^1.2.2",
     "slugify": "^1.6.5",
+    "swagger-ui-express": "^4.6.0",
     "vavite": "^1.5.2",
     "vite": "^2.9.15"
   },

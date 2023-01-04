@@ -3,12 +3,15 @@ importar httpDevServer desde 'vavite/http-dev-server';
 importar inicio desde '@/rutas/inicio.esjs'
 importar estado desde '@/rutas/estado.esjs'
 importar _casa desde '@/rutas/dolar/_casa.esjs'
+importar swaggerUi desde 'swagger-ui-express'
+importar swaggerDocument desde './swagger.json'
 
 const app = express();
 
 app.get('/', inicio);
 app.get('/estado', estado);
 app.get('/dolar/:casa', _casa)
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css' }));
 
 si (httpDevServer) {
 	httpDevServer.on('request', app);

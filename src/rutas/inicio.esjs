@@ -1,12 +1,5 @@
 importar { casas } desde '@/utilidades/constantes.esjs'
-importar slugify desde 'slugify'
 
 exportar porDefecto asincrono funcion(req, res) {
-	res.send(`
-		Acceder a los distintos dolares: \n
-
-		${casas.map(
-			casa => '- /dolar/' + slugify(casa) + ' \n '
-		)}
-	`)
+	res.redirect('/docs')
 }
