@@ -1,0 +1,27 @@
+{
+  "name": "EsJS Express App",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+  "features": {
+    "ghcr.io/NicoVIII/devcontainer-features/pnpm:2": {}
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Aplicación",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "pnpm i",
+  "postAttachCommand": {
+    "dev": "pnpm run dev"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "src/app.esjs"
+      ]
+    }
+  },
+  "extensions": [
+    "enzonotario.vscode-esjs"
+  ]
+}

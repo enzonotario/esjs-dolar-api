@@ -1,0 +1,16 @@
+importar express desde 'express';
+importar httpDevServer desde 'vavite/http-dev-server';
+importar inicio desde './rutas/inicio.esjs'
+importar estado desde './rutas/estado.esjs'
+
+const app = express();
+
+app.get('/', inicio);
+app.get('/estado', estado);
+
+si (httpDevServer) {
+	httpDevServer.on('request', app);
+} sino {
+	consola.escribir('Iniciando servidor de producción...');
+	app.listen(3000);
+}

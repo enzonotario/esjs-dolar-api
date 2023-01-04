@@ -1,0 +1,19 @@
+{
+  "name": "@es-js/crear-express-app",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --ssr --mode=production",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@es-js/core": "^0.0.7",
+    "@es-js/vite-plugin-esjs": "^0.0.7",
+    "vavite": "^1.5.2",
+    "vite": "^2.9.15"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

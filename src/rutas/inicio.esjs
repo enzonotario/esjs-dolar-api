@@ -1,0 +1,3 @@
+exportar porDefecto funcion(req, res) {
+	res.send('¡Hola mundo, desde EsJS!')
+}
