@@ -6,7 +6,7 @@
   "info": {
     "title": "Dólar API Argentina",
     "version": "1.0",
-    "description": "API para las diferentes cotizaciones de Dólar en Argentina",
+    "description": "API desarrollada en EsJS (https://esjs.dev) para las diferentes cotizaciones de Dólar en Argentina",
     "license": {
       "name": "MIT"
     }
@@ -24,7 +24,7 @@
   "paths": {
     "/dolares": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Dólares",
         "tags": [],
         "responses": {
           "200": {
@@ -126,7 +126,7 @@
     },
     "/estado": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Estado de la API",
         "tags": [],
         "responses": {
           "200": {
@@ -149,23 +149,6 @@
       "Cotizacion": {
         "title": "Cotizacion",
         "type": "object",
-        "properties": {
-          "fecha": {
-            "type": "string",
-            "description": "En formato ISO 8601"
-          },
-          "compra": {
-            "type": "number"
-          },
-          "venta": {
-            "type": "number"
-          }
-        },
-        "required": [
-          "fecha",
-          "compra",
-          "venta"
-        ],
         "x-stoplight": {
           "id": "ce96aa7960850"
         },
@@ -175,7 +158,29 @@
             "compra": 123.99,
             "venta": 132.99
           }
-        }
+        },
+        "properties": {
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          },
+          "casa": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "fechaActualizacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "compra",
+          "venta",
+          "fechaActualizacion"
+        ]
       },
       "Estado": {
         "title": "Estado",
