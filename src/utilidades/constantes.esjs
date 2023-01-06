@@ -1,10 +1,28 @@
 exportar const casas = [
-	'oficial',
-	'blue',
-	'bolsa',
-	'contadoconliqui',
-	'solidario',
-	'mayorista',
+	{
+		identificador: 'oficial',
+		nombre: 'Oficial',
+	},
+	{
+		identificador: 'blue',
+		nombre: 'Blue',
+	},
+	{
+		identificador: 'bolsa',
+		nombre: 'Bolsa',
+	},
+	{
+		identificador: 'contadoconliqui',
+		nombre: 'Contado con liquidación',
+	},
+	{
+		identificador: 'solidario',
+		nombre: 'Solidario (Turista)',
+	},
+	{
+		identificador: 'mayorista',
+		nombre: 'Mayorista',
+	},
 ]
 
 exportar const dolarHoy = {

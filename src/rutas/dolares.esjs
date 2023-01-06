@@ -1,5 +1,4 @@
-importar { casas } desde '@/utilidades/constantes.esjs'
-importar { obtenerDolarPorCasa, obtenerDolares } desde '@/servicios/servicio-dolar.esjs'
+importar { obtenerDolares } desde '@/servicios/servicio-dolar.esjs'
 
 exportar porDefecto asincrono funcion(req, res) {
 	res.setHeader('Cache-Control', 'public, s-max-age=300');

@@ -10,8 +10,9 @@ exportar asincrono funcion obtenerDolares() {
     retornar esperar Promise.all(
         casas.mapear(
             asincrono casa => ({
-                ...esperar obtenerValoresParaCasa($, casa),
-                casa,
+                ...esperar obtenerValoresParaCasa($, casa.identificador),
+                casa: casa.identificador,
+                nombre: casa.nombre,
                 fecha: crear Fecha(),
             })
         )
