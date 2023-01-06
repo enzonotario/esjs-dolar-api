@@ -10,10 +10,7 @@ exportar asincrono funcion obtenerDolares() {
     retornar esperar Promise.all(
         casas.mapear(
             asincrono casa => ({
-                ...esperar obtenerValoresParaCasa($, casa.identificador),
-                casa: casa.identificador,
-                nombre: casa.nombre,
-                fecha: crear Fecha(),
+                ...esperar obtenerValoresParaCasa($, casa),
             })
         )
     )
@@ -38,16 +35,19 @@ asincrono funcion consultarPagina() {
 }
 
 asincrono funcion obtenerValoresParaCasa($, casa) {
-    const casaConfiguracion = dolarHoy.cotizaciones[casa]
+    const casaConfiguracion = dolarHoy.cotizaciones[casa.identificador]
 
     const { obtenerValorCompra, obtenerValorVenta } = esperar importar(`./dolar-hoy-extractor-${casaConfiguracion.extractor}.esjs`)
 
     const compra = esperar obtenerValorCompra($, casaConfiguracion.href)
     const venta = esperar obtenerValorVenta($, casaConfiguracion.href)
+    const fechaActualizacion = $('.update').text()
 
     retornar {
-        fecha: crear Fecha(),
         compra,
         venta,
+        casa: casa.identificador,
+        nombre: casa.nombre,
+        fechaActualizacion,
     }
 }

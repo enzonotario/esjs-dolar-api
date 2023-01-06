@@ -3,12 +3,14 @@ importar { casas } desde '@/utilidades/constantes.esjs'
 
 exportar porDefecto asincrono funcion (req, res) {
     const casa = req.params.casa
+
+    const casaConfiguracion = casas.buscar(c => c.identificador === casa)
     
-    si (!casas.buscar(c => c.identificador === casa)) {
+    si (!casaConfiguracion) {
         retornar res.sendStatus(404)
     }
 
-    const dolar = esperar obtenerDolarPorCasa(casa)
+    const dolar = esperar obtenerDolarPorCasa(casaConfiguracion)
 
     res.setHeader('Cache-Control', 'public, s-max-age=300');
 
