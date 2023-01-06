@@ -12,6 +12,7 @@
     "@es-js/vite-plugin-esjs": "^0.0.7",
     "axios": "^1.2.2",
     "cheerio": "1.0.0-rc.12",
+    "cors": "^2.8.5",
     "slugify": "^1.6.5",
     "swagger-ui-express": "^4.6.0",
     "vavite": "^1.5.2",
