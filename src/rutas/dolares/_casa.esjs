@@ -12,13 +12,9 @@ exportar porDefecto asincrono funcion (req, res) {
 
     res.setHeader('Cache-Control', 'public, s-max-age=300');
 
-    si (!dolar || !dolar.casa) {
+    si (!dolar) {
         retornar res.sendStatus(404)
     }
     
-    res.json({
-        fecha: crear Fecha(),
-        compra: Numero(dolar.casa.compra.reemplazar(/,/g, '.')),
-        venta: Numero(dolar.casa.venta.reemplazar(/,/g, '.')),
-    })
+    res.json(dolar)
 }

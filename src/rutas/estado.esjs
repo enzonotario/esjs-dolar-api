@@ -1,6 +1,6 @@
 exportar porDefecto funcion(req, res) {
-	res.send({
-		estado: 'Disponible',
-		aleatorio: Mate.truncar(Mate.aleatorio() * 10000)
+	res.json({
+		'estado': 'Disponible',
+		'aleatorio': Mate.truncar(Mate.aleatorio() * 10000)
 	})
 }

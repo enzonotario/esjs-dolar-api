@@ -1,8 +1,38 @@
 exportar const casas = [
 	'oficial',
 	'blue',
+	'bolsa',
+	'contadoconliqui',
+	'solidario',
 	'mayorista',
-	'bcra',
-	'banco nación billete',
-	'banco nación publico',
 ]
+
+exportar const dolarHoy = {
+	baseUrl: 'https://dolarhoy.com/',
+	cotizaciones: {
+		oficial: {
+			href: '/cotizaciondolaroficial',
+			extractor: 'cabecera',
+		},
+		blue: {
+			href: '/cotizaciondolarblue',
+			extractor: 'cabecera',
+		},
+		bolsa: {
+			href: '/cotizaciondolarbolsa',
+			extractor: 'cabecera',
+		},
+		contadoconliqui: {
+			href: '/cotizaciondolarcontadoconliqui',
+			extractor: 'cabecera',
+		},
+		solidario: {
+			href: '/cotizaciondolarturista',
+			extractor: 'cabecera',
+		},
+		mayorista: {
+			href: '/cotizaciondolarmayorista',
+			extractor: 'pie',
+		},
+	}
+}

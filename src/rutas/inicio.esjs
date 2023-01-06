@@ -1,5 +1,3 @@
-importar { casas } desde '@/utilidades/constantes.esjs'
-
 exportar porDefecto asincrono funcion(req, res) {
 	res.redirect('/docs')
 }

@@ -1,8 +1,34 @@
 importar axios desde 'axios'
+importar { dolarHoy, casas } desde '@/utilidades/constantes.esjs'
+importar cheerio desde 'cheerio'
 
 exportar asincrono funcion obtenerDolares() {
+    const pagina = esperar consultarPagina()
+
+    const $ = cheerio.load(pagina)
+
+    retornar esperar Promise.all(
+        casas.mapear(
+            asincrono casa => ({
+                ...esperar obtenerValoresParaCasa($, casa),
+                casa,
+                fecha: crear Fecha(),
+            })
+        )
+    )
+}
+
+exportar asincrono funcion obtenerDolarPorCasa(casa) {
+    const pagina = esperar consultarPagina()
+
+    const $ = cheerio.load(pagina)
+
+    retornar obtenerValoresParaCasa($, casa)
+}
+
+asincrono funcion consultarPagina() {
     intentar {
-        const respuesta = esperar axios.get('https://www.dolarsi.com/api/api.php?type=dolar')
+        const respuesta = esperar axios.get(dolarHoy.baseUrl)
         
         retornar respuesta.data
     } capturar (error) {
@@ -10,12 +36,17 @@ exportar asincrono funcion obtenerDolares() {
     }
 }
 
-exportar asincrono funcion obtenerDolarPorCasa(casa) {
-    const dolares = esperar obtenerDolares()
+asincrono funcion obtenerValoresParaCasa($, casa) {
+    const casaConfiguracion = dolarHoy.cotizaciones[casa]
 
-    const dolarPorCasa = dolares.buscar(
-        dolar => dolar.casa.nombre.convertirAMinusculas().incluye(casa.convertirAMinusculas())
-    )
+    const { obtenerValorCompra, obtenerValorVenta } = esperar importar(`./dolar-hoy-extractor-${casaConfiguracion.extractor}.esjs`)
 
-    retornar dolarPorCasa
+    const compra = esperar obtenerValorCompra($, casaConfiguracion.href)
+    const venta = esperar obtenerValorVenta($, casaConfiguracion.href)
+
+    retornar {
+        fecha: crear Fecha(),
+        compra,
+        venta,
+    }
 }

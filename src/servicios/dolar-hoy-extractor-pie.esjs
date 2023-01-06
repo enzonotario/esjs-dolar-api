@@ -1,0 +1,37 @@
+importar interpretarValorMonetario desde '@/utilidades/interpretar-valor-monetario.esjs'
+
+funcion obtenerValores($, href) {
+    retornar $(`.cotizaciones_more a[href=${href}]`)
+}
+
+exportar funcion obtenerValorCompra($, href) {
+    const valores = obtenerValores($, href)
+
+    si (!valores) {
+        retornar nulo
+    }
+
+    const valor = valores.find(`.compra`).html()
+
+    si (!valor) {
+        retornar nulo
+    }
+
+    retornar interpretarValorMonetario(valor)
+}
+
+exportar funcion obtenerValorVenta($, href) {
+    const valores = obtenerValores($, href)
+
+    si (!valores) {
+        retornar nulo
+    }
+
+    const valor = valores.find(`.venta`).html()
+
+    si (!valor) {
+        retornar nulo
+    }
+
+    retornar interpretarValorMonetario(valor)
+}

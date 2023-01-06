@@ -22,7 +22,29 @@
     }
   ],
   "paths": {
-    "/dolar/oficial": {
+    "/dolares": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolares"
+      }
+    },
+    "/dolares/oficial": {
       "get": {
         "summary": "Dólar Oficial",
         "tags": [],
@@ -32,7 +54,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                  "$ref": "#/components/schemas/Cotizacion"
                 }
               }
             },
@@ -42,7 +64,7 @@
         "operationId": "get-dolar-oficial"
       }
     },
-    "/dolar/blue": {
+    "/dolares/blue": {
       "get": {
         "summary": "Dólar Blue",
         "tags": [],
@@ -52,7 +74,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                  "$ref": "#/components/schemas/Cotizacion"
                 }
               }
             }
@@ -62,7 +84,7 @@
       },
       "parameters": []
     },
-    "/dolar/mayorista": {
+    "/dolares/mayorista": {
       "get": {
         "summary": "Dólar Mayorista",
         "tags": [],
@@ -72,7 +94,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                  "$ref": "#/components/schemas/Cotizacion"
                 }
               }
             }
@@ -82,7 +104,7 @@
       },
       "parameters": []
     },
-    "/dolar/bcra": {
+    "/dolares/bcra": {
       "get": {
         "summary": "Dólar BCRA",
         "tags": [],
@@ -92,7 +114,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RespuestaCotizacion"
+                  "$ref": "#/components/schemas/Cotizacion"
                 }
               }
             }
@@ -101,12 +123,31 @@
         "operationId": "get-dolar-bcra"
       },
       "parameters": []
+    },
+    "/estado": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Estado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-estado"
+      }
     }
   },
   "components": {
     "schemas": {
-      "RespuestaCotizacion": {
-        "title": "RespuestaCotizacion",
+      "Cotizacion": {
+        "title": "Cotizacion",
         "type": "object",
         "properties": {
           "fecha": {
@@ -126,13 +167,34 @@
           "venta"
         ],
         "x-stoplight": {
-          "id": "8bde14884f4bd"
+          "id": "ce96aa7960850"
         },
         "x-examples": {
           "Example 1": {
             "fecha": "2023-01-01T12:00:00.000Z",
             "compra": 123.99,
             "venta": 132.99
+          }
+        }
+      },
+      "Estado": {
+        "title": "Estado",
+        "x-stoplight": {
+          "id": "ogwpb2wxiqwqh"
+        },
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "string"
+          },
+          "aleatorio": {
+            "type": "integer"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "estado": "Disponible",
+            "aleatorio": 1234
           }
         }
       }
