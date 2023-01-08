@@ -6,8 +6,6 @@ importar inicio desde '@/rutas/inicio.esjs'
 importar estado desde '@/rutas/estado.esjs'
 importar dolares desde '@/rutas/dolares.esjs'
 importar _casa desde '@/rutas/dolares/_casa.esjs'
-importar swaggerUi desde 'swagger-ui-express'
-importar swaggerDocument desde './swagger.json'
 
 const app = express()
 
@@ -22,7 +20,6 @@ app.get('/', inicio)
 app.get('/estado', estado)
 app.get('/dolares', dolares)
 app.get('/dolares/:casa', _casa)
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css' }))
 
 si (httpDevServer) {
 	httpDevServer.on('request', app)

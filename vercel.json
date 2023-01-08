@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "dist-client",
+  "outputDirectory": "docs/",
   "functions": {
     "api/index.js": {
       "includeFiles": "dist/**"
@@ -7,8 +7,12 @@
   },
   "rewrites": [
       {
-        "source": "/(.*)",
+        "source": "/((?!docs/).*)",
         "destination": "/api/index.js"
+      },
+      {
+        "source": "/docs",
+        "destination": "/docs/index.html"
       }
   ]
 }
