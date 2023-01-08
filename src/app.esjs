@@ -1,6 +1,7 @@
 importar express desde 'express'
 importar httpDevServer desde 'vavite/http-dev-server'
 importar cors desde 'cors'
+importar { useTreblle } desde "treblle"
 importar inicio desde '@/rutas/inicio.esjs'
 importar estado desde '@/rutas/estado.esjs'
 importar dolares desde '@/rutas/dolares.esjs'
@@ -11,6 +12,11 @@ importar swaggerDocument desde './swagger.json'
 const app = express()
 
 app.use(cors())
+
+useTreblle(app, {
+  apiKey: import.meta.env.VITE_TREBLLE_API_KEY,
+  projectId: import.meta.env.VITE_TREBLLE_PROJECT_ID,
+});
 
 app.get('/', inicio)
 app.get('/estado', estado)
