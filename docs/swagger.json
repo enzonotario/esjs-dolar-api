@@ -22,7 +22,7 @@
     }
   ],
   "paths": {
-    "/dolares": {
+    "/v1/dolares": {
       "get": {
         "summary": "Dólares",
         "tags": [],
@@ -44,7 +44,7 @@
         "operationId": "get-dolares"
       }
     },
-    "/dolares/oficial": {
+    "/v1/dolares/oficial": {
       "get": {
         "summary": "Dólar Oficial",
         "tags": [],
@@ -64,7 +64,7 @@
         "operationId": "get-dolar-oficial"
       }
     },
-    "/dolares/blue": {
+    "/v1/dolares/blue": {
       "get": {
         "summary": "Dólar Blue",
         "tags": [],
@@ -84,7 +84,67 @@
       },
       "parameters": []
     },
-    "/dolares/mayorista": {
+    "/v1/dolares/bolsa": {
+      "get": {
+        "summary": "Dólar Bolsa",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Cotización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-bolsa"
+      },
+      "parameters": []
+    },
+    "/v1/dolares/contadoconliqui": {
+      "get": {
+        "summary": "Dólar Contado con liquidación",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Cotización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-contadoconliqui"
+      },
+      "parameters": []
+    },
+    "/v1/dolares/solidario": {
+      "get": {
+        "summary": "Dólar Solidario (Turista)",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Cotización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-solidario"
+      },
+      "parameters": []
+    },
+    "/v1/dolares/mayorista": {
       "get": {
         "summary": "Dólar Mayorista",
         "tags": [],
@@ -101,26 +161,6 @@
           }
         },
         "operationId": "get-dolar-mayorista"
-      },
-      "parameters": []
-    },
-    "/dolares/bcra": {
-      "get": {
-        "summary": "Dólar BCRA",
-        "tags": [],
-        "responses": {
-          "200": {
-            "description": "Cotización",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-dolar-bcra"
       },
       "parameters": []
     },

@@ -1,0 +1,10 @@
+importar express desde 'express'
+importar inicio desde '@/rutas/v1/inicio.esjs'
+importar dolares desde '@/rutas/v1/dolares.esjs'
+importar _casa desde '@/rutas/v1/dolares/_casa.esjs'
+
+exportar const v1 = express.Router()
+
+v1.get('/', inicio)
+v1.get('/dolares', dolares)
+v1.get('/dolares/:casa', _casa)
