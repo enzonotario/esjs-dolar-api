@@ -1,6 +1,7 @@
 importar axios desde 'axios'
 importar { dolarHoy, casas } desde '@/utilidades/constantes.esjs'
 importar cheerio desde 'cheerio'
+importar parse desde 'date-fns/parse'
 
 exportar asincrono funcion obtenerDolares() {
     const pagina = esperar consultarPagina()
@@ -41,7 +42,7 @@ asincrono funcion obtenerValoresParaCasa($, casa) {
 
     const compra = esperar obtenerValorCompra($, casaConfiguracion.href)
     const venta = esperar obtenerValorVenta($, casaConfiguracion.href)
-    const fechaActualizacion = $('.update').text()
+    const fechaActualizacion = obtenerFechaActualizacion($)
 
     retornar {
         compra,
@@ -50,4 +51,9 @@ asincrono funcion obtenerValoresParaCasa($, casa) {
         nombre: casa.nombre,
         fechaActualizacion,
     }
+}
+
+funcion obtenerFechaActualizacion($) {
+    const texto = $('.update').text().split('Actualizado el')[1].trim()
+    retornar parse(texto + ' -03', 'dd/MM/yy hh:mm aa x', new Date())
 }
