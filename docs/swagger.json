@@ -6,14 +6,15 @@
   "info": {
     "title": "Dólar API Argentina",
     "version": "1.0",
-    "description": "API desarrollada en EsJS (https://esjs.dev) para las diferentes cotizaciones de Dólar en Argentina",
+    "description": "API desarrollada en EsJS (https://esjs.dev) para las diferentes cotizaciones de Dólar en Argentina.\n\nRepositorio: https://github.com/enzonotario/esjs-dolar-api\n\nWebApp: https://dolar-hoy-argentina.vercel.app/",
     "license": {
-      "name": "MIT"
+      "name": "MIT",
+      "url": "https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE"
     }
   },
   "servers": [
     {
-      "url": "https://dolar-api-argentina.vercel.app/",
+      "url": "https://dolar-api-argentina.vercel.app",
       "description": "Producción"
     },
     {
