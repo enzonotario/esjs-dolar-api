@@ -8,4 +8,4 @@ Consulta la página [DolarHoy](https://dolarhoy.com/) y determina los valores de
 
 ## Documentación
 
-Consultar el Swagger en https://dolar-api-argentina.vercel.app/docs/.
+Consultar el Swagger en https://dolar-api-argentina.vercel.app/.
