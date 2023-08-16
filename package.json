@@ -1,6 +1,7 @@
 {
   "name": "@es-js/crear-express-app",
   "version": "0.0.1",
+  "type": "module",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -8,16 +9,16 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "@es-js/core": "^0.0.10",
-    "@es-js/vite-plugin-esjs": "^0.0.7",
-    "axios": "^1.2.2",
+    "@es-js/core": "^0.0.18",
+    "@es-js/vite-plugin-esjs": "^0.0.13",
+    "axios": "^1.4.0",
     "cheerio": "1.0.0-rc.12",
     "cors": "^2.8.5",
-    "date-fns": "^2.29.3",
-    "slugify": "^1.6.5",
+    "date-fns": "^2.30.0",
+    "slugify": "^1.6.6",
     "treblle": "^1.3.0",
-    "vavite": "^1.5.2",
-    "vite": "^2.9.15"
+    "vavite": "^2.0.2",
+    "vite": "^4.4.9"
   },
   "dependencies": {
     "express": "^4.18.2"
