@@ -13,6 +13,7 @@ export default defineConfig({
     vavite({
       serverEntry: './src/app.esjs',
       reloadOn: "static-deps-change",
+      serveClientAssetsInDev: true,
     }),
   ],
   resolve: {

@@ -1,12 +1,9 @@
 {
   "openapi": "3.0.0",
-  "x-stoplight": {
-    "id": "6hf5i0fusa9fv"
-  },
   "info": {
-    "title": "Dólar API Argentina",
+    "title": "DolarApi.com",
     "version": "1.0",
-    "description": "API desarrollada en <a href=\"https://esjs.dev\" target=\"_blank\">EsJS</a> para las diferentes cotizaciones de Dólar en Argentina.\n\nRepositorio: <a href=\"https://github.com/enzonotario/esjs-dolar-api\" target=\"_blank\">GitHub</a>\n\nDemo: <a href=\"https://dolar-hoy-argentina.vercel.app/\" target=\"_blank\">WebApp</a>",
+    "description": "<br/>API desarrollada en <a href=\"https://esjs.dev?ref=dolarapi.com\" target=\"_blank\">EsJS</a>: brinda información actualizada sobre las cotizaciones del Dólar en Argentina.\n\nDemo: <a href=\"https://app.dolarapi.com\" target=\"_blank\">https://app.dolarapi.com</a>\n\n¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href=\"https://github.com/enzonotario/esjs-dolar-api\" target=\"_blank\">GitHub</a>!</strong><br/><br/>",
     "license": {
       "name": "MIT",
       "url": "https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE"
@@ -14,12 +11,8 @@
   },
   "servers": [
     {
-      "url": "https://dolar-api-argentina.vercel.app",
+      "url": "https://dolarapi.com",
       "description": "Producción"
-    },
-    {
-      "url": "http://localhost:3000",
-      "description": "Local"
     }
   ],
   "paths": {
@@ -42,7 +35,19 @@
             }
           }
         },
-        "operationId": "get-dolares"
+        "operationId": "get-dolares",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       }
     },
     "/v1/dolares/oficial": {
@@ -62,7 +67,19 @@
             "headers": {}
           }
         },
-        "operationId": "get-dolar-oficial"
+        "operationId": "get-dolar-oficial",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/oficial"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/oficial\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       }
     },
     "/v1/dolares/blue": {
@@ -81,7 +98,19 @@
             }
           }
         },
-        "operationId": "get-dolar-blue"
+        "operationId": "get-dolar-blue",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/blue"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/blue\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       },
       "parameters": []
     },
@@ -101,7 +130,19 @@
             }
           }
         },
-        "operationId": "get-dolar-bolsa"
+        "operationId": "get-dolar-bolsa",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/bolsa"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/bolsa\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       },
       "parameters": []
     },
@@ -121,7 +162,19 @@
             }
           }
         },
-        "operationId": "get-dolar-contadoconliqui"
+        "operationId": "get-dolar-contadoconliqui",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/contadoconliqui"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       },
       "parameters": []
     },
@@ -141,7 +194,19 @@
             }
           }
         },
-        "operationId": "get-dolar-solidario"
+        "operationId": "get-dolar-solidario",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/solidario"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/solidario\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       },
       "parameters": []
     },
@@ -161,11 +226,23 @@
             }
           }
         },
-        "operationId": "get-dolar-mayorista"
+        "operationId": "get-dolar-mayorista",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/mayorista"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/mayorista\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       },
       "parameters": []
     },
-    "/estado": {
+    "/v1/estado": {
       "get": {
         "summary": "Estado de la API",
         "tags": [],
@@ -181,7 +258,19 @@
             }
           }
         },
-        "operationId": "get-estado"
+        "operationId": "get-estado",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/estado"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/estado\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
       }
     }
   },
