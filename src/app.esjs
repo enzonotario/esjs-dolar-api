@@ -3,8 +3,9 @@ importar httpDevServer desde 'vavite/http-dev-server'
 importar cors desde 'cors'
 importar { useTreblle } desde "treblle"
 importar { v1 } desde '@/rutas/v1/v1.esjs'
-importar estado desde '@/rutas/estado.esjs'
-importar docs desde '@/docs/inicio.esjs'
+importar { cron } desde '@/rutas/cron/cron.esjs'
+importar estado desde '@/rutas/v1/estado.esjs'
+importar docs desde '@/docs/inicio.js'
 
 const app = express()
 
@@ -17,6 +18,7 @@ useTreblle(app, {
 
 app.get('/estado', estado)
 app.use('/v1/', v1)
+app.use('/cron/', cron)
 app.get('/docs', docs)
 app.get('/', (req, res) => {
 	res.redirect('/docs')

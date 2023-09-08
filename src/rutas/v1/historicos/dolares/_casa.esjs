@@ -1,0 +1,18 @@
+importar { obtenerHistoricosPorCasa } desde '@/db/database.js'
+
+exportar porDefecto asincrono funcion (req, res) {
+	res.setHeader('Cache-Control', 'public, s-max-age=300');
+
+	const dolares = esperar obtenerHistoricosPorCasa(req.params.casa)
+
+    res.json(
+		dolares.mapear(dolar => ({
+			moneda: dolar.moneda,
+			casa: dolar.casa,
+			nombre: dolar.nombre,
+			compra: dolar.compra,
+			venta: dolar.venta,
+			fecha: dolar.fecha,
+		 }))
+    )
+}

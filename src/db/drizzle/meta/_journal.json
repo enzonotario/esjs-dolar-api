@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1694201274074,
+      "tag": "0000_yielding_doctor_doom",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1694213660132,
+      "tag": "0001_amused_gargoyle",
+      "breakpoints": true
+    }
+  ]
+}

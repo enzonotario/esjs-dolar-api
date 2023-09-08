@@ -1,22 +1,28 @@
-importar { obtenerDolarPorCasa } desde '@/servicios/servicio-dolar.esjs'
+importar { obtenerDolarPorCasa } desde '@/db/database.js'
 importar { casas } desde '@/utilidades/constantes.esjs'
 
 exportar porDefecto asincrono funcion (req, res) {
+    res.setHeader('Cache-Control', 'public, s-max-age=300');
+
     const casa = req.params.casa
 
     const casaConfiguracion = casas.buscar(c => c.identificador === casa)
-    
+
     si (!casaConfiguracion) {
         retornar res.sendStatus(404)
     }
 
-    const dolar = esperar obtenerDolarPorCasa(casaConfiguracion)
+	const dolar = esperar obtenerDolarPorCasa(casa)
 
-    res.setHeader('Cache-Control', 'public, s-max-age=300');
+	si (!dolar) {
+		retornar res.sendStatus(404)
+	}
 
-    si (!dolar) {
-        retornar res.sendStatus(404)
-    }
-    
-    res.json(dolar)
+    res.json({
+		casa: dolar.casa,
+		nombre: casaConfiguracion.nombre,
+		compra: dolar.compra,
+		venta: dolar.venta,
+		fechaActualizacion: dolar.fecha,
+    })
 }

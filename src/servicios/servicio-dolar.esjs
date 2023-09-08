@@ -17,14 +17,6 @@ exportar asincrono funcion obtenerDolares() {
     )
 }
 
-exportar asincrono funcion obtenerDolarPorCasa(casa) {
-    const pagina = esperar consultarPagina()
-
-    const $ = cheerio.load(pagina)
-
-    retornar obtenerValoresParaCasa($, casa)
-}
-
 asincrono funcion consultarPagina() {
     intentar {
         const respuesta = esperar axios.get(dolarHoy.baseUrl)

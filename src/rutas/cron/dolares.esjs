@@ -1,0 +1,21 @@
+importar { obtenerDolares } desde '@/servicios/servicio-dolar.esjs'
+importar { db } desde '@/db/database.js'
+importar { extracciones } desde '@/db/schema.js'
+
+exportar porDefecto asincrono funcion(req, res) {
+	const dolares = esperar obtenerDolares()
+
+	esperar db
+		.insert(extracciones)
+		.values(dolares.mapear(dolar => ({
+			moneda: 'USD',
+			casa: dolar.casa,
+			compra: dolar.compra,
+			venta: dolar.venta,
+			fecha: dolar.fechaActualizacion,
+		})))
+
+	res.json({
+		estado: 'Correcto',
+	})
+}

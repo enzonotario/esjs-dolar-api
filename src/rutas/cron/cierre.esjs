@@ -1,0 +1,37 @@
+importar { obtenerDolares } desde '@/servicios/servicio-dolar.esjs'
+importar { db } desde '@/db/database.js'
+importar { cotizaciones } desde '@/db/schema.js'
+importar { startOfDay, subHours } desde 'date-fns'
+importar { zonedTimeToUtc } desde 'date-fns-tz'
+importar { and, eq } desde 'drizzle-orm';
+
+exportar porDefecto asincrono funcion(req, res) {
+	const dolares = esperar obtenerDolares()
+
+	const hoyUTC = crear Fecha()
+
+	const hoy = zonedTimeToUtc(startOfDay(subHours(hoyUTC, 3)))
+
+	esperar db
+		.delete(cotizaciones)
+		.where(
+			and(
+				eq(cotizaciones.moneda, 'USD'),
+				eq(cotizaciones.fecha, hoy),
+			)
+		)
+
+	esperar db
+		.insert(cotizaciones)
+		.values(dolares.mapear(dolar => ({
+			moneda: 'USD',
+			casa: dolar.casa,
+			compra: dolar.compra,
+			venta: dolar.venta,
+			fecha: hoy,
+		})))
+
+	res.json({
+		estado: 'Correcto',
+	})
+}
