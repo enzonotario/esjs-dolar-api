@@ -2,8 +2,6 @@ importar { obtenerDolarPorCasa } desde '@/db/database.js'
 importar { casas } desde '@/utilidades/constantes.esjs'
 
 exportar porDefecto asincrono funcion(req, res) {
-	res.setHeader('Cache-Control', 'public, s-max-age=300');
-
 	const dolares = []
 
 	para (const casa de casas) {

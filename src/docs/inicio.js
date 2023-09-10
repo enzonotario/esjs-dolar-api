@@ -1,6 +1,8 @@
 import viteDevServer from 'vavite/vite-dev-server';
 
 export default async function (req, res) {
+  const gTag = import.meta.env.VITE_GTAG;
+
   let html = `<!doctype html>
 <html lang="es">
 	<head>
@@ -11,13 +13,13 @@ export default async function (req, res) {
 
 		<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet">
 		<script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEST"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=${gTag}"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
 
-		  gtag('config', 'G-TEST');
+		  gtag('config', '${gTag}');
 		</script>
 	</head>
 	<body>
