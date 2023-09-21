@@ -1,16 +1,33 @@
 openapi: 3.0.0
 info:
-  title: DolarApi.com
-  version: '1.0'
+  title: ""
   description: |-
-    <br/>API desarrollada en <a href="https://esjs.dev?ref=dolarapi.com" target="_blank">EsJS</a>: brinda información actualizada sobre las cotizaciones del Dólar en Argentina.
+    # DolarApi.com
+    
+    <div class="flex flex-col">
+    
+      API desarrollada en <a href="https://esjs.dev?ref=dolarapi.com" target="_blank">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.
+    
+      ¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href="https://github.com/enzonotario/esjs-dolar-api" alt="GitHub" target="_blank">GitHub</a>!</strong>
+    
+    ## Demo
+    [App.DolarApi.com](https://app.dolarapi.com)
+    
+    ## Base URL
+    
+    <div class="flex flex-col w-full sm:max-w-xs pt-4">
+        <div class="flex flex-col bg-gray-300 rounded-t">
+          <span class="text-gray-700 text-xs uppercase px-2 py-1 font-semibold">
+            Base URL
+          </span>
+        </div>
+        <div class="flex flex-col bg-gray-200 rounded-b">
+          <span class="text-gray-700 text-xs px-2 py-1 select-all">
+            https://dolarapi.com
+          </span>
+        </div>
+    </div>
 
-    Demo: <a href="https://app.dolarapi.com" target="_blank">https://app.dolarapi.com</a>
-
-    ¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href="https://github.com/enzonotario/esjs-dolar-api" target="_blank">GitHub</a>!</strong><br/><br/>
-  license:
-    name: MIT
-    url: https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE
 servers:
   - url: https://dolarapi.com
     description: Producción
@@ -18,10 +35,10 @@ paths:
   /v1/dolares:
     get:
       summary: Dólares
-      tags: []
+      tags: [Cotización actual]
       responses:
         '200':
-          description: OK
+          description: Devuelve todas las cotizaciones
           content:
             application/json:
               schema:
@@ -42,10 +59,10 @@ paths:
   /v1/dolares/oficial:
     get:
       summary: Dólar Oficial
-      tags: []
+      tags: [Cotización actual]
       responses:
         '200':
-          description: Cotización
+          description: Devuelve la cotización del Dólar Oficial
           content:
             application/json:
               schema:
@@ -65,10 +82,10 @@ paths:
   /v1/dolares/blue:
     get:
       summary: Dólar Blue
-      tags: []
+      tags: [Cotización actual]
       responses:
         '200':
-          description: Cotización
+          description: Devuelve la cotización del Dólar Blue
           content:
             application/json:
               schema:
@@ -88,10 +105,10 @@ paths:
   /v1/dolares/bolsa:
     get:
       summary: Dólar Bolsa
-      tags: []
+      tags: [Cotización actual]
       responses:
         '200':
-          description: Cotización
+          description: Devuelve la cotización del Dólar Bolsa
           content:
             application/json:
               schema:
@@ -111,10 +128,10 @@ paths:
   /v1/dolares/contadoconliqui:
     get:
       summary: Dólar Contado con liquidación
-      tags: []
+      tags: [Cotización actual]
       responses:
         '200':
-          description: Cotización
+          description: Devuelve la cotización del Dólar Contado con liquidación
           content:
             application/json:
               schema:
@@ -134,10 +151,10 @@ paths:
   /v1/dolares/solidario:
     get:
       summary: Dólar Solidario (Turista)
-      tags: []
+      tags: [Cotización actual]
       responses:
         '200':
-          description: Cotización
+          description: Devuelve la cotización del Dólar Solidario (Turista)
           content:
             application/json:
               schema:
@@ -157,10 +174,10 @@ paths:
   /v1/dolares/mayorista:
     get:
       summary: Dólar Mayorista
-      tags: []
+      tags: [Cotización actual]
       responses:
         '200':
-          description: Cotización
+          description: Devuelve la cotización del Dólar Mayorista
           content:
             application/json:
               schema:
@@ -180,10 +197,10 @@ paths:
   /v1/estado:
     get:
       summary: Estado de la API
-      tags: []
+      tags: [API]
       responses:
         '200':
-          description: OK
+          description: Devuelve el estado de la API
           content:
             application/json:
               schema:

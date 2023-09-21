@@ -5,10 +5,11 @@ importar { useTreblle } desde "treblle"
 importar { v1 } desde '@/rutas/v1/v1.esjs'
 importar { cron } desde '@/rutas/cron/cron.esjs'
 importar estado desde '@/rutas/v1/estado.esjs'
-importar docs desde '@/docs/inicio.js'
+importar docs desde '@/docs/inicio.esjs'
 importar pino desde 'pino'
 importar pinoHttp desde 'pino-http'
 importar 'pino-loki'
+importar { cache } desde '@/cache.middleware.esjs'
 
 const modoDesarrollo = import.meta.env.MODE == 'development'
 
@@ -41,31 +42,13 @@ const logger = pinoHttp({
 app.use(logger);
 
 /**
- * Configuración de cache
- */
-app.use((req, res, next) => {
-	const tiempoEnSegundos = 60 * 15
-
-	// Sólo cacheamos los GET
-	si (req.method == 'GET' && !modoDesarrollo) {
-		res.set('Cache-control', `public, s-maxage=${tiempoEnSegundos}`)
-	} sino {
-		// No cacheamos los demás métodos
-		res.set('Cache-control', `no-store`)
-	}
-
-	// Continuamos
-	next()
-})
-
-/**
  * Configuración de rutas
  */
+app.use('/cron/', cron)
 app.get('/estado', estado)
 app.use('/v1/', v1)
-app.use('/cron/', cron)
-app.get('/docs', docs)
-app.get('/', (req, res) => {
+app.get('/docs', cache(43800), docs)
+app.get('/', cache(43800), (req, res) => {
 	res.redirect('/docs')
 })
 

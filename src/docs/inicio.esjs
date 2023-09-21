@@ -1,0 +1,58 @@
+importar viteDevServer desde "vavite/vite-dev-server"
+importar jsYaml desde "js-yaml"
+importar rawIndexHtml desde "./index.html?raw"
+importar rawSidebarItemHtml desde "./sidebar-item.html?raw"
+importar rawSwaggerYaml desde "../../public/swagger.yaml?raw"
+
+funcion leerYaml() {
+  const yaml = jsYaml.load(rawSwaggerYaml)
+  retornar yaml
+}
+
+funcion generateSidebarItemHtml(label, url) {
+  retornar rawSidebarItemHtml
+    .reemplazarTodo("<!--REPLACE_LABEL-->", label)
+    .reemplazarTodo("<!--REPLACE_URL-->", url)
+}
+
+exportar porDefecto asincrono funcion (req, res) {
+  const gTag = importar.meta.env.VITE_GTAG
+
+  const yaml = leerYaml()
+
+  const sidebarCotizacionActualElements = Object.claves(yaml.paths)
+    .filtrar((path) => {
+      const { tags } = yaml.paths[path].obtener
+      retornar tags?.incluye("Cotización actual")
+    })
+    .mapear((path) => {
+      const { operationId, summary } = yaml.paths[path].obtener
+      retornar generateSidebarItemHtml(summary, `#/operations/${operationId}`)
+    })
+
+  const sidebarApiElements = Object.claves(yaml.paths)
+    .filtrar((path) => {
+      const { tags } = yaml.paths[path].obtener
+      retornar tags?.incluye("API")
+    })
+    .mapear((path) => {
+      const { operationId, summary } = yaml.paths[path].obtener
+      retornar generateSidebarItemHtml(summary, `#/operations/${operationId}`)
+    })
+
+  const html = rawIndexHtml
+    .reemplazarTodo("<!--REPLACE_GTAG_ID-->", gTag)
+    .reemplazarTodo(
+      "<!--REPLACE_SIDEBAR_COTIZACION_ACTUAL-->",
+      sidebarCotizacionActualElements.juntar("")
+    )
+    .reemplazarTodo("<!--REPLACE_SIDEBAR_API-->", sidebarApiElements.juntar(""))
+
+  var output = html
+
+  si (viteDevServer) {
+    output = esperar viteDevServer.transformIndexHtml(req.url, html)
+  }
+
+  res.send(output)
+}
