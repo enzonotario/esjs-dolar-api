@@ -31,6 +31,9 @@
     <!-- Incluir Alpine -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+<!--    &lt;!&ndash; Incluir echarts &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>-->
+
     <meta name="description" content="API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Solidario, Dólar Mayorista">
 </head>
 <body x-data="sidebar()"
@@ -169,7 +172,6 @@
             },
 
             isOpen() {
-                console.log(this.isAboveBreakpoint)
                 if (this.isAboveBreakpoint) {
                     return this.open.above
                 }
@@ -180,17 +182,20 @@
                     this.open.above = true
                 }
                 this.open.below = true
+                window.resizeCharts()
             },
             handleClose() {
                 if (this.isAboveBreakpoint) {
                     this.open.above = false
                 }
                 this.open.below = false
+                window.resizeCharts()
             },
             handleAway() {
                 if (!this.isAboveBreakpoint) {
                     this.open.below = false
                 }
+                window.resizeCharts()
             },
             toggleOpen() {
                 if (this.isOpen()) {
@@ -202,5 +207,7 @@
         }
     }
 </script>
+
+<script src="/plots.js"></script>
 </body>
 </html>

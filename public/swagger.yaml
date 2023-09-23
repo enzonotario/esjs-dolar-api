@@ -36,6 +36,8 @@ paths:
     get:
       summary: Dólares
       tags: [Cotización actual]
+      description: |-
+        <div class="w-full h-[60vh] min-h-[500px] p-4" id="plot-cotizacion-actual-dolares"></div>
       responses:
         '200':
           description: Devuelve todas las cotizaciones
@@ -60,6 +62,8 @@ paths:
     get:
       summary: Dólar Oficial
       tags: [Cotización actual]
+      description: |-
+        <div class="w-full h-48 p-4" id="plot-cotizacion-actual-oficial"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Oficial
@@ -83,6 +87,8 @@ paths:
     get:
       summary: Dólar Blue
       tags: [Cotización actual]
+      description: |-
+        <div class="w-full h-48 p-4" id="plot-cotizacion-actual-blue"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Blue
@@ -106,6 +112,8 @@ paths:
     get:
       summary: Dólar Bolsa
       tags: [Cotización actual]
+      description: |-
+        <div class="w-full h-48 p-4" id="plot-cotizacion-actual-bolsa"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Bolsa
@@ -129,6 +137,8 @@ paths:
     get:
       summary: Dólar Contado con liquidación
       tags: [Cotización actual]
+      description: |-
+        <div class="w-full h-48 p-4" id="plot-cotizacion-actual-contadoconliqui"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Contado con liquidación
@@ -152,6 +162,8 @@ paths:
     get:
       summary: Dólar Solidario (Turista)
       tags: [Cotización actual]
+      description: |-
+          <div class="w-full h-48 p-4" id="plot-cotizacion-actual-solidario"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Solidario (Turista)
@@ -175,6 +187,8 @@ paths:
     get:
       summary: Dólar Mayorista
       tags: [Cotización actual]
+      description: |-
+        <div class="w-full h-48 p-4" id="plot-cotizacion-actual-mayorista"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Mayorista

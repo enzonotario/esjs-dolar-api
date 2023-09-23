@@ -10,37 +10,5 @@
       "source": "/(.*)",
       "destination": "/api/index.js"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "dolar-api-argentina.vercel.app"
-        }
-      ],
-      "destination": "https://dolarapi.com/docs"
-    },
-    {
-      "source": "/docs",
-      "has": [
-        {
-          "type": "host",
-          "value": "dolar-api-argentina.vercel.app"
-        }
-      ],
-      "destination": "https://dolarapi.com/docs"
-    },
-    {
-      "source": "/v1",
-      "has": [
-        {
-          "type": "host",
-          "value": "dolar-api-argentina.vercel.app"
-        }
-      ],
-      "destination": "https://dolarapi.com/docs"
-    }
   ]
 }
