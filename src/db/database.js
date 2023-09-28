@@ -1,8 +1,8 @@
 import { drizzle } from 'drizzle-orm/libsql';
 import { createClient } from '@libsql/client';
 import { and, desc, eq } from 'drizzle-orm';
-import * as schema from './schema.js';
-import { cotizaciones, extracciones } from './schema.js';
+import * as schema from './schema';
+import { cotizaciones, extracciones } from './schema';
 
 const client = createClient({
   url: import.meta.env.VITE_DATABASE_URL,
