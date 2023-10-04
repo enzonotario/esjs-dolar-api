@@ -1,5 +1,5 @@
 import { drizzle } from 'drizzle-orm/libsql';
-import { createClient } from '@libsql/client/web';
+import { createClient } from '@libsql/client';
 import { and, desc, eq } from 'drizzle-orm';
 import * as schema from './schema';
 import { cotizaciones, extracciones } from './schema';
