@@ -1,7 +1,7 @@
 import { URL, fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import EsJS from '@es-js/vite-plugin-esjs';
-import vavite from 'vavite';
+import { vavite } from 'vavite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
