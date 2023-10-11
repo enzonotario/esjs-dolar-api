@@ -7,8 +7,20 @@
   },
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/v1/(.*)",
       "destination": "/api/index.js"
+    },
+    {
+      "source": "/cron/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/docs/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

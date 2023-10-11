@@ -6,7 +6,7 @@
     <title>DolarApi.com - API para obtener el precio del Dólar en Argentina</title>
 
     <!-- Incluir Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<!--REPLACE_GTAG_ID-->"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNSEPHSRFF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -16,7 +16,7 @@
 
         gtag('js', new Date());
 
-        gtag('config', '<!--REPLACE_GTAG_ID-->');
+        gtag('config', 'G-MNSEPHSRFF');
     </script>
 
     <!-- Fuente -->
@@ -122,7 +122,105 @@
                         </div>
                     </li>
 
-                    <!--REPLACE_SIDEBAR_COTIZACION_ACTUAL-->
+                    <li x-data="{ isActive: window.location.hash === '#/operations/get-dolares' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-dolares' }) }">
+    <a href="#/operations/get-dolares"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Dólares</span>
+    </a>
+</li>
+<li x-data="{ isActive: window.location.hash === '#/operations/get-dolar-oficial' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-dolar-oficial' }) }">
+    <a href="#/operations/get-dolar-oficial"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Dólar Oficial</span>
+    </a>
+</li>
+<li x-data="{ isActive: window.location.hash === '#/operations/get-dolar-blue' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-dolar-blue' }) }">
+    <a href="#/operations/get-dolar-blue"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Dólar Blue</span>
+    </a>
+</li>
+<li x-data="{ isActive: window.location.hash === '#/operations/get-dolar-bolsa' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-dolar-bolsa' }) }">
+    <a href="#/operations/get-dolar-bolsa"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Dólar Bolsa</span>
+    </a>
+</li>
+<li x-data="{ isActive: window.location.hash === '#/operations/get-dolar-contadoconliqui' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-dolar-contadoconliqui' }) }">
+    <a href="#/operations/get-dolar-contadoconliqui"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Dólar Contado con liquidación</span>
+    </a>
+</li>
+<li x-data="{ isActive: window.location.hash === '#/operations/get-dolar-solidario' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-dolar-solidario' }) }">
+    <a href="#/operations/get-dolar-solidario"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Dólar Solidario (Turista)</span>
+    </a>
+</li>
+<li x-data="{ isActive: window.location.hash === '#/operations/get-dolar-mayorista' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-dolar-mayorista' }) }">
+    <a href="#/operations/get-dolar-mayorista"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Dólar Mayorista</span>
+    </a>
+</li>
+
 
                     <li class="border-t border-gray-200"></li>
                     <li class="px-2">
@@ -133,7 +231,21 @@
                         </div>
                     </li>
 
-                    <!--REPLACE_SIDEBAR_API-->
+                    <li x-data="{ isActive: window.location.hash === '#/operations/get-estado' }"
+    x-init="() => { window.addEventListener('hashchange', () => { isActive = window.location.hash === '#/operations/get-estado' }) }">
+    <a href="#/operations/get-estado"
+       :class="{
+            'bg-gray-100 border-l-2 border-blue-500': isActive,
+            'border-l-2 border-transparent hover:border-blue-500 hover:bg-gray-100': !isActive
+        }"
+       class="flex items-center p-2 text-gray-800 space-x-2"
+       @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 text-[0.6rem] font-medium">GET</span>
+
+        <span class="text-sm font-medium truncate">Estado de la API</span>
+    </a>
+</li>
+
                 </ul>
             </div>
         </div>
