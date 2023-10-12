@@ -1,0 +1,15 @@
+const modoDesarrollo = falso && import.meta.env.MODE == 'development'
+
+exportar funcion cache(minutos) {
+	const tiempoEnSegundos = 60 * minutos
+
+	retornar (peticion, respuesta, siguiente) => {
+		si (peticion.method == 'GET' && !modoDesarrollo) {
+			respuesta.set('Cache-control', `public, s-maxage=${tiempoEnSegundos}`)
+		} sino {
+			respuesta.set('Cache-control', `no-store`)
+		}
+
+		siguiente()
+	}
+}

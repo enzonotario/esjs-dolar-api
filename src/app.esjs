@@ -8,7 +8,6 @@ importar estado desde '@/rutas/v1/estado.esjs'
 importar pino desde 'pino'
 importar pinoHttp desde 'pino-http'
 importar 'pino-loki'
-importar { cache } desde '@/cache.middleware.esjs'
 
 const modoDesarrollo = import.meta.env.MODE == 'development'
 

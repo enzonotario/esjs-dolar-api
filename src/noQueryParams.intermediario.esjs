@@ -1,0 +1,12 @@
+exportar funcion noQueryParams() {
+	retornar (peticion, respuesta, siguiente) => {
+		si (peticion.url.incluye('?')) {
+			respuesta.status(404).json({
+				error: 'No se permiten Query Params en esta ruta'
+			})
+			retornar
+		}
+
+		siguiente()
+	}
+}
