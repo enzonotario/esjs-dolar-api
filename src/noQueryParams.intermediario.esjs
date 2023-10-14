@@ -1,9 +1,8 @@
 exportar funcion noQueryParams() {
 	retornar (peticion, respuesta, siguiente) => {
 		si (peticion.url.incluye('?')) {
-			respuesta.status(404).json({
-				error: 'No se permiten Query Params en esta ruta'
-			})
+			// Redirigir a la misma URL sin parámetros de consulta
+			respuesta.redirect(peticion.originalUrl.dividir('?')[0])
 			retornar
 		}
 
