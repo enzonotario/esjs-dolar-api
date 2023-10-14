@@ -4,8 +4,8 @@ importar dolares desde '@/rutas/v1/dolares.esjs'
 importar _casa desde '@/rutas/v1/dolares/_casa.esjs'
 importar estado desde '@/rutas/v1/estado.esjs'
 importar historicosDolaresCasa desde '@/rutas/v1/historicos/dolares/_casa.esjs'
-importar { cache } desde '@/cache.intermediario.esjs'
-importar { noQueryParams } desde '@/noQueryParams.intermediario.esjs'
+importar { cache } desde '@/intermediarios/cache.intermediario.esjs'
+importar { noQueryParams } desde '@/intermediarios/noQueryParams.intermediario.esjs'
 
 exportar const v1 = express.Router()
 
