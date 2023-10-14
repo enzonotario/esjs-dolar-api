@@ -11,7 +11,7 @@ export default defineConfig({
 
     // https://github.com/cyco130/vavite
     vavite({
-      serverEntry: './src/app.esjs',
+      serverEntry: './src/api.esjs',
       reloadOn: 'any-change',
       serveClientAssetsInDev: true,
     }),
