@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "dev:tailwind": "npx tailwindcss -i src/docs/css/tailwind.css -o public/styles.css --watch",
-    "build:tailwind": "npx tailwindcss -i src/docs/css/tailwind.css -o public/styles.css --minify",
-    "watch:build:tailwind": "npx tailwindcss -i src/docs/css/tailwind.css -o public/styles.css --watch --minify",
+    "dev:tailwind": "npx tailwindcss -i servidor/docs/css/tailwind.css -o docs/styles.css --watch",
+    "build:tailwind": "npx tailwindcss -i servidor/docs/css/tailwind.css -o docs/styles.css --minify",
+    "watch:build:tailwind": "npx tailwindcss -i servidor/docs/css/tailwind.css -o docs/styles.css --watch --minify",
     "build": "vite build --ssr --mode=production",
     "serve": "vite preview",
     "generate": "drizzle-kit generate:sqlite",

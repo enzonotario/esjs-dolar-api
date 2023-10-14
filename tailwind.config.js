@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    './src/docs/*.html',
-    './public/swagger.yaml',
+    './servidor/docs/*.html',
+    './docs/swagger.yaml',
   ],
   darkMode: 'class',
 };

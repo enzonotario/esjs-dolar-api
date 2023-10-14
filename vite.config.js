@@ -5,20 +5,21 @@ import { vavite } from 'vavite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  publicDir: './docs',
   plugins: [
     // https://github.com/es-js/esjs
     EsJS(),
 
     // https://github.com/cyco130/vavite
     vavite({
-      serverEntry: './src/api.esjs',
+      serverEntry: './servidor/api.esjs',
       reloadOn: 'any-change',
       serveClientAssetsInDev: true,
     }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': fileURLToPath(new URL('./servidor', import.meta.url)),
     },
     extensions: [
       '.js',

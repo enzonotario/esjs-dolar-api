@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "public/",
+  "outputDirectory": "docs/",
   "functions": {
     "api/index.js": {
       "includeFiles": "dist/**"
@@ -8,6 +8,10 @@
   "rewrites": [
     {
       "source": "/v1/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/api/v1/(.*)",
       "destination": "/api/index.js"
     },
     {
