@@ -5,7 +5,7 @@ import { vavite } from 'vavite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  publicDir: './docs',
+  // publicDir: './docs',
   plugins: [
     // https://github.com/es-js/esjs
     EsJS(),

@@ -1,10 +1,8 @@
 openapi: 3.0.0
 info:
-  title: ''
+  title: 'DolarApi.com'
   version: 1.0.0
   description: |-
-    # DolarApi.com
-
     <div class="flex flex-col">
 
       API desarrollada en <a href="https://esjs.dev?ref=dolarapi.com" target="_blank">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.
@@ -13,21 +11,6 @@ info:
 
     ## Demo
     [App.DolarApi.com](https://app.dolarapi.com)
-
-    ## Base URL
-
-    <div class="flex flex-col w-full sm:max-w-xs pt-4">
-        <div class="flex flex-col bg-gray-300 rounded-t">
-          <span class="text-gray-700 text-xs uppercase px-2 py-1 font-semibold">
-            Base URL
-          </span>
-        </div>
-        <div class="flex flex-col bg-gray-200 rounded-b">
-          <span class="text-gray-700 text-xs px-2 py-1 select-all">
-            https://dolarapi.com
-          </span>
-        </div>
-    </div>
 servers:
   - url: https://dolarapi.com
     description: Producción
@@ -37,9 +20,7 @@ paths:
       summary: Dólares
       tags:
         - Cotización actual
-      description: >-
-        <div class="w-full h-[60vh] min-h-[500px] p-4"
-        id="plot-cotizacion-actual-dolares"></div>
+      description: <div class="w-full h-[60vh] min-h-[500px] p-4" id="plot-cotizacion-actual-dolares"></div>
       responses:
         '200':
           description: Devuelve todas las cotizaciones
@@ -140,9 +121,7 @@ paths:
       summary: Dólar Contado con liquidación
       tags:
         - Cotización actual
-      description: >-
-        <div class="w-full h-48 p-4"
-        id="plot-cotizacion-actual-contadoconliqui"></div>
+      description: <div class="w-full h-48 p-4" id="plot-cotizacion-actual-contadoconliqui"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Contado con liquidación
@@ -167,9 +146,7 @@ paths:
       summary: Dólar Solidario (Turista)
       tags:
         - Cotización actual
-      description: >-
-        <div class="w-full h-48 p-4"
-        id="plot-cotizacion-actual-solidario"></div>
+      description: <div class="w-full h-48 p-4" id="plot-cotizacion-actual-solidario"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Solidario (Turista)
@@ -194,9 +171,7 @@ paths:
       summary: Dólar Mayorista
       tags:
         - Cotización actual
-      description: >-
-        <div class="w-full h-48 p-4"
-        id="plot-cotizacion-actual-mayorista"></div>
+      description: <div class="w-full h-48 p-4" id="plot-cotizacion-actual-mayorista"></div>
       responses:
         '200':
           description: Devuelve la cotización del Dólar Mayorista

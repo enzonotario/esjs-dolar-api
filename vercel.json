@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "docs/",
+  "outputDirectory": "dist/docs/",
   "functions": {
     "api/index.js": {
       "includeFiles": "dist/**"

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vp-font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.pager-link .SidebarItem {
+  @apply justify-end;
+}
+.SidebarItem {
+  @apply flex flex-row items-center space-x-1 w-full;
+}
+.SidebarItem-badge {
+  @apply px-1 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100 text-xs rounded;
+}
+.SidebarItem-text {
+  @apply truncate;
+}
+
+.VPImage.logo {
+  @apply w-8 h-8;
+}

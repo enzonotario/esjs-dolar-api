@@ -1,0 +1,357 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DolarApi.com",
+    "version": "1.0.0",
+    "description": "<div class=\"flex flex-col\">\n\n  API desarrollada en <a href=\"https://esjs.dev?ref=dolarapi.com\" target=\"_blank\">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.\n\n  ¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href=\"https://github.com/enzonotario/esjs-dolar-api\" alt=\"GitHub\" target=\"_blank\">GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)"
+  },
+  "servers": [
+    {
+      "url": "https://dolarapi.com",
+      "description": "Producción"
+    }
+  ],
+  "paths": {
+    "/v1/dolares": {
+      "get": {
+        "summary": "Dólares",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "<div class=\"w-full h-[60vh] min-h-[500px] p-4\" id=\"plot-cotizacion-actual-dolares\"></div>",
+        "responses": {
+          "200": {
+            "description": "Devuelve todas las cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolares",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      }
+    },
+    "/v1/dolares/oficial": {
+      "get": {
+        "summary": "Dólar Oficial",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-oficial\"></div>",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Oficial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-dolar-oficial",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/oficial"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/oficial\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      }
+    },
+    "/v1/dolares/blue": {
+      "get": {
+        "summary": "Dólar Blue",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-blue\"></div>",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Blue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-blue",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/blue"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/blue\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/dolares/bolsa": {
+      "get": {
+        "summary": "Dólar Bolsa",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-bolsa\"></div>",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Bolsa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-bolsa",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/bolsa"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/bolsa\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/dolares/contadoconliqui": {
+      "get": {
+        "summary": "Dólar Contado con liquidación",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-contadoconliqui\"></div>",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Contado con liquidación",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-contadoconliqui",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/contadoconliqui"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/dolares/solidario": {
+      "get": {
+        "summary": "Dólar Solidario (Turista)",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-solidario\"></div>",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Solidario (Turista)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-solidario",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/solidario"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/solidario\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/dolares/mayorista": {
+      "get": {
+        "summary": "Dólar Mayorista",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-mayorista\"></div>",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Mayorista",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-mayorista",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/mayorista"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/mayorista\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/estado": {
+      "get": {
+        "summary": "Estado de la API",
+        "tags": [
+          "API"
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve el estado de la API",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Estado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-estado",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/estado"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript",
+            "source": "fetch(\"https://dolarapi.com/v1/estado\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cotizacion": {
+        "title": "Cotizacion",
+        "type": "object",
+        "x-stoplight": {
+          "id": "ce96aa7960850"
+        },
+        "x-examples": {
+          "Example 1": {
+            "fechaActualizacion": "2021-01-01T00:00:00.000Z",
+            "compra": 123.99,
+            "venta": 132.99
+          }
+        },
+        "properties": {
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          },
+          "casa": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "fechaActualizacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "compra",
+          "venta",
+          "fechaActualizacion"
+        ]
+      },
+      "Estado": {
+        "title": "Estado",
+        "x-stoplight": {
+          "id": "ogwpb2wxiqwqh"
+        },
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "string"
+          },
+          "aleatorio": {
+            "type": "integer"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "estado": "Disponible",
+            "aleatorio": 1234
+          }
+        }
+      }
+    }
+  }
+}
