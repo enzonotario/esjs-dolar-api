@@ -1,6 +1,6 @@
-import { config } from 'dotenv';
+import { config } from 'dotenv'
 
-config();
+config()
 
 /** @type { import("drizzle-kit").Config } */
 export default {
@@ -11,4 +11,4 @@ export default {
     url: process.env.VITE_DATABASE_URL,
     authToken: process.env.VITE_DATABASE_AUTH_TOKEN,
   },
-};
+}

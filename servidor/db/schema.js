@@ -1,7 +1,10 @@
 import {
-  integer, real, sqliteTable, text,
-} from 'drizzle-orm/sqlite-core';
-import { sql } from 'drizzle-orm';
+  integer,
+  real,
+  sqliteTable,
+  text,
+} from 'drizzle-orm/sqlite-core'
+import { sql } from 'drizzle-orm'
 
 export const cotizaciones = sqliteTable('cotizaciones', {
   id: integer('id').primaryKey(),
@@ -12,7 +15,7 @@ export const cotizaciones = sqliteTable('cotizaciones', {
   fecha: integer('fecha', { mode: 'timestamp' }).default(
     sql`(strftime('%s', 'now'))`,
   ),
-});
+})
 
 export const extracciones = sqliteTable('extracciones', {
   id: integer('id').primaryKey(),
@@ -23,11 +26,11 @@ export const extracciones = sqliteTable('extracciones', {
   fecha: integer('fecha', { mode: 'timestamp' }).default(
     sql`(strftime('%s', 'now'))`,
   ),
-});
+})
 
 export const indicadores = sqliteTable('indicadores', {
   id: integer('id').primaryKey(),
   tipo: text('tipo'),
   valor: text('valor'),
   fecha: text('fecha'),
-});
+})

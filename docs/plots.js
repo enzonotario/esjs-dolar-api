@@ -1,22 +1,22 @@
 async function getEcharts() {
   try {
-    return echarts;
-  } catch (error) {
-    await import('https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js');
-    return echarts;
+    return echarts
+  }
+  catch (error) {
+    await import('https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js')
+    return echarts
   }
 }
 
 async function plotDolares() {
-  const plotDolaresElement = document.querySelector('#plot-cotizacion-actual-dolares');
+  const plotDolaresElement = document.querySelector('#plot-cotizacion-actual-dolares')
 
-  if (!plotDolaresElement) {
-    return;
-  }
+  if (!plotDolaresElement)
+    return
 
-  const chart = (await getEcharts()).init(plotDolaresElement);
+  const chart = (await getEcharts()).init(plotDolaresElement)
 
-  const cotizaciones = await fetch('https://dolarapi.com/v1/dolares').then((response) => response.json());
+  const cotizaciones = await fetch('https://dolarapi.com/v1/dolares').then(response => response.json())
 
   // Ordenar cotizaciones por valor de venta de menor a mayor
   const sortedCotizaciones = cotizaciones
@@ -24,23 +24,21 @@ async function plotDolares() {
     .sort((a, b) => {
       // Mover la cotización oficial al principio
 
-      if (a.casa === 'oficial') {
-        return -1;
-      }
+      if (a.casa === 'oficial')
+        return -1
 
-      if (b.casa === 'oficial') {
-        return 1;
-      }
+      if (b.casa === 'oficial')
+        return 1
 
-      return 0;
-    });
+      return 0
+    })
 
   // Obtener nombres y valores de cotizaciones
-  const nombresCotizaciones = sortedCotizaciones.map((cotizacion) => cotizacion.nombre);
-  const valoresCotizaciones = sortedCotizaciones.map((cotizacion) => cotizacion.venta);
+  const nombresCotizaciones = sortedCotizaciones.map(cotizacion => cotizacion.nombre)
+  const valoresCotizaciones = sortedCotizaciones.map(cotizacion => cotizacion.venta)
 
   // Calcular el tipo de cambio oficial como base
-  const tipoCambioOficial = valoresCotizaciones[0];
+  const tipoCambioOficial = valoresCotizaciones[0]
 
   const option = {
     title: {
@@ -82,15 +80,13 @@ async function plotDolares() {
           },
         },
         data: valoresCotizaciones.map((valor, index) => {
-          if (index === 0) {
-            return 0;
-          }
+          if (index === 0)
+            return 0
 
-          if (valor > tipoCambioOficial) {
-            return tipoCambioOficial;
-          }
+          if (valor > tipoCambioOficial)
+            return tipoCambioOficial
 
-          return tipoCambioOficial - Math.abs(valor - tipoCambioOficial);
+          return tipoCambioOficial - Math.abs(valor - tipoCambioOficial)
         }),
         label: {
           show: false,
@@ -110,28 +106,25 @@ async function plotDolares() {
               itemStyle: {
                 color: '#3b82f6',
               },
-            };
+            }
           }
 
-          if (valor > tipoCambioOficial) {
-            return valor - tipoCambioOficial;
-          }
+          if (valor > tipoCambioOficial)
+            return valor - tipoCambioOficial
 
-          return 0;
+          return 0
         }),
         label: {
           show: true,
           position: 'top',
           formatter(params) {
-            if (params.name === 'Oficial') {
-              return `$${params.value.toFixed(2)}`;
-            }
+            if (params.name === 'Oficial')
+              return `$${params.value.toFixed(2)}`
 
-            if (params.value === 0) {
-              return '';
-            }
+            if (params.value === 0)
+              return ''
 
-            return params.value > 0 ? `+${params.value.toFixed(2)}` : params.value.toFixed(2);
+            return params.value > 0 ? `+${params.value.toFixed(2)}` : params.value.toFixed(2)
           },
         },
         itemStyle: {
@@ -143,25 +136,22 @@ async function plotDolares() {
         type: 'bar',
         stack: 'Total',
         data: valoresCotizaciones.map((valor, index) => {
-          if (index === 0) {
-            return 0;
-          }
+          if (index === 0)
+            return 0
 
-          if (valor > tipoCambioOficial) {
-            return 0;
-          }
+          if (valor > tipoCambioOficial)
+            return 0
 
-          return Math.abs(valor - tipoCambioOficial);
+          return Math.abs(valor - tipoCambioOficial)
         }),
         label: {
           show: true,
           position: 'bottom',
           formatter(params) {
-            if (params.value === 0) {
-              return '';
-            }
+            if (params.value === 0)
+              return ''
 
-            return params.value > 0 ? `-${params.value.toFixed(2)}` : params.value.toFixed(2);
+            return params.value > 0 ? `-${params.value.toFixed(2)}` : params.value.toFixed(2)
           },
         },
         itemStyle: {
@@ -175,25 +165,27 @@ async function plotDolares() {
         type: 'cross',
       },
       formatter(params) {
-        let output = `Dólar ${params[0].name}`;
+        let output = `Dólar ${params[0].name}`
 
         if (params[0].name === 'Oficial') {
-          output += `<br/>Base: $${params[0].value.toFixed(2)}`;
-        } else if (params[0].value > 0) {
-          const cotizacion = (params[0].value + tipoCambioOficial).toFixed(2);
-          const brecha = ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100;
-          const brechaAbsoluta = cotizacion - tipoCambioOficial;
+          output += `<br/>Base: $${params[0].value.toFixed(2)}`
+        }
+        else if (params[0].value > 0) {
+          const cotizacion = (params[0].value + tipoCambioOficial).toFixed(2)
+          const brecha = ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100
+          const brechaAbsoluta = cotizacion - tipoCambioOficial
           output += `<br/>Brecha: ${brecha.toFixed(2)}% ($${brechaAbsoluta.toFixed(2)})
-<br/>Precio: $${(cotizacion)}`;
-        } else if (params[1].value > 0) {
-          const cotizacion = (Math.abs(params[1].value - tipoCambioOficial)).toFixed(2);
-          const brecha = ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100;
-          const brechaAbsoluta = cotizacion - tipoCambioOficial;
+<br/>Precio: $${(cotizacion)}`
+        }
+        else if (params[1].value > 0) {
+          const cotizacion = (Math.abs(params[1].value - tipoCambioOficial)).toFixed(2)
+          const brecha = ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100
+          const brechaAbsoluta = cotizacion - tipoCambioOficial
           output += `<br/>Brecha: ${brecha.toFixed(2)}% ($${brechaAbsoluta.toFixed(2)})
-<br/>Precio: $${(cotizacion)}`;
+<br/>Precio: $${(cotizacion)}`
         }
 
-        return output;
+        return output
       },
     },
     dataZoom: [
@@ -201,21 +193,20 @@ async function plotDolares() {
         type: 'inside',
       },
     ],
-  };
+  }
 
-  chart.setOption(option);
+  chart.setOption(option)
 }
 
 async function plotCotizacionActual(casa) {
-  const plotCotizacionActualElement = document.querySelector(`#plot-cotizacion-actual-${casa}`);
+  const plotCotizacionActualElement = document.querySelector(`#plot-cotizacion-actual-${casa}`)
 
-  if (!plotCotizacionActualElement) {
-    return;
-  }
+  if (!plotCotizacionActualElement)
+    return
 
-  const chart = (await getEcharts()).init(plotCotizacionActualElement);
+  const chart = (await getEcharts()).init(plotCotizacionActualElement)
 
-  const cotizacionActual = (await fetch(`https://dolarapi.com/v1/dolares/${casa}`).then((response) => response.json()));
+  const cotizacionActual = (await fetch(`https://dolarapi.com/v1/dolares/${casa}`).then(response => response.json()))
 
   const fechaFormateada = new Date(cotizacionActual.fechaActualizacion).toLocaleString('es-AR', {
     day: '2-digit',
@@ -223,7 +214,7 @@ async function plotCotizacionActual(casa) {
     year: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
-  });
+  })
 
   const option = {
     series: [
@@ -298,38 +289,35 @@ async function plotCotizacionActual(casa) {
       max: 2,
       inverse: true,
     },
-  };
+  }
 
-  chart.setOption(option);
+  chart.setOption(option)
 }
 
 function findCasaToPlot(node) {
-  const casas = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'solidario', 'mayorista'];
+  const casas = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'solidario', 'mayorista']
   casas.forEach((casa) => {
-    if (node.querySelector(`#plot-cotizacion-actual-${casa}`)) {
-      plotCotizacionActual(casa);
-    }
-  });
+    if (node.querySelector(`#plot-cotizacion-actual-${casa}`))
+      plotCotizacionActual(casa)
+  })
 
-  if (node.querySelector('#plot-cotizacion-actual-dolares')) {
-    plotDolares();
-  }
+  if (node.querySelector('#plot-cotizacion-actual-dolares'))
+    plotDolares()
 }
 
 function setupElementsApiObserver() {
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
-        if (node.classList && node.classList.contains('HttpOperation')) {
-          findCasaToPlot(node);
-        }
-      });
-    });
-  });
+        if (node.classList && node.classList.contains('HttpOperation'))
+          findCasaToPlot(node)
+      })
+    })
+  })
   observer.observe(document.querySelector('elements-api'), {
     childList: true,
     subtree: true,
-  });
+  })
 }
 
 function setupMainObserver() {
@@ -337,33 +325,33 @@ function setupMainObserver() {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
         if (node.classList && node.classList.contains('sl-elements-api')) {
-          setupElementsApiObserver();
-          findCasaToPlot(node);
+          setupElementsApiObserver()
+          findCasaToPlot(node)
         }
-      });
-    });
-  });
+      })
+    })
+  })
   observer.observe(document, {
     childList: true,
     subtree: true,
-  });
+  })
 }
 
 window.resizeCharts = function () {
   setTimeout(() => {
     document.querySelectorAll('div[id^="plot-"]').forEach(async (element) => {
-      const id = element.getAttribute('_echarts_instance_');
-      const chart = (await getEcharts()).getInstanceById(id);
-      if (!chart) {
-        return;
-      }
-      chart.resize();
-    });
-  }, 100);
-};
+      const id = element.getAttribute('_echarts_instance_')
+      const chart = (await getEcharts()).getInstanceById(id)
+      if (!chart)
+        return
+
+      chart.resize()
+    })
+  }, 100)
+}
 
 window.onresize = function () {
-  window.resizeCharts();
-};
+  window.resizeCharts()
+}
 
-setupMainObserver();
+setupMainObserver()
