@@ -1,9 +1,9 @@
 <script setup>
 import { useSwagger } from '@theme/composables/useSwagger.js'
 import { usePlots } from '@theme/composables/usePlots.js'
-import { onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useResizeObserver, useTitle } from '@vueuse/core'
-import { useRoute } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 
 const props = defineProps({
   id: {
@@ -15,6 +15,8 @@ const props = defineProps({
     required: true,
   },
 })
+
+const { isDark } = useData()
 
 const swagger = useSwagger()
 
@@ -55,6 +57,10 @@ onMounted(() => {
     plots.resizeCharts(document)
   })
 })
+
+watch(isDark, () => {
+  plots.setDarkMode(isDark.value)
+}, { immediate: true })
 </script>
 
 <template>

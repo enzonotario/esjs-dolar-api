@@ -1,4 +1,8 @@
+import colors from 'tailwindcss/colors'
+
 export function usePlots() {
+  let isDark = window.matchMedia('(prefers-color-scheme: dark)')
+
   async function getEcharts() {
     try {
       return echarts
@@ -19,12 +23,10 @@ export function usePlots() {
 
     const cotizaciones = await fetch('https://dolarapi.com/v1/dolares').then(response => response.json())
 
-    // Ordenar cotizaciones por valor de venta de menor a mayor
+    // Ordena las cotizaciones por valor de venta de menor a mayor
     const sortedCotizaciones = cotizaciones
       .sort((a, b) => a.venta - b.venta)
       .sort((a, b) => {
-        // Mover la cotización oficial al principio
-
         if (a.casa === 'oficial')
           return -1
 
@@ -34,12 +36,22 @@ export function usePlots() {
         return 0
       })
 
-    // Obtener nombres y valores de cotizaciones
-    const nombresCotizaciones = sortedCotizaciones.map(cotizacion => cotizacion.nombre)
-    const valoresCotizaciones = sortedCotizaciones.map(cotizacion => cotizacion.venta)
+    const colorsMap = {
+      oficial: colors.gray[500],
+      blue: colors.blue[500],
+      bolsa: colors.indigo[500],
+      contadoconliqui: colors.green[500],
+      solidario: colors.yellow[500],
+      mayorista: colors.pink[500],
+    }
 
-    // Calcular el tipo de cambio oficial como base
-    const tipoCambioOficial = valoresCotizaciones[0]
+    // Extrae los nombres, valores y colores de las cotizaciones
+    const nombres = sortedCotizaciones.map(cotizacion => cotizacion.nombre)
+    const valores = sortedCotizaciones.map(cotizacion => cotizacion.venta)
+    const colores = sortedCotizaciones.map(cotizacion => colorsMap[cotizacion.casa])
+
+    // Extrae el valor del tipo de cambio oficial
+    const tipoCambioOficial = valores[0]
 
     const option = {
       title: {
@@ -47,7 +59,7 @@ export function usePlots() {
       },
       xAxis: {
         type: 'category',
-        data: nombresCotizaciones,
+        data: nombres,
         axisLabel: {
           interval: 0,
           rotate: 45,
@@ -80,7 +92,7 @@ export function usePlots() {
               color: 'transparent',
             },
           },
-          data: valoresCotizaciones.map((valor, index) => {
+          data: valores.map((valor, index) => {
             if (index === 0)
               return 0
 
@@ -100,18 +112,24 @@ export function usePlots() {
           name: 'Variación positiva',
           type: 'bar',
           stack: 'Total',
-          data: valoresCotizaciones.map((valor, index) => {
+          data: valores.map((valor, index) => {
             if (index === 0) {
               return {
                 value: valor,
                 itemStyle: {
-                  color: '#3b82f6',
+                  color: colores[index],
                 },
               }
             }
 
-            if (valor > tipoCambioOficial)
-              return valor - tipoCambioOficial
+            if (valor > tipoCambioOficial) {
+              return {
+                value: valor - tipoCambioOficial,
+                itemStyle: {
+                  color: colores[index],
+                },
+              }
+            }
 
             return 0
           }),
@@ -127,23 +145,29 @@ export function usePlots() {
 
               return params.value > 0 ? `+${params.value.toFixed(2)}` : params.value.toFixed(2)
             },
+            color: isDark ? colors.gray[100] : colors.gray[800],
           },
           itemStyle: {
-            color: '#6366f1',
+            color: colors.green[500],
           },
         },
         {
           name: 'Variación negativa',
           type: 'bar',
           stack: 'Total',
-          data: valoresCotizaciones.map((valor, index) => {
+          data: valores.map((valor, index) => {
             if (index === 0)
               return 0
 
             if (valor > tipoCambioOficial)
               return 0
 
-            return Math.abs(valor - tipoCambioOficial)
+            return {
+              value: Math.abs(valor - tipoCambioOficial),
+              itemStyle: {
+                color: colores[index],
+              },
+            }
           }),
           label: {
             show: true,
@@ -154,9 +178,10 @@ export function usePlots() {
 
               return params.value > 0 ? `-${params.value.toFixed(2)}` : params.value.toFixed(2)
             },
+            color: isDark ? colors.gray[100] : colors.gray[800],
           },
           itemStyle: {
-            color: '#ec4899',
+            color: colors.red[500],
           },
         },
       ],
@@ -245,15 +270,15 @@ export function usePlots() {
           symbolSize: 0,
           label: {
             show: true,
-            backgroundColor: '#f1f5f9',
-            borderColor: '#cbd5e1',
+            backgroundColor: isDark ? colors.gray[800] : colors.gray[100],
+            borderColor: isDark ? colors.gray[700] : colors.gray[300],
             borderWidth: 1,
             borderRadius: 5,
-            color: '#000',
+            color: isDark ? colors.gray[100] : colors.gray[800],
             fontSize: 14,
             rich: {
               titleBg: {
-                backgroundColor: '#e2e8f0',
+                backgroundColor: isDark ? colors.gray[700] : colors.gray[200],
                 height: 30,
                 borderRadius: [5, 5, 0, 0],
                 padding: [0, 10, 0, 10],
@@ -261,17 +286,17 @@ export function usePlots() {
               },
               title: {
                 align: 'center',
-                color: '#0f172a',
+                color: isDark ? colors.white : colors.black,
               },
               hr: {
-                borderColor: '#cbd5e1',
+                borderColor: isDark ? colors.gray[700] : colors.gray[300],
                 width: '100%',
                 borderWidth: 0.5,
                 height: 0,
               },
               contentLine: {
                 align: 'center',
-                color: '#0f172a',
+                color: isDark ? colors.gray[100] : colors.gray[800],
                 height: 25,
                 padding: [0, 10, 0, 10],
               },
@@ -317,8 +342,13 @@ export function usePlots() {
     })
   }
 
+  function setDarkMode(value) {
+    isDark = value
+  }
+
   return {
     findCasaToPlot,
     resizeCharts,
+    setDarkMode,
   }
 }
