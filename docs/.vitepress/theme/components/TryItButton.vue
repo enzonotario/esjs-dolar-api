@@ -47,13 +47,13 @@ async function tryIt() {
       class="bg-black text-white hover:bg-gray-800 dark:text-black dark:bg-white dark:hover:bg-gray-200 font-bold py-2 px-4 rounded"
       @click="tryIt"
     >
-      Try it out
+      {{ $t('Try it out') }}
     </button>
 
     <div v-if="response || loading" class="flex flex-col">
       <details class="flex flex-col" open>
         <summary class="my-0! text-lg font-bold cursor-pointer">
-          {{ loading ? 'Loading...' : 'Response' }}
+          {{ loading ? $t('Loading') : $t('Response') }}
         </summary>
 
         <div class="flex flex-col max-h-96 overflow-y-auto">

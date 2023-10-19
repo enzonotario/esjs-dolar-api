@@ -30,15 +30,9 @@ const operationId = route.data.params.operationId
 
 </template>
 
-<template #parameters="parameters">
-
-## Parameters
-
-</template>
-
 <template #responses="responses">
 
-## Response
+## {{ $t('Response') }}
 
 <Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
 
