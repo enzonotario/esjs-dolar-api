@@ -42,7 +42,7 @@ async function tryIt() {
 </script>
 
 <template>
-  <div class="flex flex-col space-y-4">
+  <div class="sticky top-[100px] inset-x-0 flex flex-col space-y-4">
     <button
       class="bg-black text-white hover:bg-gray-800 dark:text-black dark:bg-white dark:hover:bg-gray-200 font-bold py-2 px-4 rounded"
       @click="tryIt"

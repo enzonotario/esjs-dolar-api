@@ -67,7 +67,7 @@ watch(isDark, () => {
   <div class="flex flex-col space-y-8">
     <slot name="header" :operation="operation" :method="props.method" :base-url="baseUrl" :path="operationPath" />
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div class="flex flex-col">
         <div class="flex flex-col space-y-4">
           <slot name="description" :operation="operation" :method="props.method" :base-url="baseUrl" :path="operationPath" />
