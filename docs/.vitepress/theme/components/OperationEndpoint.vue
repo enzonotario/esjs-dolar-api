@@ -19,7 +19,7 @@ const props = defineProps({
   <div class="flex flex-row items-center space-x-4 text-sm bg-gray-100 dark:bg-gray-800 rounded p-2 overflow-x-auto">
     <span
       :class="{
-        'bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200': props.method === 'GET',
+        'bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200': props.method === 'GET',
       }"
       class="px-2 py-1 rounded"
     >{{ props.method }}</span>

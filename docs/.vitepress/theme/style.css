@@ -13,7 +13,7 @@
   @apply flex flex-row items-center space-x-1 w-full my-0.5;
 }
 .SidebarItem-badge {
-  @apply px-1 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100 text-xs rounded;
+  @apply px-1 py-0.5 bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100 text-xs rounded;
 }
 .SidebarItem-text {
   @apply truncate;
