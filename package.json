@@ -19,6 +19,7 @@
     "@antfu/eslint-config": "^1.0.0-beta.27",
     "@es-js/core": "^0.0.18",
     "@es-js/vite-plugin-esjs": "^0.0.13",
+    "@intlify/unplugin-vue-i18n": "^1.4.0",
     "@vueuse/core": "^10.5.0",
     "autoprefixer": "latest",
     "axios": "^1.4.0",
@@ -43,7 +44,7 @@
     "vite": "^4.4.9",
     "vitepress": "^1.0.0-rc.22",
     "vue": "^3.3.4",
-    "vue-i18n": "9"
+    "vue-i18n": "^9.5.0"
   },
   "dependencies": {
     "@libsql/client": "^0.3.6-pre.1",

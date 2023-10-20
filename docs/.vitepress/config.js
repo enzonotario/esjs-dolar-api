@@ -1,5 +1,6 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, loadEnv } from 'vitepress'
+import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { useSwagger } from './theme/composables/useSwagger.js'
 
 const swagger = useSwagger()
@@ -120,6 +121,12 @@ export default defineConfig({
   ],
 
   vite: {
+    plugins: [
+      vueI18n({
+        ssr: true,
+      }),
+    ],
+
     resolve: {
       alias: {
         '@swagger': fileURLToPath(new URL('../public/swagger.json', import.meta.url)),
