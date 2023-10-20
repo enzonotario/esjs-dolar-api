@@ -1,6 +1,9 @@
 ---
 aside: false
 outline: false
+next:
+    text: "Dólares"
+    link: "/operations/get-dolares"
 ---
 
 # DolarApi.com
