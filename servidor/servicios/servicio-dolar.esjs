@@ -1,4 +1,3 @@
-importar axios desde 'axios'
 importar { dolarHoy, casas } desde '@/utilidades/constantes.esjs'
 importar cheerio desde 'cheerio'
 importar parse desde 'date-fns/parse/index.js'
@@ -19,9 +18,9 @@ exportar asincrono funcion obtenerDolares() {
 
 asincrono funcion consultarPagina() {
     intentar {
-        const respuesta = esperar axios.get(dolarHoy.baseUrl)
+        const respuesta = esperar fetch(dolarHoy.baseUrl)
 
-        retornar respuesta.data
+        retornar esperar respuesta.text()
     } capturar (error) {
         console.error(error)
     }
