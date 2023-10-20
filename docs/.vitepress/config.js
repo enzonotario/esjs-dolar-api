@@ -75,6 +75,7 @@ function generateSidebar(req, res) {
 export default defineConfig({
   title: 'DolarApi.com',
   description: 'API para obtener la cotización del dólar en Argentina',
+  lang: 'es-AR',
 
   // srcDir: './docs',
   outDir: '../dist/docs',
