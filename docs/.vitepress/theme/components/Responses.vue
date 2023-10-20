@@ -1,5 +1,5 @@
 <script setup>
-import { useSwagger } from '../composables/useSwagger.js'
+import { useOpenapi } from '../composables/useOpenapi.js'
 
 const props = defineProps({
   schema: {
@@ -18,7 +18,7 @@ const props = defineProps({
 
 const responsesCodes = Object.keys(props.responses)
 
-const schemaJson = useSwagger().propertiesTypesJson(props.schema, props.responseType)
+const schemaJson = useOpenapi().propertiesTypesJson(props.schema, props.responseType)
 </script>
 
 <template>

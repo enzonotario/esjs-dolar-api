@@ -1,7 +1,7 @@
 import colors from 'tailwindcss/colors'
 
 export function usePlots() {
-  let isDark = window.matchMedia('(prefers-color-scheme: dark)')
+  let isDark = false
 
   async function getEcharts() {
     try {
@@ -56,6 +56,9 @@ export function usePlots() {
     const option = {
       title: {
         text: 'Variación de Cotizaciones respecto al Oficial',
+        textStyle: {
+          color: isDark ? colors.gray[100] : colors.gray[800],
+        },
       },
       xAxis: {
         type: 'category',
@@ -63,12 +66,21 @@ export function usePlots() {
         axisLabel: {
           interval: 0,
           rotate: 45,
+          color: isDark ? colors.gray[100] : colors.gray[800],
         },
         name: 'Casa de Cambio',
       },
       yAxis: {
         name: 'Variación con respecto al Oficial',
         type: 'value',
+        axisLabel: {
+          color: isDark ? colors.gray[100] : colors.gray[800],
+        },
+        splitLine: {
+          lineStyle: {
+            color: isDark ? colors.gray[700] : colors.gray[300],
+          },
+        },
       },
       grid: {
         top: '10%',

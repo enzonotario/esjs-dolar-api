@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "dist/docs/",
+  "outputDirectory": "dist/static/",
   "functions": {
     "api/index.js": {
       "includeFiles": "dist/**"
@@ -20,11 +20,7 @@
     },
     {
       "source": "/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/docs/(.*)",
-      "destination": "/index.html"
+      "destination": "/docs/index.html"
     }
   ]
 }

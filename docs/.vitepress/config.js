@@ -1,9 +1,9 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, loadEnv } from 'vitepress'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
-import { useSwagger } from './theme/composables/useSwagger.js'
+import { useOpenapi } from './theme/composables/useOpenapi.js'
 
-const swagger = useSwagger()
+const openapi = useOpenapi()
 
 const METHOD_GET = 'get'
 
@@ -11,8 +11,10 @@ const env = loadEnv('', process.cwd())
 
 const gTag = env.VITE_GTAG
 
+const insertGithubIframe = false
+
 function generateSidebarItem(method, path) {
-  const { operationId, summary } = swagger.json.paths[path].get
+  const { operationId, summary } = openapi.json.paths[path].get
   return {
     text: `<span class="SidebarItem">
     <span class="SidebarItem-badge">${method.toUpperCase()}</span>
@@ -23,18 +25,18 @@ function generateSidebarItem(method, path) {
 }
 
 function generateSidebar(req, res) {
-  const sidebarCotizacionActualElements = Object.keys(swagger.json.paths)
+  const sidebarCotizacionActualElements = Object.keys(openapi.json.paths)
     .filter((path) => {
-      const { tags } = swagger.json.paths[path][METHOD_GET]
+      const { tags } = openapi.json.paths[path][METHOD_GET]
       return tags?.includes('Cotización actual')
     })
     .map((path) => {
       return generateSidebarItem(METHOD_GET, path)
     })
 
-  const sidebarApiElements = Object.keys(swagger.json.paths)
+  const sidebarApiElements = Object.keys(openapi.json.paths)
     .filter((path) => {
-      const { tags } = swagger.json.paths[path][METHOD_GET]
+      const { tags } = openapi.json.paths[path][METHOD_GET]
       return tags?.includes('API')
     })
     .map((path) => {
@@ -77,14 +79,20 @@ export default defineConfig({
   description: 'API para obtener la cotización del dólar en Argentina',
   lang: 'es-AR',
 
-  // srcDir: './docs',
-  outDir: '../dist/docs',
+  outDir: '../dist/static/docs',
+  base: '/docs/',
 
   themeConfig: {
     logo: '/assets/logo.webp',
-    nav: [
-      { text: 'Inicio', link: '/' },
-    ],
+    nav: insertGithubIframe
+      ? [
+          {
+            text: `<iframe src="https://ghbtns.com/github-btn.html?user=enzonotario&repo=esjs-dolar-api&type=star&count=true&size=large"
+                frameborder="0" scrolling="0" width="160px" height="30px" title="GitHub"></iframe>`,
+            link: '',
+          },
+        ]
+      : [],
     sidebar: generateSidebar(),
     socialLinks: [
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },
@@ -130,8 +138,7 @@ export default defineConfig({
 
     resolve: {
       alias: {
-        '@swagger': fileURLToPath(new URL('../public/swagger.json', import.meta.url)),
-        // '@theme': fileURLToPath(new URL('./theme', import.meta.url)),
+        '@openapi': fileURLToPath(new URL('../public/openapi.json', import.meta.url)),
       },
     },
   },

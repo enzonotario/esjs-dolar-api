@@ -1,6 +1,7 @@
 <script setup>
-import { useSwagger } from '@theme/composables/useSwagger.js'
+import { useOpenapi } from '@theme/composables/useOpenapi.js'
 import { usePlots } from '@theme/composables/usePlots.js'
+import { useCodeSamples } from '@theme/composables/useCodeSamples.js'
 import { onMounted, watch } from 'vue'
 import { useResizeObserver, useTitle } from '@vueuse/core'
 import { useData, useRoute } from 'vitepress'
@@ -18,15 +19,17 @@ const props = defineProps({
 
 const { isDark } = useData()
 
-const swagger = useSwagger()
+const openapi = useOpenapi()
 
-const operation = swagger.getOperation(props.id)
+const codeSamples = useCodeSamples().getCodeSamples(props.id)
 
-const operationPath = swagger.getOperationPath(props.id)
+const operation = openapi.getOperation(props.id)
 
-const baseUrl = swagger.getBaseUrl()
+const operationPath = openapi.getOperationPath(props.id)
 
-const schemas = swagger.getSchemas()
+const baseUrl = openapi.getBaseUrl()
+
+const schemas = openapi.getSchemas()
 
 const response200 = operation.responses['200']
 
@@ -76,8 +79,12 @@ watch(isDark, () => {
         <slot name="responses" :schema="schema" :responses="operation.responses" :response-type="responseType" />
       </div>
 
-      <div class="flex flex-col sm:px-6">
-        <slot name="try-it" :operation-id="props.id" :method="props.method" />
+      <div class="flex flex-col">
+        <div class="sticky top-[100px] inset-x-0 flex flex-col sm:px-6">
+          <slot name="try-it" :operation-id="props.id" :method="props.method" />
+
+          <slot name="samples" :code-samples="codeSamples" />
+        </div>
       </div>
     </div>
   </div>

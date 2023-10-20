@@ -1,20 +1,25 @@
-import swaggerJson from './swagger.json'
+import json from './swagger.json'
 
-export function useSwagger() {
+export function useOpenapi() {
   function getOperation(operationId) {
-    return Object.values(swaggerJson.paths).find(path => path.get.operationId === operationId).get
+    return Object.values(json.paths).find(path => path.get.operationId === operationId).get
   }
 
   function getOperationPath(operationId) {
-    return Object.keys(swaggerJson.paths).find(path => swaggerJson.paths[path].get.operationId === operationId)
+    return Object.keys(json.paths).find(path => json.paths[path].get.operationId === operationId)
+  }
+
+  function getOperationCodeSamples(operationId) {
+    const operation = getOperation(operationId)
+    return operation['x-codeSamples'] || operation['x-code-samples'] || []
   }
 
   function getBaseUrl() {
-    return swaggerJson.servers[0].url
+    return json.servers[0].url
   }
 
   function getSchemas() {
-    return swaggerJson.components.schemas
+    return json.components.schemas
   }
 
   function propertiesTypesJson(schema, responseType) {
@@ -77,12 +82,13 @@ export function useSwagger() {
   }
 
   return {
-    json: swaggerJson,
+    json,
     getOperation,
     getOperationPath,
     getBaseUrl,
     getSchemas,
     propertiesTypesJson,
     propertiesAsJson,
+    getOperationCodeSamples,
   }
 }

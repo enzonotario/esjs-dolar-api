@@ -8,6 +8,11 @@ title: DolarApi.com
 
 <script setup>
 import { useRoute } from 'vitepress'
+import Operation from '@theme/components/Operation.vue'
+import OperationEndpoint from '@theme/components/OperationEndpoint.vue'
+import Responses from '@theme/components/Responses.vue'
+import ResponseBody from '@theme/components/ResponseBody.vue'
+import TryItButton from '@theme/components/TryItButton.vue'
 
 const route = useRoute()
 
@@ -67,6 +72,32 @@ const operationId = route.data.params.operationId
 </template>
 
 </TryItButton>
+
+</template>
+
+<template #samples="samples">
+
+## {{ $t('Samples') }}
+
+::: code-group
+
+```bash-vue [cURL] 
+{{ samples.codeSamples.curl.source }}
+```
+
+```js-vue [JavaScript]
+{{ samples.codeSamples.javascriptFetch.source }}
+```
+
+```php-vue [PHP]
+{{ samples.codeSamples.php.source }}
+```
+
+```python-vue [Python]
+{{ samples.codeSamples.python.source }}
+```
+
+:::
 
 </template>
 

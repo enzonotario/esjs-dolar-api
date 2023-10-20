@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { useSwagger } from '../composables/useSwagger.js'
+import { useOpenapi } from '../composables/useOpenapi.js'
 
 const props = defineProps({
   operationId: {
@@ -13,11 +13,11 @@ const props = defineProps({
   },
 })
 
-const swagger = useSwagger()
+const openapi = useOpenapi()
 
-const operationPath = swagger.getOperationPath(props.operationId)
+const operationPath = openapi.getOperationPath(props.operationId)
 
-const baseUrl = swagger.getBaseUrl()
+const baseUrl = openapi.getBaseUrl()
 
 const requestUrl = `${baseUrl}${operationPath}`
 
@@ -42,7 +42,7 @@ async function tryIt() {
 </script>
 
 <template>
-  <div class="sticky top-[100px] inset-x-0 flex flex-col space-y-4">
+  <div class="flex flex-col space-y-4">
     <button
       class="bg-black text-white hover:bg-gray-800 dark:text-black dark:bg-white dark:hover:bg-gray-200 font-bold py-2 px-4 rounded"
       @click="tryIt"
@@ -53,7 +53,7 @@ async function tryIt() {
     <div v-if="response || loading" class="flex flex-col">
       <details class="flex flex-col" open>
         <summary class="my-0! text-lg font-bold cursor-pointer">
-          {{ loading ? $t('Loading') : $t('Response') }}
+          {{ loading ? $t('Loading...') : $t('Response') }}
         </summary>
 
         <div class="flex flex-col max-h-96 overflow-y-auto">

@@ -8,7 +8,7 @@ Consulta la página [DolarHoy](https://dolarhoy.com/) y determina los valores de
 
 ## Documentación
 
-Consultar el Swagger en https://dolarapi.com/.
+La documentación de la API está disponible en [DolarApi.com](https://dolarapi.com).
 
 ## Aplicaciones que consumen esta API
 

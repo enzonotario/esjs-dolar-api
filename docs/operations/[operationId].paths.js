@@ -1,16 +1,16 @@
-import { useSwagger } from '../.vitepress/theme/composables/useSwagger.js'
+import { useOpenapi } from '../.vitepress/theme/composables/useOpenapi.js'
 
 export default {
   paths() {
-    const swagger = useSwagger()
+    const openapi = useOpenapi()
 
-    return Object.keys(swagger.json.paths)
+    return Object.keys(openapi.json.paths)
       .map((path) => {
-        const { operationId } = swagger.json.paths[path].get
+        const { operationId } = openapi.json.paths[path].get
         return {
           params: {
             operationId,
-            pageTitle: `${swagger.getOperation(operationId).summary} - DolarApi.com`,
+            pageTitle: `${openapi.getOperation(operationId).summary} - DolarApi.com`,
           },
         }
       })

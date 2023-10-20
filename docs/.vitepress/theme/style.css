@@ -16,9 +16,6 @@
 /**
   Sidebar
  */
-/*.pager-link .SidebarItem {*/
-/*  @apply justify-end;*/
-/*}*/
 .VPSidebarItem .is-link:hover {
   @apply bg-gray-200 text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded;
 }
