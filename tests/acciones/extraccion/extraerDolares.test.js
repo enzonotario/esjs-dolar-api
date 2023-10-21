@@ -1,9 +1,9 @@
 import { expect, it } from 'vitest'
-import { obtenerDolares } from '@/servicios/servicio-dolar.esjs'
-import { casas } from '@/utilidades/constantes.esjs'
+import { extraerDolares } from '@/acciones/extraccion/extraerDolares.esjs'
+import { casas } from '@/constantes.esjs'
 
-it('obtiene dólares', async () => {
-  const dolares = await obtenerDolares()
+it('extrae dólares', async () => {
+  const dolares = await extraerDolares()
 
   expect(dolares.length).toBeGreaterThan(0)
 

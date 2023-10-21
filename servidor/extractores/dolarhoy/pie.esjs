@@ -1,7 +1,8 @@
-importar interpretarValorMonetario desde '@/utilidades/interpretar-valor-monetario.esjs'
+importar { interpretarValorMonetario } desde './interpretarValorMonetario.esjs'
+importar { obtenerFechaActualizacion } desde './fechaActualizacion.esjs'
 
 funcion obtenerValores($, href) {
-    retornar $(`.dolar a[href=${href}] + .values`)
+    retornar $(`.cotizaciones_more a[href=${href}]`)
 }
 
 exportar funcion obtenerValorCompra($, href) {
@@ -11,7 +12,7 @@ exportar funcion obtenerValorCompra($, href) {
         retornar nulo
     }
 
-    const valor = valores.find(`.compra .val`).html()
+    const valor = valores.find(`.compra`).html()
 
     si (!valor) {
         retornar nulo
@@ -27,7 +28,7 @@ exportar funcion obtenerValorVenta($, href) {
         retornar nulo
     }
 
-    const valor = valores.find(`.venta .val`).html()
+    const valor = valores.find(`.venta`).html()
 
     si (!valor) {
         retornar nulo
@@ -35,3 +36,5 @@ exportar funcion obtenerValorVenta($, href) {
 
     retornar interpretarValorMonetario(valor)
 }
+
+exportar { obtenerFechaActualizacion }

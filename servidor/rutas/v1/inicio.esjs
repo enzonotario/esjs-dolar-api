@@ -1,3 +1,0 @@
-exportar porDefecto asincrono funcion(req, res) {
-	res.redirect('/')
-}

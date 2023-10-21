@@ -1,19 +1,5 @@
-importar { obtenerDolarPorCasa } desde '@/db/database.js'
-importar { casas } desde '@/utilidades/constantes.esjs'
+importar { consultarDolares } desde '@/acciones/consulta/consultarDolares.esjs'
 
 exportar porDefecto asincrono funcion(req, res) {
-	const dolares = []
-
-	para (const casa de casas) {
-		const dolar = esperar obtenerDolarPorCasa(casa.identificador)
-		dolares.agregar({
-			casa: dolar.casa,
-			nombre: casa.nombre,
-			compra: dolar.compra,
-			venta: dolar.venta,
-			fechaActualizacion: dolar.fecha,
-		})
-	}
-
-	res.json(dolares)
+	res.json(esperar consultarDolares())
 }

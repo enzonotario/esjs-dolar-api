@@ -1,8 +1,7 @@
-importar { dolarHoy, casas } desde '@/utilidades/constantes.esjs'
+importar { dolarHoy, casas } desde '@/constantes.esjs'
 importar cheerio desde 'cheerio'
-importar parse desde 'date-fns/parse/index.js'
 
-exportar asincrono funcion obtenerDolares() {
+exportar asincrono funcion extraerDolares() {
     const pagina = esperar consultarPagina()
 
     const $ = cheerio.load(pagina)
@@ -27,9 +26,9 @@ asincrono funcion consultarPagina() {
 }
 
 asincrono funcion obtenerValoresParaCasa($, casa) {
-    const casaConfiguracion = dolarHoy.cotizaciones[casa.identificador]
+    const casaConfiguracion = dolarHoy.dolares[casa.identificador]
 
-    const { obtenerValorCompra, obtenerValorVenta } = esperar importar(`./dolar-hoy-extractor-${casaConfiguracion.extractor}.esjs`)
+    const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } = esperar importar(`@/extractores/dolarhoy/${casaConfiguracion.extractor}.esjs`)
 
     const compra = esperar obtenerValorCompra($, casaConfiguracion.href)
     const venta = esperar obtenerValorVenta($, casaConfiguracion.href)
@@ -44,7 +43,4 @@ asincrono funcion obtenerValoresParaCasa($, casa) {
     }
 }
 
-funcion obtenerFechaActualizacion($) {
-    const texto = $('.update').text().split('Actualizado el')[1].trim()
-    retornar parse(texto + ' -03', 'dd/MM/yy hh:mm aa x', new Date())
-}
+

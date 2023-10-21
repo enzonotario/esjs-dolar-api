@@ -1,0 +1,6 @@
+importar parse desde 'date-fns/parse/index.js'
+
+exportar funcion obtenerFechaActualizacion($) {
+	 const texto = $('.update').text().split('Actualizado el')[1].trim()
+	 retornar parse(texto + ' -03', 'dd/MM/yy hh:mm aa x', new Date())
+ }

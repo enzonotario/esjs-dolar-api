@@ -31,9 +31,46 @@ exportar const casas = [
 	},
 ]
 
+exportar const monedas = [
+	{
+		codigo: 'ARS',
+		nombre: 'Peso Argentino',
+		simbolo: '$',
+	},
+	{
+		codigo: 'USD',
+		nombre: 'Dólar',
+		simbolo: '$',
+	},
+	{
+		codigo: 'BRL',
+		nombre: 'Real',
+		simbolo: 'R$',
+	},
+	{
+		codigo: 'CLP',
+		nombre: 'Peso Chileno',
+		simbolo: '$',
+	},
+	{
+		codigo: 'UYU',
+		nombre: 'Peso Uruguayo',
+		simbolo: '$',
+	},
+]
+
+exportar const monedaPorDefecto = 'ARS'
+
+exportar const monedasSoportadas = [
+	'USD',
+	'BRL',
+	'CLP',
+	'UYU',
+]
+
 exportar const dolarHoy = {
 	baseUrl: 'https://dolarhoy.com/',
-	cotizaciones: {
+	dolares: {
 		oficial: {
 			href: '/cotizaciondolaroficial',
 			extractor: 'cabecera',
@@ -58,5 +95,23 @@ exportar const dolarHoy = {
 			href: '/cotizaciondolarmayorista',
 			extractor: 'pie',
 		},
-	}
+	},
+	cotizaciones: {
+		USD: {
+			href: '/cotizaciondolaroficial',
+			extractor: 'pie',
+		},
+		BRL: {
+			href: '/cotizacion-real-brasileno',
+			extractor: 'pie',
+		},
+		CLP: {
+			href: '/cotizacion-peso-chileno',
+			extractor: 'pie',
+		},
+		UYU: {
+			href: '/cotizacion-peso-uruguayo',
+			extractor: 'pie',
+		},
+	},
 }

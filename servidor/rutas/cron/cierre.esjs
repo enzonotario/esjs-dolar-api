@@ -1,10 +1,10 @@
-importar { obtenerDolares } desde '@/servicios/servicio-dolar.esjs'
+importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
 importar { guardarCotizaciones } desde '@/db/database.js'
 importar { startOfDay, subHours } desde 'date-fns'
 importar { zonedTimeToUtc } desde 'date-fns-tz'
 
 exportar porDefecto asincrono funcion(req, res) {
-	const dolares = esperar obtenerDolares()
+	const dolares = esperar extraerDolares()
 
 	const hoyUTC = crear Fecha()
 

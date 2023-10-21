@@ -1,0 +1,47 @@
+importar cheerio desde 'cheerio'
+importar { dolarHoy, monedasSoportadas } desde '@/constantes.esjs'
+
+exportar asincrono funcion extraerCotizaciones() {
+    const pagina = esperar consultarPagina()
+
+    si (!pagina) {
+		retornar
+	}
+
+    const $ = cheerio.load(pagina)
+
+    retornar esperar Promise.all(
+        monedasSoportadas.mapear(
+            asincrono moneda => ({
+                ...esperar extraerCotizacion($, moneda),
+            })
+        )
+    )
+}
+
+asincrono funcion consultarPagina() {
+    intentar {
+        const respuesta = esperar fetch(dolarHoy.baseUrl)
+
+        retornar esperar respuesta.text()
+    } capturar (error) {
+        console.error(error)
+    }
+}
+
+asincrono funcion extraerCotizacion($, moneda) {
+    const configuracion = dolarHoy.cotizaciones[moneda]
+
+    const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } = esperar importar(`@/extractores/dolarhoy/${configuracion.extractor}.esjs`)
+
+    const compra = esperar obtenerValorCompra($, configuracion.href)
+    const venta = esperar obtenerValorVenta($, configuracion.href)
+    const fechaActualizacion = obtenerFechaActualizacion($)
+
+    retornar {
+		moneda,
+        compra,
+        venta,
+        fechaActualizacion,
+    }
+}

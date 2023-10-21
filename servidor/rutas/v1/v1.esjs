@@ -1,5 +1,4 @@
 importar express desde 'express'
-importar inicio desde '@/rutas/v1/inicio.esjs'
 importar dolares desde '@/rutas/v1/dolares.esjs'
 importar _casa desde '@/rutas/v1/dolares/_casa.esjs'
 importar estado desde '@/rutas/v1/estado.esjs'
@@ -9,8 +8,8 @@ importar { noQueryParams } desde '@/intermediarios/noQueryParams.intermediario.e
 
 exportar const v1 = express.Router()
 
-v1.get('/', inicio)
 v1.get('/dolares', [cache(15), noQueryParams()], dolares)
 v1.get('/dolares/:casa', [cache(15), noQueryParams()], _casa)
 v1.get('/estado', [noQueryParams()], estado)
+
 v1.get('/historicos/dolares/:casa', [cache(60), noQueryParams()], historicosDolaresCasa)
