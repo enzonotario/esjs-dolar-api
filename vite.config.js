@@ -3,9 +3,7 @@ import { defineConfig } from 'vite'
 import EsJS from '@es-js/vite-plugin-esjs'
 import { vavite } from 'vavite'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  // publicDir: './docs',
   plugins: [
     // https://github.com/es-js/esjs
     EsJS(),
@@ -17,6 +15,9 @@ export default defineConfig({
       serveClientAssetsInDev: true,
     }),
   ],
+
+  test: {},
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./servidor', import.meta.url)),
@@ -31,6 +32,7 @@ export default defineConfig({
       '.esjs',
     ],
   },
+
   build: {
     outDir: './dist',
   },

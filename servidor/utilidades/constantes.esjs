@@ -2,26 +2,32 @@ exportar const casas = [
 	{
 		identificador: 'oficial',
 		nombre: 'Oficial',
+		permiteCompra: verdadero,
 	},
 	{
 		identificador: 'blue',
 		nombre: 'Blue',
+		permiteCompra: verdadero,
 	},
 	{
 		identificador: 'bolsa',
 		nombre: 'Bolsa',
+		permiteCompra: verdadero,
 	},
 	{
 		identificador: 'contadoconliqui',
 		nombre: 'Contado con liquidación',
+		permiteCompra: verdadero,
 	},
 	{
 		identificador: 'solidario',
 		nombre: 'Solidario (Turista)',
+		permiteCompra: falso,
 	},
 	{
 		identificador: 'mayorista',
 		nombre: 'Mayorista',
+		permiteCompra: verdadero,
 	},
 ]
 
