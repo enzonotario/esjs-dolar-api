@@ -1,8 +1,10 @@
 importar express desde 'express'
 importar cronDolares desde '@/rutas/cron/dolares.esjs'
+importar cronCotizaciones desde '@/rutas/cron/cotizaciones.esjs'
 importar cierre desde '@/rutas/cron/cierre.esjs'
 
 exportar const cron = express.Router()
 
 cron.post('/dolares', cronDolares)
+cron.post('/cotizaciones', cronCotizaciones)
 cron.post('/cierre', cierre)

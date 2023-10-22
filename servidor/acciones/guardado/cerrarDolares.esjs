@@ -1,0 +1,14 @@
+importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
+importar { guardarDolares } desde '@/db/database.js'
+importar { startOfDay, subHours } desde 'date-fns'
+importar { zonedTimeToUtc } desde 'date-fns-tz'
+
+exportar asincrono funcion cerrarDolares() {
+	const dolares = esperar extraerDolares()
+
+	const hoyUTC = crear Fecha()
+
+	const hoy = zonedTimeToUtc(startOfDay(subHours(hoyUTC, 3)))
+
+	esperar guardarDolares(dolares, hoy)
+}

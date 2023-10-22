@@ -32,7 +32,7 @@ asincrono funcion consultarPagina() {
 asincrono funcion extraerCotizacion($, moneda) {
     const configuracion = dolarHoy.cotizaciones[moneda]
 
-    const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } = esperar importar(`@/extractores/dolarhoy/${configuracion.extractor}.esjs`)
+    const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } = esperar importar(`../../extractores/dolarhoy/${configuracion.extractor}.esjs`)
 
     const compra = esperar obtenerValorCompra($, configuracion.href)
     const venta = esperar obtenerValorVenta($, configuracion.href)

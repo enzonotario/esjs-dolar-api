@@ -1,7 +1,7 @@
 importar { guardarDolares } desde '@/acciones/guardado/guardarDolares.esjs'
 
 exportar porDefecto asincrono funcion(req, res) {
-	const dolares = esperar guardarDolares()
+	esperar guardarDolares()
 
 	res.json({
 		estado: 'Correcto',

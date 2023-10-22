@@ -12,8 +12,8 @@ exportar const v1 = express.Router()
 v1.get('/dolares', [cache(15), noQueryParams()], dolares)
 v1.get('/dolares/:casa', [cache(15), noQueryParams()], _casa)
 
-v1.get('/cotizaciones/:monedaOrigen', [cache(15), noQueryParams()], moneda)
-v1.get('/cotizaciones/:monedaOrigen/:monedaDestino', [cache(15), noQueryParams()], moneda)
+v1.get('/cotizaciones/:monedaOrigen', [cache(60), noQueryParams()], moneda)
+v1.get('/cotizaciones/:monedaOrigen/:monedaDestino', [cache(60), noQueryParams()], moneda)
 
 v1.get('/estado', [noQueryParams()], estado)
 

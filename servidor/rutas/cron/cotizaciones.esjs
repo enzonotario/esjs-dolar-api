@@ -1,0 +1,9 @@
+importar { guardarCotizaciones } desde '@/acciones/guardado/guardarCotizaciones.esjs'
+
+exportar porDefecto asincrono funcion(req, res) {
+	esperar guardarCotizaciones()
+
+	res.json({
+		estado: 'Correcto',
+	})
+}

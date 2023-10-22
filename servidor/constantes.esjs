@@ -49,7 +49,7 @@ exportar const monedas = [
 	},
 	{
 		codigo: 'BRL',
-		nombre: 'Real',
+		nombre: 'Real Brasileño',
 		simbolo: 'R$',
 	},
 	{

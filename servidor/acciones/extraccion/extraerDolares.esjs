@@ -28,7 +28,7 @@ asincrono funcion consultarPagina() {
 asincrono funcion obtenerValoresParaCasa($, casa) {
     const casaConfiguracion = dolarHoy.dolares[casa.identificador]
 
-    const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } = esperar importar(`@/extractores/dolarhoy/${casaConfiguracion.extractor}.esjs`)
+    const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } = esperar importar(`../../extractores/dolarhoy/${casaConfiguracion.extractor}.esjs`)
 
     const compra = esperar obtenerValorCompra($, casaConfiguracion.href)
     const venta = esperar obtenerValorVenta($, casaConfiguracion.href)

@@ -1,16 +1,10 @@
-importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
-importar { guardarCotizaciones } desde '@/db/database.js'
-importar { startOfDay, subHours } desde 'date-fns'
-importar { zonedTimeToUtc } desde 'date-fns-tz'
+importar { cerrarDolares } desde '@/acciones/guardado/cerrarDolares.esjs'
+importar { cerrarCotizaciones } desde '@/acciones/guardado/cerrarCotizaciones.esjs'
 
 exportar porDefecto asincrono funcion(req, res) {
-	const dolares = esperar extraerDolares()
+	esperar cerrarDolares()
 
-	const hoyUTC = crear Fecha()
-
-	const hoy = zonedTimeToUtc(startOfDay(subHours(hoyUTC, 3)))
-
-	esperar guardarCotizaciones(dolares, hoy)
+	esperar cerrarCotizaciones()
 
 	res.json({
 		estado: 'Correcto',

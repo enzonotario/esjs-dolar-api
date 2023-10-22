@@ -2,7 +2,7 @@ import { drizzle } from 'drizzle-orm/libsql'
 import { createClient } from '@libsql/client'
 import { and, desc, eq } from 'drizzle-orm'
 import * as schema from './schema'
-import { dolares, extracciones } from './schema'
+import { cotizaciones, dolares, extracciones } from './schema'
 
 const client = createClient({
   url: import.meta.env.VITE_DATABASE_URL,
@@ -48,42 +48,58 @@ export async function obtenerHistoricosPorCasa(casa) {
     .from(dolares)
     .where(
       and(
-        eq(dolares.moneda, DOLAR_CODIGO),
         eq(dolares.casa, casa),
       ),
     )
     .orderBy(desc(dolares.fecha))
 }
 
-export async function guardarCotizaciones(dolares, fecha) {
+export async function guardarDolares(valores, fecha) {
   await db
     .delete(dolares)
     .where(
       and(
-        eq(dolares.moneda, 'USD'),
         eq(dolares.fecha, fecha),
       ),
     )
 
   await db
     .insert(dolares)
-    .values(dolares.map(dolar => ({
-      moneda: 'USD',
-      casa: dolar.casa,
-      compra: dolar.compra,
-      venta: dolar.venta,
+    .values(valores.map(valor => ({
+      casa: valor.casa,
+      compra: valor.compra,
+      venta: valor.venta,
       fecha,
     })))
 }
 
-export async function guardarExtracciones(cotizaciones) {
+export async function guardarCotizaciones(valores, fecha) {
+  await db
+    .delete(cotizaciones)
+    .where(
+      and(
+        eq(cotizaciones.fecha, fecha),
+      ),
+    )
+
+  await db
+    .insert(cotizaciones)
+    .values(valores.map(valor => ({
+      moneda: valor.moneda,
+      compra: valor.compra,
+      venta: valor.venta,
+      fecha,
+    })))
+}
+
+export async function guardarExtracciones(valores) {
   await db
     .insert(extracciones)
-    .values(cotizaciones.map(cotizacion => ({
-      moneda: cotizacion.moneda,
-      casa: cotizacion.casa,
-      compra: cotizacion.compra,
-      venta: cotizacion.venta,
-      fecha: cotizacion.fechaActualizacion,
+    .values(valores.map(valor => ({
+      moneda: valor.moneda,
+      casa: valor.casa,
+      compra: valor.compra,
+      venta: valor.venta,
+      fecha: valor.fechaActualizacion,
     })))
 }
