@@ -2,13 +2,17 @@
   "openapi": "3.0.0",
   "info": {
     "title": "DolarApi.com",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "<div class=\"flex flex-col\">\n\n  API desarrollada en <a href=\"https://esjs.dev?ref=dolarapi.com\" target=\"_blank\">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.\n\n  ¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href=\"https://github.com/enzonotario/esjs-dolar-api\" alt=\"GitHub\" target=\"_blank\">GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)"
   },
   "servers": [
     {
       "url": "https://dolarapi.com",
       "description": "Producción"
+    },
+    {
+      "url": "http://localhost:5173",
+      "description": "Local"
     }
   ],
   "paths": {
@@ -16,7 +20,7 @@
       "get": {
         "summary": "Dólares",
         "tags": [
-          "Cotización actual"
+          "Cotización actual Dólares"
         ],
         "description": "<div class=\"w-full h-[60vh] min-h-[500px] p-4\" id=\"plot-cotizacion-actual-dolares\"></div>",
         "responses": {
@@ -68,7 +72,7 @@
       "get": {
         "summary": "Dólar Oficial",
         "tags": [
-          "Cotización actual"
+          "Cotización actual Dólares"
         ],
         "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-oficial\"></div>",
         "responses": {
@@ -118,7 +122,7 @@
       "get": {
         "summary": "Dólar Blue",
         "tags": [
-          "Cotización actual"
+          "Cotización actual Dólares"
         ],
         "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-blue\"></div>",
         "responses": {
@@ -168,7 +172,7 @@
       "get": {
         "summary": "Dólar Bolsa",
         "tags": [
-          "Cotización actual"
+          "Cotización actual Dólares"
         ],
         "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-bolsa\"></div>",
         "responses": {
@@ -218,7 +222,7 @@
       "get": {
         "summary": "Dólar Contado con liquidación",
         "tags": [
-          "Cotización actual"
+          "Cotización actual Dólares"
         ],
         "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-contadoconliqui\"></div>",
         "responses": {
@@ -268,7 +272,7 @@
       "get": {
         "summary": "Dólar Solidario (Turista)",
         "tags": [
-          "Cotización actual"
+          "Cotización actual Dólares"
         ],
         "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-solidario\"></div>",
         "responses": {
@@ -318,7 +322,7 @@
       "get": {
         "summary": "Dólar Mayorista",
         "tags": [
-          "Cotización actual"
+          "Cotización actual Dólares"
         ],
         "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-mayorista\"></div>",
         "responses": {
@@ -411,6 +415,206 @@
           }
         ]
       }
+    },
+    "/v1/cotizaciones/eur": {
+      "get": {
+        "summary": "Euro",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Euro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-cotizacion-eur",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/eur"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/eur\")"
+          }
+        ]
+      }
+    },
+    "/v1/cotizaciones/brl": {
+      "get": {
+        "summary": "Real Brasileño",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Real Brasileño",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-cotizacion-brl",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/brl"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/brl\")"
+          }
+        ]
+      }
+    },
+    "/v1/cotizaciones/clp": {
+      "get": {
+        "summary": "Peso Chileno",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Peso Chileno",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-cotizacion-clp",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/clp"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/clp\")"
+          }
+        ]
+      }
+    },
+    "/v1/cotizaciones/uyu": {
+      "get": {
+        "summary": "Peso Uruguayo",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Peso Uruguayo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-cotizacion-uyu",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/uyu"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/uyu\")"
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -441,13 +645,18 @@
           "nombre": {
             "type": "string"
           },
+          "moneda": {
+            "type": "string"
+          },
           "fechaActualizacion": {
             "type": "string"
           }
         },
         "required": [
-          "compra",
           "venta",
+          "casa",
+          "nombre",
+          "moneda",
           "fechaActualizacion"
         ]
       },

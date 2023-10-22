@@ -24,25 +24,26 @@ function generateSidebarItem(method, path) {
   }
 }
 
-function generateSidebar(req, res) {
-  const sidebarCotizacionActualElements = Object.keys(openapi.json.paths)
+function generateSidebarGroup(tag, text) {
+  if (!text)
+    text = tag
+
+  const sidebarGroupElements = Object.keys(openapi.json.paths)
     .filter((path) => {
       const { tags } = openapi.json.paths[path][METHOD_GET]
-      return tags?.includes('Cotización actual')
+      return tags?.includes(tag)
     })
     .map((path) => {
       return generateSidebarItem(METHOD_GET, path)
     })
 
-  const sidebarApiElements = Object.keys(openapi.json.paths)
-    .filter((path) => {
-      const { tags } = openapi.json.paths[path][METHOD_GET]
-      return tags?.includes('API')
-    })
-    .map((path) => {
-      return generateSidebarItem(METHOD_GET, path)
-    })
+  return {
+    text,
+    items: sidebarGroupElements,
+  }
+}
 
+function generateSidebar() {
   return [
     {
       text: `<span class="SidebarItem">
@@ -65,12 +66,12 @@ function generateSidebar(req, res) {
     },
     {
       text: 'Cotización actual',
-      items: sidebarCotizacionActualElements,
+      items: [
+        generateSidebarGroup('Cotización actual Dólares', 'Dólares'),
+        generateSidebarGroup('Cotización actual Monedas', 'Otras Monedas'),
+      ],
     },
-    {
-      text: 'API',
-      items: sidebarApiElements,
-    },
+    generateSidebarGroup('API'),
   ]
 }
 
