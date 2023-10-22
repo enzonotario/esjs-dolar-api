@@ -2,7 +2,7 @@ import { drizzle } from 'drizzle-orm/libsql'
 import { createClient } from '@libsql/client'
 import { and, desc, eq } from 'drizzle-orm'
 import * as schema from './schema'
-import { cotizaciones, extracciones } from './schema'
+import { dolares, extracciones } from './schema'
 
 const client = createClient({
   url: import.meta.env.VITE_DATABASE_URL,
@@ -28,30 +28,45 @@ export async function obtenerDolarPorCasa(casa) {
   return resultado[0]
 }
 
-export async function obtenerHistoricosPorCasa(casa) {
-  return db.select()
-    .from(cotizaciones)
+export async function obtenerCotizacionPorMoneda(moneda) {
+  const resultado = await db.select()
+    .from(extracciones)
     .where(
       and(
-        eq(cotizaciones.moneda, DOLAR_CODIGO),
-        eq(cotizaciones.casa, casa),
+        eq(extracciones.moneda, moneda),
+        eq(extracciones.casa, 'oficial'),
       ),
     )
-    .orderBy(desc(cotizaciones.fecha))
+    .orderBy(desc(extracciones.fecha))
+    .limit(1)
+
+  return resultado[0]
+}
+
+export async function obtenerHistoricosPorCasa(casa) {
+  return db.select()
+    .from(dolares)
+    .where(
+      and(
+        eq(dolares.moneda, DOLAR_CODIGO),
+        eq(dolares.casa, casa),
+      ),
+    )
+    .orderBy(desc(dolares.fecha))
 }
 
 export async function guardarCotizaciones(dolares, fecha) {
   await db
-    .delete(cotizaciones)
+    .delete(dolares)
     .where(
       and(
-        eq(cotizaciones.moneda, 'USD'),
-        eq(cotizaciones.fecha, fecha),
+        eq(dolares.moneda, 'USD'),
+        eq(dolares.fecha, fecha),
       ),
     )
 
   await db
-    .insert(cotizaciones)
+    .insert(dolares)
     .values(dolares.map(dolar => ({
       moneda: 'USD',
       casa: dolar.casa,
@@ -61,14 +76,14 @@ export async function guardarCotizaciones(dolares, fecha) {
     })))
 }
 
-export async function guardarExtracciones(dolares) {
+export async function guardarExtracciones(cotizaciones) {
   await db
     .insert(extracciones)
-    .values(dolares.map(dolar => ({
-      moneda: 'USD',
-      casa: dolar.casa,
-      compra: dolar.compra,
-      venta: dolar.venta,
-      fecha: dolar.fechaActualizacion,
+    .values(cotizaciones.map(cotizacion => ({
+      moneda: cotizacion.moneda,
+      casa: cotizacion.casa,
+      compra: cotizacion.compra,
+      venta: cotizacion.venta,
+      fecha: cotizacion.fechaActualizacion,
     })))
 }

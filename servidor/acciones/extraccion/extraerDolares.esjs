@@ -35,10 +35,11 @@ asincrono funcion obtenerValoresParaCasa($, casa) {
     const fechaActualizacion = obtenerFechaActualizacion($)
 
     retornar {
-        compra,
-        venta,
+		moneda: 'USD',
         casa: casa.identificador,
         nombre: casa.nombre,
+        compra,
+        venta,
         fechaActualizacion,
     }
 }

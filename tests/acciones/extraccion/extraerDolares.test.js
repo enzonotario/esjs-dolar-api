@@ -16,13 +16,13 @@ it('extrae dólares', async () => {
 
     expect(dolarCasa).not.toBeNull()
 
-    expect(dolarCasa.fechaActualizacion).not.toBeNull()
-
-    expect(dolarCasa.venta).toBeGreaterThan(0)
-
+    expect(dolarCasa.moneda).toBe('USD')
+    expect(dolarCasa.casa).toBe(casa.identificador)
     if (casa.permiteCompra)
       expect(dolarCasa.compra).toBeGreaterThan(0)
     else
       expect(dolarCasa.compra).toBeNull()
+    expect(dolarCasa.venta).toBeGreaterThan(0)
+    expect(dolarCasa.fechaActualizacion).not.toBeNull()
   })
 })

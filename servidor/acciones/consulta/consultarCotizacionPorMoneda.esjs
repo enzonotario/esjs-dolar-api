@@ -1,0 +1,30 @@
+importar { obtenerCotizacionPorMoneda } desde '@/db/database.js'
+importar { monedasSoportadas, monedas } desde '@/constantes.esjs'
+importar { validarMoneda } desde '@/acciones/consulta/validarMoneda.esjs'
+
+exportar asincrono funcion consultarCotizacionPorMoneda(moneda) {
+	si (! validarMoneda(moneda)) {
+		retornar nulo
+	}
+
+	const monedaConfiguracion = monedas.buscar(m => m.codigo === moneda)
+
+	si (! monedaConfiguracion) {
+		retornar nulo
+	}
+
+	const cotizacion = esperar obtenerCotizacionPorMoneda(moneda)
+
+	si (! cotizacion) {
+		retornar nulo
+	}
+
+	retornar {
+		moneda: cotizacion.moneda,
+		casa: cotizacion.casa,
+		nombre: monedaConfiguracion.nombre,
+		compra: cotizacion.compra,
+		venta: cotizacion.venta,
+		fechaActualizacion: cotizacion.fecha,
+	}
+}

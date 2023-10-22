@@ -43,6 +43,11 @@ exportar const monedas = [
 		simbolo: '$',
 	},
 	{
+		codigo: 'EUR',
+		nombre: 'Euro',
+		simbolo: '€',
+	},
+	{
 		codigo: 'BRL',
 		nombre: 'Real',
 		simbolo: 'R$',
@@ -63,6 +68,7 @@ exportar const monedaPorDefecto = 'ARS'
 
 exportar const monedasSoportadas = [
 	'USD',
+	'EUR',
 	'BRL',
 	'CLP',
 	'UYU',
@@ -99,6 +105,10 @@ exportar const dolarHoy = {
 	cotizaciones: {
 		USD: {
 			href: '/cotizaciondolaroficial',
+			extractor: 'pie',
+		},
+		EUR: {
+			href: '/cotizacion-euro',
 			extractor: 'pie',
 		},
 		BRL: {

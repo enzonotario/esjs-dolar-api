@@ -15,6 +15,7 @@ exportar asincrono funcion consultarDolarPorCasa(casa) {
 	}
 
 	retornar {
+		moneda: dolar.moneda,
 		casa: dolar.casa,
 		nombre: casaConfiguracion.nombre,
 		compra: dolar.compra,

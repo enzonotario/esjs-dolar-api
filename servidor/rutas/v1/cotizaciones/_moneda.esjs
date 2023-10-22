@@ -1,0 +1,29 @@
+importar { consultarCotizacionPorMoneda } desde '@/acciones/consulta/consultarCotizacionPorMoneda.esjs'
+importar { validarMoneda } desde '@/acciones/consulta/validarMoneda.esjs'
+
+exportar porDefecto asincrono funcion (req, res) {
+    const monedaOrigen = req.params.monedaOrigen.aMayusculas()
+    const monedaDestino = (req.params.monedaDestino || 'ARS').aMayusculas()
+
+    si (!validarMoneda(monedaOrigen)) {
+    	retornar res.status(400).json({
+			error: 'La moneda de origen no es válida',
+		})
+    }
+
+    si (!validarMoneda(monedaDestino)) {
+		retornar res.status(400).json({
+			error: 'La moneda de destino no es válida',
+		})
+	}
+
+	const cotizacion = esperar consultarCotizacionPorMoneda(monedaOrigen)
+
+	if (!cotizacion) {
+		retornar res.status(404).json({
+			error: 'No se encontró cotización para la moneda de origen',
+		})
+	}
+
+    res.json(cotizacion)
+}

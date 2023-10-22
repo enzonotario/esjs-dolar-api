@@ -15,9 +15,10 @@ it('extrae cotizaciones', async () => {
     const cotizacionMoneda = cotizaciones.find(dolar => dolar.moneda === moneda)
 
     expect(cotizacionMoneda).not.toBeNull()
-    expect(cotizacionMoneda.fechaActualizacion).not.toBeNull()
     expect(cotizacionMoneda.moneda).toBe(moneda)
-    expect(cotizacionMoneda.venta).toBeGreaterThan(0)
+    expect(cotizacionMoneda.casa).toBe('oficial')
     expect(cotizacionMoneda.compra).toBeGreaterThan(0)
+    expect(cotizacionMoneda.venta).toBeGreaterThan(0)
+    expect(cotizacionMoneda.fechaActualizacion).not.toBeNull()
   })
 })

@@ -1,12 +1,16 @@
 import { expect, it } from 'vitest'
 import { consultarDolarPorCasa } from '@/acciones/consulta/consultarDolarPorCasa.esjs'
+import { guardarDolares } from '@/acciones/guardado/guardarDolares.esjs'
 import { casas } from '@/constantes.esjs'
 
 it('consulta dólar por casa', async () => {
+  await guardarDolares()
+
   for (const casa of casas) {
     const dolarCasa = await consultarDolarPorCasa(casa.identificador)
 
     expect(dolarCasa).toMatchObject({
+      moneda: 'USD',
       casa: casa.identificador,
       nombre: casa.nombre,
       fechaActualizacion: expect.any(Date),

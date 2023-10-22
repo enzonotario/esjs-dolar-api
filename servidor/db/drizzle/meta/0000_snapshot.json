@@ -1,11 +1,131 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "9a03b2a5-b4d0-42b6-a520-4ac67da0669c",
+  "id": "d2839772-6e31-4371-8c2f-f4f273058235",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "cotizaciones": {
       "name": "cotizaciones",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "moneda": {
+          "name": "moneda",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "compra": {
+          "name": "compra",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "venta": {
+          "name": "venta",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "fecha": {
+          "name": "fecha",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(strftime('%s', 'now'))"
+        }
+      },
+      "indexes": {
+        "cotizaciones_fecha": {
+          "name": "cotizaciones_fecha",
+          "columns": [
+            "fecha"
+          ],
+          "isUnique": false
+        },
+        "cotizaciones_moneda": {
+          "name": "cotizaciones_moneda",
+          "columns": [
+            "moneda"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "dolares": {
+      "name": "dolares",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "casa": {
+          "name": "casa",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "compra": {
+          "name": "compra",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "venta": {
+          "name": "venta",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "fecha": {
+          "name": "fecha",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(strftime('%s', 'now'))"
+        }
+      },
+      "indexes": {
+        "dolares_fecha": {
+          "name": "dolares_fecha",
+          "columns": [
+            "fecha"
+          ],
+          "isUnique": false
+        },
+        "dolares_casa": {
+          "name": "dolares_casa",
+          "columns": [
+            "casa"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "extracciones": {
+      "name": "extracciones",
       "columns": {
         "id": {
           "name": "id",
@@ -51,44 +171,29 @@
           "default": "(strftime('%s', 'now'))"
         }
       },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "indicadores": {
-      "name": "indicadores",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "integer",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
+      "indexes": {
+        "extracciones_fecha": {
+          "name": "extracciones_fecha",
+          "columns": [
+            "fecha"
+          ],
+          "isUnique": false
         },
-        "tipo": {
-          "name": "tipo",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
+        "extracciones_moneda": {
+          "name": "extracciones_moneda",
+          "columns": [
+            "moneda"
+          ],
+          "isUnique": false
         },
-        "valor": {
-          "name": "valor",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "fecha": {
-          "name": "fecha",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
+        "extracciones_casa": {
+          "name": "extracciones_casa",
+          "columns": [
+            "casa"
+          ],
+          "isUnique": false
         }
       },
-      "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}

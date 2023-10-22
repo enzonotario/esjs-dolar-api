@@ -7,7 +7,12 @@ exportar asincrono funcion consultarDolares() {
 	para (const casa de casas) {
 		const dolar = esperar obtenerDolarPorCasa(casa.identificador)
 
+		si (!dolar) {
+			continuar
+		}
+
 		dolares.agregar({
+			moneda: dolar.moneda,
 			casa: dolar.casa,
 			nombre: casa.nombre,
 			compra: dolar.compra,
