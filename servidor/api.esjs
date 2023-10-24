@@ -1,7 +1,6 @@
 importar express desde 'express'
 importar httpDevServer desde 'vavite/http-dev-server'
 importar cors desde 'cors'
-importar { useTreblle } desde "treblle"
 importar { v1 } desde '@/rutas/v1/v1.esjs'
 importar { cron } desde '@/rutas/cron/cron.esjs'
 importar estado desde '@/rutas/v1/estado.esjs'
@@ -14,11 +13,6 @@ const modoDesarrollo = import.meta.env.MODE == 'development'
 const app = express()
 
 app.use(cors())
-
-useTreblle(app, {
-  apiKey: import.meta.env.VITE_TREBLLE_API_KEY,
-  projectId: import.meta.env.VITE_TREBLLE_PROJECT_ID,
-});
 
 /**
  * Configuración de registro
