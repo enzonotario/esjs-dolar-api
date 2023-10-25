@@ -23,9 +23,14 @@ const requestUrl = `${baseUrl}${operationPath}`
 
 const response = ref(null)
 
+const responseTime = ref(null)
+
 const loading = ref(false)
 
 async function tryIt() {
+  const start = performance.now()
+
+  responseTime.value = null
   response.value = '{}'
   loading.value = true
 
@@ -36,6 +41,9 @@ async function tryIt() {
     },
   })
 
+  const end = performance.now()
+
+  responseTime.value = (end - start).toFixed(2)
   response.value = await data.json()
   loading.value = false
 }
@@ -55,6 +63,10 @@ async function tryIt() {
         <summary class="my-0! text-lg font-bold cursor-pointer">
           {{ loading ? $t('Loading...') : $t('Response') }}
         </summary>
+
+        <div v-if="responseTime" class="text-sm text-gray-500">
+          {{ $t('Response time') }}: {{ responseTime }}ms
+        </div>
 
         <div class="flex flex-col max-h-96 overflow-y-auto">
           <slot name="response" :response="response" />
