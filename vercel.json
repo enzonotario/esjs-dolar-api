@@ -20,7 +20,11 @@
     },
     {
       "source": "/",
-      "destination": "/docs/index.html"
+      "destination": "/docs/"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/docs/sitemap.xml"
     }
   ]
 }

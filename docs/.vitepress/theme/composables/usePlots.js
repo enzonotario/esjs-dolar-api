@@ -267,8 +267,10 @@ export function usePlots() {
 {hr|}
 {contentLine|Fecha de actualización: ${fechaFormateada}}
 {hr|}
-{contentLine|Compra: $${cotizacionActual.compra}}
-{hr|}
+${cotizacionActual.compra
+? `{contentLine|Compra: $${cotizacionActual.compra}}
+{hr|}`
+: ''}
 {contentLine|Venta: $${cotizacionActual.venta}}`,
                 ].join('\n'),
                 rich: {

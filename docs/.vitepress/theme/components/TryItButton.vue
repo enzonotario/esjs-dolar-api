@@ -28,6 +28,8 @@ const responseTime = ref(null)
 const loading = ref(false)
 
 async function tryIt() {
+  trackTryIt()
+
   const start = performance.now()
 
   responseTime.value = null
@@ -47,6 +49,16 @@ async function tryIt() {
   response.value = await data.json()
   loading.value = false
 }
+
+function trackTryIt() {
+  try {
+    window.gtag('event', 'try_it', {
+      event_category: 'api',
+      event_label: props.operationId,
+    })
+  }
+  catch (error) { }
+}
 </script>
 
 <template>
@@ -64,8 +76,8 @@ async function tryIt() {
           {{ loading ? $t('Loading...') : $t('Response') }}
         </summary>
 
-        <div v-if="responseTime" class="text-sm text-gray-500">
-          {{ $t('Response time') }}: {{ responseTime }}ms
+        <div v-if="response" class="text-sm text-gray-500">
+          {{ $t('Response time') }}: {{ loading ? $t('Loading...') : `${responseTime}ms` }}
         </div>
 
         <div class="flex flex-col max-h-96 overflow-y-auto">

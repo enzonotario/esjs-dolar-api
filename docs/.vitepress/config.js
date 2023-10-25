@@ -1,7 +1,12 @@
 import { URL, fileURLToPath } from 'node:url'
+import { createWriteStream } from 'node:fs'
+import { resolve } from 'node:path'
 import { defineConfig, loadEnv } from 'vitepress'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
+import { SitemapStream } from 'sitemap'
 import { useOpenapi } from './theme/composables/useOpenapi.js'
+
+const links = []
 
 const openapi = useOpenapi()
 
@@ -10,8 +15,6 @@ const METHOD_GET = 'get'
 const env = loadEnv('', process.cwd())
 
 const gTag = env.VITE_GTAG
-
-const insertGithubIframe = false
 
 function generateSidebarItem(method, path) {
   const { operationId, summary } = openapi.json.paths[path].get
@@ -85,15 +88,6 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/assets/logo.webp',
-    nav: insertGithubIframe
-      ? [
-          {
-            text: `<iframe src="https://ghbtns.com/github-btn.html?user=enzonotario&repo=esjs-dolar-api&type=star&count=true&size=large"
-                frameborder="0" scrolling="0" width="160px" height="30px" title="GitHub"></iframe>`,
-            link: '',
-          },
-        ]
-      : [],
     sidebar: generateSidebar(),
     socialLinks: [
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },
@@ -129,6 +123,32 @@ export default defineConfig({
       { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap', rel: 'stylesheet' },
     ],
   ],
+
+  /**
+   * Sitemap generation
+   */
+  cleanUrls: false,
+  transformHtml: (_, id, { pageData }) => {
+    if (!/[\\/]404\.html$/.test(id)) {
+      links.push({
+        url: /* conatins index.md? */
+            pageData.relativePath.endsWith('index.md')
+              ? '/'
+              : `${pageData.relativePath.replace(/((^|\/)index)?\.md$/, '$2')}.html`,
+        lastmod: pageData.lastUpdated,
+      })
+    }
+  },
+  buildEnd: async ({ outDir }) => {
+    const sitemap = new SitemapStream({
+      hostname: 'https://dolarapi.com/docs/',
+    })
+    const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+    sitemap.pipe(writeStream)
+    links.forEach(link => sitemap.write(link))
+    sitemap.end()
+    await new Promise(resolve => writeStream.on('finish', resolve))
+  },
 
   vite: {
     plugins: [
