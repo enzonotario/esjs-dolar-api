@@ -3,7 +3,7 @@ import { useOpenapi } from '@theme/composables/useOpenapi.js'
 import { usePlots } from '@theme/composables/usePlots.js'
 import { useCodeSamples } from '@theme/composables/useCodeSamples.js'
 import { onMounted, watch } from 'vue'
-import { useResizeObserver, useTitle } from '@vueuse/core'
+import { useResizeObserver } from '@vueuse/core'
 import { useData, useRoute } from 'vitepress'
 
 const props = defineProps({
@@ -41,19 +41,11 @@ const schemaTitle = (responseType === 'array' ? response200.content['application
 
 const schema = Object.values(schemas).find(schema => schema.title === schemaTitle)
 
-const title = useTitle()
-
 const route = useRoute()
 
 const plots = usePlots()
 
-function setupTitle() {
-  title.value = route.data.params.pageTitle
-}
-
 onMounted(() => {
-  setupTitle()
-
   plots.findCasaToPlot(document)
 
   useResizeObserver(document.body, () => {

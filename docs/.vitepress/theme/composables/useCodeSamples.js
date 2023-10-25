@@ -1,4 +1,4 @@
-import { useOpenapi } from './useOpenapi'
+import { useOpenapi } from './useOpenapi.js'
 
 export function useCodeSamples() {
   const openapi = useOpenapi()

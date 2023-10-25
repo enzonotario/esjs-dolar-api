@@ -1,4 +1,4 @@
-import { useOpenapi } from '../.vitepress/theme/composables/useOpenapi.js'
+import { useOpenapi } from '../composables/useOpenapi.js'
 
 export default {
   paths() {

@@ -16,7 +16,8 @@
     "docs:i18n-extract": "npx vue-i18n-extract report --vueFiles './docs/.vitepress/**/*.?(js|vue|md)' --languageFiles './docs/.vitepress/theme/locales/*.?(json|yml|yaml)'",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "md": "node ./docs/scripts/generate-md.js"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^1.0.0-beta.27",
