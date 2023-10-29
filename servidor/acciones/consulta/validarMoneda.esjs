@@ -1,9 +1,9 @@
 importar { monedasSoportadas, monedaPorDefecto } desde '@/constantes.esjs'
 
 exportar funcion validarMoneda(moneda) {
-	if (!monedasSoportadas.incluye(moneda) && moneda !== monedaPorDefecto) {
-		retornar falso
-	}
+  si (!monedasSoportadas.incluye(moneda) && moneda !== monedaPorDefecto) {
+    retornar falso
+  }
 
-	retornar verdadero
+  retornar verdadero
 }

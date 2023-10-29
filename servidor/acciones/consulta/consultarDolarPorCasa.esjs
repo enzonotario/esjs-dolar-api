@@ -2,24 +2,24 @@ importar { obtenerDolarPorCasa } desde '@/db/database.js'
 importar { casas } desde '@/constantes.esjs'
 
 exportar asincrono funcion consultarDolarPorCasa(casa) {
-	const casaConfiguracion = casas.buscar(c => c.identificador === casa)
+  const casaConfiguracion = casas.buscar((c) => c.identificador === casa)
 
-    si (!casaConfiguracion) {
-		retornar nulo
-    }
+  si (!casaConfiguracion) {
+    retornar nulo
+  }
 
-	const dolar = esperar obtenerDolarPorCasa(casa)
+  const dolar = esperar obtenerDolarPorCasa(casa)
 
-	si (!dolar) {
-		retornar nulo
-	}
+  si (!dolar) {
+    retornar nulo
+  }
 
-	retornar {
-		moneda: dolar.moneda,
-		casa: dolar.casa,
-		nombre: casaConfiguracion.nombre,
-		compra: dolar.compra,
-		venta: dolar.venta,
-		fechaActualizacion: dolar.fecha,
-	}
+  retornar {
+    moneda: dolar.moneda,
+    casa: dolar.casa,
+    nombre: casaConfiguracion.nombre,
+    compra: dolar.compra,
+    venta: dolar.venta,
+    fechaActualizacion: dolar.fecha,
+  }
 }

@@ -2,14 +2,16 @@ importar { obtenerDolarPorCasa } desde '@/db/database.js'
 importar { casas } desde '@/constantes.esjs'
 
 exportar asincrono funcion consultarDolares() {
-	const dolares = esperar Promesa.todos(casas.mapear(casa => obtenerDolarPorCasa(casa.identificador)))
+  const dolares = esperar Promesa.todos(
+    casas.mapear((casa) => obtenerDolarPorCasa(casa.identificador)),
+  )
 
-	retornar dolares.mapear(dolar => ({
-		moneda: dolar.moneda,
-		casa: dolar.casa,
-		nombre: casas.buscar(casa => casa.identificador === dolar.casa).nombre,
-		compra: dolar.compra,
-		venta: dolar.venta,
-		fechaActualizacion: dolar.fecha,
-	}))
+  retornar dolares.mapear((dolar) => ({
+    moneda: dolar.moneda,
+    casa: dolar.casa,
+    nombre: casas.buscar((casa) => casa.identificador === dolar.casa).nombre,
+    compra: dolar.compra,
+    venta: dolar.venta,
+    fechaActualizacion: dolar.fecha,
+  }))
 }

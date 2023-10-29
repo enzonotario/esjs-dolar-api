@@ -4,11 +4,11 @@ importar { startOfDay, subHours } desde 'date-fns'
 importar { zonedTimeToUtc } desde 'date-fns-tz'
 
 exportar asincrono funcion cerrarDolares() {
-	const dolares = esperar extraerDolares()
+  const dolares = esperar extraerDolares()
 
-	const hoyUTC = crear Fecha()
+  const hoyUTC = crear Fecha()
 
-	const hoy = zonedTimeToUtc(startOfDay(subHours(hoyUTC, 3)))
+  const hoy = zonedTimeToUtc(startOfDay(subHours(hoyUTC, 3)))
 
-	esperar guardarDolares(dolares, hoy)
+  esperar guardarDolares(dolares, hoy)
 }

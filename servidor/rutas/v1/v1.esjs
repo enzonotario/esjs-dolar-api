@@ -5,16 +5,24 @@ importar estado desde '@/rutas/v1/estado.esjs'
 importar historicosDolaresCasa desde '@/rutas/v1/historicos/dolares/_casa.esjs'
 importar { cache } desde '@/intermediarios/cache.intermediario.esjs'
 importar { noQueryParams } desde '@/intermediarios/noQueryParams.intermediario.esjs'
-importar moneda from '@/rutas/v1/cotizaciones/_moneda.esjs'
+importar moneda desde '@/rutas/v1/cotizaciones/_moneda.esjs'
 
 exportar const v1 = express.Router()
 
-v1.get('/dolares', [cache(15), noQueryParams()], dolares)
-v1.get('/dolares/:casa', [cache(15), noQueryParams()], _casa)
+v1.obtener('/dolares', [cache(15), noQueryParams()], dolares)
+v1.obtener('/dolares/:casa', [cache(15), noQueryParams()], _casa)
 
-v1.get('/cotizaciones/:monedaOrigen', [cache(60), noQueryParams()], moneda)
-v1.get('/cotizaciones/:monedaOrigen/:monedaDestino', [cache(60), noQueryParams()], moneda)
+v1.obtener('/cotizaciones/:monedaOrigen', [cache(60), noQueryParams()], moneda)
+v1.obtener(
+  '/cotizaciones/:monedaOrigen/:monedaDestino',
+  [cache(60), noQueryParams()],
+  moneda,
+)
 
-v1.get('/estado', [noQueryParams()], estado)
+v1.obtener('/estado', [noQueryParams()], estado)
 
-v1.get('/historicos/dolares/:casa', [cache(60), noQueryParams()], historicosDolaresCasa)
+v1.obtener(
+  '/historicos/dolares/:casa',
+  [cache(60), noQueryParams()],
+  historicosDolaresCasa,
+)

@@ -1,127 +1,121 @@
 exportar const casas = [
-	{
-		identificador: 'oficial',
-		nombre: 'Oficial',
-		permiteCompra: verdadero,
-	},
-	{
-		identificador: 'blue',
-		nombre: 'Blue',
-		permiteCompra: verdadero,
-	},
-	{
-		identificador: 'bolsa',
-		nombre: 'Bolsa',
-		permiteCompra: verdadero,
-	},
-	{
-		identificador: 'contadoconliqui',
-		nombre: 'Contado con liquidación',
-		permiteCompra: verdadero,
-	},
-	{
-		identificador: 'solidario',
-		nombre: 'Solidario (Turista)',
-		permiteCompra: falso,
-	},
-	{
-		identificador: 'mayorista',
-		nombre: 'Mayorista',
-		permiteCompra: verdadero,
-	},
+  {
+    identificador: 'oficial',
+    nombre: 'Oficial',
+    permiteCompra: verdadero,
+  },
+  {
+    identificador: 'blue',
+    nombre: 'Blue',
+    permiteCompra: verdadero,
+  },
+  {
+    identificador: 'bolsa',
+    nombre: 'Bolsa',
+    permiteCompra: verdadero,
+  },
+  {
+    identificador: 'contadoconliqui',
+    nombre: 'Contado con liquidación',
+    permiteCompra: verdadero,
+  },
+  {
+    identificador: 'solidario',
+    nombre: 'Solidario (Turista)',
+    permiteCompra: falso,
+  },
+  {
+    identificador: 'mayorista',
+    nombre: 'Mayorista',
+    permiteCompra: verdadero,
+  },
 ]
 
 exportar const monedas = [
-	{
-		codigo: 'ARS',
-		nombre: 'Peso Argentino',
-		simbolo: '$',
-	},
-	{
-		codigo: 'USD',
-		nombre: 'Dólar',
-		simbolo: '$',
-	},
-	{
-		codigo: 'EUR',
-		nombre: 'Euro',
-		simbolo: '€',
-	},
-	{
-		codigo: 'BRL',
-		nombre: 'Real Brasileño',
-		simbolo: 'R$',
-	},
-	{
-		codigo: 'CLP',
-		nombre: 'Peso Chileno',
-		simbolo: '$',
-	},
-	{
-		codigo: 'UYU',
-		nombre: 'Peso Uruguayo',
-		simbolo: '$',
-	},
+  {
+    codigo: 'ARS',
+    nombre: 'Peso Argentino',
+    simbolo: '$',
+  },
+  {
+    codigo: 'USD',
+    nombre: 'Dólar',
+    simbolo: '$',
+  },
+  {
+    codigo: 'EUR',
+    nombre: 'Euro',
+    simbolo: '€',
+  },
+  {
+    codigo: 'BRL',
+    nombre: 'Real Brasileño',
+    simbolo: 'R$',
+  },
+  {
+    codigo: 'CLP',
+    nombre: 'Peso Chileno',
+    simbolo: '$',
+  },
+  {
+    codigo: 'UYU',
+    nombre: 'Peso Uruguayo',
+    simbolo: '$',
+  },
 ]
 
 exportar const monedaPorDefecto = 'ARS'
 
-exportar const monedasSoportadas = [
-	'USD',
-	'EUR',
-	'BRL',
-	'CLP',
-	'UYU',
-]
+exportar const monedasSoportadas = ['USD', 'EUR', 'BRL', 'CLP', 'UYU']
 
 exportar const dolarHoy = {
-	baseUrl: 'https://dolarhoy.com/',
-	dolares: {
-		oficial: {
-			href: '/cotizaciondolaroficial',
-			extractor: 'cabecera',
-		},
-		blue: {
-			href: '/cotizaciondolarblue',
-			extractor: 'cabecera',
-		},
-		bolsa: {
-			href: '/cotizaciondolarbolsa',
-			extractor: 'cabecera',
-		},
-		contadoconliqui: {
-			href: '/cotizaciondolarcontadoconliqui',
-			extractor: 'cabecera',
-		},
-		solidario: {
-			href: '/cotizaciondolarturista',
-			extractor: 'cabecera',
-		},
-		mayorista: {
-			href: '/cotizaciondolarmayorista',
-			extractor: 'pie',
-		},
-	},
-	cotizaciones: {
-		USD: {
-			href: '/cotizaciondolaroficial',
-			extractor: 'pie',
-		},
-		EUR: {
-			href: '/cotizacion-euro',
-			extractor: 'pie',
-		},
-		BRL: {
-			href: '/cotizacion-real-brasileno',
-			extractor: 'pie',
-		},
-		CLP: {
-			href: '/cotizacion-peso-chileno',
-			extractor: 'pie',
-		},
-		UYU: {
-			href: '/cotizacion-peso-uruguayo',
-			extractor: 'pie',
-		},
-	},
+  baseUrl: 'https://dolarhoy.com/',
+  dolares: {
+    oficial: {
+      href: '/cotizaciondolaroficial',
+      extractor: 'cabecera',
+    },
+    blue: {
+      href: '/cotizaciondolarblue',
+      extractor: 'cabecera',
+    },
+    bolsa: {
+      href: '/cotizaciondolarbolsa',
+      extractor: 'cabecera',
+    },
+    contadoconliqui: {
+      href: '/cotizaciondolarcontadoconliqui',
+      extractor: 'cabecera',
+    },
+    solidario: {
+      href: '/cotizaciondolarturista',
+      extractor: 'cabecera',
+    },
+    mayorista: {
+      href: '/cotizaciondolarmayorista',
+      extractor: 'pie',
+    },
+  },
+  cotizaciones: {
+    USD: {
+      href: '/cotizaciondolaroficial',
+      extractor: 'pie',
+    },
+    EUR: {
+      href: '/cotizacion-euro',
+      extractor: 'pie',
+    },
+    BRL: {
+      href: '/cotizacion-real-brasileno',
+      extractor: 'pie',
+    },
+    CLP: {
+      href: '/cotizacion-peso-chileno',
+      extractor: 'pie',
+    },
+    UYU: {
+      href: '/cotizacion-peso-uruguayo',
+      extractor: 'pie',
+    },
+  },
 }

@@ -1,4 +1,4 @@
-import { it, expect } from 'vitest'
+import { expect, it } from 'vitest'
 import { cerrarCotizaciones } from '@/acciones/guardado/cerrarCotizaciones.esjs'
 import { consultarCotizacionPorMoneda } from '@/acciones/consulta/consultarCotizacionPorMoneda.esjs'
 import { monedasSoportadas } from '@/constantes.esjs'

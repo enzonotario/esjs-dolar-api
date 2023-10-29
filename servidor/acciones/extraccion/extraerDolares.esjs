@@ -2,46 +2,45 @@ importar { dolarHoy, casas } desde '@/constantes.esjs'
 importar cheerio desde 'cheerio'
 
 exportar asincrono funcion extraerDolares() {
-    const pagina = esperar consultarPagina()
+  const pagina = esperar consultarPagina()
 
-    const $ = cheerio.load(pagina)
+  const $ = cheerio.load(pagina)
 
-    retornar esperar Promise.all(
-        casas.mapear(
-            asincrono casa => ({
-                ...esperar obtenerValoresParaCasa($, casa),
-            })
-        )
-    )
+  retornar esperar Promesa.todos(
+    casas.mapear(asincrono (casa) => ({
+      ...(esperar obtenerValoresParaCasa($, casa)),
+    })),
+  )
 }
 
 asincrono funcion consultarPagina() {
-    intentar {
-        const respuesta = esperar fetch(dolarHoy.baseUrl)
+  intentar {
+    const respuesta = esperar fetch(dolarHoy.baseUrl)
 
-        retornar esperar respuesta.text()
-    } capturar (error) {
-        console.error(error)
-    }
+    retornar esperar respuesta.text()
+  } capturar (error) {
+    consola.error(error)
+  }
 }
 
 asincrono funcion obtenerValoresParaCasa($, casa) {
-    const casaConfiguracion = dolarHoy.dolares[casa.identificador]
+  const casaConfiguracion = dolarHoy.dolares[casa.identificador]
 
-    const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } = esperar importar(`../../extractores/dolarhoy/${casaConfiguracion.extractor}.esjs`)
+  const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } =
+    esperar importar(
+      `../../extractores/dolarhoy/${casaConfiguracion.extractor}.esjs`
+    )
 
-    const compra = esperar obtenerValorCompra($, casaConfiguracion.href)
-    const venta = esperar obtenerValorVenta($, casaConfiguracion.href)
-    const fechaActualizacion = obtenerFechaActualizacion($)
+  const compra = esperar obtenerValorCompra($, casaConfiguracion.href)
+  const venta = esperar obtenerValorVenta($, casaConfiguracion.href)
+  const fechaActualizacion = obtenerFechaActualizacion($)
 
-    retornar {
-		moneda: 'USD',
-        casa: casa.identificador,
-        nombre: casa.nombre,
-        compra,
-        venta,
-        fechaActualizacion,
-    }
+  retornar {
+    moneda: 'USD',
+    casa: casa.identificador,
+    nombre: casa.nombre,
+    compra,
+    venta,
+    fechaActualizacion,
+  }
 }
-
-

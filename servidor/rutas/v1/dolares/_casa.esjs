@@ -1,13 +1,13 @@
 importar { consultarDolarPorCasa } desde '@/acciones/consulta/consultarDolarPorCasa.esjs'
 
 exportar porDefecto asincrono funcion (req, res) {
-    const casa = req.params.casa
+  const casa = req.params.casa
 
-	const dolar = esperar consultarDolarPorCasa(casa)
+  const dolar = esperar consultarDolarPorCasa(casa)
 
-	si (!dolar) {
-		retornar res.sendStatus(404)
-	}
+  si (!dolar) {
+    retornar res.sendStatus(404)
+  }
 
-	res.json(dolar)
+  res.json(dolar)
 }

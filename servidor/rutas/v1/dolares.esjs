@@ -1,5 +1,5 @@
 importar { consultarDolares } desde '@/acciones/consulta/consultarDolares.esjs'
 
-exportar porDefecto asincrono funcion(req, res) {
-	res.json(esperar consultarDolares())
+exportar porDefecto asincrono funcion (req, res) {
+  res.json(esperar consultarDolares())
 }
