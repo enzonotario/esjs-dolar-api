@@ -1,50 +1,26 @@
-importar express desde 'express'
-importar httpDevServer desde 'vavite/http-dev-server'
-importar cors desde 'cors'
+importar { Hono } desde 'hono'
+importar { cors } desde 'hono/cors'
+importar { timing } desde 'hono/timing'
 importar { v1 } desde '@/rutas/v1/v1.esjs'
 importar { cron } desde '@/rutas/cron/cron.esjs'
-importar estado desde '@/rutas/v1/estado.esjs'
-importar pino desde 'pino'
-importar pinoHttp desde 'pino-http'
-importar 'pino-loki'
+importar { registro } desde '@/intermediarios/registro.intermediario.esjs'
+importar { honoHelmet } desde "@/intermediarios/helmet.intermediario.js"
 
-const modoDesarrollo = import.meta.env.MODE == 'development'
+exportar const app = crear Hono()
 
-const app = express()
+app.use('*', honoHelmet());
+app.use('*', cors())
+app.use('*', timing())
+app.use('*', asincrono (c, siguiente) => {
+  const respuesta = esperar siguiente()
 
-app.use(cors())
+  esperar registro(c, respuesta)
 
-/**
- * Configuración de registro
- */
-const logger = pinoHttp({
-	transport: {
-		target: 'pino-loki',
-		options: {
-			host: import.meta.env.VITE_LOKI_URL,
-			basicAuth: {
-				username: import.meta.env.VITE_LOKI_USER,
-				password: import.meta.env.VITE_LOKI_PASSWORD,
-			},
-		},
-	},
-	enabled: !modoDesarrollo,
-});
+  retornar respuesta
+})
 
-app.use(logger);
+app.route('/cron/', cron)
+app.route('/v1/', v1)
+app.route('/api/v1/', v1)
 
-/**
- * Configuración de rutas
- */
-app.use('/cron/', cron)
-app.use(['/v1/', '/api/v1/'], v1)
-
-/**
- * Iniciar servidor
- */
-si (httpDevServer) {
-	httpDevServer.on('request', app)
-} sino {
-	consola.escribir('Iniciando servidor de producción...')
-	app.listen(3000)
-}
+exportar porDefecto app

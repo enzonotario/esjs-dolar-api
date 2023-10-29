@@ -1,12 +1,12 @@
 importar { cerrarDolares } desde '@/acciones/guardado/cerrarDolares.esjs'
 importar { cerrarCotizaciones } desde '@/acciones/guardado/cerrarCotizaciones.esjs'
 
-exportar porDefecto asincrono funcion (req, res) {
+exportar porDefecto asincrono (c) => {
   esperar cerrarDolares()
 
   esperar cerrarCotizaciones()
 
-  res.json({
+  retornar c.json({
     estado: 'Correcto',
   })
 }

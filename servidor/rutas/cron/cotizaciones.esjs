@@ -1,9 +1,9 @@
 importar { guardarCotizaciones } desde '@/acciones/guardado/guardarCotizaciones.esjs'
 
-exportar porDefecto asincrono funcion (req, res) {
+exportar porDefecto asincrono (c) => {
   esperar guardarCotizaciones()
 
-  res.json({
+  retornar c.json({
     estado: 'Correcto',
   })
 }

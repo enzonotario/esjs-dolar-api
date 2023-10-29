@@ -1,11 +1,9 @@
-exportar funcion noQueryParams() {
-	retornar (peticion, respuesta, siguiente) => {
-		si (peticion.url.incluye('?')) {
-			// Redirigir a la misma URL sin parámetros de consulta
-			respuesta.redirect(peticion.originalUrl.dividir('?')[0])
-			retornar
-		}
+exportar const noQueryParams = () => {
+  retornar asincrono (c, siguiente) => {
+    si (c.req.url.incluye('?')) {
+      retornar c.redirect(c.req.url.dividir('?')[0])
+    }
 
-		siguiente()
-	}
+    esperar siguiente()
+  }
 }

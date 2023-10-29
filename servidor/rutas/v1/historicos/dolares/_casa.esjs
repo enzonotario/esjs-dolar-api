@@ -1,9 +1,9 @@
 importar { obtenerHistoricosPorCasa } desde '@/datos/datos.esjs'
 
-exportar porDefecto asincrono funcion (req, res) {
-  const dolares = esperar obtenerHistoricosPorCasa(req.params.casa)
+exportar porDefecto asincrono (c) => {
+  const dolares = esperar obtenerHistoricosPorCasa(c.req.param('casa'))
 
-  res.json(
+  retornar c.json(
     dolares.mapear((dolar) => ({
       moneda: dolar.moneda,
       casa: dolar.casa,

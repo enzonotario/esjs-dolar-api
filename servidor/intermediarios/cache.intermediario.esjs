@@ -1,15 +1,15 @@
-const modoDesarrollo = falso && importar.meta.env.MODE == 'development'
+const modoDesarrollo = importar.meta.env.MODE == 'development'
 
-exportar funcion cache(minutos) {
-  const tiempoEnSegundos = 60 * minutos
+exportar const cache = (minutos = 1) => {
+  retornar asincrono (c, siguiente) => {
+    esperar siguiente()
 
-  retornar (peticion, respuesta, siguiente) => {
-    si (peticion.method == 'GET' && !modoDesarrollo) {
-      respuesta.establecer('Cache-control', `public, s-maxage=${tiempoEnSegundos}`)
+    const tiempoEnSegundos = 60 * minutos
+
+    si (c.req.method === 'GET' && !modoDesarrollo) {
+      c.header('Cache-control', `public, s-maxage=${tiempoEnSegundos}`)
     } sino {
-      respuesta.establecer('Cache-control', `no-store`)
+      c.header('Cache-control', `no-store`)
     }
-
-    siguiente()
   }
 }

@@ -1,18 +1,15 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import EsJS from '@es-js/vite-plugin-esjs'
-import { vavite } from 'vavite'
+import devServer from '@hono/vite-dev-server'
 
 export default defineConfig({
   plugins: [
     // https://github.com/es-js/esjs
     EsJS(),
 
-    // https://github.com/cyco130/vavite
-    vavite({
-      serverEntry: './servidor/api.esjs',
-      reloadOn: 'any-change',
-      serveClientAssetsInDev: true,
+    devServer({
+      entry: './servidor/api.esjs',
     }),
   ],
 
@@ -35,5 +32,15 @@ export default defineConfig({
 
   build: {
     outDir: './dist',
+    rollupOptions: {
+      input: './servidor/api.esjs',
+      output: {
+        format: 'esm',
+        entryFileNames: 'servidor/[name].js',
+        chunkFileNames: 'servidor/[name].js',
+        assetFileNames: 'servidor/[name].[ext]',
+        exports: 'auto',
+      },
+    },
   },
 })

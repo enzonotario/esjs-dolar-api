@@ -1,6 +1,5 @@
-exportar porDefecto funcion (req, res) {
-  res.json({
+exportar porDefecto (c) =>
+  c.json({
     estado: 'Disponible',
     aleatorio: Mate.truncar(Mate.aleatorio() * 10000),
   })
-}

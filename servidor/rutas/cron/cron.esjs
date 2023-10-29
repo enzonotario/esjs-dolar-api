@@ -1,10 +1,12 @@
-importar express desde 'express'
+importar { Hono } desde 'hono'
 importar cronDolares desde '@/rutas/cron/dolares.esjs'
 importar cronCotizaciones desde '@/rutas/cron/cotizaciones.esjs'
 importar cierre desde '@/rutas/cron/cierre.esjs'
+importar { qstash } desde '@/intermediarios/qstash.intermediario.esjs'
 
-exportar const cron = express.Router()
+exportar const cron = crear Hono()
 
+cron.use('*', qstash())
 cron.post('/dolares', cronDolares)
 cron.post('/cotizaciones', cronCotizaciones)
 cron.post('/cierre', cierre)

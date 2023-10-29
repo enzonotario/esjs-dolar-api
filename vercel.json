@@ -2,7 +2,7 @@
   "outputDirectory": "dist/static/",
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/**"
+      "includeFiles": "dist/servidor/**"
     }
   },
   "rewrites": [
@@ -23,8 +23,8 @@
       "destination": "/docs/"
     },
     {
-      "source": "/sitemap.xml",
-      "destination": "/docs/sitemap.xml"
+      "source": "/:path*",
+      "destination": "/docs/:path*"
     }
   ]
 }
