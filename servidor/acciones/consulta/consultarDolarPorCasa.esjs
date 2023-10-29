@@ -1,4 +1,4 @@
-importar { obtenerDolarPorCasa } desde '@/db/database.js'
+importar { obtenerDolarPorCasa } desde '@/datos/datos.esjs'
 importar { casas } desde '@/constantes.esjs'
 
 exportar asincrono funcion consultarDolarPorCasa(casa) {

@@ -1,5 +1,5 @@
 importar { extraerCotizaciones } desde '@/acciones/extraccion/extraerCotizaciones.esjs'
-importar { guardarCotizaciones } desde '@/db/database.js'
+importar { guardarCotizaciones } desde '@/datos/datos.esjs'
 importar { startOfDay, subHours } desde 'date-fns'
 importar { zonedTimeToUtc } desde 'date-fns-tz'
 

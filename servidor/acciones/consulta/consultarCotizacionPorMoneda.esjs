@@ -1,4 +1,4 @@
-importar { obtenerCotizacionPorMoneda } desde '@/db/database.js'
+importar { obtenerCotizacionPorMoneda } desde '@/datos/datos.esjs'
 importar { monedasSoportadas, monedas } desde '@/constantes.esjs'
 importar { validarMoneda } desde '@/acciones/consulta/validarMoneda.esjs'
 

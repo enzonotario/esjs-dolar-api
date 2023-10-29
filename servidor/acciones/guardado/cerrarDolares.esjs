@@ -1,5 +1,5 @@
 importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
-importar { guardarDolares } desde '@/db/database.js'
+importar { guardarDolares } desde '@/datos/datos.esjs'
 importar { startOfDay, subHours } desde 'date-fns'
 importar { zonedTimeToUtc } desde 'date-fns-tz'
 

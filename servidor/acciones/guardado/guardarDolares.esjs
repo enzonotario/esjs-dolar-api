@@ -1,5 +1,5 @@
 importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
-importar { guardarExtracciones } desde '@/db/database.js'
+importar { guardarExtracciones } desde '@/datos/datos.esjs'
 
 exportar asincrono funcion guardarDolares() {
   const dolares = esperar extraerDolares()

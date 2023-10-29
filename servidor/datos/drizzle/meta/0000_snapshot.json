@@ -47,16 +47,12 @@
       "indexes": {
         "cotizaciones_fecha": {
           "name": "cotizaciones_fecha",
-          "columns": [
-            "fecha"
-          ],
+          "columns": ["fecha"],
           "isUnique": false
         },
         "cotizaciones_moneda": {
           "name": "cotizaciones_moneda",
-          "columns": [
-            "moneda"
-          ],
+          "columns": ["moneda"],
           "isUnique": false
         }
       },
@@ -107,16 +103,12 @@
       "indexes": {
         "dolares_fecha": {
           "name": "dolares_fecha",
-          "columns": [
-            "fecha"
-          ],
+          "columns": ["fecha"],
           "isUnique": false
         },
         "dolares_casa": {
           "name": "dolares_casa",
-          "columns": [
-            "casa"
-          ],
+          "columns": ["casa"],
           "isUnique": false
         }
       },
@@ -174,23 +166,17 @@
       "indexes": {
         "extracciones_fecha": {
           "name": "extracciones_fecha",
-          "columns": [
-            "fecha"
-          ],
+          "columns": ["fecha"],
           "isUnique": false
         },
         "extracciones_moneda": {
           "name": "extracciones_moneda",
-          "columns": [
-            "moneda"
-          ],
+          "columns": ["moneda"],
           "isUnique": false
         },
         "extracciones_casa": {
           "name": "extracciones_casa",
-          "columns": [
-            "casa"
-          ],
+          "columns": ["casa"],
           "isUnique": false
         }
       },

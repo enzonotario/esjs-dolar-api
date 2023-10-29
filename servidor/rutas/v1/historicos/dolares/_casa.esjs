@@ -1,4 +1,4 @@
-importar { obtenerHistoricosPorCasa } desde '@/db/database.js'
+importar { obtenerHistoricosPorCasa } desde '@/datos/datos.esjs'
 
 exportar porDefecto asincrono funcion (req, res) {
   const dolares = esperar obtenerHistoricosPorCasa(req.params.casa)

@@ -1,5 +1,5 @@
 importar { extraerCotizaciones } desde '@/acciones/extraccion/extraerCotizaciones.esjs'
-importar { guardarExtracciones } desde '@/db/database.js'
+importar { guardarExtracciones } desde '@/datos/datos.esjs'
 
 exportar asincrono funcion guardarCotizaciones() {
   const cotizaciones = esperar extraerCotizaciones()
