@@ -1,0 +1,19 @@
+importar { consultarDolarPorCasa } desde '@/acciones/consulta/consultarDolarPorCasa.esjs'
+
+exportar porDefecto asincrono (c) => {
+  const dolarOficial = esperar consultarDolarPorCasa('oficial')
+
+  const impuestos = 0.3 + 0.45 + 0.25
+
+  const compra = Numero((dolarOficial.compra * (1 + impuestos)).fijarDecimales(2))
+  const venta = Numero((dolarOficial.venta * (1 + impuestos)).fijarDecimales(2))
+
+  retornar c.json({
+    moneda: dolarOficial.moneda,
+    casa: 'tarjeta',
+    nombre: 'Tarjeta',
+    compra,
+    venta,
+    fechaActualizacion: dolarOficial.fecha,
+  })
+}

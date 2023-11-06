@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Real Brasileño
+title: Dólar Tarjeta
 ---
 
 <script setup>
@@ -13,11 +13,11 @@ import ResponseBody from '@theme/components/ResponseBody.vue'
 import TryItButton from '@theme/components/TryItButton.vue'
 </script>
 
-<Operation method="GET" id="get-cotizacion-brl">
+<Operation method="GET" id="get-dolar-tarjeta">
 
 <template #header="header">
 
-# Real Brasileño
+# Dólar Tarjeta
 
 </template>
 
@@ -27,7 +27,7 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 
 
-<!--@include: ./parts/get-cotizacion-brl-description-after.md -->
+<!--@include: ./parts/get-dolar-tarjeta-description-after.md -->
 
 </template>
 
@@ -85,23 +85,23 @@ import TryItButton from '@theme/components/TryItButton.vue'
 ::: code-group
 
 ```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/cotizaciones/brl
+curl -X GET https://dolarapi.com/v1/dolares/tarjeta
 ```
 
 ```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/cotizaciones/brl")
+fetch("https://dolarapi.com/v1/dolares/tarjeta")
   .then(response => response.json())
   .then(data => console.log(data));
 ```
 
 ```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/cotizaciones/brl")
+file_get_contents("https://dolarapi.com/v1/dolares/tarjeta")
 ```
 
 ```python-vue [Python]
 import requests
 
-requests.get("https://dolarapi.com/v1/cotizaciones/brl")
+requests.get("https://dolarapi.com/v1/dolares/tarjeta")
   .then(response => console.log(response.data));
 ```
 

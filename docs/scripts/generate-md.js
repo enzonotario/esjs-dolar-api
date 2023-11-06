@@ -34,8 +34,6 @@ function generateMarkdown(operationId) {
   const schemaJson = useOpenapi().propertiesTypesJson(schema, responseType)
 
   const markdown = `---
-prev: false
-next: false
 aside: false
 outline: false
 title: ${operation.summary}

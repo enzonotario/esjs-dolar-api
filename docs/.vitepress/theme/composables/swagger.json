@@ -220,7 +220,7 @@
     },
     "/v1/dolares/contadoconliqui": {
       "get": {
-        "summary": "Dólar Contado con liquidación",
+        "summary": "Dólar CCL",
         "tags": [
           "Cotización actual Dólares"
         ],
@@ -277,7 +277,7 @@
         "description": "",
         "responses": {
           "200": {
-            "description": "Devuelve la cotización del Dólar Solidario (Turista)",
+            "description": "Devuelve el valor del Dólar Solidario",
             "content": {
               "application/json": {
                 "schema": {
@@ -313,6 +313,56 @@
             "lang": "php",
             "label": "PHP",
             "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/solidario\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/dolares/tarjeta": {
+      "get": {
+        "summary": "Dólar Tarjeta",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Devuelve el valor del Dólar Tarjeta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-tarjeta",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/tarjeta"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/tarjeta\")"
           }
         ]
       },

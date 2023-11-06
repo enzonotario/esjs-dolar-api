@@ -1,5 +1,6 @@
 importar dolares desde '@/rutas/v1/dolares.esjs'
 importar _casa desde '@/rutas/v1/dolares/_casa.esjs'
+importar tarjeta desde '@/rutas/v1/dolares/tarjeta.esjs'
 importar estado desde '@/rutas/v1/estado.esjs'
 importar historicosDolaresCasa desde '@/rutas/v1/historicos/dolares/_casa.esjs'
 importar { cache } desde '@/intermediarios/cache.intermediario.esjs'
@@ -17,6 +18,8 @@ v1.obtener('/estado/', estado)
 v1.use('/dolares/*', cache(15))
 v1.obtener('/dolares', dolares)
 v1.obtener('/dolares/', dolares)
+v1.obtener('/dolares/tarjeta', tarjeta)
+v1.obtener('/dolares/tarjeta/', tarjeta)
 v1.obtener('/dolares/:casa', _casa)
 v1.obtener('/dolares/:casa/', _casa)
 

@@ -37,3 +37,10 @@
 .VPSidebarItem .is-active .SidebarItem-text {
   @apply font-semibold;
 }
+
+/**
+  Next links
+ */
+.pager-link.next .title .SidebarItem {
+    @apply justify-end;
+}

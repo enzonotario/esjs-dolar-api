@@ -22,7 +22,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-[60vh] min-h-[500px] p-4\" id=\"plot-cotizacion-actual-dolares\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve todas las cotizaciones",
@@ -74,7 +74,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-oficial\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Oficial",
@@ -124,7 +124,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-blue\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Blue",
@@ -174,7 +174,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-bolsa\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Bolsa",
@@ -220,11 +220,11 @@
     },
     "/v1/dolares/contadoconliqui": {
       "get": {
-        "summary": "Dólar Contado con liquidación",
+        "summary": "Dólar CCL",
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-contadoconliqui\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Contado con liquidación",
@@ -274,10 +274,10 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-solidario\"></div>",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Devuelve la cotización del Dólar Solidario (Turista)",
+            "description": "Devuelve el valor del Dólar Solidario",
             "content": {
               "application/json": {
                 "schema": {
@@ -318,13 +318,63 @@
       },
       "parameters": []
     },
+    "/v1/dolares/tarjeta": {
+      "get": {
+        "summary": "Dólar Tarjeta",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Devuelve el valor del Dólar Tarjeta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-tarjeta",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/tarjeta"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/tarjeta\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
     "/v1/dolares/mayorista": {
       "get": {
         "summary": "Dólar Mayorista",
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-mayorista\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Mayorista",
