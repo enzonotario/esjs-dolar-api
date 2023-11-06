@@ -27,7 +27,9 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-<div class="w-full h-48 p-4" id="plot-cotizacion-actual-mayorista"></div>
+
+
+<!--@include: ./parts/get-dolar-mayorista-description-after.md -->
 
 </template>
 

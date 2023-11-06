@@ -62,7 +62,9 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-${operation.description}
+${operation.description || ''}
+
+<!--@include: ./parts/${operationId}-description-after.md -->
 
 </template>
 

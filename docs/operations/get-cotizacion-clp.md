@@ -29,6 +29,8 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 
 
+<!--@include: ./parts/get-cotizacion-clp-description-after.md -->
+
 </template>
 
 <template #responses="responses">

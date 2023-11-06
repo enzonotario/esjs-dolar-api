@@ -22,7 +22,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-[60vh] min-h-[500px] p-4\" id=\"plot-cotizacion-actual-dolares\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve todas las cotizaciones",
@@ -74,7 +74,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-oficial\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Oficial",
@@ -124,7 +124,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-blue\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Blue",
@@ -174,7 +174,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-bolsa\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Bolsa",
@@ -224,7 +224,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-contadoconliqui\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Contado con liquidación",
@@ -274,7 +274,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-solidario\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Solidario (Turista)",
@@ -324,7 +324,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "<div class=\"w-full h-48 p-4\" id=\"plot-cotizacion-actual-mayorista\"></div>",
+        "description": "",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Mayorista",

@@ -27,7 +27,9 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-undefined
+
+
+<!--@include: ./parts/get-estado-description-after.md -->
 
 </template>
 

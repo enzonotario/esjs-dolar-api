@@ -29,6 +29,8 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 
 
+<!--@include: ./parts/get-cotizacion-eur-description-after.md -->
+
 </template>
 
 <template #responses="responses">
