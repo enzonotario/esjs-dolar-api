@@ -220,7 +220,7 @@
     },
     "/v1/dolares/contadoconliqui": {
       "get": {
-        "summary": "Dólar CCL",
+        "summary": "Dólar Contado con Liquidación",
         "tags": [
           "Cotización actual Dólares"
         ],
@@ -238,6 +238,7 @@
           }
         },
         "operationId": "get-dolar-contadoconliqui",
+        "x-sidebar-title": "Dólar CCL",
         "x-code-samples": [
           {
             "lang": "curl",
@@ -288,6 +289,7 @@
           }
         },
         "operationId": "get-dolar-solidario",
+        "x-sidebar-title": "Dólar Solidario",
         "x-code-samples": [
           {
             "lang": "curl",

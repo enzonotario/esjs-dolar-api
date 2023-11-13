@@ -18,10 +18,13 @@ const gTag = env.VITE_GTAG
 
 function generateSidebarItem(method, path) {
   const { operationId, summary } = openapi.json.paths[path].get
+
+  const sidebarTitle = openapi.json.paths[path].get['x-sidebar-title'] || summary
+
   return {
     text: `<span class="SidebarItem">
     <span class="SidebarItem-badge">${method.toUpperCase()}</span>
-    <span class="SidebarItem-text">${summary}</span>
+    <span class="SidebarItem-text">${sidebarTitle}</span>
     </span>`,
     link: `/operations/${operationId}`,
   }

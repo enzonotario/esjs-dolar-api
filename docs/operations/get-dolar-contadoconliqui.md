@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Dólar CCL
+title: Dólar Contado con Liquidación
 ---
 
 <script setup>
@@ -17,7 +17,7 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 <template #header="header">
 
-# Dólar CCL
+# Dólar Contado con Liquidación
 
 </template>
 

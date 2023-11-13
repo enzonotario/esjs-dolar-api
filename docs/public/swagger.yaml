@@ -180,7 +180,7 @@ paths:
     parameters: []
   /v1/dolares/contadoconliqui:
     get:
-      summary: Dólar CCL
+      summary: Dólar Contado con Liquidación
       tags:
         - Cotización actual Dólares
       description: ''
@@ -192,6 +192,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Cotizacion'
       operationId: get-dolar-contadoconliqui
+      x-sidebar-title: Dólar CCL
       x-code-samples:
         - lang: curl
           label: cURL
@@ -232,6 +233,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Cotizacion'
       operationId: get-dolar-solidario
+      x-sidebar-title: Dólar Solidario
       x-code-samples:
         - lang: curl
           label: cURL
