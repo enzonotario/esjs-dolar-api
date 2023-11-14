@@ -16,3 +16,4 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [DolarLive](https://chrome.google.com/webstore/detail/dolarlive-cotizaci%C3%B3n-de-d/bkmobaaidlobcdldaegkbhhimicbdpcg?hl=es): Extensión de Chromium para consultar el valor diario del dólar y euro oficial y blue.
 - [Conversor ARS - USD](https://play.google.com/store/apps/details?id=com.ezebeck.arsusd&pli=1): App móvil escrita en React Native, disponible en [Google Play](https://play.google.com/store/apps/details?id=com.ezebeck.arsusd&pli=1) y [App Store](https://apps.apple.com/us/app/argentine-peso-to-dollar-rates/id6450311058).
 - [Impue-Steam](https://impue-steam.netlify.app/): Aplicación web para calcular los precios de los juegos de Steam en Argentina.
+- [Dollargs](https://jesparzarom.github.io/dollargs/): Conversor de Dólar a Peso Argentino y viceversa.
