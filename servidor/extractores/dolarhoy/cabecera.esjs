@@ -12,7 +12,7 @@ exportar funcion obtenerValorCompra($, href) {
     retornar nulo
   }
 
-  const valor = valores.find(`.compra .val`).html()
+  const valor = valores.buscar(`.compra .val`).html()
 
   si (!valor) {
     retornar nulo
@@ -28,7 +28,7 @@ exportar funcion obtenerValorVenta($, href) {
     retornar nulo
   }
 
-  const valor = valores.find(`.venta .val`).html()
+  const valor = valores.buscar(`.venta .val`).html()
 
   si (!valor) {
     retornar nulo

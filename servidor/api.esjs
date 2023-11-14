@@ -4,11 +4,11 @@ importar { timing } desde 'hono/timing'
 importar { v1 } desde '@/rutas/v1/v1.esjs'
 importar { cron } desde '@/rutas/cron/cron.esjs'
 importar { registro } desde '@/intermediarios/registro.intermediario.esjs'
-importar { honoHelmet } desde "@/intermediarios/helmet.intermediario.js"
+importar { honoHelmet } desde '@/intermediarios/helmet.intermediario.js'
 
 exportar const app = crear Hono()
 
-app.use('*', honoHelmet());
+app.use('*', honoHelmet())
 app.use('*', cors())
 app.use('*', timing())
 app.use('*', asincrono (c, siguiente) => {

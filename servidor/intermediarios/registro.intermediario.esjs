@@ -2,9 +2,9 @@ const modoDesarrollo = importar.meta.env.MODE == 'development'
 
 const performanceNow = () => {
   intentar {
-    retornar performance.now()
+    retornar performance.ahora()
   } capturar {}
-  retornar Fecha.now()
+  retornar Fecha.ahora()
 }
 
 funcion quitarBarraAlFinal(cadena) {
@@ -16,7 +16,7 @@ exportar const registro = asincrono (c, respuesta) => {
     retornar
   }
 
-  const tiempoEnNs = Mate.redondear(crear Fecha().getTime() * 1000000)
+  const tiempoEnNs = Mate.redondear(crear Fecha().obtenerTiempo() * 1000000)
 
   intentar {
     const fecha = crear Fecha()
