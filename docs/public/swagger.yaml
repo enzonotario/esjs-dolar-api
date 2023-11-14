@@ -52,9 +52,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares")
@@ -92,9 +91,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares/oficial")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares/oficial")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/oficial")
@@ -131,9 +129,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares/blue")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares/blue")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/blue")
@@ -171,9 +168,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares/bolsa")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares/bolsa")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/bolsa")
@@ -212,9 +208,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares/contadoconliqui")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares/contadoconliqui")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/contadoconliqui")
@@ -253,9 +248,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares/solidario")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares/solidario")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/solidario")
@@ -293,9 +287,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares/tarjeta")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares/tarjeta")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/tarjeta")
@@ -333,9 +326,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/dolares/mayorista")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/dolares/mayorista")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/mayorista")
@@ -372,9 +364,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/estado")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/estado")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/estado")
@@ -412,9 +403,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/cotizaciones/eur")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/cotizaciones/eur")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/cotizaciones/eur")
@@ -452,9 +442,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/cotizaciones/brl")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/cotizaciones/brl")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/cotizaciones/brl")
@@ -492,9 +481,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/cotizaciones/clp")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/cotizaciones/clp")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/cotizaciones/clp")
@@ -532,9 +520,8 @@ paths:
           label: Python
           source: |-
             import requests
-
-            requests.get("https://dolarapi.com/v1/cotizaciones/uyu")
-              .then(response => console.log(response.data));
+            response = requests.get("https://dolarapi.com/v1/cotizaciones/uyu")
+            print(response.json())
         - lang: php
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/cotizaciones/uyu")

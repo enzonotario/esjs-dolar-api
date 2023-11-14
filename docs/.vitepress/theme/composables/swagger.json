@@ -58,7 +58,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -108,7 +108,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/oficial\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/oficial\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -157,7 +157,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/blue\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/blue\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -207,7 +207,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/bolsa\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/bolsa\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -258,7 +258,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -309,7 +309,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/solidario\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/solidario\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -359,7 +359,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -409,7 +409,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/dolares/mayorista\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/mayorista\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -458,7 +458,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/estado\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/estado\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -508,7 +508,7 @@
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => console.log(response.data));"
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\nprint(response.json())"
           },
           {
             "lang": "php",
@@ -558,7 +558,7 @@
             {
                 "lang": "python",
                 "label": "Python",
-                "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => console.log(response.data));"
+                "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\nprint(response.json())"
             },
             {
                 "lang": "php",
@@ -608,7 +608,7 @@
             {
                 "lang": "python",
                 "label": "Python",
-                "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => console.log(response.data));"
+                "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\nprint(response.json())"
             },
             {
                 "lang": "php",
@@ -658,7 +658,7 @@
             {
                 "lang": "python",
                 "label": "Python",
-                "source": "import requests\n\nrequests.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => console.log(response.data));"
+                "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\nprint(response.json())"
             },
             {
                 "lang": "php",

@@ -100,9 +100,8 @@ file_get_contents("https://dolarapi.com/v1/dolares/bolsa")
 
 ```python-vue [Python]
 import requests
-
-requests.get("https://dolarapi.com/v1/dolares/bolsa")
-  .then(response => console.log(response.data));
+response = requests.get("https://dolarapi.com/v1/dolares/bolsa")
+print(response.json())
 ```
 
 :::

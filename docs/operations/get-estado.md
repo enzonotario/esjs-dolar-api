@@ -96,9 +96,8 @@ file_get_contents("https://dolarapi.com/v1/estado")
 
 ```python-vue [Python]
 import requests
-
-requests.get("https://dolarapi.com/v1/estado")
-  .then(response => console.log(response.data));
+response = requests.get("https://dolarapi.com/v1/estado")
+print(response.json())
 ```
 
 :::
