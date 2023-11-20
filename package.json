@@ -10,7 +10,7 @@
     "generate": "drizzle-kit generate:sqlite",
     "push": "drizzle-kit push:sqlite",
     "studio": "drizzle-kit studio",
-    "api:build": "vite build --ssr --mode=production ",
+    "api:build": "vite build --ssr --mode=production",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
