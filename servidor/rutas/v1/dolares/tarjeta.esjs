@@ -3,7 +3,7 @@ importar { consultarDolarPorCasa } desde '@/acciones/consulta/consultarDolarPorC
 exportar porDefecto asincrono (c) => {
   const dolarOficial = esperar consultarDolarPorCasa('oficial')
 
-  const impuestos = 0.3 + 0.45 + 0.25
+  const impuestos = 0.3 + 1 + 0.25
 
   const compra = Numero((dolarOficial.compra * (1 + impuestos)).fijarDecimales(2))
   const venta = Numero((dolarOficial.venta * (1 + impuestos)).fijarDecimales(2))
