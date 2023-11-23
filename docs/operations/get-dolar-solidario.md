@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Dólar Solidario (Turista)
+title: Dólar Solidario
 ---
 
 <script setup>
@@ -17,7 +17,7 @@ import TryItButton from '@theme/components/TryItButton.vue'
 
 <template #header="header">
 
-# Dólar Solidario (Turista)
+# Dólar Solidario
 
 </template>
 

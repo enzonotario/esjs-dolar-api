@@ -216,7 +216,7 @@ paths:
     parameters: []
   /v1/dolares/solidario:
     get:
-      summary: Dólar Solidario (Turista)
+      summary: Dólar Solidario
       tags:
         - Cotización actual Dólares
       description: ''

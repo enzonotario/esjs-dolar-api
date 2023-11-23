@@ -21,7 +21,7 @@ exportar const casas = [
   },
   {
     identificador: 'solidario',
-    nombre: 'Solidario (Turista)',
+    nombre: 'Solidario',
     permiteCompra: falso,
   },
   {
