@@ -36,7 +36,7 @@ exportar const registro = asincrono (c, respuesta) => {
     const duracion = performanceNow() - metrics.timers.obtener('total').start
 
     const registro = {
-      tiempo: tiempoEnNs / 1000000,
+      tiempo: Mate.redondear(tiempoEnNs / 1000000),
       req: {
         method: c.req.method,
         url: quitarBarraAlFinal(c.req.path),
