@@ -40,7 +40,7 @@ https://dolarapi.com
 
 Aplicación desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que muestra la cotización del Dólar Blue en Argentina en la torre de Mortal Kombat.
 
-<iframe src="https://kombat.dolarapi.com" class="w-full h-[1000px] rounded" title="Kombat.DolarApi.com"></iframe>
+<iframe src="https://kombat.dolarapi.com" class="w-full h-[630px] rounded" title="Kombat.DolarApi.com" scrolling="no"></iframe>
 
 <div class="flex justify-center items-center space-x-3 mt-5">
 <a href="https://kombat.dolarapi.com" target="_blank" class="px-3 py-2 bg-blue-50 dark:bg-gray-800 rounded hover:bg-gray-300 dark:hover:bg-gray-700 border border-blue-300 dark:border-gray-700" style="text-decoration-line: none;">
