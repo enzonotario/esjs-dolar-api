@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest'
-import { cerrarCotizaciones } from '@/acciones/guardado/cerrarCotizaciones.esjs'
-import { consultarCotizacionPorMoneda } from '@/acciones/consulta/consultarCotizacionPorMoneda.esjs'
-import { monedasSoportadas } from '@/constantes.esjs'
+import { cerrarCotizaciones } from '../../../api/acciones/guardado/cerrarCotizaciones.esjs'
+import { consultarCotizacionPorMoneda } from '../../../api/acciones/consulta/consultarCotizacionPorMoneda.esjs'
+import { monedasSoportadas } from '../../../api/constantes.esjs'
 
 it('cierra cotizaciones', async () => {
   await cerrarCotizaciones()

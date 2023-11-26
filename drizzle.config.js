@@ -4,8 +4,8 @@ config()
 
 /** @type { import("drizzle-kit").Config } */
 export default {
-  schema: './servidor/db/schema.js',
-  out: './servidor/db/drizzle',
+  schema: './api/db/schema.js',
+  out: './api/db/drizzle',
   driver: 'turso',
   dbCredentials: {
     url: process.env.VITE_DATABASE_URL,

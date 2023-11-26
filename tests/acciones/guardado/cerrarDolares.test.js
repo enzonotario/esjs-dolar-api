@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest'
-import { consultarDolarPorCasa } from '@/acciones/consulta/consultarDolarPorCasa.esjs'
-import { cerrarDolares } from '@/acciones/guardado/cerrarDolares.esjs'
-import { casas } from '@/constantes.esjs'
+import { consultarDolarPorCasa } from '../../../api/acciones/consulta/consultarDolarPorCasa.esjs'
+import { cerrarDolares } from '../../../api/acciones/guardado/cerrarDolares.esjs'
+import { casas } from '../../../api/constantes.esjs'
 
 it('cierra dólares', async () => {
   await cerrarDolares()

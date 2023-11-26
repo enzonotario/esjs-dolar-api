@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest'
-import { consultarCotizacionPorMoneda } from '@/acciones/consulta/consultarCotizacionPorMoneda.esjs'
-import { guardarCotizaciones } from '@/acciones/guardado/guardarCotizaciones.esjs'
-import { monedasSoportadas } from '@/constantes.esjs'
+import { consultarCotizacionPorMoneda } from '../../../api/acciones/consulta/consultarCotizacionPorMoneda.esjs'
+import { guardarCotizaciones } from '../../../api/acciones/guardado/guardarCotizaciones.esjs'
+import { monedasSoportadas } from '../../../api/constantes.esjs'
 
 it('consulta cotización por moneda', async () => {
   await guardarCotizaciones()

@@ -1,5 +1,5 @@
 import { assert, it } from 'vitest'
-import { interpretarValorMonetario } from '@/extractores/dolarhoy/interpretarValorMonetario.esjs'
+import { interpretarValorMonetario } from '../../api/extractores/dolarhoy/interpretarValorMonetario.esjs'
 
 it('interpreta valor monetario', () => {
   assert(interpretarValorMonetario('1') === 1)
