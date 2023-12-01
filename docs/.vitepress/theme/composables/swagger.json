@@ -420,6 +420,56 @@
       },
       "parameters": []
     },
+    "/v1/dolares/cripto": {
+      "get": {
+        "summary": "Dólar Cripto",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Cripto",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dolar-cripto",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/dolares/cripto"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/dolares/cripto\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/dolares/cripto\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/cripto\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/cripto\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
     "/v1/estado": {
       "get": {
         "summary": "Estado de la API",

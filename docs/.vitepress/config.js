@@ -88,6 +88,9 @@ export default defineConfig({
 
   outDir: '../dist/static/docs',
   base: '/docs/',
+  srcExclude: [
+    '**/operations/parts/*.md',
+  ],
 
   themeConfig: {
     logo: '/assets/logo.webp',

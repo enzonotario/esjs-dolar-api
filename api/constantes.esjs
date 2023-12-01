@@ -29,6 +29,11 @@ exportar const casas = [
     nombre: 'Mayorista',
     permiteCompra: verdadero,
   },
+  {
+    identificador: 'cripto',
+    nombre: 'Cripto',
+    permiteCompra: verdadero,
+  },
 ]
 
 exportar const monedas = [
@@ -94,6 +99,10 @@ exportar const dolarHoy = {
     mayorista: {
       href: '/cotizaciondolarmayorista',
       extractor: 'pie',
+    },
+    cripto: {
+      href: '/seccion/bitcoins',
+      extractor: 'cabecera',
     },
   },
   cotizaciones: {
