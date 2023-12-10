@@ -1,0 +1,25 @@
+importar { consultarDolarPorCasa } desde '@/acciones/consulta/consultarDolarPorCasa.esjs'
+
+exportar asincrono funcion calcularDolarPorCasa(casa) {
+  const calculosDisponibles = ['tarjeta']
+
+  si (!calculosDisponibles.incluye(casa)) {
+    lanzar crear Error('Casa de cambio no soportada')
+  }
+
+  const dolarOficial = esperar consultarDolarPorCasa('oficial')
+
+  const impuestos = 1 + 0.3 + 0.25
+
+  const compra = Numero((dolarOficial.compra * (1 + impuestos)).fijarDecimales(2))
+  const venta = Numero((dolarOficial.venta * (1 + impuestos)).fijarDecimales(2))
+
+  retornar {
+    moneda: dolarOficial.moneda,
+    casa: 'tarjeta',
+    nombre: 'Tarjeta',
+    compra,
+    venta,
+    fechaActualizacion: dolarOficial.fechaActualizacion,
+  }
+}

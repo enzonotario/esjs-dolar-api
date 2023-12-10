@@ -1,12 +1,13 @@
 importar { obtenerDolarPorCasa } desde '@/datos/datos.esjs'
 importar { casas } desde '@/constantes.esjs'
+importar { calcularDolarPorCasa } desde '@/acciones/consulta/calcularDolarPorCasa.esjs'
 
 exportar asincrono funcion consultarDolares() {
-  const dolares = esperar Promesa.todos(
-    casas.mapear((casa) => obtenerDolarPorCasa(casa.identificador)),
-  )
-
-  retornar dolares.mapear((dolar) => ({
+  const dolares = (
+    esperar Promesa.todos(
+      casas.mapear((casa) => obtenerDolarPorCasa(casa.identificador)),
+    )
+  ).mapear((dolar) => ({
     moneda: dolar.moneda,
     casa: dolar.casa,
     nombre: casas.buscar((casa) => casa.identificador === dolar.casa).nombre,
@@ -14,4 +15,8 @@ exportar asincrono funcion consultarDolares() {
     venta: dolar.venta,
     fechaActualizacion: dolar.fecha,
   }))
+
+  dolares.agregar(esperar calcularDolarPorCasa('tarjeta'))
+
+  retornar dolares
 }
