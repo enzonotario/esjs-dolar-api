@@ -78,7 +78,7 @@ exportar const dolarHoy = {
   dolares: {
     oficial: {
       href: '/cotizaciondolaroficial',
-      extractor: 'pie',
+      extractor: 'cabecera',
     },
     blue: {
       href: '/cotizaciondolarblue',
