@@ -1,6 +1,6 @@
 ---
 title: "API para obtener el precio del Dólar en Argentina"
-description: "API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Solidario, Dólar Mayorista"
+description: "API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Mayorista"
 aside: false
 outline: false
 
@@ -9,10 +9,10 @@ next:
     link: "/operations/get-dolares"
 
 head:
-    - ['meta', {name: 'description', content: 'API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Solidario, Dólar Mayorista'}]
-    - ['meta', {name: 'keywords', content: 'dolar, dolar oficial, dolar blue, dolar bolsa, dolar ccl, dolar solidario, dolar mayorista, dolar api, dolar api argentina'}]
+    - ['meta', {name: 'description', content: 'API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Mayorista'}]
+    - ['meta', {name: 'keywords', content: 'dolar, dolar oficial, dolar blue, dolar bolsa, dolar ccl, dolar mayorista, dolar api, dolar api argentina'}]
     - ['meta', {property: 'og:title', content: 'API para obtener el precio del Dólar en Argentina'}]
-    - ['meta', {property: 'og:description', content: 'API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Solidario, Dólar Mayorista'}]
+    - ['meta', {property: 'og:description', content: 'API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Mayorista'}]
     - ['meta', {property: 'og:url', content: 'https://dolarapi.com'}]
     - ['meta', {property: 'og:site_name', content: 'DolarApi.com'}]
     - ['meta', {property: 'og:type', content: 'website'}]

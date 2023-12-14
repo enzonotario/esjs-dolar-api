@@ -214,46 +214,6 @@ paths:
           label: PHP
           source: file_get_contents("https://dolarapi.com/v1/dolares/contadoconliqui")
     parameters: []
-  /v1/dolares/solidario:
-    get:
-      summary: Dólar Solidario
-      tags:
-        - Cotización actual Dólares
-      description: ''
-      responses:
-        '200':
-          description: Devuelve el valor del Dólar Solidario
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Cotizacion'
-      operationId: get-dolar-solidario
-      x-sidebar-title: Dólar Solidario
-      x-code-samples:
-        - lang: curl
-          label: cURL
-          source: curl -X GET https://dolarapi.com/v1/dolares/solidario
-        - lang: javascript
-          label: JavaScript (fetch)
-          source: |-
-            fetch("https://dolarapi.com/v1/dolares/solidario")
-              .then(response => response.json())
-              .then(data => console.log(data));
-        - lang: javascript
-          label: JavaScript (axios)
-          source: |-
-            axios.get("https://dolarapi.com/v1/dolares/solidario")
-              .then(response => console.log(response.data));
-        - lang: python
-          label: Python
-          source: |-
-            import requests
-            response = requests.get("https://dolarapi.com/v1/dolares/solidario")
-            print(response.json())
-        - lang: php
-          label: PHP
-          source: file_get_contents("https://dolarapi.com/v1/dolares/solidario")
-    parameters: []
   /v1/dolares/tarjeta:
     get:
       summary: Dólar Tarjeta

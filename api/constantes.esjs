@@ -20,11 +20,6 @@ exportar const casas = [
     permiteCompra: verdadero,
   },
   {
-    identificador: 'solidario',
-    nombre: 'Solidario',
-    permiteCompra: falso,
-  },
-  {
     identificador: 'mayorista',
     nombre: 'Mayorista',
     permiteCompra: verdadero,
@@ -90,10 +85,6 @@ exportar const dolarHoy = {
     },
     contadoconliqui: {
       href: '/cotizaciondolarcontadoconliqui',
-      extractor: 'cabecera',
-    },
-    solidario: {
-      href: '/cotizaciondolarturista',
       extractor: 'cabecera',
     },
     mayorista: {

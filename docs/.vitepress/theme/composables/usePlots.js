@@ -41,7 +41,6 @@ export function usePlots() {
       blue: colors.blue[500],
       bolsa: colors.indigo[500],
       contadoconliqui: colors.green[500],
-      solidario: colors.yellow[500],
       mayorista: colors.pink[500],
     }
 
@@ -335,7 +334,7 @@ ${cotizacionActual.compra
   }
 
   function findCasaToPlot(node) {
-    const casas = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'solidario', 'mayorista', 'tarjeta']
+    const casas = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'mayorista', 'tarjeta']
     casas.forEach((casa) => {
       if (node.querySelector(`#plot-cotizacion-actual-${casa}`))
         plotCotizacionActual(casa)
