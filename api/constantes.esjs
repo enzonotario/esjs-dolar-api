@@ -99,7 +99,7 @@ exportar const dolarHoy = {
   cotizaciones: {
     USD: {
       href: '/cotizaciondolaroficial',
-      extractor: 'pie',
+      extractor: 'cabecera',
     },
     EUR: {
       href: '/cotizacion-euro',
