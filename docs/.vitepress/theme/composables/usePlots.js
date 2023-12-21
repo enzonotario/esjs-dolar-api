@@ -336,7 +336,7 @@ ${cotizacionActual.compra
   }
 
   function findCasaToPlot(node) {
-    const casas = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'mayorista', 'tarjeta']
+    const casas = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'mayorista', 'tarjeta', 'cripto']
     casas.forEach((casa) => {
       if (node.querySelector(`#plot-cotizacion-actual-${casa}`))
         plotCotizacionActual(casa)
