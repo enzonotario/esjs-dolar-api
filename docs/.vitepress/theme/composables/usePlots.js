@@ -42,6 +42,8 @@ export function usePlots() {
       bolsa: colors.indigo[500],
       contadoconliqui: colors.green[500],
       mayorista: colors.pink[500],
+      tarjeta: colors.orange[500],
+      cripto: colors.yellow[500],
     }
 
     // Extrae los nombres, valores y colores de las cotizaciones
