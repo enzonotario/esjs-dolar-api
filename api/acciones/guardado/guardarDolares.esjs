@@ -4,7 +4,7 @@ importar { guardarExtracciones } desde '@/datos/datos.esjs'
 exportar asincrono funcion guardarDolares() {
   const dolares = esperar extraerDolares()
 
-  esperar guardarExtracciones(dolares)
+  esperar guardarExtracciones(dolares.filtrar((dolar) => dolar.venta > 0))
 
   retornar dolares
 }

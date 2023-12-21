@@ -29,6 +29,12 @@ exportar const casas = [
     nombre: 'Cripto',
     permiteCompra: verdadero,
   },
+  {
+    identificador: 'tarjeta',
+    nombre: 'Tarjeta',
+    permiteCompra: verdadero,
+    calculado: verdadero,
+  },
 ]
 
 exportar const monedas = [

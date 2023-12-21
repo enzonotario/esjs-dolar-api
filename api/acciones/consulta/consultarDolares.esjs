@@ -5,7 +5,9 @@ importar { calcularDolarPorCasa } desde '@/acciones/consulta/calcularDolarPorCas
 exportar asincrono funcion consultarDolares() {
   const dolares = (
     esperar Promesa.todos(
-      casas.mapear((casa) => obtenerDolarPorCasa(casa.identificador)),
+      casas
+        .filtrar((casa) => !casa.calculado)
+        .mapear((casa) => obtenerDolarPorCasa(casa.identificador)),
     )
   ).mapear((dolar) => ({
     moneda: dolar.moneda,

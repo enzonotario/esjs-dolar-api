@@ -6,7 +6,7 @@ import { casas } from '../../../api/constantes.esjs'
 it('consulta dólar por casa', async () => {
   await guardarDolares()
 
-  for (const casa of casas) {
+  for (const casa of casas.filter(casa => !casa.calculado)) {
     const dolarCasa = await consultarDolarPorCasa(casa.identificador)
 
     expect(dolarCasa).toMatchObject({
