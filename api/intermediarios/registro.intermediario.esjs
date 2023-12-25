@@ -31,9 +31,9 @@ exportar const registro = asincrono (c, respuesta) => {
       responseHeaders[index] = element
     }
 
-    const metrics = c.obtener('metric')
+    const metrics = c.get('metric')
 
-    const duracion = performanceNow() - metrics.timers.obtener('total').start
+    const duracion = performanceNow() - metrics.timers.get('total').start
 
     const registro = {
       tiempo: Mate.redondear(tiempoEnNs / 1000000),
