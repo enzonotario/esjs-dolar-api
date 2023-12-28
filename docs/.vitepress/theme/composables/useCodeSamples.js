@@ -1,8 +1,10 @@
-import { useOpenapi } from './useOpenapi.js'
+import { useOpenapi } from 'vitepress-theme-openapi'
+import spec from '../../../public/openapi.json' assert { type: 'json' }
+
+const openapi = useOpenapi()
+openapi.setSpec(spec)
 
 export function useCodeSamples() {
-  const openapi = useOpenapi()
-
   function getCodeSamples(operationId) {
     const codeSampels = openapi.getOperationCodeSamples(operationId)
 

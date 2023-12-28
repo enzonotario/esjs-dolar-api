@@ -1,17 +1,22 @@
 import fs from 'node:fs'
-import { useOpenapi } from '../.vitepress/theme/composables/useOpenapi.js'
+import { useOpenapi } from 'vitepress-theme-openapi'
 import { useCodeSamples } from '../.vitepress/theme/composables/useCodeSamples.js'
 
+const loadJSON = path => JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
+
+const spec = loadJSON('../public/openapi.json')
+
 const openapi = useOpenapi()
+openapi.setSpec(spec)
+
 export function init() {
-  return Object.keys(openapi.json.paths)
-    .map((path) => {
-      const { operationId } = openapi.json.paths[path].get
+  return Object.keys(openapi.json.paths).map((path) => {
+    const { operationId } = openapi.json.paths[path].get
 
-      const markdown = generateMarkdown(operationId)
+    const markdown = generateMarkdown(operationId)
 
-      fs.writeFileSync(`docs/operations/${operationId}.md`, markdown)
-    })
+    fs.writeFileSync(`docs/operations/${operationId}.md`, markdown)
+  })
 }
 
 function generateMarkdown(operationId) {
@@ -23,13 +28,21 @@ function generateMarkdown(operationId) {
 
   const response200 = operation.responses['200']
 
-  const responseType = response200.content['application/json'].schema.items ? 'array' : 'object'
+  const responseType = response200.content['application/json'].schema.items
+    ? 'array'
+    : 'object'
 
-  const schemaTitle = (responseType === 'array' ? response200.content['application/json'].schema.items : response200.content['application/json'].schema)
-    .$ref.split('/')
+  const schemaTitle = (
+    responseType === 'array'
+      ? response200.content['application/json'].schema.items
+      : response200.content['application/json'].schema
+  ).$ref
+    .split('/')
     .pop()
 
-  const schema = Object.values(schemas).find(schema => schema.title === schemaTitle)
+  const schema = Object.values(schemas).find(
+    (schema) => schema.title === schemaTitle,
+  )
 
   const schemaJson = useOpenapi().propertiesTypesJson(schema, responseType)
 
@@ -41,11 +54,6 @@ title: ${operation.summary}
 
 <script setup>
 import { useRoute } from 'vitepress'
-import Operation from '@theme/components/Operation.vue'
-import OperationEndpoint from '@theme/components/OperationEndpoint.vue'
-import Responses from '@theme/components/Responses.vue'
-import ResponseBody from '@theme/components/ResponseBody.vue'
-import TryItButton from '@theme/components/TryItButton.vue'
 </script>
 
 <Operation method="GET" id="${operationId}">
@@ -104,10 +112,6 @@ ${schemaJson}
 
 </TryItButton>
 
-</template>
-
-<template #samples="samples">
-
 ## {{ $t('Samples') }}
 
 ::: code-group
@@ -137,4 +141,8 @@ ${codeSamples.python.source}
   return markdown
 }
 
-init()
+try {
+  init()
+} catch (error) {
+  console.error(error)
+}

@@ -2,3 +2,4 @@ Es el valor de la cotización del dólar estadounidense en el mercado oficial, m
 
 <div class="w-full h-48 p-4" id="plot-cotizacion-actual-tarjeta"></div>
 
+<Plot />

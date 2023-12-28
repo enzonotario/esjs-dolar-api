@@ -2,3 +2,4 @@ Cotización del dólar estadounidense en el mercado paralelo o informal. Es deci
 
 <div class="w-full h-48 p-4" id="plot-cotizacion-actual-blue"></div>
 
+<Plot />

@@ -6,11 +6,6 @@ title: Dólar Cripto
 
 <script setup>
 import { useRoute } from 'vitepress'
-import Operation from '@theme/components/Operation.vue'
-import OperationEndpoint from '@theme/components/OperationEndpoint.vue'
-import Responses from '@theme/components/Responses.vue'
-import ResponseBody from '@theme/components/ResponseBody.vue'
-import TryItButton from '@theme/components/TryItButton.vue'
 </script>
 
 <Operation method="GET" id="get-dolar-cripto">
@@ -75,10 +70,6 @@ import TryItButton from '@theme/components/TryItButton.vue'
 </template>
 
 </TryItButton>
-
-</template>
-
-<template #samples="samples">
 
 ## {{ $t('Samples') }}
 

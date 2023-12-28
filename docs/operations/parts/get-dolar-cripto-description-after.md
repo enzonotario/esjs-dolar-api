@@ -2,3 +2,4 @@ Cotización del dólar estadounidense en el mercado de criptomonedas. Es decir, 
 
 <div class="w-full h-48 p-4" id="plot-cotizacion-actual-cripto"></div>
 
+<Plot />

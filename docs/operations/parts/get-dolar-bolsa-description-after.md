@@ -2,3 +2,4 @@ Cotización del dólar estadounidense en el mercado bursátil. Es decir, el prec
 
 <div class="w-full h-48 p-4" id="plot-cotizacion-actual-bolsa"></div>
 
+<Plot />

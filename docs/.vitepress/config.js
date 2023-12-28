@@ -4,50 +4,18 @@ import { resolve } from 'node:path'
 import { defineConfig, loadEnv } from 'vitepress'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { SitemapStream } from 'sitemap'
-import { useOpenapi } from './theme/composables/useOpenapi.js'
+import { useOpenapi, useSidebar } from 'vitepress-theme-openapi'
+import spec from './openapi.json' assert { type: 'json' }
 
 const links = []
-
-const openapi = useOpenapi()
-
-const METHOD_GET = 'get'
 
 const env = loadEnv('', process.cwd())
 
 const gTag = env.VITE_GTAG
 
-function generateSidebarItem(method, path) {
-  const { operationId, summary } = openapi.json.paths[path].get
-
-  const sidebarTitle = openapi.json.paths[path].get['x-sidebar-title'] || summary
-
-  return {
-    text: `<span class="SidebarItem">
-    <span class="SidebarItem-badge">${method.toUpperCase()}</span>
-    <span class="SidebarItem-text">${sidebarTitle}</span>
-    </span>`,
-    link: `/operations/${operationId}`,
-  }
-}
-
-function generateSidebarGroup(tag, text) {
-  if (!text)
-    text = tag
-
-  const sidebarGroupElements = Object.keys(openapi.json.paths)
-    .filter((path) => {
-      const { tags } = openapi.json.paths[path][METHOD_GET]
-      return tags?.includes(tag)
-    })
-    .map((path) => {
-      return generateSidebarItem(METHOD_GET, path)
-    })
-
-  return {
-    text,
-    items: sidebarGroupElements,
-  }
-}
+const openapi = useOpenapi()
+openapi.setSpec(spec)
+const sidebar = useSidebar()
 
 function generateSidebar() {
   return [
@@ -73,11 +41,14 @@ function generateSidebar() {
     {
       text: 'Cotización actual',
       items: [
-        generateSidebarGroup('Cotización actual Dólares', 'Dólares'),
-        generateSidebarGroup('Cotización actual Monedas', 'Otras Monedas'),
+        sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares'),
+        sidebar.generateSidebarGroup(
+          'Cotización actual Monedas',
+          'Otras Monedas',
+        ),
       ],
     },
-    generateSidebarGroup('API'),
+    sidebar.generateSidebarGroup('API'),
   ]
 }
 
@@ -88,9 +59,7 @@ export default defineConfig({
 
   outDir: '../dist/static/docs',
   base: '/docs/',
-  srcExclude: [
-    '**/operations/parts/*.md',
-  ],
+  srcExclude: ['**/operations/parts/*.md'],
 
   themeConfig: {
     logo: '/assets/logo.webp',
@@ -162,11 +131,5 @@ export default defineConfig({
         ssr: true,
       }),
     ],
-
-    resolve: {
-      alias: {
-        '@openapi': fileURLToPath(new URL('../public/openapi.json', import.meta.url)),
-      },
-    },
   },
 })

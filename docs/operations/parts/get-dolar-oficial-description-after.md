@@ -2,3 +2,4 @@ Cotización del dólar estadounidense en el mercado oficial. Es decir, el precio
 
 <div class="w-full h-48 p-4" id="plot-cotizacion-actual-oficial"></div>
 
+<Plot />

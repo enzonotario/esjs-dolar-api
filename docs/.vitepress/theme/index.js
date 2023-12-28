@@ -1,29 +1,25 @@
 // https://vitepress.dev/guide/custom-theme
 import DefaultTheme from 'vitepress/theme'
-import 'tailwindcss/tailwind.css'
 import './style.css'
-import * as VueI18n from 'vue-i18n'
 import { h } from 'vue'
-import en from './locales/en.json'
-import es from './locales/es.json'
 import GitHubStars from './components/GitHubStars.vue'
+import Plot from './components/Plot.vue'
+import { theme, useOpenapi } from 'vitepress-theme-openapi'
+import spec from '../../public/openapi.json' assert { type: 'json' }
+import 'vitepress-theme-openapi/dist/style.css'
 
 export default {
-  extends: DefaultTheme,
+  ...DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(GitHubStars),
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    const i18n = VueI18n.createI18n({
-      locale: 'es',
-      fallbackLocale: 'en',
-      messages: {
-        en,
-        es,
-      },
-    })
-    app.use(i18n)
+  enhanceApp({ app }) {
+    const openapi = useOpenapi()
+    openapi.setSpec(spec)
+    theme.enhanceApp({ app })
+
+    app.component('Plot', Plot)
   },
 }
