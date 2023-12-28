@@ -2,7 +2,8 @@ import fs from 'node:fs'
 import { useOpenapi } from 'vitepress-theme-openapi'
 import { useCodeSamples } from '../.vitepress/theme/composables/useCodeSamples.js'
 
-const loadJSON = path => JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
+const loadJSON = (path) =>
+  JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
 
 const spec = loadJSON('../public/openapi.json')
 

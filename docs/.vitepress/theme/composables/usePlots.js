@@ -6,32 +6,34 @@ export function usePlots() {
   async function getEcharts() {
     try {
       return echarts
-    }
-    catch (error) {
-      await import('https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js')
+    } catch (error) {
+      await import(
+        'https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js'
+      )
       return echarts
     }
   }
 
   async function plotDolares() {
-    const plotDolaresElement = document.querySelector('#plot-cotizacion-actual-dolares')
+    const plotDolaresElement = document.querySelector(
+      '#plot-cotizacion-actual-dolares',
+    )
 
-    if (!plotDolaresElement)
-      return
+    if (!plotDolaresElement) return
 
     const chart = (await getEcharts()).init(plotDolaresElement)
 
-    const cotizaciones = await fetch('https://dolarapi.com/v1/dolares').then(response => response.json())
+    const cotizaciones = await fetch('https://dolarapi.com/v1/dolares').then(
+      (response) => response.json(),
+    )
 
     // Ordena las cotizaciones por valor de venta de menor a mayor
     const sortedCotizaciones = cotizaciones
       .sort((a, b) => a.venta - b.venta)
       .sort((a, b) => {
-        if (a.casa === 'oficial')
-          return -1
+        if (a.casa === 'oficial') return -1
 
-        if (b.casa === 'oficial')
-          return 1
+        if (b.casa === 'oficial') return 1
 
         return 0
       })
@@ -47,9 +49,11 @@ export function usePlots() {
     }
 
     // Extrae los nombres, valores y colores de las cotizaciones
-    const nombres = sortedCotizaciones.map(cotizacion => cotizacion.nombre)
-    const valores = sortedCotizaciones.map(cotizacion => cotizacion.venta)
-    const colores = sortedCotizaciones.map(cotizacion => colorsMap[cotizacion.casa])
+    const nombres = sortedCotizaciones.map((cotizacion) => cotizacion.nombre)
+    const valores = sortedCotizaciones.map((cotizacion) => cotizacion.venta)
+    const colores = sortedCotizaciones.map(
+      (cotizacion) => colorsMap[cotizacion.casa],
+    )
 
     // Extrae el valor del tipo de cambio oficial
     const tipoCambioOficial = valores[0]
@@ -106,11 +110,9 @@ export function usePlots() {
             },
           },
           data: valores.map((valor, index) => {
-            if (index === 0)
-              return 0
+            if (index === 0) return 0
 
-            if (valor > tipoCambioOficial)
-              return tipoCambioOficial
+            if (valor > tipoCambioOficial) return tipoCambioOficial
 
             return tipoCambioOficial - Math.abs(valor - tipoCambioOficial)
           }),
@@ -153,10 +155,11 @@ export function usePlots() {
               if (params.name === 'Oficial')
                 return `$${params.value.toFixed(2)}`
 
-              if (params.value === 0)
-                return ''
+              if (params.value === 0) return ''
 
-              return params.value > 0 ? `+${params.value.toFixed(2)}` : params.value.toFixed(2)
+              return params.value > 0
+                ? `+${params.value.toFixed(2)}`
+                : params.value.toFixed(2)
             },
             color: isDark ? colors.gray[100] : colors.gray[800],
           },
@@ -169,11 +172,9 @@ export function usePlots() {
           type: 'bar',
           stack: 'Total',
           data: valores.map((valor, index) => {
-            if (index === 0)
-              return 0
+            if (index === 0) return 0
 
-            if (valor > tipoCambioOficial)
-              return 0
+            if (valor > tipoCambioOficial) return 0
 
             return {
               value: Math.abs(valor - tipoCambioOficial),
@@ -186,10 +187,11 @@ export function usePlots() {
             show: true,
             position: 'bottom',
             formatter(params) {
-              if (params.value === 0)
-                return ''
+              if (params.value === 0) return ''
 
-              return params.value > 0 ? `-${params.value.toFixed(2)}` : params.value.toFixed(2)
+              return params.value > 0
+                ? `-${params.value.toFixed(2)}`
+                : params.value.toFixed(2)
             },
             color: isDark ? colors.gray[100] : colors.gray[800],
           },
@@ -208,20 +210,26 @@ export function usePlots() {
 
           if (params[0].name === 'Oficial') {
             output += `<br/>Base: $${params[0].value.toFixed(2)}`
-          }
-          else if (params[0].value > 0) {
+          } else if (params[0].value > 0) {
             const cotizacion = (params[0].value + tipoCambioOficial).toFixed(2)
-            const brecha = ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100
+            const brecha =
+              ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100
             const brechaAbsoluta = cotizacion - tipoCambioOficial
-            output += `<br/>Brecha: ${brecha.toFixed(2)}% ($${brechaAbsoluta.toFixed(2)})
-<br/>Precio: $${(cotizacion)}`
-          }
-          else if (params[1].value > 0) {
-            const cotizacion = (Math.abs(params[1].value - tipoCambioOficial)).toFixed(2)
-            const brecha = ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100
+            output += `<br/>Brecha: ${brecha.toFixed(
+              2,
+            )}% ($${brechaAbsoluta.toFixed(2)})
+<br/>Precio: $${cotizacion}`
+          } else if (params[1].value > 0) {
+            const cotizacion = Math.abs(
+              params[1].value - tipoCambioOficial,
+            ).toFixed(2)
+            const brecha =
+              ((cotizacion - tipoCambioOficial) / tipoCambioOficial) * 100
             const brechaAbsoluta = cotizacion - tipoCambioOficial
-            output += `<br/>Brecha: ${brecha.toFixed(2)}% ($${brechaAbsoluta.toFixed(2)})
-<br/>Precio: $${(cotizacion)}`
+            output += `<br/>Brecha: ${brecha.toFixed(
+              2,
+            )}% ($${brechaAbsoluta.toFixed(2)})
+<br/>Precio: $${cotizacion}`
           }
 
           return output
@@ -238,16 +246,21 @@ export function usePlots() {
   }
 
   async function plotCotizacionActual(casa) {
-    const plotCotizacionActualElement = document.querySelector(`#plot-cotizacion-actual-${casa}`)
+    const plotCotizacionActualElement = document.querySelector(
+      `#plot-cotizacion-actual-${casa}`,
+    )
 
-    if (!plotCotizacionActualElement)
-      return
+    if (!plotCotizacionActualElement) return
 
     const chart = (await getEcharts()).init(plotCotizacionActualElement)
 
-    const cotizacionActual = (await fetch(`https://dolarapi.com/v1/dolares/${casa}`).then(response => response.json()))
+    const cotizacionActual = await fetch(
+      `https://dolarapi.com/v1/dolares/${casa}`,
+    ).then((response) => response.json())
 
-    const fechaFormateada = new Date(cotizacionActual.fechaActualizacion).toLocaleString('es-AR', {
+    const fechaFormateada = new Date(
+      cotizacionActual.fechaActualizacion,
+    ).toLocaleString('es-AR', {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
@@ -264,14 +277,16 @@ export function usePlots() {
               value: [0, 0],
               label: {
                 formatter: [
-                                    `{title|Dólar ${cotizacionActual.nombre}}{titleBg|}
+                  `{title|Dólar ${cotizacionActual.nombre}}{titleBg|}
 {hr|}
 {contentLine|Fecha de actualización: ${fechaFormateada}}
 {hr|}
-${cotizacionActual.compra
-? `{contentLine|Compra: $${cotizacionActual.compra}}
+${
+  cotizacionActual.compra
+    ? `{contentLine|Compra: $${cotizacionActual.compra}}
 {hr|}`
-: ''}
+    : ''
+}
 {contentLine|Venta: $${cotizacionActual.venta}}`,
                 ].join('\n'),
                 rich: {
@@ -336,22 +351,28 @@ ${cotizacionActual.compra
   }
 
   function findCasaToPlot(node) {
-    const casas = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'mayorista', 'tarjeta', 'cripto']
+    const casas = [
+      'oficial',
+      'blue',
+      'bolsa',
+      'contadoconliqui',
+      'mayorista',
+      'tarjeta',
+      'cripto',
+    ]
     casas.forEach((casa) => {
       if (node.querySelector(`#plot-cotizacion-actual-${casa}`))
         plotCotizacionActual(casa)
     })
 
-    if (node.querySelector('#plot-cotizacion-actual-dolares'))
-      plotDolares()
+    if (node.querySelector('#plot-cotizacion-actual-dolares')) plotDolares()
   }
 
   function resizeCharts(node) {
     node.querySelectorAll('div[id^="plot-"]').forEach(async (element) => {
       const id = element.getAttribute('_echarts_instance_')
       const chart = (await getEcharts()).getInstanceById(id)
-      if (!chart)
-        return
+      if (!chart) return
 
       chart.resize()
     })

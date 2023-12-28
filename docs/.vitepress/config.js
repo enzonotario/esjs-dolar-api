@@ -1,4 +1,3 @@
-import { URL, fileURLToPath } from 'node:url'
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
 import { defineConfig, loadEnv } from 'vitepress'
@@ -85,17 +84,17 @@ export default defineConfig({
     ],
 
     // Google Fonts
-    [
-      'link',
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    ],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     [
       'link',
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
     ],
     [
       'link',
-      { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap', rel: 'stylesheet' },
+      {
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap',
+        rel: 'stylesheet',
+      },
     ],
   ],
 
@@ -106,10 +105,13 @@ export default defineConfig({
   transformHtml: (_, id, { pageData }) => {
     if (!/[\\/]404\.html$/.test(id)) {
       links.push({
-        url: /* conatins index.md? */
-            pageData.relativePath.endsWith('index.md')
-              ? '/'
-              : `${pageData.relativePath.replace(/((^|\/)index)?\.md$/, '$2')}.html`,
+        /* conatins index.md? */
+        url: pageData.relativePath.endsWith('index.md')
+          ? '/'
+          : `${pageData.relativePath.replace(
+              /((^|\/)index)?\.md$/,
+              '$2',
+            )}.html`,
         lastmod: pageData.lastUpdated,
       })
     }
@@ -120,9 +122,9 @@ export default defineConfig({
     })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
-    links.forEach(link => sitemap.write(link))
+    links.forEach((link) => sitemap.write(link))
     sitemap.end()
-    await new Promise(resolve => writeStream.on('finish', resolve))
+    await new Promise((resolve) => writeStream.on('finish', resolve))
   },
 
   vite: {

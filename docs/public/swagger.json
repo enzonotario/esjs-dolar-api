@@ -19,9 +19,7 @@
     "/v1/dolares": {
       "get": {
         "summary": "Dólares",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -71,9 +69,7 @@
     "/v1/dolares/oficial": {
       "get": {
         "summary": "Dólar Oficial",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -121,9 +117,7 @@
     "/v1/dolares/blue": {
       "get": {
         "summary": "Dólar Blue",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -171,9 +165,7 @@
     "/v1/dolares/bolsa": {
       "get": {
         "summary": "Dólar Bolsa",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -221,9 +213,7 @@
     "/v1/dolares/contadoconliqui": {
       "get": {
         "summary": "Dólar Contado con Liquidación",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -272,9 +262,7 @@
     "/v1/dolares/tarjeta": {
       "get": {
         "summary": "Dólar Tarjeta",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -322,9 +310,7 @@
     "/v1/dolares/mayorista": {
       "get": {
         "summary": "Dólar Mayorista",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -372,9 +358,7 @@
     "/v1/dolares/cripto": {
       "get": {
         "summary": "Dólar Cripto",
-        "tags": [
-          "Cotización actual Dólares"
-        ],
+        "tags": ["Cotización actual Dólares"],
         "description": "",
         "responses": {
           "200": {
@@ -422,9 +406,7 @@
     "/v1/estado": {
       "get": {
         "summary": "Estado de la API",
-        "tags": [
-          "API"
-        ],
+        "tags": ["API"],
         "responses": {
           "200": {
             "description": "Devuelve el estado de la API",
@@ -470,9 +452,7 @@
     "/v1/cotizaciones/eur": {
       "get": {
         "summary": "Euro",
-        "tags": [
-          "Cotización actual Monedas"
-        ],
+        "tags": ["Cotización actual Monedas"],
         "description": "",
         "responses": {
           "200": {
@@ -520,9 +500,7 @@
     "/v1/cotizaciones/brl": {
       "get": {
         "summary": "Real Brasileño",
-        "tags": [
-          "Cotización actual Monedas"
-        ],
+        "tags": ["Cotización actual Monedas"],
         "description": "",
         "responses": {
           "200": {
@@ -570,9 +548,7 @@
     "/v1/cotizaciones/clp": {
       "get": {
         "summary": "Peso Chileno",
-        "tags": [
-          "Cotización actual Monedas"
-        ],
+        "tags": ["Cotización actual Monedas"],
         "description": "",
         "responses": {
           "200": {
@@ -620,9 +596,7 @@
     "/v1/cotizaciones/uyu": {
       "get": {
         "summary": "Peso Uruguayo",
-        "tags": [
-          "Cotización actual Monedas"
-        ],
+        "tags": ["Cotización actual Monedas"],
         "description": "",
         "responses": {
           "200": {
@@ -703,13 +677,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "venta",
-          "casa",
-          "nombre",
-          "moneda",
-          "fechaActualizacion"
-        ]
+        "required": ["venta", "casa", "nombre", "moneda", "fechaActualizacion"]
       },
       "Estado": {
         "title": "Estado",

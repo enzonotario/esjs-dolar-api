@@ -6,14 +6,22 @@ openapi.setSpec(spec)
 
 export function useCodeSamples() {
   function getCodeSamples(operationId) {
-    const codeSampels = openapi.getOperationCodeSamples(operationId)
+    const codeSamples = openapi.getOperationCodeSamples(operationId)
 
     return {
-      curl: codeSampels.find(codeSample => codeSample.lang === 'curl'),
-      javascriptFetch: codeSampels.find(codeSample => codeSample.lang === 'javascript' && codeSample.label === 'JavaScript (fetch)'),
-      javascriptAxios: codeSampels.find(codeSample => codeSample.lang === 'javascript' && codeSample.label === 'JavaScript (axios)'),
-      python: codeSampels.find(codeSample => codeSample.lang === 'python'),
-      php: codeSampels.find(codeSample => codeSample.lang === 'php'),
+      curl: codeSamples.find((codeSample) => codeSample.lang === 'curl'),
+      javascriptFetch: codeSamples.find(
+        (codeSample) =>
+          codeSample.lang === 'javascript' &&
+          codeSample.label === 'JavaScript (fetch)',
+      ),
+      javascriptAxios: codeSamples.find(
+        (codeSample) =>
+          codeSample.lang === 'javascript' &&
+          codeSample.label === 'JavaScript (axios)',
+      ),
+      python: codeSamples.find((codeSample) => codeSample.lang === 'python'),
+      php: codeSamples.find((codeSample) => codeSample.lang === 'php'),
     }
   }
 
