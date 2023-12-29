@@ -49,9 +49,43 @@ API desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que brinda inform
 
 ¿Encontraste útil esta API? **¡Dejá tu ⭐ en [GitHub](https://github.com/enzonotario/esjs-dolar-api)!**
 
+
+<div class="grid grid-cols-1 sm:grid-cols-2">
+
+<div>
+
 ## Demo
 
-[App.DolarApi.com](https://app.dolarapi.com)
+<div class="flex flex-row">
+
+<a href="https://app.dolarapi.com" target="_blank" class="button">
+App.DolarApi.com
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+## Bot de Discord
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+<a href="https://discord.com/oauth2/authorize?client_id=1188981656359550976&scope=applications.commands" target="_blank" class="button">
+Agregar a Discord
+</a>
+
+<a href="https://github.com/enzonotario/esjs-dolar-discord-bot" target="_blank" class="button">
+Repositorio en GitHub
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 
 ## Base URL
 
@@ -66,11 +100,11 @@ Aplicación desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que muest
 <iframe src="https://kombat.dolarapi.com" class="w-full h-[630px] rounded" title="Kombat.DolarApi.com" scrolling="no"></iframe>
 
 <div class="flex justify-center items-center space-x-3 mt-5">
-<a href="https://kombat.dolarapi.com" target="_blank" class="px-3 py-2 bg-blue-50 dark:bg-gray-800 rounded hover:bg-gray-300 dark:hover:bg-gray-700 border border-blue-300 dark:border-gray-700" style="text-decoration-line: none;">
+<a href="https://kombat.dolarapi.com" target="_blank" class="button">
 Kombat.DolarApi.com
 </a>
 
-<a href="https://github.com/enzonotario/esjs-dolar-kombat" target="_blank" class="px-3 py-2 bg-blue-50 dark:bg-gray-800 rounded hover:bg-gray-300 dark:hover:bg-gray-700 border border-blue-300 dark:border-gray-700" style="text-decoration-line: none;">
+<a href="https://github.com/enzonotario/esjs-dolar-kombat" target="_blank" class="button">
 GitHub
 </a>
 </div>
