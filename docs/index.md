@@ -50,16 +50,21 @@ API desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que brinda inform
 ¿Encontraste útil esta API? **¡Dejá tu ⭐ en [GitHub](https://github.com/enzonotario/esjs-dolar-api)!**
 
 
-<div class="grid grid-cols-1 sm:grid-cols-2">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
 <div>
 
 ## Demo
 
-<div class="flex flex-row">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
 <a href="https://app.dolarapi.com" target="_blank" class="button">
-App.DolarApi.com
+Visitar
+</a>
+
+<a href="https://github.com/enzonotario/esjs-dolar-app" target="_blank" class="button flex justify-center items-center gap-1">
+<span class="i-mdi-github w-5 h-5" />
+Ver en GitHub
 </a>
 
 </div>
@@ -76,8 +81,9 @@ App.DolarApi.com
 Agregar a Discord
 </a>
 
-<a href="https://github.com/enzonotario/esjs-dolar-discord-bot" target="_blank" class="button">
-Repositorio en GitHub
+<a href="https://github.com/enzonotario/esjs-dolar-discord-bot" target="_blank" class="button flex justify-center items-center gap-1">
+<span class="i-mdi-github w-5 h-5" />
+Ver en GitHub
 </a>
 
 </div>
@@ -104,7 +110,8 @@ Aplicación desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que muest
 Kombat.DolarApi.com
 </a>
 
-<a href="https://github.com/enzonotario/esjs-dolar-kombat" target="_blank" class="button">
-GitHub
+<a href="https://github.com/enzonotario/esjs-dolar-kombat" target="_blank" class="button flex justify-center items-center gap-1">
+<span class="i-mdi-github w-5 h-5" />
+Ver en GitHub
 </a>
 </div>
