@@ -1,7 +1,7 @@
 exportar const noQueryParams = () => {
   retornar asincrono (c, siguiente) => {
     si (c.req.url.incluye('?')) {
-      retornar c.redirect(c.req.url.dividir('?')[0])
+      retornar c.notFound()
     }
 
     esperar siguiente()
