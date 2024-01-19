@@ -1,0 +1,15 @@
+importar { extraerCotizaciones } desde '@/acciones/extraccion/extraerCotizaciones.esjs'
+importar { escribirRuta } desde '@cron/datos/rutas.esjs'
+
+exportar asincrono funcion cronCotizaciones() {
+  consola.escribir('Guardando cotizaciones...')
+
+  const cotizaciones = esperar extraerCotizaciones()
+
+  escribirRuta(`/cotizaciones`, cotizaciones)
+
+  cotizaciones.mapear((cotizacion) => {
+    const moneda = cotizacion.moneda.aMinusculas()
+    escribirRuta(`/cotizaciones/${moneda}`, cotizacion)
+  })
+}

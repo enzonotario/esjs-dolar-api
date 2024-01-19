@@ -1,9 +1,0 @@
-importar { guardarDolares } desde '@/acciones/guardado/guardarDolares.esjs'
-
-exportar porDefecto asincrono (c) => {
-  esperar guardarDolares()
-
-  retornar c.json({
-    estado: 'Correcto',
-  })
-}

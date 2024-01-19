@@ -1,23 +1,6 @@
 {
   "outputDirectory": "dist/static/",
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/servidor/**"
-    }
-  },
   "rewrites": [
-    {
-      "source": "/v1/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/api/v1/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/cron/(.*)",
-      "destination": "/api/index.js"
-    },
     {
       "source": "/",
       "destination": "/docs/"

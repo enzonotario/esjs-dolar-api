@@ -1,5 +1,5 @@
 importar cheerio desde 'cheerio'
-importar { dolarHoy, monedasSoportadas } desde '@/constantes.esjs'
+importar { dolarHoy, monedasSoportadas, monedas } desde '@/constantes.esjs'
 
 exportar asincrono funcion extraerCotizaciones() {
   const pagina = esperar consultarPagina()
@@ -40,6 +40,7 @@ asincrono funcion extraerCotizacion($, moneda) {
   retornar {
     moneda,
     casa: 'oficial',
+    nombre: monedas.buscar(({ codigo }) => codigo === moneda).nombre,
     compra,
     venta,
     fechaActualizacion,

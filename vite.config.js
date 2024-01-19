@@ -1,16 +1,11 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import EsJS from '@es-js/vite-plugin-esjs'
-import devServer from '@hono/vite-dev-server'
 
 export default defineConfig({
   plugins: [
     // https://github.com/es-js/esjs
     EsJS(),
-
-    devServer({
-      entry: './api/api.esjs',
-    }),
   ],
 
   test: {},
@@ -18,6 +13,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./api', import.meta.url)),
+      '@cron': fileURLToPath(new URL('./cron', import.meta.url)),
     },
     extensions: [
       '.js',
@@ -33,12 +29,12 @@ export default defineConfig({
   build: {
     outDir: './dist',
     rollupOptions: {
-      input: './api/api.esjs',
+      input: './cron/index.js',
       output: {
         format: 'esm',
-        entryFileNames: 'servidor/[name].js',
-        chunkFileNames: 'servidor/[name].js',
-        assetFileNames: 'servidor/[name].[ext]',
+        entryFileNames: 'cron/[name].js',
+        chunkFileNames: 'cron/[name].js',
+        assetFileNames: 'cron/[name].[ext]',
         exports: 'auto',
       },
     },

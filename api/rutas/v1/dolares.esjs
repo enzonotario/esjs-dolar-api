@@ -1,5 +1,0 @@
-importar { consultarDolares } desde '@/acciones/consulta/consultarDolares.esjs'
-
-exportar porDefecto asincrono (c) => {
-  retornar c.json(esperar consultarDolares())
-}
