@@ -3,6 +3,7 @@ const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
 module.exports = {
   content: [
     './docs/.vitepress/theme/**/*.{js,vue,ts,json,md}',
+    './docs/.vitepress/config.js',
     './docs/**/*.md',
   ],
   darkMode: 'class',

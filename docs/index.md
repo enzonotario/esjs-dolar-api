@@ -105,9 +105,10 @@ Aplicación desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que muest
 
 <iframe src="https://kombat.dolarapi.com" class="w-full h-[630px] rounded" title="Kombat.DolarApi.com" scrolling="no"></iframe>
 
-<div class="flex justify-center items-center space-x-3 mt-5">
+<div class="mt-5 w-full max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
+
 <a href="https://kombat.dolarapi.com" target="_blank" class="button">
-Kombat.DolarApi.com
+Visitar
 </a>
 
 <a href="https://github.com/enzonotario/esjs-dolar-kombat" target="_blank" class="button flex justify-center items-center gap-1">

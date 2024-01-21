@@ -42,6 +42,22 @@ function generateSidebar() {
         ),
       ],
     },
+    {
+      text: 'Cotización histórica',
+      items: [
+       {
+         items: [
+           {
+             text: `<span class="SidebarItem">
+              <svg class="i-mdi-chart-line w-5 h-5" />
+              <span class="SidebarItem-text">ArgentinaDatos</span> 
+              </span>`,
+             link: 'https://argentinadatos.com/',
+           }
+         ]
+       }
+      ],
+    },
     sidebar.generateSidebarGroup('API'),
   ]
 }

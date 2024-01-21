@@ -39,7 +39,7 @@ devDependencies:
     version: 10.5.0(vue@3.3.7)
   autoprefixer:
     specifier: latest
-    version: 10.4.16(postcss@8.4.33)
+    version: 10.4.17(postcss@8.4.33)
   cheerio:
     specifier: 1.0.0-rc.12
     version: 1.0.0-rc.12
@@ -101,8 +101,8 @@ devDependencies:
     specifier: ^1.0.0-rc.31
     version: 1.0.0-rc.32(@algolia/client-search@4.20.0)(@types/node@14.18.33)(postcss@8.4.33)(search-insights@2.9.0)(typescript@5.2.2)
   vitepress-theme-openapi:
-    specifier: 0.0.2-alpha.11
-    version: 0.0.2-alpha.11(@iconify/vue@4.1.1)(vue@3.3.7)
+    specifier: 0.0.2-alpha.16
+    version: 0.0.2-alpha.16(vue@3.3.7)
   vitest:
     specifier: ^0.34.6
     version: 0.34.6
@@ -1063,15 +1063,6 @@ packages:
       local-pkg: 0.4.3
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@iconify/vue@4.1.1(vue@3.3.7):
-    resolution: {integrity: sha512-RL85Bm/DAe8y6rT6pux7D2FJSiUEM/TPfyK7GrbAOfTSwrhvwJW+S5yijdGcmtXouA8MtuH9C7l4hiSE4mLMjg==}
-    peerDependencies:
-      vue: '>=3'
-    dependencies:
-      '@iconify/types': 2.0.0
-      vue: 3.3.7(typescript@5.2.2)
     dev: true
 
   /@intlify/bundle-utils@7.4.0(vue-i18n@9.6.1):
@@ -2597,15 +2588,15 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /autoprefixer@10.4.16(postcss@8.4.33):
-    resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
+  /autoprefixer@10.4.17(postcss@8.4.33):
+    resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      browserslist: 4.22.1
-      caniuse-lite: 1.0.30001557
+      browserslist: 4.22.2
+      caniuse-lite: 1.0.30001579
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2657,15 +2648,15 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /browserslist@4.22.1:
-    resolution: {integrity: sha512-FEVc202+2iuClEhZhrWy6ZiAcRLvNMyYcxZ8raemul1DYVOVdFsbqckWLdsixQZCpJlwe77Z3UTalE7jsjnKfQ==}
+  /browserslist@4.22.2:
+    resolution: {integrity: sha512-0UgcrvQmBDvZHFGdYUehrCNIazki7/lUP3kkoi/r3YB2amZbFM9J43ZRkJTXBUZK4gmx56+Sqk9+Vs9mwZx9+A==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001557
-      electron-to-chromium: 1.4.569
-      node-releases: 2.0.13
-      update-browserslist-db: 1.0.13(browserslist@4.22.1)
+      caniuse-lite: 1.0.30001579
+      electron-to-chromium: 1.4.640
+      node-releases: 2.0.14
+      update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
 
   /buffer-crc32@0.2.13:
@@ -2720,8 +2711,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /caniuse-lite@1.0.30001557:
-    resolution: {integrity: sha512-91oR7hLNUP3gG6MLU+n96em322a8Xzes8wWdBKhLgUoiJsAF5irZnxSUCbc+qUZXNnPCfUwLOi9ZCZpkvjQajw==}
+  /caniuse-lite@1.0.30001579:
+    resolution: {integrity: sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==}
     dev: true
 
   /capnp-ts@0.7.0:
@@ -3326,8 +3317,8 @@ packages:
       time-span: 4.0.0
     dev: true
 
-  /electron-to-chromium@1.4.569:
-    resolution: {integrity: sha512-LsrJjZ0IbVy12ApW3gpYpcmHS3iRxH4bkKOW98y1/D+3cvDUWGcbzbsFinfUS8knpcZk/PG/2p/RnkMCYN7PVg==}
+  /electron-to-chromium@1.4.640:
+    resolution: {integrity: sha512-z/6oZ/Muqk4BaE7P69bXhUhpJbUM9ZJeka43ZwxsDshKtePns4mhBlh8bU5+yrnOnz3fhG82XLzGUXazOmsWnA==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -5630,8 +5621,8 @@ packages:
     hasBin: true
     dev: true
 
-  /node-releases@2.0.13:
-    resolution: {integrity: sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==}
+  /node-releases@2.0.14:
+    resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
     dev: true
 
   /nopt@5.0.0:
@@ -7009,13 +7000,13 @@ packages:
       webpack-virtual-modules: 0.5.0
     dev: true
 
-  /update-browserslist-db@1.0.13(browserslist@4.22.1):
+  /update-browserslist-db@1.0.13(browserslist@4.22.2):
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
-      browserslist: 4.22.1
+      browserslist: 4.22.2
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
@@ -7245,13 +7236,11 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress-theme-openapi@0.0.2-alpha.11(@iconify/vue@4.1.1)(vue@3.3.7):
-    resolution: {integrity: sha512-pIr5v2Q57Jr2m9w8Yd9oUXxF8HMt7kIPB/iSVtTKuVIY4T8/RkP+7id/sQzlU2TKuAXalKYqXnYvY3FUJ0Xkfg==}
+  /vitepress-theme-openapi@0.0.2-alpha.16(vue@3.3.7):
+    resolution: {integrity: sha512-P8ugJmB5kwPU9xFhfG8cUTgaqAisU4dgPASUI8ZhbKHa/MShJYG3BEh2CQw/A4DMaGKdfmLVPbG+caISbyX6MA==}
     peerDependencies:
-      '@iconify/vue': ^4.0.2
       vue: ^3.2.25
     dependencies:
-      '@iconify/vue': 4.1.1(vue@3.3.7)
       vue: 3.3.7(typescript@5.2.2)
     dev: true
 
