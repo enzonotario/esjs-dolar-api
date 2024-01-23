@@ -1,14 +1,13 @@
 importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
-importar { escribirRuta } desde '@cron/datos/rutas.esjs'
+importar { leerRuta } desde '@/datos/rutas.esjs'
+importar { unificar } desde '@/datos/unificar.esjs'
 
-exportar asincrono funcion cronDolares() {
-  consola.escribir('Guardando dolares...')
+asincrono funcion nuevosValores() {
+  var dolaresNoCalculados = esperar extraerDolares()
 
-  var dolares = esperar extraerDolares()
-
-  dolares = [
-    ...dolares,
-    ...dolares
+  const dolares = [
+    ...dolaresNoCalculados,
+    ...dolaresNoCalculados
       .filtrar((dolar) => dolar.casa === 'oficial')
       .mapear((dolarOficial) => {
         const impuestos = 0.6
@@ -16,6 +15,7 @@ exportar asincrono funcion cronDolares() {
         const compra = Numero(
           (dolarOficial.compra * (1 + impuestos)).fijarDecimales(2),
         )
+
         const venta = Numero((dolarOficial.venta * (1 + impuestos)).fijarDecimales(2))
 
         retornar {
@@ -28,9 +28,15 @@ exportar asincrono funcion cronDolares() {
       }),
   ]
 
-  escribirRuta(`/dolares`, dolares)
+  retornar dolares
+}
 
-  dolares.mapear((dolar) => {
-    escribirRuta(`/dolares/${dolar.casa}`, dolar)
-  })
+exportar asincrono funcion consultarDolares() {
+  const valoresActuales = esperar leerRuta('/dolares')
+
+  const valoresNuevos = esperar nuevosValores()
+
+  const dolares = unificar(valoresActuales, valoresNuevos, 'casa')
+
+  retornar dolares
 }

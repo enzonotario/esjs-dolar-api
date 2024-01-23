@@ -48,7 +48,7 @@ jobs:
         run: pnpm run cron:build
 
       - name: Run cron
-        run: pnpm run cron
+        run: pnpm run cron:run
 
       - name: Commit and push if changes
         run: |

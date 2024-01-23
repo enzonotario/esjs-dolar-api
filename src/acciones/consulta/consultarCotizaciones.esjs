@@ -1,0 +1,13 @@
+importar { extraerCotizaciones } desde '@/acciones/extraccion/extraerCotizaciones.esjs'
+importar { leerRuta } desde '@/datos/rutas.esjs'
+importar { unificar } desde '@/datos/unificar.esjs'
+
+exportar asincrono funcion consultarCotizaciones() {
+  const valoresActuales = esperar leerRuta('/cotizaciones')
+
+  const valoresNuevos = esperar extraerCotizaciones()
+
+  const cotizaciones = esperar unificar(valoresActuales, valoresNuevos, 'moneda')
+
+  retornar cotizaciones
+}

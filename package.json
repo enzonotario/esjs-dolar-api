@@ -5,12 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "pnpm run docs:build && pnpm run api:build",
-    "api:build": "cp -r ./datos/v1 ./dist/static",
+    "build": "pnpm run docs:build && pnpm run cron:copy",
     "serve": "vite preview",
-    "generate": "drizzle-kit generate:sqlite",
-    "push": "drizzle-kit push:sqlite",
-    "studio": "drizzle-kit studio",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
@@ -21,13 +17,13 @@
     "md": "node ./docs/scripts/generate-md.js",
     "prettier": "prettier --write '**/*.esjs'",
     "cron:build": "vite build --ssr --mode=production",
-    "cron": "node ./dist/cron/index.js"
+    "cron:copy": "cp -r ./datos/v1 ./dist/static",
+    "cron:run": "node ./dist/cron/index.js"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^1.0.0-beta.27",
     "@egoist/tailwindcss-icons": "^1.7.1",
     "@es-js/vite-plugin-esjs": "^0.0.15",
-    "@hono/vite-dev-server": "^0.0.12",
     "@iconify-json/mdi": "^1.1.63",
     "@intlify/unplugin-vue-i18n": "^1.4.0",
     "@vueuse/core": "^10.5.0",
@@ -36,9 +32,7 @@
     "cors": "^2.8.5",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
-    "drizzle-kit": "^0.19.13",
     "eslint": "^8.51.0",
-    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "hono": "^3.9.0",
     "iconv-lite": "^0.6.3",
@@ -56,10 +50,5 @@
     "vitest": "^0.34.6",
     "vue": "^3.3.4",
     "vue-i18n": "^9.5.0"
-  },
-  "dependencies": {
-    "@libsql/client": "^0.3.6-pre.1",
-    "dotenv": "^16.3.1",
-    "drizzle-orm": "^0.28.6"
   }
 }
