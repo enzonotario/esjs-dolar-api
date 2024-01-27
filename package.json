@@ -7,17 +7,19 @@
     "dev": "vite",
     "build": "pnpm run docs:build && pnpm run data:copy && pnpm run api:build",
     "serve": "vite preview",
-    "api:build": "vite build --ssr --mode=production",
+    "api:build": "vite build --config vite.api.config.js --ssr --mode=production",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:i18n-extract": "npx vue-i18n-extract report --vueFiles './docs/.vitepress/**/*.?(js|vue|md)' --languageFiles './docs/.vitepress/theme/locales/*.?(json|yml|yaml)'",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:run": "vitest run",
     "md": "node ./docs/scripts/generate-md.js",
     "prettier": "prettier --write '**/*.esjs'",
-    "data:copy": "cp -r ./datos/v1 ./dist/static"
+    "data:copy": "cp -r ./datos/v1 ./dist/static",
+    "cron:build": "vite build --config vite.cron.config.js --ssr --mode=production",
+    "cron:run": "node ./dist/cron/index.js",
+    "cron:test": "vitest --config vite.cron.config.js",
+    "cron:test:ui": "vitest --ui",
+    "cron:test:run": "vitest run"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^1.0.0-beta.27",
@@ -45,7 +47,10 @@
     "vitepress-theme-openapi": "0.0.2-alpha.16",
     "vitest": "^0.34.6",
     "vue": "^3.3.4",
-    "vue-i18n": "^9.5.0"
+    "vue-i18n": "^9.5.0",
+    "cheerio": "1.0.0-rc.12",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0"
   },
   "dependencies": {
     "dotenv": "^16.3.1"

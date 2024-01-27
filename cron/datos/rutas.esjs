@@ -1,6 +1,6 @@
 importar fs desde 'node:fs'
 
-const datosDirectorio = '../datos/v1'
+const datosDirectorio = './datos/v1'
 
 exportar asincrono funcion escribirRuta(ruta, contenido) {
   const directorio = `${datosDirectorio}/${ruta}`

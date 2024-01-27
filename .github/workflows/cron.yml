@@ -42,16 +42,13 @@ jobs:
           run_install: false
 
       - name: Install dependencies
-        working-directory: cron
         run: pnpm install
 
       - name: Build
-        working-directory: cron
-        run: pnpm run build
+        run: pnpm run cron:build
 
       - name: Run cron
-        working-directory: cron
-        run: pnpm run cron
+        run: pnpm run cron:run
 
       - name: Commit and push if changes
         run: |

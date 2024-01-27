@@ -13,8 +13,6 @@ export default defineConfig({
     }),
   ],
 
-  test: {},
-
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./api', import.meta.url)),

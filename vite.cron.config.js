@@ -12,7 +12,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./', import.meta.url)),
+      '@': fileURLToPath(new URL('./cron', import.meta.url)),
     },
     extensions: [
       '.js',
@@ -26,9 +26,10 @@ export default defineConfig({
   },
 
   build: {
-    outDir: './dist',
+    outDir: './dist/cron',
+    emptyOutDir: false,
     rollupOptions: {
-      input: './index.js',
+      input: './cron/index.js',
       output: {
         format: 'esm',
         entryFileNames: '[name].js',
