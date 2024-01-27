@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "pnpm run docs:build && pnpm run cron:copy",
+    "build": "pnpm run docs:build && pnpm run data:copy && pnpm run api:build",
     "serve": "vite preview",
+    "api:build": "vite build --ssr --mode=production",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
@@ -16,33 +17,28 @@
     "test:run": "vitest run",
     "md": "node ./docs/scripts/generate-md.js",
     "prettier": "prettier --write '**/*.esjs'",
-    "cron:build": "vite build --ssr --mode=production",
-    "cron:copy": "cp -r ./datos/v1 ./dist/static",
-    "cron:run": "node ./dist/cron/index.js"
+    "data:copy": "cp -r ./datos/v1 ./dist/static"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^1.0.0-beta.27",
     "@egoist/tailwindcss-icons": "^1.7.1",
     "@es-js/vite-plugin-esjs": "^0.0.15",
+    "@hono/vite-dev-server": "^0.0.12",
     "@iconify-json/mdi": "^1.1.63",
     "@intlify/unplugin-vue-i18n": "^1.4.0",
     "@vueuse/core": "^10.5.0",
     "autoprefixer": "latest",
-    "cheerio": "1.0.0-rc.12",
     "cors": "^2.8.5",
-    "date-fns": "^2.30.0",
-    "date-fns-tz": "^2.0.0",
     "eslint": "^8.51.0",
     "eslint-plugin-import": "^2.25.2",
     "hono": "^3.9.0",
     "iconv-lite": "^0.6.3",
     "postcss": "latest",
     "prettier": "3.0.3",
-    "prettier-plugin-esjs": "^0.0.1",
+    "prettier-plugin-esjs": "^0.0.2",
     "sitemap": "^7.1.1",
     "tailwindcss": "latest",
     "typescript": "^5.2.2",
-    "vavite": "^3.0.0",
     "vercel": "^32.5.0",
     "vite": "^4.4.9",
     "vitepress": "^1.0.0-rc.31",
@@ -50,5 +46,8 @@
     "vitest": "^0.34.6",
     "vue": "^3.3.4",
     "vue-i18n": "^9.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }

@@ -41,14 +41,17 @@ jobs:
           version: 8
           run_install: false
 
+      - name: cd cron
+        run: cd cron
+
       - name: Install dependencies
         run: pnpm install
 
       - name: Build
-        run: pnpm run cron:build
+        run: pnpm run build
 
       - name: Run cron
-        run: pnpm run cron:run
+        run: pnpm run cron
 
       - name: Commit and push if changes
         run: |

@@ -1,9 +1,18 @@
 {
   "outputDirectory": "dist/static/",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/servidor/**"
+    }
+  },
   "rewrites": [
     {
       "source": "/",
       "destination": "/docs/"
+    },
+    {
+      "source": "/cron/(.*)",
+      "destination": "/api/index.js"
     },
     {
       "source": "/:path*",
