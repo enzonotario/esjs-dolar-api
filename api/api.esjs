@@ -1,0 +1,24 @@
+importar { Hono } desde 'hono'
+importar { cors } desde 'hono/cors'
+importar { timing } desde 'hono/timing'
+importar { registro } desde '@/intermediarios/registro.intermediario.esjs'
+importar { qstash } desde '@/intermediarios/qstash.intermediario.esjs'
+
+exportar const app = crear Hono()
+
+app.use('*', cors())
+app.use('*', timing())
+app.use('*', asincrono (c, siguiente) => {
+  const respuesta = esperar siguiente()
+
+  esperar registro(c, respuesta)
+
+  retornar respuesta
+})
+app.use('/cron/*', qstash())
+
+app.get('/cron/*', (c) => {
+  retornar cron(c)
+})
+
+exportar porDefecto app

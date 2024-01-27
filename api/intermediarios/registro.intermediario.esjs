@@ -1,0 +1,88 @@
+const modoDesarrollo = importar.meta.env.MODE == 'development'
+
+const performanceNow = () => {
+  intentar {
+    retornar performance.ahora()
+  } capturar {}
+  retornar Fecha.ahora()
+}
+
+funcion quitarBarraAlFinal(cadena) {
+  retornar cadena.reemplazar(/\/+$/, '')
+}
+
+exportar const registro = asincrono (c, respuesta) => {
+  si (modoDesarrollo) {
+    retornar
+  }
+
+  const tiempoEnNs = Mate.redondear(crear Fecha().obtenerTiempo() * 1000000)
+
+  intentar {
+    const fecha = crear Fecha()
+
+    const requestHeaders = {}
+    para (const [index, element] de c.req.headers.entradas()) {
+      requestHeaders[index] = element
+    }
+
+    const responseHeaders = {}
+    para (const [index, element] de c.res.headers.entradas()) {
+      responseHeaders[index] = element
+    }
+
+    const metrics = c.get('metric')
+
+    const duracion = performanceNow() - metrics.timers.get('total').start
+
+    const registro = {
+      tiempo: Mate.redondear(tiempoEnNs / 1000000),
+      req: {
+        method: c.req.method,
+        url: quitarBarraAlFinal(c.req.path),
+        query: c.req.query,
+        params: c.req.params,
+        headers: requestHeaders,
+        remoteAddress: c.req.remoteAddress,
+        remotePort: c.req.remotePort,
+      },
+      res: {
+        statusCode: c.res.status,
+        headers: responseHeaders,
+      },
+      responseTime: duracion.fijarDecimales(1),
+      msg: 'request completed',
+    }
+
+    const body = {
+      streams: [
+        {
+          stream: {
+            label: modoDesarrollo ? 'localhost' : 'dolarapi.com',
+            level: 'info',
+          },
+          valores: [[tiempoEnNs.aCadena(), JSON.stringify(registro)]],
+        },
+      ],
+    }
+
+    const opciones = {
+      hostname: importar.meta.env.VITE_LOKI_URL,
+      port: 443,
+      path: '/loki/api/v1/push',
+      method: 'POST',
+      timeout: 5000,
+      headers: {
+        Authorization: `Basic ${Buffer.from(
+          `${importar.meta.env.VITE_LOKI_USER}:${
+            importar.meta.env.VITE_LOKI_PASSWORD
+          }`,
+        ).toString('base64')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }
+
+    const respuesta = esperar fetch(opciones.hostname + opciones.path, opciones)
+  } capturar (error) {}
+}
