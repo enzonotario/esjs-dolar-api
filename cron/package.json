@@ -1,0 +1,39 @@
+{
+  "name": "esjs-dolar-api-cron",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --ssr --mode=production",
+    "copy": "cp -r ./datos/v1 ./dist/static",
+    "cron": "node ./dist/index.js",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "prettier": "prettier --write '**/*.esjs'"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^1.0.0-beta.27",
+    "@es-js/vite-plugin-esjs": "^0.0.15",
+    "@vueuse/core": "^10.5.0",
+    "autoprefixer": "latest",
+    "cheerio": "1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
+    "eslint": "^8.51.0",
+    "eslint-plugin-import": "^2.25.2",
+    "hono": "^3.9.0",
+    "iconv-lite": "^0.6.3",
+    "postcss": "latest",
+    "prettier": "3.0.3",
+    "prettier-plugin-esjs": "^0.0.1",
+    "sitemap": "^7.1.1",
+    "tailwindcss": "latest",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.6",
+    "vue": "^3.3.4"
+  }
+}

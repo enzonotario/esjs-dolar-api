@@ -1,7 +1,9 @@
 importar fs desde 'node:fs'
 
+const datosDirectorio = '../datos/v1'
+
 exportar asincrono funcion escribirRuta(ruta, contenido) {
-  const directorio = `datos/v1/${ruta}`
+  const directorio = `${datosDirectorio}/${ruta}`
 
   intentar {
     fs.mkdirSync(directorio, { recursive: verdadero })
@@ -23,7 +25,7 @@ exportar asincrono funcion leerRuta(ruta) {
     ruta = ruta.recortar(1)
   }
 
-  const directorio = `datos/v1/${ruta}`
+  const directorio = `${datosDirectorio}/${ruta}`
 
   intentar {
     const contenido = fs.readFileSync(`${directorio}/index.json`, 'utf8')
