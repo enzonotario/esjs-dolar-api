@@ -18,7 +18,7 @@ app.use('*', asincrono (c, siguiente) => {
   retornar respuesta
 })
 
-//app.use('/cron/*', qstash())
+app.use('/cron/*', qstash())
 
 app.post('/cron/', asincrono (c) => {
   const token = importar.meta.env.VITE_GITHUB_TOKEN
