@@ -19,3 +19,4 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [Dollargs](https://jesparzarom.github.io/dollargs/): Conversor de Dólar a Peso Argentino y viceversa.
 - [Kombat.DolarApi.com](https://kombat.dolarapi.com): Aplicación desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que muestra la cotización del Dólar en Argentina en la torre de Mortal Kombat.
 - [Dolar 3D](https://dolar3d.vercel.app/ ): Aplicación que muestra las cotizaciones del dólar en un cubo 3D.
+- [Dolaruco](https://www.dolaruco.com.ar/): Aplicación web que muestra las cotizaciones del Dólar en Argentina.
