@@ -125,3 +125,30 @@ exportar const dolarHoy = {
     },
   },
 }
+
+exportar const ambito = {
+  baseUrl: 'https://www.ambito.com/contenidos/dolar.html',
+  dolares: {
+    oficial: {
+      url: 'https://mercados.ambito.com//dolar/oficial/variacion',
+    },
+    blue: {
+      url: 'https://mercados.ambito.com//dolar/informal/variacion',
+    },
+    bolsa: {
+      url: 'https://mercados.ambito.com//dolarrava/mep/variacion',
+    },
+    contadoconliqui: {
+      url: 'https://mercados.ambito.com//dolarrava/cl/variacion',
+    },
+    mayorista: {
+      url: 'https://mercados.ambito.com//dolar/mayorista/variacion',
+    },
+    tarjeta: {
+      url: 'https://mercados.ambito.com//dolarturista/variacion',
+    },
+    cripto: {
+      url: 'https://mercados.ambito.com//dolarcripto/variacion',
+    },
+  },
+}

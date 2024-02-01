@@ -1,0 +1,14 @@
+importar { consultarAmbito } desde '@/acciones/consulta/consultarAmbito.esjs'
+importar { escribirRuta } desde '@/datos/rutas.esjs'
+
+exportar asincrono funcion cronAmbito() {
+  consola.escribir('Guardando ambito...')
+
+  var dolares = esperar consultarAmbito()
+
+  escribirRuta(`/ambito/dolares`, dolares)
+
+  dolares.mapear((dolar) => {
+    escribirRuta(`/ambito/dolares/${dolar.casa}`, dolar)
+  })
+}

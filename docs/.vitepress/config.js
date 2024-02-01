@@ -58,6 +58,22 @@ function generateSidebar() {
        }
       ],
     },
+    {
+      text: 'Cotización Ámbito',
+      items: [
+        {
+          items: [
+            {
+              text: `<span class="SidebarItem">
+            <span class="w-5 h-5 bg-blue-200 text-gray-800 dark:bg-blue-600 dark:text-white rounded-full text-xs flex items-center justify-center">AF</span>
+            <span class="SidebarItem-text">Dólares Ámbito</span>
+          </span>`,
+              link: '/ambito/',
+            },
+          ]
+        }
+      ],
+    },
     sidebar.generateSidebarGroup('API'),
   ]
 }

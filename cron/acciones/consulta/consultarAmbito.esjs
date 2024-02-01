@@ -1,0 +1,19 @@
+importar { extraerAmbito } desde '@/acciones/extraccion/extraerAmbito.esjs'
+importar { leerRuta } desde '@/datos/rutas.esjs'
+importar { unificar } desde '@/datos/unificar.esjs'
+
+asincrono funcion nuevosValores() {
+  var dolares = esperar extraerAmbito()
+
+  retornar dolares
+}
+
+exportar asincrono funcion consultarAmbito() {
+  const valoresActuales = esperar leerRuta('/ambito/dolares')
+
+  const valoresNuevos = esperar nuevosValores()
+
+  const dolares = unificar(valoresActuales, valoresNuevos, 'casa')
+
+  retornar dolares
+}

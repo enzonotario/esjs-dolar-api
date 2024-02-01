@@ -403,6 +403,393 @@
       },
       "parameters": []
     },
+    "/v1/ambito/dolares": {
+      "get": {
+        "summary": "Dólares Ámbito",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve todas las cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolares",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares\")"
+          }
+        ]
+      }
+    },
+    "/v1/ambito/dolares/oficial": {
+      "get": {
+        "summary": "Dólar Oficial",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Oficial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-ambito-dolar-oficial",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/oficial"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/oficial\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/oficial\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/oficial\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/oficial\")"
+          }
+        ]
+      }
+    },
+    "/v1/ambito/dolares/blue": {
+      "get": {
+        "summary": "Dólar Blue",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Blue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-blue",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/blue"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/blue\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/blue\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/blue\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/blue\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/bolsa": {
+      "get": {
+        "summary": "Dólar Bolsa",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Bolsa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-bolsa",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/bolsa"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/contadoconliqui": {
+      "get": {
+        "summary": "Dólar Contado con Liquidación",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Contado con liquidación",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-contadoconliqui",
+        "x-sidebar-title": "Dólar CCL",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/contadoconliqui"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/tarjeta": {
+      "get": {
+        "summary": "Dólar Tarjeta",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve el valor del Dólar Tarjeta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-tarjeta",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/tarjeta"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/mayorista": {
+      "get": {
+        "summary": "Dólar Mayorista",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Mayorista",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-mayorista",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/mayorista"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/cripto": {
+      "get": {
+        "summary": "Dólar Cripto",
+        "tags": ["Dólares Ámbito"],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Cripto",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-cripto",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/cripto"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/cripto\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/cripto\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/cripto\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/cripto\")"
+          }
+        ]
+      },
+      "parameters": []
+    },
     "/v1/estado": {
       "get": {
         "summary": "Estado de la API",

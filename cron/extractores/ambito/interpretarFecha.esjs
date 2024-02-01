@@ -1,0 +1,5 @@
+importar analizar desde 'date-fns/parse/index.js'
+
+exportar funcion interpretarFecha(valor) {
+  retornar analizar(valor, 'dd/MM/yyyy - HH:mm', crear Fecha())
+}

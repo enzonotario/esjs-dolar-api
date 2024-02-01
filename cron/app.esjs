@@ -1,11 +1,13 @@
 importar { cronDolares } desde '@/comandos/dolares.cron.esjs'
 importar { cronCotizaciones } desde '@/comandos/cotizaciones.cron.esjs'
+importar { cronAmbito } desde '@/comandos/ambito.cron.esjs'
 
 exportar asincrono funcion iniciar(comando) {
   consola.escribir('Iniciando cron...')
 
   esperar cronDolares()
   esperar cronCotizaciones()
+  esperar cronAmbito()
 
   consola.escribir('Finalizado con éxito')
 }
