@@ -1,4 +1,4 @@
-importar analizar desde 'date-fns/parse/index.js'
+importar { analizar } desde 'date-fns'
 
 exportar funcion obtenerFechaActualizacion($) {
   const texto = $('.update').text().dividir('Actualizado el')[1].recortarEspacios()

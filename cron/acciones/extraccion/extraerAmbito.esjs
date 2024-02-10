@@ -8,14 +8,14 @@ exportar asincrono funcion extraerAmbito() {
       .filtrar((casa) => ambito.dolares[casa.identificador])
       .mapear(asincrono (casa) => ({
         ...(esperar obtenerValoresParaCasa(casa)),
-      }))
+      })),
   )
 }
 
 asincrono funcion obtenerValoresParaCasa(casa) {
   const casaConfiguracion = ambito.dolares[casa.identificador]
 
-  if (!casaConfiguracion) {
+  si (!casaConfiguracion) {
     retornar nulo
   }
 
