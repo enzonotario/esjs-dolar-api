@@ -73,7 +73,12 @@ https://dolarapi.com
 
 ### App.DolarApi.com
 
-<iframe src="https://app.dolarapi.com" class="mt-5 w-full h-[680px] rounded" title="Kombat.DolarApi.com" scrolling="no"></iframe>
+<a href="https://app.dolarapi.com" target="_blank" class="relative w-full h-[630px] rounded overflow-hidden group">
+<img src="https://dolarapi.com/docs/assets/og.png" class="w-full rounded" alt="App.DolarApi.com" loading="lazy" />
+<div class="hidden absolute inset-0 w-full h-full bg-transparent hover:bg-black hover:bg-opacity-20 group-hover:flex justify-center items-center gap-3 text-white text-2xl font-bold rounded">
+<span>Abrir</span>
+</div>  
+</a>
 
 <div class="mt-5 w-full max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
 
@@ -82,7 +87,7 @@ https://dolarapi.com
 Visitar
 </a>
 
-<a href="https://github.com/enzonotario/esjs-dolar-kombat" target="_blank" class="button flex justify-center items-center gap-1">
+<a href="https://github.com/enzonotario/esjs-dolar-app" target="_blank" class="button flex justify-center items-center gap-1">
 <span class="i-mdi-github w-5 h-5" />
 Ver en GitHub
 </a>
