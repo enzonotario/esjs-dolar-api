@@ -21,3 +21,4 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [Dolar 3D](https://dolar3d.vercel.app/ ): Aplicación que muestra las cotizaciones del dólar en un cubo 3D.
 - [Dolaruco](https://www.dolaruco.com.ar/): Aplicación web que muestra las cotizaciones del Dólar en Argentina.
 - [DolarBot](https://github.com/Defeeeee/DolarBot/): Bot de Discord que te mantiene informado sobre las cotizaciones del Dólar en Argentina.
+- [Compara Tasas](https://comparatasas.ar): Sitio para comparar el rendimiento de distintos fondos u opciones de inversión.
