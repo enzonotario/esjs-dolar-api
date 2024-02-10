@@ -26,6 +26,13 @@ head:
   - [
       'meta',
       {
+        property: 'og:image',
+        content: 'https://dolarapi.com/docs/assets/og.png',
+      },
+    ]
+  - [
+      'meta',
+      {
         property: 'og:title',
         content: 'API para obtener el precio del Dólar en Argentina',
       },
