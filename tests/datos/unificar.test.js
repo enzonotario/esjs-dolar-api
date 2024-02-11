@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { unificar } from '@/datos/unificar.esjs'
+import { unificar } from '@/utils/unificar.esjs'
 
 it('unifica json1 con json2 por casa', async () => {
   const json1 = [

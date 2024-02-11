@@ -1,5 +1,5 @@
 importar { consultarAmbito } desde '@/acciones/consulta/consultarAmbito.esjs'
-importar { escribirRuta } desde '@/datos/rutas.esjs'
+importar { escribirRuta } desde '@/utils/rutas.esjs'
 
 exportar asincrono funcion cronAmbito() {
   consola.escribir('Guardando ambito...')

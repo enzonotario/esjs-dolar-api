@@ -1,6 +1,6 @@
 importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
-importar { leerRuta } desde '@/datos/rutas.esjs'
-importar { unificar } desde '@/datos/unificar.esjs'
+importar { leerRuta } desde '@/utils/rutas.esjs'
+importar { unificar } desde '@/utils/unificar.esjs'
 
 asincrono funcion nuevosValores() {
   var dolaresNoCalculados = esperar extraerDolares()
