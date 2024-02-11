@@ -1,19 +1,17 @@
 import { expect, it } from 'vitest'
-import { extraerDolares } from '../../../acciones/extraccion/extraerDolares.esjs'
-import { casas } from '../../../constantes.esjs'
+import { extraerAmbito } from '@/acciones/extraccion/extraerAmbito.esjs'
+import { casas } from '@/constantes.esjs'
 
-it('extrae dólares', async () => {
-  const dolares = await extraerDolares()
-
-  const casasNoCalculadas = casas.filter(casa => !casa.calculado)
+it('extrae ambito', async () => {
+  const dolares = await extraerAmbito()
 
   expect(dolares.length).toBeGreaterThan(0)
 
-  expect(casasNoCalculadas.length).toBeGreaterThan(0)
+  expect(casas.length).toBeGreaterThan(0)
 
-  expect(dolares.length).toBe(casasNoCalculadas.length)
+  expect(dolares.length).toBe(casas.length)
 
-  casasNoCalculadas.forEach((casa) => {
+  casas.forEach((casa) => {
     const dolarCasa = dolares.find(dolar => dolar.casa === casa.identificador)
 
     expect(dolarCasa).not.toBeNull()
