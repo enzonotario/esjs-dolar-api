@@ -25,7 +25,9 @@ const col2 = dolares.filter(dolar => dolar.casa === 'bolsa' || dolar.casa === 'c
         return dolar
     })
 
-const fechaActualizacion = format(parseISO(dolares[0].fechaActualizacion), "'Actualizado el ' dd/MM/yyyy ' a las ' HH:mm")
+const fecha = parseISO(dolares[0].fechaActualizacion).toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' })
+
+const fechaActualizacion = format(fecha, "'Actualizado el ' dd/MM/yyyy ' a las ' HH:mm")
 
 export default defineSatoriConfig({
     height: 628,
