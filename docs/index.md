@@ -48,6 +48,13 @@ head:
   - ['meta', { property: 'og:site_name', content: 'DolarApi.com' }]
   - ['meta', { property: 'og:type', content: 'website' }]
   - ['meta', { property: 'og:locale', content: 'es_AR' }]
+  - ['meta', { property: 'twitter:card', content: 'summary_large_image' }]
+  - ['meta', { property: 'twitter:description', content: 'API para Dólar Oficial, Dólar Blue, Dólar Bolsa, Dólar CCL, Dólar Mayorista' }]
+  - ['meta', { property: 'twitter:title', content: 'API para obtener el precio del Dólar en Argentina' }]
+  - ['meta', { property: 'twitter:site', content: '@dolarapi' }]
+  - ['meta', { property: 'twitter:creator', content: '@enzonotario_' }]
+  - ['meta', { property: 'twitter:image', content: 'https://dolarapi.com/docs/assets/og.png' }]
+  - ['meta', { property: 'twitter:url', content: 'https://dolarapi.com' }]
 ---
 
 # DolarApi.com
