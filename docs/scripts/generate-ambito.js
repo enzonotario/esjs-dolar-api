@@ -33,7 +33,7 @@ import { useRoute } from 'vitepress'
       index += markdown
 
       index += `
-<hr>
+<hr style="margin: 4rem 0;">
       `
     })
 

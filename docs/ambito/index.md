@@ -103,7 +103,7 @@ print(response.json())
 
 </Operation>
 
-<hr>
+<hr style="margin: 4rem 0;">
       
 <Operation method="GET" id="get-ambito-dolar-oficial">
 
@@ -198,7 +198,7 @@ print(response.json())
 
 </Operation>
 
-<hr>
+<hr style="margin: 4rem 0;">
       
 <Operation method="GET" id="get-ambito-dolar-blue">
 
@@ -293,7 +293,7 @@ print(response.json())
 
 </Operation>
 
-<hr>
+<hr style="margin: 4rem 0;">
       
 <Operation method="GET" id="get-ambito-dolar-bolsa">
 
@@ -388,7 +388,7 @@ print(response.json())
 
 </Operation>
 
-<hr>
+<hr style="margin: 4rem 0;">
       
 <Operation method="GET" id="get-ambito-dolar-contadoconliqui">
 
@@ -483,7 +483,7 @@ print(response.json())
 
 </Operation>
 
-<hr>
+<hr style="margin: 4rem 0;">
       
 <Operation method="GET" id="get-ambito-dolar-tarjeta">
 
@@ -578,7 +578,7 @@ print(response.json())
 
 </Operation>
 
-<hr>
+<hr style="margin: 4rem 0;">
       
 <Operation method="GET" id="get-ambito-dolar-mayorista">
 
@@ -673,7 +673,7 @@ print(response.json())
 
 </Operation>
 
-<hr>
+<hr style="margin: 4rem 0;">
       
 <Operation method="GET" id="get-ambito-dolar-cripto">
 
@@ -768,5 +768,4 @@ print(response.json())
 
 </Operation>
 
-<hr>
-      
+<hr style="margin: 4rem 0;">
