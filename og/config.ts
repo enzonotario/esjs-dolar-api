@@ -2,29 +2,13 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { defineSatoriConfig } from 'x-satori/vue'
-import { format, parseISO, subDays } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 
 const _DIRNAME = typeof __dirname !== 'undefined'
     ? __dirname
     : dirname(fileURLToPath(import.meta.url))
 
-
-const ayer = subDays(new Date(), 1)
-
-const dolaresAyer = await (await (fetch(`https://api.argentinadatos.com/v1/cotizaciones/dolares/${format(ayer, 'yyyy/MM/dd')}`))).json()
-
 const dolares = JSON.parse(readFileSync(resolve(_DIRNAME, '../datos/v1/dolares/index.json'), 'utf8'))
-  .map(dolar => {
-    const dolarAyer = dolaresAyer.find(d => d.casa === dolar.casa)
-
-    if (dolarAyer) {
-        const variacionPorcentual = (((dolar.venta - dolarAyer.venta) / dolarAyer.venta))
-        dolar.variacion = dolar.venta - dolarAyer.venta
-        dolar.variacionPorcentual = Math.round(variacionPorcentual * 10000) / 10000
-    }
-
-    return dolar
-  })
 
 const col1 = dolares.filter(dolar => dolar.casa === 'oficial' || dolar.casa === 'blue' || dolar.casa === 'tarjeta')
 
@@ -69,6 +53,8 @@ export default defineSatoriConfig({
         },
     ],
     props: {
+        title: 'Hello World',
+        site: 'https://qbb.sh',
         dolares,
         col1,
         col2,
