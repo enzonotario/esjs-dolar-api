@@ -64,10 +64,10 @@ API desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que brinda inform
 ¿Encontraste útil esta API? **¡Dejá tu ⭐ en [GitHub](https://github.com/enzonotario/esjs-dolar-api)!**
 
 <div class="flex justify-center items-center gap-3">
-    <a href="https://github.com/enzonotario/esjs-dolar-api" target="_blank" class="flex justify-center items-center gap-1 px-4 py-2 bg-black !text-white hover:bg-gray-800 dark:bg-white dark:!text-black dark:hover:bg-gray-100 dark:hover:!text-black rounded-full !no-underline !font-bold">
-        <span class="i-mdi-github w-5 h-5" />
-        Ver en GitHub
-    </a>
+<a href="https://github.com/enzonotario/esjs-dolar-api" target="_blank" class="flex justify-center items-center gap-1 px-4 py-2 bg-black !text-white hover:bg-gray-800 dark:bg-white dark:!text-black dark:hover:bg-gray-100 dark:hover:!text-black rounded-full !no-underline !font-bold">
+<span class="i-mdi-github w-5 h-5" />
+Ver en GitHub
+</a>
 </div>
 
 ## Base URL
@@ -80,12 +80,11 @@ https://dolarapi.com
 
 ### App.DolarApi.com
 
-<a href="https://app.dolarapi.com" target="_blank" class="relative w-full h-[630px] rounded overflow-hidden group">
-<img src="https://dolarapi.com/docs/assets/og.png" class="w-full rounded" alt="App.DolarApi.com" loading="lazy" />
-<div class="hidden absolute inset-0 w-full h-full bg-transparent hover:bg-black hover:bg-opacity-20 group-hover:flex justify-center items-center gap-3 text-white text-2xl font-bold rounded">
-<span>Abrir</span>
-</div>  
+<div class="mt-3 w-full max-w-xl mx-auto">
+<a href="https://app.dolarapi.com" target="_blank" class="w-full max-w-md mx-auto h-[630px]" aria-label="App.DolarApi.com">
+<img src="https://dolarapi.com/docs/assets/og.png" class="w-full h-full rounded" alt="App.DolarApi.com" loading="lazy" />
 </a>
+</div>
 
 <div class="mt-5 w-full max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
 
@@ -103,12 +102,11 @@ Ver en GitHub
 
 ### Kombat.DolarApi.com
 
-<a href="https://kombat.dolarapi.com" target="_blank" class="relative w-full h-[630px] rounded overflow-hidden group">
-<img src="https://lcmcdlwmppejonttmzrh.supabase.co/storage/v1/object/public/og/og.png" class="w-full rounded" alt="Kombat.DolarApi.com" loading="lazy" />
-<div class="hidden absolute inset-0 w-full h-full bg-transparent hover:bg-black hover:bg-opacity-20 group-hover:flex justify-center items-center gap-3 text-white text-2xl font-bold rounded">
-<span>Abrir</span>
-</div>  
+<div class="mt-3 w-full max-w-xl mx-auto">
+<a href="https://kombat.dolarapi.com" target="_blank" class="w-full max-w-md mx-auto h-[630px]" aria-label="Kombat.DolarApi.com">
+<img src="https://lcmcdlwmppejonttmzrh.supabase.co/storage/v1/object/public/og/og.png" class="w-full h-full rounded" alt="Kombat.DolarApi.com" loading="lazy" />
 </a>
+</div>
 
 <div class="mt-5 w-full max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
 
