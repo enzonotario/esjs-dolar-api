@@ -57,6 +57,10 @@ head:
   - ['meta', { property: 'twitter:url', content: 'https://dolarapi.com' }]
 ---
 
+<script setup>
+import IndexDemo from './.vitepress/theme/components/IndexDemo.vue'
+</script>
+
 # DolarApi.com
 
 API desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.
@@ -80,44 +84,8 @@ https://dolarapi.com
 
 ### App.DolarApi.com
 
-<div class="mt-3 w-full max-w-xl mx-auto">
-<a href="https://app.dolarapi.com" target="_blank" class="w-full max-w-md mx-auto h-[630px]" aria-label="App.DolarApi.com">
-<img src="https://dolarapi.com/docs/assets/og.png" class="w-full h-full rounded" alt="App.DolarApi.com" loading="lazy" />
-</a>
-</div>
-
-<div class="mt-5 w-full max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
-
-<a href="https://app.dolarapi.com" target="_blank" class="button flex justify-center items-center gap-1">
-<span class="i-mdi-open-in-new w-5 h-5" />
-Visitar
-</a>
-
-<a href="https://github.com/enzonotario/esjs-dolar-app" target="_blank" class="button flex justify-center items-center gap-1">
-<span class="i-mdi-github w-5 h-5" />
-Ver en GitHub
-</a>
-
-</div>
+<IndexDemo url="https://app.dolarapi.com" image="https://dolarapi.com/docs/assets/og.png" github-url="https://github.com/enzonotario/esjs-dolar-app" />
 
 ### Kombat.DolarApi.com
 
-<div class="mt-3 w-full max-w-xl mx-auto">
-<a href="https://kombat.dolarapi.com" target="_blank" class="w-full max-w-md mx-auto h-[630px]" aria-label="Kombat.DolarApi.com">
-<img src="https://lcmcdlwmppejonttmzrh.supabase.co/storage/v1/object/public/og/og.png" class="w-full h-full rounded" alt="Kombat.DolarApi.com" loading="lazy" />
-</a>
-</div>
-
-<div class="mt-5 w-full max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
-
-<a href="https://kombat.dolarapi.com" target="_blank" class="button flex justify-center items-center gap-1">
-<span class="i-mdi-open-in-new w-5 h-5" />
-Visitar
-</a>
-
-<a href="https://github.com/enzonotario/esjs-dolar-kombat" target="_blank" class="button flex justify-center items-center gap-1">
-<span class="i-mdi-github w-5 h-5" />
-Ver en GitHub
-</a>
-
-</div>
+<IndexDemo url="https://kombat.dolarapi.com" image="https://lcmcdlwmppejonttmzrh.supabase.co/storage/v1/object/public/og/og.png" github-url="https://github.com/enzonotario/esjs-dolar-kombat" />
