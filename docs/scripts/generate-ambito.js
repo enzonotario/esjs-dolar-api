@@ -12,7 +12,7 @@ const openapi = useOpenapi()
 openapi.setSpec(spec)
 
 export function init() {
-  let index = `---
+  let output = `---
 aside: false
 outline: false
 title: Dólares Ámbito
@@ -24,20 +24,22 @@ import { useRoute } from 'vitepress'
 `
 
   Object.keys(openapi.json.paths)
-    .filter((path) => path.startsWith('/v1/ambito'))
-    .map((path) => {
+    .filter(path => path.startsWith('/v1/ambito'))
+    .map((path, index, array) => {
       const { operationId } = openapi.json.paths[path].get
-      // //
       const markdown = generateMarkdown(operationId)
 
-      index += markdown
+      output += markdown
 
-      index += `
+      // Si no es el último elemento, agregar hr
+      if (index !== array.length - 1) {
+        output += `
 <hr style="margin: 4rem 0;">
-      `
+`
+      }
     })
 
-  fs.writeFileSync(`docs/ambito/index.md`, index)
+  fs.writeFileSync(`docs/ambito/index.md`, output)
 }
 
 function generateMarkdown(operationId) {
@@ -62,7 +64,7 @@ function generateMarkdown(operationId) {
     .pop()
 
   const schema = Object.values(schemas).find(
-    (schema) => schema.title === schemaTitle,
+    schema => schema.title === schemaTitle,
   )
 
   const schemaJson = useOpenapi().propertiesTypesJson(schema, responseType)
@@ -155,6 +157,7 @@ ${codeSamples.python.source}
 
 try {
   init()
-} catch (error) {
+}
+catch (error) {
   console.error(error)
 }
