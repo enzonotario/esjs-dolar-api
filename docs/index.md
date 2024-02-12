@@ -82,10 +82,10 @@ https://dolarapi.com
 
 ## Demo
 
-### App.DolarApi.com
+<h3>App.DolarApi.com</h3>
 
 <IndexDemo url="https://app.dolarapi.com" image="https://dolarapi.com/docs/assets/og.png" github-url="https://github.com/enzonotario/esjs-dolar-app" />
 
-### Kombat.DolarApi.com
+<h3>Kombat.DolarApi.com</h3>
 
 <IndexDemo url="https://kombat.dolarapi.com" image="https://lcmcdlwmppejonttmzrh.supabase.co/storage/v1/object/public/og/og.png" github-url="https://github.com/enzonotario/esjs-dolar-kombat" />
