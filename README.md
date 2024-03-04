@@ -22,6 +22,7 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [Dolaruco](https://www.dolaruco.com.ar/): Aplicación web que muestra las cotizaciones del Dólar en Argentina.
 - [DolarBot](https://github.com/Defeeeee/DolarBot/): Bot de Discord que te mantiene informado sobre las cotizaciones del Dólar en Argentina.
 - [Compara Tasas](https://comparatasas.ar): Sitio para comparar el rendimiento de distintos fondos u opciones de inversión.
+- [Promedio Dolar](https://promedioblue.web.app/): Página web simple para consultar el valor promedio del dolar blue y sus otras cotizaciones. Con otras funciones como calculadora y consultar el precio para una fecha especifica.
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
