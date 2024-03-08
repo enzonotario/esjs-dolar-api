@@ -3,80 +3,14 @@ import { resolve } from 'node:path'
 import { defineConfig, loadEnv } from 'vitepress'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { SitemapStream } from 'sitemap'
-import { useOpenapi, useSidebar } from 'vitepress-theme-openapi'
-import spec from './openapi.json' assert { type: 'json' }
+import { generateSidebar } from './sidebar.js'
+import sidebarCl from './sidebar.cl.js'
 
 const links = []
 
 const env = loadEnv('', process.cwd())
 
 const gTag = env.VITE_GTAG
-
-const openapi = useOpenapi()
-openapi.setSpec(spec)
-const sidebar = useSidebar()
-
-function generateSidebar() {
-  return [
-    {
-      text: `<span class="SidebarItem">
-        <svg class="i-mdi-home w-5 h-5" />
-        <span class="SidebarItem-text">Inicio</span>
-      </span>`,
-      link: '/',
-    },
-    {
-      text: `<span class="SidebarItem">
-        <svg class="i-mdi-github w-5 h-5" />
-        <span class="SidebarItem-text">GitHub</span>
-      </span>`,
-      link: 'https://github.com/enzonotario/esjs-dolar-api',
-    },
-    {
-      text: 'Cotización actual',
-      items: [
-        sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares'),
-        sidebar.generateSidebarGroup(
-          'Cotización actual Monedas',
-          'Otras Monedas',
-        ),
-      ],
-    },
-    {
-      text: 'Cotización histórica',
-      items: [
-       {
-         items: [
-           {
-             text: `<span class="SidebarItem">
-              <svg class="i-mdi-chart-line w-5 h-5" />
-              <span class="SidebarItem-text">ArgentinaDatos</span> 
-              </span>`,
-             link: 'https://argentinadatos.com/',
-           }
-         ]
-       }
-      ],
-    },
-    {
-      text: 'Cotización Ámbito',
-      items: [
-        {
-          items: [
-            {
-              text: `<span class="SidebarItem">
-            <span class="w-5 h-5 bg-blue-200 text-gray-800 dark:bg-blue-600 dark:text-white rounded-full text-xs flex items-center justify-center">AF</span>
-            <span class="SidebarItem-text">Dólares Ámbito</span>
-          </span>`,
-              link: '/ambito/',
-            },
-          ]
-        }
-      ],
-    },
-    sidebar.generateSidebarGroup('API'),
-  ]
-}
 
 export default defineConfig({
   title: 'DolarApi.com',
@@ -89,7 +23,10 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/assets/logo.webp',
-    sidebar: generateSidebar(),
+    sidebar: {
+      '/': generateSidebar(),
+      '/chile/': sidebarCl(),
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },
     ],
@@ -149,9 +86,9 @@ export default defineConfig({
     })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
-    links.forEach((link) => sitemap.write(link))
+    links.forEach(link => sitemap.write(link))
     sitemap.end()
-    await new Promise((resolve) => writeStream.on('finish', resolve))
+    await new Promise(resolve => writeStream.on('finish', resolve))
   },
 
   vite: {
