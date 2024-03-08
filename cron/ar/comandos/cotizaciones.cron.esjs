@@ -1,4 +1,4 @@
-importar { consultarCotizaciones } desde '@/acciones/consulta/consultarCotizaciones.esjs'
+importar { consultarCotizaciones } desde '@/ar/acciones/consulta/consultarCotizaciones.esjs'
 importar { escribirRuta } desde '@/utils/rutas.esjs'
 
 exportar asincrono funcion cronCotizaciones() {

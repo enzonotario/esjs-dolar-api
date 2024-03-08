@@ -1,4 +1,4 @@
-importar { consultarAmbito } desde '@/acciones/consulta/consultarAmbito.esjs'
+importar { consultarAmbito } desde '@/ar/acciones/consulta/consultarAmbito.esjs'
 importar { escribirRuta } desde '@/utils/rutas.esjs'
 
 exportar asincrono funcion cronAmbito() {

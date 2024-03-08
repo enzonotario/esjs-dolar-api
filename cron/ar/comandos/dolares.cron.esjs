@@ -1,4 +1,4 @@
-importar { consultarDolares } desde '@/acciones/consulta/consultarDolares.esjs'
+importar { consultarDolares } desde '@/ar/acciones/consulta/consultarDolares.esjs'
 importar { escribirRuta } desde '@/utils/rutas.esjs'
 
 exportar asincrono funcion cronDolares() {

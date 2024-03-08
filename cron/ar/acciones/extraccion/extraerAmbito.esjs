@@ -1,6 +1,6 @@
 importar { ambito, casas } desde '@/constantes.esjs'
-importar { interpretarValorMonetario } desde '@/extractores/ambito/interpretarValorMonetario.esjs'
-importar { interpretarFecha } desde '@/extractores/ambito/interpretarFecha.esjs'
+importar { interpretarValorMonetario } desde '@/ar/extractores/ambito/interpretarValorMonetario.esjs'
+importar { interpretarFecha } desde '@/ar/extractores/ambito/interpretarFecha.esjs'
 
 exportar asincrono funcion extraerAmbito() {
   retornar esperar Promesa.todos(

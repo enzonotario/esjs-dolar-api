@@ -1,4 +1,4 @@
-importar { extraerDolares } desde '@/acciones/extraccion/extraerDolares.esjs'
+importar { extraerDolares } desde '@/ar/acciones/extraccion/extraerDolares.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { unificar } desde '@/utils/unificar.esjs'
 
