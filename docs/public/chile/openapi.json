@@ -16,7 +16,7 @@
     }
   ],
   "paths": {
-    "/v1/usd": {
+    "/v1/cotizaciones/usd": {
       "get": {
         "summary": "USD / CLP",
         "tags": ["Cotización actual"],
@@ -41,32 +41,32 @@
           {
             "lang": "curl",
             "label": "cURL",
-            "source": "curl -X GET https://cl.dolarapi.com/v1/dolares"
+            "source": "curl -X GET https://cl.dolarapi.com/v1/cotizaciones/usd"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://cl.dolarapi.com/v1/dolares\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+            "source": "fetch(\"https://cl.dolarapi.com/v1/cotizaciones/usd\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://cl.dolarapi.com/v1/dolares\")\n  .then(response => console.log(response.data));"
+            "source": "axios.get(\"https://cl.dolarapi.com/v1/cotizaciones/usd\")\n  .then(response => console.log(response.data));"
           },
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/dolares\")\nprint(response.json())"
+            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/cotizaciones/usd\")\nprint(response.json())"
           },
           {
             "lang": "php",
             "label": "PHP",
-            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/dolares\")"
+            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/cotizaciones/usd\")"
           }
         ]
       }
     },
-    "/v1/eur": {
+    "/v1/cotizaciones/eur": {
       "get": {
         "summary": "EUR / CLP",
         "tags": ["Cotización actual"],
@@ -89,32 +89,32 @@
           {
             "lang": "curl",
             "label": "cURL",
-            "source": "curl -X GET https://cl.dolarapi.com/v1/eur"
+            "source": "curl -X GET https://cl.dolarapi.com/v1/cotizaciones/eur"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://cl.dolarapi.com/v1/eur\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+            "source": "fetch(\"https://cl.dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://cl.dolarapi.com/v1/eur\")\n  .then(response => console.log(response.data));"
+            "source": "axios.get(\"https://cl.dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => console.log(response.data));"
           },
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/eur\")\nprint(response.json())"
+            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/cotizaciones/eur\")\nprint(response.json())"
           },
           {
             "lang": "php",
             "label": "PHP",
-            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/eur\")"
+            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/cotizaciones/eur\")"
           }
         ]
       }
     },
-    "/v1/brl": {
+    "/v1/cotizaciones/brl": {
       "get": {
         "summary": "BRL / CLP",
         "tags": ["Cotización actual"],
@@ -137,32 +137,32 @@
           {
             "lang": "curl",
             "label": "cURL",
-            "source": "curl -X GET https://cl.dolarapi.com/v1/brl"
+            "source": "curl -X GET https://cl.dolarapi.com/v1/cotizaciones/brl"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://cl.dolarapi.com/v1/brl\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+            "source": "fetch(\"https://cl.dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://cl.dolarapi.com/v1/brl\")\n  .then(response => console.log(response.data));"
+            "source": "axios.get(\"https://cl.dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => console.log(response.data));"
           },
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/brl\")\nprint(response.json())"
+            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/cotizaciones/brl\")\nprint(response.json())"
           },
           {
             "lang": "php",
             "label": "PHP",
-            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/brl\")"
+            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/cotizaciones/brl\")"
           }
         ]
       }
     },
-    "/v1/ars": {
+    "/v1/cotizaciones/ars": {
       "get": {
         "summary": "ARS / CLP",
         "tags": ["Cotización actual"],
@@ -185,32 +185,32 @@
           {
             "lang": "curl",
             "label": "cURL",
-            "source": "curl -X GET https://cl.dolarapi.com/v1/clp"
+            "source": "curl -X GET https://cl.dolarapi.com/v1/cotizaciones/ars"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://cl.dolarapi.com/v1/clp\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+            "source": "fetch(\"https://cl.dolarapi.com/v1/cotizaciones/ars\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://cl.dolarapi.com/v1/clp\")\n  .then(response => console.log(response.data));"
+            "source": "axios.get(\"https://cl.dolarapi.com/v1/cotizaciones/ars\")\n  .then(response => console.log(response.data));"
           },
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/clp\")\nprint(response.json())"
+            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/cotizaciones/ars\")\nprint(response.json())"
           },
           {
             "lang": "php",
             "label": "PHP",
-            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/clp\")"
+            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/cotizaciones/ars\")"
           }
         ]
       }
     },
-    "/v1/uyu": {
+    "/v1/cotizaciones/uyu": {
       "get": {
         "summary": "UYU / CLP",
         "tags": ["Cotización actual"],
@@ -233,27 +233,27 @@
           {
             "lang": "curl",
             "label": "cURL",
-            "source": "curl -X GET https://cl.dolarapi.com/v1/uyu"
+            "source": "curl -X GET https://cl.dolarapi.com/v1/cotizaciones/uyu"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://cl.dolarapi.com/v1/uyu\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+            "source": "fetch(\"https://cl.dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
           },
           {
             "lang": "javascript",
             "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://cl.dolarapi.com/v1/uyu\")\n  .then(response => console.log(response.data));"
+            "source": "axios.get(\"https://cl.dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => console.log(response.data));"
           },
           {
             "lang": "python",
             "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/uyu\")\nprint(response.json())"
+            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/cotizaciones/uyu\")\nprint(response.json())"
           },
           {
             "lang": "php",
             "label": "PHP",
-            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/uyu\")"
+            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/cotizaciones/uyu\")"
           }
         ]
       }
@@ -327,9 +327,6 @@
           "venta": {
             "type": "number"
           },
-          "casa": {
-            "type": "string"
-          },
           "nombre": {
             "type": "string"
           },
@@ -340,7 +337,7 @@
             "type": "string"
           }
         },
-        "required": ["venta", "casa", "nombre", "moneda", "fechaActualizacion"]
+        "required": ["venta", "nombre", "moneda", "fechaActualizacion"]
       },
       "Estado": {
         "title": "Estado",

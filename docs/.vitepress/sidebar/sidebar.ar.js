@@ -1,11 +1,11 @@
-import { useOpenapi, useSidebar } from 'vitepress-theme-openapi'
-import spec from './openapi.json'
+import { useSidebar } from 'vitepress-theme-openapi'
+import { setRegionForSidebar } from './sidebar.utils.js'
 
-const openapi = useOpenapi()
-openapi.setSpec(spec)
+setRegionForSidebar('ar')
+
 const sidebar = useSidebar()
 
-export function generateSidebar() {
+export default function () {
   return [
     {
       text: `<span class="SidebarItem">

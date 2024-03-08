@@ -3,8 +3,7 @@ import { resolve } from 'node:path'
 import { defineConfig, loadEnv } from 'vitepress'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { SitemapStream } from 'sitemap'
-import { generateSidebar } from './sidebar.js'
-import sidebarCl from './sidebar.cl.js'
+import { generateSidebar } from './sidebar/sidebar.js'
 
 const links = []
 
@@ -24,8 +23,8 @@ export default defineConfig({
   themeConfig: {
     logo: '/assets/logo.webp',
     sidebar: {
-      '/': generateSidebar(),
-      '/chile/': sidebarCl(),
+      '/': generateSidebar('ar'),
+      '/chile/': generateSidebar('cl'),
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },

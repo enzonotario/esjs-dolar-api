@@ -1,22 +1,23 @@
 import fs from 'node:fs'
 import { useOpenapi } from 'vitepress-theme-openapi'
-import { useCodeSamples } from '../.vitepress/theme/composables/useCodeSamples.js'
+import { useCodeSamples } from '../docs/.vitepress/theme/composables/useCodeSamples.js'
 
-const loadJSON = (path) =>
-  JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
+function loadJSON(path) {
+  return JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
+}
 
-const spec = loadJSON('../public/openapi.json')
+const spec = loadJSON('../docs/public/chile/openapi.json')
 
 const openapi = useOpenapi()
 openapi.setSpec(spec)
 
 export function init() {
-  return Object.keys(openapi.json.paths).map((path) => {
-    const { operationId } = openapi.json.paths[path].get
+  return Object.keys(spec.paths).map((path) => {
+    const { operationId } = spec.paths[path].get
 
     const markdown = generateMarkdown(operationId)
 
-    fs.writeFileSync(`docs/operations/${operationId}.md`, markdown)
+    fs.writeFileSync(`docs/chile/operations/${operationId}.md`, markdown)
   })
 }
 
@@ -42,7 +43,7 @@ function generateMarkdown(operationId) {
     .pop()
 
   const schema = Object.values(schemas).find(
-    (schema) => schema.title === schemaTitle,
+    schema => schema.title === schemaTitle,
   )
 
   const schemaJson = useOpenapi().propertiesTypesJson(schema, responseType)
@@ -144,6 +145,7 @@ ${codeSamples.python.source}
 
 try {
   init()
-} catch (error) {
+}
+catch (error) {
   console.error(error)
 }
