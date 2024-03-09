@@ -340,7 +340,7 @@
             "type": "string"
           }
         },
-        "required": ["venta", "nombre", "moneda", "fechaActualizacion"]
+        "required": ["venta", "ultimoCierre", "nombre", "moneda", "fechaActualizacion"]
       },
       "Estado": {
         "title": "Estado",
