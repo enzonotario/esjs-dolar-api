@@ -7,7 +7,7 @@
   },
   "rewrites": [
     {
-      "source": "/argentina/v1/:path*",
+      "source": "/v1/:path*",
       "has": [
         {
           "type": "host",
