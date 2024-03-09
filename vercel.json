@@ -7,15 +7,7 @@
   },
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/docs/"
-    },
-    {
-      "source": "/cron/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/chile/v1/:path*",
+      "source": "/v1/:path*",
       "has": [
         {
           "type": "host",
@@ -23,6 +15,14 @@
         }
       ],
       "destination": "/cl/v1/:path*"
+    },
+    {
+      "source": "/",
+      "destination": "/docs/"
+    },
+    {
+      "source": "/cron/(.*)",
+      "destination": "/api/index.js"
     }
   ]
 }
