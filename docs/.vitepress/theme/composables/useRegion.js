@@ -30,7 +30,7 @@ export function useRegion() {
   }
 
   function determineRegionByURL(url) {
-    if (url.pathname.startsWith('/docs/chile/'))
+    if (url.startsWith('/docs/chile/'))
       return setCurrentRegion('cl')
 
     return setCurrentRegion('ar')

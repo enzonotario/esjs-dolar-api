@@ -24,7 +24,7 @@ export default {
       const url = new URL(window.location.href)
 
       const region = useRegion()
-      region.determineRegionByURL(url)
+      region.determineRegionByURL(url.pathname)
 
       const openapi = useOpenapi()
       openapi.setSpec(region.currentRegion.value.spec)
