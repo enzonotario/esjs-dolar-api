@@ -92,3 +92,5 @@ https://dolarapi.com
 <h3>Kombat.DolarApi.com</h3>
 
 <IndexDemo url="https://kombat.dolarapi.com" image="https://lcmcdlwmppejonttmzrh.supabase.co/storage/v1/object/public/og/og.png" github-url="https://github.com/enzonotario/esjs-dolar-kombat" />
+
+<span v-if="false" class="i-mdi-chart-line" /> <!-- Force import -->
