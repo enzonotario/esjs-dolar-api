@@ -327,6 +327,9 @@
           "venta": {
             "type": "number"
           },
+          "ultimoCierre": {
+            "type": "number"
+          },
           "nombre": {
             "type": "string"
           },
