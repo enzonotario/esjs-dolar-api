@@ -19,14 +19,14 @@
       "destination": "/docs/:path*"
     },
     {
-      "source": "/:path*",
+      "source": "/v1/:path*",
       "has": [
         {
           "type": "host",
           "value": "cl.dolarapi.com"
         }
       ],
-      "destination": "/cl/:path*"
+      "destination": "/cl/v1/:path*"
     }
   ]
 }
