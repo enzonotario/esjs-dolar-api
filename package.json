@@ -16,7 +16,7 @@
     "gen:ambito": "node ./scripts/generate-ambito.js",
     "gen:cl": "node ./scripts/generate-cl.js",
     "prettier": "prettier --write '**/*.esjs'",
-    "data:copy": "cp -r ./datos/* ./dist/static && cp -r ./datos/v1 ./dist/static/ar/v1",
+    "data:copy": "cp -r ./datos/* ./dist/static && mkdir -p ./dist/static/ar/v1 && cp -r ./datos/v1 ./dist/static/ar/v1",
     "cron:build": "vite build --config vite.config.js --ssr --mode=production",
     "cron:run": "node ./dist/cron/index.js",
     "cron:test": "vitest --config vite.config.js",
