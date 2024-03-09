@@ -13,6 +13,10 @@
     {
       "source": "/cron/(.*)",
       "destination": "/api/index.js"
+    },
+    {
+      "source": "/chile/v1/:path*",
+      "destination": "/cl/v1/:path*"
     }
   ]
 }
