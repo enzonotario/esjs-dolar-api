@@ -16,6 +16,12 @@
     },
     {
       "source": "/chile/v1/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "cl.dolarapi.com"
+        }
+      ],
       "destination": "/cl/v1/:path*"
     }
   ]
