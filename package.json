@@ -38,6 +38,7 @@
     "@types/node": "^18.17.1",
     "@vueuse/core": "^10.5.0",
     "autoprefixer": "latest",
+    "axios": "^1.6.7",
     "cheerio": "1.0.0-rc.12",
     "cors": "^2.8.5",
     "date-fns": "^3.3.1",
