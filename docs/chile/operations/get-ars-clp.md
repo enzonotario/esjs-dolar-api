@@ -20,7 +20,7 @@ import { useRoute } from 'vitepress'
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Cotización del peso argentino en pesos chilenos
 
 <!--@include: ./parts/get-ars-clp-description-after.md -->
 

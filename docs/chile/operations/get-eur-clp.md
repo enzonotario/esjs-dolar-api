@@ -20,7 +20,7 @@ import { useRoute } from 'vitepress'
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Cotización del euro en pesos chilenos
 
 <!--@include: ./parts/get-eur-clp-description-after.md -->
 

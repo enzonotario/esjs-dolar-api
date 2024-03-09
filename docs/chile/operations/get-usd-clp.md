@@ -20,7 +20,7 @@ import { useRoute } from 'vitepress'
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Cotización del dólar estadounidense en pesos chilenos
 
 <!--@include: ./parts/get-usd-clp-description-after.md -->
 

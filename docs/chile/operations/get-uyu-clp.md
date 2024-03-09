@@ -20,7 +20,7 @@ import { useRoute } from 'vitepress'
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Cotización del peso uruguayo en pesos chilenos
 
 <!--@include: ./parts/get-uyu-clp-description-after.md -->
 
