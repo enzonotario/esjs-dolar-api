@@ -1,5 +1,6 @@
 <script setup>
 import { useRouter } from 'vitepress'
+import { useOpenapi } from 'vitepress-theme-openapi'
 import { useRegion } from '../composables/useRegion.js'
 
 const region = useRegion()
@@ -8,6 +9,8 @@ const router = useRouter()
 
 const options = region.regions
 
+const openapi = useOpenapi()
+
 function onRegionChange(event) {
   const selected = options.find(option => option.code === event.target.value)
 
@@ -15,6 +18,8 @@ function onRegionChange(event) {
     .replace(/\/\//g, '/') // Replace double slashes
 
   router.go(goTo)
+
+  openapi.setSpec(selected.spec)
 }
 </script>
 
@@ -27,7 +32,11 @@ function onRegionChange(event) {
       class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
       @change="onRegionChange"
     >
-      <option v-for="option in options" :key="option.code" :value="option.code">
+      <option
+        v-for="option in options" :key="option.code"
+        :value="option.code"
+        :selected="region.currentRegion.value.code === option.code"
+      >
         {{ option.name }}
       </option>
     </select>

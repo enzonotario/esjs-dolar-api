@@ -13,7 +13,7 @@ next:
 <script setup>
 </script>
 
-# DolarApi.com <small class="text-sm">Región: <span class="bg-indigo-50 text-indigo-800 dark:bg-indigo-800 dark:!text-indigo-50 px-2 py-1 rounded-md">Chile</span></small>
+# DolarApi.com <small class="ml-2 text-sm">Región <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-800 dark:!text-indigo-50 px-2 py-1 rounded-md">Chile</span></small>
 
 API desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que brinda información actualizada sobre las cotizaciones de monedas extranjeras en Chile.
 

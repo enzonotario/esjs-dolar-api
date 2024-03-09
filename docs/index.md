@@ -61,7 +61,7 @@ head:
 import IndexDemo from './.vitepress/theme/components/IndexDemo.vue'
 </script>
 
-# DolarApi.com
+# DolarApi.com <small class="ml-2 text-sm">Región <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-800 dark:!text-indigo-50 px-2 py-1 rounded-md">Argentina</span></small>
 
 API desarrollada en [EsJS](https://es.js.org?ref=dolarapi.com) que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.
 
