@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { extraerAmbito } from '@/acciones/extraccion/extraerAmbito.esjs'
+import { extraerAmbito } from '@/ar/acciones/extraccion/extraerAmbito.esjs'
 import { casas } from '@/constantes.esjs'
 
 it('extrae ambito', async () => {

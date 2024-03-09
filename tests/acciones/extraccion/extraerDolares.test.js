@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { extraerDolares } from '@/acciones/extraccion/extraerDolares.esjs'
+import { extraerDolares } from '@/ar/acciones/extraccion/extraerDolares.esjs'
 import { casas } from '@/constantes.esjs'
 
 it('extrae dólares', async () => {

@@ -1,4 +1,4 @@
-importar { extraerAmbito } desde '@/acciones/extraccion/extraerAmbito.esjs'
+importar { extraerAmbito } desde '@/ar/acciones/extraccion/extraerAmbito.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { unificar } desde '@/utils/unificar.esjs'
 

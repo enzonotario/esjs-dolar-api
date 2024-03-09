@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { consultarCotizaciones } from '@/acciones/consulta/consultarCotizaciones.esjs'
+import { consultarCotizaciones } from '@/ar/acciones/consulta/consultarCotizaciones.esjs'
 import { monedasSoportadas } from '@/constantes.esjs'
 
 it('consulta cotizaciones', async () => {
