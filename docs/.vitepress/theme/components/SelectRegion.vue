@@ -28,6 +28,8 @@ function onRegionChange(event) {
 watch(
   router.route,
   (url) => {
+    console.log({ path: url.path })
+
     region.determineRegionByURL(url.path)
 
     innerValue.value = region.currentRegion.value.code
