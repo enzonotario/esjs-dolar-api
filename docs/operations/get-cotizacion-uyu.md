@@ -5,7 +5,9 @@ title: Peso Uruguayo
 ---
 
 <script setup>
-import { useRoute } from 'vitepress'
+import { setRegionForSidebar } from '../.vitepress/sidebar/sidebar.utils.js'
+
+setRegionForSidebar('ar')
 </script>
 
 <Operation method="GET" id="get-cotizacion-uyu">

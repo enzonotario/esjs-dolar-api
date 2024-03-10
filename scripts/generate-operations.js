@@ -2,21 +2,22 @@ import fs from 'node:fs'
 import { useOpenapi } from 'vitepress-theme-openapi'
 import { useCodeSamples } from '../docs/.vitepress/theme/composables/useCodeSamples.js'
 
-const loadJSON = (path) =>
-  JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
+function loadJSON(path) {
+  return JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
+}
 
-const spec = loadJSON('../public/openapi.json')
+const spec = loadJSON('../docs/public/openapi.json')
 
 const openapi = useOpenapi()
 openapi.setSpec(spec)
 
 export function init() {
-  return Object.keys(openapi.json.paths).map((path) => {
-    const { operationId } = openapi.json.paths[path].get
+  return Object.keys(spec.paths).map((path) => {
+    const { operationId } = spec.paths[path].get
 
     const markdown = generateMarkdown(operationId)
 
-    fs.writeFileSync(`../docs/operations/${operationId}.md`, markdown)
+    fs.writeFileSync(`docs/operations/${operationId}.md`, markdown)
   })
 }
 
@@ -54,11 +55,9 @@ title: ${operation.summary}
 ---
 
 <script setup>
-import { useRoute } from 'vitepress'
-import { useRegion } from '../.vitepress/theme/composables/useRegion.js'
+import { setRegionForSidebar } from '../.vitepress/sidebar/sidebar.utils.js'
 
-const region = useRegion()
-region.setCurrentRegion('ar')
+setRegionForSidebar('ar')
 </script>
 
 <Operation method="GET" id="${operationId}">

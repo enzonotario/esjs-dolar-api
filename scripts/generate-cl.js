@@ -102,7 +102,6 @@ head:
 ---
 
 <script setup>
-import { useRoute } from 'vitepress'
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
 setRegionForSidebar('cl')

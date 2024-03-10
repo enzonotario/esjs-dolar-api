@@ -12,6 +12,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:i18n-extract": "npx vue-i18n-extract report --vueFiles './docs/.vitepress/**/*.?(js|vue|md)' --languageFiles './docs/.vitepress/theme/locales/*.?(json|yml|yaml)'",
+    "gen:docs": "pnpm run gen:operations && pnpm run gen:ambito && pnpm run gen:cl",
     "gen:operations": "node ./scripts/generate-operations.js",
     "gen:ambito": "node ./scripts/generate-ambito.js",
     "gen:cl": "node ./scripts/generate-cl.js",

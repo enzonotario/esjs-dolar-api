@@ -19,18 +19,16 @@ title: Dólares Ámbito
 ---
 
 <script setup>
-import { useRoute } from 'vitepress'
-import { useRegion } from '../.vitepress/theme/composables/useRegion.js'
+import { setRegionForSidebar } from '../.vitepress/sidebar/sidebar.utils.js'
 
-const region = useRegion()
-region.setCurrentRegion('ar')
+setRegionForSidebar('ar')
 </script>
 `
 
-  Object.keys(openapi.json.paths)
+  Object.keys(spec.paths)
     .filter(path => path.startsWith('/v1/ambito'))
     .map((path, index, array) => {
-      const { operationId } = openapi.json.paths[path].get
+      const { operationId } = spec.paths[path].get
       const markdown = generateMarkdown(operationId)
 
       output += markdown
