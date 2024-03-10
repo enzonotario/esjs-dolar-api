@@ -103,6 +103,10 @@ head:
 
 <script setup>
 import { useRoute } from 'vitepress'
+import { useRegion } from '../../.vitepress/theme/composables/useRegion.js'
+
+const region = useRegion()
+region.setCurrentRegion('cl')
 </script>
 
 <Operation method="GET" id="${operationId}">

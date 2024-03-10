@@ -55,6 +55,10 @@ title: ${operation.summary}
 
 <script setup>
 import { useRoute } from 'vitepress'
+import { useRegion } from '../.vitepress/theme/composables/useRegion.js'
+
+const region = useRegion()
+region.setCurrentRegion('ar')
 </script>
 
 <Operation method="GET" id="${operationId}">
