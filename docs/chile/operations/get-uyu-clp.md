@@ -53,10 +53,9 @@ head:
 
 <script setup>
 import { useRoute } from 'vitepress'
-import { useRegion } from '../../.vitepress/theme/composables/useRegion.js'
+import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-const region = useRegion()
-region.setCurrentRegion('cl')
+setRegionForSidebar('cl')
 </script>
 
 <Operation method="GET" id="get-uyu-clp">
