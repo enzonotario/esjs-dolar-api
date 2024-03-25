@@ -5,7 +5,7 @@
     "nombre": "Oficial",
     "compra": 840.57,
     "venta": 898.87,
-    "fechaActualizacion": "2024-03-22T15:50:00.000Z"
+    "fechaActualizacion": "2024-03-25T10:22:00.000Z"
   },
   {
     "moneda": "USD",
@@ -13,7 +13,7 @@
     "nombre": "Blue",
     "compra": 990,
     "venta": 1020,
-    "fechaActualizacion": "2024-02-22T16:26:00.000Z"
+    "fechaActualizacion": "2024-02-25T10:14:00.000Z"
   },
   {
     "moneda": "USD",
@@ -21,38 +21,38 @@
     "nombre": "Bolsa",
     "compra": 1036.16,
     "venta": 1036.16,
-    "fechaActualizacion": "2024-03-22T17:55:00.000Z"
+    "fechaActualizacion": "2024-03-25T10:55:00.000Z"
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1096.17,
-    "venta": 1096.17,
-    "fechaActualizacion": "2024-03-22T17:55:00.000Z"
+    "compra": 1095.63,
+    "venta": 1095.63,
+    "fechaActualizacion": "2024-03-25T10:55:00.000Z"
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 851.5,
-    "venta": 854.5,
-    "fechaActualizacion": "2024-03-22T15:46:00.000Z"
+    "compra": 853.5,
+    "venta": 856.5,
+    "fechaActualizacion": "2024-03-25T10:05:00.000Z"
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1057.51,
-    "venta": 1057.51,
-    "fechaActualizacion": "2024-03-25T09:55:00.000Z"
+    "compra": 1055.51,
+    "venta": 1055.51,
+    "fechaActualizacion": "2024-03-25T10:55:00.000Z"
   },
   {
     "moneda": "USD",
     "casa": "tarjeta",
     "nombre": "Tarjeta",
-    "compra": 833.5,
-    "venta": 1397.6,
-    "fechaActualizacion": "2024-03-22T18:55:00.000Z"
+    "compra": 835,
+    "venta": 1400,
+    "fechaActualizacion": "2024-03-25T10:55:00.000Z"
   }
 ]
