@@ -19,15 +19,15 @@
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1002,
-    "venta": 1005.8,
+    "compra": 1000,
+    "venta": 1000.8,
     "fechaActualizacion": "2024-04-11T15:08:00.000Z"
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1041.5,
+    "compra": 1043.9,
     "venta": 1045.5,
     "fechaActualizacion": "2024-04-11T15:08:00.000Z"
   },
@@ -43,8 +43,8 @@
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1020,
-    "venta": 1036,
+    "compra": 1023,
+    "venta": 1040,
     "fechaActualizacion": "2024-04-11T15:08:00.000Z"
   },
   {
