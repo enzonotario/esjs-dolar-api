@@ -31,6 +31,14 @@
       "destination": "/docs/"
     },
     {
+      "source": "/openapi.json",
+      "destination": "/docs/openapi.json"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/docs/favicon.ico"
+    },
+    {
       "source": "/cron/(.*)",
       "destination": "/api/index.js"
     }
