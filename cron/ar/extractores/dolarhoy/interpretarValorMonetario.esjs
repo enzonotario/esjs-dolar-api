@@ -1,3 +1,3 @@
 exportar funcion interpretarValorMonetario(valor) {
-  retornar Numero(valor.reemplazar(/[^0-9.-]+/g, ''));
+  retornar Numero(valor.reemplazar(/[^0-9.-]+/g, ''))
 }

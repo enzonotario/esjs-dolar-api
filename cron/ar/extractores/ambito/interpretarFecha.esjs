@@ -1,5 +1,5 @@
-importar { parse } desde 'date-fns'
+importar { analizar } desde 'date-fns'
 
 exportar funcion interpretarFecha(valor) {
-  retornar parse(valor, 'dd/MM/yyyy - HH:mm', crear Fecha());
+  retornar analizar(valor, 'dd/MM/yyyy - HH:mm', crear Fecha())
 }
