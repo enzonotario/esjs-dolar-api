@@ -7,12 +7,10 @@ exportar asincrono funcion extraerDolares() {
   const $ = cheerio.load(pagina)
 
   retornar esperar Promesa.todos(
-    casas
-      .filtrar((casa) => !casa.calculado)
-      .mapear(asincrono (casa) => ({
+    casas.filtrar((casa) => !casa.calculado).mapear(asincrono (casa) => ({
         ...(esperar obtenerValoresParaCasa($, casa)),
       })),
-  )
+  );
 }
 
 asincrono funcion consultarPagina() {

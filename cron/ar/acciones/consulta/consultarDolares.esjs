@@ -7,14 +7,10 @@ asincrono funcion nuevosValores() {
 
   const dolares = [
     ...dolaresNoCalculados,
-    ...dolaresNoCalculados
-      .filtrar((dolar) => dolar.casa === 'oficial')
-      .mapear((dolarOficial) => {
+    ...dolaresNoCalculados.filtrar((dolar) => dolar.casa === 'oficial').mapear((dolarOficial) => {
         const impuestos = 0.6
 
-        const compra = Numero(
-          (dolarOficial.compra * (1 + impuestos)).fijarDecimales(2),
-        )
+        const compra = Numero((dolarOficial.compra * (1 + impuestos)).fijarDecimales(2))
 
         const venta = Numero((dolarOficial.venta * (1 + impuestos)).fijarDecimales(2))
 

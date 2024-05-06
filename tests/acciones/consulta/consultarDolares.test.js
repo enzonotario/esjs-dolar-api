@@ -26,4 +26,6 @@ it('consulta dólares', async () => {
       expect(dolarCasa.compra).toBeGreaterThan(0)
     else expect(dolarCasa.compra).toBeNull()
   })
+}, {
+  timeout: 10000,
 })

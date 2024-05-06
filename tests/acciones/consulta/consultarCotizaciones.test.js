@@ -24,4 +24,6 @@ it('consulta cotizaciones', async () => {
     expect(cotizacionMoneda.compra).toBeGreaterThan(0)
     expect(cotizacionMoneda.venta).toBeGreaterThan(0)
   }
+}, {
+  timeout: 10000,
 })
