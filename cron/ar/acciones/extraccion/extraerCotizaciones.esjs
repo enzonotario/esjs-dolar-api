@@ -14,7 +14,7 @@ exportar asincrono funcion extraerCotizaciones() {
     monedasSoportadas.mapear(asincrono (moneda) => ({
       ...(esperar extraerCotizacion($, moneda)),
     })),
-  )
+  );
 }
 
 asincrono funcion consultarPagina() {
@@ -44,5 +44,5 @@ asincrono funcion extraerCotizacion($, moneda) {
     compra,
     venta,
     fechaActualizacion,
-  }
+  };
 }

@@ -22,7 +22,7 @@ exportar asincrono funcion escribirRutaRegion(region, ruta, contenido) {
 
 exportar asincrono funcion leerRutaRegion(region, ruta) {
   si (ruta.comienzaCon('/')) {
-    ruta = ruta.recortar(1)
+    ruta = ruta.rodaja(1)
   }
 
   const directorio = `./datos/${region}/v1/${ruta}`
@@ -58,7 +58,7 @@ exportar asincrono funcion escribirRuta(ruta, contenido) {
 
 exportar asincrono funcion leerRuta(ruta) {
   si (ruta.comienzaCon('/')) {
-    ruta = ruta.recortar(1)
+    ruta = ruta.rodaja(1)
   }
 
   const directorio = `${datosDirectorio}/${ruta}`

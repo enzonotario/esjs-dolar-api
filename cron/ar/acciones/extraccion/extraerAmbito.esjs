@@ -4,12 +4,10 @@ importar { interpretarFecha } desde '@/ar/extractores/ambito/interpretarFecha.es
 
 exportar asincrono funcion extraerAmbito() {
   retornar esperar Promesa.todos(
-    casas
-      .filtrar((casa) => ambito.dolares[casa.identificador])
-      .mapear(asincrono (casa) => ({
+    casas.filtrar((casa) => ambito.dolares[casa.identificador]).mapear(asincrono (casa) => ({
         ...(esperar obtenerValoresParaCasa(casa)),
       })),
-  )
+  );
 }
 
 asincrono funcion obtenerValoresParaCasa(casa) {

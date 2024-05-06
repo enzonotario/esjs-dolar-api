@@ -25,4 +25,6 @@ it('extrae ambito', async () => {
     expect(dolarCasa.venta).toBeGreaterThan(0)
     expect(dolarCasa.fechaActualizacion).not.toBeNull()
   })
+}, {
+  timeout: 20000,
 })

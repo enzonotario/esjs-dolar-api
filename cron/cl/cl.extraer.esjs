@@ -4,9 +4,7 @@ importar { monedas } desde '@/constantes.esjs'
 
 exportar porDefecto asincrono funcion () {
   const cotizaciones = esperar Promesa.todos(
-    monedas
-      .filtrar((moneda) => moneda.codigo !== 'CLP')
-      .mapear((moneda) => extraerCotizacion(moneda)),
+    monedas.filtrar((moneda) => moneda.codigo !== 'CLP').mapear((moneda) => extraerCotizacion(moneda)),
   )
 
   retornar cotizaciones
@@ -41,12 +39,12 @@ asincrono funcion extraerCotizacion(moneda) {
 }
 
 funcion interpretarValorMonetario(valor) {
-  retornar Numero.interpretarDecimal(valor.reemplazar(',', '.'))
+  retornar Numero.interpretarDecimal(valor.reemplazar(',', '.'));
 }
 
 funcion interpretarFecha(fecha) {
   intentar {
-    retornar crear Fecha(fecha).aCadenaISO()
+    retornar crear Fecha(fecha).aCadenaISO();
   } capturar (error) {
     retornar fecha
   }

@@ -1,7 +1,7 @@
 importar extraer desde '@/cl/cl.extraer.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 
-exportar porDefecto asincrono funcion() {
+exportar porDefecto asincrono funcion () {
   const cotizaciones = esperar extraer()
 
   cotizaciones.mapear((cotizacion) => {

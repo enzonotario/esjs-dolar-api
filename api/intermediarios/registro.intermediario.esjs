@@ -4,11 +4,11 @@ const performanceNow = () => {
   intentar {
     retornar performance.ahora()
   } capturar {}
-  retornar Fecha.ahora()
+  retornar Fecha.ahora();
 }
 
 funcion quitarBarraAlFinal(cadena) {
-  retornar cadena.reemplazar(/\/+$/, '')
+  retornar cadena.reemplazar(/\/+$/, '');
 }
 
 exportar const registro = asincrono (c, respuesta) => {
@@ -74,10 +74,8 @@ exportar const registro = asincrono (c, respuesta) => {
       timeout: 5000,
       headers: {
         Authorization: `Basic ${Buffer.from(
-          `${importar.meta.env.VITE_LOKI_USER}:${
-            importar.meta.env.VITE_LOKI_PASSWORD
-          }`,
-        ).toString('base64')}`,
+          `${importar.meta.env.VITE_LOKI_USER}:${importar.meta.env.VITE_LOKI_PASSWORD}`,
+        ).aCadena('base64')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
