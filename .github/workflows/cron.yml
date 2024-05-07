@@ -47,8 +47,8 @@ jobs:
       - name: Run cron
         run: pnpm run cron:run
 
-      #- name: Run og
-      #  run: pnpm run og:png
+      - name: Run og
+        run: pnpm run og:png
 
       - name: Commit and push if changes
         run: |
