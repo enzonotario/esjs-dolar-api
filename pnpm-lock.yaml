@@ -19,8 +19,8 @@ importers:
         specifier: ^1.7.4
         version: 1.7.4(tailwindcss@3.4.3(ts-node@10.9.1(@types/node@18.19.31)(typescript@5.4.5)))
       '@es-js/vite-plugin-esjs':
-        specifier: 0.1.0-alpha.9
-        version: 0.1.0-alpha.9(@types/node@18.19.31)
+        specifier: 0.1.0-alpha.10
+        version: 0.1.0-alpha.10(@types/node@18.19.31)
       '@hono/vite-dev-server':
         specifier: ^0.0.12
         version: 0.0.12
@@ -314,8 +314,8 @@ packages:
     resolution: {integrity: sha512-aKUhyn1QI5Ksbqcr3fFJj16p99QdjUxXAEuFst1Z47DRyoiMwivIH9MV/ARcJOCXVjPfjITciej8ZD2O/6qUmw==}
     engines: {node: '>=16'}
 
-  '@es-js/vite-plugin-esjs@0.1.0-alpha.9':
-    resolution: {integrity: sha512-870ZJIx5kxI5rowj3zKHOW8dTcQ5eLLNnwuuq4m1Rnxc3Gh5sNABlY7ZTy88XBKXvPUBqrD5PhF+w3NVjlVGeg==}
+  '@es-js/vite-plugin-esjs@0.1.0-alpha.10':
+    resolution: {integrity: sha512-ORUpP+K+YjaE7iFfKAldJLkKX01uzVn2t92A5ynS9HeRXeo2ThQDgCMDJSO4cMo4KC31b7FiBXCebKWAX3Ya1Q==}
 
   '@esbuild/aix-ppc64@0.20.2':
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -4515,7 +4515,7 @@ snapshots:
       esquery: 1.5.0
       jsdoc-type-pratt-parser: 4.0.0
 
-  '@es-js/vite-plugin-esjs@0.1.0-alpha.9(@types/node@18.19.31)':
+  '@es-js/vite-plugin-esjs@0.1.0-alpha.10(@types/node@18.19.31)':
     dependencies:
       vite: 4.5.3(@types/node@18.19.31)
     transitivePeerDependencies:

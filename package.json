@@ -33,7 +33,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^1.2.1",
     "@egoist/tailwindcss-icons": "^1.7.4",
-    "@es-js/vite-plugin-esjs": "0.1.0-alpha.9",
+    "@es-js/vite-plugin-esjs": "0.1.0-alpha.10",
     "@hono/vite-dev-server": "^0.0.12",
     "@iconify-json/mdi": "^1.1.66",
     "@intlify/unplugin-vue-i18n": "^1.6.0",
