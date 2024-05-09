@@ -3,33 +3,33 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Dólar",
-    "compra": 901,
+    "compra": 861,
     "venta": 901,
-    "fechaActualizacion": "2024-05-09T19:57:00.000Z"
+    "fechaActualizacion": "2024-05-09T20:59:00.000Z"
   },
   {
     "moneda": "EUR",
     "casa": "oficial",
     "nombre": "Euro",
     "compra": 950.97,
-    "venta": 952.4,
-    "fechaActualizacion": "2024-05-09T19:57:00.000Z"
+    "venta": 952.14,
+    "fechaActualizacion": "2024-05-09T20:59:00.000Z"
   },
   {
     "moneda": "BRL",
     "casa": "oficial",
     "nombre": "Real Brasileño",
-    "compra": 171.49,
-    "venta": 171.71,
-    "fechaActualizacion": "2024-05-09T19:57:00.000Z"
+    "compra": 171.51,
+    "venta": 171.72,
+    "fechaActualizacion": "2024-05-09T20:59:00.000Z"
   },
   {
     "moneda": "CLP",
     "casa": "oficial",
     "nombre": "Peso Chileno",
-    "compra": 95.24,
-    "venta": 95.4,
-    "fechaActualizacion": "2024-05-09T19:57:00.000Z"
+    "compra": 95.25,
+    "venta": 95.52,
+    "fechaActualizacion": "2024-05-09T20:59:00.000Z"
   },
   {
     "moneda": "UYU",
@@ -37,6 +37,6 @@
     "nombre": "Peso Uruguayo",
     "compra": 22.93,
     "venta": 22.98,
-    "fechaActualizacion": "2024-05-09T19:57:00.000Z"
+    "fechaActualizacion": "2024-05-09T20:59:00.000Z"
   }
 ]
