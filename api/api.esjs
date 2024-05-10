@@ -21,7 +21,7 @@ app.use('*', asincrono (c, siguiente) => {
 app.use('/cron/*', qstash())
 
 app.post('/cron/', asincrono (c) => {
-  const token = importar.meta.env.VITE_GITHUB_TOKEN
+  const token = import.meta.env.VITE_GITHUB_TOKEN
 
   const acciones = esperar (
     esperar fetch(
@@ -49,7 +49,7 @@ app.post('/cron/', asincrono (c) => {
         'X-GitHub-Api-Version': '2022-11-28',
         'Content-Type': 'text/plain',
       },
-      body: JSON.stringify({
+      body: JSON.aTexto({
         ref: 'main',
       }),
     },

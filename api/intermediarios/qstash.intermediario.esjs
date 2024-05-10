@@ -3,7 +3,7 @@ importar { decode, signo, verify } desde 'hono/jwt'
 exportar const qstash = () => {
   retornar asincrono (c, siguiente) => {
     const firma = c.req.header('Upstash-Signature')
-    const secreto = importar.meta.env.VITE_QSTASH_CURRENT_SIGNING_KEY
+    const secreto = import.meta.env.VITE_QSTASH_CURRENT_SIGNING_KEY
 
     intentar {
       const verificar = esperar verify(firma, secreto)
@@ -14,5 +14,5 @@ exportar const qstash = () => {
         status: 401,
       })
     }
-  }
+  };
 }

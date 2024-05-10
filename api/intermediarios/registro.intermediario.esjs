@@ -1,4 +1,4 @@
-const modoDesarrollo = importar.meta.env.MODE == 'development'
+const modoDesarrollo = import.meta.env.MODE == 'development'
 
 const performanceNow = () => {
   intentar {
@@ -61,24 +61,24 @@ exportar const registro = asincrono (c, respuesta) => {
             label: modoDesarrollo ? 'localhost' : 'dolarapi.com',
             level: 'info',
           },
-          valores: [[tiempoEnNs.aCadena(), JSON.stringify(registro)]],
+          valores: [[tiempoEnNs.aCadena(), JSON.aTexto(registro)]],
         },
       ],
     }
 
     const opciones = {
-      hostname: importar.meta.env.VITE_LOKI_URL,
+      hostname: import.meta.env.VITE_LOKI_URL,
       port: 443,
       path: '/loki/api/v1/push',
       method: 'POST',
       timeout: 5000,
       headers: {
         Authorization: `Basic ${Buffer.from(
-          `${importar.meta.env.VITE_LOKI_USER}:${importar.meta.env.VITE_LOKI_PASSWORD}`,
+          `${import.meta.env.VITE_LOKI_USER}:${import.meta.env.VITE_LOKI_PASSWORD}`,
         ).aCadena('base64')}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(body),
+      body: JSON.aTexto(body),
     }
 
     const respuesta = esperar fetch(opciones.hostname + opciones.path, opciones)
