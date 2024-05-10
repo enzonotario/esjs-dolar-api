@@ -8,7 +8,7 @@ exportar asincrono funcion escribirRutaRegion(region, ruta, contenido) {
   intentar {
     fs.mkdirSync(directorio, { recursive: verdadero })
 
-    contenido = JSON.stringify(contenido, nulo, 2)
+    contenido = JSON.aTexto(contenido, nulo, 2)
 
     fs.writeFileSync(`${directorio}/index.json`, contenido)
 
@@ -44,7 +44,7 @@ exportar asincrono funcion escribirRuta(ruta, contenido) {
   intentar {
     fs.mkdirSync(directorio, { recursive: verdadero })
 
-    contenido = JSON.stringify(contenido, nulo, 2)
+    contenido = JSON.aTexto(contenido, nulo, 2)
 
     fs.writeFileSync(`${directorio}/index.json`, contenido)
 
