@@ -1,7 +1,8 @@
 {
   "moneda": "ARS",
   "nombre": "Peso Argentino",
-  "compra": null,
-  "venta": null,
-  "ultimoCierre": null
+  "compra": 1.02,
+  "venta": 1.02,
+  "ultimoCierre": 1.02,
+  "fechaActualizacion": "2024-05-16T11:56:21.000Z"
 }
