@@ -9,7 +9,6 @@ import spec from '../../public/openapi.json' assert { type: 'json' }
 import 'vitepress-theme-openapi/dist/style.css'
 import { useRegion } from './composables/useRegion.js'
 
-
 export default {
   ...DefaultTheme,
   Layout() {

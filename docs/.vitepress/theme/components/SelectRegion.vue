@@ -37,8 +37,8 @@ watch(
 </script>
 
 <template>
-  <form class="flex items-center px-2 space-x-1">
-    <label for="region" class="block text-sm font-medium text-gray-900 dark:text-white">Región</label>
+  <form class="flex items-center sm:px-2 space-x-1">
+    <label for="region" class="region">Región</label>
     <select
       id="region"
       :value="innerValue"
@@ -55,3 +55,9 @@ watch(
     </select>
   </form>
 </template>
+
+<style scoped>
+.region {
+  @apply hidden sm:block text-sm font-medium text-gray-900 dark:text-white;
+}
+</style>

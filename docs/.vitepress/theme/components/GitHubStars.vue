@@ -23,7 +23,14 @@ onMounted(async () => {
       <span v-if="false" class="i-mdi-home w-5 h-5" />
       <span class="i-mdi-star-outline w-5 h-5" />
 
-      <span>Stars: <span>{{ githubStars }}</span></span>
+      <span class="stars">Stars: </span>
+      <span>{{ githubStars }}</span>
     </a>
   </div>
 </template>
+
+<style scoped>
+.stars {
+  @apply hidden sm:block;
+}
+</style>
