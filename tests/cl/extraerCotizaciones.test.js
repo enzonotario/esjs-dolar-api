@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import extraer from '@/cl/cl.extraer.esjs'
+import extraer from '@/cl/cl.extractor.esjs'
 
 describe('extraer cotizaciones', () => {
   it('extraer cotizaciones de un texto', async () => {

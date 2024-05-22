@@ -10,7 +10,7 @@ exportar porDefecto asincrono funcion () {
   retornar cotizaciones
 }
 
-funcion getResponse(moneda) {
+funcion obtenerRespuesta(moneda) {
   const monedaEnMinusculas = moneda.codigo.aMinusculas()
   const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-clp`
 
@@ -18,7 +18,7 @@ funcion getResponse(moneda) {
 }
 
 asincrono funcion extraerCotizacion(moneda) {
-  const response = esperar getResponse(moneda)
+  const response = esperar obtenerRespuesta(moneda)
 
   const $ = cheerio.load(response.data)
 
