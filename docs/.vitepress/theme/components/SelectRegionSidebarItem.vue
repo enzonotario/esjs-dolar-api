@@ -1,6 +1,5 @@
 <script setup>
 import { useRouter } from 'vitepress'
-import { useOpenapi } from 'vitepress-theme-openapi'
 import { ref, watch } from 'vue'
 import { useRegion } from '../composables/useRegion.js'
 
@@ -10,20 +9,7 @@ const router = useRouter()
 
 const options = region.regions
 
-const openapi = useOpenapi()
-
 const innerValue = ref()
-
-function onRegionChange(event) {
-  const selected = region.regions.find(r => r.code === event.target.value)
-
-  const goTo = `/docs${selected.prefix}/`
-    .replace(/\/\//g, '/') // Replace double slashes
-
-  router.go(goTo)
-
-  openapi.setSpec(selected.spec)
-}
 
 watch(
   router.route,
@@ -37,16 +23,17 @@ watch(
 </script>
 
 <template>
-  <form class="flex items-center sm:px-2 space-x-1">
-    <label for="region" class="region">Región</label>
+  <form style="width: calc(var(--vp-sidebar-width) - 64px);" class="pb-3 border-b">
+    <label for="region-sidebar" class="block my-1 text-sm font-medium text-gray-900 dark:text-white">Región</label>
     <select
       id="region"
       :value="innerValue"
-      class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+      class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
       @change="region.onRegionChange($event, router)"
     >
       <option
-        v-for="option in options" :key="option.code"
+        v-for="option in options"
+        :key="option.code"
         :value="option.code"
         :selected="option.code === region.currentRegion.value.code"
       >

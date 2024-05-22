@@ -8,11 +8,13 @@ import { theme, useOpenapi } from 'vitepress-theme-openapi'
 import spec from '../../public/openapi.json' assert { type: 'json' }
 import 'vitepress-theme-openapi/dist/style.css'
 import { useRegion } from './composables/useRegion.js'
+import SelectRegionSidebarItem from './components/SelectRegionSidebarItem.vue'
 
 export default {
   ...DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
+      'sidebar-nav-before': () => h(SelectRegionSidebarItem),
       'nav-bar-content-before': () => h(SelectRegion),
       'nav-bar-content-after': () => h(GitHubStars),
     })

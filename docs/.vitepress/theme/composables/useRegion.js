@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { useOpenapi } from 'vitepress-theme-openapi'
 import arSpec from '../../../public/openapi.json'
 import clSpec from '../../../public/chile/openapi.json'
 
@@ -36,11 +37,26 @@ export function useRegion() {
     return setCurrentRegion('ar')
   }
 
+  async function onRegionChange(event, router) {
+    const selected = regions.find(r => r.code === event.target.value)
+
+    const goTo = `/docs${selected.prefix}/`
+      .replace(/\/\//g, '/') // Replace double slashes
+
+    const openapi = useOpenapi()
+
+    openapi.setSpec(selected.spec)
+
+    console.debug(`Navigating to ${goTo}`)
+    await router.go(goTo)
+  }
+
   return {
     regions,
     currentRegion,
     setCurrentRegion,
     getRegionByCode,
     determineRegionByURL,
+    onRegionChange,
   }
 }
