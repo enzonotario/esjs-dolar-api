@@ -1,0 +1,24 @@
+importar extraerDolares desde '@/ve/dolartoday.extractor.esjs'
+importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
+
+exportar porDefecto asincrono funcion () {
+  consola.escribir('ve.cron.esjs : Iniciando')
+
+  esperar guardarDolares()
+
+  consola.escribir('ve.cron.esjs : Finalizado')
+}
+
+asincrono funcion guardarDolares() {
+  consola.escribir('ve.cron.esjs : guardando /v1/dolares')
+
+  const dolares = esperar extraerDolares()
+
+  dolares.mapear((dolar) => {
+    escribirRutaRegion('ve', `/dolares/${dolar.fuente}`, dolar)
+  })
+
+  escribirRutaRegion('ve', '/dolares', dolares)
+
+  consola.escribir('ve.cron.esjs : finalizado /v1/dolares')
+}

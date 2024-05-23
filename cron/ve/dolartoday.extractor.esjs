@@ -1,0 +1,64 @@
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
+importar { monedas } desde '@/constantes.esjs'
+
+exportar porDefecto asincrono funcion () {
+  const respuesta = esperar obtenerRespuesta()
+
+  retornar extraerCotizaciones(respuesta)
+}
+
+asincrono funcion obtenerRespuesta() {
+  const respuesta = esperar axios.post(
+    'https://dolartoday.com/wp-admin/admin-ajax.php',
+    'action=dt_currency_calculator_handler&amount=1',
+  )
+
+  retornar respuesta.data
+}
+
+funcion extraerCotizaciones(json) {
+  const fuentes = [
+    {
+      slug: 'oficial',
+      nombre: 'Dólar BCV',
+    },
+    {
+      slug: 'paralelo',
+      nombre: 'Dólar Paralelo',
+    },
+    {
+      slug: 'bitcoin',
+      nombre: 'Dólar Bitcoin',
+    },
+  ]
+
+  const cotizaciones = []
+
+  fuentes.paraCada(({ slug, nombre }) => {
+    const promedio = interpretarValorMonetario(json[nombre])
+
+    cotizaciones.agregar({
+      fuente: slug,
+      nombre: nombre.reemplazar('Dólar ', ''),
+      compra: nulo,
+      venta: nulo,
+      promedio,
+      fecha: crear Fecha().aCadenaISO(),
+    })
+  })
+
+  retornar cotizaciones
+}
+
+funcion interpretarValorMonetario(valor) {
+  retornar Numero(valor.replace('Bs. ', '').reemplazar(',', '.'));
+}
+
+funcion interpretarFecha(fecha) {
+  intentar {
+    retornar crear Fecha(fecha).aCadenaISO();
+  } capturar (error) {
+    retornar fecha
+  }
+}
