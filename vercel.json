@@ -44,7 +44,7 @@
           "value": "cl.dolarapi.com"
         }
       ],
-      "destination": "cl.dolarapi.com/docs/chile/"
+      "destination": "/docs/chile"
     },
     {
       "source": "/",
@@ -54,7 +54,7 @@
           "value": "ve.dolarapi.com"
         }
       ],
-      "destination": "ve.dolarapi.com/docs/venezuela/"
+      "destination": "/docs/venezuela"
     },
     {
       "source": "/",
