@@ -41,8 +41,48 @@
       "destination": "/docs/"
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "cl.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/chile"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "ve.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/venezuela"
+    },
+    {
       "source": "/openapi.json",
       "destination": "/docs/openapi.json"
+    },
+    {
+      "source": "/openapi.json",
+      "has": [
+        {
+          "type": "host",
+          "value": "cl.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/chile/openapi.json"
+    },
+    {
+      "source": "/openapi.json",
+      "has": [
+        {
+          "type": "host",
+          "value": "ve.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/venezuela/openapi.json"
     },
     {
       "source": "/favicon.ico",
