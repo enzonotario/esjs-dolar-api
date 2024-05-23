@@ -23,7 +23,7 @@ watch(
 </script>
 
 <template>
-  <form style="width: calc(var(--vp-sidebar-width) - 64px);" class="pb-3 mb-3 lg:mb-0 border-b">
+  <form style="width: calc(var(--vp-sidebar-width) - 64px);" class="pb-3 mb-3 lg:mb-0 border-b dark:border-gray-600">
     <label for="region-sidebar" class="block my-1 text-sm font-medium text-gray-900 dark:text-white">Región</label>
     <select
       id="region"
