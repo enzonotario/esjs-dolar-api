@@ -37,7 +37,7 @@
       "destination": "/ve/v1/:path*"
     },
     {
-      "source": "/",
+      "source": "/docs/",
       "has": [
         {
           "type": "host",
@@ -47,7 +47,7 @@
       "destination": "/docs/chile/"
     },
     {
-      "source": "/",
+      "source": "/docs/",
       "has": [
         {
           "type": "host",
