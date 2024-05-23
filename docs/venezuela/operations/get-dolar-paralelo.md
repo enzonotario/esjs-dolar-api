@@ -125,22 +125,22 @@ setRegionForSidebar('ve')
 ::: code-group
 
 ```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/dolares/paralelo
+curl -X GET https://ve.dolarapi.com/v1/dolares/paralelo
 ```
 
 ```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/dolares/paralelo")
+fetch("https://ve.dolarapi.com/v1/dolares/paralelo")
   .then(response => response.json())
   .then(data => console.log(data));
 ```
 
 ```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/dolares/paralelo")
+file_get_contents("https://ve.dolarapi.com/v1/dolares/paralelo")
 ```
 
 ```python-vue [Python]
 import requests
-response = requests.get("https://dolarapi.com/v1/dolares/paralelo")
+response = requests.get("https://ve.dolarapi.com/v1/dolares/paralelo")
 print(response.json())
 ```
 

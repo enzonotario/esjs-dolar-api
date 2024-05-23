@@ -121,22 +121,22 @@ setRegionForSidebar('ve')
 ::: code-group
 
 ```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/estado
+curl -X GET https://ve.dolarapi.com/v1/estado
 ```
 
 ```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/estado")
+fetch("https://ve.dolarapi.com/v1/estado")
   .then(response => response.json())
   .then(data => console.log(data));
 ```
 
 ```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/estado")
+file_get_contents("https://ve.dolarapi.com/v1/estado")
 ```
 
 ```python-vue [Python]
 import requests
-response = requests.get("https://dolarapi.com/v1/estado")
+response = requests.get("https://ve.dolarapi.com/v1/estado")
 print(response.json())
 ```
 
