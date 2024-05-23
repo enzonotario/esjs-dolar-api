@@ -27,6 +27,16 @@
       "destination": "/cl/v1/:path*"
     },
     {
+      "source": "/v1/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ve.dolarapi.com"
+        }
+      ],
+      "destination": "/ve/v1/:path*"
+    },
+    {
       "source": "/",
       "destination": "/docs/"
     },
@@ -50,24 +60,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600, s-maxage=3600"
-        }
-      ]
-    },
-    {
-      "source": "/ar/v1/:path*",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3000, s-maxage=3000"
-        }
-      ]
-    },
-    {
-      "source": "/cl/v1/:path*",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3000, s-maxage=3000"
         }
       ]
     }
