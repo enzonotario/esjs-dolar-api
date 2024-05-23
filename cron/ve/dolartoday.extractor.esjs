@@ -21,26 +21,29 @@ funcion extraerCotizaciones(json) {
   const fuentes = [
     {
       slug: 'oficial',
-      nombre: 'Dólar BCV',
+      nombre: 'Oficial',
+      buscar: 'Dólar BCV',
     },
     {
       slug: 'paralelo',
-      nombre: 'Dólar Paralelo',
+      nombre: 'Paralelo',
+      buscar: 'Dólar Paralelo',
     },
     {
       slug: 'bitcoin',
-      nombre: 'Dólar Bitcoin',
+      nombre: 'Bitcoin',
+      buscar: 'Dólar Bitcoin',
     },
   ]
 
   const cotizaciones = []
 
-  fuentes.paraCada(({ slug, nombre }) => {
-    const promedio = interpretarValorMonetario(json[nombre])
+  fuentes.paraCada(({ slug, nombre, buscar }) => {
+    const promedio = interpretarValorMonetario(json[buscar])
 
     cotizaciones.agregar({
       fuente: slug,
-      nombre: nombre.reemplazar('Dólar ', ''),
+      nombre,
       compra: nulo,
       venta: nulo,
       promedio,
