@@ -1,12 +1,11 @@
-import { useOpenapi } from 'vitepress-theme-openapi'
 import { useRegion } from '../theme/composables/useRegion.js'
-
-const region = useRegion()
-const openapi = useOpenapi()
+import { useOpenapi } from 'vitepress-theme-openapi'
 
 export function setRegionForSidebar(regionCode) {
+  const region = useRegion()
   region.setCurrentRegion(regionCode)
 
+  const openapi = useOpenapi()
   openapi.setSpec(region.currentRegion.value.spec)
 }
 
