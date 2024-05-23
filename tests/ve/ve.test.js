@@ -12,7 +12,7 @@ describe('ve.dolarapi.com', () => {
       expect(cotizacion.fuente).toBeTypeOf('string')
       expect(cotizacion.nombre).toBeTypeOf('string')
       expect(cotizacion.promedio).toBeTypeOf('number')
-      expect(cotizacion.fecha).toBeTypeOf('string')
+      expect(cotizacion.fechaActualizacion).toBeTypeOf('string')
 
       if (cotizacion.compra)
         expect(cotizacion.compra).toBeTypeOf('number')

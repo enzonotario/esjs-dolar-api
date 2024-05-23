@@ -44,7 +44,7 @@ funcion extraerCotizaciones(json) {
       compra: nulo,
       venta: nulo,
       promedio,
-      fecha: crear Fecha().aCadenaISO(),
+      fechaActualizacion: crear Fecha().aCadenaISO(),
     })
   })
 
