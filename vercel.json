@@ -37,24 +37,24 @@
       "destination": "/ve/v1/:path*"
     },
     {
-      "source": "/",
+      "source": "",
       "has": [
         {
           "type": "host",
           "value": "cl.dolarapi.com"
         }
       ],
-      "destination": "/docs/chile"
+      "destination": "/docs/chile/"
     },
     {
-      "source": "/",
+      "source": "",
       "has": [
         {
           "type": "host",
           "value": "ve.dolarapi.com"
         }
       ],
-      "destination": "/docs/venezuela"
+      "destination": "/docs/venezuela/"
     },
     {
       "source": "/",
