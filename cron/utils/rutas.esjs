@@ -30,7 +30,7 @@ exportar asincrono funcion leerRutaRegion(region, ruta) {
   intentar {
     const contenido = fs.readFileSync(`${directorio}/index.json`, 'utf8')
 
-    retornar JSON.analizar(contenido)
+    retornar JSON.analizar(contenido);
   } capturar (error) {
     consola.error(error)
 
@@ -66,7 +66,7 @@ exportar asincrono funcion leerRuta(ruta) {
   intentar {
     const contenido = fs.readFileSync(`${directorio}/index.json`, 'utf8')
 
-    retornar JSON.analizar(contenido)
+    retornar JSON.analizar(contenido);
   } capturar (error) {
     consola.error(error)
 

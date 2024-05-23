@@ -2,14 +2,18 @@ importar extraer desde '@/cl/cl.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 
 exportar porDefecto asincrono funcion () {
-  consola.escribir('cl.cron.esjs : Iniciando')
+  intentar {
+    consola.escribir('cl.cron.esjs : Iniciando')
 
-  const cotizaciones = esperar extraer()
+    const cotizaciones = esperar extraer()
 
-  cotizaciones.mapear((cotizacion) => {
-    const moneda = cotizacion.moneda.aMinusculas()
-    escribirRutaRegion('cl', `/cotizaciones/${moneda}`, cotizacion)
-  })
+    cotizaciones.mapear((cotizacion) => {
+      const moneda = cotizacion.moneda.aMinusculas()
+      escribirRutaRegion('cl', `/cotizaciones/${moneda}`, cotizacion)
+    })
 
-  consola.escribir('cl.cron.esjs : Finalizado')
+    consola.escribir('cl.cron.esjs : Finalizado')
+  } capturar (error) {
+    consola.error('cl.cron.esjs : Error', error)
+  }
 }

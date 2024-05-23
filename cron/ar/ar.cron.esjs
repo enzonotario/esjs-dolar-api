@@ -3,11 +3,15 @@ importar { cronCotizaciones } desde '@/ar/comandos/cotizaciones.cron.esjs'
 importar { cronAmbito } desde '@/ar/comandos/ambito.cron.esjs'
 
 exportar porDefecto asincrono funcion () {
-  consola.escribir('ar.cron.esjs : Iniciando')
+  intentar {
+    consola.escribir('ar.cron.esjs : Iniciando')
 
-  esperar cronDolares()
-  esperar cronCotizaciones()
-  esperar cronAmbito()
+    esperar cronDolares()
+    esperar cronCotizaciones()
+    esperar cronAmbito()
 
-  consola.escribir('ar.cron.esjs : Finalizado')
+    consola.escribir('ar.cron.esjs : Finalizado')
+  } capturar (error) {
+    consola.error('ar.cron.esjs : Error', error)
+  }
 }
