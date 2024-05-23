@@ -11,11 +11,11 @@ export function setRegionForSidebar(regionCode) {
   openapi.setSpec(region.currentRegion.value.spec)
 }
 
-export function addRegionPrefixToSidebarItems(items) {
+export function addRegionPrefixToSidebarItems(prefix, items) {
   return {
     items: items.items.map((item) => {
       if (item.link)
-        item.link = `${region.currentRegion.value.prefix}${item.link}`
+        item.link = `${prefix}${item.link}`
 
       if (item.items)
         item.items = addRegionPrefixToSidebarItems(item.items)
