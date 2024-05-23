@@ -1,8 +1,8 @@
 import { useSidebar } from 'vitepress-theme-openapi'
-import { addRegionPrefixToSidebarItems, setRegionForSidebar } from './sidebar.utils.js'
 import { useRegion } from '../theme/composables/useRegion.js'
+import { addRegionPrefixToSidebarItems, setRegionForSidebar } from './sidebar.utils.js'
 
-const region = useRegion().regions.find(region => region.code === 'cl')
+const region = useRegion().regions.find(region => region.code === 've')
 
 setRegionForSidebar(region.code)
 
