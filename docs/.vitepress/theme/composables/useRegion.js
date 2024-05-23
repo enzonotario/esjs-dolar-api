@@ -57,7 +57,6 @@ export function useRegion() {
 
     openapi.setSpec(selected.spec)
 
-    console.debug(`Navigating to ${goTo}`)
     await router.go(goTo)
   }
 
