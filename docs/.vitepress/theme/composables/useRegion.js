@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import { useOpenapi } from 'vitepress-theme-openapi'
 import arSpec from '../../../public/openapi.json'
 import clSpec from '../../../public/chile/openapi.json'
+import veSpec from '../../../public/venezuela/openapi.json'
 
 const regions = [
   {
@@ -16,6 +17,12 @@ const regions = [
     name: 'Chile',
     prefix: '/chile',
     spec: clSpec,
+  },
+  {
+    code: 've',
+    name: 'Venezuela',
+    prefix: '/venezuela',
+    spec: veSpec,
   },
 ]
 

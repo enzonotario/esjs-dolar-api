@@ -25,6 +25,7 @@ export default defineConfig({
     sidebar: {
       '/': generateSidebar('ar'),
       '/chile/': generateSidebar('cl'),
+      '/venezuela/': generateSidebar('ve'),
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },
