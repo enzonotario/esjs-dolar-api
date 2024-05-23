@@ -68,6 +68,12 @@
     },
     {
       "source": "/openapi.json",
+      "has": [
+        {
+          "type": "host",
+          "value": "dolarapi.com"
+        }
+      ],
       "destination": "/docs/openapi.json"
     },
     {
