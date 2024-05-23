@@ -37,7 +37,7 @@
       "destination": "/ve/v1/:path*"
     },
     {
-      "source": "(/|/docs)",
+      "source": "/",
       "has": [
         {
           "type": "host",
@@ -47,7 +47,7 @@
       "destination": "https://cl.dolarapi.com/docs/chile/"
     },
     {
-      "source": "(/|/docs)",
+      "source": "/",
       "has": [
         {
           "type": "host",
