@@ -41,6 +41,9 @@ export function useRegion() {
     if (url.startsWith('/docs/chile/'))
       return setCurrentRegion('cl')
 
+    if (url.startsWith('/docs/venezuela/'))
+      return setCurrentRegion('ve')
+
     return setCurrentRegion('ar')
   }
 
