@@ -58,6 +58,12 @@
     },
     {
       "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "dolarapi.com"
+        }
+      ],
       "destination": "/docs/"
     },
     {
