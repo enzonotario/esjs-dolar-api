@@ -26,10 +26,10 @@ export default function sidebarVe() {
       items: [
         {
           text: 'Dólares',
-          ...addRegionPrefixToSidebarItems('ve', sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares')),
+          ...addRegionPrefixToSidebarItems('venezuela', sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares')),
         },
       ],
     },
-    addRegionPrefixToSidebarItems('ve', sidebar.generateSidebarGroup('API')),
+    addRegionPrefixToSidebarItems('venezuela', sidebar.generateSidebarGroup('API')),
   ]
 }

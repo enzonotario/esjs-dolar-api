@@ -24,9 +24,9 @@ export default function sidebarCl() {
     {
       text: 'Cotización actual',
       items: [
-        addRegionPrefixToSidebarItems('cl', sidebar.generateSidebarGroup('Cotización actual', '')),
+        addRegionPrefixToSidebarItems('chile', sidebar.generateSidebarGroup('Cotización actual', '')),
       ],
     },
-    addRegionPrefixToSidebarItems('cl', sidebar.generateSidebarGroup('API')),
+    addRegionPrefixToSidebarItems('chile', sidebar.generateSidebarGroup('API')),
   ]
 }
