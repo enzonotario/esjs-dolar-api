@@ -5,8 +5,8 @@ aside: false
 outline: false
 
 next:
-  text: 'USD / CLP'
-  link: '/venezuela/operations/get-usd-clp'
+  text: 'Dólares'
+  link: '/venezuela/operations/get-dolares'
 
 head:
   - [
