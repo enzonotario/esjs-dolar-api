@@ -63,6 +63,8 @@ export function useRegion() {
     const goTo = `/docs${selected.prefix}/`
       .replace(/\/\//g, '/') // Replace double slashes
 
+    console.debug(['onRegionChange', selected, goTo])
+
     const openapi = useOpenapi()
 
     openapi.setSpec(selected.spec)

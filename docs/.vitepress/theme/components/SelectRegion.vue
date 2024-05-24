@@ -1,6 +1,5 @@
 <script setup>
 import { useRouter } from 'vitepress'
-import { useOpenapi } from 'vitepress-theme-openapi'
 import { ref, watch } from 'vue'
 import { useRegion } from '../composables/useRegion.js'
 
@@ -10,20 +9,7 @@ const router = useRouter()
 
 const options = region.regions
 
-const openapi = useOpenapi()
-
 const innerValue = ref()
-
-function onRegionChange(event) {
-  const selected = region.regions.find(r => r.code === event.target.value)
-
-  const goTo = `/docs${selected.prefix}/`
-    .replace(/\/\//g, '/') // Replace double slashes
-
-  router.go(goTo)
-
-  openapi.setSpec(selected.spec)
-}
 
 watch(
   router.route,
