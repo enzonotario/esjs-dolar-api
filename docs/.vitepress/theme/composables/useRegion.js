@@ -44,7 +44,7 @@ export function useRegion() {
     if (url.hostname === 've.dolarapi.com')
       return setCurrentRegion('ve')
 
-    return setCurrentRegion('ar')
+    return determineRegionByPath(url.pathname)
   }
 
   function determineRegionByPath(url) {
@@ -63,7 +63,7 @@ export function useRegion() {
     const goTo = `/docs${selected.prefix}/`
       .replace(/\/\//g, '/') // Replace double slashes
 
-    console.debug(['onRegionChange', selected, goTo])
+    setCurrentRegion(selected.code)
 
     const openapi = useOpenapi()
 

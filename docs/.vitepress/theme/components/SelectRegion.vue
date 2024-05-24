@@ -1,6 +1,5 @@
 <script setup>
 import { useRouter } from 'vitepress'
-import { ref, watch } from 'vue'
 import { useRegion } from '../composables/useRegion.js'
 
 const region = useRegion()
@@ -8,20 +7,6 @@ const region = useRegion()
 const router = useRouter()
 
 const options = region.regions
-
-const innerValue = ref()
-
-watch(
-  router.route,
-  (url) => {
-    console.debug(['selectRegion navbar', url])
-
-    region.determineRegionByPath(url.path)
-
-    innerValue.value = region.currentRegion.value.code
-  },
-  // { immediate: true },
-)
 </script>
 
 <template>
@@ -29,7 +14,7 @@ watch(
     <label for="region" class="region">Región</label>
     <select
       id="region"
-      :value="innerValue"
+      :value="region.currentRegion.value.code"
       class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
       @change="region.onRegionChange($event, router)"
     >

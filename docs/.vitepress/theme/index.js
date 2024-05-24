@@ -23,8 +23,6 @@ export default {
     if (!import.meta.env.SSR) {
       const url = new URL(window.location.href)
 
-      console.debug(['index', url])
-
       const region = useRegion()
       region.determineRegionByURL(url)
 
