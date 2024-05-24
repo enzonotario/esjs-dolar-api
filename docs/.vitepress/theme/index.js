@@ -14,8 +14,8 @@ export default {
   ...DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'sidebar-nav-before': () => h(SelectRegionSidebarItem),
-      'nav-bar-content-before': () => h(SelectRegion),
+      // 'sidebar-nav-before': () => h(SelectRegionSidebarItem),
+      // 'nav-bar-content-before': () => h(SelectRegion),
       'nav-bar-content-after': () => h(GitHubStars),
     })
   },
