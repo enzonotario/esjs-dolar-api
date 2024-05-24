@@ -53,10 +53,10 @@ export function useRegion() {
   function determineRegionByPath(path) {
     console.debug('Determining region by path:', path)
 
-    if (path.startsWith('/docs/chile/'))
+    if (path.startsWith('/docs/chile'))
       return setCurrentRegion('cl')
 
-    if (path.startsWith('/docs/venezuela/'))
+    if (path.startsWith('/docs/venezuela'))
       return setCurrentRegion('ve')
 
     return setCurrentRegion('ar')
