@@ -21,7 +21,6 @@ const options = region.regions
       <option
         v-for="option in options" :key="option.code"
         :value="option.code"
-        :selected="option.code === region.currentRegion.value.code"
       >
         {{ option.name }}
       </option>
