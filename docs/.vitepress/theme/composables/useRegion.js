@@ -38,6 +38,16 @@ export function useRegion() {
   }
 
   function determineRegionByURL(url) {
+    if (url.hostname === 'cl.dolarapi.com')
+      return setCurrentRegion('cl')
+
+    if (url.hostname === 've.dolarapi.com')
+      return setCurrentRegion('ve')
+
+    return setCurrentRegion('ar')
+  }
+
+  function determineRegionByPath(url) {
     if (url.startsWith('/docs/chile/'))
       return setCurrentRegion('cl')
 
@@ -66,6 +76,7 @@ export function useRegion() {
     setCurrentRegion,
     getRegionByCode,
     determineRegionByURL,
+    determineRegionByPath,
     onRegionChange,
   }
 }

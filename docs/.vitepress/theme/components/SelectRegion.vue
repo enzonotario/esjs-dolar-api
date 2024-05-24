@@ -28,7 +28,9 @@ function onRegionChange(event) {
 watch(
   router.route,
   (url) => {
-    region.determineRegionByURL(url.path)
+    console.debug(['selectRegion navbar', url])
+
+    region.determineRegionByPath(url.path)
 
     innerValue.value = region.currentRegion.value.code
   },

@@ -14,7 +14,9 @@ const innerValue = ref()
 watch(
   router.route,
   (url) => {
-    region.determineRegionByURL(url.path)
+    console.debug(['selectRegion sidebar', url])
+
+    region.determineRegionByPath(url.path)
 
     innerValue.value = region.currentRegion.value.code
   },

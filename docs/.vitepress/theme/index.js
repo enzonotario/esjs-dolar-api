@@ -20,12 +20,13 @@ export default {
     })
   },
   enhanceApp({ app }) {
-    // if window is defined, we are in the browser
     if (!import.meta.env.SSR) {
       const url = new URL(window.location.href)
 
+      console.debug(['index', url])
+
       const region = useRegion()
-      region.determineRegionByURL(url.pathname)
+      region.determineRegionByURL(url)
 
       const openapi = useOpenapi()
       openapi.setSpec(region.currentRegion.value.spec)
