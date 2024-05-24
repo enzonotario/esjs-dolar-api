@@ -20,7 +20,7 @@ watch(
 
     innerValue.value = region.currentRegion.value.code
   },
-  { immediate: true },
+  // { immediate: true },
 )
 </script>
 
