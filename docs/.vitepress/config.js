@@ -22,6 +22,16 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/assets/logo.webp',
+    nav: [
+      {
+        text: 'Región',
+        items: [
+          { text: 'Argentina', link: '/' },
+          { text: 'Chile', link: '/chile/' },
+          { text: 'Venezuela', link: '/venezuela/' },
+        ],
+      },
+    ],
     sidebar: {
       '/': generateSidebar('ar'),
       '/chile/': generateSidebar('cl'),
