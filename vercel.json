@@ -44,7 +44,7 @@
           "value": "cl.dolarapi.com"
         }
       ],
-      "destination": "https://cl.dolarapi.com/docs/chile/"
+      "destination": "/docs/chile/"
     },
     {
       "source": "/",
@@ -54,7 +54,7 @@
           "value": "ve.dolarapi.com"
         }
       ],
-      "destination": "https://ve.dolarapi.com/docs/venezuela/"
+      "destination": "/docs/venezuela/"
     },
     {
       "source": "/",
@@ -64,7 +64,7 @@
           "value": "dolarapi.com"
         }
       ],
-      "destination": "https://dolarapi.com/docs/"
+      "destination": "/docs/"
     },
     {
       "source": "/openapi.json",
@@ -74,7 +74,7 @@
           "value": "dolarapi.com"
         }
       ],
-      "destination": "https://dolarapi.com/docs/openapi.json"
+      "destination": "/docs/openapi.json"
     },
     {
       "source": "/openapi.json",
@@ -84,7 +84,7 @@
           "value": "cl.dolarapi.com"
         }
       ],
-      "destination": "https://cl.dolarapi.com/docs/chile/openapi.json"
+      "destination": "/docs/chile/openapi.json"
     },
     {
       "source": "/openapi.json",
@@ -94,7 +94,7 @@
           "value": "ve.dolarapi.com"
         }
       ],
-      "destination": "https://ve.dolarapi.com/docs/venezuela/openapi.json"
+      "destination": "/docs/venezuela/openapi.json"
     },
     {
       "source": "/favicon.ico",
