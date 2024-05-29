@@ -1,12 +1,12 @@
 import fs from 'node:fs'
 import { useOpenapi } from 'vitepress-theme-openapi'
-import { useCodeSamples } from '../docs/.vitepress/theme/composables/useCodeSamples.js'
+import { useCodeSamples } from '../../docs/.vitepress/theme/composables/useCodeSamples.js'
 
 function loadJSON(path) {
   return JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
 }
 
-const spec = loadJSON('../docs/public/openapi.json')
+const spec = loadJSON('../../docs/public/openapi.json')
 
 const openapi = useOpenapi()
 openapi.setSpec(spec)
@@ -41,7 +41,7 @@ setRegionForSidebar('ar')
       }
     })
 
-  fs.writeFileSync(`docs/ambito/index.md`, output)
+  fs.writeFileSync(`docs/argentina/ambito/index.md`, output)
 }
 
 function generateMarkdown(operationId) {

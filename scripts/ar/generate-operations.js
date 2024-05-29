@@ -1,24 +1,26 @@
 import fs from 'node:fs'
 import { useOpenapi } from 'vitepress-theme-openapi'
-import { useCodeSamples } from '../docs/.vitepress/theme/composables/useCodeSamples.js'
+import { useCodeSamples } from '../../docs/.vitepress/theme/composables/useCodeSamples.js'
 
 function loadJSON(path) {
   return JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
 }
 
-const spec = loadJSON('../docs/public/openapi.json')
+const spec = loadJSON('../../docs/public/openapi.json')
 
 const openapi = useOpenapi()
 openapi.setSpec(spec)
 
 export function init() {
-  return Object.keys(spec.paths).map((path) => {
-    const { operationId } = spec.paths[path].get
+  return Object.keys(spec.paths)
+    .filter(path => !path.includes('/ambito/'))
+    .map((path) => {
+      const { operationId } = spec.paths[path].get
 
-    const markdown = generateMarkdown(operationId)
+      const markdown = generateMarkdown(operationId)
 
-    fs.writeFileSync(`docs/operations/${operationId}.md`, markdown)
-  })
+      fs.writeFileSync(`docs/argentina/operations/${operationId}.md`, markdown)
+    })
 }
 
 function generateMarkdown(operationId) {
@@ -43,7 +45,7 @@ function generateMarkdown(operationId) {
     .pop()
 
   const schema = Object.values(schemas).find(
-    (schema) => schema.title === schemaTitle,
+    schema => schema.title === schemaTitle,
   )
 
   const schemaJson = useOpenapi().propertiesTypesJson(schema, responseType)
@@ -147,6 +149,7 @@ ${codeSamples.python.source}
 
 try {
   init()
-} catch (error) {
+}
+catch (error) {
   console.error(error)
 }
