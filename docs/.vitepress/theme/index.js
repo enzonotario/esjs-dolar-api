@@ -1,14 +1,12 @@
 import DefaultTheme from 'vitepress/theme'
-import './style.css'
 import { h } from 'vue'
-import GitHubStars from './components/GitHubStars.vue'
-import SelectRegion from './components/SelectRegion.vue'
-import Plot from './components/Plot.vue'
 import { theme, useOpenapi } from 'vitepress-theme-openapi'
-import spec from '../../public/openapi.json' assert { type: 'json' }
-import 'vitepress-theme-openapi/dist/style.css'
+import GitHubStars from './components/GitHubStars.vue'
+import Plot from './components/Plot.vue'
 import { useRegion } from './composables/useRegion.js'
-import SelectRegionSidebarItem from './components/SelectRegionSidebarItem.vue'
+
+import 'vitepress-theme-openapi/dist/style.css'
+import './style.css'
 
 export default {
   ...DefaultTheme,

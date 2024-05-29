@@ -1,7 +1,10 @@
 import { useSidebar } from 'vitepress-theme-openapi'
-import { setRegionForSidebar } from './sidebar.utils.js'
+import { addRegionPrefixToSidebarItems, setRegionForSidebar } from './sidebar.utils.js'
+import { useRegion } from '../theme/composables/useRegion.js'
 
-setRegionForSidebar('ar')
+const region = useRegion().regions.find(region => region.code === 'ar')
+
+setRegionForSidebar(region.code)
 
 const sidebar = useSidebar()
 
@@ -12,7 +15,7 @@ export default function () {
         <svg class="i-mdi-home w-5 h-5" />
         <span class="SidebarItem-text">Inicio</span>
       </span>`,
-      link: '/',
+      link: '/argentina',
     },
     {
       text: `<span class="SidebarItem">
@@ -24,11 +27,11 @@ export default function () {
     {
       text: 'Cotización actual',
       items: [
-        sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares'),
-        sidebar.generateSidebarGroup(
+        addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares')),
+        addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup(
           'Cotización actual Monedas',
           'Otras Monedas',
-        ),
+        )),
       ],
     },
     {
@@ -57,12 +60,12 @@ export default function () {
             <span class="w-5 h-5 bg-blue-200 text-gray-800 dark:bg-blue-600 dark:text-white rounded-full text-xs flex items-center justify-center">AF</span>
             <span class="SidebarItem-text">Dólares Ámbito</span>
           </span>`,
-              link: '/ambito/',
+              link: '/argentina/ambito/',
             },
           ],
         },
       ],
     },
-    sidebar.generateSidebarGroup('API'),
+    addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup('API')),
   ]
 }

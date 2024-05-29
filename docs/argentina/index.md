@@ -6,7 +6,7 @@ outline: false
 
 next:
   text: 'Dólares'
-  link: '/operations/get-dolares'
+  link: '/argentina/operations/get-dolares'
 
 head:
   - [

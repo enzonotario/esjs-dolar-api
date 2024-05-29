@@ -8,7 +8,7 @@ const regions = [
   {
     code: 'ar',
     name: 'Argentina',
-    prefix: '/',
+    prefix: '/argentina',
     spec: arSpec,
     default: true,
   },

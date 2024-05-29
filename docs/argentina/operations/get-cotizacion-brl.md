@@ -5,7 +5,7 @@ title: Real Brasileño
 ---
 
 <script setup>
-import { setRegionForSidebar } from '../.vitepress/sidebar/sidebar.utils.js'
+import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
 setRegionForSidebar('ar')
 </script>

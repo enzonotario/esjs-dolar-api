@@ -17,7 +17,7 @@ export default defineConfig({
   lang: 'es-AR',
 
   outDir: '../dist/static/docs',
-  // base: '/',
+  base: '/docs/',
   srcExclude: ['**/operations/parts/*.md'],
 
   themeConfig: {
@@ -26,14 +26,14 @@ export default defineConfig({
       {
         text: 'Región',
         items: [
-          { text: 'Argentina', link: '/' },
+          { text: 'Argentina', link: '/argentina' },
           { text: 'Chile', link: '/chile/' },
           { text: 'Venezuela', link: '/venezuela/' },
         ],
       },
     ],
     sidebar: {
-      '/': generateSidebar('ar'),
+      '/argentina/': generateSidebar('ar'),
       '/chile/': generateSidebar('cl'),
       '/venezuela/': generateSidebar('ve'),
     },
