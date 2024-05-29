@@ -67,6 +67,10 @@
       "destination": "/docs/"
     },
     {
+      "source": "/docs/(?!chile|venezuela)(.*)",
+      "destination": "/docs/argentina/$1"
+    },
+    {
       "source": "/openapi.json",
       "has": [
         {
