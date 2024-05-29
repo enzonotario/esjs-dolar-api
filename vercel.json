@@ -68,7 +68,7 @@
     },
     {
       "source": "/docs/:path((?!chile(?=/)|venezuela(?=/)).*)/:page",
-      "destination": "/docs/argentina/:page"
+      "destination": "/docs/argentina/:path/:page"
     },
     {
       "source": "/openapi.json",
