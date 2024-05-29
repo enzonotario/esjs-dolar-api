@@ -67,7 +67,7 @@
       "destination": "/docs/"
     },
     {
-      "source": "/docs/:path((?!chile|venezuela).*)",
+      "source": "/docs/:path((?!chile/|venezuela/).*)",
       "destination": "/docs/argentina/:path"
     },
     {
