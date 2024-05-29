@@ -57,6 +57,16 @@
       "destination": "/docs/venezuela/"
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "dolarapi.com"
+        }
+      ],
+      "destination": "/docs/"
+    },
+    {
       "source": "/docs/:path((?!chile|venezuela).*)",
       "destination": "/docs/argentina/:path"
     },
