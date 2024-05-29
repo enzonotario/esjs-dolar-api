@@ -17,7 +17,7 @@ export default defineConfig({
   lang: 'es-AR',
 
   outDir: '../dist/static/docs',
-  base: '/docs/',
+  // base: '/',
   srcExclude: ['**/operations/parts/*.md'],
 
   themeConfig: {
