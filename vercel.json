@@ -67,8 +67,12 @@
       "destination": "/docs/"
     },
     {
-      "source": "/docs/:path((?!chile|venezuela).*)",
+      "source": "/docs/operations/:path*",
       "destination": "/docs/argentina/:path"
+    },
+    {
+      "source": "/docs/ambito/:path*",
+      "destination": "/docs/argentina/ambito/:path"
     },
     {
       "source": "/openapi.json",
