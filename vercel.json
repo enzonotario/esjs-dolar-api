@@ -57,14 +57,6 @@
       "destination": "/docs/venezuela/"
     },
     {
-      "source": "/docs/operations/:path*",
-      "destination": "/docs/argentina/operations/:path*"
-    },
-    {
-      "source": "/docs/ambito",
-      "destination": "/docs/argentina/ambito"
-    },
-    {
       "source": "/",
       "has": [
         {
@@ -73,6 +65,14 @@
         }
       ],
       "destination": "/docs/"
+    },
+    {
+      "source": "/docs/operations/:path*",
+      "destination": "/docs/argentina/operations/:path*"
+    },
+    {
+      "source": "/docs/ambito/",
+      "destination": "/docs/argentina/ambito/"
     },
     {
       "source": "/openapi.json",
