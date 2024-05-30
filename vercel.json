@@ -37,6 +37,16 @@
       "destination": "/ve/v1/:path*"
     },
     {
+      "source": "/v1/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "uy.dolarapi.com"
+        }
+      ],
+      "destination": "/uy/v1/:path*"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -55,6 +65,16 @@
         }
       ],
       "destination": "/docs/venezuela/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "uy.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/uruguay/"
     },
     {
       "source": "/",
@@ -95,6 +115,16 @@
         }
       ],
       "destination": "/docs/venezuela/openapi.json"
+    },
+    {
+      "source": "/openapi.json",
+      "has": [
+        {
+          "type": "host",
+          "value": "uy.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/uruguay/openapi.json"
     },
     {
       "source": "/favicon.ico",
