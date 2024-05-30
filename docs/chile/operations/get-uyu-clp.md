@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: UYU / CLP
+title: Peso Uruguayo
 head:
   - [
     'meta',
@@ -61,7 +61,7 @@ setRegionForSidebar('cl')
 
 <template #header="header">
 
-# UYU / CLP
+# Peso Uruguayo
 
 </template>
 

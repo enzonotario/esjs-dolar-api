@@ -18,7 +18,7 @@
   "paths": {
     "/v1/cotizaciones/usd": {
       "get": {
-        "summary": "USD / CLP",
+        "summary": "Dólar",
         "tags": ["Cotización actual"],
         "description": "Cotización del dólar estadounidense en pesos chilenos",
         "responses": {
@@ -68,7 +68,7 @@
     },
     "/v1/cotizaciones/eur": {
       "get": {
-        "summary": "EUR / CLP",
+        "summary": "Euro",
         "tags": ["Cotización actual"],
         "description": "Cotización del euro en pesos chilenos",
         "responses": {
@@ -116,7 +116,7 @@
     },
     "/v1/cotizaciones/brl": {
       "get": {
-        "summary": "BRL / CLP",
+        "summary": "Real Brasileño",
         "tags": ["Cotización actual"],
         "description": "Cotización del real brasileño en pesos chilenos",
         "responses": {
@@ -164,7 +164,7 @@
     },
     "/v1/cotizaciones/ars": {
       "get": {
-        "summary": "ARS / CLP",
+        "summary": "Peso Argentino",
         "tags": ["Cotización actual"],
         "description": "Cotización del peso argentino en pesos chilenos",
         "responses": {
@@ -212,7 +212,7 @@
     },
     "/v1/cotizaciones/uyu": {
       "get": {
-        "summary": "UYU / CLP",
+        "summary": "Peso Uruguayo",
         "tags": ["Cotización actual"],
         "description": "Cotización del peso uruguayo en pesos chilenos",
         "responses": {

@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: USD / CLP
+title: Dólar
 head:
   - [
     'meta',
@@ -61,7 +61,7 @@ setRegionForSidebar('cl')
 
 <template #header="header">
 
-# USD / CLP
+# Dólar
 
 </template>
 

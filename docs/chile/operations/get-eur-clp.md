@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: EUR / CLP
+title: Euro
 head:
   - [
     'meta',
@@ -61,7 +61,7 @@ setRegionForSidebar('cl')
 
 <template #header="header">
 
-# EUR / CLP
+# Euro
 
 </template>
 

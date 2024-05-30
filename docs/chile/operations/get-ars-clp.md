@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: ARS / CLP
+title: Peso Argentino
 head:
   - [
     'meta',
@@ -61,7 +61,7 @@ setRegionForSidebar('cl')
 
 <template #header="header">
 
-# ARS / CLP
+# Peso Argentino
 
 </template>
 

@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: BRL / CLP
+title: Real Brasileño
 head:
   - [
     'meta',
@@ -61,7 +61,7 @@ setRegionForSidebar('cl')
 
 <template #header="header">
 
-# BRL / CLP
+# Real Brasileño
 
 </template>
 
