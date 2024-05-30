@@ -61,8 +61,8 @@
       "destination": "/docs/argentina/operations/:path*"
     },
     {
-      "source": "/docs/ambito/",
-      "destination": "/docs/argentina/ambito/"
+      "source": "/docs/ambito",
+      "destination": "/docs/argentina/ambito"
     },
     {
       "source": "/",
