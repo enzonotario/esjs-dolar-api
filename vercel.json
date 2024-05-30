@@ -57,12 +57,12 @@
       "destination": "/docs/venezuela/"
     },
     {
-      "source": "/docs/operations/:path*.html",
-      "destination": "/docs/argentina/:path*.html"
+      "source": "/docs/operations/:path*",
+      "destination": "/docs/argentina/operations/:path*"
     },
     {
-      "source": "/docs/ambito/:path*.html",
-      "destination": "/docs/argentina/ambito/:path*.html"
+      "source": "/docs/ambito/:path*",
+      "destination": "/docs/argentina/ambito/:path*"
     },
     {
       "source": "/",
