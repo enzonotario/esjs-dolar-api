@@ -67,10 +67,6 @@
       "destination": "/docs/"
     },
     {
-      "source": "/docs/operations/:path*",
-      "destination": "/docs/argentina/operations/:path*"
-    },
-    {
       "source": "/openapi.json",
       "has": [
         {
