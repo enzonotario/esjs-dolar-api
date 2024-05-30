@@ -58,8 +58,7 @@
     },
     {
       "source": "/docs/operations/:path*",
-      "destination": "/docs/argentina/operations/:path*",
-
+      "destination": "/docs/argentina/operations/:path*"
     },
     {
       "source": "/docs/ambito/",
