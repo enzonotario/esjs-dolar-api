@@ -1,0 +1,65 @@
+[
+  {
+    "moneda": "USD",
+    "nombre": "Dólar",
+    "compra": 37.5,
+    "venta": 39.9,
+    "fechaActualizacion": "2024-05-30T23:22:37.309Z"
+  },
+  {
+    "moneda": "EUR",
+    "nombre": "Euro",
+    "compra": 39.66,
+    "venta": 44.48,
+    "fechaActualizacion": "2024-05-30T23:22:37.311Z"
+  },
+  {
+    "moneda": "ARS",
+    "nombre": "Peso Argentino",
+    "compra": 0.024,
+    "venta": 0.2,
+    "fechaActualizacion": "2024-05-30T23:22:37.311Z"
+  },
+  {
+    "moneda": "BRL",
+    "nombre": "Real",
+    "compra": 6.8,
+    "venta": 8.5,
+    "fechaActualizacion": "2024-05-30T23:22:37.312Z"
+  },
+  {
+    "moneda": "GBP",
+    "nombre": "Libra Esterlina",
+    "compra": 46.64,
+    "venta": 52.77,
+    "fechaActualizacion": "2024-05-30T23:22:37.312Z"
+  },
+  {
+    "moneda": "CHF",
+    "nombre": "Franco Suizo",
+    "compra": 40.76,
+    "venta": 44.97,
+    "fechaActualizacion": "2024-05-30T23:22:37.313Z"
+  },
+  {
+    "moneda": "PYG",
+    "nombre": "Guaraní",
+    "compra": 0.00487,
+    "venta": 0.0054,
+    "fechaActualizacion": "2024-05-30T23:22:37.313Z"
+  },
+  {
+    "moneda": "UI",
+    "nombre": "Unidad Indexada",
+    "compra": null,
+    "venta": 6.03,
+    "fechaActualizacion": "2024-05-30T23:22:37.313Z"
+  },
+  {
+    "moneda": "XAU",
+    "nombre": "Onza Troy De Oro",
+    "compra": 87.11,
+    "venta": 93.831,
+    "fechaActualizacion": "2024-05-30T23:22:37.314Z"
+  }
+]

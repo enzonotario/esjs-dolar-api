@@ -1,0 +1,32 @@
+importar extraerCotizaciones desde '@/uy/brou.extractor.esjs'
+importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
+
+exportar porDefecto asincrono funcion () {
+  intentar {
+    consola.escribir('uy.cron.esjs : Iniciando')
+
+    esperar guardarCotizaciones()
+
+    consola.escribir('uy.cron.esjs : Finalizado')
+  } capturar (error) {
+    consola.error('uy.cron.esjs : Error', error)
+  }
+}
+
+asincrono funcion guardarCotizaciones() {
+  consola.escribir('uy.cron.esjs : guardando /v1/cotizaciones')
+
+  const cotizaciones = esperar extraerCotizaciones()
+
+  cotizaciones.mapear((cotizacion) => {
+    escribirRutaRegion(
+      'uy',
+      `/cotizaciones/${cotizacion.moneda.aMinusculas()}`,
+      cotizacion,
+    )
+  })
+
+  escribirRutaRegion('uy', '/cotizaciones', cotizaciones)
+
+  consola.escribir('uy.cron.esjs : finalizado /v1/cotizaciones')
+}
