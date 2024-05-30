@@ -8,6 +8,26 @@ setRegionForSidebar(region.code)
 
 const sidebar = useSidebar()
 
+function getCotizacionActualItems() {
+  const dolares = sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares');
+
+  const monedas =       sidebar.generateSidebarGroup(
+    'Cotización actual Monedas',
+    'Otras Monedas',
+  )
+
+  return [
+    {
+      ...dolares,
+      ...addRegionPrefixToSidebarItems(region.prefix, dolares),
+    },
+    {
+      ...monedas,
+      ...addRegionPrefixToSidebarItems(region.prefix, monedas),
+    },
+  ]
+}
+
 export default function () {
   return [
     {
@@ -26,13 +46,7 @@ export default function () {
     },
     {
       text: 'Cotización actual',
-      items: [
-        addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares')),
-        addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup(
-          'Cotización actual Monedas',
-          'Otras Monedas',
-        )),
-      ],
+      items: getCotizacionActualItems(),
     },
     {
       text: 'Cotización histórica',
