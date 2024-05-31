@@ -5,7 +5,7 @@ aside: false
 outline: false
 
 next:
-  text: 'Cotizaciones',
+  text: 'Cotizaciones'
   link: '/chile/operations/get-cotizaciones'
 
 head:
