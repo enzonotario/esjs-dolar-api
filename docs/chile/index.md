@@ -5,8 +5,8 @@ aside: false
 outline: false
 
 next:
-  text: 'Dólar'
-  link: '/chile/operations/get-usd-clp'
+  text: 'Cotizaciones',
+  link: '/chile/operations/get-cotizaciones'
 
 head:
   - [
