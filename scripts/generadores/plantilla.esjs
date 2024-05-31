@@ -1,0 +1,85 @@
+exportar funcion plantilla(operationId, operation, schemaJson, codeSamples) {
+  const markdown = `<Operation method="GET" id="${operationId}">
+
+<template #header="header">
+
+# ${operation.summary}
+
+</template>
+
+<template #description="description">
+
+<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+
+${operation.description || ""}
+
+<!--@include: ./parts/${operationId}-description-after.md -->
+
+</template>
+
+<template #responses="responses">
+
+## {{ $t('Response') }}
+
+<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
+
+<template #body="body">
+
+<ResponseBody :schema="body.schema" :responseType="body.responseType" />
+
+</template>
+
+<template #example="example">
+
+\`\`\`json
+${schemaJson}
+\`\`\`
+
+</template>
+
+</Responses>
+
+</template>
+
+<template #try-it="tryIt">
+
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+
+<template #response="response">
+
+\`\`\`json-vue
+{{ response.response }}
+\`\`\`
+
+</template>
+
+</TryItButton>
+
+## {{ $t('Samples') }}
+
+::: code-group
+
+\`\`\`bash [cURL] 
+${codeSamples.curl.source}
+\`\`\`
+
+\`\`\`js-vue [JavaScript]
+${codeSamples.javascriptFetch.source}
+\`\`\`
+
+\`\`\`php-vue [PHP]
+${codeSamples.php.source}
+\`\`\`
+
+\`\`\`python-vue [Python]
+${codeSamples.python.source}
+\`\`\`
+
+:::
+
+</template>
+
+</Operation>`
+
+  retornar markdown
+}

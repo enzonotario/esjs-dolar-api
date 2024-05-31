@@ -1,6 +1,7 @@
 importar fs desde 'node:fs'
 importar { useOpenapi } desde 'vitepress-theme-openapi'
 importar { useCodeSamples } desde '../../docs/.vitepress/theme/composables/useCodeSamples.js'
+importar { plantilla } desde './plantilla.esjs'
 
 funcion loadJSON(path) {
   retornar JSON.analizar(fs.readFileSync(crear URL(path, import.meta.url)));
@@ -101,87 +102,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ve')
 </script>
 
-<Operation method="GET" id="${operationId}">
-
-<template #header="header">
-
-# ${operation.summary}
-
-</template>
-
-<template #description="description">
-
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
-${operation.description || ''}
-
-<!--@include: ./parts/${operationId}-description-after.md -->
-
-</template>
-
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-\`\`\`json
-${schemaJson}
-\`\`\`
-
-</template>
-
-</Responses>
-
-</template>
-
-<template #try-it="tryIt">
-
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
-
-<template #response="response">
-
-\`\`\`json-vue
-{{ response.response }}
-\`\`\`
-
-</template>
-
-</TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-\`\`\`bash [cURL] 
-${codeSamples.curl.source}
-\`\`\`
-
-\`\`\`js-vue [JavaScript]
-${codeSamples.javascriptFetch.source}
-\`\`\`
-
-\`\`\`php-vue [PHP]
-${codeSamples.php.source}
-\`\`\`
-
-\`\`\`python-vue [Python]
-${codeSamples.python.source}
-\`\`\`
-
-:::
-
-</template>
-
-</Operation>
+${plantilla(operationId, operation, schemaJson, codeSamples)}
 `
   retornar markdown
 }
