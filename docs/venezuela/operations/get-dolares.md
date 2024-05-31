@@ -69,7 +69,7 @@ setRegionForSidebar('ve')
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Devuelve las distintas cotizaciones del Dólar en Venezuela
 
 <!--@include: ./parts/get-dolares-description-after.md -->
 

@@ -69,7 +69,7 @@ setRegionForSidebar('ve')
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Cotización del Dólar Paralelo en Venezuela
 
 <!--@include: ./parts/get-dolar-paralelo-description-after.md -->
 

@@ -69,7 +69,7 @@ setRegionForSidebar('ve')
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Cotización del Dólar Bitcoin en Venezuela
 
 <!--@include: ./parts/get-dolar-bitcoin-description-after.md -->
 

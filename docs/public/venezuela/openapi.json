@@ -20,7 +20,7 @@
       "get": {
         "summary": "Dólares",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Devuelve las distintas cotizaciones del Dólar en Venezuela",
         "responses": {
           "200": {
             "description": "Devuelve todas las cotizaciones",
@@ -70,7 +70,7 @@
       "get": {
         "summary": "Dólar Oficial",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del Dólar Oficial en Venezuela",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Oficial",
@@ -118,7 +118,7 @@
       "get": {
         "summary": "Dólar Paralelo",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del Dólar Paralelo en Venezuela",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Paralelo",
@@ -166,7 +166,7 @@
       "get": {
         "summary": "Dólar Bitcoin",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del Dólar Bitcoin en Venezuela",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Bitcoin",
