@@ -36,7 +36,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "^1.0.0-beta.27",
     "@egoist/tailwindcss-icons": "^1.7.1",
-    "@es-js/core": "0.1.0-beta.1",
     "@es-js/vite-plugin-esjs": "0.1.0-alpha.13",
     "@hono/vite-dev-server": "^0.0.12",
     "@iconify-json/mdi": "^1.1.63",
@@ -49,7 +48,6 @@
     "cheerio": "1.0.0-rc.12",
     "cors": "^2.8.5",
     "date-fns": "^3.3.1",
-    "es.js": "0.0.1-alpha.13",
     "esjs-loader": "0.1.0-alpha.0",
     "eslint": "^8.51.0",
     "eslint-plugin-import": "^2.25.2",
