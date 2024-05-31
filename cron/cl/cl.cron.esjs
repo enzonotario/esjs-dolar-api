@@ -12,6 +12,8 @@ exportar porDefecto asincrono funcion () {
       escribirRutaRegion('cl', `/cotizaciones/${moneda}`, cotizacion)
     })
 
+    escribirRutaRegion('cl', '/cotizaciones', cotizaciones)
+
     consola.escribir('cl.cron.esjs : Finalizado')
   } capturar (error) {
     consola.error('cl.cron.esjs : Error', error)
