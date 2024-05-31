@@ -16,10 +16,64 @@
     }
   ],
   "paths": {
+    "/v1/cotizaciones": {
+      "get": {
+        "summary": "Cotizaciones",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotizaciones de las principales monedas en pesos chilenos",
+        "responses": {
+          "200": {
+            "description": "Devuelve las cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cotizaciones",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://cl.dolarapi.com/v1/cotizaciones"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://cl.dolarapi.com/v1/cotizaciones\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://cl.dolarapi.com/v1/cotizaciones\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://cl.dolarapi.com/v1/cotizaciones\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://cl.dolarapi.com/v1/cotizaciones\")"
+          }
+        ]
+      }
+    },
     "/v1/cotizaciones/usd": {
       "get": {
         "summary": "Dólar",
-        "tags": ["Cotización actual"],
+        "tags": [
+          "Cotización actual"
+        ],
         "description": "Cotización del dólar estadounidense en pesos chilenos",
         "responses": {
           "200": {
@@ -69,7 +123,9 @@
     "/v1/cotizaciones/eur": {
       "get": {
         "summary": "Euro",
-        "tags": ["Cotización actual"],
+        "tags": [
+          "Cotización actual"
+        ],
         "description": "Cotización del euro en pesos chilenos",
         "responses": {
           "200": {
@@ -117,7 +173,9 @@
     "/v1/cotizaciones/brl": {
       "get": {
         "summary": "Real Brasileño",
-        "tags": ["Cotización actual"],
+        "tags": [
+          "Cotización actual"
+        ],
         "description": "Cotización del real brasileño en pesos chilenos",
         "responses": {
           "200": {
@@ -165,7 +223,9 @@
     "/v1/cotizaciones/ars": {
       "get": {
         "summary": "Peso Argentino",
-        "tags": ["Cotización actual"],
+        "tags": [
+          "Cotización actual"
+        ],
         "description": "Cotización del peso argentino en pesos chilenos",
         "responses": {
           "200": {
@@ -213,7 +273,9 @@
     "/v1/cotizaciones/uyu": {
       "get": {
         "summary": "Peso Uruguayo",
-        "tags": ["Cotización actual"],
+        "tags": [
+          "Cotización actual"
+        ],
         "description": "Cotización del peso uruguayo en pesos chilenos",
         "responses": {
           "200": {
@@ -261,7 +323,9 @@
     "/v1/estado": {
       "get": {
         "summary": "Estado de la API",
-        "tags": ["API"],
+        "tags": [
+          "API"
+        ],
         "responses": {
           "200": {
             "description": "Devuelve el estado de la API",
@@ -340,7 +404,13 @@
             "type": "string"
           }
         },
-        "required": ["venta", "ultimoCierre", "nombre", "moneda", "fechaActualizacion"]
+        "required": [
+          "venta",
+          "ultimoCierre",
+          "nombre",
+          "moneda",
+          "fechaActualizacion"
+        ]
       },
       "Estado": {
         "title": "Estado",

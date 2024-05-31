@@ -16,6 +16,58 @@
     }
   ],
   "paths": {
+    "/v1/cotizaciones": {
+      "get": {
+        "summary": "Cotizaciones",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotizaciones de las monedas más utilizadas en Uruguay",
+        "responses": {
+          "200": {
+            "description": "Devuelve las cotizaciones de las monedas más utilizadas en Uruguay",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cotizaciones",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://uy.dolarapi.com/v1/cotizaciones"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://uy.dolarapi.com/v1/cotizaciones\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://uy.dolarapi.com/v1/cotizaciones\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://uy.dolarapi.com/v1/cotizaciones\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://uy.dolarapi.com/v1/cotizaciones\")"
+          }
+        ]
+      }
+    },
     "/v1/cotizaciones/usd": {
       "get": {
         "summary": "Dólar",
