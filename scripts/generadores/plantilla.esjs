@@ -11,7 +11,7 @@ exportar funcion plantilla(operationId, operation, schemaJson, codeSamples) {
 
 <OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-${operation.description || ""}
+${operation.description || ''}
 
 <!--@include: ./parts/${operationId}-description-after.md -->
 

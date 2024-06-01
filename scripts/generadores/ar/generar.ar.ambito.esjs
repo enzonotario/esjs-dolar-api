@@ -67,6 +67,7 @@ funcion generateMarkdown(operationId) {
   const markdown = `
 ${plantilla(operationId, operation, schemaJson, codeSamples)}
 `
+
   retornar markdown
 }
 

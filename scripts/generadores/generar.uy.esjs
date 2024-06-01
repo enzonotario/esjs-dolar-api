@@ -104,6 +104,7 @@ setRegionForSidebar('uy')
 
 ${plantilla(operationId, operation, schemaJson, codeSamples)}
 `
+
   retornar markdown
 }
 
