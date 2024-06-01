@@ -37,7 +37,6 @@ const currentRegion = ref(regions.find(region => region.default))
 
 export function useRegion() {
   function setCurrentRegion(regionCode) {
-    console.debug('Setting current region:', regionCode)
     currentRegion.value = regions.find(region => region.code === regionCode)
   }
 
@@ -46,8 +45,6 @@ export function useRegion() {
   }
 
   function determineRegionByURL(url) {
-    console.debug('Determining region by URL:', url)
-
     if (url.hostname === 'cl.dolarapi.com')
       return setCurrentRegion('cl')
 
@@ -58,8 +55,6 @@ export function useRegion() {
   }
 
   function determineRegionByPath(path) {
-    console.debug('Determining region by path:', path)
-
     if (path.startsWith('/docs/chile'))
       return setCurrentRegion('cl')
 
