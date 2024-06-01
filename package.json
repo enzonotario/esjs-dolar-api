@@ -44,7 +44,7 @@
     "cheerio": "1.0.0-rc.12",
     "cors": "^2.8.5",
     "date-fns": "^3.3.1",
-    "esjs-loader": "0.1.0-alpha.0",
+    "esjs-loader": "^0.0.1",
     "eslint": "^8.51.0",
     "eslint-plugin-import": "^2.25.2",
     "hono": "^3.9.0",
