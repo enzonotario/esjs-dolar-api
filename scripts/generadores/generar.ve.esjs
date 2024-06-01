@@ -1,7 +1,7 @@
 importar fs desde 'node:fs'
 importar { useOpenapi } desde 'vitepress-theme-openapi'
-importar { useCodeSamples } desde '../../docs/.vitepress/theme/composables/useCodeSamples.js'
 importar { plantilla } desde './plantilla.esjs'
+importar { openapiAtributos } desde './openapiAtributos.esjs'
 
 funcion loadJSON(path) {
   retornar JSON.analizar(fs.readFileSync(crear URL(path, import.meta.url)));
@@ -23,25 +23,10 @@ exportar funcion init() {
 }
 
 funcion generateMarkdown(operationId) {
-  const operation = openapi.getOperation(operationId)
-
-  const codeSamples = useCodeSamples().getCodeSamples(operationId)
-
-  const schemas = openapi.getSchemas()
-
-  const response200 = operation.responses['200']
-
-  const responseType = response200.content['application/json'].schema.items
-    ? 'array'
-    : 'object'
-
-  const schemaTitle = (responseType === 'array' ? response200.content['application/json'].schema.items : response200.content['application/json'].schema).$ref.dividir('/').sacar()
-
-  const schema = Object.valores(schemas).buscar(
-    (schema) => schema.title === schemaTitle,
+  const { operation, schemaJson, codeSamples } = openapiAtributos(
+    openapi,
+    operationId,
   )
-
-  const schemaJson = useOpenapi().propertiesTypesJson(schema, responseType)
 
   const markdown = `---
 aside: false
