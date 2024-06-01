@@ -1,6 +1,6 @@
 importar axios desde 'axios'
 importar cheerio desde 'cheerio'
-importar { monedas } desde '@/constantes.esjs'
+importar { monedas } desde '@/ve/constantes.ve.esjs'
 
 exportar porDefecto asincrono funcion () {
   const respuesta = esperar obtenerRespuesta()

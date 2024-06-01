@@ -1,4 +1,4 @@
-importar { ambito, casas } desde '@/constantes.esjs'
+importar { ambito, casas } desde '@/ar/constantes.ar.esjs'
 importar { interpretarValorMonetario } desde '@/ar/extractores/ambito/interpretarValorMonetario.esjs'
 importar { interpretarFecha } desde '@/ar/extractores/ambito/interpretarFecha.esjs'
 

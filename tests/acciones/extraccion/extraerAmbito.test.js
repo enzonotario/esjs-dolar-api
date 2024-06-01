@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest'
 import { extraerAmbito } from '@/ar/acciones/extraccion/extraerAmbito.esjs'
-import { casas } from '@/constantes.esjs'
+import { casas } from '@/ar/constantes.ar.esjs'
 
 it('extrae ambito', async () => {
   const dolares = await extraerAmbito()

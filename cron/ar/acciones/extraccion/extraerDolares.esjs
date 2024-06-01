@@ -1,4 +1,4 @@
-importar { dolarHoy, casas } desde '@/constantes.esjs'
+importar { dolarHoy, casas } desde '@/ar/constantes.ar.esjs'
 importar cheerio desde 'cheerio'
 
 exportar asincrono funcion extraerDolares() {

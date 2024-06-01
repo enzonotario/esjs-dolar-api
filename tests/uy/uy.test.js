@@ -10,7 +10,7 @@ describe('uy.dolarapi.com', () => {
 
     cotizaciones.forEach((cotizacion) => {
       expect(cotizacion).toBeTypeOf('object')
-      expect(cotizacion.codigo).toBeTypeOf('string')
+      expect(cotizacion.moneda).toBeTypeOf('string')
       expect(cotizacion.nombre).toBeTypeOf('string')
       expect(cotizacion.fechaActualizacion).toBeTypeOf('object')
 
