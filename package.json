@@ -14,7 +14,7 @@
     "docs:i18n-extract": "npx vue-i18n-extract report --vueFiles './docs/.vitepress/**/*.?(js|vue|md)' --languageFiles './docs/.vitepress/theme/locales/*.?(json|yml|yaml)'",
     "docs:gen": "node --experimental-loader esjs-loader scripts/generadores/generar.esjs",
     "prettier": "prettier --write '**/*.esjs'",
-    "data:copy": "pnpm run data:copy:ar && pnpm run data:copy:cl && pnpm run data:copy:ve && pnpm run data:copy:uy",
+    "data:copy": "node --experimental-loader esjs-loader scripts/datos.esjs",
     "data:copy:ar": "mkdir -p ./dist/static/ar/v1 && cp -r ./datos/v1/* ./dist/static/ar/v1",
     "data:copy:cl": "mkdir -p ./dist/static/cl/v1 && cp -r ./datos/cl/v1/* ./dist/static/cl/v1",
     "data:copy:ve": "mkdir -p ./dist/static/ve/v1 && cp -r ./datos/ve/v1/* ./dist/static/ve/v1",
