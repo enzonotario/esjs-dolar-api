@@ -1,5 +1,3 @@
 importar { monedas como monedasAr } desde '@/ar/constantes.ar.esjs'
 
-exportar const monedas = [
-  ...monedasAr
-]
+exportar const monedas = [...monedasAr]

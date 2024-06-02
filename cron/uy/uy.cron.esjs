@@ -12,7 +12,7 @@ exportar porDefecto asincrono funcion () {
 
     log.info('Fin')
   } capturar (error) {
-    log.error('Error', error)
+    logError(log, error)
   }
 }
 

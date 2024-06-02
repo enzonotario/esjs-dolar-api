@@ -14,13 +14,9 @@ exportar asincrono funcion extraerDolares() {
 }
 
 asincrono funcion consultarPagina() {
-  intentar {
-    const respuesta = esperar fetch(dolarHoy.baseUrl)
+  const respuesta = esperar fetch(dolarHoy.baseUrl)
 
-    retornar esperar respuesta.text()
-  } capturar (error) {
-    consola.error(error)
-  }
+  retornar esperar respuesta.text()
 }
 
 asincrono funcion obtenerValoresParaCasa($, casa) {

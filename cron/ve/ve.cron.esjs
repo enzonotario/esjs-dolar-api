@@ -1,6 +1,6 @@
 importar extraerDolares desde '@/ve/dolartoday.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
-importar { grupo } desde '@/log.esjs'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
   const log = grupo({ cron: 'cron.uy.esjs' })
@@ -12,7 +12,7 @@ exportar porDefecto asincrono funcion () {
 
     log.info('Fin')
   } capturar (error) {
-    log.error('Error', error)
+    logError(log, error)
   }
 }
 

@@ -1,7 +1,7 @@
 importar { cronDolares } desde '@/ar/comandos/dolares.cron.esjs'
 importar { cronCotizaciones } desde '@/ar/comandos/cotizaciones.cron.esjs'
 importar { cronAmbito } desde '@/ar/comandos/ambito.cron.esjs'
-importar { grupo } desde '@/log.esjs'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
   const log = grupo({ cron: 'cron.ar.esjs' })
@@ -15,6 +15,6 @@ exportar porDefecto asincrono funcion () {
 
     log.info('Fin')
   } capturar (error) {
-    log.error('Error', error)
+    logError(log, error)
   }
 }
