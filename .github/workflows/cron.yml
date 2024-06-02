@@ -38,6 +38,13 @@ jobs:
           version: 8
           run_install: false
 
+      - name: Create .env file
+        run: |
+          touch .env
+          echo "VITE_AXIOM_ORG_ID=${{ secrets.VITE_AXIOM_ORG_ID }}" >> .env
+          echo "VITE_AXIOM_TOKEN=${{ secrets.VITE_AXIOM_TOKEN }}" >> .env
+          echo "VITE_AXIOM_DATASET=${{ secrets.VITE_AXIOM_DATASET }}" >> .env
+
       - name: Install dependencies
         run: pnpm install
 

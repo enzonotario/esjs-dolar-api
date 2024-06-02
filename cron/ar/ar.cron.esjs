@@ -1,17 +1,20 @@
 importar { cronDolares } desde '@/ar/comandos/dolares.cron.esjs'
 importar { cronCotizaciones } desde '@/ar/comandos/cotizaciones.cron.esjs'
 importar { cronAmbito } desde '@/ar/comandos/ambito.cron.esjs'
+importar { grupo } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
+  const log = grupo({ cron: 'cron.ar.esjs' })
+
   intentar {
-    consola.escribir('ar.cron.esjs : Iniciando')
+    log.info('Inicio')
 
     esperar cronDolares()
     esperar cronCotizaciones()
     esperar cronAmbito()
 
-    consola.escribir('ar.cron.esjs : Finalizado')
+    log.info('Fin')
   } capturar (error) {
-    consola.error('ar.cron.esjs : Error', error)
+    log.error('Error', error)
   }
 }

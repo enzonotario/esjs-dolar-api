@@ -1,9 +1,12 @@
 importar extraer desde '@/cl/cl.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
+importar { grupo } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
+  const log = grupo({ cron: 'cron.cl.esjs' })
+
   intentar {
-    consola.escribir('cl.cron.esjs : Iniciando')
+    log.info('Inicio')
 
     const cotizaciones = esperar extraer()
 
@@ -14,8 +17,8 @@ exportar porDefecto asincrono funcion () {
 
     escribirRutaRegion('cl', '/cotizaciones', cotizaciones)
 
-    consola.escribir('cl.cron.esjs : Finalizado')
+    log.info('Fin')
   } capturar (error) {
-    consola.error('cl.cron.esjs : Error', error)
+    log.error('Error', error)
   }
 }

@@ -1,15 +1,18 @@
 importar extraerDolares desde '@/ve/dolartoday.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
+importar { grupo } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
+  const log = grupo({ cron: 'cron.uy.esjs' })
+
   intentar {
-    consola.escribir('ve.cron.esjs : Iniciando')
+    log.info('Inicio')
 
     esperar guardarDolares()
 
-    consola.escribir('ve.cron.esjs : Finalizado')
+    log.info('Fin')
   } capturar (error) {
-    consola.error('ve.cron.esjs : Error', error)
+    log.error('Error', error)
   }
 }
 

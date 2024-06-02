@@ -1,15 +1,18 @@
 importar extraerCotizaciones desde '@/uy/brou.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
+importar { grupo } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
+  const log = grupo({ cron: 'cron.uy.esjs' })
+
   intentar {
-    consola.escribir('uy.cron.esjs : Iniciando')
+    log.info('Inicio')
 
     esperar guardarCotizaciones()
 
-    consola.escribir('uy.cron.esjs : Finalizado')
+    log.info('Fin')
   } capturar (error) {
-    consola.error('uy.cron.esjs : Error', error)
+    log.error('Error', error)
   }
 }
 
