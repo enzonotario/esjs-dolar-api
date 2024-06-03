@@ -74,7 +74,13 @@ funcion extraerCotizaciones(data) {
 }
 
 funcion interpretarValorMonetario(valor) {
-  retornar interpretarDecimal(valor.reemplazar(',', '.'));
+  si (valor.recortarEspacios() === '-' || valor.recortarEspacios() === '') {
+    retornar nulo
+  }
+
+  const valorLimpio = valor.replace(/\./g, '').reemplazar(',', '.')
+
+  retornar interpretarDecimal(valorLimpio);
 }
 
 funcion interpretarFecha(fecha) {
