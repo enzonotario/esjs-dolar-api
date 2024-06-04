@@ -1,6 +1,7 @@
 importar axios desde 'axios'
 importar cheerio desde 'cheerio'
 importar { monedas } desde '@/uy/constantes.uy.esjs'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
   const respuesta = esperar obtenerRespuesta()
@@ -27,7 +28,7 @@ asincrono funcion obtenerRespuesta() {
   )
 
   si (!portletPath) {
-    consola.error('No se encontró el portlet')
+    logError(grupo({ cron: 'cron.uy.esjs' }), 'No se encontró el portlet')
     retornar
   }
 

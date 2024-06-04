@@ -17,8 +17,6 @@ exportar porDefecto asincrono funcion () {
 }
 
 asincrono funcion guardarDolares() {
-  consola.escribir('ve.cron.esjs : guardando /v1/dolares')
-
   const dolares = esperar extraerDolares()
 
   dolares.mapear((dolar) => {
@@ -26,6 +24,4 @@ asincrono funcion guardarDolares() {
   })
 
   escribirRutaRegion('ve', '/dolares', dolares)
-
-  consola.escribir('ve.cron.esjs : finalizado /v1/dolares')
 }

@@ -2,8 +2,6 @@ importar { consultarDolares } desde '@/ar/acciones/consulta/consultarDolares.esj
 importar { escribirRuta } desde '@/utils/rutas.esjs'
 
 exportar asincrono funcion cronDolares() {
-  consola.escribir('Guardando dolares...')
-
   var dolares = esperar consultarDolares()
 
   escribirRuta(`/dolares`, dolares)
