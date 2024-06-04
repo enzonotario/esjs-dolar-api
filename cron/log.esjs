@@ -1,15 +1,26 @@
 importar pino desde 'pino'
 
-const logger = pino({
-  transport: {
-    target: 'pino-axiom',
-    options: {
-      orgId: import.meta.env.VITE_AXIOM_ORG_ID, // Can be found on settings page
-      token: import.meta.env.VITE_AXIOM_TOKEN, // Can be created on settings page
-      dataset: import.meta.env.VITE_AXIOM_DATASET, // Can be created on settings page
+const transports = pino.transport({
+  targets: [
+    {
+      target: 'pino-axiom',
+      options: {
+        orgId: import.meta.env.VITE_AXIOM_ORG_ID, // Can be found on settings page
+        token: import.meta.env.VITE_AXIOM_TOKEN, // Can be created on settings page
+        dataset: import.meta.env.VITE_AXIOM_DATASET, // Can be created on settings page
+      },
     },
-  },
+    {
+      target: 'pino-pretty',
+      options: {
+        colorize: verdadero,
+        ignore: 'pid,hostname',
+      },
+    },
+  ],
 })
+
+const logger = pino(transports)
 
 const traceId =
   Mate.aleatorio().aCadena(36).subcadena(2, 15) +
