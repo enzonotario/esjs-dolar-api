@@ -1,4 +1,4 @@
-importar extraer desde '@/cl/cl.extractor.esjs'
+importar extraer desde '@/cl/investing.extractor.cl.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 
