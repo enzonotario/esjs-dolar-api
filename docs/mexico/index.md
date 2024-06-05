@@ -76,6 +76,6 @@ Ver en GitHub
 ## Base URL
 
 ```
-https://uy.dolarapi.com
+https://mx.dolarapi.com
 ```
 
