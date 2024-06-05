@@ -6,7 +6,7 @@ outline: false
 
 next:
   text: 'Cotizaciones'
-  link: '/mexico/operations/get-cotizaciones'
+  link: '/mexico/operations/get-usd-mxn'
 
 head:
   - [

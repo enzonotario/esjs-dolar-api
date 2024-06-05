@@ -20,7 +20,7 @@
       "get": {
         "summary": "Cotizaciones",
         "tags": [
-          "Cotización actual"
+          "Hidden - Cotización actual"
         ],
         "description": "Cotizaciones de las monedas más utilizadas en Mexico",
         "responses": {
