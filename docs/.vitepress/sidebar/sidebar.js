@@ -2,6 +2,7 @@ import arSidebar from './sidebar.ar.js'
 import clSidebar from './sidebar.cl.js'
 import veSidebar from './sidebar.ve.js'
 import uySidebar from './sidebar.uy.js'
+import mxSidebar from './sidebar.mx.js'
 
 export function generateSidebar(regionCode) {
   switch (regionCode) {
@@ -13,6 +14,9 @@ export function generateSidebar(regionCode) {
 
     case 'uy':
       return uySidebar()
+
+    case 'mx':
+      return mxSidebar()
 
     default:
       return arSidebar()

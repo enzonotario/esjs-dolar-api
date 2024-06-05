@@ -47,6 +47,16 @@
       "destination": "/uy/v1/:path*"
     },
     {
+      "source": "/v1/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mx.dolarapi.com"
+        }
+      ],
+      "destination": "/mx/v1/:path*"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -65,6 +75,16 @@
         }
       ],
       "destination": "/docs/venezuela/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "mx.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/mexico/"
     },
     {
       "source": "/",

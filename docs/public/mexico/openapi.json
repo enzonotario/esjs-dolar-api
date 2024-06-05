@@ -1,0 +1,235 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DolarApi.com",
+    "version": "1.1.0",
+    "description": "<div class=\"flex flex-col\">\n\n  API desarrollada en <a href=\"https://es.js.org?ref=dolarapi.com\" target=\"_blank\">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Mexico.\n\n  ¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href=\"https://github.com/enzonotario/esjs-dolar-api\" alt=\"GitHub\" target=\"_blank\">GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)"
+  },
+  "servers": [
+    {
+      "url": "https://mx.dolarapi.com",
+      "description": "Producción"
+    },
+    {
+      "url": "http://localhost:5173",
+      "description": "Local"
+    }
+  ],
+  "paths": {
+    "/v1/cotizaciones": {
+      "get": {
+        "summary": "Cotizaciones",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotizaciones de las monedas más utilizadas en Mexico",
+        "responses": {
+          "200": {
+            "description": "Devuelve las cotizaciones de las monedas más utilizadas en Mexico",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cotizaciones",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://mx.dolarapi.com/v1/cotizaciones"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://mx.dolarapi.com/v1/cotizaciones\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://mx.dolarapi.com/v1/cotizaciones\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://mx.dolarapi.com/v1/cotizaciones\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://mx.dolarapi.com/v1/cotizaciones\")"
+          }
+        ]
+      }
+    },
+    "/v1/cotizaciones/usd": {
+      "get": {
+        "summary": "Dólar",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del dólar estadounidense en pesos mexicanos",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Estadounidense",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-usd-mxn",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://mx.dolarapi.com/v1/cotizaciones/usd"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://mx.dolarapi.com/v1/cotizaciones/usd\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://mx.dolarapi.com/v1/cotizaciones/usd\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://mx.dolarapi.com/v1/cotizaciones/usd\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://mx.dolarapi.com/v1/cotizaciones/usd\")"
+          }
+        ]
+      }
+    },
+    "/v1/estado": {
+      "get": {
+        "summary": "Estado de la API",
+        "tags": [
+          "API"
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve el estado de la API",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Estado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-estado",
+        "x-code-samples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -X GET https://mx.dolarapi.com/v1/estado"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (fetch)",
+            "source": "fetch(\"https://mx.dolarapi.com/v1/estado\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
+          },
+          {
+            "lang": "javascript",
+            "label": "JavaScript (axios)",
+            "source": "axios.get(\"https://mx.dolarapi.com/v1/estado\")\n  .then(response => console.log(response.data));"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import requests\nresponse = requests.get(\"https://mx.dolarapi.com/v1/estado\")\nprint(response.json())"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "file_get_contents(\"https://mx.dolarapi.com/v1/estado\")"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cotizacion": {
+        "title": "Cotizacion",
+        "type": "object",
+        "x-stoplight": {
+          "id": "ce96aa7960850"
+        },
+        "x-examples": {
+          "Example 1": {
+            "fechaActualizacion": "2021-01-01T00:00:00.000Z",
+            "compra": 123.99,
+            "venta": 132.99
+          }
+        },
+        "properties": {
+          "fix": {
+            "type": "number"
+          },
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "moneda": {
+            "type": "string"
+          },
+          "fechaActualizacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "venta",
+          "nombre",
+          "moneda",
+          "fechaActualizacion"
+        ]
+      },
+      "Estado": {
+        "title": "Estado",
+        "x-stoplight": {
+          "id": "ogwpb2wxiqwqh"
+        },
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "string"
+          },
+          "aleatorio": {
+            "type": "integer"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "estado": "Disponible",
+            "aleatorio": 1234
+          }
+        }
+      }
+    }
+  }
+}
