@@ -1,5 +1,6 @@
 importar axios desde 'axios'
 importar cheerio desde 'cheerio'
+importar { parse } desde 'date-fns'
 
 const series = {
   fix: 'SF43718',
@@ -18,7 +19,7 @@ asincrono funcion obtenerRespuesta() {
     `https://www.banxico.org.mx/SieAPIRest/service/v1/series/${series.fix},${series.compra},${series.venta}/datos/oportuno`,
     {
       headers: {
-        'Bmx-Token': importar.meta.env.VITE_BANXICO_TOKEN,
+        'Bmx-Token': import.meta.env.VITE_BANXICO_TOKEN,
         Accept: 'application/json',
       },
     },
@@ -57,12 +58,12 @@ funcion extraerDolar(json) {
 }
 
 funcion interpretarValorMonetario(valor) {
-  retornar parseFloat(valor)
+  retornar interpretarDecimal(valor);
 }
 
 funcion interpretarFecha(fecha) {
   intentar {
-    retornar crear Fecha(fecha).aCadenaISO();
+    retornar parse(fecha, 'dd/MM/yyyy', crear Fecha());
   } capturar (error) {
     retornar fecha
   }

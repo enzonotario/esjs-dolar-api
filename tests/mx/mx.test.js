@@ -10,7 +10,7 @@ describe('mx.dolarapi.com', () => {
     expect(dolar.fix).toBeTypeOf('number')
     expect(dolar.compra).toBeTypeOf('number')
     expect(dolar.venta).toBeTypeOf('number')
-    expect(dolar.fechaActualizacion).toBeTypeOf('string')
+    expect(dolar.fechaActualizacion).toBeTypeOf('object')
   }, {
     timeout: 10000,
   })
