@@ -1,0 +1,72 @@
+importar { dolarHoy, casas } desde '@/ar/constantes.ar.esjs'
+importar cheerio desde 'cheerio'
+
+exportar asincrono funcion extraerDolares() {
+  const pagina = esperar consultarPagina()
+
+  const $ = cheerio.load(pagina)
+
+  retornar esperar Promesa.todos(
+    casas.filtrar((casa) => !casa.calculado).mapear(asincrono (casa) => ({
+        moneda: 'USD',
+        casa: casa.identificador,
+        nombre: casa.nombre,
+        ...(esperar obtenerValoresParaCasa($, casa)),
+      })),
+  );
+}
+
+asincrono funcion consultarPagina() {
+  const respuesta = esperar fetch(dolarHoy.baseUrl)
+
+  retornar esperar respuesta.text()
+}
+
+asincrono funcion obtenerValoresParaCasa($, casa) {
+  const casaConfiguracion = dolarHoy.dolares[casa.identificador]
+
+  elegir (casaConfiguracion.extractor) {
+    caso 'cabecera': {
+      retornar esperar extraerCabecera($, casaConfiguracion.href)
+    }
+    caso 'pie':
+      {
+        retornar esperar extraerPie($, casaConfiguracion.href)
+      }
+      porDefecto: {
+        lanzar crear Error(
+          `Extractor no soportado: ${casaConfiguracion.extractor}`,
+        )
+      }
+  }
+}
+
+asincrono funcion extraerCabecera($, href) {
+  const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } =
+    esperar importar('@/ar/extractores/dolarhoy/cabecera.esjs')
+
+  const compra = esperar obtenerValorCompra($, href)
+  const venta = esperar obtenerValorVenta($, href)
+  const fechaActualizacion = obtenerFechaActualizacion($, href)
+
+  retornar {
+    compra,
+    venta,
+    fechaActualizacion,
+  }
+}
+
+asincrono funcion extraerPie($, href) {
+  const { obtenerValorCompra, obtenerValorVenta, obtenerFechaActualizacion } =
+    esperar importar('@/ar/extractores/dolarhoy/pie.esjs')
+
+  const compra = esperar obtenerValorCompra($, href)
+  const venta = esperar obtenerValorVenta($, href)
+  const fechaActualizacion = obtenerFechaActualizacion($, href)
+
+  retornar {
+    compra,
+    venta,
+    fechaActualizacion,
+  }
+}

@@ -1,11 +1,17 @@
-importar { extraerCotizaciones } desde '@/ar/acciones/extraccion/extraerCotizaciones.esjs'
+importar { extraerCotizaciones como extraerDolarHoy } desde '@/ar/acciones/extraccion/extraerCotizaciones.esjs'
+importar { extraerCotizaciones como extraerBNA } desde '@/ar/bna.extractor.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { unificar } desde '@/utils/unificar.esjs'
 
 exportar asincrono funcion consultarCotizaciones() {
   const valoresActuales = esperar leerRuta('/cotizaciones')
 
-  const valoresNuevos = esperar extraerCotizaciones()
+  const valoresNuevos = [
+    ...(esperar extraerBNA()).filtrar((cotizacion) => cotizacion.moneda === 'USD'),
+    ...(esperar extraerDolarHoy()).filtrar(
+      (cotizacion) => cotizacion.moneda !== 'USD',
+    ),
+  ]
 
   const cotizaciones = esperar unificar(valoresActuales, valoresNuevos, 'moneda')
 

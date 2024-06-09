@@ -1,13 +1,17 @@
-importar { extraerDolares } desde '@/ar/acciones/extraccion/extraerDolares.esjs'
+importar { extraerDolares como extraerDolarHoy } desde '@/ar/acciones/extraccion/extraerDolares.esjs'
+importar { extraerCotizaciones } desde '@/ar/bna.extractor.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { unificar } desde '@/utils/unificar.esjs'
 
 asincrono funcion nuevosValores() {
-  var dolaresNoCalculados = esperar extraerDolares()
+  const cotizaciones = esperar extraerCotizaciones()
+
+  const dolaresNoCalculados = esperar extraerDolarHoy()
 
   const dolares = [
-    ...dolaresNoCalculados,
-    ...dolaresNoCalculados.filtrar((dolar) => dolar.casa === 'oficial').mapear((dolarOficial) => {
+    ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD'),
+    ...dolaresNoCalculados.filtrar((dolar) => dolar.casa !== 'oficial'),
+    ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD').mapear((dolarOficial) => {
         const impuestos = 0.6
 
         const compra = Numero((dolarOficial.compra * (1 + impuestos)).fijarDecimales(2))
