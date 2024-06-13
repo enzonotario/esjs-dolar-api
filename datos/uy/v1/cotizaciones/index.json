@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 38.25,
+    "compra": 38.05,
     "venta": 40.45,
-    "fechaActualizacion": "2024-06-13T19:00:36.526Z"
+    "fechaActualizacion": "2024-06-13T20:00:42.965Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 40.2,
-    "venta": 44.81,
-    "fechaActualizacion": "2024-06-13T19:00:36.526Z"
+    "compra": 39.88,
+    "venta": 44.7,
+    "fechaActualizacion": "2024-06-13T20:00:42.965Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.024,
     "venta": 0.2,
-    "fechaActualizacion": "2024-06-13T19:00:36.526Z"
+    "fechaActualizacion": "2024-06-13T20:00:42.965Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
     "compra": 6.6,
     "venta": 8.3,
-    "fechaActualizacion": "2024-06-13T19:00:36.526Z"
+    "fechaActualizacion": "2024-06-13T20:00:42.965Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 47.67,
+    "compra": 47.43,
     "venta": 53.63,
-    "fechaActualizacion": "2024-06-13T19:00:36.526Z"
+    "fechaActualizacion": "2024-06-13T20:00:42.965Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 41.95,
-    "venta": 45.99,
-    "fechaActualizacion": "2024-06-13T19:00:36.526Z"
+    "compra": 41.8,
+    "venta": 46.09,
+    "fechaActualizacion": "2024-06-13T20:00:42.965Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
-    "compra": 0.00499,
-    "venta": 0.0055,
-    "fechaActualizacion": "2024-06-13T19:00:36.526Z"
+    "compra": 0.00496,
+    "venta": 0.00549,
+    "fechaActualizacion": "2024-06-13T20:00:42.966Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.0437,
-    "fechaActualizacion": "2024-06-13T19:00:36.527Z"
+    "fechaActualizacion": "2024-06-13T20:00:42.966Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 88135.65,
+    "compra": 87358.234,
     "venta": 94106.5205,
-    "fechaActualizacion": "2024-06-13T19:00:36.527Z"
+    "fechaActualizacion": "2024-06-13T20:00:42.966Z"
   }
 ]
