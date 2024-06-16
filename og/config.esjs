@@ -52,21 +52,13 @@ exportar porDefecto defineSatoriConfig({
   fonts: [
     {
       name: 'Inter',
-      data: readFileSync(resolve(_DIRNAME, './fonts/Inter-Medium.woff')),
+      data: readFileSync(resolve(_DIRNAME, '../node_modules/@fontsource/inter/files/inter-latin-400-normal.woff')),
       weight: 400,
       style: 'normal',
     },
     {
       name: 'Inter',
-      data: readFileSync(resolve(_DIRNAME, './fonts/Inter-Bold.woff')),
-      weight: 700,
-      style: 'normal',
-    },
-    {
-      name: 'Noto Sans Symbols',
-      data: readFileSync(
-        resolve(_DIRNAME, './fonts/NotoSansSymbols2-Regular.ttf'),
-      ),
+      data: readFileSync(resolve(_DIRNAME, '../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff')),
       weight: 700,
       style: 'normal',
     },
