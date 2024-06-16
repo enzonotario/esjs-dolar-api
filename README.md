@@ -25,7 +25,7 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [Promedio Dolar](https://promedioblue.web.app/): Página web simple para consultar el valor promedio del dolar blue y sus otras cotizaciones. Con otras funciones como calculadora y consultar el precio para una fecha especifica.
 - [CotizArg](https://github.com/nehuengiacone/CotizArg): Sistema de escritorio para consultar las diferentes cotizaciones del dolar en Argentina.
 - [Dólarcito](https://dolarcito.netlify.app/): SPA desarrollada con React que muestra las diferentes cotizaciones del Dólar y permite hacer conversiones entre pesos y dólares
-- [FinherArg](https://financiero-app-production.up.railway.app): Plataforma web donde se podrá encontrar diversas herramientas e información sobre finanzas.
+- [FinherArg](https://finherarg.com): Plataforma web donde se podrá encontrar diversas herramientas e información sobre finanzas.
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
