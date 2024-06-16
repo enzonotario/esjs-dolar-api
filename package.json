@@ -20,10 +20,9 @@
     "cron:test": "vitest --config vite.config.js",
     "cron:test:ui": "vitest --ui",
     "cron:test:run": "vitest run",
-    "og:dev": "x-satori -t ./og/Template.vue -c ./og/config.ts --dev",
-    "og:build": "x-satori -t ./og/Template.vue -c ./og/config.ts -o image.svg",
-    "og:svg": "tsx ./og/gen-svg.mts",
-    "og:png": "tsx ./og/gen-png.mts"
+    "og:dev": "x-satori -t ./og/Template.vue -c og/config.esjs --dev",
+    "og:build": "x-satori -t ./og/Template.vue -c og/config.esjs -o image.svg",
+    "og:png": "node --experimental-loader esjs-loader og/gen-png.esjs"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^1.0.0-beta.27",
