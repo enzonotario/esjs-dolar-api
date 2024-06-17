@@ -1,15 +1,9 @@
-exportar funcion plantilla(operationId, operation, schemaJson, codeSamples) {
-  const markdown = `<Operation method="GET" id="${operationId}">
-
-<template #header="header">
-
-# ${operation.summary}
-
-</template>
+exportar funcion plantilla(operationId, operation, schemaJson, codeSamples, hideDefaultFooter = falso) {
+  const markdown = `<OAOperation operationId="${operationId}" :hide-default-footer="${hideDefaultFooter}">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 ${operation.description || ''}
 
@@ -17,33 +11,9 @@ ${operation.description || ''}
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-\`\`\`json
-${schemaJson}
-\`\`\`
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -79,7 +49,7 @@ ${codeSamples.python.source}
 
 </template>
 
-</Operation>`
+</OAOperation>`
 
   retornar markdown
 }

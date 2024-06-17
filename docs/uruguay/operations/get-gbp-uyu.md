@@ -57,17 +57,11 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('uy')
 </script>
 
-<Operation method="GET" id="get-gbp-uyu">
-
-<template #header="header">
-
-# Libra Esterlina
-
-</template>
+<OAOperation operationId="get-gbp-uyu" :hide-default-footer="false">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotización de la libra esterlina en pesos uruguayos
 
@@ -75,39 +69,9 @@ Cotización de la libra esterlina en pesos uruguayos
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -147,4 +111,4 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>

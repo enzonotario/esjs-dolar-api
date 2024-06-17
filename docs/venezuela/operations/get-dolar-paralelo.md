@@ -57,17 +57,11 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ve')
 </script>
 
-<Operation method="GET" id="get-dolar-paralelo">
-
-<template #header="header">
-
-# Dólar Paralelo
-
-</template>
+<OAOperation operationId="get-dolar-paralelo" :hide-default-footer="false">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotización del Dólar Paralelo en Venezuela
 
@@ -75,40 +69,9 @@ Cotización del Dólar Paralelo en Venezuela
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "fuente": "string",
-  "nombre": "string",
-  "compra": "number",
-  "venta": "number",
-  "promedio": "number",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -148,4 +111,4 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>

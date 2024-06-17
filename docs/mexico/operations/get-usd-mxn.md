@@ -57,17 +57,11 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('mx')
 </script>
 
-<Operation method="GET" id="get-usd-mxn">
-
-<template #header="header">
-
-# Dólar
-
-</template>
+<OAOperation operationId="get-usd-mxn" :hide-default-footer="false">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotización del dólar estadounidense en pesos mexicanos
 
@@ -75,40 +69,9 @@ Cotización del dólar estadounidense en pesos mexicanos
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "fix": "number",
-  "compra": "number",
-  "venta": "number",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -148,4 +111,4 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>

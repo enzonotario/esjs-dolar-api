@@ -10,17 +10,13 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<Operation method="GET" id="get-ambito-dolares">
+<div class="flex flex-col">
 
-<template #header="header">
-
-# Dólares Ámbito
-
-</template>
+<OAOperation operationId="get-ambito-dolares" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -28,42 +24,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-[
-  {
-    "compra": "number",
-    "venta": "number",
-    "casa": "string",
-    "nombre": "string",
-    "moneda": "string",
-    "fechaActualizacion": "string"
-  }
-]
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -103,21 +66,15 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
 
 <hr style="margin: 4rem 0;">
 
-<Operation method="GET" id="get-ambito-dolar-oficial">
-
-<template #header="header">
-
-# Dólar Oficial
-
-</template>
+<OAOperation operationId="get-ambito-dolar-oficial" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -125,40 +82,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "casa": "string",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -198,21 +124,15 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
 
 <hr style="margin: 4rem 0;">
 
-<Operation method="GET" id="get-ambito-dolar-blue">
-
-<template #header="header">
-
-# Dólar Blue
-
-</template>
+<OAOperation operationId="get-ambito-dolar-blue" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -220,40 +140,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "casa": "string",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -293,21 +182,15 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
 
 <hr style="margin: 4rem 0;">
 
-<Operation method="GET" id="get-ambito-dolar-bolsa">
-
-<template #header="header">
-
-# Dólar Bolsa
-
-</template>
+<OAOperation operationId="get-ambito-dolar-bolsa" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -315,40 +198,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "casa": "string",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -388,21 +240,15 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
 
 <hr style="margin: 4rem 0;">
 
-<Operation method="GET" id="get-ambito-dolar-contadoconliqui">
-
-<template #header="header">
-
-# Dólar Contado con Liquidación
-
-</template>
+<OAOperation operationId="get-ambito-dolar-contadoconliqui" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -410,40 +256,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "casa": "string",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -483,21 +298,15 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
 
 <hr style="margin: 4rem 0;">
 
-<Operation method="GET" id="get-ambito-dolar-tarjeta">
-
-<template #header="header">
-
-# Dólar Tarjeta
-
-</template>
+<OAOperation operationId="get-ambito-dolar-tarjeta" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -505,40 +314,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "casa": "string",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -578,21 +356,15 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
 
 <hr style="margin: 4rem 0;">
 
-<Operation method="GET" id="get-ambito-dolar-mayorista">
-
-<template #header="header">
-
-# Dólar Mayorista
-
-</template>
+<OAOperation operationId="get-ambito-dolar-mayorista" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -600,40 +372,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "casa": "string",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -673,21 +414,15 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
 
 <hr style="margin: 4rem 0;">
 
-<Operation method="GET" id="get-ambito-dolar-cripto">
-
-<template #header="header">
-
-# Dólar Cripto
-
-</template>
+<OAOperation operationId="get-ambito-dolar-cripto" :hide-default-footer="true">
 
 <template #description="description">
 
-<OperationEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -695,40 +430,9 @@ Devuelve la cotización según Ámbito Financiero.
 
 </template>
 
-<template #responses="responses">
-
-## {{ $t('Response') }}
-
-<Responses :responses="responses.responses" :schema="responses.schema" :responseType="responses.responseType">
-
-<template #body="body">
-
-<ResponseBody :schema="body.schema" :responseType="body.responseType" />
-
-</template>
-
-<template #example="example">
-
-```json
-{
-  "compra": "number",
-  "venta": "number",
-  "casa": "string",
-  "nombre": "string",
-  "moneda": "string",
-  "fechaActualizacion": "string"
-}
-```
-
-</template>
-
-</Responses>
-
-</template>
-
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method">
+<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -768,4 +472,10 @@ print(response.json())
 
 </template>
 
-</Operation>
+</OAOperation>
+
+<hr style="margin: 4rem 0;">
+
+<OAFooter />
+
+</div>
