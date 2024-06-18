@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Peso Uruguayo
+title: Cotizaciones
 ---
 
 <script setup>
@@ -10,13 +10,13 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-cotizacion-uyu" :hide-default-footer="false">
+<OAOperation operationId="get-cotizaciones" :hide-default-footer="false">
 
 <template #description="description">
 
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-Cotización del Peso Uruguayo en el mercado.
+Devuelve la cotización de todas las monedas.
 
 </template>
 
@@ -39,22 +39,22 @@ Cotización del Peso Uruguayo en el mercado.
 ::: code-group
 
 ```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/cotizaciones/uyu
+curl -X GET https://dolarapi.com/v1/cotizaciones
 ```
 
 ```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/cotizaciones/uyu")
+fetch("https://dolarapi.com/v1/cotizaciones")
   .then(response => response.json())
   .then(data => console.log(data));
 ```
 
 ```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/cotizaciones/uyu")
+file_get_contents("https://dolarapi.com/v1/cotizaciones")
 ```
 
 ```python-vue [Python]
 import requests
-response = requests.get("https://dolarapi.com/v1/cotizaciones/uyu")
+response = requests.get("https://dolarapi.com/v1/cotizaciones")
 print(response.json())
 ```
 
@@ -64,7 +64,7 @@ print(response.json())
 
 <template #footer>
 
-<!--@include: ./parts/get-cotizacion-uyu-footer.md -->
+<!--@include: ./parts/get-cotizaciones-footer.md -->
 
 </template>
 
