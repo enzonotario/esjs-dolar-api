@@ -16,9 +16,7 @@ setRegionForSidebar('ar')
 
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
-
-<!--@include: ./parts/get-dolar-bolsa-description-after.md -->
+Cotización del dólar estadounidense en el mercado bursátil. Es decir, el precio de compra y venta de dólares en el mercado de valores. También conocido como **Dólar MEP**.
 
 </template>
 
@@ -61,6 +59,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-dolar-bolsa-footer.md -->
 
 </template>
 

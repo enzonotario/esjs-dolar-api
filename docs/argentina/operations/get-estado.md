@@ -16,9 +16,7 @@ setRegionForSidebar('ar')
 
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
-
-<!--@include: ./parts/get-estado-description-after.md -->
+Devuelve el estado de la API.
 
 </template>
 
@@ -61,6 +59,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-estado-footer.md -->
 
 </template>
 

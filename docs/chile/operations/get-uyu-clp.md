@@ -65,8 +65,6 @@ setRegionForSidebar('cl')
 
 Cotización del peso uruguayo en pesos chilenos
 
-<!--@include: ./parts/get-uyu-clp-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-uyu-clp-footer.md -->
 
 </template>
 

@@ -65,8 +65,6 @@ setRegionForSidebar('mx')
 
 
 
-<!--@include: ./parts/get-estado-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-estado-footer.md -->
 
 </template>
 

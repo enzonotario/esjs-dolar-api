@@ -1,3 +1,5 @@
+## Monitoreo
+
 El estado de la API se puede consultar en:
 
 - [estado.dolarapi.com](https://estado.dolarapi.com)

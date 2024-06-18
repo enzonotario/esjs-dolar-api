@@ -18,8 +18,6 @@ setRegionForSidebar('ar')
 
 
 
-<!--@include: ./parts/get-cotizacion-brl-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -61,6 +59,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-cotizacion-brl-footer.md -->
 
 </template>
 

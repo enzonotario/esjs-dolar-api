@@ -65,8 +65,6 @@ setRegionForSidebar('uy')
 
 Cotización del dólar estadounidense en pesos uruguayos
 
-<!--@include: ./parts/get-usd-uyu-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-usd-uyu-footer.md -->
 
 </template>
 

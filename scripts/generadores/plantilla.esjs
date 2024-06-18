@@ -7,8 +7,6 @@ exportar funcion plantilla(operationId, operation, schemaJson, codeSamples, hide
 
 ${operation.description || ''}
 
-<!--@include: ./parts/${operationId}-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -46,6 +44,12 @@ ${codeSamples.python.source}
 \`\`\`
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/${operationId}-footer.md -->
 
 </template>
 

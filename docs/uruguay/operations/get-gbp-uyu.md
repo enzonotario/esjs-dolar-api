@@ -65,8 +65,6 @@ setRegionForSidebar('uy')
 
 Cotización de la libra esterlina en pesos uruguayos
 
-<!--@include: ./parts/get-gbp-uyu-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-gbp-uyu-footer.md -->
 
 </template>
 

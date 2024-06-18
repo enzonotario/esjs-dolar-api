@@ -16,9 +16,7 @@ setRegionForSidebar('ar')
 
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
-
-<!--@include: ./parts/get-dolar-contadoconliqui-description-after.md -->
+Cotización del dólar estadounidense en el mercado bursátil. Es decir, el precio de compra y venta de dólares en el mercado de valores. También conocido como **Dólar CCL**.
 
 </template>
 
@@ -61,6 +59,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-dolar-contadoconliqui-footer.md -->
 
 </template>
 

@@ -65,8 +65,6 @@ setRegionForSidebar('uy')
 
 Cotización del guaraní paraguayo en pesos uruguayos
 
-<!--@include: ./parts/get-pyg-uyu-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-pyg-uyu-footer.md -->
 
 </template>
 

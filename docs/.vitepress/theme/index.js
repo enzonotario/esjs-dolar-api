@@ -1,9 +1,10 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import { theme, useOpenapi } from 'vitepress-theme-openapi'
+import { useRegion } from './composables/useRegion.js'
 import GitHubStars from './components/GitHubStars.vue'
 import Plot from './components/Plot.vue'
-import { useRegion } from './composables/useRegion.js'
+import IndexDemo from './components/IndexDemo.vue'
 
 import 'vitepress-theme-openapi/dist/style.css'
 import './style.css'
@@ -31,5 +32,6 @@ export default {
     theme.enhanceApp({ app })
 
     app.component('Plot', Plot)
+    app.component('IndexDemo', IndexDemo)
   },
 }

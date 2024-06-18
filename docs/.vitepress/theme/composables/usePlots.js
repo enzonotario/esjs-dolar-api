@@ -59,12 +59,6 @@ export function usePlots() {
     const tipoCambioOficial = valores[0]
 
     const option = {
-      title: {
-        text: 'Variación de Cotizaciones respecto al Oficial',
-        textStyle: {
-          color: isDark ? colors.gray[100] : colors.gray[800],
-        },
-      },
       xAxis: {
         type: 'category',
         data: nombres,

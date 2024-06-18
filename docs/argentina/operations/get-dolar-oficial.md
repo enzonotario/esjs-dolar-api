@@ -16,9 +16,7 @@ setRegionForSidebar('ar')
 
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
-
-<!--@include: ./parts/get-dolar-oficial-description-after.md -->
+Cotización del dólar estadounidense en el mercado oficial. Es decir, el precio de compra y venta de dólares en bancos y casas de cambio autorizadas por el Banco Central de la República Argentina (BCRA).
 
 </template>
 
@@ -61,6 +59,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-dolar-oficial-footer.md -->
 
 </template>
 

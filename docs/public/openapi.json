@@ -20,7 +20,7 @@
       "get": {
         "summary": "Dólares",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye el precio de compra y venta de dólares en diferentes mercados.",
         "responses": {
           "200": {
             "description": "Devuelve todas las cotizaciones",
@@ -70,7 +70,7 @@
       "get": {
         "summary": "Dólar Oficial",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del dólar estadounidense en el mercado oficial. Es decir, el precio de compra y venta de dólares en bancos y casas de cambio autorizadas por el Banco Central de la República Argentina (BCRA).",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Oficial",
@@ -118,7 +118,7 @@
       "get": {
         "summary": "Dólar Blue",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del dólar estadounidense en el mercado paralelo o informal. Es decir, el precio de compra y venta de dólares en cuevas o casas de cambio no autorizadas por el Banco Central de la República Argentina (BCRA).",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Blue",
@@ -166,7 +166,7 @@
       "get": {
         "summary": "Dólar Bolsa",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del dólar estadounidense en el mercado bursátil. Es decir, el precio de compra y venta de dólares en el mercado de valores. También conocido como **Dólar MEP**.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Bolsa",
@@ -214,7 +214,7 @@
       "get": {
         "summary": "Dólar Contado con Liquidación",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del dólar estadounidense en el mercado bursátil. Es decir, el precio de compra y venta de dólares en el mercado de valores. También conocido como **Dólar CCL**.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Contado con liquidación",
@@ -263,7 +263,7 @@
       "get": {
         "summary": "Dólar Tarjeta",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Es el valor de la cotización del dólar estadounidense en el mercado oficial, más el impuesto PAIS (30%), el impuesto a las ganancias (100%) y el impuesto a cuenta de bienes personales (25%).",
         "responses": {
           "200": {
             "description": "Devuelve el valor del Dólar Tarjeta",
@@ -311,7 +311,7 @@
       "get": {
         "summary": "Dólar Mayorista",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del dólar estadounidense en el mercado mayorista. Es decir, el precio de compra y venta de dólares en el mercado interbancario.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Mayorista",
@@ -359,7 +359,7 @@
       "get": {
         "summary": "Dólar Cripto",
         "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "description": "Cotización del dólar estadounidense en el mercado de criptomonedas. Es decir, el precio de compra y venta de dólares en el mercado de criptoactivos.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Cripto",
@@ -794,6 +794,7 @@
       "get": {
         "summary": "Estado de la API",
         "tags": ["API"],
+        "description": "Devuelve el estado de la API.",
         "responses": {
           "200": {
             "description": "Devuelve el estado de la API",

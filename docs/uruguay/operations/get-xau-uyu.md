@@ -65,8 +65,6 @@ setRegionForSidebar('uy')
 
 Cotización del oro en pesos uruguayos
 
-<!--@include: ./parts/get-xau-uyu-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-xau-uyu-footer.md -->
 
 </template>
 

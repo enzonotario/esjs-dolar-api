@@ -65,8 +65,6 @@ setRegionForSidebar('cl')
 
 Cotizaciones de las principales monedas en pesos chilenos
 
-<!--@include: ./parts/get-cotizaciones-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-cotizaciones-footer.md -->
 
 </template>
 

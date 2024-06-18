@@ -65,8 +65,6 @@ setRegionForSidebar('mx')
 
 Cotización del dólar estadounidense en pesos mexicanos
 
-<!--@include: ./parts/get-usd-mxn-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-usd-mxn-footer.md -->
 
 </template>
 

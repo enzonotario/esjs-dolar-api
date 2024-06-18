@@ -65,8 +65,6 @@ setRegionForSidebar('ve')
 
 Devuelve las distintas cotizaciones del Dólar en Venezuela
 
-<!--@include: ./parts/get-dolares-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-dolares-footer.md -->
 
 </template>
 

@@ -65,8 +65,6 @@ setRegionForSidebar('mx')
 
 Cotizaciones de las monedas más utilizadas en Mexico
 
-<!--@include: ./parts/get-cotizaciones-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-cotizaciones-footer.md -->
 
 </template>
 

@@ -65,8 +65,6 @@ setRegionForSidebar('uy')
 
 Cotización del real brasileño en pesos uruguayos
 
-<!--@include: ./parts/get-brl-uyu-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-brl-uyu-footer.md -->
 
 </template>
 

@@ -20,8 +20,6 @@ setRegionForSidebar('ar')
 
 Devuelve la cotización según Ámbito Financiero.
 
-<!--@include: ./parts/get-ambito-dolares-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -66,6 +64,12 @@ print(response.json())
 
 </template>
 
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolares-footer.md -->
+
+</template>
+
 </OAOperation>
 
 <hr style="margin: 4rem 0;">
@@ -77,8 +81,6 @@ print(response.json())
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
-
-<!--@include: ./parts/get-ambito-dolar-oficial-description-after.md -->
 
 </template>
 
@@ -124,6 +126,12 @@ print(response.json())
 
 </template>
 
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolar-oficial-footer.md -->
+
+</template>
+
 </OAOperation>
 
 <hr style="margin: 4rem 0;">
@@ -135,8 +143,6 @@ print(response.json())
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
-
-<!--@include: ./parts/get-ambito-dolar-blue-description-after.md -->
 
 </template>
 
@@ -182,6 +188,12 @@ print(response.json())
 
 </template>
 
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolar-blue-footer.md -->
+
+</template>
+
 </OAOperation>
 
 <hr style="margin: 4rem 0;">
@@ -193,8 +205,6 @@ print(response.json())
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
-
-<!--@include: ./parts/get-ambito-dolar-bolsa-description-after.md -->
 
 </template>
 
@@ -240,6 +250,12 @@ print(response.json())
 
 </template>
 
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolar-bolsa-footer.md -->
+
+</template>
+
 </OAOperation>
 
 <hr style="margin: 4rem 0;">
@@ -251,8 +267,6 @@ print(response.json())
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
-
-<!--@include: ./parts/get-ambito-dolar-contadoconliqui-description-after.md -->
 
 </template>
 
@@ -298,6 +312,12 @@ print(response.json())
 
 </template>
 
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolar-contadoconliqui-footer.md -->
+
+</template>
+
 </OAOperation>
 
 <hr style="margin: 4rem 0;">
@@ -309,8 +329,6 @@ print(response.json())
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
-
-<!--@include: ./parts/get-ambito-dolar-tarjeta-description-after.md -->
 
 </template>
 
@@ -356,6 +374,12 @@ print(response.json())
 
 </template>
 
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolar-tarjeta-footer.md -->
+
+</template>
+
 </OAOperation>
 
 <hr style="margin: 4rem 0;">
@@ -367,8 +391,6 @@ print(response.json())
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
-
-<!--@include: ./parts/get-ambito-dolar-mayorista-description-after.md -->
 
 </template>
 
@@ -414,6 +436,12 @@ print(response.json())
 
 </template>
 
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolar-mayorista-footer.md -->
+
+</template>
+
 </OAOperation>
 
 <hr style="margin: 4rem 0;">
@@ -425,8 +453,6 @@ print(response.json())
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
-
-<!--@include: ./parts/get-ambito-dolar-cripto-description-after.md -->
 
 </template>
 
@@ -469,6 +495,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-ambito-dolar-cripto-footer.md -->
 
 </template>
 

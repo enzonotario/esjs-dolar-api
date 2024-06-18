@@ -65,8 +65,6 @@ setRegionForSidebar('cl')
 
 Cotización del euro en pesos chilenos
 
-<!--@include: ./parts/get-eur-clp-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-eur-clp-footer.md -->
 
 </template>
 

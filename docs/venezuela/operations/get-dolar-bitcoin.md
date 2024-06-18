@@ -65,8 +65,6 @@ setRegionForSidebar('ve')
 
 Cotización del Dólar Bitcoin en Venezuela
 
-<!--@include: ./parts/get-dolar-bitcoin-description-after.md -->
-
 </template>
 
 <template #try-it="tryIt">
@@ -108,6 +106,12 @@ print(response.json())
 ```
 
 :::
+
+</template>
+
+<template #footer>
+
+<!--@include: ./parts/get-dolar-bitcoin-footer.md -->
 
 </template>
 
