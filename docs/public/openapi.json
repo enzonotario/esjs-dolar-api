@@ -22,7 +22,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye el precio de compra y venta de dólares en diferentes mercados.",
+        "description": "Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye el precio de compra y venta de dólares en diferentes mercados (denominados \"casas\").",
         "responses": {
           "200": {
             "description": "Devuelve todas las cotizaciones",

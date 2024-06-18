@@ -16,7 +16,7 @@ setRegionForSidebar('ar')
 
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye el precio de compra y venta de dólares en diferentes mercados.
+Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye el precio de compra y venta de dólares en diferentes mercados (denominados "casas").
 
 </template>
 
