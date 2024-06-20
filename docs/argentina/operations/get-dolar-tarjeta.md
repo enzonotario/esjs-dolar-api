@@ -64,6 +64,8 @@ print(response.json())
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/get-dolar-tarjeta-footer.md -->
 
 </template>

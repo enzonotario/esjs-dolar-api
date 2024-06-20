@@ -111,6 +111,8 @@ print(response.json())
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/get-dolar-bitcoin-footer.md -->
 
 </template>

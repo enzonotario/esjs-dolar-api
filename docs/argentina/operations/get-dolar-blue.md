@@ -64,6 +64,8 @@ print(response.json())
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/get-dolar-blue-footer.md -->
 
 </template>

@@ -49,6 +49,8 @@ ${codeSamples.python.source}
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/${operationId}-footer.md -->
 
 </template>

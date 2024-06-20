@@ -66,6 +66,8 @@ print(response.json())
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/get-ambito-dolares-footer.md -->
 
 </template>
@@ -127,6 +129,8 @@ print(response.json())
 </template>
 
 <template #footer>
+
+<OAFooter />
 
 <!--@include: ./parts/get-ambito-dolar-oficial-footer.md -->
 
@@ -190,6 +194,8 @@ print(response.json())
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/get-ambito-dolar-blue-footer.md -->
 
 </template>
@@ -251,6 +257,8 @@ print(response.json())
 </template>
 
 <template #footer>
+
+<OAFooter />
 
 <!--@include: ./parts/get-ambito-dolar-bolsa-footer.md -->
 
@@ -314,6 +322,8 @@ print(response.json())
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/get-ambito-dolar-contadoconliqui-footer.md -->
 
 </template>
@@ -375,6 +385,8 @@ print(response.json())
 </template>
 
 <template #footer>
+
+<OAFooter />
 
 <!--@include: ./parts/get-ambito-dolar-tarjeta-footer.md -->
 
@@ -438,6 +450,8 @@ print(response.json())
 
 <template #footer>
 
+<OAFooter />
+
 <!--@include: ./parts/get-ambito-dolar-mayorista-footer.md -->
 
 </template>
@@ -499,6 +513,8 @@ print(response.json())
 </template>
 
 <template #footer>
+
+<OAFooter />
 
 <!--@include: ./parts/get-ambito-dolar-cripto-footer.md -->
 
