@@ -31,11 +31,11 @@ jobs:
           registry-url: https://registry.npmjs.org/
           node-version: 18
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 8
+          version: 9
           run_install: false
 
       - name: Create .env file
