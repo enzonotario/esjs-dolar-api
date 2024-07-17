@@ -28,39 +28,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares")
-print(response.json())
-```
-
-:::
 
 </template>
 
@@ -92,39 +64,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares/oficial
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares/oficial")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares/oficial")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares/oficial")
-print(response.json())
-```
-
-:::
 
 </template>
 
@@ -156,39 +100,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares/blue
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares/blue")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares/blue")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares/blue")
-print(response.json())
-```
-
-:::
 
 </template>
 
@@ -220,39 +136,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares/bolsa
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares/bolsa")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares/bolsa")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares/bolsa")
-print(response.json())
-```
-
-:::
 
 </template>
 
@@ -284,39 +172,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares/contadoconliqui
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares/contadoconliqui")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares/contadoconliqui")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares/contadoconliqui")
-print(response.json())
-```
-
-:::
 
 </template>
 
@@ -348,39 +208,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares/tarjeta
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares/tarjeta")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares/tarjeta")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares/tarjeta")
-print(response.json())
-```
-
-:::
 
 </template>
 
@@ -412,39 +244,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares/mayorista
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares/mayorista")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares/mayorista")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares/mayorista")
-print(response.json())
-```
-
-:::
 
 </template>
 
@@ -476,39 +280,11 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/ambito/dolares/cripto
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/ambito/dolares/cripto")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/ambito/dolares/cripto")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/ambito/dolares/cripto")
-print(response.json())
-```
-
-:::
 
 </template>
 

@@ -73,39 +73,11 @@ Cotización del Dólar Bitcoin en Venezuela
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://ve.dolarapi.com/v1/dolares/bitcoin
-```
-
-```js-vue [JavaScript]
-fetch("https://ve.dolarapi.com/v1/dolares/bitcoin")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://ve.dolarapi.com/v1/dolares/bitcoin")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://ve.dolarapi.com/v1/dolares/bitcoin")
-print(response.json())
-```
-
-:::
 
 </template>
 

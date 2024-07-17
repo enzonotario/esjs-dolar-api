@@ -73,39 +73,11 @@ Cotización del Dólar Paralelo en Venezuela
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://ve.dolarapi.com/v1/dolares/paralelo
-```
-
-```js-vue [JavaScript]
-fetch("https://ve.dolarapi.com/v1/dolares/paralelo")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://ve.dolarapi.com/v1/dolares/paralelo")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://ve.dolarapi.com/v1/dolares/paralelo")
-print(response.json())
-```
-
-:::
 
 </template>
 

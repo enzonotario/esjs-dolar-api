@@ -38,34 +38,7 @@
             }
           }
         },
-        "operationId": "get-dolares",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares\")"
-          }
-        ]
+        "operationId": "get-dolares"
       }
     },
     "/v1/dolares/oficial": {
@@ -88,34 +61,7 @@
             "headers": {}
           }
         },
-        "operationId": "get-dolar-oficial",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/oficial"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/oficial\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/oficial\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/oficial\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/oficial\")"
-          }
-        ]
+        "operationId": "get-dolar-oficial"
       }
     },
     "/v1/dolares/blue": {
@@ -137,34 +83,7 @@
             }
           }
         },
-        "operationId": "get-dolar-blue",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/blue"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/blue\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/blue\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/blue\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/blue\")"
-          }
-        ]
+        "operationId": "get-dolar-blue"
       },
       "parameters": []
     },
@@ -187,34 +106,7 @@
             }
           }
         },
-        "operationId": "get-dolar-bolsa",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/bolsa"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/bolsa\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/bolsa\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/bolsa\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/bolsa\")"
-          }
-        ]
+        "operationId": "get-dolar-bolsa"
       },
       "parameters": []
     },
@@ -238,34 +130,7 @@
           }
         },
         "operationId": "get-dolar-contadoconliqui",
-        "x-sidebar-title": "Dólar CCL",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/contadoconliqui"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/contadoconliqui\")"
-          }
-        ]
+        "x-sidebar-title": "Dólar CCL"
       },
       "parameters": []
     },
@@ -288,34 +153,7 @@
             }
           }
         },
-        "operationId": "get-dolar-tarjeta",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/tarjeta"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/tarjeta\")"
-          }
-        ]
+        "operationId": "get-dolar-tarjeta"
       },
       "parameters": []
     },
@@ -338,34 +176,7 @@
             }
           }
         },
-        "operationId": "get-dolar-mayorista",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/mayorista"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/mayorista\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/mayorista\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/mayorista\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/mayorista\")"
-          }
-        ]
+        "operationId": "get-dolar-mayorista"
       },
       "parameters": []
     },
@@ -388,34 +199,7 @@
             }
           }
         },
-        "operationId": "get-dolar-cripto",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/cripto"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/cripto\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/cripto\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/cripto\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/cripto\")"
-          }
-        ]
+        "operationId": "get-dolar-cripto"
       },
       "parameters": []
     },
@@ -441,34 +225,7 @@
             }
           }
         },
-        "operationId": "get-ambito-dolares",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares\")"
-          }
-        ]
+        "operationId": "get-ambito-dolares"
       }
     },
     "/v1/ambito/dolares/oficial": {
@@ -491,34 +248,7 @@
             "headers": {}
           }
         },
-        "operationId": "get-ambito-dolar-oficial",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/oficial"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/oficial\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/oficial\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/oficial\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/oficial\")"
-          }
-        ]
+        "operationId": "get-ambito-dolar-oficial"
       }
     },
     "/v1/ambito/dolares/blue": {
@@ -540,34 +270,7 @@
             }
           }
         },
-        "operationId": "get-ambito-dolar-blue",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/blue"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/blue\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/blue\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/blue\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/blue\")"
-          }
-        ]
+        "operationId": "get-ambito-dolar-blue"
       },
       "parameters": []
     },
@@ -590,34 +293,7 @@
             }
           }
         },
-        "operationId": "get-ambito-dolar-bolsa",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/bolsa"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/bolsa\")"
-          }
-        ]
+        "operationId": "get-ambito-dolar-bolsa"
       },
       "parameters": []
     },
@@ -641,34 +317,7 @@
           }
         },
         "operationId": "get-ambito-dolar-contadoconliqui",
-        "x-sidebar-title": "Dólar CCL",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/contadoconliqui"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/contadoconliqui\")"
-          }
-        ]
+        "x-sidebar-title": "Dólar CCL"
       },
       "parameters": []
     },
@@ -691,34 +340,7 @@
             }
           }
         },
-        "operationId": "get-ambito-dolar-tarjeta",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/tarjeta"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/tarjeta\")"
-          }
-        ]
+        "operationId": "get-ambito-dolar-tarjeta"
       },
       "parameters": []
     },
@@ -741,34 +363,7 @@
             }
           }
         },
-        "operationId": "get-ambito-dolar-mayorista",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/mayorista"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/mayorista\")"
-          }
-        ]
+        "operationId": "get-ambito-dolar-mayorista"
       },
       "parameters": []
     },
@@ -791,34 +386,7 @@
             }
           }
         },
-        "operationId": "get-ambito-dolar-cripto",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/ambito/dolares/cripto"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/ambito/dolares/cripto\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/ambito/dolares/cripto\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/ambito/dolares/cripto\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/ambito/dolares/cripto\")"
-          }
-        ]
+        "operationId": "get-ambito-dolar-cripto"
       },
       "parameters": []
     },
@@ -841,34 +409,7 @@
             }
           }
         },
-        "operationId": "get-estado",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/estado"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/estado\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/estado\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/estado\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/estado\")"
-          }
-        ]
+        "operationId": "get-estado"
       }
     },
     "/v1/cotizaciones": {
@@ -893,34 +434,7 @@
             }
           }
         },
-        "operationId": "get-cotizaciones",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones\")"
-          }
-        ]
+        "operationId": "get-cotizaciones"
       }
     },
     "/v1/cotizaciones/eur": {
@@ -943,34 +457,7 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-eur",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/eur"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/eur\")"
-          }
-        ]
+        "operationId": "get-cotizacion-eur"
       }
     },
     "/v1/cotizaciones/brl": {
@@ -993,34 +480,7 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-brl",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/brl"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/brl\")"
-          }
-        ]
+        "operationId": "get-cotizacion-brl"
       }
     },
     "/v1/cotizaciones/clp": {
@@ -1043,34 +503,7 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-clp",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/clp"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/clp\")"
-          }
-        ]
+        "operationId": "get-cotizacion-clp"
       }
     },
     "/v1/cotizaciones/uyu": {
@@ -1093,34 +526,7 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-uyu",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/uyu"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/uyu\")"
-          }
-        ]
+        "operationId": "get-cotizacion-uyu"
       }
     }
   },

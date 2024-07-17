@@ -26,39 +26,11 @@ Es el valor de la cotización del dólar estadounidense en el mercado oficial, m
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://dolarapi.com/v1/dolares/tarjeta
-```
-
-```js-vue [JavaScript]
-fetch("https://dolarapi.com/v1/dolares/tarjeta")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://dolarapi.com/v1/dolares/tarjeta")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://dolarapi.com/v1/dolares/tarjeta")
-print(response.json())
-```
-
-:::
 
 </template>
 

@@ -73,39 +73,11 @@ Cotización del real brasileño en pesos chilenos
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://cl.dolarapi.com/v1/cotizaciones/brl
-```
-
-```js-vue [JavaScript]
-fetch("https://cl.dolarapi.com/v1/cotizaciones/brl")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://cl.dolarapi.com/v1/cotizaciones/brl")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://cl.dolarapi.com/v1/cotizaciones/brl")
-print(response.json())
-```
-
-:::
 
 </template>
 

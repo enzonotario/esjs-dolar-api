@@ -73,39 +73,11 @@ setRegionForSidebar('uy')
 
 <template #response="response">
 
-```json-vue
-{{ response.response }}
-```
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-```bash [cURL] 
-curl -X GET https://uy.dolarapi.com/v1/estado
-```
-
-```js-vue [JavaScript]
-fetch("https://uy.dolarapi.com/v1/estado")
-  .then(response => response.json())
-  .then(data => console.log(data));
-```
-
-```php-vue [PHP]
-file_get_contents("https://uy.dolarapi.com/v1/estado")
-```
-
-```python-vue [Python]
-import requests
-response = requests.get("https://uy.dolarapi.com/v1/estado")
-print(response.json())
-```
-
-:::
 
 </template>
 
