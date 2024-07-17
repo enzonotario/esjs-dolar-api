@@ -15,35 +15,11 @@ ${operation.description || ''}
 
 <template #response="response">
 
-\`\`\`json-vue
-{{ response.response }}
-\`\`\`
-
+<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
+             
 </template>
 
 </TryItButton>
-
-## {{ $t('Samples') }}
-
-::: code-group
-
-\`\`\`bash [cURL] 
-${codeSamples.curl.source}
-\`\`\`
-
-\`\`\`js-vue [JavaScript]
-${codeSamples.javascriptFetch.source}
-\`\`\`
-
-\`\`\`php-vue [PHP]
-${codeSamples.php.source}
-\`\`\`
-
-\`\`\`python-vue [Python]
-${codeSamples.python.source}
-\`\`\`
-
-:::
 
 </template>
 
