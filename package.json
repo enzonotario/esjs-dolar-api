@@ -1,7 +1,12 @@
 {
   "name": "esjs-dolar-api",
-  "version": "0.0.1",
+  "private": true,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enzonotario/esjs-dolar-api.git"
+  },
+  "author": "Enzo Notario <hi@enzonotario.me>",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
