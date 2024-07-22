@@ -1,0 +1,56 @@
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
+importar { parse } desde 'date-fns'
+
+exportar porDefecto asincrono funcion () {
+  const respuesta = esperar obtenerRespuesta()
+
+  retornar extraerDolar(respuesta)
+}
+
+asincrono funcion obtenerRespuesta() {
+  const respuesta = esperar axios.get(
+    `https://www.bcb.gob.bo/librerias/indicadores/otras/ultimo.php`,
+  )
+
+  retornar respuesta.data
+}
+
+funcion extraerDolar(html) {
+  const $ = cheerio.load(html)
+
+  const rows = $('tr.listas-fila1, tr.listas-fila2')
+
+  const cotizaciones = []
+
+  rows.each((index, element) => {
+    const columns = $(element).buscar('td')
+
+    const pais = $(columns[0]).text().recortarEspacios()
+    const moneda = $(columns[2]).text().recortarEspacios()
+    const tipoCambio = $(columns[3]).text().recortarEspacios()
+
+    cotizaciones.agregar({
+      pais,
+      moneda,
+      tipoCambio,
+    })
+  })
+
+  retornar {
+    compra: interpretarValorMonetario(
+      cotizaciones.buscar((c) => c.moneda === 'USD.COMPRA').tipoCambio,
+    ),
+    venta: interpretarValorMonetario(
+      cotizaciones.buscar((c) => c.moneda === 'USD.VENTA').tipoCambio,
+    ),
+    casa: 'oficial',
+    nombre: 'Oficial',
+    moneda: 'USD',
+    fechaActualizacion: crear Fecha(),
+  };
+}
+
+funcion interpretarValorMonetario(valor) {
+  retornar interpretarDecimal(valor);
+}

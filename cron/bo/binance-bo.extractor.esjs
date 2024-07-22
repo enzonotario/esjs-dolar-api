@@ -1,0 +1,61 @@
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
+importar { parse } desde 'date-fns'
+
+exportar porDefecto asincrono funcion () {
+  const respuesta = esperar obtenerRespuesta()
+
+  retornar extraerDolar(respuesta)
+}
+
+asincrono funcion obtenerRespuesta() {
+  const respuesta = esperar axios.post(
+    'https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search',
+    {
+      fiat: 'BOB',
+      page: 1,
+      rows: 10,
+      tradeType: 'BUY',
+      asset: 'USDT',
+      countries: [],
+      proMerchantAds: falso,
+      shieldMerchantAds: falso,
+      filterType: 'all',
+      periods: [],
+      additionalKycVerifyFilter: 0,
+      publisherType: nulo,
+      payTypes: [],
+      classifies: ['mass', 'profession', 'fiat_trade'],
+    },
+  )
+
+  retornar respuesta.data
+}
+
+funcion extraerDolar(json) {
+  const precios = json.data.mapear((cotizacion) =>
+    interpretarValorMonetario(cotizacion.adv.price),
+  )
+
+  const precioModa = precios.reducir((acc, val) => {
+    acc[val] = acc[val] ? acc[val] + 1 : 1
+    retornar acc
+  }, {})
+
+  const precioMasRepetido = Object.claves(precioModa).reducir((a, b) =>
+    precioModa[a] > precioModa[b] ? a : b,
+  )
+
+  retornar {
+    compra: nulo,
+    venta: interpretarValorMonetario(precioMasRepetido),
+    casa: 'binance',
+    nombre: 'Binance',
+    moneda: 'USD',
+    fechaActualizacion: crear Fecha(),
+  };
+}
+
+funcion interpretarValorMonetario(valor) {
+  retornar interpretarDecimal(valor);
+}
