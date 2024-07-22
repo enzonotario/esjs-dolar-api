@@ -47,11 +47,11 @@ funcion extraerDolar(json) {
   )
 
   retornar {
-    compra: nulo,
-    venta: interpretarValorMonetario(precioMasRepetido),
+    moneda: 'USD',
     casa: 'binance',
     nombre: 'Binance',
-    moneda: 'USD',
+    compra: nulo,
+    venta: interpretarValorMonetario(precioMasRepetido),
     fechaActualizacion: crear Fecha(),
   };
 }

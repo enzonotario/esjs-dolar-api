@@ -38,15 +38,15 @@ funcion extraerDolar(html) {
   })
 
   retornar {
+    moneda: 'USD',
+    casa: 'oficial',
+    nombre: 'Oficial',
     compra: interpretarValorMonetario(
       cotizaciones.buscar((c) => c.moneda === 'USD.COMPRA').tipoCambio,
     ),
     venta: interpretarValorMonetario(
       cotizaciones.buscar((c) => c.moneda === 'USD.VENTA').tipoCambio,
     ),
-    casa: 'oficial',
-    nombre: 'Oficial',
-    moneda: 'USD',
     fechaActualizacion: crear Fecha(),
   };
 }
