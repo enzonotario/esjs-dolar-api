@@ -1,20 +1,20 @@
 ---
 aside: false
 outline: false
-title: Estado de la API
+title: Dólar Binance
 head:
   - [
     'meta',
     {
       name: 'description',
-      content: 'API de cotizaciones de monedas extranjeras en Mexico',
+      content: 'API de cotizaciones de monedas extranjeras en Bolivia',
     },
   ]
   - [
     'meta',
     {
       name: 'keywords',
-      content: 'mexico, dolar, dolar api, dolar api mexico',
+      content: 'bolivia, dolar, dolar api, dolar api bolivia',
     },
   ]
   - [
@@ -54,16 +54,16 @@ head:
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('mx')
+setRegionForSidebar('bo')
 </script>
 
-<OAOperation operationId="get-estado" :hide-default-footer="false">
+<OAOperation operationId="get-dolar-binance" :hide-default-footer="false">
 
 <template #description="description">
 
 <PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
-
+Cotización del dólar estadounidense en pesos bolivianos según Binance
 
 </template>
 
@@ -85,7 +85,7 @@ setRegionForSidebar('mx')
 
 <OAFooter />
 
-<!--@include: ./parts/get-estado-footer.md -->
+<!--@include: ./parts/get-dolar-binance-footer.md -->
 
 </template>
 

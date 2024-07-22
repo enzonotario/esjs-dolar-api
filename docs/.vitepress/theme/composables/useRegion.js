@@ -5,6 +5,7 @@ import clSpec from '../../../public/chile/openapi.json'
 import veSpec from '../../../public/venezuela/openapi.json'
 import uySpec from '../../../public/uruguay/openapi.json'
 import mxSpec from '../../../public/mexico/openapi.json'
+import boSpec from '../../../public/bolivia/openapi.json'
 
 const regions = [
   {
@@ -37,6 +38,12 @@ const regions = [
     name: 'México',
     prefix: '/mexico',
     spec: mxSpec,
+  },
+  {
+    code: 'bo',
+    name: 'Bolivia',
+    prefix: '/bolivia',
+    spec: boSpec,
   },
 ]
 

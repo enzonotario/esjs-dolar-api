@@ -1,20 +1,50 @@
----
+importar fs desde 'node:fs'
+importar { useOpenapi } desde 'vitepress-theme-openapi'
+importar { plantilla } desde './plantilla.esjs'
+importar { openapiAtributos } desde './openapiAtributos.esjs'
+
+funcion loadJSON(path) {
+  retornar JSON.analizar(fs.readFileSync(crear URL(path, import.meta.url)));
+}
+
+const spec = loadJSON('../../docs/public/bolivia/openapi.json')
+
+const openapi = useOpenapi()
+openapi.setSpec(spec)
+
+exportar funcion init() {
+  retornar Object.claves(spec.paths).mapear((path) => {
+    const { operationId } = spec.paths[path].get
+
+    const markdown = generateMarkdown(operationId)
+
+    fs.writeFileSync(`docs/bolivia/operations/${operationId}.md`, markdown)
+  });
+}
+
+funcion generateMarkdown(operationId) {
+  const { operation, schemaJson, codeSamples } = openapiAtributos(
+    openapi,
+    operationId,
+  )
+
+  const markdown = `---
 aside: false
 outline: false
-title: Estado de la API
+title: ${operation.summary}
 head:
   - [
     'meta',
     {
       name: 'description',
-      content: 'API de cotizaciones de monedas extranjeras en Mexico',
+      content: 'API de cotizaciones de monedas extranjeras en Bolivia',
     },
   ]
   - [
     'meta',
     {
       name: 'keywords',
-      content: 'mexico, dolar, dolar api, dolar api mexico',
+      content: 'bolivia, dolar, dolar api, dolar api bolivia',
     },
   ]
   - [
@@ -54,39 +84,17 @@ head:
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('mx')
+setRegionForSidebar('bo')
 </script>
 
-<OAOperation operationId="get-estado" :hide-default-footer="false">
+${plantilla(operationId, operation, schemaJson, codeSamples)}
+`
 
-<template #description="description">
+  retornar markdown
+}
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
-
-
-</template>
-
-<template #try-it="tryIt">
-
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</TryItButton>
-
-</template>
-
-<template #footer>
-
-<OAFooter />
-
-<!--@include: ./parts/get-estado-footer.md -->
-
-</template>
-
-</OAOperation>
+intentar {
+  init()
+} capturar (error) {
+  consola.error(error)
+}

@@ -7,7 +7,7 @@ head:
     'meta',
     {
       name: 'description',
-      content: 'API de cotizaciones de monedas extranjeras en Chile',
+      content: 'API de cotizaciones de monedas extranjeras en Mexico',
     },
   ]
   - [
