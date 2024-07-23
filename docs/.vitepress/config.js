@@ -23,6 +23,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/assets/logo.webp',
     nav: [
+      { text: 'Aviso Legal', link: '/legal' },
       {
         text: 'Región',
         items: [
@@ -46,6 +47,10 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },
     ],
+    footer: {
+      message: 'Liberado bajo la <a href="https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE">Licencia MIT</a>.',
+      copyright: '<a href="/docs/legal">Aviso Legal</a>'
+    },
   },
 
   head: [
