@@ -28,7 +28,7 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [FinherArg](https://finherarg.com): Plataforma web donde se podrá encontrar diversas herramientas e información sobre finanzas.
 - [DolarArg](https://dolar-arg-app.netlify.app/): App Web que muestra las cotizaciones de dólares en Argentina con agradable diseño.
 - [Dolar Info](https://www.dolar-info.com/): Aplicación web enfocada en ofrecer información actualizada para analizar indicadores económicos claves de Argentina.
-- [Dolar Ipc Argentina](https://www.dolar-ipc-app.vercel.app): Aplicación web desarrollada en next.js, con cotizaciones del dolar en Argentina e inflacion mensual (IPC).
+- [Dolar Ipc Argentina](https://dolar-ipc-app.vercel.app): Aplicación web desarrollada en next.js, con cotizaciones del dolar en Argentina e inflacion mensual (IPC).
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
