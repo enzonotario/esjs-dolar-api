@@ -2,18 +2,18 @@
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
-    "compra": 1.02,
+    "compra": 1.01,
     "venta": 1.02,
     "ultimoCierre": 1.02,
-    "fechaActualizacion": "2024-07-31T11:59:21.000Z"
+    "fechaActualizacion": "2024-07-31T12:59:35.000Z"
   },
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 947.9,
-    "venta": 950.6,
+    "compra": 947.1,
+    "venta": 948.1,
     "ultimoCierre": 953.4,
-    "fechaActualizacion": "2024-07-31T11:58:42.000Z"
+    "fechaActualizacion": "2024-07-31T12:59:06.000Z"
   },
   {
     "moneda": "EUR",
@@ -21,22 +21,22 @@
     "compra": 1.02,
     "venta": 1.048,
     "ultimoCierre": 1.036,
-    "fechaActualizacion": "2024-07-31T11:59:41.000Z"
+    "fechaActualizacion": "2024-07-31T12:59:24.000Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real Brasileño",
-    "compra": 169.518,
-    "venta": 169.606,
+    "compra": 167.808,
+    "venta": 167.897,
     "ultimoCierre": 170.303,
-    "fechaActualizacion": "2024-07-31T11:59:41.000Z"
+    "fechaActualizacion": "2024-07-31T12:56:26.000Z"
   },
   {
     "moneda": "UYU",
     "nombre": "Peso Uruguayo",
-    "compra": 23.53,
-    "venta": 23.6,
-    "ultimoCierre": 23.66,
-    "fechaActualizacion": "2024-07-31T11:59:17.000Z"
+    "compra": 23.51,
+    "venta": 23.54,
+    "ultimoCierre": 23.8,
+    "fechaActualizacion": "2024-07-31T12:59:17.000Z"
   }
 ]
