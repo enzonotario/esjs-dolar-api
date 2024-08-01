@@ -3,63 +3,63 @@
     "moneda": "USD",
     "nombre": "Dólar",
     "compra": 39.25,
-    "venta": 41.45,
-    "fechaActualizacion": "2024-08-01T19:00:36.175Z"
+    "venta": 41.65,
+    "fechaActualizacion": "2024-08-01T20:00:35.786Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 41.31,
-    "venta": 46,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "compra": 41.32,
+    "venta": 46.2,
+    "fechaActualizacion": "2024-08-01T20:00:35.786Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.024,
     "venta": 0.2,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "fechaActualizacion": "2024-08-01T20:00:35.786Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
     "compra": 6.35,
     "venta": 8.05,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "fechaActualizacion": "2024-08-01T20:00:35.786Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 48.86,
-    "venta": 54.9,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "compra": 48.78,
+    "venta": 55.08,
+    "fechaActualizacion": "2024-08-01T20:00:35.786Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 44.09,
-    "venta": 48.28,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "compra": 44.16,
+    "venta": 48.59,
+    "fechaActualizacion": "2024-08-01T20:00:35.786Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
     "compra": 0.00508,
-    "venta": 0.00559,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "venta": 0.00562,
+    "fechaActualizacion": "2024-08-01T20:00:35.787Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.0804,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "fechaActualizacion": "2024-08-01T20:00:35.787Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
     "compra": 95393.2,
-    "venta": 102053.6305,
-    "fechaActualizacion": "2024-08-01T19:00:36.176Z"
+    "venta": 102546.0485,
+    "fechaActualizacion": "2024-08-01T20:00:35.787Z"
   }
 ]
