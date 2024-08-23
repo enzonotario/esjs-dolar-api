@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import { theme, useOpenapi } from 'vitepress-theme-openapi'
+import { theme, useOpenapi, useTheme } from 'vitepress-theme-openapi'
 import { useRegion } from './composables/useRegion.js'
 import GitHubStars from './components/GitHubStars.vue'
 import Plot from './components/Plot.vue'
@@ -28,6 +28,9 @@ export default {
       const openapi = useOpenapi()
       openapi.setSpec(region.currentRegion.value.spec)
     }
+
+    const themeConfig = useTheme()
+    themeConfig.setLocale('es')
 
     theme.enhanceApp({ app })
 
