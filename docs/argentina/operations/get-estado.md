@@ -14,7 +14,7 @@ setRegionForSidebar('ar')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve el estado de la API.
 
@@ -22,7 +22,7 @@ Devuelve el estado de la API.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -30,7 +30,7 @@ Devuelve el estado de la API.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

@@ -14,7 +14,7 @@ setRegionForSidebar('ar')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotización del dólar estadounidense en el mercado bursátil. Es decir, el precio de compra y venta de dólares en el mercado de valores. También conocido como **Dólar CCL**.
 
@@ -22,7 +22,7 @@ Cotización del dólar estadounidense en el mercado bursátil. Es decir, el prec
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -30,7 +30,7 @@ Cotización del dólar estadounidense en el mercado bursátil. Es decir, el prec
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

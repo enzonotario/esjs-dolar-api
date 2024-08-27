@@ -61,7 +61,7 @@ setRegionForSidebar('ve')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotización del Dólar Oficial en Venezuela
 
@@ -69,7 +69,7 @@ Cotización del Dólar Oficial en Venezuela
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -77,7 +77,7 @@ Cotización del Dólar Oficial en Venezuela
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

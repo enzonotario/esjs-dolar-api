@@ -14,7 +14,7 @@ setRegionForSidebar('ar')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Es el valor de la cotización del dólar estadounidense en el mercado oficial, más el impuesto PAIS (30%), el impuesto a las ganancias (100%) y el impuesto a cuenta de bienes personales (25%).
 
@@ -22,7 +22,7 @@ Es el valor de la cotización del dólar estadounidense en el mercado oficial, m
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -30,7 +30,7 @@ Es el valor de la cotización del dólar estadounidense en el mercado oficial, m
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

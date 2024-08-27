@@ -3,7 +3,7 @@ exportar funcion plantilla(operationId, operation, schemaJson, codeSamples, hide
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 ${operation.description || ''}
 
@@ -11,7 +11,7 @@ ${operation.description || ''}
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -19,7 +19,7 @@ ${operation.description || ''}
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

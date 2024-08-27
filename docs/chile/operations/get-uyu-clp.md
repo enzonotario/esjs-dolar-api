@@ -61,7 +61,7 @@ setRegionForSidebar('cl')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotización del peso uruguayo en pesos chilenos
 
@@ -69,7 +69,7 @@ Cotización del peso uruguayo en pesos chilenos
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -77,7 +77,7 @@ Cotización del peso uruguayo en pesos chilenos
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

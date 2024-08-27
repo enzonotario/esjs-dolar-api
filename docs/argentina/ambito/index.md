@@ -16,7 +16,7 @@ setRegionForSidebar('ar')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -24,7 +24,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -32,7 +32,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
@@ -52,7 +52,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -60,7 +60,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -68,7 +68,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
@@ -88,7 +88,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -96,7 +96,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -104,7 +104,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
@@ -124,7 +124,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -132,7 +132,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -140,7 +140,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
@@ -160,7 +160,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -168,7 +168,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -176,7 +176,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
@@ -196,7 +196,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -204,7 +204,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -212,7 +212,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
@@ -232,7 +232,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -240,7 +240,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -248,7 +248,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
@@ -268,7 +268,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización según Ámbito Financiero.
 
@@ -276,7 +276,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -284,7 +284,7 @@ Devuelve la cotización según Ámbito Financiero.
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

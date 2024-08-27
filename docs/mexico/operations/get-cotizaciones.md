@@ -61,7 +61,7 @@ setRegionForSidebar('mx')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotizaciones de las monedas más utilizadas en Mexico
 
@@ -69,7 +69,7 @@ Cotizaciones de las monedas más utilizadas en Mexico
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -77,7 +77,7 @@ Cotizaciones de las monedas más utilizadas en Mexico
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

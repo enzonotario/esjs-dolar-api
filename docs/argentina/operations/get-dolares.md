@@ -14,7 +14,7 @@ setRegionForSidebar('ar')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye el precio de compra y venta de dólares en diferentes mercados (denominados "casas").
 
@@ -22,7 +22,7 @@ Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye e
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -30,7 +30,7 @@ Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye e
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 

@@ -61,7 +61,7 @@ setRegionForSidebar('uy')
 
 <template #description="description">
 
-<PathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
+<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
 
 Cotización del dólar estadounidense en pesos uruguayos
 
@@ -69,7 +69,7 @@ Cotización del dólar estadounidense en pesos uruguayos
 
 <template #try-it="tryIt">
 
-<TryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
+<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
 
 <template #response="response">
 
@@ -77,7 +77,7 @@ Cotización del dólar estadounidense en pesos uruguayos
              
 </template>
 
-</TryItButton>
+</OATryItButton>
 
 </template>
 
