@@ -16,29 +16,13 @@ setRegionForSidebar('ar')
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolares-footer.md -->
 
@@ -52,29 +36,13 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolar-oficial-footer.md -->
 
@@ -88,29 +56,13 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolar-blue-footer.md -->
 
@@ -124,29 +76,13 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolar-bolsa-footer.md -->
 
@@ -160,29 +96,13 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolar-contadoconliqui-footer.md -->
 
@@ -196,29 +116,13 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolar-tarjeta-footer.md -->
 
@@ -232,29 +136,13 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolar-mayorista-footer.md -->
 
@@ -268,29 +156,13 @@ Devuelve la cotización según Ámbito Financiero.
 
 <template #description="description">
 
-<OAPathEndpoint :method="description.method" :path="description.path" :baseUrl="description.baseUrl" />
-
 Devuelve la cotización según Ámbito Financiero.
-
-</template>
-
-<template #try-it="tryIt">
-
-<OATryItButton :operation-id="tryIt.operationId" :method="tryIt.method" hide-endpoint>
-
-<template #response="response">
-
-<OACodeBlock :code="JSON.stringify(response.response, null, 2)" lang="json" label="JSON" :is-dark="tryIt.isDark" :disable-html-transform="response.response.length > 1000" />
-             
-</template>
-
-</OATryItButton>
 
 </template>
 
 <template #footer>
 
-<OAFooter />
+
 
 <!--@include: ./parts/get-ambito-dolar-cripto-footer.md -->
 

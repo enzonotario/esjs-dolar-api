@@ -31,6 +31,7 @@ export default {
 
     const themeConfig = useTheme()
     themeConfig.setLocale('es')
+    themeConfig.setShowBaseURL(true)
 
     theme.enhanceApp({ app })
 

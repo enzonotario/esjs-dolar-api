@@ -46,13 +46,10 @@ setRegionForSidebar('ar')
 }
 
 funcion generateMarkdown(operationId) {
-  const { operation, schemaJson, codeSamples } = openapiAtributos(
-    openapi,
-    operationId,
-  )
+  const operation = openapi.getOperation(operationId)
 
   const markdown = `
-${plantilla(operationId, operation, schemaJson, codeSamples, verdadero)}
+${plantilla(operationId, operation, verdadero)}
 `
 
   retornar markdown

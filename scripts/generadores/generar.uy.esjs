@@ -23,10 +23,7 @@ exportar funcion init() {
 }
 
 funcion generateMarkdown(operationId) {
-  const { operation, schemaJson, codeSamples } = openapiAtributos(
-    openapi,
-    operationId,
-  )
+  const operation = openapi.getOperation(operationId)
 
   const markdown = `---
 aside: false
@@ -87,7 +84,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('uy')
 </script>
 
-${plantilla(operationId, operation, schemaJson, codeSamples)}
+${plantilla(operationId, operation)}
 `
 
   retornar markdown

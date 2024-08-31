@@ -1,6 +1,6 @@
 import { useSidebar } from 'vitepress-theme-openapi'
-import { addRegionPrefixToSidebarItems, setRegionForSidebar } from './sidebar.utils.js'
 import { useRegion } from '../theme/composables/useRegion.js'
+import { addRegionPrefixToSidebarItems, setRegionForSidebar } from './sidebar.utils.js'
 
 const region = useRegion().regions.find(region => region.code === 'ar')
 
@@ -9,9 +9,9 @@ setRegionForSidebar(region.code)
 const sidebar = useSidebar()
 
 function getCotizacionActualItems() {
-  const dolares = sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares');
+  const dolares = sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares')
 
-  const monedas =       sidebar.generateSidebarGroup(
+  const monedas = sidebar.generateSidebarGroup(
     'Cotización actual Monedas',
     'Otras Monedas',
   )
