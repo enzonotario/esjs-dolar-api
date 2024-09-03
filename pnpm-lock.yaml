@@ -72,6 +72,9 @@ importers:
       iconv-lite:
         specifier: ^0.6.3
         version: 0.6.3
+      parse-decimal-number:
+        specifier: ^1.0.0
+        version: 1.0.0
       pino:
         specifier: ^9.1.0
         version: 9.2.0
@@ -3364,6 +3367,9 @@ packages:
 
   parse-css-color@0.2.1:
     resolution: {integrity: sha512-bwS/GGIFV3b6KS4uwpzCFj4w297Yl3uqnSgIPsoQkx7GMLROXfMnWvxfNkL0oh8HVhZA4hvJoEoEIqonfJ3BWg==}
+
+  parse-decimal-number@1.0.0:
+    resolution: {integrity: sha512-EwPYS1ZGFGan8TFZaQSlaoxEdNrdPR+3lO2Ie8ZW0wb9ZUWGXQwR4chzYfTc2qq4SsB8isGIlp5gPKENFMLIgw==}
 
   parse-entities@2.0.0:
     resolution: {integrity: sha512-kkywGpCcRYhqQIchaWqZ875wzpS/bMKhz5HnN3p7wveJTkTtyAB/AlnS0f8DFSqYW1T82t6yEAkEcB+A1I3MbQ==}
@@ -8017,6 +8023,8 @@ snapshots:
     dependencies:
       color-name: 1.1.4
       hex-rgb: 4.3.0
+
+  parse-decimal-number@1.0.0: {}
 
   parse-entities@2.0.0:
     dependencies:

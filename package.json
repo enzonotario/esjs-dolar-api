@@ -50,6 +50,7 @@
     "eslint-plugin-import": "^2.25.2",
     "hono": "^3.9.0",
     "iconv-lite": "^0.6.3",
+    "parse-decimal-number": "^1.0.0",
     "pino": "^9.1.0",
     "pino-axiom": "^1.0.169",
     "pino-pretty": "^11.1.0",

@@ -1,4 +1,4 @@
-importar { interpretarValorMonetario } desde './interpretarValorMonetario.esjs'
+importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
 importar { obtenerFechaActualizacion } desde './fechaActualizacion.esjs'
 
 funcion obtenerValores($, href) {
@@ -18,7 +18,7 @@ exportar funcion obtenerValorCompra($, href) {
     retornar nulo
   }
 
-  retornar interpretarValorMonetario(valor)
+  retornar interpretarDecimalConComa(valor)
 }
 
 exportar funcion obtenerValorVenta($, href) {
@@ -34,7 +34,7 @@ exportar funcion obtenerValorVenta($, href) {
     retornar nulo
   }
 
-  retornar interpretarValorMonetario(valor)
+  retornar interpretarDecimalConComa(valor)
 }
 
 exportar { obtenerFechaActualizacion }
