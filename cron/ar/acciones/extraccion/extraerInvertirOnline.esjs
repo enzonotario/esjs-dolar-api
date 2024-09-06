@@ -1,0 +1,76 @@
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
+importar { parse } desde 'date-fns'
+importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
+
+const monedas = [
+  {
+    codigo: 'USD',
+    nombre: 'Dolar Banco Nación',
+    simbolo: '$',
+  },
+  {
+    codigo: 'EUR',
+    nombre: 'Euros',
+    simbolo: '€',
+  },
+  {
+    codigo: 'BRL',
+    nombre: 'Reales Brasileños',
+    simbolo: 'R$',
+  },
+  {
+    codigo: 'CLP',
+    nombre: 'Pesos Chilenos',
+    simbolo: '$',
+  },
+  {
+    codigo: 'UYU',
+    nombre: 'Pesos Uruguayos',
+    simbolo: '$',
+  },
+]
+
+exportar asincrono funcion extraerInvertirOnline() {
+  intentar {
+    const respuesta = esperar obtenerRespuesta()
+
+    const $ = cheerio.load(respuesta)
+
+    const cotizaciones = []
+
+    para (const tr de $('table#cotizaciones tbody tr')) {
+      const monedaNombre = $(tr).buscar('td').eq(0).text().recortarEspacios()
+      const moneda = monedas.buscar(({ nombre }) => nombre === monedaNombre)
+      const compra = interpretarDecimalConComa(
+        $(tr).buscar('td').eq(1).text().recortarEspacios(),
+      )
+      const venta = interpretarDecimalConComa(
+        $(tr).buscar('td').eq(2).text().recortarEspacios(),
+      )
+      const fecha = $(tr).buscar('td').eq(3).text().recortarEspacios()
+      const fechaParseada = parse(fecha, 'd/M/yyyy H:m:s', crear Fecha())
+
+      cotizaciones.agregar({
+        monedaNombre,
+        moneda: moneda ? moneda.codigo : nulo,
+        compra,
+        venta,
+        fecha: fechaParseada,
+      })
+    }
+
+    retornar cotizaciones.filtrar(({ moneda }) => moneda);
+  } capturar (error) {
+    consola.error('Error al obtener la respuesta de InvertirOnline', error)
+    retornar []
+  }
+}
+
+asincrono funcion obtenerRespuesta() {
+  const respuesta = esperar axios({
+    url: 'https://iol.invertironline.com/mercado/cotizaciones/argentina/monedas',
+  })
+
+  retornar respuesta.data
+}
