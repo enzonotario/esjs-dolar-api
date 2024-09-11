@@ -14,5 +14,5 @@ exportar const qstash = () => {
         status: 401,
       })
     }
-  };
+  }
 }

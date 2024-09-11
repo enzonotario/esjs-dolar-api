@@ -1,5 +1,5 @@
 importar fs desde 'node:fs'
-importar { useOpenapi } desde 'vitepress-theme-openapi'
+importar { OpenApi } desde 'vitepress-theme-openapi'
 importar { plantilla } desde './plantilla.esjs'
 importar { openapiAtributos } desde './openapiAtributos.esjs'
 
@@ -9,8 +9,7 @@ funcion loadJSON(path) {
 
 const spec = loadJSON('../../docs/public/mexico/openapi.json')
 
-const openapi = useOpenapi()
-openapi.setSpec(spec)
+const openapi = OpenApi({ spec })
 
 exportar funcion init() {
   retornar Object.claves(spec.paths).mapear((path) => {

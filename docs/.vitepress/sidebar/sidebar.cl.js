@@ -6,21 +6,21 @@ const region = useRegion().regions.find(region => region.code === 'cl')
 
 setRegionForSidebar(region.code)
 
-const sidebar = useSidebar()
+const sidebar = useSidebar({ spec: region.spec })
 
-export default function sidebarCl() {
+export default function () {
   return [
     {
-      text: `<span class="SidebarItem">
+      text: `<span class="OASidebarItem">
         <svg class="i-mdi-home w-5 h-5" />
-        <span class="SidebarItem-text">Inicio</span>
+        <span class="OASidebarItem-text">Inicio</span>
       </span>`,
       link: '/chile/',
     },
     {
-      text: `<span class="SidebarItem">
+      text: `<span class="OASidebarItem">
         <svg class="i-mdi-github w-5 h-5" />
-        <span class="SidebarItem-text">GitHub</span>
+        <span class="OASidebarItem-text">GitHub</span>
       </span>`,
       link: 'https://github.com/enzonotario/esjs-dolar-api',
     },

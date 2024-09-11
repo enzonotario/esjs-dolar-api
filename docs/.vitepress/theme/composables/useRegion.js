@@ -54,30 +54,6 @@ export function useRegion() {
     currentRegion.value = regions.find(region => region.code === regionCode)
   }
 
-  function getRegionByCode(regionCode) {
-    return regions.find(region => region.code === regionCode)
-  }
-
-  function determineRegionByURL(url) {
-    if (url.hostname === 'cl.dolarapi.com')
-      return setCurrentRegion('cl')
-
-    if (url.hostname === 've.dolarapi.com')
-      return setCurrentRegion('ve')
-
-    return determineRegionByPath(url.pathname)
-  }
-
-  function determineRegionByPath(path) {
-    if (path.startsWith('/docs/chile'))
-      return setCurrentRegion('cl')
-
-    if (path.startsWith('/docs/venezuela'))
-      return setCurrentRegion('ve')
-
-    return setCurrentRegion('ar')
-  }
-
   async function onRegionChange(event, router) {
     const selected = regions.find(r => r.code === event.target.value)
 
@@ -97,8 +73,6 @@ export function useRegion() {
     regions,
     currentRegion,
     setCurrentRegion,
-    getRegionByCode,
-    determineRegionByURL,
     onRegionChange,
   }
 }

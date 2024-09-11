@@ -33,9 +33,7 @@ const col2 = dolares.filtrar(
     retornar dolar
   })
 
-const fechasOrdenadas = dolares
-  .map((dolar) => parseISO(dolar.fechaActualizacion))
-  .sort((a, b) => (a > b ? -1 : 1))
+const fechasOrdenadas = dolares.mapear((dolar) => parseISO(dolar.fechaActualizacion)).ordenar((a, b) => (a > b ? -1 : 1))
 
 const fecha = fechasOrdenadas[0].aCadenaLocalizada('en-US', {
   timeZone: 'America/Argentina/Buenos_Aires',
@@ -52,13 +50,23 @@ exportar porDefecto defineSatoriConfig({
   fonts: [
     {
       name: 'Inter',
-      data: readFileSync(resolve(_DIRNAME, '../node_modules/@fontsource/inter/files/inter-latin-400-normal.woff')),
+      data: readFileSync(
+        resolve(
+          _DIRNAME,
+          '../node_modules/@fontsource/inter/files/inter-latin-400-normal.woff',
+        ),
+      ),
       weight: 400,
       style: 'normal',
     },
     {
       name: 'Inter',
-      data: readFileSync(resolve(_DIRNAME, '../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff')),
+      data: readFileSync(
+        resolve(
+          _DIRNAME,
+          '../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff',
+        ),
+      ),
       weight: 700,
       style: 'normal',
     },

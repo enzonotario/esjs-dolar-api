@@ -9,9 +9,13 @@ ${operation.description || ''}
 
 <template #footer>
 
-${hideDefaultFooter ? '' : `
+${
+  hideDefaultFooter
+    ? ''
+    : `
 <OAFooter />
-`}
+`
+}
 
 <!--@include: ./parts/${operationId}-footer.md -->
 

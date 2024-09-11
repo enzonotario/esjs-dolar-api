@@ -22,7 +22,11 @@ asincrono funcion guardarCotizaciones() {
   const cotizaciones = [dolar]
 
   cotizaciones.mapear((cotizacion) => {
-    escribirRutaRegion('mx', `/cotizaciones/${cotizacion.moneda.aMinusculas()}`, cotizacion)
+    escribirRutaRegion(
+      'mx',
+      `/cotizaciones/${cotizacion.moneda.aMinusculas()}`,
+      cotizacion,
+    )
   })
 
   escribirRutaRegion('mx', '/cotizaciones', cotizaciones)

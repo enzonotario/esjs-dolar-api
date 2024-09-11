@@ -1,7 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import { theme, useOpenapi, useTheme } from 'vitepress-theme-openapi'
-import { useRegion } from './composables/useRegion.js'
+import { theme, useTheme } from 'vitepress-theme-openapi'
 import GitHubStars from './components/GitHubStars.vue'
 import Plot from './components/Plot.vue'
 import IndexDemo from './components/IndexDemo.vue'
@@ -19,16 +18,6 @@ export default {
     })
   },
   enhanceApp({ app }) {
-    if (!import.meta.env.SSR) {
-      const url = new URL(window.location.href)
-
-      const region = useRegion()
-      region.determineRegionByURL(url)
-
-      const openapi = useOpenapi()
-      openapi.setSpec(region.currentRegion.value.spec)
-    }
-
     const themeConfig = useTheme()
     themeConfig.setLocale('es')
     themeConfig.setShowBaseURL(true)

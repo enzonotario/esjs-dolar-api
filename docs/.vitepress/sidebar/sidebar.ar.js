@@ -6,7 +6,7 @@ const region = useRegion().regions.find(region => region.code === 'ar')
 
 setRegionForSidebar(region.code)
 
-const sidebar = useSidebar()
+const sidebar = useSidebar({ spec: region.spec })
 
 function getCotizacionActualItems() {
   const dolares = sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares')
@@ -31,16 +31,16 @@ function getCotizacionActualItems() {
 export default function () {
   return [
     {
-      text: `<span class="SidebarItem">
+      text: `<span class="OASidebarItem">
         <svg class="i-mdi-home w-5 h-5" />
-        <span class="SidebarItem-text">Inicio</span>
+        <span class="OASidebarItem-text">Inicio</span>
       </span>`,
       link: '/argentina',
     },
     {
-      text: `<span class="SidebarItem">
+      text: `<span class="OASidebarItem">
         <svg class="i-mdi-github w-5 h-5" />
-        <span class="SidebarItem-text">GitHub</span>
+        <span class="OASidebarItem-text">GitHub</span>
       </span>`,
       link: 'https://github.com/enzonotario/esjs-dolar-api',
     },
@@ -54,9 +54,9 @@ export default function () {
         {
           items: [
             {
-              text: `<span class="SidebarItem">
+              text: `<span class="OASidebarItem">
               <svg class="i-mdi-chart-line w-5 h-5" />
-              <span class="SidebarItem-text">ArgentinaDatos</span> 
+              <span class="OASidebarItem-text">ArgentinaDatos</span> 
               </span>`,
               link: 'https://argentinadatos.com/',
             },
@@ -70,9 +70,9 @@ export default function () {
         {
           items: [
             {
-              text: `<span class="SidebarItem">
+              text: `<span class="OASidebarItem">
             <span class="w-5 h-5 bg-blue-200 text-gray-800 dark:bg-blue-600 dark:text-white rounded-full text-xs flex items-center justify-center">AF</span>
-            <span class="SidebarItem-text">Dólares Ámbito</span>
+            <span class="OASidebarItem-text">Dólares Ámbito</span>
           </span>`,
               link: '/argentina/ambito/',
             },

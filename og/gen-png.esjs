@@ -3,7 +3,6 @@ importar { readFile, writeFile } desde 'node:fs/promises'
 importar { dirname, resolve } desde 'node:path'
 importar { renderAsync } desde '@resvg/resvg-js'
 importar { satoriVue } desde 'x-satori/vue'
-
 ;(asincrono funcion() {
   const _DIRNAME =
     tipoDe __dirname !== 'undefined'

@@ -74,7 +74,9 @@ exportar const registro = asincrono (c, respuesta) => {
       timeout: 5000,
       headers: {
         Authorization: `Basic ${Buffer.from(
-          `${import.meta.env.VITE_LOKI_USER}:${import.meta.env.VITE_LOKI_PASSWORD}`,
+          `${import.meta.env.VITE_LOKI_USER}:${
+            import.meta.env.VITE_LOKI_PASSWORD
+          }`,
         ).aCadena('base64')}`,
         'Content-Type': 'application/json',
       },
