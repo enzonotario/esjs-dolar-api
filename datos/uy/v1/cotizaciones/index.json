@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 40.05,
-    "venta": 42.45,
-    "fechaActualizacion": "2024-09-19T14:00:40.496Z"
+    "compra": 40.3,
+    "venta": 42.5,
+    "fechaActualizacion": "2024-09-19T15:00:46.763Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 43.54,
-    "venta": 48.63,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "compra": 43.77,
+    "venta": 48.65,
+    "fechaActualizacion": "2024-09-19T15:00:46.763Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.024,
     "venta": 0.2,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "fechaActualizacion": "2024-09-19T15:00:46.763Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
-    "compra": 6.95,
-    "venta": 8.65,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "compra": 7,
+    "venta": 8.7,
+    "fechaActualizacion": "2024-09-19T15:00:46.763Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 51.77,
-    "venta": 58.35,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "compra": 52.11,
+    "venta": 58.45,
+    "fechaActualizacion": "2024-09-19T15:00:46.763Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 46.61,
-    "venta": 51.2,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "compra": 46.64,
+    "venta": 50.98,
+    "fechaActualizacion": "2024-09-19T15:00:46.763Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
-    "compra": 0.00503,
-    "venta": 0.00555,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "compra": 0.00506,
+    "venta": 0.00556,
+    "fechaActualizacion": "2024-09-19T15:00:46.763Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.0981,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "fechaActualizacion": "2024-09-19T15:00:46.764Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 102732.255,
-    "venta": 110366.604,
-    "fechaActualizacion": "2024-09-19T14:00:40.497Z"
+    "compra": 102826.659,
+    "venta": 110275.175,
+    "fechaActualizacion": "2024-09-19T15:00:46.764Z"
   }
 ]
