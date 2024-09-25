@@ -3,8 +3,8 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Dólar",
-    "compra": 946.5,
-    "venta": 986.5,
+    "compra": 947,
+    "venta": 987,
     "fechaActualizacion": "2024-09-06T15:04:00.000Z"
   },
   {
@@ -27,16 +27,16 @@
     "moneda": "CLP",
     "casa": "oficial",
     "nombre": "Peso Chileno",
-    "compra": 1.0625,
-    "venta": 1.0626,
+    "compra": 1.0585,
+    "venta": 1.0585,
     "fechaActualizacion": "2024-09-06T20:56:00.000Z"
   },
   {
     "moneda": "UYU",
     "casa": "oficial",
     "nombre": "Peso Uruguayo",
-    "compra": 22.9385,
-    "venta": 22.9387,
+    "compra": 22.9464,
+    "venta": 22.9465,
     "fechaActualizacion": "2024-09-06T20:56:00.000Z"
   }
 ]
