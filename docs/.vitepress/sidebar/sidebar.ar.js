@@ -9,11 +9,18 @@ setRegionForSidebar(region.code)
 const sidebar = useSidebar({ spec: region.spec })
 
 function getCotizacionActualItems() {
-  const dolares = sidebar.generateSidebarGroup('Cotización actual Dólares', 'Dólares')
+  const dolares = sidebar.generateSidebarGroup(
+    {
+      tag: 'Cotización actual Dólares',
+      text: 'Dólares',
+    },
+  )
 
   const monedas = sidebar.generateSidebarGroup(
-    'Cotización actual Monedas',
-    'Otras Monedas',
+    {
+      tag: 'Cotización actual Monedas',
+      text: 'Otras Monedas',
+    },
   )
 
   return [
@@ -80,6 +87,8 @@ export default function () {
         },
       ],
     },
-    addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup('API')),
+    addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup({
+      tag: 'API',
+    })),
   ]
 }

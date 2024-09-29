@@ -33,6 +33,14 @@ export default function () {
         },
       ],
     },
-    addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup('API')),
+    addRegionPrefixToSidebarItems(
+      region.prefix,
+      sidebar.generateSidebarGroup(
+        {
+          tag: 'API',
+          text: '',
+        },
+      ),
+    ),
   ]
 }

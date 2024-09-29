@@ -27,9 +27,22 @@ export default function () {
     {
       text: 'Cotización actual',
       items: [
-        addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup('Cotización actual', '')),
+        addRegionPrefixToSidebarItems(
+          region.prefix,
+          sidebar.generateSidebarGroup(
+            {
+              tag: 'Cotización actual',
+              text: '',
+            },
+          ),
+        ),
       ],
     },
-    addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup('API')),
+    addRegionPrefixToSidebarItems(
+      region.prefix,
+      sidebar.generateSidebarGroup({
+        tag: 'API',
+      }),
+    ),
   ]
 }
