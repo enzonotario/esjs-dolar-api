@@ -1,4 +1,4 @@
-import { useSidebar } from 'vitepress-theme-openapi'
+import { useSidebar } from 'vitepress-openapi'
 import { useRegion } from '../theme/composables/useRegion.js'
 import { addRegionPrefixToSidebarItems, setRegionForSidebar } from './sidebar.utils.js'
 

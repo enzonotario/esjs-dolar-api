@@ -1,11 +1,11 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import { theme, useTheme } from 'vitepress-theme-openapi'
+import { theme, useTheme } from 'vitepress-openapi'
 import GitHubStars from './components/GitHubStars.vue'
 import Plot from './components/Plot.vue'
 import IndexDemo from './components/IndexDemo.vue'
 
-import 'vitepress-theme-openapi/dist/style.css'
+import 'vitepress-openapi/dist/style.css'
 import './style.css'
 
 export default {
