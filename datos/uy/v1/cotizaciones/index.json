@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 40.7,
+    "compra": 40.5,
     "venta": 42.9,
-    "fechaActualizacion": "2024-10-09T19:00:37.184Z"
+    "fechaActualizacion": "2024-10-09T20:00:48.519Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 43.48,
-    "venta": 48.3,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "compra": 43.24,
+    "venta": 48.27,
+    "fechaActualizacion": "2024-10-09T20:00:48.519Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.024,
     "venta": 0.2,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "fechaActualizacion": "2024-10-09T20:00:48.519Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
-    "compra": 7.05,
-    "venta": 8.75,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "compra": 7.1,
+    "venta": 8.8,
+    "fechaActualizacion": "2024-10-09T20:00:48.519Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 51.96,
-    "venta": 58.24,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "compra": 51.69,
+    "venta": 58.23,
+    "fechaActualizacion": "2024-10-09T20:00:48.519Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 46.52,
-    "venta": 50.82,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "compra": 46.23,
+    "venta": 50.75,
+    "fechaActualizacion": "2024-10-09T20:00:48.520Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
-    "compra": 0.00512,
+    "compra": 0.00509,
     "venta": 0.00561,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "fechaActualizacion": "2024-10-09T20:00:48.520Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.1105,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "fechaActualizacion": "2024-10-09T20:00:48.520Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 106043.85,
+    "compra": 105518.7,
     "venta": 112586.331,
-    "fechaActualizacion": "2024-10-09T19:00:37.185Z"
+    "fechaActualizacion": "2024-10-09T20:00:48.520Z"
   }
 ]
