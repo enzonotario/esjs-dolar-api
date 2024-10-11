@@ -19,7 +19,9 @@ export default {
   },
   enhanceApp({ app }) {
     const themeConfig = useTheme()
-    themeConfig.setLocale('es')
+    themeConfig.setI18nConfig({
+      locale: 'es',
+    })
     themeConfig.setShowBaseURL(true)
 
     theme.enhanceApp({ app })
