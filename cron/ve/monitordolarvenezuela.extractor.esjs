@@ -9,12 +9,29 @@ exportar porDefecto asincrono funcion () {
 }
 
 asincrono funcion obtenerRespuesta() {
-  const respuesta = esperar axios.post(
-    'https://dolartoday.com/wp-admin/admin-ajax.php',
-    'action=dt_currency_calculator_handler&amount=1',
+  const respuesta = esperar axios.get(
+    'https://api.monitordolarvenezuela.com/dolarhoy',
+    {
+      headers: {
+        Origin: 'https://monitordolarvenezuela.com',
+      },
+    },
   )
 
-  retornar respuesta.data
+  const datos =
+    respuesta.data && respuesta.data.result && respuesta.data.result.longitud > 0
+      ? respuesta.data.result[0]
+      : nulo
+
+  si (!datos) {
+    lanzar crear Error('No se encontraron cotizaciones')
+  }
+
+  retornar {
+    oficial: datos.bcv,
+    paralelo: datos.prom_epv,
+    bitcoin: datos.binance,
+  }
 }
 
 funcion extraerCotizaciones(json) {
@@ -22,25 +39,23 @@ funcion extraerCotizaciones(json) {
     {
       slug: 'oficial',
       nombre: 'Oficial',
-      buscar: 'Dólar BCV',
+      promedio: interpretarValorMonetario(json.oficial),
     },
     {
       slug: 'paralelo',
       nombre: 'Paralelo',
-      buscar: 'Dólar Paralelo',
+      promedio: interpretarValorMonetario(json.paralelo),
     },
     {
       slug: 'bitcoin',
       nombre: 'Bitcoin',
-      buscar: 'Dólar Bitcoin',
+      promedio: interpretarValorMonetario(json.bitcoin),
     },
   ]
 
   const cotizaciones = []
 
-  fuentes.paraCada(({ slug, nombre, buscar }) => {
-    const promedio = interpretarValorMonetario(json[buscar])
-
+  fuentes.paraCada(({ slug, nombre, promedio }) => {
     cotizaciones.agregar({
       fuente: slug,
       nombre,
@@ -55,7 +70,7 @@ funcion extraerCotizaciones(json) {
 }
 
 funcion interpretarValorMonetario(valor) {
-  retornar Numero(valor.replace('Bs. ', '').reemplazar(',', '.'));
+  retornar Numero(valor);
 }
 
 funcion interpretarFecha(fecha) {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import extraer from '@/ve/dolartoday.extractor.esjs'
+import extraer from '@/ve/monitordolarvenezuela.extractor.esjs'
 
 describe('ve.dolarapi.com', () => {
   it('extraer dolares', async () => {
@@ -7,19 +7,32 @@ describe('ve.dolarapi.com', () => {
 
     expect(cotizaciones.length).toBeGreaterThan(0)
 
-    cotizaciones.forEach((cotizacion) => {
-      expect(cotizacion).toBeTypeOf('object')
-      expect(cotizacion.fuente).toBeTypeOf('string')
-      expect(cotizacion.nombre).toBeTypeOf('string')
-      expect(cotizacion.promedio).toBeTypeOf('number')
-      expect(cotizacion.fechaActualizacion).toBeTypeOf('string')
-
-      if (cotizacion.compra)
-        expect(cotizacion.compra).toBeTypeOf('number')
-
-      if (cotizacion.venta)
-        expect(cotizacion.venta).toBeTypeOf('number')
-    })
+    expect(cotizaciones).toMatchObject([
+      {
+        fuente: 'oficial',
+        nombre: 'Oficial',
+        compra: null,
+        venta: null,
+        promedio: expect.any(Number),
+        fechaActualizacion: expect.any(String),
+      },
+      {
+        fuente: 'paralelo',
+        nombre: 'Paralelo',
+        compra: null,
+        venta: null,
+        promedio: expect.any(Number),
+        fechaActualizacion: expect.any(String),
+      },
+      {
+        fuente: 'bitcoin',
+        nombre: 'Bitcoin',
+        compra: null,
+        venta: null,
+        promedio: expect.any(Number),
+        fechaActualizacion: expect.any(String),
+      },
+    ])
   }, {
     timeout: 10000,
   })

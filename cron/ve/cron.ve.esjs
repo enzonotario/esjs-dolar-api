@@ -1,4 +1,4 @@
-importar extraerDolares desde '@/ve/dolartoday.extractor.esjs'
+importar extraerDolares desde '@/ve/monitordolarvenezuela.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 
