@@ -18,11 +18,14 @@ export default {
     })
   },
   enhanceApp({ app }) {
-    const themeConfig = useTheme()
-    themeConfig.setI18nConfig({
-      locale: 'es',
+    useTheme({
+      i18n: {
+        locale: 'es',
+      },
+      path: {
+        showBaseURL: true,
+      },
     })
-    themeConfig.setShowBaseURL(true)
 
     theme.enhanceApp({ app })
 

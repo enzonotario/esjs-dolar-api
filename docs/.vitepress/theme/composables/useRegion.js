@@ -62,9 +62,7 @@ export function useRegion() {
 
     setCurrentRegion(selected.code)
 
-    const openapi = useOpenapi()
-
-    openapi.setSpec(selected.spec)
+    const openapi = useOpenapi({ spec: selected.spec})
 
     await router.go(goTo)
   }
