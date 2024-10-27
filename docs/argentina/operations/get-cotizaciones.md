@@ -10,7 +10,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-cotizaciones" :hide-default-footer="false">
+<OAOperation operationId="get-cotizaciones" :hide-branding="false">
 
 <template #description="description">
 
@@ -19,10 +19,6 @@ Devuelve la cotización de todas las monedas.
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-cotizaciones-footer.md -->
 

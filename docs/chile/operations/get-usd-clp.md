@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('cl')
 </script>
 
-<OAOperation operationId="get-usd-clp" :hide-default-footer="false">
+<OAOperation operationId="get-usd-clp" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotización del dólar estadounidense en pesos chilenos
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-usd-clp-footer.md -->
 

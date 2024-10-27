@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('uy')
 </script>
 
-<OAOperation operationId="get-cotizaciones" :hide-default-footer="false">
+<OAOperation operationId="get-cotizaciones" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotizaciones de las monedas más utilizadas en Uruguay
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-cotizaciones-footer.md -->
 

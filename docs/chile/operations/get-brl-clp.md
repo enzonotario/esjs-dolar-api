@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('cl')
 </script>
 
-<OAOperation operationId="get-brl-clp" :hide-default-footer="false">
+<OAOperation operationId="get-brl-clp" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotización del real brasileño en pesos chilenos
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-brl-clp-footer.md -->
 

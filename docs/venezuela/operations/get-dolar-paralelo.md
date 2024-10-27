@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ve')
 </script>
 
-<OAOperation operationId="get-dolar-paralelo" :hide-default-footer="false">
+<OAOperation operationId="get-dolar-paralelo" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotización del Dólar Paralelo en Venezuela
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-dolar-paralelo-footer.md -->
 

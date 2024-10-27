@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('mx')
 </script>
 
-<OAOperation operationId="get-estado" :hide-default-footer="false">
+<OAOperation operationId="get-estado" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ setRegionForSidebar('mx')
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-estado-footer.md -->
 

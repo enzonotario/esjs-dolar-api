@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('cl')
 </script>
 
-<OAOperation operationId="get-eur-clp" :hide-default-footer="false">
+<OAOperation operationId="get-eur-clp" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotización del euro en pesos chilenos
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-eur-clp-footer.md -->
 

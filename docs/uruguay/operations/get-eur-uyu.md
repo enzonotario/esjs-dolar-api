@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('uy')
 </script>
 
-<OAOperation operationId="get-eur-uyu" :hide-default-footer="false">
+<OAOperation operationId="get-eur-uyu" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotización del euro en pesos uruguayos
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-eur-uyu-footer.md -->
 

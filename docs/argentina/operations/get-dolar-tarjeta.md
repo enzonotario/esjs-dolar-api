@@ -10,7 +10,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-dolar-tarjeta" :hide-default-footer="false">
+<OAOperation operationId="get-dolar-tarjeta" :hide-branding="false">
 
 <template #description="description">
 
@@ -19,10 +19,6 @@ Es el valor de la cotización del dólar estadounidense en el mercado oficial, m
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-dolar-tarjeta-footer.md -->
 

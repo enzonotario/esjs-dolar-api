@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('uy')
 </script>
 
-<OAOperation operationId="get-usd-uyu" :hide-default-footer="false">
+<OAOperation operationId="get-usd-uyu" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotización del dólar estadounidense en pesos uruguayos
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-usd-uyu-footer.md -->
 

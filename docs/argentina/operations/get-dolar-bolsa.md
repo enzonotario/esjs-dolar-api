@@ -10,7 +10,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-dolar-bolsa" :hide-default-footer="false">
+<OAOperation operationId="get-dolar-bolsa" :hide-branding="false">
 
 <template #description="description">
 
@@ -19,10 +19,6 @@ Cotización del dólar estadounidense en el mercado bursátil. Es decir, el prec
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-dolar-bolsa-footer.md -->
 

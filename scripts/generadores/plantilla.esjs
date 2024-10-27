@@ -1,5 +1,5 @@
-exportar funcion plantilla(operationId, operation, hideDefaultFooter = falso) {
-  const markdown = `<OAOperation operationId="${operationId}" :hide-default-footer="${hideDefaultFooter}">
+exportar funcion plantilla(operationId, operation, hideBranding = falso) {
+  const markdown = `<OAOperation operationId="${operationId}" :hide-branding="${hideBranding}">
 
 <template #description="description">
 
@@ -8,14 +8,6 @@ ${operation.description || ''}
 </template>
 
 <template #footer>
-
-${
-  hideDefaultFooter
-    ? ''
-    : `
-<OAFooter />
-`
-}
 
 <!--@include: ./parts/${operationId}-footer.md -->
 

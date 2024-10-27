@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ve')
 </script>
 
-<OAOperation operationId="get-dolares" :hide-default-footer="false">
+<OAOperation operationId="get-dolares" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Devuelve las distintas cotizaciones del Dólar en Venezuela
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-dolares-footer.md -->
 

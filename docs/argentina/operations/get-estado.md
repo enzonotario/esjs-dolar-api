@@ -10,7 +10,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-estado" :hide-default-footer="false">
+<OAOperation operationId="get-estado" :hide-branding="false">
 
 <template #description="description">
 
@@ -19,10 +19,6 @@ Devuelve el estado de la API.
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-estado-footer.md -->
 

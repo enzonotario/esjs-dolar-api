@@ -10,7 +10,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-dolar-blue" :hide-default-footer="false">
+<OAOperation operationId="get-dolar-blue" :hide-branding="false">
 
 <template #description="description">
 
@@ -19,10 +19,6 @@ Cotización del dólar estadounidense en el mercado paralelo o informal. Es deci
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-dolar-blue-footer.md -->
 

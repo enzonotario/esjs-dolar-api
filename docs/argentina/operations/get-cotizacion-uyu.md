@@ -10,7 +10,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-cotizacion-uyu" :hide-default-footer="false">
+<OAOperation operationId="get-cotizacion-uyu" :hide-branding="false">
 
 <template #description="description">
 
@@ -19,10 +19,6 @@ Cotización del Peso Uruguayo en el mercado.
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-cotizacion-uyu-footer.md -->
 

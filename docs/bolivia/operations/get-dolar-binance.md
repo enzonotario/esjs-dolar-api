@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 setRegionForSidebar('bo')
 </script>
 
-<OAOperation operationId="get-dolar-binance" :hide-default-footer="false">
+<OAOperation operationId="get-dolar-binance" :hide-branding="false">
 
 <template #description="description">
 
@@ -66,10 +66,6 @@ Cotización del dólar estadounidense en pesos bolivianos según Binance
 </template>
 
 <template #footer>
-
-
-<OAFooter />
-
 
 <!--@include: ./parts/get-dolar-binance-footer.md -->
 
