@@ -2,15 +2,18 @@ importar { extraerDolares como extraerDolarHoy } desde '@/ar/acciones/extraccion
 importar { extraerCotizaciones } desde '@/ar/bna.extractor.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { unificar } desde '@/utils/unificar.esjs'
+importar { consultarAmbito } desde '@/ar/acciones/consulta/consultarAmbito.esjs'
 
 asincrono funcion nuevosValores() {
   const cotizaciones = esperar extraerCotizaciones()
 
   const dolaresNoCalculados = esperar extraerDolarHoy()
 
+  const dolaresAmbito = esperar consultarAmbito()
+
   const dolares = [
     ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD'),
-    ...dolaresNoCalculados.filtrar((dolar) => dolar.casa !== 'oficial'),
+    ...dolaresNoCalculados.filtrar((dolar) => !['oficia', 'mayorista'].incluye(dolar.casa)),
     ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD').mapear((dolarOficial) => {
         const impuestos = 0.6
 
@@ -26,6 +29,7 @@ asincrono funcion nuevosValores() {
           venta,
         }
       }),
+    ...dolaresAmbito.filtrar((dolar) => dolar.casa === 'mayorista'),
   ]
 
   retornar dolares
