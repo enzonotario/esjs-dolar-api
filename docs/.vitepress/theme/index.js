@@ -25,6 +25,9 @@ export default {
       path: {
         showBaseURL: true,
       },
+      codeSamples: {
+        defaultHeaders: {},
+      },
     })
 
     theme.enhanceApp({ app })
