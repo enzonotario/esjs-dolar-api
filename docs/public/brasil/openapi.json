@@ -1,0 +1,249 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DolarApi.com",
+    "version": "1.1.0",
+    "description": "<div class=\"flex flex-col\">\n\n  API desenvolvida em <a href=\"https://es.js.org?ref=dolarapi.com\" target=\"_blank\">EsJS</a> que fornece informações atualizadas sobre as cotações do Dólar no Brasil.\n\n  Achou esta API útil? <strong>Deixe sua ⭐ no <a href=\"https://github.com/enzonotario/esjs-dolar-api\" alt=\"GitHub\" target=\"_blank\">GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)"
+  },
+  "servers": [
+    {
+      "url": "https://br.dolarapi.com",
+      "description": "Produção"
+    },
+    {
+      "url": "http://localhost:5173",
+      "description": "Local"
+    }
+  ],
+  "paths": {
+    "/v1/cotacoes": {
+      "get": {
+        "summary": "Cotações",
+        "tags": [
+          "Cotação atual"
+        ],
+        "description": "Cotações das principais moedas em reais brasileiros",
+        "responses": {
+          "200": {
+            "description": "Retorna as cotações",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotacao"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cotacoes"
+      }
+    },
+    "/v1/cotacoes/usd": {
+      "get": {
+        "summary": "Dólar",
+        "tags": [
+          "Cotação atual"
+        ],
+        "description": "Cotação do dólar americano em reais brasileiros",
+        "responses": {
+          "200": {
+            "description": "Retorna a cotação do Dólar",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotacao"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-usd-brl"
+      }
+    },
+    "/v1/cotacoes/eur": {
+      "get": {
+        "summary": "Euro",
+        "tags": [
+          "Cotação atual"
+        ],
+        "description": "Cotação do euro em reais brasileiros",
+        "responses": {
+          "200": {
+            "description": "Retorna a cotação do Euro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotacao"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-eur-brl"
+      }
+    },
+    "/v1/cotacoes/clp": {
+      "get": {
+        "summary": "Peso Chileno",
+        "tags": [
+          "Cotação atual"
+        ],
+        "description": "Cotação do peso chileno em reais brasileiros",
+        "responses": {
+          "200": {
+            "description": "Retorna a cotação do Peso Chileno",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotacao"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-clp-brl"
+      },
+      "/v1/cotacoes/ars": {
+        "get": {
+          "summary": "Peso Argentino",
+          "tags": [
+            "Cotação atual"
+          ],
+          "description": "Cotação do peso argentino em reais brasileiros",
+          "responses": {
+            "200": {
+              "description": "Retorna a cotação do Peso Argentino",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Cotacao"
+                  }
+                }
+              },
+              "headers": {}
+            }
+          },
+          "operationId": "get-ars-brl"
+        }
+      },
+      "/v1/cotacoes/uyu": {
+        "get": {
+          "summary": "Peso Uruguaio",
+          "tags": [
+            "Cotação atual"
+          ],
+          "description": "Cotação do peso uruguaio em reais brasileiros",
+          "responses": {
+            "200": {
+              "description": "Retorna a cotação do Peso Uruguaio",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Cotacao"
+                  }
+                }
+              },
+              "headers": {}
+            }
+          },
+          "operationId": "get-uyu-brl"
+        }
+      },
+      "/v1/status": {
+        "get": {
+          "summary": "Status da API",
+          "tags": [
+            "API"
+          ],
+          "responses": {
+            "200": {
+              "description": "Retorna o status da API",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Status"
+                  }
+                }
+              }
+            }
+          },
+          "operationId": "get-status"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cotacao": {
+        "title": "Cotacao",
+        "type": "object",
+        "x-stoplight": {
+          "id": "ce96aa7960850"
+        },
+        "x-examples": {
+          "Exemplo 1": {
+            "dataAtualizacao": "2021-01-01T00:00:00.000Z",
+            "compra": 123.99,
+            "venda": 132.99
+          }
+        },
+        "properties": {
+          "compra": {
+            "type": "number"
+          },
+          "venda": {
+            "type": "number"
+          },
+          "fechoAnterior": {
+            "type": "number"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "moeda": {
+            "type": "string"
+          },
+          "dataAtualizacao": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "venda",
+          "ultimoFechamento",
+          "nome",
+          "moeda",
+          "dataAtualizacao"
+        ]
+      },
+      "Status": {
+        "title": "Status",
+        "x-stoplight": {
+          "id": "ogwpb2wxiqwqh"
+        },
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "aleatorio": {
+            "type": "integer"
+          }
+        },
+        "x-examples": {
+          "Exemplo 1": {
+            "status": "Disponível",
+            "aleatorio": 1234
+          }
+        }
+      }
+    }
+  }
+}
