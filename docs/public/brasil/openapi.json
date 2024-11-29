@@ -89,6 +89,29 @@
         "operationId": "get-eur-brl"
       }
     },
+    "/v1/cotacoes/ars": {
+      "get": {
+        "summary": "Peso Argentino",
+        "tags": [
+          "Cotação atual"
+        ],
+        "description": "Cotação do peso argentino em reais brasileiros",
+        "responses": {
+          "200": {
+            "description": "Retorna a cotação do Peso Argentino",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotacao"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-ars-brl"
+      }
+    },
     "/v1/cotacoes/clp": {
       "get": {
         "summary": "Peso Chileno",
@@ -177,6 +200,29 @@
           },
           "operationId": "get-status"
         }
+      }
+    },
+    "/v1/cotacoes/uyu": {
+      "get": {
+        "summary": "Peso Uruguaio",
+        "tags": [
+          "Cotação atual"
+        ],
+        "description": "Cotação do peso uruguaio em reais brasileiros",
+        "responses": {
+          "200": {
+            "description": "Retorna a cotação do Peso Uruguaio",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotacao"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-uyu-brl"
       }
     }
   },

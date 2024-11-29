@@ -33,6 +33,7 @@ export default defineConfig({
           { text: 'Uruguay', link: '/uruguay/' },
           { text: 'México', link: '/mexico/' },
           { text: 'Bolivia', link: '/bolivia/' },
+          { text: 'Brasil', link: '/brasil/' },
         ],
       },
     ],
@@ -43,6 +44,7 @@ export default defineConfig({
       '/uruguay/': generateSidebar('uy'),
       '/mexico/': generateSidebar('mx'),
       '/bolivia/': generateSidebar('bo'),
+      '/brasil/': generateSidebar('br'),
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },

@@ -6,6 +6,7 @@ import veSpec from '../../../public/venezuela/openapi.json'
 import uySpec from '../../../public/uruguay/openapi.json'
 import mxSpec from '../../../public/mexico/openapi.json'
 import boSpec from '../../../public/bolivia/openapi.json'
+import brSpec from '../../../public/brasil/openapi.json'
 
 const regions = [
   {
@@ -45,6 +46,12 @@ const regions = [
     prefix: '/bolivia',
     spec: boSpec,
   },
+  {
+    code: 'br',
+    name: 'Brasil',
+    prefix: '/brasil',
+    spec: brSpec,
+  },
 ]
 
 const currentRegion = ref(regions.find(region => region.default))
@@ -62,7 +69,7 @@ export function useRegion() {
 
     setCurrentRegion(selected.code)
 
-    const openapi = useOpenapi({ spec: selected.spec})
+    const openapi = useOpenapi({ spec: selected.spec })
 
     await router.go(goTo)
   }
