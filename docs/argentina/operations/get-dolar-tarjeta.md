@@ -14,7 +14,7 @@ setRegionForSidebar('ar')
 
 <template #description="description">
 
-Es el valor de la cotización del dólar estadounidense en el mercado oficial, más el impuesto PAIS (30%), el impuesto a las ganancias (100%) y el impuesto a cuenta de bienes personales (25%).
+Es el valor de la cotización del dólar estadounidense en el mercado oficial, más el impuesto a las ganancias (30%).
 
 </template>
 
