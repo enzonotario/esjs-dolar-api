@@ -15,7 +15,7 @@ asincrono funcion nuevosValores() {
     ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD'),
     ...dolaresNoCalculados.filtrar((dolar) => !['oficia', 'mayorista'].incluye(dolar.casa)),
     ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD').mapear((dolarOficial) => {
-        const impuestos = 0.6
+        const impuestos = 0.3
 
         const compra = Numero((dolarOficial.compra * (1 + impuestos)).fijarDecimales(2))
 
