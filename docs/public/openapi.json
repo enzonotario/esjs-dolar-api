@@ -140,7 +140,7 @@
         "tags": [
           "Cotización actual Dólares"
         ],
-        "description": "Es el valor de la cotización del dólar estadounidense en el mercado oficial, más el impuesto PAIS (30%), el impuesto a las ganancias (100%) y el impuesto a cuenta de bienes personales (25%).",
+        "description": "Es el valor de la cotización del dólar estadounidense en el mercado oficial, más el impuesto a las ganancias (30%).",
         "responses": {
           "200": {
             "description": "Devuelve el valor del Dólar Tarjeta",
