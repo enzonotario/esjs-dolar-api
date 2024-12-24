@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 43.15,
-    "venta": 45.55,
-    "fechaActualizacion": "2024-12-24T12:00:36.789Z"
+    "compra": 42.9,
+    "venta": 45.1,
+    "fechaActualizacion": "2024-12-24T13:00:39.804Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 43.81,
-    "venta": 48.74,
-    "fechaActualizacion": "2024-12-24T12:00:36.789Z"
+    "compra": 43.55,
+    "venta": 48.25,
+    "fechaActualizacion": "2024-12-24T13:00:39.804Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.024,
     "venta": 0.2,
-    "fechaActualizacion": "2024-12-24T12:00:36.789Z"
+    "fechaActualizacion": "2024-12-24T13:00:39.804Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
-    "compra": 7,
-    "venta": 8.7,
-    "fechaActualizacion": "2024-12-24T12:00:36.789Z"
+    "compra": 6.9,
+    "venta": 8.6,
+    "fechaActualizacion": "2024-12-24T13:00:39.804Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 52.76,
-    "venta": 59.25,
-    "fechaActualizacion": "2024-12-24T12:00:36.790Z"
+    "compra": 52.57,
+    "venta": 58.8,
+    "fechaActualizacion": "2024-12-24T13:00:39.804Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 47.14,
-    "venta": 51.59,
-    "fechaActualizacion": "2024-12-24T12:00:36.790Z"
+    "compra": 46.81,
+    "venta": 51.04,
+    "fechaActualizacion": "2024-12-24T13:00:39.805Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
-    "compra": 0.00543,
-    "venta": 0.00597,
-    "fechaActualizacion": "2024-12-24T12:00:36.790Z"
+    "compra": 0.00539,
+    "venta": 0.00591,
+    "fechaActualizacion": "2024-12-24T13:00:39.805Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.164,
-    "fechaActualizacion": "2024-12-24T12:00:36.790Z"
+    "fechaActualizacion": "2024-12-24T13:00:39.805Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 112552.46,
-    "venta": 119943.6265,
-    "fechaActualizacion": "2024-12-24T12:00:36.790Z"
+    "compra": 111995.598,
+    "venta": 118226.042,
+    "fechaActualizacion": "2024-12-24T13:00:39.805Z"
   }
 ]
