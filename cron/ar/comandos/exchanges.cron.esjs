@@ -32,7 +32,7 @@ funcion generarExchanges() {
     },
     {
       id: 'dolarapp',
-      nombre: 'Dolar App',
+      nombre: 'DolarApp',
       logo: 'https://icons.com.ar/icons/cripto/dolar-app.svg',
     },
     {

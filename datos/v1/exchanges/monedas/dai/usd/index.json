@@ -1,0 +1,20 @@
+[
+  {
+    "exchange": "belo",
+    "moneda": "USD",
+    "monedaBase": "DAI",
+    "criptomoneda": "USDT",
+    "criptomonedaBase": null,
+    "compra": 1.0037104162959212,
+    "venta": 1.000603514009475
+  },
+  {
+    "exchange": "belo",
+    "moneda": "USD",
+    "monedaBase": "DAI",
+    "criptomoneda": "USDC",
+    "criptomonedaBase": null,
+    "compra": 1.0033119509545996,
+    "venta": 0.9971106354534812
+  }
+]

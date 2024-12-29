@@ -1,0 +1,23 @@
+[
+  {
+    "exchange": "belo",
+    "moneda": "BRL",
+    "monedaBase": "ARS",
+    "compra": 0.004837851285474952,
+    "venta": 0.005274671052631579
+  },
+  {
+    "exchange": "fiwind",
+    "moneda": "BRL",
+    "monedaBase": "ARS",
+    "compra": 0.004865591465993902,
+    "venta": 0.005425700428490893
+  },
+  {
+    "exchange": "cocos",
+    "moneda": "BRL",
+    "monedaBase": "ARS",
+    "compra": 0.005021915089503859,
+    "venta": null
+  }
+]

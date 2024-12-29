@@ -1,0 +1,38 @@
+[
+  {
+    "exchange": "belo",
+    "moneda": "BRL",
+    "monedaBase": "USD",
+    "criptomoneda": null,
+    "criptomonedaBase": "USDT",
+    "compra": 5.96023278370514,
+    "venta": 6.414000000000001
+  },
+  {
+    "exchange": "fiwind",
+    "moneda": "BRL",
+    "monedaBase": "USD",
+    "criptomoneda": "USDT",
+    "criptomonedaBase": null,
+    "compra": 5.936021559630304,
+    "venta": 6.510840549514942
+  },
+  {
+    "exchange": "cocos",
+    "moneda": "BRL",
+    "monedaBase": "USD",
+    "criptomoneda": null,
+    "criptomonedaBase": "USDT",
+    "compra": 6.0838090790096295,
+    "venta": null
+  },
+  {
+    "exchange": "takenos",
+    "moneda": "BRL",
+    "monedaBase": "USD",
+    "criptomoneda": "USDT",
+    "criptomonedaBase": null,
+    "compra": 5.960844,
+    "venta": 6.604978000000001
+  }
+]
