@@ -51,6 +51,9 @@ importers:
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
+      collect.js:
+        specifier: ^4.36.1
+        version: 4.36.1
       cors:
         specifier: ^2.8.5
         version: 2.8.5
@@ -1816,6 +1819,9 @@ packages:
 
   code-block-writer@10.1.1:
     resolution: {integrity: sha512-67ueh2IRGst/51p0n6FvPrnRjAGHY5F8xdjkgrYE7DDzpJe6qA07RYQ9VcoUeo5ATOjSOiWpSL3SWBRRbempMw==}
+
+  collect.js@4.36.1:
+    resolution: {integrity: sha512-jd97xWPKgHn6uvK31V6zcyPd40lUJd7gpYxbN2VOVxGWO4tyvS9Li4EpsFjXepGTo2tYcOTC4a8YsbQXMJ4XUw==}
 
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -6662,6 +6668,8 @@ snapshots:
   clsx@2.1.1: {}
 
   code-block-writer@10.1.1: {}
+
+  collect.js@4.36.1: {}
 
   color-convert@1.9.3:
     dependencies:

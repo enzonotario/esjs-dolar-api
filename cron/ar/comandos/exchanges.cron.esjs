@@ -1,0 +1,110 @@
+importar { extraerExchanges } desde '@/ar/acciones/extraccion/extraerExchanges.esjs'
+importar { escribirRuta } desde '@/utils/rutas.esjs'
+importar { collect } desde 'collect.js'
+
+exportar asincrono funcion cronExchanges() {
+  const rutas = []
+
+  rutas.agregar(generarExchanges())
+  rutas.agregar(esperar generarExchangesMonedas())
+
+  consola.tabla(rutas)
+
+  retornar rutas
+}
+
+funcion generarExchanges() {
+  const exchanges = [
+    {
+      id: 'belo',
+      nombre: 'Belo',
+      logo: 'https://icons.com.ar/icons/cripto/belo.svg',
+    },
+    {
+      id: 'fiwind',
+      nombre: 'Fiwind',
+      logo: 'https://icons.com.ar/icons/cripto/fiwind.svg',
+    },
+    {
+      id: 'cocos',
+      nombre: 'Cocos',
+      logo: 'https://icons.com.ar/icons/gerentes-fci/cocos.svg',
+    },
+    {
+      id: 'dolarapp',
+      nombre: 'Dolar App',
+      logo: 'https://icons.com.ar/icons/cripto/dolar-app.svg',
+    },
+    {
+      id: 'takenos',
+      nombre: 'Takenos',
+      logo: 'https://icons.com.ar/icons/cripto/takenos.svg',
+    },
+  ]
+  escribirRuta('/exchanges', exchanges)
+
+  retornar {
+    ruta: '/exchanges',
+    cantidad: exchanges.longitud,
+  }
+}
+
+asincrono funcion generarExchangesMonedas() {
+  var cotizaciones = esperar extraerExchanges()
+
+  consola.tabla(cotizaciones)
+
+  const rutas = {}
+
+  funcion agregarRuta(ruta, valor) {
+    rutas[ruta] = [...(rutas[ruta] || []), valor]
+
+    retornar rutas
+  }
+
+  collect(cotizaciones).mapear((cotizacion) => {
+    const { exchange, par, parCriptomoneda, compra, venta } = cotizacion
+    const [monedaBase, moneda] = par
+    const [criptomonedaBase, criptomoneda] = parCriptomoneda || []
+    const valor = {
+      exchange,
+      moneda,
+      monedaBase,
+      ...(criptomoneda || criptomonedaBase
+        ? { criptomoneda, criptomonedaBase }
+        : {}),
+      compra,
+      venta,
+    }
+
+    agregarRuta(`/exchanges/${exchange}/${monedaBase.aMinusculas()}`, valor)
+
+    agregarRuta(
+      `/exchanges/monedas/${moneda.aMinusculas()}/${monedaBase.aMinusculas()}`,
+      {
+        exchange,
+        moneda: monedaBase,
+        monedaBase: moneda,
+        ...(criptomoneda || criptomonedaBase
+          ? { criptomoneda: criptomonedaBase, criptomonedaBase: criptomoneda }
+          : {}),
+        compra: compra ? 1 / compra : nulo,
+        venta: venta ? 1 / venta : nulo,
+      },
+    )
+
+    agregarRuta(
+      `/exchanges/monedas/${monedaBase.aMinusculas()}/${moneda.aMinusculas()}`,
+      valor,
+    )
+  })
+
+  para (const [ruta, valor] de Object.entradas(rutas)) {
+    escribirRuta(ruta, valor)
+  }
+
+  retornar Object.entradas(rutas).mapear(([ruta, valor]) => ({
+    ruta,
+    cantidad: valor.longitud,
+  }));
+}

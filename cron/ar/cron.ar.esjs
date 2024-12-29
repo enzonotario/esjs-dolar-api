@@ -1,6 +1,7 @@
 importar { cronDolares } desde '@/ar/comandos/dolares.cron.esjs'
 importar { cronCotizaciones } desde '@/ar/comandos/cotizaciones.cron.esjs'
 importar { cronAmbito } desde '@/ar/comandos/ambito.cron.esjs'
+importar { cronExchanges } desde '@/ar/comandos/exchanges.cron.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
@@ -12,6 +13,7 @@ exportar porDefecto asincrono funcion () {
     esperar cronDolares()
     esperar cronCotizaciones()
     esperar cronAmbito()
+    esperar cronExchanges()
 
     log.info('Fin')
   } capturar (error) {

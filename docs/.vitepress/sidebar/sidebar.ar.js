@@ -1,5 +1,6 @@
 import { useSidebar } from 'vitepress-openapi'
 import { useRegion } from '../theme/composables/useRegion.js'
+import exchangesSpec from '../../public/exchanges/openapi.json'
 import { addRegionPrefixToSidebarItems, setRegionForSidebar } from './sidebar.utils.js'
 
 const region = useRegion().regions.find(region => region.code === 'ar')
@@ -86,6 +87,14 @@ export default function () {
           ],
         },
       ],
+    },
+    {
+      text: 'Cotización Exchanges',
+      items: useSidebar({
+        spec: exchangesSpec,
+        linkPrefix: '/argentina/exchanges/monedas/',
+      }).generateSidebarGroups(),
+      collapsed: true,
     },
     addRegionPrefixToSidebarItems(region.prefix, sidebar.generateSidebarGroup({
       tag: 'API',

@@ -1,0 +1,1491 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://dolarapi.com",
+      "description": "Producción"
+    }
+  ],
+  "paths": {
+    "/v1/exchanges": {
+      "get": {
+        "summary": "Listado de exchanges",
+        "operationId": "get-exchanges",
+        "description": "Listado de exchanges.",
+        "tags": [
+          "Exchanges"
+        ],
+        "responses": {
+          "200": {
+            "description": "Listado de exchanges",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "enum": [
+                          "belo",
+                          "fiwind",
+                          "cocos",
+                          "dolarapp",
+                          "takenos"
+                        ]
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "logo": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/ars/brl": {
+      "get": {
+        "summary": "ARS/BRL",
+        "operationId": "get-exchange-moneda-ars-brl",
+        "description": "Cotizaciones de ARS a BRL.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo",
+                          "fiwind",
+                          "cocos"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/ars/btc": {
+      "get": {
+        "summary": "ARS/BTC",
+        "operationId": "get-exchange-moneda-ars-btc",
+        "description": "Cotizaciones de ARS a BTC.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/ars/dai": {
+      "get": {
+        "summary": "ARS/DAI",
+        "operationId": "get-exchange-moneda-ars-dai",
+        "description": "Cotizaciones de ARS a DAI.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/ars/eth": {
+      "get": {
+        "summary": "ARS/ETH",
+        "operationId": "get-exchange-moneda-ars-eth",
+        "description": "Cotizaciones de ARS a ETH.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/ars/usd": {
+      "get": {
+        "summary": "ARS/USD",
+        "operationId": "get-exchange-moneda-ars-usd",
+        "description": "Cotizaciones de ARS a USD.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo",
+                          "dolarapp"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/brl/ars": {
+      "get": {
+        "summary": "BRL/ARS",
+        "operationId": "get-exchange-moneda-brl-ars",
+        "description": "Cotizaciones de BRL a ARS.",
+        "tags": [
+          "BRL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo",
+                          "fiwind",
+                          "cocos"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/brl/usd": {
+      "get": {
+        "summary": "BRL/USD",
+        "operationId": "get-exchange-moneda-brl-usd",
+        "description": "Cotizaciones de BRL a USD.",
+        "tags": [
+          "BRL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo",
+                          "fiwind",
+                          "cocos",
+                          "takenos"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/btc/ars": {
+      "get": {
+        "summary": "BTC/ARS",
+        "operationId": "get-exchange-moneda-btc-ars",
+        "description": "Cotizaciones de BTC a ARS.",
+        "tags": [
+          "BTC"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/btc/dai": {
+      "get": {
+        "summary": "BTC/DAI",
+        "operationId": "get-exchange-moneda-btc-dai",
+        "description": "Cotizaciones de BTC a DAI.",
+        "tags": [
+          "BTC"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/btc/eth": {
+      "get": {
+        "summary": "BTC/ETH",
+        "operationId": "get-exchange-moneda-btc-eth",
+        "description": "Cotizaciones de BTC a ETH.",
+        "tags": [
+          "BTC"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/btc/usd": {
+      "get": {
+        "summary": "BTC/USD",
+        "operationId": "get-exchange-moneda-btc-usd",
+        "description": "Cotizaciones de BTC a USD.",
+        "tags": [
+          "BTC"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/dai/ars": {
+      "get": {
+        "summary": "DAI/ARS",
+        "operationId": "get-exchange-moneda-dai-ars",
+        "description": "Cotizaciones de DAI a ARS.",
+        "tags": [
+          "DAI"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/dai/btc": {
+      "get": {
+        "summary": "DAI/BTC",
+        "operationId": "get-exchange-moneda-dai-btc",
+        "description": "Cotizaciones de DAI a BTC.",
+        "tags": [
+          "DAI"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/dai/eth": {
+      "get": {
+        "summary": "DAI/ETH",
+        "operationId": "get-exchange-moneda-dai-eth",
+        "description": "Cotizaciones de DAI a ETH.",
+        "tags": [
+          "DAI"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/dai/usd": {
+      "get": {
+        "summary": "DAI/USD",
+        "operationId": "get-exchange-moneda-dai-usd",
+        "description": "Cotizaciones de DAI a USD.",
+        "tags": [
+          "DAI"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/eth/ars": {
+      "get": {
+        "summary": "ETH/ARS",
+        "operationId": "get-exchange-moneda-eth-ars",
+        "description": "Cotizaciones de ETH a ARS.",
+        "tags": [
+          "ETH"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/eth/btc": {
+      "get": {
+        "summary": "ETH/BTC",
+        "operationId": "get-exchange-moneda-eth-btc",
+        "description": "Cotizaciones de ETH a BTC.",
+        "tags": [
+          "ETH"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/eth/dai": {
+      "get": {
+        "summary": "ETH/DAI",
+        "operationId": "get-exchange-moneda-eth-dai",
+        "description": "Cotizaciones de ETH a DAI.",
+        "tags": [
+          "ETH"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/eth/usd": {
+      "get": {
+        "summary": "ETH/USD",
+        "operationId": "get-exchange-moneda-eth-usd",
+        "description": "Cotizaciones de ETH a USD.",
+        "tags": [
+          "ETH"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usd/ars": {
+      "get": {
+        "summary": "USD/ARS",
+        "operationId": "get-exchange-moneda-usd-ars",
+        "description": "Cotizaciones de USD a ARS.",
+        "tags": [
+          "USD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo",
+                          "dolarapp"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usd/brl": {
+      "get": {
+        "summary": "USD/BRL",
+        "operationId": "get-exchange-moneda-usd-brl",
+        "description": "Cotizaciones de USD a BRL.",
+        "tags": [
+          "USD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo",
+                          "fiwind",
+                          "cocos",
+                          "takenos"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usd/btc": {
+      "get": {
+        "summary": "USD/BTC",
+        "operationId": "get-exchange-moneda-usd-btc",
+        "description": "Cotizaciones de USD a BTC.",
+        "tags": [
+          "USD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usd/dai": {
+      "get": {
+        "summary": "USD/DAI",
+        "operationId": "get-exchange-moneda-usd-dai",
+        "description": "Cotizaciones de USD a DAI.",
+        "tags": [
+          "USD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "DAI"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usd/eth": {
+      "get": {
+        "summary": "USD/ETH",
+        "operationId": "get-exchange-moneda-usd-eth",
+        "description": "Cotizaciones de USD a ETH.",
+        "tags": [
+          "USD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usd/usd": {
+      "get": {
+        "summary": "USD/USD",
+        "operationId": "get-exchange-moneda-usd-usd",
+        "description": "Cotizaciones de USD a USD.",
+        "tags": [
+          "USD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

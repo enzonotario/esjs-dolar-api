@@ -1,0 +1,137 @@
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
+importar { parse } desde 'date-fns'
+importar { collect } desde 'collect.js'
+
+exportar asincrono funcion extraerExchanges() {
+  const cotizaciones = esperar obtenerCotizaciones()
+
+  retornar cotizaciones.mapear((cotizacion) => ({
+    ...cotizacion,
+    fechaActualizacion: crear Fecha(),
+  }));
+}
+
+asincrono funcion obtenerCotizaciones() {
+  retornar esperar Promesa.todos([
+    consultarBelo(),
+    consultarFiwind(),
+    consultarCocos(),
+    consultarDolarApp(),
+    consultarTakenos(),
+  ]).luego((respuestas) => {
+    retornar respuestas.plano();
+  });
+
+  retornar cotizaciones
+}
+
+asincrono funcion consultarBelo() {
+  const respuesta = esperar axios({
+    url: 'https://api.belo.app/public/price',
+  })
+
+  retornar respuesta.data.mapear((cotizacion) => {
+    const [parBase, parMoneda] = cotizacion.pairCode.dividir('/')
+
+    const moneda = parMoneda.comienzaCon('USD') ? 'USD' : parMoneda
+    const criptomoneda = parMoneda.comienzaCon('USD') ? parMoneda : nulo
+
+    const monedaBase = parBase.comienzaCon('USD') ? 'USD' : parBase
+    const criptomonedaBase = parBase.comienzaCon('USD') ? parBase : nulo
+
+    retornar {
+      exchange: 'belo',
+      par: [monedaBase, moneda],
+      parCriptomoneda: [criptomonedaBase, criptomoneda],
+      compra: Numero(cotizacion.ask),
+      venta: Numero(cotizacion.bid),
+    };
+  });
+}
+
+asincrono funcion consultarFiwind() {
+  const respuesta = esperar axios({
+    url: 'https://api.fiwind.io/v1.0/payments/pix/prices',
+  })
+
+  const brlToUsdt = respuesta.data.buscar(
+    (cotizacion) => cotizacion.symbol === 'BRLUSDT',
+  )
+
+  const brlToArs = respuesta.data.buscar(
+    (cotizacion) => cotizacion.symbol === 'BRLARS',
+  )
+
+  retornar [
+    {
+      exchange: 'fiwind',
+      par: ['BRL', 'USD'],
+      parCriptomoneda: ['USDT', nulo],
+      compra: Numero(brlToUsdt.buy),
+      venta: Numero(brlToUsdt.sell),
+    },
+    {
+      exchange: 'fiwind',
+      par: ['BRL', 'ARS'],
+      compra: Numero(brlToArs.buy),
+      venta: Numero(brlToArs.sell),
+    },
+  ];
+}
+
+asincrono funcion consultarCocos() {
+  const respuesta = esperar (
+    esperar fetch('https://api.cocos.capital/api/v1/public/pix-prices')
+  ).json()
+
+  retornar [
+    {
+      exchange: 'cocos',
+      par: ['USD', 'BRL'],
+      parCriptomoneda: ['USDT', nulo],
+      compra: Numero(respuesta.usdToBrlRate),
+      venta: nulo,
+    },
+    {
+      exchange: 'cocos',
+      par: ['BRL', 'ARS'],
+      compra: Numero(respuesta.brlToArsRate),
+      venta: nulo,
+    },
+  ];
+}
+
+asincrono funcion consultarDolarApp() {
+  const respuesta = esperar axios({
+    url: 'https://api.dolarapp.com/v1/tickers?currencies=ARS',
+  })
+
+  retornar respuesta.data.mapear((cotizacion) => ({
+    exchange: 'dolarapp',
+    par: ['USD', 'ARS'],
+    parCriptomoneda: [nulo, cotizacion.book.dividir('_')[0].aMayusculas()],
+    compra: Numero(cotizacion.ask),
+    venta: Numero(cotizacion.bid),
+  }));
+}
+
+asincrono funcion consultarTakenos() {
+  const respuestaCompra = esperar axios({
+    url: 'https://app.takenos.com/api/rates/BRL_USD?provider=kamiPay&operation=sell',
+  })
+
+  const respuestaVenta = esperar axios({
+    url: 'https://app.takenos.com/api/rates/BRL_USD?provider=kamiPay&operation=buy',
+  })
+
+  retornar [
+    {
+      exchange: 'takenos',
+      par: ['USD', 'BRL'],
+      parCriptomoneda: [nulo, 'USDT'],
+      compra: Numero(respuestaCompra.data.rate),
+      venta: Numero(respuestaVenta.data.rate),
+    },
+  ];
+}

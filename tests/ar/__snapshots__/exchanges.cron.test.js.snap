@@ -1,0 +1,152 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`exchanges.cron > cronExchanges 1`] = `
+[
+  {
+    "cantidad": 5,
+    "ruta": "/exchanges",
+  },
+  [
+    {
+      "cantidad": 5,
+      "ruta": "/exchanges/belo/btc",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/ars/btc",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/btc/ars",
+    },
+    {
+      "cantidad": 4,
+      "ruta": "/exchanges/belo/eth",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/ars/eth",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/eth/ars",
+    },
+    {
+      "cantidad": 3,
+      "ruta": "/exchanges/belo/dai",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/ars/dai",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/dai/ars",
+    },
+    {
+      "cantidad": 6,
+      "ruta": "/exchanges/belo/usd",
+    },
+    {
+      "cantidad": 4,
+      "ruta": "/exchanges/monedas/ars/usd",
+    },
+    {
+      "cantidad": 4,
+      "ruta": "/exchanges/monedas/usd/ars",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/eth/btc",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/btc/eth",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/dai/btc",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/btc/dai",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/monedas/usd/btc",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/monedas/btc/usd",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/dai/eth",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/eth/dai",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/monedas/usd/eth",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/monedas/eth/usd",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/monedas/usd/dai",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/monedas/dai/usd",
+    },
+    {
+      "cantidad": 6,
+      "ruta": "/exchanges/monedas/usd/usd",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/belo/brl",
+    },
+    {
+      "cantidad": 4,
+      "ruta": "/exchanges/monedas/usd/brl",
+    },
+    {
+      "cantidad": 4,
+      "ruta": "/exchanges/monedas/brl/usd",
+    },
+    {
+      "cantidad": 3,
+      "ruta": "/exchanges/monedas/ars/brl",
+    },
+    {
+      "cantidad": 3,
+      "ruta": "/exchanges/monedas/brl/ars",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/fiwind/brl",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/cocos/usd",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/cocos/brl",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/dolarapp/usd",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/takenos/usd",
+    },
+  ],
+]
+`;
