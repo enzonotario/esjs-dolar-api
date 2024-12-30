@@ -14,8 +14,8 @@
     "monedaBase": "ARS",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 0.00081428958521483,
-    "venta": 0.0008324473476201453
+    "compra": 0.000814045615499895,
+    "venta": 0.0008321979127377182
   },
   {
     "exchange": "belo",
@@ -24,7 +24,7 @@
     "criptomoneda": "USD_AR",
     "criptomonedaBase": null,
     "compra": 0.0008244897959183674,
-    "venta": 0.0008735440931780365
+    "venta": 0.0008743760399334442
   },
   {
     "exchange": "dolarapp",
@@ -32,7 +32,7 @@
     "monedaBase": "ARS",
     "criptomoneda": null,
     "criptomonedaBase": "USDC",
-    "compra": 0.0008244091047741531,
-    "venta": 0.0008351255126835522
+    "compra": 0.0008215104290748972,
+    "venta": 0.0008347390338663643
   }
 ]
