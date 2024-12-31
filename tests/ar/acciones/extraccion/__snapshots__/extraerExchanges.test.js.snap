@@ -1,0 +1,319 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`extraerExchanges > extrae cotizaciones de exchanges 1`] = `
+[
+  {
+    "exchange": "belo",
+    "par": [
+      "BTC",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "ETH",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "DAI",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "USD",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "USD",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      "USDC",
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "BTC",
+      "ETH",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "BTC",
+      "DAI",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "BTC",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDT",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "BTC",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDC",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "ETH",
+      "DAI",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "ETH",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDT",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "ETH",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDC",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "DAI",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDT",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "DAI",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDC",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "USD",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      "USDC",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "USD",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      "USD",
+      "USDT",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "BRL",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDT",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "BRL",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "USD",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      "USD_AR",
+    ],
+  },
+  {
+    "exchange": "belo",
+    "par": [
+      "USD",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      "USD_AR",
+      null,
+    ],
+  },
+  {
+    "exchange": "fiwind",
+    "par": [
+      "BRL",
+      "USD",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      null,
+    ],
+  },
+  {
+    "exchange": "fiwind",
+    "par": [
+      "BRL",
+      "ARS",
+    ],
+    "parCriptomoneda": undefined,
+  },
+  {
+    "exchange": "cocos",
+    "par": [
+      "USD",
+      "BRL",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      null,
+    ],
+  },
+  {
+    "exchange": "cocos",
+    "par": [
+      "BRL",
+      "ARS",
+    ],
+    "parCriptomoneda": undefined,
+  },
+  {
+    "exchange": "dolarapp",
+    "par": [
+      "USD",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDC",
+    ],
+  },
+  {
+    "exchange": "takenos",
+    "par": [
+      "USD",
+      "BRL",
+    ],
+    "parCriptomoneda": [
+      null,
+      "USDT",
+    ],
+  },
+  {
+    "exchange": "satoshitango",
+    "par": [
+      "USD",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      null,
+    ],
+  },
+  {
+    "exchange": "satoshitango",
+    "par": [
+      "USD",
+      "BRL",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      null,
+    ],
+  },
+  {
+    "exchange": "satoshitango",
+    "par": [
+      "BRL",
+      "ARS",
+    ],
+    "parCriptomoneda": [
+      null,
+      null,
+    ],
+  },
+]
+`;

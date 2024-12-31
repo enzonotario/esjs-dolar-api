@@ -19,6 +19,7 @@ asincrono funcion obtenerCotizaciones() {
     consultarCocos(),
     consultarDolarApp(),
     consultarTakenos(),
+    consultarSatoshiTango(),
   ]).luego((respuestas) => {
     retornar respuestas.plano();
   });
@@ -135,3 +136,25 @@ asincrono funcion consultarTakenos() {
     },
   ];
 }
+
+asincrono funcion consultarSatoshiTango() {
+  const respuesta = esperar axios({
+    url: 'https://api.satoshitango.com/v3/qr/ticker',
+  })
+
+  retornar respuesta.data.data.tickers.mapear((cotizacion) => {
+    const [parBase, parMoneda] = cotizacion.pair.dividir('/')
+
+    const monedaBase = parBase.comienzaCon('USD') ? 'USD' : parBase
+    const moneda = parMoneda.comienzaCon('USD') ? 'USD' : parMoneda
+
+    retornar {
+      exchange: 'satoshitango',
+      par: [monedaBase, moneda],
+      parCriptomoneda: [parBase.comienzaCon('USD') ? parBase : nulo, parMoneda.comienzaCon('USD') ? parMoneda : nulo],
+      compra: Numero(cotizacion.rate),
+      venta: nulo,
+    };
+  });
+}
+

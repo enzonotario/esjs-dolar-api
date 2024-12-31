@@ -40,13 +40,18 @@ funcion generarExchanges() {
       nombre: 'Takenos',
       logo: 'https://icons.com.ar/icons/cripto/takenos.svg',
     },
+    {
+      id: 'satoshitango',
+      nombre: 'Satoshi Tango',
+      logo: 'https://icons.com.ar/icons/cripto/satoshi-tango.svg',
+    },
   ]
   escribirRuta('/exchanges', exchanges)
 
   retornar {
     ruta: '/exchanges',
     cantidad: exchanges.longitud,
-  }
+  };
 }
 
 asincrono funcion generarExchangesMonedas() {

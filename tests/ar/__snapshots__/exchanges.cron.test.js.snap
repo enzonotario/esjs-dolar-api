@@ -3,7 +3,7 @@
 exports[`exchanges.cron > cronExchanges 1`] = `
 [
   {
-    "cantidad": 5,
+    "cantidad": 6,
     "ruta": "/exchanges",
   },
   [
@@ -48,11 +48,11 @@ exports[`exchanges.cron > cronExchanges 1`] = `
       "ruta": "/exchanges/belo/usd",
     },
     {
-      "cantidad": 4,
+      "cantidad": 5,
       "ruta": "/exchanges/monedas/ars/usd",
     },
     {
-      "cantidad": 4,
+      "cantidad": 5,
       "ruta": "/exchanges/monedas/usd/ars",
     },
     {
@@ -112,19 +112,19 @@ exports[`exchanges.cron > cronExchanges 1`] = `
       "ruta": "/exchanges/belo/brl",
     },
     {
-      "cantidad": 4,
+      "cantidad": 5,
       "ruta": "/exchanges/monedas/usd/brl",
     },
     {
-      "cantidad": 4,
+      "cantidad": 5,
       "ruta": "/exchanges/monedas/brl/usd",
     },
     {
-      "cantidad": 3,
+      "cantidad": 4,
       "ruta": "/exchanges/monedas/ars/brl",
     },
     {
-      "cantidad": 3,
+      "cantidad": 4,
       "ruta": "/exchanges/monedas/brl/ars",
     },
     {
@@ -146,6 +146,14 @@ exports[`exchanges.cron > cronExchanges 1`] = `
     {
       "cantidad": 1,
       "ruta": "/exchanges/takenos/usd",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/satoshitango/usd",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/satoshitango/brl",
     },
   ],
 ]
