@@ -54,6 +54,14 @@ export default defineConfig({
       message: 'Liberado bajo la <a href="https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE">Licencia MIT</a>.',
       copyright: '<a href="/docs/legal">Aviso Legal</a>',
     },
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: '3X8ZZEA2NO',
+        apiKey: '3973396ebc578f45eecb42959162e3b6',
+        indexName: 'dolarapi',
+      },
+    },
   },
 
   head: [
