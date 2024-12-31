@@ -63,6 +63,10 @@ exportar funcion init() {
     const monedas = fs.readdirSync(`datos/v1/exchanges/monedas/${monedaBase}`)
 
     para (const moneda de monedas) {
+      si (!fs.existsSync(`datos/v1/exchanges/monedas/${monedaBase}/${moneda}/index.json`)) {
+        continuar
+      }
+
       const json = JSON.parse(fs.readFileSync(
         `datos/v1/exchanges/monedas/${monedaBase}/${moneda}/index.json`,
       ))

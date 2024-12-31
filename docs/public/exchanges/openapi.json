@@ -32,7 +32,8 @@
                           "fiwind",
                           "cocos",
                           "dolarapp",
-                          "takenos"
+                          "takenos",
+                          "satoshitango"
                         ]
                       },
                       "nombre": {
@@ -73,7 +74,8 @@
                         "enum": [
                           "belo",
                           "fiwind",
-                          "cocos"
+                          "cocos",
+                          "satoshitango"
                         ]
                       },
                       "compra": {
@@ -302,7 +304,8 @@
                         "type": "string",
                         "enum": [
                           "belo",
-                          "dolarapp"
+                          "dolarapp",
+                          "satoshitango"
                         ]
                       },
                       "compra": {
@@ -361,7 +364,8 @@
                         "enum": [
                           "belo",
                           "fiwind",
-                          "cocos"
+                          "cocos",
+                          "satoshitango"
                         ]
                       },
                       "compra": {
@@ -421,7 +425,8 @@
                           "belo",
                           "fiwind",
                           "cocos",
-                          "takenos"
+                          "takenos",
+                          "satoshitango"
                         ]
                       },
                       "compra": {
@@ -1163,7 +1168,8 @@
                         "type": "string",
                         "enum": [
                           "belo",
-                          "dolarapp"
+                          "dolarapp",
+                          "satoshitango"
                         ]
                       },
                       "compra": {
@@ -1223,7 +1229,8 @@
                           "belo",
                           "fiwind",
                           "cocos",
-                          "takenos"
+                          "takenos",
+                          "satoshitango"
                         ]
                       },
                       "compra": {
