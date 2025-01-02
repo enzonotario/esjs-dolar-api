@@ -3,28 +3,35 @@
     "exchange": "belo",
     "moneda": "ARS",
     "monedaBase": "BRL",
-    "compra": 207.68103166829906,
-    "venta": 190.49108539255553
+    "compra": 206.369433032046,
+    "venta": 188.03149606299212
   },
   {
     "exchange": "fiwind",
     "moneda": "ARS",
     "monedaBase": "BRL",
-    "compra": 207.392499,
-    "venta": 185.994161
+    "compra": 205.01388,
+    "venta": 183.811275
   },
   {
     "exchange": "cocos",
     "moneda": "ARS",
     "monedaBase": "BRL",
-    "compra": 198.69917716984162,
+    "compra": 197.12866048122768,
     "venta": null
   },
   {
     "exchange": "satoshitango",
     "moneda": "ARS",
     "monedaBase": "BRL",
-    "compra": 205.73,
+    "compra": 199.59,
+    "venta": null
+  },
+  {
+    "exchange": "prex",
+    "moneda": "ARS",
+    "monedaBase": "BRL",
+    "compra": 195.7825,
     "venta": null
   }
 ]
