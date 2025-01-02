@@ -315,5 +315,21 @@ exports[`extraerExchanges > extrae cotizaciones de exchanges 1`] = `
       null,
     ],
   },
+  {
+    "exchange": "prex",
+    "par": [
+      "BRL",
+      "ARS",
+    ],
+    "parCriptomoneda": undefined,
+  },
+  {
+    "exchange": "prex",
+    "par": [
+      "USD",
+      "BRL",
+    ],
+    "parCriptomoneda": undefined,
+  },
 ]
 `;

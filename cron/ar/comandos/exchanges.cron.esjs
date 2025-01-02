@@ -45,6 +45,11 @@ funcion generarExchanges() {
       nombre: 'Satoshi Tango',
       logo: 'https://icons.com.ar/icons/cripto/satoshi-tango.svg',
     },
+    {
+      id: 'prex',
+      nombre: 'Prex',
+      logo: 'https://icons.com.ar/icons/bancos-apps/prex.svg',
+    },
   ]
   escribirRuta('/exchanges', exchanges)
 

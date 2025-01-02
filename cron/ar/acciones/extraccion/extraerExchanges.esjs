@@ -20,6 +20,7 @@ asincrono funcion obtenerCotizaciones() {
     consultarDolarApp(),
     consultarTakenos(),
     consultarSatoshiTango(),
+    consultarPrex(),
   ]).luego((respuestas) => {
     retornar respuestas.plano();
   });
@@ -151,10 +152,36 @@ asincrono funcion consultarSatoshiTango() {
     retornar {
       exchange: 'satoshitango',
       par: [monedaBase, moneda],
-      parCriptomoneda: [parBase.comienzaCon('USD') ? parBase : nulo, parMoneda.comienzaCon('USD') ? parMoneda : nulo],
+      parCriptomoneda: [
+        parBase.comienzaCon('USD') ? parBase : nulo,
+        parMoneda.comienzaCon('USD') ? parMoneda : nulo,
+      ],
       compra: Numero(cotizacion.rate),
       venta: nulo,
     };
   });
 }
 
+asincrono funcion consultarPrex() {
+  const respuesta = esperar axios({
+    url: 'https://api.prexcard.com.ar/v1/partners/pix-webs/quotes',
+    headers: {
+      'API-Key': importar.meta.env.VITE_PREX_API_KEY,
+    },
+  })
+
+  retornar respuesta.data.quotes.filtrar(
+      (cotizacion) =>
+        cotizacion.symbol === 'BRLUSD' || cotizacion.symbol === 'BRLARS',
+    ).mapear((cotizacion) => {
+      const [monedaBase, moneda] =
+        cotizacion.symbol === 'BRLUSD' ? ['USD', 'BRL'] : ['BRL', 'ARS']
+
+      retornar {
+        exchange: 'prex',
+        par: [monedaBase, moneda],
+        compra: Numero(cotizacion.buy),
+        venta: nulo,
+      };
+    });
+}

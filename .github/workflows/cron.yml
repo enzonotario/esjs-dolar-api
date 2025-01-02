@@ -45,6 +45,7 @@ jobs:
           echo "VITE_AXIOM_TOKEN=${{ secrets.VITE_AXIOM_TOKEN }}" >> .env
           echo "VITE_AXIOM_DATASET=${{ secrets.VITE_AXIOM_DATASET }}" >> .env
           echo "VITE_BANXICO_TOKEN=${{ secrets.VITE_BANXICO_TOKEN }}" >> .env
+          echo "VITE_PREX_API_KEY=${{ secrets.VITE_PREX_API_KEY }}" >> .env
 
       - name: Install dependencies
         run: pnpm install
