@@ -9,7 +9,7 @@ export default {
         return {
           params: {
             operationId,
-            pageTitle: `${summary} - vitepress-openapi`,
+            pageTitle: `${summary} - DolarApi.com`,
           },
         }
       })

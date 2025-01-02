@@ -10,9 +10,11 @@ import spec from '../../../public/exchanges/openapi.json'
 
 const route = useRoute()
 
-const { isDark } = useData()
+const { isDark, params } = useData()
 
 const operationId = route.data.params.operationId
+
+document.title = params.value.pageTitle
 </script>
 
 <OAOperation :spec="spec" :operationId="operationId" :isDark="isDark" />
