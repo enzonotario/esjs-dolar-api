@@ -111,7 +111,7 @@ asincrono funcion consultarDolarApp() {
   retornar respuesta.data.mapear((cotizacion) => ({
     exchange: 'dolarapp',
     par: ['USD', 'ARS'],
-    parCriptomoneda: [nulo, cotizacion.book.dividir('_')[0].aMayusculas()],
+    parCriptomoneda: [cotizacion.book.dividir('_')[0].aMayusculas(), nulo],
     compra: Numero(cotizacion.ask),
     venta: Numero(cotizacion.bid),
   }));
