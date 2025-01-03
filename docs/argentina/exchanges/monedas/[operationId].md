@@ -70,14 +70,19 @@ async function getData() {
     return monedas
         .map((moneda) => {
             const exchange = exchanges.find((exchange) => exchange.id === moneda.exchange);
+          
+            const exchangeSufijo = moneda.criptomonedaBase ? `-cryptoBase-${moneda.criptomonedaBase}` : ''
+              + (moneda.criptomoneda ? `-crypto-${moneda.criptomoneda}` : '')
+          
+            const nombreSufijo = moneda.criptomonedaBase ? ` (${moneda.criptomonedaBase})` : ''
+              + (moneda.criptomoneda ? ` (${moneda.criptomoneda})` : '')
+          
             return {
-                exchange: moneda.exchange + (moneda.criptomonedaBase ? `-crypto-${moneda.criptomonedaBase}` : ''),
+                exchange: moneda.exchange + exchangeSufijo,
                 compra: moneda.compra,
                 venta: moneda.venta,
                 exchangeLogo: exchange ? exchange.logo : null,
-                exchangeNombre: exchange 
-                  ? (exchange.nombre + (moneda.criptomonedaBase ? ` (${moneda.criptomonedaBase})` : '')) 
-                  : null,
+                exchangeNombre: exchange.nombre + nombreSufijo,
             };
         })
 }
