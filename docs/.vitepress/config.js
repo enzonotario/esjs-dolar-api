@@ -1,8 +1,9 @@
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
-import { defineConfig, loadEnv } from 'vitepress'
+import { defineConfig, loadEnv, postcssIsolateStyles } from 'vitepress'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { SitemapStream } from 'sitemap'
+import { genjiAttrs } from 'genji-theme-vitepress/config'
 import { generateSidebar } from './sidebar/sidebar.js'
 
 const links = []
@@ -129,5 +130,17 @@ export default defineConfig({
         ssr: true,
       }),
     ],
+    optimizeDeps: {
+      include: [
+        'genji-theme-vitepress > genji-runtime > esprima',
+        'genji-theme-vitepress > genji-runtime > estraverse',
+      ],
+    },
+  },
+
+  markdown: {
+    config: (md) => {
+      md.use(genjiAttrs)
+    },
   },
 })
