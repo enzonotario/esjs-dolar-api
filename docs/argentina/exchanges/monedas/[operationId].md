@@ -29,12 +29,36 @@ document.title = params.value.pageTitle
 ## Ejemplos
 
 ```js eval code=false inspector=false
+function getPair() {
+  return window.location.pathname.match(/get-exchange-moneda-(.*)-(.*).html/).slice(1)
+}
+```
+
+```js eval code=false inspector=false
 function getEndpoint() {
-    const pair = window.location.pathname.match(/get-exchange-moneda-(.*)-(.*).html/).slice(1)
-  
-    const url = `https://dolarapi.com/v1/exchanges/monedas/${pair[0]}/${pair[1]}`
+    const url = `https://dolarapi.com/v1/exchanges/monedas/${getPair()[0]}/${getPair()[1]}`
   
     return url
+}
+```
+
+```js eval code=false inspector=false
+function getSortCompra() {
+    const pair = getPair()
+    if (['brl'].includes(pair[0])) {
+        return 'asc'
+    }
+    return 'desc'
+}
+```
+
+```js eval code=false inspector=false
+function getSortVenta() {
+    const pair = getPair()
+    if (['brl'].includes(pair[0])) {
+        return 'desc'
+    }
+    return 'asc'
 }
 ```
 
@@ -68,6 +92,7 @@ function getPlotBase({
     yLabel,
     title,
     additionalMarks,
+    sort,
 }) {
     const marks = [
         Plot.ruleY([0]),
@@ -78,7 +103,7 @@ function getPlotBase({
             width: 40,
             r: 20,
             title: 'exchange',
-            sort: {x: 'y'}
+            sort: {x: sort === 'asc' ? 'y' : '-y'},
         }),
         Plot.text(data, {x: x, y: y, text: 'exchangeNombre', dy: 35, lineAnchor: 'bottom'}),
         Plot.text(data, {x: x, y: y, text: y, dy: 50, lineAnchor: 'bottom'}),
@@ -100,7 +125,7 @@ function getPlotBase({
 (async () => {
   const data = (await getData())
     .filter((moneda) => moneda.compra > 0)
-    .sort((a, b) => a.compra - b.compra);
+    .sort((a, b) => getSortCompra() === 'asc' ? a.compra - b.compra : b.compra - a.compra);
   
   const mejorOpcion = data[0];
   
@@ -116,7 +141,8 @@ function getPlotBase({
         ['Mejor opción para pagar', mejorOpcion.compra],
         {x: [mejorOpcion.exchangeNombre], y: [mejorOpcion.compra], dy: -10, anchor: 'bottom'}
       ),
-    ]
+    ],
+    sort: getSortCompra(),
   })  
 })()
 ```
@@ -127,7 +153,7 @@ function getPlotBase({
 (async () => {
   const data = (await getData())
     .filter((moneda) => moneda.venta > 0)
-    .sort((a, b) => b.venta - a.venta);
+    .sort((a, b) => getSortVenta() === 'asc' ? a.venta - b.venta : b.venta - a.venta);
   
   const mejorOpcion = data[0];
   
@@ -143,7 +169,8 @@ function getPlotBase({
         ['Mejor opción para cobrar', mejorOpcion.venta],
         {x: [mejorOpcion.exchangeNombre], y: [mejorOpcion.venta], dy: -10, anchor: 'bottom'}
       ),
-    ]
+    ],
+    sort: getSortVenta(),
   })  
 })()
 ```
