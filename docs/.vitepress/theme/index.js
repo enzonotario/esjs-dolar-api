@@ -4,7 +4,6 @@ import { theme, useTheme } from 'vitepress-openapi'
 import Layout from 'genji-theme-vitepress'
 import * as ObservablePlot from '@observablehq/plot'
 import GitHubStars from './components/GitHubStars.vue'
-import Plot from './components/Plot.vue'
 import IndexDemo from './components/IndexDemo.vue'
 
 import 'vitepress-openapi/dist/style.css'
@@ -41,7 +40,6 @@ export default {
 
     theme.enhanceApp({ app })
 
-    app.component('Plot', Plot)
     app.component('IndexDemo', IndexDemo)
   },
 }

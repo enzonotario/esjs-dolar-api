@@ -6,6 +6,4 @@
 
 ### Valor del Dólar Blue
 
-<div class="w-full h-48 p-4" id="plot-cotizacion-actual-blue"></div>
-
-<Plot />
+<!--@include: ./plot-dolar.md -->
