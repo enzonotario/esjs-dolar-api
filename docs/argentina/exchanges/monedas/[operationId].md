@@ -107,9 +107,14 @@ function getPlotBase({
     additionalMarks,
     sort,
 }) {
-    const marks = [
-        Plot.ruleY([0]),
-        Plot.image(data, {
+    return Plot.plot({
+        width,
+        marginTop: 60,
+        x: {label: xLabel},
+        y: {label: yLabel},
+        marks: [
+          Plot.ruleY([0]),
+          Plot.image(data, {
             x: x,
             y: y,
             src: 'exchangeLogo',
@@ -117,17 +122,12 @@ function getPlotBase({
             r: 20,
             title: 'exchange',
             sort: {x: sort === 'asc' ? 'y' : '-y'},
-        }),
-        Plot.text(data, {x: x, y: y, text: 'exchangeNombre', dy: 35, lineAnchor: 'bottom'}),
-        Plot.text(data, {x: x, y: y, text: y, dy: 50, lineAnchor: 'bottom'}),
-        Plot.tip(data, Plot.pointerX({x: x, y: y})),
-      ...additionalMarks,
-    ]
-    return Plot.plot({
-        marginTop: 60,
-        x: {label: xLabel},
-        y: {label: yLabel},
-        marks,
+          }),
+          Plot.text(data, {x: x, y: y, text: 'exchangeNombre', dy: 35, lineAnchor: 'bottom'}),
+          Plot.text(data, {x: x, y: y, text: y, dy: 50, lineAnchor: 'bottom'}),
+          Plot.tip(data, Plot.pointerX({x: x, y: y})),
+          ...additionalMarks,
+        ]
     }) 
 }
 ```

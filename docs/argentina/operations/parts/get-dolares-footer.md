@@ -61,7 +61,7 @@ function getPlotBase({
     return Plot.plot({
         marginTop: 60,
         marginLeft: 60,
-        width: 800,
+        width,
         height: 400,
         padding: 0.3,
         x: {
