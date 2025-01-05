@@ -26,7 +26,7 @@ document.title = params.value.pageTitle
 
 <template v-if="pair === 'brl/ars' || pair === 'usd/brl'">
 
-## Ejemplos
+## Ejemplos de uso
 
 ```js eval code=false inspector=false
 function getPair() {

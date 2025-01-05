@@ -14,7 +14,7 @@ const { isDark } = useData()
 
 <OAOperation :spec="spec" operationId="get-exchanges" :isDark="isDark" />
 
-## Ejemplos
+## Ejemplos de uso
 
 ```js eval code=false inspector=false
 async function getData() {
