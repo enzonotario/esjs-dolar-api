@@ -17,14 +17,14 @@ const operationId = route.data.params.operationId
 
 const openapi = useOpenapi({ spec })
 
-const baseUrl = openapi.getServers()[0].url
-
-const url = baseUrl + openapi.getOperationPath(operationId)
+const pair = operationId.match(/get-exchange-moneda-(.*)-(.*)/).slice(1).join('/')
 
 document.title = params.value.pageTitle
 </script>
 
 <OAOperation :spec="spec" :operationId="operationId" :isDark="isDark" />
+
+<template v-if="pair === 'brl/ars' || pair === 'usd/brl'">
 
 ## Ejemplos
 
@@ -36,29 +36,37 @@ function getPair() {
 
 ```js eval code=false inspector=false
 function getEndpoint() {
-    const url = `https://dolarapi.com/v1/exchanges/monedas/${getPair()[0]}/${getPair()[1]}`
-  
-    return url
+  const url = `https://dolarapi.com/v1/exchanges/monedas/${getPair()[0]}/${getPair()[1]}`
+
+  return url
 }
 ```
 
 ```js eval code=false inspector=false
 function getSortCompra() {
-    const pair = getPair()
-    if (['brl'].includes(pair[0])) {
-        return 'asc'
-    }
-    return 'desc'
+  const pair = getPair().join('/')
+  switch (pair) {
+    case 'brl/ars':
+      return 'asc'
+    case 'usd/brl':
+      return 'desc'
+    default:
+      return 'asc'
+  }
 }
 ```
 
 ```js eval code=false inspector=false
 function getSortVenta() {
-    const pair = getPair()
-    if (['brl'].includes(pair[0])) {
+  const pair = getPair().join('/')
+    switch (pair) {
+      case 'brl/ars':
+        return 'desc'
+      case 'usd/brl':
+        return 'desc'
+      default:
         return 'desc'
     }
-    return 'asc'
 }
 ```
 
@@ -131,9 +139,9 @@ function getPlotBase({
   const data = (await getData())
     .filter((moneda) => moneda.compra > 0)
     .sort((a, b) => getSortCompra() === 'asc' ? a.compra - b.compra : b.compra - a.compra);
-  
+
   const mejorOpcion = data[0];
-  
+
   return getPlotBase({
     data,
     x: 'exchangeNombre',
@@ -148,7 +156,7 @@ function getPlotBase({
       ),
     ],
     sort: getSortCompra(),
-  })  
+  })
 })()
 ```
 
@@ -159,9 +167,9 @@ function getPlotBase({
   const data = (await getData())
     .filter((moneda) => moneda.venta > 0)
     .sort((a, b) => getSortVenta() === 'asc' ? a.venta - b.venta : b.venta - a.venta);
-  
+
   const mejorOpcion = data[0];
-  
+
   return getPlotBase({
     data,
     x: 'exchangeNombre',
@@ -176,6 +184,8 @@ function getPlotBase({
       ),
     ],
     sort: getSortVenta(),
-  })  
+  })
 })()
 ```
+
+</template>
