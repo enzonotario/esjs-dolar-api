@@ -13,3 +13,17 @@ const { isDark } = useData()
 </script>
 
 <OAOperation :spec="spec" operationId="get-exchanges" :isDark="isDark" />
+
+## Ejemplos
+
+```js eval code=false inspector=false
+async function getData() {
+  const data = await fetch('https://dolarapi.com/v1/exchanges').then((res) => res.json())
+
+  return data
+}
+```
+
+```js eval code=false
+Inputs.table(getData())
+```
