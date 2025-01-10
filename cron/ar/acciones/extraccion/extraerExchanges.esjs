@@ -23,6 +23,7 @@ asincrono funcion obtenerCotizaciones() {
     consultarPrex(),
     consultarLemon(),
     consultarPlus(),
+    consultarAstroPay(),
   ]).luego((respuestas) => {
     retornar respuestas.plano();
   });
@@ -230,4 +231,22 @@ asincrono funcion consultarPlus() {
       venta: nulo,
     },
   ];
+}
+
+asincrono funcion consultarAstroPay() {
+  const respuesta = esperar axios({
+    url: 'https://partners-api.astropay.com/v1/partners/pix/exchanges',
+    headers: {
+      Authorization: `Basic ${import.meta.env.VITE_ASTROPAY_AUTH}`,
+    },
+  })
+
+  retornar respuesta.data.data.mapear((cotizacion) => {
+    retornar {
+      exchange: 'astropay',
+      par: [cotizacion.to, cotizacion.from],
+      compra: Numero(cotizacion.exchange),
+      venta: nulo,
+    };
+  });
 }

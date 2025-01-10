@@ -60,6 +60,11 @@ funcion generarExchanges() {
       nombre: 'Plus',
       logo: 'https://uokihdagbfiaicipggkz.supabase.co/storage/v1/object/public/exchanges/plus.jpeg',
     },
+    {
+      id: 'astropay',
+      nombre: 'AstroPay',
+      logo: 'https://uokihdagbfiaicipggkz.supabase.co/storage/v1/object/public/exchanges/astropay-white-bg.svg?t=2025-01-10T15%3A48%3A11.973Z',
+    },
   ]
   escribirRuta('/exchanges', exchanges)
 
