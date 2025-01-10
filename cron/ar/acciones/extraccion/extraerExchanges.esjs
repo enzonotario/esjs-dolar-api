@@ -21,6 +21,8 @@ asincrono funcion obtenerCotizaciones() {
     consultarTakenos(),
     consultarSatoshiTango(),
     consultarPrex(),
+    consultarLemon(),
+    consultarPlus(),
   ]).luego((respuestas) => {
     retornar respuestas.plano();
   });
@@ -166,7 +168,7 @@ asincrono funcion consultarPrex() {
   const respuesta = esperar axios({
     url: 'https://api.prexcard.com.ar/v1/partners/pix-webs/quotes',
     headers: {
-      'API-Key': importar.meta.env.VITE_PREX_API_KEY,
+      'API-Key': import.meta.env.VITE_PREX_API_KEY,
     },
   })
 
@@ -184,4 +186,48 @@ asincrono funcion consultarPrex() {
         venta: nulo,
       };
     });
+}
+
+asincrono funcion consultarLemon() {
+  const respuesta = esperar axios({
+    url: 'https://api.lemoncash.com.ar/api/v1/pix-payments/external-info',
+  })
+
+  retornar respuesta.data.pix_exchange_rates.mapear((cotizacion) => {
+    const monedaBase = cotizacion.base_currency
+    const moneda = cotizacion.quote_currency
+
+    retornar {
+      exchange: 'lemon',
+      par: [monedaBase, moneda],
+      compra: Numero(cotizacion.applied_price),
+      venta: nulo,
+    };
+  });
+}
+
+asincrono funcion consultarPlus() {
+  const respuesta = esperar axios({
+    url: 'https://api.plus.com.ar/external/remittance/pix/cotization',
+    headers: {
+      Plusauthclient: 'comparapix',
+      Plusauthkey: import.meta.env.VITE_PLUS_AUTH_KEY,
+    },
+  })
+
+  retornar [
+    {
+      exchange: 'plus',
+      par: ['USD', 'BRL'],
+      parCriptomoneda: ['USDT', nulo],
+      compra: Numero(respuesta.data.USDT_BRL),
+      venta: nulo,
+    },
+    {
+      exchange: 'plus',
+      par: ['BRL', 'ARS'],
+      compra: Numero(respuesta.data.ARS_BRL),
+      venta: nulo,
+    },
+  ];
 }

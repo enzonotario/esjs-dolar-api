@@ -331,5 +331,40 @@ exports[`extraerExchanges > extrae cotizaciones de exchanges 1`] = `
     ],
     "parCriptomoneda": undefined,
   },
+  {
+    "exchange": "lemon",
+    "par": [
+      "BRL",
+      "USDT",
+    ],
+    "parCriptomoneda": undefined,
+  },
+  {
+    "exchange": "lemon",
+    "par": [
+      "BRL",
+      "ARS",
+    ],
+    "parCriptomoneda": undefined,
+  },
+  {
+    "exchange": "plus",
+    "par": [
+      "USD",
+      "BRL",
+    ],
+    "parCriptomoneda": [
+      "USDT",
+      null,
+    ],
+  },
+  {
+    "exchange": "plus",
+    "par": [
+      "BRL",
+      "ARS",
+    ],
+    "parCriptomoneda": undefined,
+  },
 ]
 `;

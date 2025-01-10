@@ -3,7 +3,7 @@
 exports[`exchanges.cron > cronExchanges 1`] = `
 [
   {
-    "cantidad": 7,
+    "cantidad": 9,
     "ruta": "/exchanges",
   },
   [
@@ -112,19 +112,19 @@ exports[`exchanges.cron > cronExchanges 1`] = `
       "ruta": "/exchanges/belo/brl",
     },
     {
-      "cantidad": 6,
+      "cantidad": 7,
       "ruta": "/exchanges/monedas/usd/brl",
     },
     {
-      "cantidad": 6,
+      "cantidad": 7,
       "ruta": "/exchanges/monedas/brl/usd",
     },
     {
-      "cantidad": 5,
+      "cantidad": 7,
       "ruta": "/exchanges/monedas/ars/brl",
     },
     {
-      "cantidad": 5,
+      "cantidad": 7,
       "ruta": "/exchanges/monedas/brl/ars",
     },
     {
@@ -162,6 +162,26 @@ exports[`exchanges.cron > cronExchanges 1`] = `
     {
       "cantidad": 1,
       "ruta": "/exchanges/prex/usd",
+    },
+    {
+      "cantidad": 2,
+      "ruta": "/exchanges/lemon/brl",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/usdt/brl",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/monedas/brl/usdt",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/plus/usd",
+    },
+    {
+      "cantidad": 1,
+      "ruta": "/exchanges/plus/brl",
     },
   ],
 ]

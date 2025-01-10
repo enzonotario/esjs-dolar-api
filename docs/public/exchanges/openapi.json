@@ -34,7 +34,9 @@
                           "dolarapp",
                           "takenos",
                           "satoshitango",
-                          "prex"
+                          "prex",
+                          "lemon",
+                          "plus"
                         ]
                       },
                       "nombre": {
@@ -77,7 +79,9 @@
                           "fiwind",
                           "cocos",
                           "satoshitango",
-                          "prex"
+                          "prex",
+                          "lemon",
+                          "plus"
                         ]
                       },
                       "compra": {
@@ -368,7 +372,9 @@
                           "fiwind",
                           "cocos",
                           "satoshitango",
-                          "prex"
+                          "prex",
+                          "lemon",
+                          "plus"
                         ]
                       },
                       "compra": {
@@ -430,7 +436,8 @@
                           "cocos",
                           "takenos",
                           "satoshitango",
-                          "prex"
+                          "prex",
+                          "plus"
                         ]
                       },
                       "compra": {
@@ -443,6 +450,63 @@
                         "type": "string",
                         "enum": [
                           "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/brl/usdt": {
+      "get": {
+        "summary": "BRL/USDT",
+        "operationId": "get-exchange-moneda-brl-usdt",
+        "description": "Cotizaciones de BRL a USDT.",
+        "tags": [
+          "BRL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "lemon"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USDT"
                         ]
                       },
                       "monedaBase": {
@@ -1235,7 +1299,8 @@
                           "cocos",
                           "takenos",
                           "satoshitango",
-                          "prex"
+                          "prex",
+                          "plus"
                         ]
                       },
                       "compra": {
@@ -1482,6 +1547,63 @@
                         "type": "string",
                         "enum": [
                           "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usdt/brl": {
+      "get": {
+        "summary": "USDT/BRL",
+        "operationId": "get-exchange-moneda-usdt-brl",
+        "description": "Cotizaciones de USDT a BRL.",
+        "tags": [
+          "USDT"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "lemon"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USDT"
                         ]
                       },
                       "criptomoneda": {
