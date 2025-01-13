@@ -10,10 +10,10 @@
   {
     "moeda": "USD",
     "nome": "Dólar",
-    "compra": 6.104,
-    "venda": 6.106,
+    "compra": 6.108,
+    "venda": 6.11,
     "fechoAnterior": 6.1242,
-    "dataAtualizacao": "2025-01-13T16:00:47.765Z"
+    "dataAtualizacao": "2025-01-13T17:00:54.802Z"
   },
   {
     "moeda": "EUR",
@@ -26,17 +26,17 @@
   {
     "moeda": "CLP",
     "nome": "Peso Chileno",
-    "compra": 0.006034,
-    "venda": 0.006036,
+    "compra": 0.006047,
+    "venda": 0.00605,
     "fechoAnterior": 0.006037,
-    "dataAtualizacao": "2025-01-13T15:57:15.000Z"
+    "dataAtualizacao": "2025-01-13T16:59:17.000Z"
   },
   {
     "moeda": "UYU",
     "nome": "Peso Uruguayo",
-    "compra": 0.1396,
-    "venda": 0.1396,
+    "compra": 0.1397,
+    "venda": 0.1398,
     "fechoAnterior": 0.1399,
-    "dataAtualizacao": "2025-01-13T15:45:17.000Z"
+    "dataAtualizacao": "2025-01-13T17:00:19.000Z"
   }
 ]
