@@ -1,5 +1,5 @@
 importar extraer desde '@/br/investing.extractor.br.esjs'
-importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
+importar { escribirRutaRegion, leerRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
@@ -8,7 +8,21 @@ exportar porDefecto asincrono funcion () {
   intentar {
     log.info('Inicio')
 
-    const cotizaciones = esperar extraer()
+    const valoresActuales = esperar leerRutaRegion('br', '/cotacoes')
+
+    const valoresNuevos = esperar extraer()
+
+    const cotizaciones = valoresActuales.mapear((cotizacion) => {
+      const cotizacionNueva = valoresNuevos.buscar(
+        (item) => item.moeda === cotizacion.moeda,
+      )
+
+      si (cotizacionNueva) {
+        retornar cotizacionNueva
+      }
+
+      retornar cotizacion
+    })
 
     cotizaciones.mapear((cotizacion) => {
       const moneda = cotizacion.moeda.aMinusculas()

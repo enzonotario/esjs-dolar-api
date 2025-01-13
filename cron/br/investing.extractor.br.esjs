@@ -1,11 +1,37 @@
 importar axios desde 'axios'
 importar cheerio desde 'cheerio'
 importar { monedas } desde '@/br/constantes.br.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
-  const cotizaciones = esperar Promesa.todos(
-    monedas.filtrar((moneda) => moneda.codigo !== 'BRL').mapear((moneda) => extraerCotizacion(moneda)),
-  )
+  const cotizaciones = []
+
+  para (const moneda de monedas) {
+    const log = grupo({
+      cron: 'cron.br.esjs',
+      extractor: 'investing.extractor.br.esjs',
+      moneda: moneda.codigo,
+    })
+
+    si (moneda.codigo === 'USD') {
+      const [error, cotizacion] = esperar tryToCatch(extraerUsdBrl)
+
+      si (error) {
+        logError(log, error)
+      } sino {
+        cotizaciones.agregar(cotizacion)
+      }
+    } sino {
+      const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda)
+
+      si (error) {
+        logError(log, error)
+      } sino {
+        cotizaciones.agregar(cotizacion)
+      }
+    }
+  }
 
   retornar cotizaciones
 }
@@ -48,4 +74,36 @@ funcion interpretarFecha(fecha) {
   } capturar (error) {
     retornar fecha
   }
+}
+
+asincrono funcion extraerUsdBrl() {
+  const response = esperar axios.post(
+    'https://api.firecrawl.dev/v1/scrape',
+    {
+      url: 'https://es.investing.com/currencies/usd-brl',
+      formats: ['extract'],
+      extract: {
+        prompt: 'Extract the `compra` and `venta` values',
+      },
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_FIREWCRAWL_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+    },
+  )
+
+  si (!response.data || !response.data.data || !response.data.data.extract || !response.data.data.extract.current_exchange_rate) {
+    throw new Error('No se pudo extraer la información')
+  }
+
+  retornar {
+    moeda: 'USD',
+    nome: 'Dólar',
+    compra: response.data.data.extract.current_exchange_rate.compra,
+    venda: response.data.data.extract.current_exchange_rate.venta,
+    fechoAnterior: response.data.data.extract.historical_data.last_close,
+    dataAtualizacao: crear Fecha().aCadenaISO(),
+  };
 }
