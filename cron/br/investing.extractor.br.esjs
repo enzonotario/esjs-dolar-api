@@ -7,7 +7,7 @@ importar { grupo, logError } desde '@/log.esjs'
 exportar porDefecto asincrono funcion () {
   const cotizaciones = []
 
-  para (const moneda de monedas) {
+  para (const moneda de monedas.filter((moneda) => moneda.codigo !== 'BRL')) {
     const log = grupo({
       cron: 'cron.br.esjs',
       extractor: 'investing.extractor.br.esjs',
@@ -18,7 +18,9 @@ exportar porDefecto asincrono funcion () {
       const [error, cotizacion] = esperar tryToCatch(extraerUsdBrl)
 
       si (error) {
-        logError(log, error)
+        logError(log, error, {
+          response: error.response.data,
+        })
       } sino {
         cotizaciones.agregar(cotizacion)
       }
@@ -26,7 +28,9 @@ exportar porDefecto asincrono funcion () {
       const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda)
 
       si (error) {
-        logError(log, error)
+        logError(log, error, {
+          response: error.response.data,
+        })
       } sino {
         cotizaciones.agregar(cotizacion)
       }
@@ -85,6 +89,24 @@ asincrono funcion extraerUsdBrl() {
       extract: {
         prompt: 'Extract the `compra` and `venta` values',
       },
+      formats: ['extract'],
+      extract: {
+        schema: {
+          type: 'object',
+          properties: {
+            compra: {
+              type: 'number',
+            },
+            venta: {
+              type: 'number',
+            },
+            ultimoCierre: {
+              type: 'number',
+            },
+          },
+          required: ['compra', 'venta', 'ultimoCierre'],
+        },
+      },
     },
     {
       headers: {
@@ -94,16 +116,12 @@ asincrono funcion extraerUsdBrl() {
     },
   )
 
-  si (!response.data || !response.data.data || !response.data.data.extract || !response.data.data.extract.current_exchange_rate) {
-    throw new Error('No se pudo extraer la información')
-  }
-
   retornar {
     moeda: 'USD',
     nome: 'Dólar',
-    compra: response.data.data.extract.current_exchange_rate.compra,
-    venda: response.data.data.extract.current_exchange_rate.venta,
-    fechoAnterior: response.data.data.extract.historical_data.last_close,
+    compra: response.data.data.extract.compra,
+    venda: response.data.data.extract.venta,
+    fechoAnterior: response.data.data.extract.ultimoCierre,
     dataAtualizacao: crear Fecha().aCadenaISO(),
   };
 }

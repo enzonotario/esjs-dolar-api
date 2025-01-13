@@ -40,10 +40,11 @@ exportar funcion grupo(grupo) {
   })
 }
 
-exportar funcion logError(grupo, error) {
+exportar funcion logError(grupo, error, context) {
   grupo.error({
     msg: 'Error',
     errorMessage: error.message,
     errorStack: error.stack,
+    ...context,
   })
 }
