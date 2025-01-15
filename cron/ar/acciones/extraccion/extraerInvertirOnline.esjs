@@ -56,7 +56,7 @@ exportar asincrono funcion extraerInvertirOnline() {
         moneda: moneda ? moneda.codigo : nulo,
         compra,
         venta,
-        fecha: fechaParseada,
+        fechaActualizacion: fechaParseada,
       })
     }
 

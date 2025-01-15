@@ -24,6 +24,11 @@ exportar funcion unificar(json1, json2, claveBusqueda = 'casa') {
       ...valor1,
     }
 
+    si (!valor2) {
+      respuesta.agregar(item)
+      retornar
+    }
+
     si (valor2.fechaActualizacion) {
       item.fechaActualizacion = valor2.fechaActualizacion
     }

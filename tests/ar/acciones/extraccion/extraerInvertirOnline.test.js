@@ -28,7 +28,7 @@ describe('extraerInvertirOnline', () => {
         moneda: 'USD',
         compra: 100,
         venta: 105,
-        fecha: new Date(2023, 0, 1, 12, 0, 0),
+        fechaActualizacion: new Date(2023, 0, 1, 12, 0, 0),
       },
     ])
   })
