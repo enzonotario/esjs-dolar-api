@@ -1,5 +1,7 @@
 # esjs-dolar-api
 
+[![Desarrollado en EsJS](https://es.js.org/badge.svg)](https://es.js.org)
+
 API escrita en [EsJS](https://es.js.org) que proporciona las cotizaciones de los diferentes Dólares y Monedas en Argentina, Chile , Venezuela, Uruguay, México, Bolivia y Brasil.
 
 ## ¿Cómo funciona?
