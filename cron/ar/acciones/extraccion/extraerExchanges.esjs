@@ -2,6 +2,7 @@ importar axios desde 'axios'
 importar cheerio desde 'cheerio'
 importar { parse } desde 'date-fns'
 importar { collect } desde 'collect.js'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar asincrono funcion extraerExchanges() {
   const cotizaciones = esperar obtenerCotizaciones()
@@ -13,20 +14,35 @@ exportar asincrono funcion extraerExchanges() {
 }
 
 asincrono funcion obtenerCotizaciones() {
-  retornar esperar Promesa.todos([
-    consultarBelo(),
-    consultarFiwind(),
-    consultarCocos(),
-    consultarDolarApp(),
-    consultarTakenos(),
-    consultarSatoshiTango(),
-    consultarPrex(),
-    consultarLemon(),
-    consultarPlus(),
-    consultarAstroPay(),
-  ]).luego((respuestas) => {
-    retornar respuestas.plano();
-  });
+  const maps = {
+    belo: consultarBelo,
+    fiwind: consultarFiwind,
+    cocos: consultarCocos,
+    dolarapp: consultarDolarApp,
+    takenos: consultarTakenos,
+    satoshitango: consultarSatoshiTango,
+    prex: consultarPrex,
+    lemon: consultarLemon,
+    plus: consultarPlus,
+    astropay: consultarAstroPay,
+  }
+
+  const cotizaciones = []
+
+  para (const [exchange, fn] de Object.entradas(maps)) {
+    const log = grupo({
+      cron: 'cron.ar.esjs',
+      accion: 'extraerExchanges',
+      exchange,
+    })
+
+    intentar {
+      const data = esperar fn()
+      cotizaciones.agregar(...data)
+    } capturar (error) {
+      logError(log, error)
+    }
+  }
 
   retornar cotizaciones
 }
