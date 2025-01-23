@@ -1,4 +1,4 @@
-import { useOpenapi } from 'vitepress-openapi'
+import { useOpenapi } from 'vitepress-openapi/client'
 import { useRegion } from '../theme/composables/useRegion.js'
 
 const region = useRegion()

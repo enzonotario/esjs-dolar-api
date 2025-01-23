@@ -6,7 +6,7 @@ title: vitepress-openapi
 
 <script setup lang="ts">
 import { useRoute, useData } from 'vitepress'
-import { useOpenapi } from 'vitepress-openapi'
+import { useOpenapi } from 'vitepress-openapi/client'
 import spec from '../../../public/exchanges/openapi.json'
 
 const route = useRoute()

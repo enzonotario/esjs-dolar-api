@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { useOpenapi } from 'vitepress-openapi'
+import { useOpenapi } from 'vitepress-openapi/client'
 import arSpec from '../../../public/openapi.json'
 import clSpec from '../../../public/chile/openapi.json'
 import veSpec from '../../../public/venezuela/openapi.json'

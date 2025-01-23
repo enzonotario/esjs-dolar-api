@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import { theme, useTheme } from 'vitepress-openapi'
+import { theme, useTheme } from 'vitepress-openapi/client'
 import Layout from 'genji-theme-vitepress'
 import * as ObservablePlot from '@observablehq/plot'
 import GitHubStars from './components/GitHubStars.vue'

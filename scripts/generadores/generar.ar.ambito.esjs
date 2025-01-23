@@ -1,5 +1,5 @@
 importar fs desde 'node:fs'
-importar { useOpenapi } desde 'vitepress-openapi'
+importar { useOpenapi } desde 'vitepress-openapi/client'
 importar { plantilla } desde './plantilla.esjs'
 importar { openapiAtributos } desde './openapiAtributos.esjs'
 
