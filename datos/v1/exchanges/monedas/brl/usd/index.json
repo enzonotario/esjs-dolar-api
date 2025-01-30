@@ -5,8 +5,8 @@
     "monedaBase": "BRL",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 0.176490805980409,
-    "venta": 0.16466326362588507
+    "compra": 0.17703844164799173,
+    "venta": 0.16515276630883569
   },
   {
     "exchange": "fiwind",
@@ -14,8 +14,8 @@
     "monedaBase": "BRL",
     "criptomoneda": null,
     "criptomonedaBase": "USDT",
-    "compra": 0.175709,
-    "venta": 0.163319
+    "compra": 0.175916,
+    "venta": 0.16351
   },
   {
     "exchange": "cocos",
@@ -23,7 +23,7 @@
     "monedaBase": "BRL",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 0.17079563492063493,
+    "compra": 0.17099603174603173,
     "venta": null
   },
   {
@@ -32,8 +32,8 @@
     "monedaBase": "BRL",
     "criptomoneda": null,
     "criptomonedaBase": "USDT",
-    "compra": 0.17549590976070517,
-    "venta": 0.1601784772665094
+    "compra": 0.17570160329645723,
+    "venta": 0.1603663280104007
   },
   {
     "exchange": "satoshitango",
@@ -50,14 +50,14 @@
     "monedaBase": "BRL",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 0.16863406408094436,
+    "compra": null,
     "venta": null
   },
   {
     "exchange": "astropay",
     "moneda": "USD",
     "monedaBase": "BRL",
-    "compra": 0.16666666666666666,
+    "compra": 0.1669449081803005,
     "venta": null
   }
 ]
