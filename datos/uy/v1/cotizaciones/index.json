@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 42.1,
-    "venta": 44.3,
-    "fechaActualizacion": "2025-02-18T19:00:46.418Z"
+    "compra": 42,
+    "venta": 44.4,
+    "fechaActualizacion": "2025-02-18T20:00:43.626Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 43,
+    "compra": 42.81,
     "venta": 47.69,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "fechaActualizacion": "2025-02-18T20:00:43.626Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.024,
     "venta": 0.2,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "fechaActualizacion": "2025-02-18T20:00:43.626Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
     "compra": 7,
     "venta": 8.7,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "fechaActualizacion": "2025-02-18T20:00:43.627Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 51.85,
-    "venta": 58.04,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "compra": 51.67,
+    "venta": 58.09,
+    "fechaActualizacion": "2025-02-18T20:00:43.627Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 45.86,
-    "venta": 50.04,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "compra": 45.65,
+    "venta": 50.02,
+    "fechaActualizacion": "2025-02-18T20:00:43.627Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
-    "compra": 0.00522,
-    "venta": 0.00572,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "compra": 0.00521,
+    "venta": 0.00573,
+    "fechaActualizacion": "2025-02-18T20:00:43.627Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.225,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "fechaActualizacion": "2025-02-18T20:00:43.627Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 121764.988,
-    "venta": 129776.407,
-    "fechaActualizacion": "2025-02-18T19:00:46.419Z"
+    "compra": 121475.76,
+    "venta": 130258.944,
+    "fechaActualizacion": "2025-02-18T20:00:43.627Z"
   }
 ]
