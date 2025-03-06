@@ -3,22 +3,15 @@
     "exchange": "belo",
     "moneda": "ARS",
     "monedaBase": "BTC",
-    "compra": 114127891.625,
-    "venta": 110078034.264
+    "compra": 115901705.3168,
+    "venta": 111254880.429
   },
   {
     "exchange": "belo",
     "moneda": "ETH",
     "monedaBase": "BTC",
-    "compra": 40.96111152072223,
-    "venta": 40.13372557361127
-  },
-  {
-    "exchange": "belo",
-    "moneda": "DAI",
-    "monedaBase": "BTC",
-    "compra": 91455.26659154671,
-    "venta": 89366.79284374446
+    "compra": 40.16306203184931,
+    "venta": 39.35210691180406
   },
   {
     "exchange": "belo",
@@ -26,8 +19,8 @@
     "monedaBase": "BTC",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 91302.3133,
-    "venta": 89494.3368
+    "compra": 92278.4278,
+    "venta": 90451.1223
   },
   {
     "exchange": "belo",
@@ -35,7 +28,7 @@
     "monedaBase": "BTC",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 91334.4515,
-    "venta": 89525.8386
+    "compra": 92284.71,
+    "venta": 90457.2801
   }
 ]
