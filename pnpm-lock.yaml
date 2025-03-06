@@ -127,8 +127,8 @@ importers:
         specifier: ^1.6.3
         version: 1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5)
       vitepress-openapi:
-        specifier: ^0.0.3-alpha.62
-        version: 0.0.3-alpha.62(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)))(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5))
+        specifier: ^0.0.3-alpha.63
+        version: 0.0.3-alpha.63(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)))(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5))
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(@edge-runtime/vm@3.1.7)
@@ -4715,8 +4715,8 @@ packages:
       terser:
         optional: true
 
-  vitepress-openapi@0.0.3-alpha.62:
-    resolution: {integrity: sha512-8N5UQikEdlWGpI6Fjcv0Qthu13k4zQAW9I0cW112KkXtzMI1RiKWFhKItQupPmMvQS0g46bwKYUWsq2abNPyjQ==}
+  vitepress-openapi@0.0.3-alpha.63:
+    resolution: {integrity: sha512-oS7h+oTPbpcFcD58uxE8NerHBjZudYTqnnAvKLRc+h51avPa/z0qAHhxOAuKqWum8Ezdu/wEQBE3MkSg2y+UKQ==}
     peerDependencies:
       vitepress: '>=1.0.0'
       vue: ^3.0.0
@@ -9963,7 +9963,7 @@ snapshots:
       '@types/node': 18.19.36
       fsevents: 2.3.3
 
-  vitepress-openapi@0.0.3-alpha.62(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)))(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5)):
+  vitepress-openapi@0.0.3-alpha.63(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)))(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5)):
     dependencies:
       '@vueuse/core': 12.5.0(typescript@5.4.5)
       class-variance-authority: 0.7.1
