@@ -3,7 +3,14 @@
     "exchange": "astropay",
     "moneda": "ARS",
     "monedaBase": "BRL",
-    "compra": 207.51224108,
+    "compra": 211.73681242,
+    "venta": null
+  },
+  {
+    "exchange": "astropay",
+    "moneda": "USD",
+    "monedaBase": "BRL",
+    "compra": 0.17587625,
     "venta": null
   }
 ]
