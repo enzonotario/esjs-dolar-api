@@ -124,17 +124,42 @@ asincrono funcion consultarCocos() {
 }
 
 asincrono funcion consultarDolarApp() {
-  const respuesta = esperar axios({
+  const respuestaUSD = esperar axios({
     url: 'https://api.dolarapp.com/v1/tickers?currencies=ARS',
   })
 
-  retornar respuesta.data.mapear((cotizacion) => ({
-    exchange: 'dolarapp',
-    par: ['USD', 'ARS'],
-    parCriptomoneda: [cotizacion.book.dividir('_')[0].aMayusculas(), nulo],
-    compra: Numero(cotizacion.ask),
-    venta: Numero(cotizacion.bid),
-  }));
+  const respuestaBRL = esperar axios({
+    url: 'https://api.dolarapp.com/v1/tickers?currencies=BRL',
+  })
+
+  const cotizacionUSD = respuestaUSD.data.buscar(
+    (cotizacion) => cotizacion.book === 'usdc_ars',
+  )
+  const compraUSD = Numero(cotizacionUSD.ask)
+  const ventaUSD = Numero(cotizacionUSD.bid)
+
+  const cotizacionBRL = respuestaBRL.data.buscar(
+    (cotizacion) => cotizacion.book === 'usdc_brl',
+  )
+  const compraBRL = Numero(cotizacionBRL.ask)
+  const ventaBRL = Numero(cotizacionBRL.bid)
+  const fxRate = compraUSD / (ventaBRL / 1.0038)
+
+  retornar [
+    {
+      exchange: 'dolarapp',
+      par: ['USD', 'ARS'],
+      parCriptomoneda: [cotizacionUSD.book.dividir('_')[0].aMayusculas(), nulo],
+      compra: compraUSD,
+      venta: ventaUSD,
+    },
+    {
+      exchange: 'dolarapp',
+      par: ['BRL', 'ARS'],
+      compra: fxRate,
+      venta: nulo,
+    },
+  ];
 }
 
 asincrono funcion consultarTakenos() {
