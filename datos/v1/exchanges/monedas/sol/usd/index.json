@@ -1,0 +1,20 @@
+[
+  {
+    "exchange": "belo",
+    "moneda": "USD",
+    "monedaBase": "SOL",
+    "criptomoneda": "USDT",
+    "criptomonedaBase": null,
+    "compra": 123.57180000000001,
+    "venta": 126.0783
+  },
+  {
+    "exchange": "belo",
+    "moneda": "USD",
+    "monedaBase": "SOL",
+    "criptomoneda": "USDC",
+    "criptomonedaBase": null,
+    "compra": 123.51240000000001,
+    "venta": 126.0278
+  }
+]
