@@ -7,10 +7,10 @@ title: Dólar Tarjeta
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('ar')
+const spec = setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-dolar-tarjeta" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-dolar-tarjeta" :hide-branding="false">
 
 <template #description="description">
 

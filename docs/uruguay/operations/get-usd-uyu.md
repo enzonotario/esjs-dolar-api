@@ -54,10 +54,10 @@ head:
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('uy')
+const spec = setRegionForSidebar('uy')
 </script>
 
-<OAOperation operationId="get-usd-uyu" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-usd-uyu" :hide-branding="false">
 
 <template #description="description">
 

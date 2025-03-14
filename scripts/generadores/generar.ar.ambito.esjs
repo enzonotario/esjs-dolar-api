@@ -21,7 +21,7 @@ title: Dólares Ámbito
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('ar')
+const spec = setRegionForSidebar('ar')
 </script>
 
 <div class="flex flex-col">

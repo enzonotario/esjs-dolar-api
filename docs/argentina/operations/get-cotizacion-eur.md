@@ -7,10 +7,10 @@ title: Euro
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('ar')
+const spec = setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-cotizacion-eur" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-cotizacion-eur" :hide-branding="false">
 
 <template #description="description">
 

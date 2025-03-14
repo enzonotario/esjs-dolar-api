@@ -1,5 +1,5 @@
 exportar funcion plantilla(operationId, operation, hideBranding = falso) {
-  const markdown = `<OAOperation operationId="${operationId}" :hide-branding="${hideBranding}">
+  const markdown = `<OAOperation :spec="spec" operationId="${operationId}" :hide-branding="${hideBranding}">
 
 <template #description="description">
 

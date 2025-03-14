@@ -80,7 +80,7 @@ head:
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('cl')
+const spec = setRegionForSidebar('cl')
 </script>
 
 ${plantilla(operationId, operation)}

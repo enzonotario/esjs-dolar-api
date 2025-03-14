@@ -54,10 +54,10 @@ head:
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('mx')
+const spec = setRegionForSidebar('mx')
 </script>
 
-<OAOperation operationId="get-usd-mxn" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-usd-mxn" :hide-branding="false">
 
 <template #description="description">
 

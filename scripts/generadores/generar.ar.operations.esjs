@@ -33,7 +33,7 @@ title: ${operation.summary}
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('ar')
+const spec = setRegionForSidebar('ar')
 </script>
 
 ${plantilla(operationId, operation)}

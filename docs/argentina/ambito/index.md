@@ -7,12 +7,12 @@ title: Dólares Ámbito
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('ar')
+const spec = setRegionForSidebar('ar')
 </script>
 
 <div class="flex flex-col">
 
-<OAOperation operationId="get-ambito-dolares" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolares" :hide-branding="true">
 
 <template #description="description">
 
@@ -30,7 +30,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <hr style="margin: 4rem 0;">
 
-<OAOperation operationId="get-ambito-dolar-oficial" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolar-oficial" :hide-branding="true">
 
 <template #description="description">
 
@@ -48,7 +48,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <hr style="margin: 4rem 0;">
 
-<OAOperation operationId="get-ambito-dolar-blue" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolar-blue" :hide-branding="true">
 
 <template #description="description">
 
@@ -66,7 +66,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <hr style="margin: 4rem 0;">
 
-<OAOperation operationId="get-ambito-dolar-bolsa" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolar-bolsa" :hide-branding="true">
 
 <template #description="description">
 
@@ -84,7 +84,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <hr style="margin: 4rem 0;">
 
-<OAOperation operationId="get-ambito-dolar-contadoconliqui" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolar-contadoconliqui" :hide-branding="true">
 
 <template #description="description">
 
@@ -102,7 +102,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <hr style="margin: 4rem 0;">
 
-<OAOperation operationId="get-ambito-dolar-tarjeta" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolar-tarjeta" :hide-branding="true">
 
 <template #description="description">
 
@@ -120,7 +120,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <hr style="margin: 4rem 0;">
 
-<OAOperation operationId="get-ambito-dolar-mayorista" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolar-mayorista" :hide-branding="true">
 
 <template #description="description">
 
@@ -138,7 +138,7 @@ Devuelve la cotización según Ámbito Financiero.
 
 <hr style="margin: 4rem 0;">
 
-<OAOperation operationId="get-ambito-dolar-cripto" :hide-branding="true">
+<OAOperation :spec="spec" operationId="get-ambito-dolar-cripto" :hide-branding="true">
 
 <template #description="description">
 

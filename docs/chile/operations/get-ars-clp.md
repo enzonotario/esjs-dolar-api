@@ -54,10 +54,10 @@ head:
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('cl')
+const spec = setRegionForSidebar('cl')
 </script>
 
-<OAOperation operationId="get-ars-clp" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-ars-clp" :hide-branding="false">
 
 <template #description="description">
 

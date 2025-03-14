@@ -79,10 +79,12 @@
                           "belo",
                           "fiwind",
                           "cocos",
+                          "dolarapp",
                           "satoshitango",
                           "prex",
                           "lemon",
-                          "plus"
+                          "plus",
+                          "astropay"
                         ]
                       },
                       "compra": {
@@ -152,6 +154,63 @@
                         "type": "string",
                         "enum": [
                           "BTC"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/ars/clp": {
+      "get": {
+        "summary": "ARS/CLP",
+        "operationId": "get-exchange-moneda-ars-clp",
+        "description": "Cotizaciones de ARS a CLP.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "CLP"
                         ]
                       },
                       "monedaBase": {
@@ -289,6 +348,120 @@
         }
       }
     },
+    "/v1/exchanges/monedas/ars/pen": {
+      "get": {
+        "summary": "ARS/PEN",
+        "operationId": "get-exchange-moneda-ars-pen",
+        "description": "Cotizaciones de ARS a PEN.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "PEN"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/ars/sol": {
+      "get": {
+        "summary": "ARS/SOL",
+        "operationId": "get-exchange-moneda-ars-sol",
+        "description": "Cotizaciones de ARS a SOL.",
+        "tags": [
+          "ARS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/exchanges/monedas/ars/usd": {
       "get": {
         "summary": "ARS/USD",
@@ -372,10 +545,12 @@
                           "belo",
                           "fiwind",
                           "cocos",
+                          "dolarapp",
                           "satoshitango",
                           "prex",
                           "lemon",
-                          "plus"
+                          "plus",
+                          "astropay"
                         ]
                       },
                       "compra": {
@@ -388,6 +563,120 @@
                         "type": "string",
                         "enum": [
                           "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/brl/clp": {
+      "get": {
+        "summary": "BRL/CLP",
+        "operationId": "get-exchange-moneda-brl-clp",
+        "description": "Cotizaciones de BRL a CLP.",
+        "tags": [
+          "BRL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "CLP"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/brl/pen": {
+      "get": {
+        "summary": "BRL/PEN",
+        "operationId": "get-exchange-moneda-brl-pen",
+        "description": "Cotizaciones de BRL a PEN.",
+        "tags": [
+          "BRL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "PEN"
                         ]
                       },
                       "monedaBase": {
@@ -438,7 +727,8 @@
                           "takenos",
                           "satoshitango",
                           "prex",
-                          "plus"
+                          "plus",
+                          "astropay"
                         ]
                       },
                       "compra": {
@@ -702,6 +992,63 @@
         }
       }
     },
+    "/v1/exchanges/monedas/btc/sol": {
+      "get": {
+        "summary": "BTC/SOL",
+        "operationId": "get-exchange-moneda-btc-sol",
+        "description": "Cotizaciones de BTC a SOL.",
+        "tags": [
+          "BTC"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/exchanges/monedas/btc/usd": {
       "get": {
         "summary": "BTC/USD",
@@ -742,6 +1089,120 @@
                         "type": "string",
                         "enum": [
                           "BTC"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/clp/ars": {
+      "get": {
+        "summary": "CLP/ARS",
+        "operationId": "get-exchange-moneda-clp-ars",
+        "description": "Cotizaciones de CLP a ARS.",
+        "tags": [
+          "CLP"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "CLP"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/clp/brl": {
+      "get": {
+        "summary": "CLP/BRL",
+        "operationId": "get-exchange-moneda-clp-brl",
+        "description": "Cotizaciones de CLP a BRL.",
+        "tags": [
+          "CLP"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "CLP"
                         ]
                       },
                       "criptomoneda": {
@@ -1158,6 +1619,63 @@
         }
       }
     },
+    "/v1/exchanges/monedas/eth/sol": {
+      "get": {
+        "summary": "ETH/SOL",
+        "operationId": "get-exchange-moneda-eth-sol",
+        "description": "Cotizaciones de ETH a SOL.",
+        "tags": [
+          "ETH"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/exchanges/monedas/eth/usd": {
       "get": {
         "summary": "ETH/USD",
@@ -1198,6 +1716,348 @@
                         "type": "string",
                         "enum": [
                           "ETH"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/pen/ars": {
+      "get": {
+        "summary": "PEN/ARS",
+        "operationId": "get-exchange-moneda-pen-ars",
+        "description": "Cotizaciones de PEN a ARS.",
+        "tags": [
+          "PEN"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "PEN"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/pen/brl": {
+      "get": {
+        "summary": "PEN/BRL",
+        "operationId": "get-exchange-moneda-pen-brl",
+        "description": "Cotizaciones de PEN a BRL.",
+        "tags": [
+          "PEN"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "satoshitango"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BRL"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "PEN"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/sol/ars": {
+      "get": {
+        "summary": "SOL/ARS",
+        "operationId": "get-exchange-moneda-sol-ars",
+        "description": "Cotizaciones de SOL a ARS.",
+        "tags": [
+          "SOL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ARS"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/sol/btc": {
+      "get": {
+        "summary": "SOL/BTC",
+        "operationId": "get-exchange-moneda-sol-btc",
+        "description": "Cotizaciones de SOL a BTC.",
+        "tags": [
+          "SOL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "BTC"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/sol/eth": {
+      "get": {
+        "summary": "SOL/ETH",
+        "operationId": "get-exchange-moneda-sol-eth",
+        "description": "Cotizaciones de SOL a ETH.",
+        "tags": [
+          "SOL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "ETH"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/sol/usd": {
+      "get": {
+        "summary": "SOL/USD",
+        "operationId": "get-exchange-moneda-sol-usd",
+        "description": "Cotizaciones de SOL a USD.",
+        "tags": [
+          "SOL"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
                         ]
                       },
                       "criptomoneda": {
@@ -1301,7 +2161,8 @@
                           "takenos",
                           "satoshitango",
                           "prex",
-                          "plus"
+                          "plus",
+                          "astropay"
                         ]
                       },
                       "compra": {
@@ -1485,6 +2346,63 @@
                         "type": "string",
                         "enum": [
                           "ETH"
+                        ]
+                      },
+                      "monedaBase": {
+                        "type": "string",
+                        "enum": [
+                          "USD"
+                        ]
+                      },
+                      "criptomoneda": {
+                        "type": "string"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/monedas/usd/sol": {
+      "get": {
+        "summary": "USD/SOL",
+        "operationId": "get-exchange-moneda-usd-sol",
+        "description": "Cotizaciones de USD a SOL.",
+        "tags": [
+          "USD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "exchange": {
+                        "type": "string",
+                        "enum": [
+                          "belo"
+                        ]
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      },
+                      "moneda": {
+                        "type": "string",
+                        "enum": [
+                          "SOL"
                         ]
                       },
                       "monedaBase": {

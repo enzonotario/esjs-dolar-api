@@ -7,10 +7,10 @@ title: Peso Uruguayo
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('ar')
+const spec = setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-cotizacion-uyu" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-cotizacion-uyu" :hide-branding="false">
 
 <template #description="description">
 

@@ -7,10 +7,10 @@ title: Dólar Bolsa
 <script setup>
 import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 
-setRegionForSidebar('ar')
+const spec = setRegionForSidebar('ar')
 </script>
 
-<OAOperation operationId="get-dolar-bolsa" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-dolar-bolsa" :hide-branding="false">
 
 <template #description="description">
 
