@@ -127,8 +127,8 @@ importers:
         specifier: ^1.6.3
         version: 1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5)
       vitepress-openapi:
-        specifier: ^0.0.3-alpha.65
-        version: 0.0.3-alpha.65(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)))(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5))
+        specifier: ^0.0.3-alpha.72
+        version: 0.0.3-alpha.72(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5))
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(@edge-runtime/vm@3.1.7)
@@ -1180,6 +1180,9 @@ packages:
   '@types/web-bluetooth@0.0.20':
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
 
+  '@types/web-bluetooth@0.0.21':
+    resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
+
   '@typescript-eslint/eslint-plugin@6.21.0':
     resolution: {integrity: sha512-oy9+hTPCUFpngkEZUSzbf9MxI65wbKFoQYsgPdILTfbUldp5ovUuphZVe4i30emU9M/kP+T64Di0mxl7dSw3MA==}
     engines: {node: ^16.0.0 || >=18.0.0}
@@ -1423,6 +1426,9 @@ packages:
   '@vueuse/core@12.5.0':
     resolution: {integrity: sha512-GVyH1iYqNANwcahAx8JBm6awaNgvR/SwZ1fjr10b8l1HIgDp82ngNbfzJUgOgWEoxjL+URAggnlilAEXwCOZtg==}
 
+  '@vueuse/core@12.8.2':
+    resolution: {integrity: sha512-HbvCmZdzAu3VGi/pWYm5Ut+Kd9mn1ZHnn4L5G8kOQTPs/IwIAmJoBrmYk2ckLArgMXZj0AW3n5CAejLUO+PhdQ==}
+
   '@vueuse/integrations@12.5.0':
     resolution: {integrity: sha512-HYLt8M6mjUfcoUOzyBcX2RjpfapIwHPBmQJtTmXOQW845Y/Osu9VuTJ5kPvnmWJ6IUa05WpblfOwZ+P0G4iZsQ==}
     peerDependencies:
@@ -1473,6 +1479,9 @@ packages:
   '@vueuse/metadata@12.5.0':
     resolution: {integrity: sha512-Ui7Lo2a7AxrMAXRF+fAp9QsXuwTeeZ8fIB9wsLHqzq9MQk+2gMYE2IGJW48VMJ8ecvCB3z3GsGLKLbSasQ5Qlg==}
 
+  '@vueuse/metadata@12.8.2':
+    resolution: {integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==}
+
   '@vueuse/shared@10.11.0':
     resolution: {integrity: sha512-fyNoIXEq3PfX1L3NkNhtVQUSRtqYwJtJg+Bp9rIzculIZWHTkKSysujrOk2J+NrRulLTQH9+3gGSfYLWSEWU1A==}
 
@@ -1481,6 +1490,9 @@ packages:
 
   '@vueuse/shared@12.5.0':
     resolution: {integrity: sha512-vMpcL1lStUU6O+kdj6YdHDixh0odjPAUM15uJ9f7MY781jcYkIwFA4iv2EfoIPO6vBmvutI1HxxAwmf0cx5ISQ==}
+
+  '@vueuse/shared@12.8.2':
+    resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -3963,8 +3975,8 @@ packages:
   quick-format-unescaped@4.0.4:
     resolution: {integrity: sha512-tYC1Q1hgyRuHgloV/YXs2w15unPVh8qfu/qCTfhTYamaw7fyhumKa2yGpdSo87vY32rIclj+4fWYQXUMs9EHvg==}
 
-  radix-vue@1.9.12:
-    resolution: {integrity: sha512-zkr66Jqxbej4+oR6O/pZRzyM/VZi66ndbyIBZQjJKAXa1lIoYReZJse6W1EEDZKXknD7rXhpS+jM9Sr23lIqfg==}
+  radix-vue@1.9.17:
+    resolution: {integrity: sha512-mVCu7I2vXt1L2IUYHTt0sZMz7s1K2ZtqKeTIxG3yC5mMFfLBG4FtE1FDeRMpDd+Hhg/ybi9+iXmAP1ISREndoQ==}
     peerDependencies:
       vue: '>= 3.2.0'
 
@@ -4371,14 +4383,6 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwind-merge@2.6.0:
-    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
-
-  tailwindcss-animate@1.0.7:
-    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
-    peerDependencies:
-      tailwindcss: '>=3.0.0 || insiders'
-
   tailwindcss@3.4.4:
     resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}
     engines: {node: '>=14.0.0'}
@@ -4715,8 +4719,8 @@ packages:
       terser:
         optional: true
 
-  vitepress-openapi@0.0.3-alpha.65:
-    resolution: {integrity: sha512-rTFngImPBf8lkPABEpnAbFQRSqE/eLghmR/kOCYpdZ/RFRZ+5DUnCNsz/RZ3MtP3W1hl0jQHiauX5WmWmTygmQ==}
+  vitepress-openapi@0.0.3-alpha.72:
+    resolution: {integrity: sha512-yF+R94KrS2HIyhG8ED2defk381iLsT9CSYoLQOUoCzEVPdtwpwdHHuwKpUBPG5Aqi8AzHoDZVx1hxfFKK248EQ==}
     peerDependencies:
       vitepress: '>=1.0.0'
       vue: ^3.0.0
@@ -5949,6 +5953,8 @@ snapshots:
 
   '@types/web-bluetooth@0.0.20': {}
 
+  '@types/web-bluetooth@0.0.21': {}
+
   '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/regexpp': 4.10.1
@@ -6407,6 +6413,15 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@vueuse/core@12.8.2(typescript@5.4.5)':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 12.8.2
+      '@vueuse/shared': 12.8.2(typescript@5.4.5)
+      vue: 3.5.13(typescript@5.4.5)
+    transitivePeerDependencies:
+      - typescript
+
   '@vueuse/integrations@12.5.0(axios@1.7.2)(focus-trap@7.6.4)(typescript@5.4.5)':
     dependencies:
       '@vueuse/core': 12.5.0(typescript@5.4.5)
@@ -6424,6 +6439,8 @@ snapshots:
 
   '@vueuse/metadata@12.5.0': {}
 
+  '@vueuse/metadata@12.8.2': {}
+
   '@vueuse/shared@10.11.0(vue@3.4.29(typescript@5.4.5))':
     dependencies:
       vue-demi: 0.14.10(vue@3.4.29(typescript@5.4.5))
@@ -6439,6 +6456,12 @@ snapshots:
       - vue
 
   '@vueuse/shared@12.5.0(typescript@5.4.5)':
+    dependencies:
+      vue: 3.5.13(typescript@5.4.5)
+    transitivePeerDependencies:
+      - typescript
+
+  '@vueuse/shared@12.8.2(typescript@5.4.5)':
     dependencies:
       vue: 3.5.13(typescript@5.4.5)
     transitivePeerDependencies:
@@ -9112,7 +9135,7 @@ snapshots:
 
   quick-format-unescaped@4.0.4: {}
 
-  radix-vue@1.9.12(vue@3.4.29(typescript@5.4.5)):
+  radix-vue@1.9.17(vue@3.4.29(typescript@5.4.5)):
     dependencies:
       '@floating-ui/dom': 1.6.11
       '@floating-ui/vue': 1.1.5(vue@3.4.29(typescript@5.4.5))
@@ -9582,12 +9605,6 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwind-merge@2.6.0: {}
-
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5))):
-    dependencies:
-      tailwindcss: 3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5))
-
   tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
@@ -9963,20 +9980,17 @@ snapshots:
       '@types/node': 18.19.36
       fsevents: 2.3.3
 
-  vitepress-openapi@0.0.3-alpha.65(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)))(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5)):
+  vitepress-openapi@0.0.3-alpha.72(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5)):
     dependencies:
-      '@vueuse/core': 12.5.0(typescript@5.4.5)
+      '@vueuse/core': 12.8.2(typescript@5.4.5)
       class-variance-authority: 0.7.1
       clsx: 2.1.1
       lucide-vue-next: 0.474.0(vue@3.4.29(typescript@5.4.5))
-      radix-vue: 1.9.12(vue@3.4.29(typescript@5.4.5))
-      tailwind-merge: 2.6.0
-      tailwindcss-animate: 1.0.7(tailwindcss@3.4.4(ts-node@10.9.1(@types/node@18.19.36)(typescript@5.4.5)))
+      radix-vue: 1.9.17(vue@3.4.29(typescript@5.4.5))
       vitepress: 1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5)
       vue: 3.4.29(typescript@5.4.5)
     transitivePeerDependencies:
       - '@vue/composition-api'
-      - tailwindcss
       - typescript
 
   vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5):
