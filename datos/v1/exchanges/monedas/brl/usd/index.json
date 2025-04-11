@@ -1,14 +1,5 @@
 [
   {
-    "exchange": "belo",
-    "moneda": "USD",
-    "monedaBase": "BRL",
-    "criptomoneda": "USDT",
-    "criptomonedaBase": null,
-    "compra": 0.17725232999654816,
-    "venta": 0.16534391534391535
-  },
-  {
     "exchange": "fiwind",
     "moneda": "USD",
     "monedaBase": "BRL",
@@ -73,7 +64,7 @@
     "exchange": "astropay",
     "moneda": "USD",
     "monedaBase": "BRL",
-    "compra": 0.17292834,
+    "compra": 0.1730846,
     "venta": null
   }
 ]
