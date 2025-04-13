@@ -1,5 +1,6 @@
 importar axios desde 'axios'
 importar cheerio desde 'cheerio'
+importar { chromium } desde 'playwright'
 importar { monedas } desde '@/br/constantes.br.esjs'
 importar tryToCatch desde 'try-to-catch'
 importar { grupo, logError } desde '@/log.esjs'
@@ -7,7 +8,7 @@ importar { grupo, logError } desde '@/log.esjs'
 exportar porDefecto asincrono funcion () {
   const cotizaciones = []
 
-  para (const moneda de monedas.filter((moneda) => moneda.codigo !== 'BRL')) {
+  para (const moneda de monedas.filtrar((moneda) => moneda.codigo !== 'BRL')) {
     const log = grupo({
       cron: 'cron.br.esjs',
       extractor: 'investing.extractor.br.esjs',
@@ -81,47 +82,36 @@ funcion interpretarFecha(fecha) {
 }
 
 asincrono funcion extraerUsdBrl() {
-  const response = esperar axios.post(
-    'https://api.firecrawl.dev/v1/scrape',
-    {
-      url: 'https://es.investing.com/currencies/usd-brl',
-      formats: ['extract'],
-      extract: {
-        prompt: 'Extract the `compra` and `venta` values',
-      },
-      formats: ['extract'],
-      extract: {
-        schema: {
-          type: 'object',
-          properties: {
-            compra: {
-              type: 'number',
-            },
-            venta: {
-              type: 'number',
-            },
-            ultimoCierre: {
-              type: 'number',
-            },
-          },
-          required: ['compra', 'venta', 'ultimoCierre'],
-        },
-      },
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_FIREWCRAWL_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-    },
-  )
+  const browser = esperar chromium.launch()
+  const context = esperar browser.newContext({
+    userAgent:
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+  })
+  const page = esperar context.newPage()
 
-  retornar {
-    moeda: 'USD',
-    nome: 'Dólar',
-    compra: response.data.data.extract.compra,
-    venda: response.data.data.extract.venta,
-    fechoAnterior: response.data.data.extract.ultimoCierre,
-    dataAtualizacao: crear Fecha().aCadenaISO(),
-  };
+  intentar {
+    esperar page.goto('https://es.investing.com/currencies/usd-brl', {
+      waitUntil: 'domcontentloaded',
+    })
+
+    esperar page.waitForSelector('dd[data-test=bid]')
+
+    const compra = esperar page.$eval('dd[data-test=bid]', (el) => el.textContent)
+    const venta = esperar page.$eval('dd[data-test=ask]', (el) => el.textContent)
+    const fechoAnterior = esperar page.$eval(
+      'dd[data-test=prevClose]',
+      (el) => el.textContent,
+    )
+
+    retornar {
+      moeda: 'USD',
+      nome: 'Dólar',
+      compra: interpretarValorMonetario(compra),
+      venda: interpretarValorMonetario(venta),
+      fechoAnterior: interpretarValorMonetario(fechoAnterior),
+      dataAtualizacao: crear Fecha().aCadenaISO(),
+    };
+  } finalmente {
+    esperar browser.close()
+  }
 }

@@ -48,7 +48,9 @@ jobs:
           echo "VITE_PREX_API_KEY=${{ secrets.VITE_PREX_API_KEY }}" >> .env
           echo "VITE_PLUS_AUTH_KEY=${{ secrets.VITE_PLUS_AUTH_KEY }}" >> .env
           echo "VITE_ASTROPAY_AUTH=${{ secrets.VITE_ASTROPAY_AUTH }}" >> .env
-          echo "VITE_FIREWCRAWL_API_KEY=${{ secrets.VITE_FIREWCRAWL_API_KEY }}" >> .env
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
 
       - name: Install dependencies
         run: pnpm install
