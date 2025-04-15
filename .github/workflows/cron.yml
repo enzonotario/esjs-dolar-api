@@ -49,11 +49,11 @@ jobs:
           echo "VITE_PLUS_AUTH_KEY=${{ secrets.VITE_PLUS_AUTH_KEY }}" >> .env
           echo "VITE_ASTROPAY_AUTH=${{ secrets.VITE_ASTROPAY_AUTH }}" >> .env
 
-      - name: Install Playwright
-        run: npx playwright install --with-deps chromium
-
       - name: Install dependencies
         run: pnpm install
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
 
       - name: Build
         run: pnpm run cron:build
