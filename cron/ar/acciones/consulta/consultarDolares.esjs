@@ -9,11 +9,9 @@ asincrono funcion nuevosValores() {
 
   const dolaresNoCalculados = esperar extraerDolarHoy()
 
-  const dolaresAmbito = esperar consultarAmbito()
-
   const dolares = [
     ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD'),
-    ...dolaresNoCalculados.filtrar((dolar) => !['oficia', 'mayorista'].incluye(dolar.casa)),
+    ...dolaresNoCalculados.filtrar((dolar) => !['oficial'].incluye(dolar.casa)),
     ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD').mapear((dolarOficial) => {
         const impuestos = 0.3
 
@@ -29,7 +27,6 @@ asincrono funcion nuevosValores() {
           venta,
         }
       }),
-    ...dolaresAmbito.filtrar((dolar) => dolar.casa === 'mayorista'),
   ]
 
   retornar dolares
