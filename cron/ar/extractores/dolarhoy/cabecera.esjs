@@ -2,7 +2,7 @@ importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
 importar { obtenerFechaActualizacion } desde './fechaActualizacion.esjs'
 
 funcion obtenerValores($, href) {
-  retornar $(`.dolar a[href=${href}] + .values`)
+  retornar $(`.title:has(a[href=${href}]) + .values`)
 }
 
 exportar funcion obtenerValorCompra($, href) {
