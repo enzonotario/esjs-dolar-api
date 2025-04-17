@@ -12,7 +12,7 @@
     "nombre": "Dólar",
     "compra": 965.29,
     "venta": 967.09,
-    "ultimoCierre": 970.51,
+    "ultimoCierre": 965.29,
     "fechaActualizacion": "2025-04-17T18:03:44.000Z"
   },
   {
@@ -20,16 +20,16 @@
     "nombre": "Euro",
     "compra": 1.086,
     "venta": 1.114,
-    "ultimoCierre": 1.103,
-    "fechaActualizacion": "2025-04-17T20:00:34.000Z"
+    "ultimoCierre": 1.1,
+    "fechaActualizacion": "2025-04-17T21:00:34.046Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real Brasileño",
     "compra": 166.473,
     "venta": 166.559,
-    "ultimoCierre": 165.608,
-    "fechaActualizacion": "2025-04-17T19:58:34.063Z"
+    "ultimoCierre": 166.516,
+    "fechaActualizacion": "2025-04-17T21:00:34.046Z"
   },
   {
     "moneda": "UYU",
@@ -37,6 +37,6 @@
     "compra": 23.03,
     "venta": 23.07,
     "ultimoCierre": 22.86,
-    "fechaActualizacion": "2025-04-17T18:59:59.505Z"
+    "fechaActualizacion": "2025-04-17T19:59:07.340Z"
   }
 ]
