@@ -5,8 +5,8 @@
     "monedaBase": "ARS",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 0.000819672131147541,
-    "venta": 0.000847457627118644
+    "compra": 0.000819000819000819,
+    "venta": 0.0008389261744966443
   },
   {
     "exchange": "belo",
@@ -14,8 +14,8 @@
     "monedaBase": "ARS",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 0.0008184444644508647,
-    "venta": 0.0008488156047639256
+    "compra": 0.0008175288990944444,
+    "venta": 0.0008400184504878136
   },
   {
     "exchange": "belo",
@@ -23,8 +23,8 @@
     "monedaBase": "ARS",
     "criptomoneda": "USD_AR",
     "criptomonedaBase": null,
-    "compra": 0.0008114754098360656,
-    "venta": 0.0008796610169491526
+    "compra": 0.0008026208026208026,
+    "venta": 0.0010486577181208054
   },
   {
     "exchange": "dolarapp",
@@ -32,8 +32,8 @@
     "monedaBase": "ARS",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 0.0008347315086102555,
-    "venta": 0.0008495168415439561
+    "compra": 0.0008301648707433296,
+    "venta": 0.0008473504157482447
   },
   {
     "exchange": "satoshitango",
@@ -41,7 +41,7 @@
     "monedaBase": "ARS",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 0.0008472637616816491,
+    "compra": 0.0008455015092201939,
     "venta": null
   },
   {
@@ -50,7 +50,7 @@
     "monedaBase": "ARS",
     "criptomoneda": "USD",
     "criptomonedaBase": null,
-    "compra": 0.0008777704630239193,
+    "compra": 0.0008784798784183848,
     "venta": null
   }
 ]
