@@ -65,11 +65,12 @@
   backdrop-filter: blur(12px);
   transition: background-color 0.3s ease-in-out;
 }
-
 .dark .VPSidebar {
   background-color: rgba(0, 0, 0, .5) !important;
 }
-
 .VPSidebar .curtain {
   background-color: transparent !important;
+}
+.VPSidebar.open {
+  background-color: rgba(255, 255, 255, .8) !important;
 }
