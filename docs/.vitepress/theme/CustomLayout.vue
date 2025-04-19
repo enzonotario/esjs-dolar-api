@@ -8,7 +8,7 @@ const { Layout } = DefaultTheme
 <template>
   <Layout>
     <template #layout-top>
-      <div class="relative h-px w-full">
+      <div class="fixed h-px w-full">
         <div class="section-flare">
           <div class="section-flare-item" />
           <div class="section-flare-item" />
