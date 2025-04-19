@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import { theme, useTheme } from 'vitepress-openapi/client'
+import { theme, useShiki, useTheme } from 'vitepress-openapi/client'
 import Layout from 'genji-theme-vitepress'
 import * as ObservablePlot from '@observablehq/plot'
 
@@ -24,7 +24,7 @@ export default {
   Layout() {
     return h(Layout, props)
   },
-  enhanceApp({ app }) {
+  async enhanceApp({ app }) {
     useTheme({
       i18n: {
         locale: 'es',
@@ -33,6 +33,8 @@ export default {
         showBaseURL: true,
       },
     })
+
+    await useShiki().initShiki()
 
     theme.enhanceApp({ app })
 
