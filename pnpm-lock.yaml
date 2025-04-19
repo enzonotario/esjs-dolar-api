@@ -130,8 +130,8 @@ importers:
         specifier: ^1.6.3
         version: 1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5)
       vitepress-openapi:
-        specifier: ^0.0.3-alpha.72
-        version: 0.0.3-alpha.72(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5))
+        specifier: ^0.0.3-alpha.75
+        version: 0.0.3-alpha.75(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5))
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(@edge-runtime/vm@3.1.7)(playwright@1.51.1)
@@ -4737,8 +4737,8 @@ packages:
       terser:
         optional: true
 
-  vitepress-openapi@0.0.3-alpha.72:
-    resolution: {integrity: sha512-yF+R94KrS2HIyhG8ED2defk381iLsT9CSYoLQOUoCzEVPdtwpwdHHuwKpUBPG5Aqi8AzHoDZVx1hxfFKK248EQ==}
+  vitepress-openapi@0.0.3-alpha.75:
+    resolution: {integrity: sha512-8nK2TiYjdtP1MUtO5ocUnq0flSbYTCYHhPkNsyF9o/3GNKtGztHx7MMpm0IS6ObvvL+8b2ZHpGS2e7GM15i06Q==}
     peerDependencies:
       vitepress: '>=1.0.0'
       vue: ^3.0.0
@@ -10009,7 +10009,7 @@ snapshots:
       '@types/node': 18.19.36
       fsevents: 2.3.3
 
-  vitepress-openapi@0.0.3-alpha.72(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5)):
+  vitepress-openapi@0.0.3-alpha.75(typescript@5.4.5)(vitepress@1.6.3(@algolia/client-search@5.17.1)(@types/node@18.19.36)(axios@1.7.2)(postcss@8.4.38)(search-insights@2.14.0)(typescript@5.4.5))(vue@3.4.29(typescript@5.4.5)):
     dependencies:
       '@vueuse/core': 12.8.2(typescript@5.4.5)
       class-variance-authority: 0.7.1

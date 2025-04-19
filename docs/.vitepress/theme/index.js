@@ -3,14 +3,17 @@ import { h } from 'vue'
 import { theme, useTheme } from 'vitepress-openapi/client'
 import Layout from 'genji-theme-vitepress'
 import * as ObservablePlot from '@observablehq/plot'
-import GitHubStars from './components/GitHubStars.vue'
+
 import IndexDemo from './components/IndexDemo.vue'
+import CustomLayout from './CustomLayout.vue'
 
 import 'vitepress-openapi/dist/style.css'
 import './style.css'
 
 const props = {
-  Theme: DefaultTheme,
+  Theme: {
+    Layout: CustomLayout,
+  },
   library: {
     Plot: ObservablePlot,
   },
@@ -19,11 +22,7 @@ const props = {
 export default {
   extends: DefaultTheme,
   Layout() {
-    return h(Layout, props, {
-      // 'sidebar-nav-before': () => h(SelectRegionSidebarItem),
-      // 'nav-bar-content-before': () => h(SelectRegion),
-      'nav-bar-content-after': () => h(GitHubStars),
-    })
+    return h(Layout, props)
   },
   enhanceApp({ app }) {
     useTheme({

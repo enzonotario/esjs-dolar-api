@@ -26,3 +26,50 @@
 .dark .button:hover {
   @apply bg-gray-700;
 }
+
+.VPNavBar.top, .dark .VPNavBar.top {
+  background-color: transparent !important;
+}
+.VPNavBar {
+  background-color: rgba(255, 255, 255, .7) !important;
+  backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease-in-out;
+}
+.VPNavBar .content-body {
+  background-color: transparent !important;
+}
+.dark .VPNavBar {
+  background-color: rgba(0, 0, 0, .7) !important;
+}
+.VPNavBar .divider {
+  transition: background-color 0.3s ease-in-out;
+}
+.VPNavBar.top .divider, .dark .VPNavBar.top .divider {
+  background-color: transparent !important;
+}
+.VPNavBar:not(.home.top) .divider-line {
+  background-color: transparent !important;
+}
+
+.VPLocalNav {
+  background-color: rgba(255, 255, 255, .5) !important;
+  backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease-in-out;
+}
+.dark .VPLocalNav {
+  background-color: rgba(0, 0, 0, .5) !important;
+}
+
+.VPSidebar {
+  background-color: rgba(255, 255, 255, .5) !important;
+  backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dark .VPSidebar {
+  background-color: rgba(0, 0, 0, .5) !important;
+}
+
+.VPSidebar .curtain {
+  background-color: transparent !important;
+}
