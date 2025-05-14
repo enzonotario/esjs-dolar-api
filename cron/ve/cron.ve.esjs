@@ -1,4 +1,5 @@
-importar extraerDolares desde '@/ve/monitordolarvenezuela.extractor.esjs'
+importar extraerDolaresMonitor desde '@/ve/monitordolarvenezuela.extractor.esjs'
+importar extraerDolaresLasLucas desde '@/ve/laslucas.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 
@@ -17,11 +18,23 @@ exportar porDefecto asincrono funcion () {
 }
 
 asincrono funcion guardarDolares() {
-  const dolares = esperar extraerDolares()
+  const dolaresMonitor = esperar extraerDolaresMonitor()
+  const dolaresLasLucas = esperar extraerDolaresLasLucas()
 
-  dolares.mapear((dolar) => {
-    escribirRutaRegion('ve', `/dolares/${dolar.fuente}`, dolar)
-  })
+  const orden = ['oficial', 'paralelo', 'bitcoin']
+
+  const dolares = [
+    ...dolaresMonitor.filtrar((dolar) => dolar.fuente !== 'paralelo'),
+    ...dolaresLasLucas,
+  ]
+
+  dolares.ordenar((a, b) => {
+      const indexA = orden.indiceDe(a.fuente)
+      const indexB = orden.indiceDe(b.fuente)
+      retornar indexA - indexB
+    }).mapear((dolar) => {
+      escribirRutaRegion('ve', `/dolares/${dolar.fuente}`, dolar)
+    })
 
   escribirRutaRegion('ve', '/dolares', dolares)
 }
