@@ -2,41 +2,41 @@
   {
     "moeda": "ARS",
     "nome": "Peso Argentino",
-    "compra": 0.005,
-    "venda": 0.005,
+    "compra": 0.0049,
+    "venda": 0.0049,
     "fechoAnterior": 0.005,
-    "dataAtualizacao": "2025-05-16T15:54:55.000Z"
+    "dataAtualizacao": "2025-05-16T17:00:55.475Z"
   },
   {
     "moeda": "USD",
     "nome": "Dólar",
-    "compra": 5.678,
-    "venda": 5.681,
+    "compra": 5.673,
+    "venda": 5.676,
     "fechoAnterior": 5.6813,
-    "dataAtualizacao": "2025-05-16T16:01:20.329Z"
+    "dataAtualizacao": "2025-05-16T17:02:02.473Z"
   },
   {
     "moeda": "EUR",
     "nome": "Euro",
-    "compra": 6.3211,
-    "venda": 6.3371,
+    "compra": 6.3131,
+    "venda": 6.3291,
     "fechoAnterior": 6.3573,
-    "dataAtualizacao": "2025-05-16T15:56:55.000Z"
+    "dataAtualizacao": "2025-05-16T16:54:55.000Z"
   },
   {
     "moeda": "CLP",
     "nome": "Peso Chileno",
-    "compra": 0.006015,
-    "venda": 0.006017,
+    "compra": 0.006001,
+    "venda": 0.006003,
     "fechoAnterior": 0.006047,
-    "dataAtualizacao": "2025-05-16T15:59:37.106Z"
+    "dataAtualizacao": "2025-05-16T16:59:57.782Z"
   },
   {
     "moeda": "UYU",
     "nome": "Peso Uruguayo",
-    "compra": 0.137,
-    "venda": 0.1371,
+    "compra": 0.1365,
+    "venda": 0.1365,
     "fechoAnterior": 0.1363,
-    "dataAtualizacao": "2025-05-16T14:59:16.978Z"
+    "dataAtualizacao": "2025-05-16T16:59:57.782Z"
   }
 ]
