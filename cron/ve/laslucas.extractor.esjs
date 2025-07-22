@@ -16,7 +16,7 @@ asincrono funcion obtenerRespuesta() {
   const page = esperar context.newPage()
 
   intentar {
-    esperar page.goto('https://laslucas.com/', {
+    esperar page.goto('https://laslucas.com/?c=r', {
       waitUntil: 'domcontentloaded',
     })
 
