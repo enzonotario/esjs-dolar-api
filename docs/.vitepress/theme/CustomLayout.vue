@@ -1,6 +1,7 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import GitHubStars from './components/GitHubStars.vue'
+import DonateBanner from './components/DonateBanner.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -24,6 +25,10 @@ const { Layout } = DefaultTheme
 
     <template #nav-bar-content-after>
       <GitHubStars class="hidden sm:block" />
+    </template>
+
+    <template #layout-bottom>
+      <DonateBanner />
     </template>
   </Layout>
 </template>
