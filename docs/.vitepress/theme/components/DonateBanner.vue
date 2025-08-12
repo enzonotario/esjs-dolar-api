@@ -44,7 +44,7 @@ function closeBanner() {
       <span class="i-mdi-close text-lg"></span>
     </button>
     <div class="flex flex-col pr-4 gap-1 text-sm leading-relaxed ">
-      <p class="m-0">ArgentinaDatos es una API <strong>pública y gratuita</strong>, ayudanos a mantenerla en funcionamiento.</p>
+      <p class="m-0">DolarApi.com es una API <strong>pública y gratuita</strong>, ayudanos a mantenerla en funcionamiento.</p>
 
       <a
         href="https://cafecito.app/enzonotario"
