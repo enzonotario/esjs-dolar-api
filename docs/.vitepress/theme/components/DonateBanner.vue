@@ -43,27 +43,24 @@ function closeBanner() {
     >
       <span class="i-mdi-close text-lg"></span>
     </button>
-    <div class="flex items-center gap-3">
-      <div class="text-indigo-500 dark:text-indigo-400 flex-shrink-0">
-        <span class="i-mdi-coffee text-3xl"></span>
-      </div>
-      <div class="text-sm leading-relaxed pr-4 space-y-1">
-        <p class="m-0">DolarApi.com es una API <strong>pública y gratuita</strong>, ayudanos a mantenerla en funcionamiento.</p>
-        <a
-          href="https://cafecito.app/enzonotario"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-indigo-500 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white font-medium py-1.5 px-3 rounded text-sm transition-colors"
-        >
-          Invitanos un Cafecito
-        </a>
+    <div class="flex flex-col pr-4 gap-1 text-sm leading-relaxed ">
+      <p class="m-0">ArgentinaDatos es una API <strong>pública y gratuita</strong>, ayudanos a mantenerla en funcionamiento.</p>
 
-        <span class="block mt-2 text-gray-500 dark:text-gray-400 text-xs">
-          O apoyanos en GitHub Sponsors
-        </span>
+      <a
+        href="https://cafecito.app/enzonotario"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1 self-start bg-indigo-500 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white font-medium py-1.5 px-3 rounded text-sm transition-colors"
+      >
+        <span class="i-mdi-coffee"></span>
+        Invitanos un Cafecito
+      </a>
 
-        <iframe src="https://github.com/sponsors/enzonotario/button" title="Sponsor enzonotario" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
-      </div>
+      <span class="text-gray-600 dark:text-gray-300 text-xs">
+        O apoyanos en GitHub Sponsors
+      </span>
+
+      <iframe src="https://github.com/sponsors/enzonotario/button" title="Sponsor enzonotario" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
     </div>
   </div>
 </template>
