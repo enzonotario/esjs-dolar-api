@@ -58,10 +58,11 @@ head:
 ---
 
 <script setup>
-import IndexDemo from '../.vitepress/theme/components/IndexDemo.vue'
-import { setRegionForSidebar } from '../.vitepress/sidebar/sidebar.utils.js'
+import IndexDemo from '../.vitepress/theme/components/IndexDemo.vue';
+import { setRegionForSidebar } from '../.vitepress/sidebar/sidebar.utils.js';
+import SponsorsAvatars from '../.vitepress/theme/components/sponsors/SponsorsAvatars.vue';
 
-setRegionForSidebar('ar')
+setRegionForSidebar('ar');
 </script>
 
 # DolarApi.com <small class="ml-2 text-sm">Región <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-800 dark:!text-indigo-50 px-2 py-1 rounded-md">Argentina</span></small>
@@ -88,3 +89,7 @@ https://dolarapi.com
 ## Aviso Legal
 
 DolarApi.com es un proyecto de código abierto que brinda datos de fuentes públicas. Para más información, consulta la seción de [Aviso Legal](/legal).
+
+## Sponsors
+
+<SponsorsAvatars />

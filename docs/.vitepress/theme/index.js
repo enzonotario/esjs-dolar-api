@@ -6,6 +6,7 @@ import * as ObservablePlot from '@observablehq/plot'
 
 import IndexDemo from './components/IndexDemo.vue'
 import CustomLayout from './CustomLayout.vue'
+import SponsorsAvatars from './components/sponsors/SponsorsAvatars.vue'
 
 import 'vitepress-openapi/dist/style.css'
 import './style.css'
@@ -39,5 +40,6 @@ export default {
     theme.enhanceApp({ app })
 
     app.component('IndexDemo', IndexDemo)
+    app.component('SponsorsAvatars', SponsorsAvatars)
   },
 }

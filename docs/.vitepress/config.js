@@ -25,7 +25,7 @@ export default defineConfig({
     logo: '/assets/logo.webp',
     nav: [
       { component: 'OALocaleSelect' },
-      { text: 'Aviso Legal', link: '/legal' },
+      { text: 'Sponsors', link: '/sponsors/' },
       {
         text: 'Región',
         items: [
