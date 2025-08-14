@@ -32,10 +32,29 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: 18
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 9
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'datos'
+          path: 'dist/static'
 
       - name: Deploy to GitHub Pages
         id: deployment
