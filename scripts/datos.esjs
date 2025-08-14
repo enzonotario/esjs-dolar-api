@@ -1,5 +1,6 @@
 importar { execSync } desde 'child_process'
 importar { join, dirname } desde 'path'
+importar { writeFileSync } desde 'fs'
 
 const raiz = dirname('../')
 
@@ -10,6 +11,8 @@ execSync(
   )} ${join(raiz, 'dist/static/ar/v1')}`,
 )
 
+writeFileSync(join(raiz, 'dist/static/ar/CNAME'), 'gh.dolarapi.com')
+
 const regiones = ['cl', 've', 'uy', 'mx', 'bo', 'br']
 
 regiones.paraCada((region) => {
@@ -18,5 +21,9 @@ regiones.paraCada((region) => {
       raiz,
       `datos/${region}/v1/*`,
     )} ${join(raiz, `dist/static/${region}/v1`)}`,
+  )
+  writeFileSync(
+    join(raiz, `dist/static/${region}/CNAME`),
+    `${region}-gh.dolarapi.com`,
   )
 })
