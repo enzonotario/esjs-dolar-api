@@ -24,6 +24,6 @@ regiones.paraCada((region) => {
   )
   writeFileSync(
     join(raiz, `dist/static/${region}/CNAME`),
-    `${region}-gh.dolarapi.com`,
+    `${region}.gh.dolarapi.com`,
   )
 })
