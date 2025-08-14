@@ -4,7 +4,7 @@
 <template>
   <div>
     <div class="grid grid-cols-1 gap-4">
-      <a class="border rounded-lg p-4 flex gap-3 !no-underline">
+      <a class="border rounded-lg p-2 flex gap-3 !no-underline">
         <div class="w-16 h-16 rounded bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs text-gray-500">
           Logo
         </div>
@@ -21,19 +21,19 @@
         </div>
       </a>
 
-      <a class="border rounded-lg p-4 flex gap-3 !no-underline">
-        <div class="w-16 h-16 rounded bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-xs text-gray-500">
-          Logo
-        </div>
+      <a
+        href="https://www.theonclub.com/"
+        target="_blank" rel="noopener"
+        class="border rounded-lg p-2 flex gap-3 !no-underline"
+      >
+        <img src="https://argentinadatos.com/assets/sponsors/theonclub.jpg" alt="O(n) Club Logo" class="w-16 h-16 rounded bg-gray-100 dark:bg-gray-800 object-cover">
         <div class="flex flex-col flex-grow">
           <div class="font-medium">
-            Tu organización aquí
+            O(n) Club
           </div>
           <span class="flex-1" />
           <div class="flex justify-between items-center text-xs text-gray-600 dark:text-gray-400">
             <span>Dominio</span>
-
-            <span>$50 USD / año</span>
           </div>
         </div>
       </a>
