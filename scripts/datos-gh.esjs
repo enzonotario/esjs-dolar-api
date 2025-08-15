@@ -27,3 +27,11 @@ regiones.paraCada((region) => {
     `${region}-gh.dolarapi.com`,
   )
 })
+
+execSync(
+  `mkdir -p ${join(raiz, 'dist/static/ar-gh/docs')} &&
+    cp -r ${join(
+      raiz,
+      'dist/static/docs/*',
+    )} ${join(raiz, 'dist/static/ar-gh/docs')}`,
+)
