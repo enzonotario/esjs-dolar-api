@@ -11,7 +11,7 @@ execSync(
   )} ${join(raiz, 'dist/static/ar-gh/v1')}`,
 )
 
-writeFileSync(join(raiz, 'dist/static/ar-gh/CNAME'), 'ar-gh.dolarapi.com')
+writeFileSync(join(raiz, 'dist/static/ar-gh/CNAME'), 'ar.gh.dolarapi.com')
 
 const regiones = ['cl', 've', 'uy', 'mx', 'bo', 'br']
 
@@ -24,7 +24,7 @@ regiones.paraCada((region) => {
   )
   writeFileSync(
     join(raiz, `dist/static/${region}-gh/CNAME`),
-    `${region}-gh.dolarapi.com`,
+    `${region}.gh.dolarapi.com`,
   )
 })
 
