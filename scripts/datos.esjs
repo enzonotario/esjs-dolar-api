@@ -5,13 +5,13 @@ importar { writeFileSync } desde 'fs'
 const raiz = dirname('../')
 
 execSync(
-  `mkdir -p ${join(raiz, 'dist/static/ar/v1')} && cp -r ${join(
+  `mkdir -p ${join(raiz, 'dist/static/ar-gh/v1')} && cp -r ${join(
     raiz,
     'datos/v1/*',
-  )} ${join(raiz, 'dist/static/ar/v1')}`,
+  )} ${join(raiz, 'dist/static/ar-gh/v1')}`,
 )
 
-writeFileSync(join(raiz, 'dist/static/ar/CNAME'), 'gh.dolarapi.com')
+writeFileSync(join(raiz, 'dist/static/ar-gh/CNAME'), 'ar-gh.dolarapi.com')
 
 const regiones = ['cl', 've', 'uy', 'mx', 'bo', 'br']
 
@@ -24,6 +24,6 @@ regiones.paraCada((region) => {
   )
   writeFileSync(
     join(raiz, `dist/static/${region}-gh/CNAME`),
-    `${region}.gh.dolarapi.com`,
+    `${region}-gh.dolarapi.com`,
   )
 })
