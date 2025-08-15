@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vite",
     "build": "pnpm run docs:build && pnpm run data:copy && pnpm run api:build",
+    "build:gh": "pnpm run docs:build && pnpm run data:copy:gh",
     "serve": "vite preview",
     "api:build": "vite build --config vite.api.config.js --ssr --mode=production",
     "docs:dev": "vitepress dev docs",
@@ -20,6 +21,7 @@
     "docs:gen": "node --experimental-loader esjs-loader scripts/generadores/generar.esjs",
     "format": "prettier --write '**/*.esjs'",
     "data:copy": "node --experimental-loader esjs-loader scripts/datos.esjs",
+    "data:copy:gh": "node --experimental-loader esjs-loader scripts/datos-gh.esjs",
     "cron:build": "vite build --config vite.config.js --ssr --mode=production",
     "cron:run": "node ./dist/cron/index.js",
     "cron:test": "vitest --config vite.config.js",
