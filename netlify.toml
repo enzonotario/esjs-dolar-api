@@ -1,48 +1,48 @@
 [[redirects]]
   from = "/*"
-  to = "/ar/:splat"
+  to = "/dist/static/ar/:splat"
   status = 200
   force = true
   conditions = { Host = ["ar.gh.dolarapi.com"] }
 
 [[redirects]]
   from = "/*"
-  to = "/cl/:splat"
+  to = "/dist/static/cl/:splat"
   status = 200
   force = true
   conditions = { Host = ["cl.gh.dolarapi.com"] }
 
 [[redirects]]
   from = "/*"
-  to = "/bo/:splat"
+  to = "/dist/static/bo/:splat"
   status = 200
   force = true
   conditions = { Host = ["bo.gh.dolarapi.com"] }
 
 [[redirects]]
   from = "/*"
-  to = "/br/:splat"
+  to = "/dist/static/br/:splat"
   status = 200
   force = true
   conditions = { Host = ["br.gh.dolarapi.com"] }
 
 [[redirects]]
   from = "/*"
-  to = "/mx/:splat"
+  to = "/dist/static/mx/:splat"
   status = 200
   force = true
   conditions = { Host = ["mx.gh.dolarapi.com"] }
 
 [[redirects]]
   from = "/*"
-  to = "/uy/:splat"
+  to = "/dist/static/uy/:splat"
   status = 200
   force = true
   conditions = { Host = ["uy.gh.dolarapi.com"] }
 
 [[redirects]]
   from = "/*"
-  to = "/ve/:splat"
+  to = "/dist/static/ve/:splat"
   status = 200
   force = true
   conditions = { Host = ["ve.gh.dolarapi.com"] }
