@@ -172,8 +172,6 @@ const items = computed(() => ([
   { type: 'logo', logoUrl: 'https://argentinadatos.com/assets/sponsors/theonclub.jpg', url: 'https://www.theonclub.com/', name: 'O(n) Club' },
   'https://github.com/catdevnull',
   'https://github.com/Xyborg',
-  'https://x.com/ferminrp',
-  'https://x.com/lozards',
   { type: 'logo', url: '/docs/sponsors', name: 'Tu Logo' },
 ])
   .map(parseItem)
