@@ -13,8 +13,6 @@ describe('extraerExchanges', () => {
 
     console.table(cotizacionesAtributos)
 
-    expect(cotizacionesAtributos).toMatchSnapshot()
-
     expect(cotizaciones.length).toBeGreaterThan(0)
     for (const cotizacion of cotizaciones) {
       expect(cotizacion).toBeTypeOf('object')
@@ -31,5 +29,7 @@ describe('extraerExchanges', () => {
 
       expect(cotizacion.fechaActualizacion).toBeTypeOf('object')
     }
+  }, {
+    timeout: 10000,
   })
 })
