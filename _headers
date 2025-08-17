@@ -1,0 +1,5 @@
+https://mx.dolarapi.com/v1/*
+  Cache-Control: public, max-age=3600, s-maxage=3600
+
+https://br.dolarapi.com/v1/*
+  Cache-Control: public, max-age=3600, s-maxage=3600
