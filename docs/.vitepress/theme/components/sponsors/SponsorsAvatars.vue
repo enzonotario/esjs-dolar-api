@@ -169,6 +169,7 @@ function parseItem(entry) {
 }
 
 const items = computed(() => ([
+  { type: 'logo', logoUrl: 'https://argentinadatos.com/assets/sponsors/revolt.png', url: 'https://revolt.digital/', name: 'Revolt' },
   { type: 'logo', logoUrl: 'https://argentinadatos.com/assets/sponsors/theonclub.jpg', url: 'https://www.theonclub.com/', name: 'O(n) Club' },
   'https://github.com/catdevnull',
   'https://github.com/Xyborg',
