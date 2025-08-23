@@ -203,6 +203,16 @@
     {
       "source": "/cron/(.*)",
       "destination": "/api/index.js"
+    },
+    {
+      "source": "/cron/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "cron.dolarapi.com"
+        }
+      ],
+      "destination": "/api/index.js"
     }
   ],
   "headers": [
