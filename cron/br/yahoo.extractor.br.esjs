@@ -1,0 +1,48 @@
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
+
+exportar porDefecto asincrono funcion () {
+  const url = 'https://es-us.finanzas.yahoo.com/quote/BRL%3DX/'
+  const response = esperar axios.get(url)
+  const $ = cheerio.load(response.data)
+
+  const container = $('[data-testid="quote-statistics"]')
+
+  const ofertaTexto = container
+    .find('span.label[title="Oferta"]')
+    .parent().buscar('span.value')
+    .text()
+
+  const demandaTexto = container
+    .find('span.label[title="Demanda"]')
+    .parent().buscar('span.value')
+    .text()
+
+  const fechoAnteriorTexto = container.buscar('fin-streamer[data-field="regularMarketPreviousClose"]')
+    .text()
+
+  const compra = extraerNumero(ofertaTexto)
+  const venda = extraerNumero(demandaTexto)
+  const fechoAnterior = interpretarValorMonetario(fechoAnteriorTexto)
+
+  retornar {
+    moeda: 'USD',
+    nome: 'Dólar',
+    compra: compra,
+    venda: venda,
+    fechoAnterior: fechoAnterior,
+    dataAtualizacao: crear Fecha().aCadenaISO(),
+  };
+}
+
+funcion extraerNumero(texto) {
+  si (!texto) retornar Numero.NuN;
+  const coincidencia = Cadena(texto).coincidir(/[-+]?\d+(?:[\.,]\d+)?/)
+  si (!coincidencia) retornar Numero.NuN;
+  retornar interpretarValorMonetario(coincidencia[0])
+}
+
+funcion interpretarValorMonetario(valor) {
+  si (valor == nulo) retornar Numero.NuN;
+  retornar Numero.interpretarDecimal(Cadena(valor).reemplazar(',', '.'));
+}

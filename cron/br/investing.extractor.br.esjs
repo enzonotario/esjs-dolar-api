@@ -4,6 +4,7 @@ importar { chromium } desde 'playwright'
 importar { monedas } desde '@/br/constantes.br.esjs'
 importar tryToCatch desde 'try-to-catch'
 importar { grupo, logError } desde '@/log.esjs'
+importar extraerUsdBrl desde '@/br/yahoo.extractor.br.esjs'
 
 exportar porDefecto asincrono funcion () {
   const cotizaciones = []
@@ -78,40 +79,5 @@ funcion interpretarFecha(fecha) {
     retornar crear Fecha(fecha).aCadenaISO();
   } capturar (error) {
     retornar fecha
-  }
-}
-
-asincrono funcion extraerUsdBrl() {
-  const browser = esperar chromium.launch()
-  const context = esperar browser.newContext({
-    userAgent:
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
-  })
-  const page = esperar context.newPage()
-
-  intentar {
-    esperar page.goto('https://es.investing.com/currencies/usd-brl', {
-      waitUntil: 'domcontentloaded',
-    })
-
-    esperar page.waitForSelector('dd[data-test=bid]')
-
-    const compra = esperar page.$eval('dd[data-test=bid]', (el) => el.textContent)
-    const venta = esperar page.$eval('dd[data-test=ask]', (el) => el.textContent)
-    const fechoAnterior = esperar page.$eval(
-      'dd[data-test=prevClose]',
-      (el) => el.textContent,
-    )
-
-    retornar {
-      moeda: 'USD',
-      nome: 'Dólar',
-      compra: interpretarValorMonetario(compra),
-      venda: interpretarValorMonetario(venta),
-      fechoAnterior: interpretarValorMonetario(fechoAnterior),
-      dataAtualizacao: crear Fecha().aCadenaISO(),
-    };
-  } finalmente {
-    esperar browser.close()
   }
 }
