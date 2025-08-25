@@ -71,11 +71,14 @@
     "vitepress": "^1.6.3",
     "vitepress-openapi": "^0.1.0",
     "vitest": "^0.34.6",
+    "@faker-js/faker": "^8.4.1",
     "vue": "^3.3.4",
     "vue-i18n": "^9.5.0",
     "x-satori": "0.1.5"
   },
   "dependencies": {
-    "dotenv": "^16.3.1"
-  }
+    "dotenv": "^16.3.1",
+    "better-sqlite3": "^12.2.0"
+  },
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
 }
