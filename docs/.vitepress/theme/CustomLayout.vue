@@ -2,6 +2,7 @@
 import DefaultTheme from 'vitepress/theme'
 import GitHubStars from './components/GitHubStars.vue'
 import DonateBanner from './components/DonateBanner.vue'
+import Ads from './components/Ads.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -29,6 +30,10 @@ const { Layout } = DefaultTheme
 
     <template #layout-bottom>
       <DonateBanner />
+    </template>
+
+    <template #doc-footer-before>
+      <Ads />
     </template>
   </Layout>
 </template>
