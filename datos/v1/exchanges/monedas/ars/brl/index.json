@@ -3,28 +3,28 @@
     "exchange": "belo",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.003661396881098598,
-    "venta": 0.003966954022988506
+    "compra": 0.0036624142502709334,
+    "venta": 0.003973419540229885
   },
   {
     "exchange": "fiwind",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.0037027767615404102,
-    "venta": 0.003996247507605369
+    "compra": 0.0037008031649564733,
+    "venta": 0.0039941176073760905
   },
   {
     "exchange": "cocos",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.003769732906955828,
+    "compra": 0.0037677073548804843,
     "venta": null
   },
   {
     "exchange": "dolarapp",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.0037980504985158175,
+    "compra": 0.003795997574776592,
     "venta": null
   },
   {
@@ -45,21 +45,21 @@
     "exchange": "lemon",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.003685548962517967,
+    "compra": 0.003657510698218792,
     "venta": null
   },
   {
     "exchange": "plus",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.0037317610180244054,
+    "compra": 0.0037296732806206176,
     "venta": null
   },
   {
     "exchange": "astropay",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.003806758712977474,
+    "compra": 0.0038174993805659653,
     "venta": null
   }
 ]
