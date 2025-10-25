@@ -34,6 +34,7 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [ARS2USD](https://chromewebstore.google.com/detail/ars2usd/ejhhkpcflhmmlpjnhockoblhijklhokp?hl=es-419): Extensión de Chrome que permite convertir el precio de productos desde pesos argentinos (ARS) a dólares estadounidenses (USD) directamente en las páginas web.
 - [Dólar Ahora](https://play.google.com/store/apps/details?id=com.fraancogaalfras.dolarahora): App móvil para consultar el precio de los dólares financieros en Argentina.
 - [Stock Web](https://stockweb.com.ar/): App web de control de stock, los precios y costos del inventario se muestran en distintas monedas de cambio.
+- [Dolaruco-app](https://github.com/bacf5/dolaruco-app): App liviana y minimalista para la barra de menú de macOS, creada con SwiftUI, que te muestra rápidamente la cotización de venta del dólar en ARS.
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
