@@ -15,6 +15,7 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 ## Aplicaciones que consumen esta API
 
 - [Dólar Hoy Argentina](https://app.dolarapi.com/): Aplicación web escrita en [EsJS](https://es.js.org/) que muestra las diferentes cotizaciones del dólar en Argentina.
+- [Cobrix Venezuela](https://www.cobrix.co/): Cobrix es el Gestor de pagos y cobros de recurrencias mas completo de venezuela, usamos la api para el calculo del cobro en bolivares
 - [DolarLive](https://chrome.google.com/webstore/detail/dolarlive-cotizaci%C3%B3n-de-d/bkmobaaidlobcdldaegkbhhimicbdpcg?hl=es): Extensión de Chromium para consultar el valor diario del dólar y euro oficial y blue.
 - [Conversor ARS - USD](https://play.google.com/store/apps/details?id=com.ezebeck.arsusd&pli=1): App móvil escrita en React Native, disponible en [Google Play](https://play.google.com/store/apps/details?id=com.ezebeck.arsusd&pli=1) y [App Store](https://apps.apple.com/us/app/argentine-peso-to-dollar-rates/id6450311058).
 - [Impue-Steam](https://impue-steam.netlify.app/): Aplicación web para calcular los precios de los juegos de Steam en Argentina.
