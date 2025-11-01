@@ -15,7 +15,6 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 ## Aplicaciones que consumen esta API
 
 - [Dólar Hoy Argentina](https://app.dolarapi.com/): Aplicación web escrita en [EsJS](https://es.js.org/) que muestra las diferentes cotizaciones del dólar en Argentina.
-- [Cobrix Venezuela](https://www.cobrix.co/): Cobrix es el Gestor de pagos y cobros de recurrencias más completo de Venezuela, usamos la API para el cálculo del cobro en bolívares
 - [DolarLive](https://chrome.google.com/webstore/detail/dolarlive-cotizaci%C3%B3n-de-d/bkmobaaidlobcdldaegkbhhimicbdpcg?hl=es): Extensión de Chromium para consultar el valor diario del dólar y euro oficial y blue.
 - [Conversor ARS - USD](https://play.google.com/store/apps/details?id=com.ezebeck.arsusd&pli=1): App móvil escrita en React Native, disponible en [Google Play](https://play.google.com/store/apps/details?id=com.ezebeck.arsusd&pli=1) y [App Store](https://apps.apple.com/us/app/argentine-peso-to-dollar-rates/id6450311058).
 - [Impue-Steam](https://impue-steam.netlify.app/): Aplicación web para calcular los precios de los juegos de Steam en Argentina.
@@ -36,6 +35,7 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [Dólar Ahora](https://play.google.com/store/apps/details?id=com.fraancogaalfras.dolarahora): App móvil para consultar el precio de los dólares financieros en Argentina.
 - [Stock Web](https://stockweb.com.ar/): App web de control de stock, los precios y costos del inventario se muestran en distintas monedas de cambio.
 - [Dolaruco-app](https://github.com/bacf5/dolaruco-app): App liviana y minimalista para la barra de menú de macOS, creada con SwiftUI, que te muestra rápidamente la cotización de venta del dólar en ARS.
+- [Cobrix Venezuela](https://www.cobrix.co/): Cobrix es el Gestor de pagos y cobros de recurrencias más completo de Venezuela, usamos la API para el cálculo del cobro en bolívares
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
