@@ -5,7 +5,7 @@
     "nombre": "Oficial",
     "compra": 1425,
     "venta": 1475,
-    "fechaActualizacion": "2025-11-05T11:04:00.000Z"
+    "fechaActualizacion": "2025-11-05T13:48:00.000Z"
   },
   {
     "moneda": "USD",
@@ -19,25 +19,25 @@
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1485,
-    "venta": 1486.3,
+    "compra": 1485.3,
+    "venta": 1486.1,
     "fechaActualizacion": "2025-11-04T17:32:00.000Z"
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1503.8,
-    "venta": 1504.3,
+    "compra": 1502.4,
+    "venta": 1503.2,
     "fechaActualizacion": "2025-11-04T17:32:00.000Z"
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1442,
-    "venta": 1451,
-    "fechaActualizacion": "2025-11-05T11:20:00.000Z"
+    "compra": 1440,
+    "venta": 1449,
+    "fechaActualizacion": "2025-11-05T14:02:00.000Z"
   },
   {
     "moneda": "USD",
@@ -53,6 +53,6 @@
     "nombre": "Tarjeta",
     "compra": 1852.5,
     "venta": 1917.5,
-    "fechaActualizacion": "2025-11-05T11:04:00.000Z"
+    "fechaActualizacion": "2025-11-05T13:48:00.000Z"
   }
 ]
