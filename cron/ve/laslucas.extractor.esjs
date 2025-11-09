@@ -2,12 +2,23 @@ importar { chromium } desde 'playwright'
 importar { monedas } desde '@/ve/constantes.ve.esjs'
 
 exportar porDefecto asincrono funcion () {
-  const respuesta = esperar obtenerRespuesta()
+  const [paralelo, oficial] = esperar Promesa.todos([
+    obtenerCotizacionParalelo(),
+    obtenerCotizacionOficial(),
+  ])
 
-  retornar extraerCotizaciones(respuesta)
+  retornar extraerCotizaciones({ paralelo, oficial })
 }
 
-asincrono funcion obtenerRespuesta() {
+asincrono funcion obtenerCotizacionParalelo() {
+  retornar esperar obtenerCotizacionDesdeUrl('https://laslucas.com/?c=r')
+}
+
+asincrono funcion obtenerCotizacionOficial() {
+  retornar esperar obtenerCotizacionDesdeUrl('https://laslucas.com/?c=b')
+}
+
+asincrono funcion obtenerCotizacionDesdeUrl(url) {
   const browser = esperar chromium.launch()
   const context = esperar browser.newContext({
     userAgent:
@@ -16,7 +27,7 @@ asincrono funcion obtenerRespuesta() {
   const page = esperar context.newPage()
 
   intentar {
-    esperar page.goto('https://laslucas.com/?c=r', {
+    esperar page.goto(url, {
       waitUntil: 'domcontentloaded',
     })
 
@@ -27,27 +38,35 @@ asincrono funcion obtenerRespuesta() {
     )
 
     si (!valorDolar) {
-      lanzar crear Error('No se encontró la cotización del dólar')
+      lanzar crear Error(`No se encontró la cotización del dólar en ${url}`)
     }
 
     const valorNumerico = valorDolar.reemplazar(',', '.')
 
-    retornar {
-      laslucas: valorNumerico,
-    }
+    retornar interpretarValorMonetario(valorNumerico)
   } finalmente {
     esperar browser.close()
   }
 }
 
-funcion extraerCotizaciones(json) {
-  const fuentes = [
-    {
+funcion extraerCotizaciones({ paralelo, oficial }) {
+  const fuentes = []
+
+  si (paralelo) {
+    fuentes.agregar({
       slug: 'paralelo',
       nombre: 'Paralelo',
-      promedio: interpretarValorMonetario(json.laslucas),
-    },
-  ]
+      promedio: paralelo,
+    })
+  }
+
+  si (oficial) {
+    fuentes.agregar({
+      slug: 'oficial',
+      nombre: 'Oficial',
+      promedio: oficial,
+    })
+  }
 
   const cotizaciones = []
 
@@ -67,12 +86,4 @@ funcion extraerCotizaciones(json) {
 
 funcion interpretarValorMonetario(valor) {
   retornar Numero.interpretarDecimal(valor);
-}
-
-funcion interpretarFecha(fecha) {
-  intentar {
-    retornar crear Fecha(fecha).aCadenaISO();
-  } capturar (error) {
-    retornar fecha
-  }
 }

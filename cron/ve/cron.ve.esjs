@@ -1,4 +1,3 @@
-importar extraerDolaresMonitor desde '@/ve/monitordolarvenezuela.extractor.esjs'
 importar extraerDolaresLasLucas desde '@/ve/laslucas.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
@@ -18,13 +17,11 @@ exportar porDefecto asincrono funcion () {
 }
 
 asincrono funcion guardarDolares() {
-  const dolaresMonitor = esperar extraerDolaresMonitor()
   const dolaresLasLucas = esperar extraerDolaresLasLucas()
 
   const orden = ['oficial', 'paralelo', 'bitcoin']
 
   const dolares = [
-    ...dolaresMonitor.filtrar((dolar) => dolar.fuente !== 'paralelo'),
     ...dolaresLasLucas,
   ]
 
