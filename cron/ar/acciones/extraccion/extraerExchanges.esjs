@@ -19,7 +19,6 @@ asincrono funcion obtenerCotizaciones() {
     fiwind: consultarFiwind,
     cocos: consultarCocos,
     dolarapp: consultarDolarApp,
-    takenos: consultarTakenos,
     satoshitango: consultarSatoshiTango,
     prex: consultarPrex,
     lemon: consultarLemon,
@@ -158,26 +157,6 @@ asincrono funcion consultarDolarApp() {
       par: ['BRL', 'ARS'],
       compra: fxRate,
       venta: nulo,
-    },
-  ];
-}
-
-asincrono funcion consultarTakenos() {
-  const respuestaCompra = esperar axios({
-    url: 'https://app.takenos.com/api/rates/BRL_USD?provider=kamiPay&operation=sell',
-  })
-
-  const respuestaVenta = esperar axios({
-    url: 'https://app.takenos.com/api/rates/BRL_USD?provider=kamiPay&operation=buy',
-  })
-
-  retornar [
-    {
-      exchange: 'takenos',
-      par: ['USD', 'BRL'],
-      parCriptomoneda: [nulo, 'USDT'],
-      compra: Numero(respuestaCompra.data.rate),
-      venta: Numero(respuestaVenta.data.rate),
     },
   ];
 }

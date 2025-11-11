@@ -36,11 +36,6 @@ funcion generarExchanges() {
       logo: 'https://icons.com.ar/icons/cripto/dolar-app.svg',
     },
     {
-      id: 'takenos',
-      nombre: 'Takenos',
-      logo: 'https://icons.com.ar/icons/cripto/takenos.svg',
-    },
-    {
       id: 'satoshitango',
       nombre: 'Satoshi Tango',
       logo: 'https://icons.com.ar/icons/cripto/satoshi-tango.svg',
