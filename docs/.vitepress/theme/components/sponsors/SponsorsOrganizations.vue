@@ -37,6 +37,23 @@
           </div>
         </div>
       </a>
+
+      <a
+        href="https://diploi.com/"
+        target="_blank" rel="noopener"
+        class="border rounded-lg p-2 flex gap-3 !no-underline"
+      >
+        <img src="https://argentinadatos.com/assets/sponsors/diploi.png" alt="Diploi Logo" class="w-16 h-16 rounded bg-gray-100 dark:bg-gray-800 object-cover">
+        <div class="flex flex-col flex-grow">
+          <div class="font-medium">
+            Diploi
+          </div>
+          <span class="flex-1" />
+          <div class="flex justify-between items-center text-xs text-gray-600 dark:text-gray-400">
+            <span>Dominio</span>
+          </div>
+        </div>
+      </a>
     </div>
 
     <div class="mt-4 text-xs">
