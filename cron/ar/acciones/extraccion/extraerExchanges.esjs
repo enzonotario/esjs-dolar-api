@@ -17,7 +17,6 @@ asincrono funcion obtenerCotizaciones() {
   const maps = {
     belo: consultarBelo,
     fiwind: consultarFiwind,
-    cocos: consultarCocos,
     dolarapp: consultarDolarApp,
     satoshitango: consultarSatoshiTango,
     prex: consultarPrex,
@@ -96,28 +95,6 @@ asincrono funcion consultarFiwind() {
       par: ['BRL', 'ARS'],
       compra: Numero(brlToArs.buy),
       venta: Numero(brlToArs.sell),
-    },
-  ];
-}
-
-asincrono funcion consultarCocos() {
-  const respuesta = esperar (
-    esperar fetch('https://api.cocos.capital/api/v1/public/pix-prices')
-  ).json()
-
-  retornar [
-    {
-      exchange: 'cocos',
-      par: ['USD', 'BRL'],
-      parCriptomoneda: ['USDT', nulo],
-      compra: Numero(respuesta.usdToBrlRate),
-      venta: nulo,
-    },
-    {
-      exchange: 'cocos',
-      par: ['BRL', 'ARS'],
-      compra: Numero(respuesta.brlToArsRate),
-      venta: nulo,
     },
   ];
 }
