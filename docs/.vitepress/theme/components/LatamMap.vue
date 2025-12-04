@@ -186,7 +186,18 @@ function getSvg(region) {
           <path d="M264.745,687.564l0.225,4.951l3.803-0.337l3.242-2.144l-5.48-1.124L264.745,687.564z">
             <title>Argentina</title>
           </path>
-          <path d="M281.194,678.393l-2.273-0.25l-2.265,1.521l1.642,1.781L281.194,678.393z">
+          <path
+            class="country"
+            :class="{ active: isSupported('ar') }"
+            d="M281.194,678.393l-2.273-0.25l-2.265,1.521l1.642,1.781L281.194,678.393z"
+          >
+            <title>Argentina</title>
+          </path>
+          <path
+            class="country"
+            :class="{ active: isSupported('ar') }"
+            d="M283.459,677.252l-0.752,2.411l-2.144,1.901l0.13,0.631l3.655-1.4l1.513-1.901L283.459,677.252z"
+          >
             <title>Argentina</title>
           </path>
         </g>
