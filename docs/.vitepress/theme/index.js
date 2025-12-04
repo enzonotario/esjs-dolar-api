@@ -35,8 +35,6 @@ export default {
       },
     })
 
-    await useShiki().initShiki()
-
     theme.enhanceApp({ app })
 
     app.component('IndexDemo', IndexDemo)
