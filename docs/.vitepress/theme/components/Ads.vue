@@ -43,9 +43,5 @@ const bannerMobileSrc = computed(() => {
         class="w-full rounded-lg"
       >
     </a>
-
-    <div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-      Ad
-    </div>
   </div>
 </template>
