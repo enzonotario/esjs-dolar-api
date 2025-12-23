@@ -136,8 +136,8 @@ importers:
         specifier: ^1.6.4
         version: 1.6.4(@algolia/client-search@5.17.1)(@types/node@20.19.25)(axios@1.13.2)(change-case@5.4.4)(postcss@8.5.6)(search-insights@2.14.0)(typescript@5.9.3)
       vitepress-openapi:
-        specifier: ^0.1.12
-        version: 0.1.12(typescript@5.9.3)(vitepress@1.6.4(@algolia/client-search@5.17.1)(@types/node@20.19.25)(axios@1.13.2)(change-case@5.4.4)(postcss@8.5.6)(search-insights@2.14.0)(typescript@5.9.3))(vue@3.5.25(typescript@5.9.3))
+        specifier: https://pkg.pr.new/vitepress-openapi@ccb5648
+        version: https://pkg.pr.new/vitepress-openapi@ccb5648(typescript@5.9.3)(vitepress@1.6.4(@algolia/client-search@5.17.1)(@types/node@20.19.25)(axios@1.13.2)(change-case@5.4.4)(postcss@8.5.6)(search-insights@2.14.0)(typescript@5.9.3))(vue@3.5.25(typescript@5.9.3))
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@20.19.25)(jiti@1.21.6)(tsx@3.12.7)(yaml@2.8.2)
@@ -5888,8 +5888,9 @@ packages:
       yaml:
         optional: true
 
-  vitepress-openapi@0.1.12:
-    resolution: {integrity: sha512-r6Uj43MZpWDrU60xvRG5ZT7Y9wG0qJZIzw7VmXqF5vbbB196/fZ7a3dEhhVs8HrQuX2JsMdRj2reurB+bwidew==}
+  vitepress-openapi@https://pkg.pr.new/vitepress-openapi@ccb5648:
+    resolution: {tarball: https://pkg.pr.new/vitepress-openapi@ccb5648}
+    version: 0.1.12
     peerDependencies:
       vitepress: '>=1.0.0'
       vue: ^3.0.0
@@ -12430,7 +12431,7 @@ snapshots:
       tsx: 3.12.7
       yaml: 2.8.2
 
-  vitepress-openapi@0.1.12(typescript@5.9.3)(vitepress@1.6.4(@algolia/client-search@5.17.1)(@types/node@20.19.25)(axios@1.13.2)(change-case@5.4.4)(postcss@8.5.6)(search-insights@2.14.0)(typescript@5.9.3))(vue@3.5.25(typescript@5.9.3)):
+  vitepress-openapi@https://pkg.pr.new/vitepress-openapi@ccb5648(typescript@5.9.3)(vitepress@1.6.4(@algolia/client-search@5.17.1)(@types/node@20.19.25)(axios@1.13.2)(change-case@5.4.4)(postcss@8.5.6)(search-insights@2.14.0)(typescript@5.9.3))(vue@3.5.25(typescript@5.9.3)):
     dependencies:
       '@vueuse/core': 13.4.0(vue@3.5.25(typescript@5.9.3))
       class-variance-authority: 0.7.1
