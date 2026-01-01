@@ -88,6 +88,7 @@ exportar const dolarHoy = {
     bolsa: {
       href: '/cotizaciondolarbolsa',
       extractor: 'cabecera',
+      titulo: 'DÓLAR MEP'
     },
     contadoconliqui: {
       href: '/cotizaciondolarcontadoconliqui',
