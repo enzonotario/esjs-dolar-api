@@ -1,12 +1,14 @@
 import { describe, expect, it } from 'vitest'
+import { monedas } from '@/br/constantes.br.esjs'
 import extraer from '@/br/investing.extractor.br.esjs'
-import { monedas as monedasAr } from '@/ar/constantes.ar.esjs'
 
 describe('investing.extractor.br.esjs', () => {
-  it('extrae cotizaciones de monedas', async () => {
+  it('extrae cotizaciones de monedas usando Firecrawl', {
+    timeout: 180000,
+  }, async () => {
     const cotizaciones = await extraer()
 
-    expect(cotizaciones.length).toBe(monedasAr.length - 1)
+    expect(cotizaciones.length).toBe(monedas.length - 1)
 
     cotizaciones.forEach((cotizacion) => {
       expect(cotizacion).toBeTypeOf('object')
@@ -16,7 +18,5 @@ describe('investing.extractor.br.esjs', () => {
       expect(cotizacion.venda).toBeTypeOf('number')
       expect(cotizacion.fechoAnterior).toBeTypeOf('number')
     })
-  }, {
-    timeout: 30000,
   })
 })

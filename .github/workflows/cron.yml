@@ -47,6 +47,8 @@ jobs:
           echo "VITE_PREX_API_KEY=${{ secrets.VITE_PREX_API_KEY }}" >> .env
           echo "VITE_PLUS_AUTH_KEY=${{ secrets.VITE_PLUS_AUTH_KEY }}" >> .env
           echo "VITE_ASTROPAY_AUTH=${{ secrets.VITE_ASTROPAY_AUTH }}" >> .env
+          echo "VITE_FIRECRAWL_BASE_URL=${{ secrets.VITE_FIRECRAWL_BASE_URL }}" >> .env
+          echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
 
       - name: Install dependencies
         run: pnpm install

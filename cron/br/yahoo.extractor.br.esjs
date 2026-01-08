@@ -1,48 +1,53 @@
-importar axios desde 'axios'
-importar cheerio desde 'cheerio'
+importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
+importar { grupo } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
-  const url = 'https://es-us.finanzas.yahoo.com/quote/BRL%3DX/'
-  const response = esperar axios.get(url)
-  const $ = cheerio.load(response.data)
+  const log = grupo({
+    cron: 'cron.br.esjs',
+    extractor: 'yahoo.extractor.br.esjs',
+    moneda: 'USD',
+  })
 
-  const container = $('[data-testid="quote-statistics"]')
+  const url = 'https://es.investing.com/currencies/usd-brl'
 
-  const ofertaTexto = container
-    .find('span.label[title="Oferta"]')
-    .parent().buscar('span.value')
-    .text()
+  const datos = esperar scrapearConFirecrawl(log, {
+    url,
+    prompt: 'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
+    schema: {
+      compra: {
+        type: 'number',
+        description: 'Valor de compra (bid) de la moneda',
+      },
+      venda: {
+        type: 'number',
+        description: 'Valor de venta (ask) de la moneda',
+      },
+      fechoAnterior: {
+        type: 'number',
+        description: 'Valor de cierre anterior (prevClose) de la moneda',
+      },
+      dataAtualizacao: {
+        type: 'string',
+        description: 'Fecha y hora de actualización en formato ISO 8601',
+      },
+    },
+    required: ['compra', 'venda', 'fechoAnterior', 'dataAtualizacao'],
+  })
 
-  const demandaTexto = container
-    .find('span.label[title="Demanda"]')
-    .parent().buscar('span.value')
-    .text()
-
-  const fechoAnteriorTexto = container.buscar('fin-streamer[data-field="regularMarketPreviousClose"]')
-    .text()
-
-  const compra = extraerNumero(ofertaTexto)
-  const venda = extraerNumero(demandaTexto)
-  const fechoAnterior = interpretarValorMonetario(fechoAnteriorTexto)
+  funcion interpretarFecha(fecha) {
+    intentar {
+      retornar crear Fecha(fecha).aCadenaISO()
+    } capturar (error) {
+      retornar fecha
+    }
+  }
 
   retornar {
     moeda: 'USD',
     nome: 'Dólar',
-    compra: compra,
-    venda: venda,
-    fechoAnterior: fechoAnterior,
-    dataAtualizacao: crear Fecha().aCadenaISO(),
-  };
-}
-
-funcion extraerNumero(texto) {
-  si (!texto) retornar Numero.NuN;
-  const coincidencia = Cadena(texto).coincidir(/[-+]?\d+(?:[\.,]\d+)?/)
-  si (!coincidencia) retornar Numero.NuN;
-  retornar interpretarValorMonetario(coincidencia[0])
-}
-
-funcion interpretarValorMonetario(valor) {
-  si (valor == nulo) retornar Numero.NuN;
-  retornar Numero.interpretarDecimal(Cadena(valor).reemplazar(',', '.'));
+    compra: datos.compra,
+    venda: datos.venda,
+    fechoAnterior: datos.fechoAnterior,
+    dataAtualizacao: interpretarFecha(datos.dataAtualizacao),
+  }
 }
