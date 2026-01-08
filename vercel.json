@@ -77,6 +77,16 @@
       "destination": "/br/v1/:path*"
     },
     {
+      "source": "/v1/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "co.dolarapi.com"
+        }
+      ],
+      "destination": "/co/v1/:path*"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -141,6 +151,16 @@
       "has": [
         {
           "type": "host",
+          "value": "co.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/colombia/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
           "value": "dolarapi.com"
         }
       ],
@@ -195,6 +215,16 @@
         }
       ],
       "destination": "/docs/brasil/openapi.json"
+    },
+    {
+      "source": "/openapi.json",
+      "has": [
+        {
+          "type": "host",
+          "value": "co.dolarapi.com"
+        }
+      ],
+      "destination": "/docs/colombia/openapi.json"
     },
     {
       "source": "/favicon.ico",

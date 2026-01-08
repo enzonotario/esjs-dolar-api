@@ -5,6 +5,7 @@ importar uy desde '@/uy/cron.uy.esjs'
 importar mx desde '@/mx/cron.mx.esjs'
 importar bo desde '@/bo/cron.bo.esjs'
 importar br desde '@/br/cron.br.esjs'
+importar co desde '@/co/cron.co.esjs'
 importar { grupo } desde '@/log.esjs'
 
 exportar asincrono funcion iniciar(comando) {
@@ -19,6 +20,7 @@ exportar asincrono funcion iniciar(comando) {
   esperar mx()
   esperar bo()
   esperar br()
+  esperar co()
 
   log.info('Cron finalizado')
 }

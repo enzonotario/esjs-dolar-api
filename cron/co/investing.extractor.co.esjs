@@ -1,0 +1,73 @@
+importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
+importar { monedas } desde '@/co/constantes.co.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
+
+exportar porDefecto asincrono funcion () {
+  const cotizaciones = []
+
+  para (const moneda de monedas.filtrar((moneda) => moneda.codigo !== 'COP')) {
+    const log = grupo({
+      cron: 'cron.co.esjs',
+      extractor: 'investing.extractor.co.esjs',
+      moneda: moneda.codigo,
+    })
+
+    const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda, log)
+
+    si (error) {
+      logError(log, error)
+    } sino {
+      cotizaciones.agregar(cotizacion)
+    }
+  }
+
+  retornar cotizaciones
+}
+
+asincrono funcion extraerCotizacion(moneda, log) {
+  const monedaEnMinusculas = moneda.codigo.aMinusculas()
+  const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-cop`
+
+  const datos = esperar scrapearConFirecrawl(log, {
+    url,
+    prompt: 'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
+    schema: {
+      compra: {
+        type: 'number',
+        description: 'Valor de compra (bid) de la moneda',
+      },
+      venta: {
+        type: 'number',
+        description: 'Valor de venta (ask) de la moneda',
+      },
+      cierreAnterior: {
+        type: 'number',
+        description: 'Valor de cierre anterior (prevClose) de la moneda',
+      },
+      fechaActualizacion: {
+        type: 'string',
+        description: 'Fecha y hora de actualización en formato ISO 8601',
+      },
+    },
+    required: ['compra', 'venta', 'cierreAnterior', 'fechaActualizacion'],
+  })
+
+  funcion interpretarFecha(fecha) {
+    intentar {
+      retornar crear Fecha(fecha).aCadenaISO()
+    } capturar (error) {
+      retornar fecha
+    }
+  }
+
+  retornar {
+    moneda: moneda.codigo.aMayusculas(),
+    nombre: moneda.nombre,
+    compra: datos.compra,
+    venta: datos.venta,
+    cierreAnterior: datos.cierreAnterior,
+    fechaActualizacion: interpretarFecha(datos.fechaActualizacion),
+  }
+}
+

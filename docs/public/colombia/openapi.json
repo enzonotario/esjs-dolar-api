@@ -1,0 +1,287 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DolarApi.com",
+    "version": "1.1.0",
+    "description": "<div class=\"flex flex-col\">\n\n  API desarrollada en <a href=\"https://es.js.org?ref=dolarapi.com\" target=\"_blank\">EsJS</a> que proporciona información actualizada sobre las cotizaciones del Dólar en Colombia.\n\n  ¿Te resultó útil esta API? <strong>¡Deja tu ⭐ en <a href=\"https://github.com/enzonotario/esjs-dolar-api\" alt=\"GitHub\" target=\"_blank\">GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)"
+  },
+  "servers": [
+    {
+      "url": "https://co.dolarapi.com",
+      "description": "Producción (Colombia)"
+    },
+    {
+      "url": "http://localhost:5173",
+      "description": "Local"
+    }
+  ],
+  "paths": {
+    "/v1/cotizaciones": {
+      "get": {
+        "summary": "Cotizaciones",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotizaciones de las principales monedas en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna las cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cotizaciones"
+      }
+    },
+    "/v1/cotizaciones/usd": {
+      "get": {
+        "summary": "Dólar",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del dólar americano en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna la cotización del Dólar",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-usd-cop"
+      }
+    },
+    "/v1/cotizaciones/eur": {
+      "get": {
+        "summary": "Euro",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del euro en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna la cotización del Euro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-eur-cop"
+      }
+    },
+    "/v1/cotizaciones/brl": {
+      "get": {
+        "summary": "Real Brasileño",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del real brasileño en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna la cotización del Real Brasileño",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-brl-cop"
+      }
+    },
+    "/v1/cotizaciones/mxn": {
+      "get": {
+        "summary": "Peso Mexicano",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del peso mexicano en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna la cotización del Peso Mexicano",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-mxn-cop"
+      }
+    },
+    "/v1/cotizaciones/clp": {
+      "get": {
+        "summary": "Peso Chileno",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del peso chileno en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna la cotización del Peso Chileno",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-clp-cop"
+      }
+    },
+    "/v1/cotizaciones/pen": {
+      "get": {
+        "summary": "Sol Peruano",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del sol peruano en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna la cotización del Sol Peruano",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-pen-cop"
+      }
+    },
+    "/v1/cotizaciones/ars": {
+      "get": {
+        "summary": "Peso Argentino",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Cotización del peso argentino en pesos colombianos",
+        "responses": {
+          "200": {
+            "description": "Retorna la cotización del Peso Argentino",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cotizacion"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ars-cop"
+      }
+    },
+    "/v1/status": {
+      "get": {
+        "summary": "Estado de la API",
+        "tags": [
+          "API"
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna el estado de la API",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-status"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cotizacion": {
+        "title": "Cotizacion",
+        "type": "object",
+        "x-stoplight": {
+          "id": "ce96aa7960850"
+        },
+        "x-examples": {
+          "Ejemplo 1": {
+            "fechaActualizacion": "2021-01-01T00:00:00.000Z",
+            "compra": 123.99,
+            "venta": 132.99
+          }
+        },
+        "properties": {
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          },
+          "cierreAnterior": {
+            "type": "number"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "moneda": {
+            "type": "string"
+          },
+          "fechaActualizacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "venta",
+          "cierreAnterior",
+          "nombre",
+          "moneda",
+          "fechaActualizacion"
+        ]
+      },
+      "Status": {
+        "title": "Status",
+        "x-stoplight": {
+          "id": "ogwpb2wxiqwqh"
+        },
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "aleatorio": {
+            "type": "integer"
+          }
+        },
+        "x-examples": {
+          "Ejemplo 1": {
+            "status": "Disponible",
+            "aleatorio": 1234
+          }
+        }
+      }
+    }
+  }
+}
+
