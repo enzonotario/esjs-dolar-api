@@ -63,6 +63,28 @@
         "operationId": "get-usd-cop"
       }
     },
+    "/v1/trm": {
+      "get": {
+        "summary": "TRM",
+        "tags": [
+          "Cotización actual"
+        ],
+        "description": "Tasa de Cambio Representativa del Mercado (TRM) oficial de Colombia publicada por la Superintendencia Financiera",
+        "responses": {
+          "200": {
+            "description": "Retorna la TRM oficial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TRM"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-trm"
+      }
+    },
     "/v1/cotizaciones/eur": {
       "get": {
         "summary": "Euro",
@@ -257,6 +279,43 @@
           "cierreAnterior",
           "nombre",
           "moneda",
+          "fechaActualizacion"
+        ]
+      },
+      "TRM": {
+        "title": "TRM",
+        "type": "object",
+        "x-stoplight": {
+          "id": "trm-colombia"
+        },
+        "x-examples": {
+          "Ejemplo 1": {
+            "fechaActualizacion": "2021-01-01T00:00:00.000Z",
+            "valor": 3734.67,
+            "unidad": "COP",
+            "nombre": "TRM"
+          }
+        },
+        "properties": {
+          "valor": {
+            "type": "number",
+            "description": "Valor de la Tasa de Cambio Representativa del Mercado"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "unidad": {
+            "type": "string",
+            "description": "Unidad de la TRM (COP - Peso Colombiano)"
+          },
+          "fechaActualizacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "valor",
+          "nombre",
+          "unidad",
           "fechaActualizacion"
         ]
       },

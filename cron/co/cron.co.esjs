@@ -1,4 +1,6 @@
 importar extraer desde '@/co/investing.extractor.co.esjs'
+importar extraerTrm desde '@/co/trm.extractor.co.esjs'
+importar tryToCatch desde 'try-to-catch'
 importar { escribirRutaRegion, leerRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 importar { guardarCotizacionesCo } desde '@/co/db.co.esjs'
@@ -12,6 +14,11 @@ exportar porDefecto asincrono funcion () {
     const valoresActuales = esperar leerRutaRegion('co', '/cotizaciones') || []
 
     const valoresNuevos = esperar extraer()
+
+    const [errorTrm, trm] = esperar tryToCatch(extraerTrm)
+    si (errorTrm) {
+      logError(log, errorTrm, 'Error al extraer TRM')
+    }
 
     const cotizaciones = valoresActuales.mapear((cotizacion) => {
       const cotizacionNueva = valoresNuevos.buscar(
@@ -37,6 +44,10 @@ exportar porDefecto asincrono funcion () {
     })
 
     escribirRutaRegion('co', '/cotizaciones', cotizaciones)
+
+    si (!errorTrm && trm) {
+      escribirRutaRegion('co', '/trm', trm)
+    }
 
     intentar {
       guardarCotizacionesCo(cotizaciones)
