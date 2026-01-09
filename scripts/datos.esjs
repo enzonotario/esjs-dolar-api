@@ -10,7 +10,7 @@ execSync(
   )} ${join(raiz, 'dist/static/ar/v1')}`,
 )
 
-const regiones = ['cl', 've', 'uy', 'mx', 'bo', 'br']
+const regiones = ['cl', 've', 'uy', 'mx', 'bo', 'br', 'co']
 
 regiones.paraCada((region) => {
   execSync(
