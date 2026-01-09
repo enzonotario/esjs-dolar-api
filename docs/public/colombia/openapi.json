@@ -217,7 +217,7 @@
         "operationId": "get-ars-cop"
       }
     },
-    "/v1/status": {
+    "/v1/estado": {
       "get": {
         "summary": "Estado de la API",
         "tags": [
@@ -229,13 +229,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Status"
+                  "$ref": "#/components/schemas/Estado"
                 }
               }
             }
           }
         },
-        "operationId": "get-status"
+        "operationId": "get-estado"
       }
     }
   },
@@ -261,9 +261,6 @@
           "venta": {
             "type": "number"
           },
-          "cierreAnterior": {
-            "type": "number"
-          },
           "nombre": {
             "type": "string"
           },
@@ -276,7 +273,6 @@
         },
         "required": [
           "venta",
-          "cierreAnterior",
           "nombre",
           "moneda",
           "fechaActualizacion"
@@ -319,14 +315,14 @@
           "fechaActualizacion"
         ]
       },
-      "Status": {
-        "title": "Status",
+      "Estado": {
+        "title": "Estado",
         "x-stoplight": {
           "id": "ogwpb2wxiqwqh"
         },
         "type": "object",
         "properties": {
-          "status": {
+          "estado": {
             "type": "string"
           },
           "aleatorio": {
@@ -335,7 +331,7 @@
         },
         "x-examples": {
           "Ejemplo 1": {
-            "status": "Disponible",
+            "estado": "Disponible",
             "aleatorio": 1234
           }
         }

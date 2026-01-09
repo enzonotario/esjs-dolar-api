@@ -17,7 +17,6 @@ describe('investing.extractor.co.esjs', () => {
       expect(cotizacion.nombre).toBeTypeOf('string')
       expect(cotizacion.compra).toBeTypeOf('number')
       expect(cotizacion.venta).toBeTypeOf('number')
-      expect(cotizacion.cierreAnterior).toBeTypeOf('number')
     })
   })
 })

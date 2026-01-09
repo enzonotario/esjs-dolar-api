@@ -31,7 +31,7 @@ asincrono funcion extraerCotizacion(moneda, log) {
 
   const datos = esperar scrapearConFirecrawl(log, {
     url,
-    prompt: 'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
+    prompt: 'Extrae los valores de compra (bid), venta (ask) y fecha de actualización de la cotización de la moneda.',
     schema: {
       compra: {
         type: 'number',
@@ -41,16 +41,12 @@ asincrono funcion extraerCotizacion(moneda, log) {
         type: 'number',
         description: 'Valor de venta (ask) de la moneda',
       },
-      cierreAnterior: {
-        type: 'number',
-        description: 'Valor de cierre anterior (prevClose) de la moneda',
-      },
       fechaActualizacion: {
         type: 'string',
         description: 'Fecha y hora de actualización en formato ISO 8601',
       },
     },
-    required: ['compra', 'venta', 'cierreAnterior', 'fechaActualizacion'],
+    required: ['compra', 'venta', 'fechaActualizacion'],
   })
 
   funcion interpretarFecha(fecha) {
@@ -66,7 +62,6 @@ asincrono funcion extraerCotizacion(moneda, log) {
     nombre: moneda.nombre,
     compra: datos.compra,
     venta: datos.venta,
-    cierreAnterior: datos.cierreAnterior,
     fechaActualizacion: interpretarFecha(datos.fechaActualizacion),
   }
 }

@@ -57,7 +57,7 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 const spec = setRegionForSidebar('co')
 </script>
 
-<OAOperation :spec="spec" operationId="get-status" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-estado" :hide-branding="false">
 
 <template #description="description">
 
@@ -67,7 +67,7 @@ const spec = setRegionForSidebar('co')
 
 <template #footer>
 
-<!--@include: ./parts/get-status-footer.md -->
+<!--@include: ./parts/get-estado-footer.md -->
 
 </template>
 
