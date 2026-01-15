@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 37.55,
+    "compra": 37.35,
     "venta": 39.75,
-    "fechaActualizacion": "2026-01-15T19:03:01.281Z"
+    "fechaActualizacion": "2026-01-15T20:03:49.831Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 42.52,
-    "venta": 47.45,
-    "fechaActualizacion": "2026-01-15T19:03:01.282Z"
+    "compra": 42.33,
+    "venta": 47.48,
+    "fechaActualizacion": "2026-01-15T20:03:49.831Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.02,
     "venta": 0.2,
-    "fechaActualizacion": "2026-01-15T19:03:01.282Z"
+    "fechaActualizacion": "2026-01-15T20:03:49.832Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
     "compra": 6.65,
     "venta": 8.35,
-    "fechaActualizacion": "2026-01-15T19:03:01.282Z"
+    "fechaActualizacion": "2026-01-15T20:03:49.832Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 49.05,
-    "venta": 55.22,
-    "fechaActualizacion": "2026-01-15T19:03:01.282Z"
+    "compra": 48.82,
+    "venta": 55.26,
+    "fechaActualizacion": "2026-01-15T20:03:49.832Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 45.94,
-    "venta": 50.42,
-    "fechaActualizacion": "2026-01-15T19:03:01.282Z"
+    "compra": 45.67,
+    "venta": 50.4,
+    "fechaActualizacion": "2026-01-15T20:03:49.832Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
     "compra": 0.00545,
-    "venta": 0.00601,
-    "fechaActualizacion": "2026-01-15T19:03:01.282Z"
+    "venta": 0.00605,
+    "fechaActualizacion": "2026-01-15T20:03:49.832Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.423,
-    "fechaActualizacion": "2026-01-15T19:03:01.283Z"
+    "fechaActualizacion": "2026-01-15T20:03:49.833Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 172039.08,
+    "compra": 171122.76,
     "venta": 184099.74,
-    "fechaActualizacion": "2026-01-15T19:03:01.283Z"
+    "fechaActualizacion": "2026-01-15T20:03:49.833Z"
   }
 ]
