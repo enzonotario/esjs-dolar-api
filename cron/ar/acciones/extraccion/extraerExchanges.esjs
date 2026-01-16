@@ -3,6 +3,7 @@ importar cheerio desde 'cheerio'
 importar { parse } desde 'date-fns'
 importar { collect } desde 'collect.js'
 importar { grupo, logError } desde '@/log.esjs'
+importar tryToCatch desde 'try-to-catch'
 
 exportar asincrono funcion extraerExchanges() {
   const cotizaciones = esperar obtenerCotizaciones()
@@ -34,11 +35,12 @@ asincrono funcion obtenerCotizaciones() {
       exchange,
     })
 
-    intentar {
-      const data = esperar fn()
-      cotizaciones.agregar(...data)
-    } capturar (error) {
+    const [error, data] = esperar tryToCatch(fn)
+
+    si (error) {
       logError(log, error)
+    } sino {
+      cotizaciones.agregar(...data)
     }
   }
 

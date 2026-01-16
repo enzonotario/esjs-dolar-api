@@ -1,12 +1,26 @@
 importar { extraerExchanges } desde '@/ar/acciones/extraccion/extraerExchanges.esjs'
 importar { escribirRuta } desde '@/utils/rutas.esjs'
 importar { collect } desde 'collect.js'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar asincrono funcion cronExchanges() {
+  const log = grupo({
+    cron: 'cron.ar.esjs',
+    comando: 'cronExchanges',
+  })
+
   const rutas = []
 
   rutas.agregar(generarExchanges())
-  rutas.agregar(esperar generarExchangesMonedas())
+
+  const [error, rutasMonedas] = esperar tryToCatch(generarExchangesMonedas)
+
+  si (error) {
+    logError(log, error)
+  } sino {
+    rutas.agregar(rutasMonedas)
+  }
 
   consola.tabla(rutas)
 

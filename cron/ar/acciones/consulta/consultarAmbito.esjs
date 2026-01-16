@@ -1,9 +1,21 @@
 importar { extraerAmbito } desde '@/ar/acciones/extraccion/extraerAmbito.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { unificar } desde '@/utils/unificar.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 asincrono funcion nuevosValores() {
-  var dolares = esperar extraerAmbito()
+  const log = grupo({
+    cron: 'cron.ar.esjs',
+    accion: 'consultarAmbito',
+  })
+
+  const [error, dolares] = esperar tryToCatch(extraerAmbito)
+
+  si (error) {
+    logError(log, error, { extractor: 'extraerAmbito' })
+    retornar []
+  }
 
   retornar dolares
 }

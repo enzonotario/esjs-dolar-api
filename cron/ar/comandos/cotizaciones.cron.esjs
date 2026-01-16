@@ -1,8 +1,20 @@
 importar { consultarCotizaciones } desde '@/ar/acciones/consulta/consultarCotizaciones.esjs'
 importar { escribirRuta } desde '@/utils/rutas.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar asincrono funcion cronCotizaciones() {
-  const cotizaciones = esperar consultarCotizaciones()
+  const log = grupo({
+    cron: 'cron.ar.esjs',
+    comando: 'cronCotizaciones',
+  })
+
+  const [error, cotizaciones] = esperar tryToCatch(consultarCotizaciones)
+
+  si (error) {
+    logError(log, error)
+    retornar
+  }
 
   escribirRuta(`/cotizaciones`, cotizaciones)
 

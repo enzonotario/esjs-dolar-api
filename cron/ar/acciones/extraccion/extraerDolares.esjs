@@ -1,16 +1,37 @@
 importar { dolarHoy, casas } desde '@/ar/constantes.ar.esjs'
 importar cheerio desde 'cheerio'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar asincrono funcion extraerDolares() {
-  const pagina = esperar consultarPagina()
+  const log = grupo({
+    cron: 'cron.ar.esjs',
+    extractor: 'extraerDolares',
+  })
+
+  const [errorPagina, pagina] = esperar tryToCatch(consultarPagina)
+
+  si (errorPagina) {
+    logError(log, errorPagina)
+    retornar []
+  }
 
   const $ = cheerio.load(pagina)
 
-  retornar esperar Promesa.todos(
-    casas.filtrar((casa) => !casa.calculado).mapear(asincrono (casa) => ({
-        ...(esperar obtenerValoresParaCasa($, casa)),
-      })),
-  );
+  const resultados = esperar Promesa.todos(
+    casas.filtrar((casa) => !casa.calculado).mapear(asincrono (casa) => {
+        const [error, valores] = esperar tryToCatch(obtenerValoresParaCasa, $, casa)
+
+        si (error) {
+          logError(log, error, { casa: casa.identificador })
+          retornar nulo
+        }
+
+        retornar valores
+      }),
+  )
+
+  retornar resultados.filtrar((resultado) => resultado !== nulo);
 }
 
 asincrono funcion consultarPagina() {

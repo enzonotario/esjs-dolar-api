@@ -2,6 +2,8 @@ importar axios desde 'axios'
 importar cheerio desde 'cheerio'
 importar { parse } desde 'date-fns'
 importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 const monedas = [
   {
@@ -32,39 +34,44 @@ const monedas = [
 ]
 
 exportar asincrono funcion extraerInvertirOnline() {
-  intentar {
-    const respuesta = esperar obtenerRespuesta()
+  const log = grupo({
+    cron: 'cron.ar.esjs',
+    extractor: 'extraerInvertirOnline',
+  })
 
-    const $ = cheerio.load(respuesta)
+  const [error, respuesta] = esperar tryToCatch(obtenerRespuesta)
 
-    const cotizaciones = []
-
-    para (const tr de $('table#cotizaciones tbody tr')) {
-      const monedaNombre = $(tr).buscar('td').eq(0).text().recortarEspacios()
-      const moneda = monedas.buscar(({ nombre }) => nombre === monedaNombre)
-      const compra = interpretarDecimalConComa(
-        $(tr).buscar('td').eq(1).text().recortarEspacios(),
-      )
-      const venta = interpretarDecimalConComa(
-        $(tr).buscar('td').eq(2).text().recortarEspacios(),
-      )
-      const fecha = $(tr).buscar('td').eq(3).text().recortarEspacios()
-      const fechaParseada = parse(fecha, 'd/M/yyyy H:m:s', crear Fecha())
-
-      cotizaciones.agregar({
-        monedaNombre,
-        moneda: moneda ? moneda.codigo : nulo,
-        compra,
-        venta,
-        fechaActualizacion: fechaParseada,
-      })
-    }
-
-    retornar cotizaciones.filtrar(({ moneda }) => moneda);
-  } capturar (error) {
-    consola.error('Error al obtener la respuesta de InvertirOnline', error)
+  si (error) {
+    logError(log, error)
     retornar []
   }
+
+  const $ = cheerio.load(respuesta)
+
+  const cotizaciones = []
+
+  para (const tr de $('table#cotizaciones tbody tr')) {
+    const monedaNombre = $(tr).buscar('td').eq(0).text().recortarEspacios()
+    const moneda = monedas.buscar(({ nombre }) => nombre === monedaNombre)
+    const compra = interpretarDecimalConComa(
+      $(tr).buscar('td').eq(1).text().recortarEspacios(),
+    )
+    const venta = interpretarDecimalConComa(
+      $(tr).buscar('td').eq(2).text().recortarEspacios(),
+    )
+    const fecha = $(tr).buscar('td').eq(3).text().recortarEspacios()
+    const fechaParseada = parse(fecha, 'd/M/yyyy H:m:s', crear Fecha())
+
+    cotizaciones.agregar({
+      monedaNombre,
+      moneda: moneda ? moneda.codigo : nulo,
+      compra,
+      venta,
+      fechaActualizacion: fechaParseada,
+    })
+  }
+
+  retornar cotizaciones.filtrar(({ moneda }) => moneda);
 }
 
 asincrono funcion obtenerRespuesta() {

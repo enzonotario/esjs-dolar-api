@@ -3,18 +3,34 @@ importar { extraerCotizaciones } desde '@/ar/bna.extractor.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { unificar } desde '@/utils/unificar.esjs'
 importar { consultarAmbito } desde '@/ar/acciones/consulta/consultarAmbito.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 asincrono funcion nuevosValores() {
-  const cotizaciones = esperar extraerCotizaciones()
+  const log = grupo({
+    cron: 'cron.ar.esjs',
+    accion: 'consultarDolares',
+  })
 
-  const dolaresNoCalculados = esperar extraerDolarHoy()
+  const [errorCotizaciones, cotizaciones] = esperar tryToCatch(extraerCotizaciones)
+  si (errorCotizaciones) {
+    logError(log, errorCotizaciones, { extractor: 'extraerCotizaciones' })
+  }
 
-  const dolaresAmbito = esperar consultarAmbito()
+  const [errorDolarHoy, dolaresNoCalculados] = esperar tryToCatch(extraerDolarHoy)
+  si (errorDolarHoy) {
+    logError(log, errorDolarHoy, { extractor: 'extraerDolarHoy' })
+  }
+
+  const [errorAmbito, dolaresAmbito] = esperar tryToCatch(consultarAmbito)
+  si (errorAmbito) {
+    logError(log, errorAmbito, { extractor: 'consultarAmbito' })
+  }
 
   const dolares = [
-    ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD'),
-    ...dolaresNoCalculados.filtrar((dolar) => !['oficial', 'mayorista'].incluye(dolar.casa)),
-    ...cotizaciones.filtrar((cotizacion) => cotizacion.moneda === 'USD').mapear((dolarOficial) => {
+    ...(cotizaciones || []).filtrar((cotizacion) => cotizacion.moneda === 'USD'),
+    ...(dolaresNoCalculados || []).filtrar((dolar) => !['oficial', 'mayorista'].incluye(dolar.casa)),
+    ...(cotizaciones || []).filtrar((cotizacion) => cotizacion.moneda === 'USD').mapear((dolarOficial) => {
         const impuestos = 0.3
 
         const compra = Numero((dolarOficial.compra * (1 + impuestos)).fijarDecimales(2))
@@ -29,7 +45,7 @@ asincrono funcion nuevosValores() {
           venta,
         }
       }),
-    ...dolaresAmbito.filtrar((dolar) => dolar.casa === 'mayorista'),
+    ...(dolaresAmbito || []).filtrar((dolar) => dolar.casa === 'mayorista'),
   ]
 
   retornar dolares
