@@ -1,24 +1,27 @@
 importar extraer desde '@/cl/investing.extractor.cl.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
+importar tryToCatch desde 'try-to-catch'
 
 exportar porDefecto asincrono funcion () {
   const log = grupo({ cron: 'cron.cl.esjs' })
 
-  intentar {
-    log.info('Inicio')
+  log.info('Inicio')
 
-    const cotizaciones = esperar extraer()
+  const [error, cotizaciones] = esperar tryToCatch(extraer)
 
-    cotizaciones.mapear((cotizacion) => {
-      const moneda = cotizacion.moneda.aMinusculas()
-      escribirRutaRegion('cl', `/cotizaciones/${moneda}`, cotizacion)
-    })
-
-    escribirRutaRegion('cl', '/cotizaciones', cotizaciones)
-
-    log.info('Fin')
-  } capturar (error) {
+  si (error) {
     logError(log, error)
+    log.info('Fin')
+    retornar
   }
+
+  cotizaciones.mapear((cotizacion) => {
+    const moneda = cotizacion.moneda.aMinusculas()
+    escribirRutaRegion('cl', `/cotizaciones/${moneda}`, cotizacion)
+  })
+
+  escribirRutaRegion('cl', '/cotizaciones', cotizaciones)
+
+  log.info('Fin')
 }

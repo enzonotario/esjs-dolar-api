@@ -1,11 +1,23 @@
 importar { chromium } desde 'playwright'
 importar { monedas } desde '@/ve/constantes.ve.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
-  const [paralelo, oficial] = esperar Promesa.todos([
-    obtenerCotizacionParalelo(),
-    obtenerCotizacionOficial(),
-  ])
+  const log = grupo({
+    cron: 'cron.ve.esjs',
+    extractor: 'laslucas.extractor.esjs',
+  })
+
+  const [errorParalelo, paralelo] = esperar tryToCatch(obtenerCotizacionParalelo)
+  si (errorParalelo) {
+    logError(log, errorParalelo, { tipo: 'paralelo' })
+  }
+
+  const [errorOficial, oficial] = esperar tryToCatch(obtenerCotizacionOficial)
+  si (errorOficial) {
+    logError(log, errorOficial, { tipo: 'oficial' })
+  }
 
   retornar extraerCotizaciones({ paralelo, oficial })
 }

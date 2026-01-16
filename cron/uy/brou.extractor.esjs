@@ -2,9 +2,24 @@ importar axios desde 'axios'
 importar cheerio desde 'cheerio'
 importar { monedas } desde '@/uy/constantes.uy.esjs'
 importar { grupo, logError } desde '@/log.esjs'
+importar tryToCatch desde 'try-to-catch'
 
 exportar porDefecto asincrono funcion () {
-  const respuesta = esperar obtenerRespuesta()
+  const log = grupo({
+    cron: 'cron.uy.esjs',
+    extractor: 'brou.extractor.esjs',
+  })
+
+  const [error, respuesta] = esperar tryToCatch(obtenerRespuesta)
+
+  si (error) {
+    logError(log, error)
+    retornar []
+  }
+
+  si (!respuesta) {
+    retornar []
+  }
 
   retornar extraerCotizaciones(respuesta)
 }

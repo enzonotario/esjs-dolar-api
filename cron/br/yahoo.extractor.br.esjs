@@ -1,5 +1,6 @@
 importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
-importar { grupo } desde '@/log.esjs'
+importar { grupo, logError } desde '@/log.esjs'
+importar tryToCatch desde 'try-to-catch'
 
 exportar porDefecto asincrono funcion () {
   const log = grupo({
@@ -10,7 +11,7 @@ exportar porDefecto asincrono funcion () {
 
   const url = 'https://es.investing.com/currencies/usd-brl'
 
-  const datos = esperar scrapearConFirecrawl(log, {
+  const [error, datos] = esperar tryToCatch(scrapearConFirecrawl, log, {
     url,
     prompt: 'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
     schema: {
@@ -33,6 +34,11 @@ exportar porDefecto asincrono funcion () {
     },
     required: ['compra', 'venda', 'fechoAnterior', 'dataAtualizacao'],
   })
+
+  si (error) {
+    logError(log, error)
+    retornar nulo
+  }
 
   funcion interpretarFecha(fecha) {
     intentar {

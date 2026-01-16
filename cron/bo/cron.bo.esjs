@@ -2,25 +2,38 @@ importar extraerDolarOficial desde '@/bo/bcb.extractor.esjs'
 importar extraerDolarBinance desde '@/bo/binance-bo.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
+importar tryToCatch desde 'try-to-catch'
 
 exportar porDefecto asincrono funcion () {
   const log = grupo({ cron: 'cron.bo.esjs' })
 
-  intentar {
-    log.info('Inicio')
+  log.info('Inicio')
 
-    esperar guardarDolares()
+  const [error] = esperar tryToCatch(guardarDolares, log)
 
-    log.info('Fin')
-  } capturar (error) {
+  si (error) {
     logError(log, error)
   }
+
+  log.info('Fin')
 }
 
-asincrono funcion guardarDolares() {
-  const dolarOficial = esperar extraerDolarOficial()
-  const dolaresBinance = esperar extraerDolarBinance()
-  const dolares = [dolarOficial, dolaresBinance]
+asincrono funcion guardarDolares(log) {
+  const dolares = []
+
+  const [errorOficial, dolarOficial] = esperar tryToCatch(extraerDolarOficial)
+  si (errorOficial) {
+    logError(log, errorOficial, { extractor: 'bcb.extractor.esjs' })
+  } sino {
+    dolares.agregar(dolarOficial)
+  }
+
+  const [errorBinance, dolarBinance] = esperar tryToCatch(extraerDolarBinance)
+  si (errorBinance) {
+    logError(log, errorBinance, { extractor: 'binance-bo.extractor.esjs' })
+  } sino {
+    dolares.agregar(dolarBinance)
+  }
 
   dolares.mapear((cotizacion) => {
     escribirRutaRegion('bo', `/dolares/${cotizacion.casa}`, cotizacion)

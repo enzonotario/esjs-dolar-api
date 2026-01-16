@@ -1,13 +1,29 @@
 importar axios desde 'axios'
 importar cheerio desde 'cheerio'
 importar { monedas } desde '@/cl/constantes.cl.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
-  const cotizaciones = esperar Promesa.todos(
-    monedas.filtrar((moneda) => moneda.codigo !== 'CLP').mapear((moneda) => extraerCotizacion(moneda)),
+  const log = grupo({
+    cron: 'cron.cl.esjs',
+    extractor: 'investing.extractor.cl.esjs',
+  })
+
+  const resultados = esperar Promesa.todos(
+    monedas.filtrar((moneda) => moneda.codigo !== 'CLP').mapear(asincrono (moneda) => {
+        const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda)
+
+        si (error) {
+          logError(log, error, { moneda: moneda.codigo })
+          retornar nulo
+        }
+
+        retornar cotizacion
+      }),
   )
 
-  retornar cotizaciones
+  retornar resultados.filtrar((resultado) => resultado !== nulo);
 }
 
 funcion obtenerRespuesta(moneda) {

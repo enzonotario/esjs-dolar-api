@@ -1,9 +1,21 @@
 importar axios desde 'axios'
 importar cheerio desde 'cheerio'
 importar { parse } desde 'date-fns'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
-  const respuesta = esperar obtenerRespuesta()
+  const log = grupo({
+    cron: 'cron.bo.esjs',
+    extractor: 'binance-bo.extractor.esjs',
+  })
+
+  const [error, respuesta] = esperar tryToCatch(obtenerRespuesta)
+
+  si (error) {
+    logError(log, error)
+    retornar nulo
+  }
 
   retornar extraerDolar(respuesta)
 }
