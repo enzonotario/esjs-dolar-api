@@ -20,7 +20,9 @@ exportar porDefecto asincrono funcion () {
   }
 
   const cotizaciones = valoresActuales.mapear((cotizacion) => {
-    const cotizacionNueva = valoresNuevos.filtrar().buscar((item) => item.moeda === cotizacion.moeda)
+    const cotizacionNueva = valoresNuevos.buscar(
+      (item) => item && item.moeda === cotizacion.moeda,
+    )
 
     si (cotizacionNueva) {
       retornar cotizacionNueva
