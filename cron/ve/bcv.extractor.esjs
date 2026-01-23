@@ -1,0 +1,89 @@
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
+importar https desde 'https'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
+
+exportar porDefecto asincrono funcion () {
+  const log = grupo({
+    cron: 'cron.ve.esjs',
+    extractor: 'bcv.extractor.esjs',
+  })
+
+  const [error, html] = esperar tryToCatch(obtenerHtml)
+
+  si (error) {
+    logError(log, error)
+    retornar nulo
+  }
+
+  retornar extraerCotizacion(html)
+}
+
+asincrono funcion obtenerHtml() {
+  const httpsAgent = crear https.Agent({
+    rejectUnauthorized: falso,
+  })
+
+  const respuesta = esperar axios.get('https://www.bcv.org.ve/', {
+    httpsAgent,
+  })
+
+  retornar respuesta.data
+}
+
+funcion extraerCotizacion(html) {
+  const $ = cheerio.load(html)
+
+  var valorUsd = nulo
+
+  $('span').each((i, el) => {
+    const texto = $(el).text().recortarEspacios()
+    si (texto === 'USD') {
+      const contenedor = $(el).closest('.recuadrotsmc')
+      const strong = contenedor.buscar('strong')
+      si (strong.longitud > 0) {
+        valorUsd = strong.text().recortarEspacios()
+      }
+    }
+  })
+
+  si (!valorUsd) {
+    $('*').each((i, el) => {
+      const texto = $(el).text()
+      si (texto.incluye('USD') && !valorUsd) {
+        const strong = $(el).closest('div').buscar('strong')
+        si (strong.longitud > 0) {
+          const posibleValor = strong.text().recortarEspacios()
+          si (/^\d/.test(posibleValor)) {
+            valorUsd = posibleValor
+          }
+        }
+      }
+    })
+  }
+
+  si (!valorUsd) {
+    retornar nulo
+  }
+
+  const valorNumerico = interpretarValorMonetario(valorUsd)
+
+  si (!valorNumerico) {
+    retornar nulo
+  }
+
+  retornar {
+    fuente: 'oficial',
+    nombre: 'Oficial',
+    compra: nulo,
+    venta: nulo,
+    promedio: valorNumerico,
+    fechaActualizacion: crear Fecha().aCadenaISO(),
+  };
+}
+
+funcion interpretarValorMonetario(valor) {
+  const limpio = valor.replace(/\s/g, '').reemplazar(',', '.')
+  retornar interpretarDecimal(limpio);
+}

@@ -1,4 +1,5 @@
-importar extraerDolaresLasLucas desde '@/ve/laslucas.extractor.esjs'
+importar extraerDolarYadio desde '@/ve/yadio.extractor.esjs'
+importar extraerDolarBcv desde '@/ve/bcv.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 importar tryToCatch desde 'try-to-catch'
@@ -18,22 +19,33 @@ exportar porDefecto asincrono funcion () {
 }
 
 asincrono funcion guardarDolares(log) {
-  const [error, dolaresLasLucas] = esperar tryToCatch(extraerDolaresLasLucas)
+  const [errorYadio, dolaresYadio] = esperar tryToCatch(extraerDolarYadio)
 
-  si (error) {
-    logError(log, error, { extractor: 'laslucas.extractor.esjs' })
-    retornar
+  si (errorYadio) {
+    logError(log, errorYadio, { extractor: 'yadio.extractor.esjs' })
   }
 
-  si (!dolaresLasLucas || dolaresLasLucas.longitud === 0) {
+  const [errorBcv, dolarBcv] = esperar tryToCatch(extraerDolarBcv)
+
+  si (errorBcv) {
+    logError(log, errorBcv, { extractor: 'bcv.extractor.esjs' })
+  }
+
+  const dolares = []
+
+  si (dolarBcv) {
+    dolares.agregar(dolarBcv)
+  }
+
+  si (dolaresYadio && dolaresYadio.longitud > 0) {
+    dolares.agregar(...dolaresYadio)
+  }
+
+  si (dolares.longitud === 0) {
     retornar
   }
 
   const orden = ['oficial', 'paralelo', 'bitcoin']
-
-  const dolares = [
-    ...dolaresLasLucas,
-  ]
 
   dolares.ordenar((a, b) => {
       const indexA = orden.indiceDe(a.fuente)

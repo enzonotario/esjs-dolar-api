@@ -1,0 +1,44 @@
+importar axios desde 'axios'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
+
+exportar porDefecto asincrono funcion () {
+  const log = grupo({
+    cron: 'cron.ve.esjs',
+    extractor: 'yadio.extractor.esjs',
+  })
+
+  const [error, respuesta] = esperar tryToCatch(obtenerRespuesta)
+
+  si (error) {
+    logError(log, error)
+    retornar nulo
+  }
+
+  retornar extraerCotizaciones(respuesta)
+}
+
+asincrono funcion obtenerRespuesta() {
+  const respuesta = esperar axios.get('https://api.yadio.io/exrates/usd')
+
+  retornar respuesta.data
+}
+
+funcion extraerCotizaciones(json) {
+  const ves = json.USD ? json.USD.VES : nulo
+
+  si (!ves) {
+    retornar []
+  }
+
+  retornar [
+    {
+      fuente: 'paralelo',
+      nombre: 'Paralelo',
+      compra: nulo,
+      venta: nulo,
+      promedio: ves,
+      fechaActualizacion: crear Fecha().aCadenaISO(),
+    },
+  ];
+}
