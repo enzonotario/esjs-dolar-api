@@ -25,17 +25,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          registry-url: https://registry.npmjs.org/
-          node-version: 18
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        id: pnpm-install
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          run_install: false
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
 
       - name: Create .env file
         run: |
@@ -53,8 +59,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install Playwright
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+
+      - name: Install Playwright system dependencies
+        run: npx playwright install-deps chromium
 
       - name: Build
         run: pnpm run cron:build
