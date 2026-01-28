@@ -21,4 +21,6 @@ it('retorna nulo para valores invalidos', () => {
   expect(interpretarVariacion(undefined)).toBeNull()
   expect(interpretarVariacion('')).toBeNull()
   expect(interpretarVariacion('S/C')).toBeNull()
+  expect(interpretarVariacion('N/A')).toBeNull()
+  expect(interpretarVariacion('--')).toBeNull()
 })

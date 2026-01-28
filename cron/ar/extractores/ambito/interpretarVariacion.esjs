@@ -3,5 +3,6 @@ exportar funcion interpretarVariacion(valor) {
     retornar nulo
   }
 
-  retornar Numero(valor.reemplazar('%', '').reemplazar(',', '.'))
+  const resultado = Numero(valor.reemplazar('%', '').reemplazar(',', '.'))
+  retornar isNaN(resultado) ? nulo : resultado
 }

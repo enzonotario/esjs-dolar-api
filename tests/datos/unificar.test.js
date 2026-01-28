@@ -169,3 +169,27 @@ it('maneja variacion cero correctamente', async () => {
 
   expect(respuesta[0].variacion).toBe(0)
 })
+
+it('preserva variacion cuando json2.variacion es null', async () => {
+  const json1 = [
+    {
+      casa: 'oficial',
+      compra: 1,
+      venta: 1,
+      variacion: -0.5,
+    },
+  ]
+
+  const json2 = [
+    {
+      casa: 'oficial',
+      compra: 2,
+      venta: 2,
+      variacion: null,
+    },
+  ]
+
+  const respuesta = await unificar(json1, json2, 'casa')
+
+  expect(respuesta[0].variacion).toBe(-0.5)
+})
