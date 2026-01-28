@@ -23,6 +23,7 @@ it('extrae ambito', async () => {
     else
       expect(dolarCasa.compra).toBeNull()
     expect(dolarCasa.venta).toBeGreaterThan(0)
+    expect(dolarCasa.variacion).toBeDefined()
     expect(dolarCasa.fechaActualizacion).not.toBeNull()
   })
 }, {

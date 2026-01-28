@@ -98,3 +98,74 @@ it('unifica json1 con json2 por moneda', async () => {
     },
   ])
 })
+
+it('unifica variacion correctamente', async () => {
+  const json1 = [
+    {
+      casa: 'oficial',
+      compra: 1,
+      venta: 1,
+      variacion: -0.5,
+    },
+  ]
+
+  const json2 = [
+    {
+      casa: 'oficial',
+      compra: 2,
+      venta: 2,
+      variacion: 1.2,
+    },
+  ]
+
+  const respuesta = await unificar(json1, json2, 'casa')
+
+  expect(respuesta[0].variacion).toBe(1.2)
+})
+
+it('preserva variacion cuando json2 no tiene', async () => {
+  const json1 = [
+    {
+      casa: 'oficial',
+      compra: 1,
+      venta: 1,
+      variacion: -0.5,
+    },
+  ]
+
+  const json2 = [
+    {
+      casa: 'oficial',
+      compra: 2,
+      venta: 2,
+    },
+  ]
+
+  const respuesta = await unificar(json1, json2, 'casa')
+
+  expect(respuesta[0].variacion).toBe(-0.5)
+})
+
+it('maneja variacion cero correctamente', async () => {
+  const json1 = [
+    {
+      casa: 'oficial',
+      compra: 1,
+      venta: 1,
+      variacion: -0.5,
+    },
+  ]
+
+  const json2 = [
+    {
+      casa: 'oficial',
+      compra: 2,
+      venta: 2,
+      variacion: 0,
+    },
+  ]
+
+  const respuesta = await unificar(json1, json2, 'casa')
+
+  expect(respuesta[0].variacion).toBe(0)
+})

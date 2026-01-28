@@ -1,6 +1,7 @@
 import { ambito, casas } from '@/ar/constantes.ar.esjs'
 import { interpretarValorMonetario } from '@/ar/extractores/ambito/interpretarValorMonetario.esjs'
 import { interpretarFecha } from '@/ar/extractores/ambito/interpretarFecha.esjs'
+import { interpretarVariacion } from '@/ar/extractores/ambito/interpretarVariacion.esjs'
 import tryToCatch from 'try-to-catch'
 import { grupo, logError } from '@/log.esjs'
 
@@ -45,6 +46,7 @@ async function obtenerValoresParaCasa(casa) {
   const compra = interpretarValorMonetario(json.compra)
   const venta = interpretarValorMonetario(json.venta)
   const fechaActualizacion = interpretarFecha(json.fecha)
+  const variacion = interpretarVariacion(json.variacion)
 
   return {
     moneda: 'USD',
@@ -52,6 +54,7 @@ async function obtenerValoresParaCasa(casa) {
     nombre: casa.nombre,
     compra: casa.permiteCompra ? compra : null,
     venta,
+    variacion,
     fechaActualizacion,
   }
 }
