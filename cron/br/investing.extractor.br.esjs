@@ -21,20 +21,24 @@ exportar porDefecto asincrono funcion () {
 
       si (error) {
         logError(log, error, {
-          response: error.response.data,
+          response: error.response?.data,
         })
-      } sino {
+      } sino si (cotizacion) {
         cotizaciones.agregar(cotizacion)
+      } sino {
+        log.warn('No se pudo extraer cotización USD')
       }
     } sino {
       const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda)
 
       si (error) {
         logError(log, error, {
-          response: error.response.data,
+          response: error.response?.data,
         })
-      } sino {
+      } sino si (cotizacion) {
         cotizaciones.agregar(cotizacion)
+      } sino {
+        log.warn(`No se pudo extraer cotización ${moneda.codigo}`)
       }
     }
   }

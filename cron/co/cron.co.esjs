@@ -22,7 +22,7 @@ exportar porDefecto asincrono funcion () {
 
     const cotizaciones = valoresActuales.mapear((cotizacion) => {
       const cotizacionNueva = valoresNuevos.buscar(
-        (item) => item.moneda === cotizacion.moneda,
+        (item) => item && item.moneda === cotizacion.moneda,
       )
 
       si (cotizacionNueva) {
@@ -33,7 +33,7 @@ exportar porDefecto asincrono funcion () {
     })
 
     valoresNuevos.paraCada((cotizacionNueva) => {
-      si (!cotizaciones.buscar((c) => c.moneda === cotizacionNueva.moneda)) {
+      si (cotizacionNueva && !cotizaciones.buscar((c) => c.moneda === cotizacionNueva.moneda)) {
         cotizaciones.agregar(cotizacionNueva)
       }
     })

@@ -32,7 +32,7 @@ exportar porDefecto asincrono funcion () {
   })
 
   valoresNuevos.paraCada((cotizacionNueva) => {
-    si (!cotizaciones.buscar((c) => c.moeda === cotizacionNueva.moeda)) {
+    si (cotizacionNueva && !cotizaciones.buscar((c) => c.moeda === cotizacionNueva.moeda)) {
       cotizaciones.agregar(cotizacionNueva)
     }
   })
