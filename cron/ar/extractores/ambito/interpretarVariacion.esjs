@@ -1,0 +1,8 @@
+exportar funcion interpretarVariacion(valor) {
+  si (!valor || valor === 'S/C') {
+    retornar nulo
+  }
+
+  const resultado = Numero(valor.reemplazar('%', '').reemplazar(',', '.'))
+  retornar isNaN(resultado) ? nulo : resultado
+}

@@ -536,11 +536,16 @@ components:
           fechaActualizacion: '2021-01-01T00:00:00.000Z'
           compra: 123.99
           venta: 132.99
+          variacion: -1.54
       properties:
         compra:
           type: number
         venta:
           type: number
+        variacion:
+          type: number
+          nullable: true
+          description: Variacion porcentual respecto al cierre anterior
         casa:
           type: string
         nombre:

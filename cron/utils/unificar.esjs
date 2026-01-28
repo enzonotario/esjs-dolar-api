@@ -41,6 +41,10 @@ exportar funcion unificar(json1, json2, claveBusqueda = 'casa') {
       item.venta = valor2.venta
     }
 
+    si (valor2.variacion !== nulo && valor2.variacion !== indefinido) {
+      item.variacion = valor2.variacion
+    }
+
     respuesta.agregar(item)
   })
 
