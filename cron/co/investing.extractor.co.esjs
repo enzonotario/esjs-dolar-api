@@ -1,56 +1,69 @@
-importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
+importar axios desde 'axios'
+importar cheerio desde 'cheerio'
 importar { monedas } desde '@/co/constantes.co.esjs'
 importar tryToCatch desde 'try-to-catch'
 importar { grupo, logError } desde '@/log.esjs'
 
 exportar porDefecto asincrono funcion () {
-  const cotizaciones = []
+  const log = grupo({
+    cron: 'cron.co.esjs',
+    extractor: 'investing.extractor.co.esjs',
+  })
 
-  para (const moneda de monedas.filtrar((moneda) => moneda.codigo !== 'COP')) {
-    const log = grupo({
-      cron: 'cron.co.esjs',
-      extractor: 'investing.extractor.co.esjs',
-      moneda: moneda.codigo,
-    })
+  const resultados = esperar Promesa.todos(
+    monedas.filtrar((moneda) => moneda.codigo !== 'COP').mapear(asincrono (moneda) => {
+        const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda)
 
-    const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda, log)
+        si (error) {
+          logError(log, error, { moneda: moneda.codigo })
+          retornar nulo
+        }
 
-    si (error) {
-      logError(log, error)
-    } sino {
-      cotizaciones.agregar(cotizacion)
-    }
-  }
+        retornar cotizacion
+      }),
+  )
 
-  retornar cotizaciones
+  retornar resultados.filtrar((resultado) => resultado !== nulo);
 }
 
-asincrono funcion extraerCotizacion(moneda, log) {
+funcion obtenerRespuesta(moneda) {
   const monedaEnMinusculas = moneda.codigo.aMinusculas()
   const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-cop`
 
-  const datos = esperar scrapearConFirecrawl(log, {
-    url,
-    prompt: 'Extrae los valores de compra (bid) y venta (ask) de la cotización de la moneda.',
-    schema: {
-      compra: {
-        type: 'number',
-        description: 'Valor de compra (bid) de la moneda',
-      },
-      venta: {
-        type: 'number',
-        description: 'Valor de venta (ask) de la moneda',
-      },
-    },
-    required: ['compra', 'venta'],
-  })
-
-  retornar {
-    moneda: moneda.codigo.aMayusculas(),
-    nombre: moneda.nombre,
-    compra: datos.compra,
-    venta: datos.venta,
-    fechaActualizacion: crear Fecha(),
-  }
+  retornar axios.get(url)
 }
 
+asincrono funcion extraerCotizacion(moneda) {
+  const response = esperar obtenerRespuesta(moneda)
+
+  const $ = cheerio.load(response.data)
+
+  const cotizacion = {
+    moneda: moneda.codigo.aMayusculas(),
+    nombre: moneda.nombre,
+    compra: interpretarValorMonetario($('dd[data-test=bid]').text()),
+    venta: interpretarValorMonetario($('dd[data-test=ask]').text()),
+    ultimoCierre: interpretarValorMonetario(
+      $('dd[data-test=prevClose]').text(),
+    ),
+    fechaActualizacion: interpretarFecha(
+      $('time[data-test=trading-time-label]').attr('datetime'),
+    ),
+  }
+
+  retornar cotizacion
+}
+
+exportar { extraerCotizacion }
+
+funcion interpretarValorMonetario(valor) {
+  retornar Numero.interpretarDecimal(valor.reemplazar(',', '.'));
+}
+
+funcion interpretarFecha(fecha) {
+  intentar {
+    retornar crear Fecha(fecha).aCadenaISO();
+  } capturar (error) {
+    retornar fecha
+  }
+}

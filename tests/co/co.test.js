@@ -9,7 +9,7 @@ describe('investing.extractor.co.esjs', () => {
   }, async () => {
     const cotizaciones = await extraer()
 
-    expect(cotizaciones.length).toBe(monedas.length - 1)
+    expect(cotizaciones.length).toBe(monedas.length)
 
     cotizaciones.forEach((cotizacion) => {
       expect(cotizacion).toBeTypeOf('object')
