@@ -34,7 +34,7 @@ exportar asincrono funcion scrapearConFirecrawl(log, configuracion) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': FIRECRAWL_API_KEY,
+        Authorization: `Bearer ${FIRECRAWL_API_KEY}`,
       },
       body: JSON.aTexto(body),
     })
