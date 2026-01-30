@@ -1,58 +1,58 @@
-import { ambito, casas } from '@/ar/constantes.ar.esjs'
-import { interpretarValorMonetario } from '@/ar/extractores/ambito/interpretarValorMonetario.esjs'
-import { interpretarFecha } from '@/ar/extractores/ambito/interpretarFecha.esjs'
-import { interpretarVariacion } from '@/ar/extractores/ambito/interpretarVariacion.esjs'
-import tryToCatch from 'try-to-catch'
-import { grupo, logError } from '@/log.esjs'
+importar { ambito, casas } desde '@/ar/constantes.ar.esjs'
+importar { interpretarValorMonetario } desde '@/ar/extractores/ambito/interpretarValorMonetario.esjs'
+importar { interpretarFecha } desde '@/ar/extractores/ambito/interpretarFecha.esjs'
+importar { interpretarVariacion } desde '@/ar/extractores/ambito/interpretarVariacion.esjs'
+importar tryToCatch desde 'try-to-catch'
+importar { grupo, logError } desde '@/log.esjs'
 
-export async function extraerAmbito() {
+exportar asincrono funcion extraerAmbito() {
   const log = grupo({
     cron: 'cron.ar.esjs',
     extractor: 'extraerAmbito',
   })
 
-  const resultados = await Promise.all(
-    casas.filter((casa) => ambito.dolares[casa.identificador]).map(async (casa) => {
-        const [error, valores] = await tryToCatch(obtenerValoresParaCasa, casa)
+  const resultados = esperar Promesa.todos(
+    casas.filtrar((casa) => ambito.dolares[casa.identificador]).mapear(asincrono (casa) => {
+        const [error, valores] = esperar tryToCatch(obtenerValoresParaCasa, casa)
 
-        if (error) {
+        si (error) {
           logError(log, error, { casa: casa.identificador })
-          return null
+          retornar nulo
         }
 
-        return valores
+        retornar valores
       }),
   )
 
-  return resultados.filter((resultado) => resultado !== null);
+  retornar resultados.filtrar((resultado) => resultado !== nulo);
 }
 
-async function obtenerValoresParaCasa(casa) {
+asincrono funcion obtenerValoresParaCasa(casa) {
   const casaConfiguracion = ambito.dolares[casa.identificador]
 
-  if (!casaConfiguracion) {
-    return null
+  si (!casaConfiguracion) {
+    retornar nulo
   }
 
-  const response = await fetch(casaConfiguracion.url, {
+  const response = esperar fetch(casaConfiguracion.url, {
     headers: {
-      'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+      'user-agent':
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36',
     },
   })
 
-  const json = await response.json()
-
+  const json = esperar response.json()
 
   const compra = interpretarValorMonetario(json.compra)
   const venta = interpretarValorMonetario(json.venta)
   const fechaActualizacion = interpretarFecha(json.fecha)
   const variacion = interpretarVariacion(json.variacion)
 
-  return {
+  retornar {
     moneda: 'USD',
     casa: casa.identificador,
     nombre: casa.nombre,
-    compra: casa.permiteCompra ? compra : null,
+    compra: casa.permiteCompra ? compra : nulo,
     venta,
     variacion,
     fechaActualizacion,
