@@ -214,7 +214,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Cotizacion"
+                    "$ref": "#/components/schemas/CotizacionAmbito"
                   }
                 }
               }
@@ -237,7 +237,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
+                  "$ref": "#/components/schemas/CotizacionAmbito"
                 }
               }
             },
@@ -260,7 +260,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
+                  "$ref": "#/components/schemas/CotizacionAmbito"
                 }
               }
             }
@@ -283,7 +283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
+                  "$ref": "#/components/schemas/CotizacionAmbito"
                 }
               }
             }
@@ -306,7 +306,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
+                  "$ref": "#/components/schemas/CotizacionAmbito"
                 }
               }
             }
@@ -330,7 +330,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
+                  "$ref": "#/components/schemas/CotizacionAmbito"
                 }
               }
             }
@@ -353,7 +353,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
+                  "$ref": "#/components/schemas/CotizacionAmbito"
                 }
               }
             }
@@ -376,7 +376,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
+                  "$ref": "#/components/schemas/CotizacionAmbito"
                 }
               }
             }
@@ -566,6 +566,41 @@
           "casa",
           "nombre",
           "moneda",
+          "fechaActualizacion"
+        ]
+      },
+      "CotizacionAmbito": {
+        "title": "CotizacionAmbito",
+        "type": "object",
+        "properties": {
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          },
+          "casa": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "moneda": {
+            "type": "string"
+          },
+          "variacion": {
+            "type": "number"
+          },
+          "fechaActualizacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "venta",
+          "casa",
+          "nombre",
+          "moneda",
+          "variacion",
           "fechaActualizacion"
         ]
       },

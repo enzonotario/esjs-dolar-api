@@ -9,18 +9,16 @@
     {
       "url": "https://dolarapi.com",
       "description": "Producción"
-    },
-    {
-      "url": "http://localhost:5173",
-      "description": "Local"
     }
   ],
   "paths": {
     "/v1/dolares": {
       "get": {
         "summary": "Dólares",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Devuelve la cotización actual del dólar estadounidense en Argentina. Incluye el precio de compra y venta de dólares en diferentes mercados (denominados \"casas\").",
         "responses": {
           "200": {
             "description": "Devuelve todas las cotizaciones",
@@ -36,41 +34,16 @@
             }
           }
         },
-        "operationId": "get-dolares",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares\")"
-          }
-        ]
+        "operationId": "get-dolares"
       }
     },
     "/v1/dolares/oficial": {
       "get": {
         "summary": "Dólar Oficial",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Cotización del dólar estadounidense en el mercado oficial. Es decir, el precio de compra y venta de dólares en bancos y casas de cambio autorizadas por el Banco Central de la República Argentina (BCRA).",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Oficial",
@@ -84,41 +57,16 @@
             "headers": {}
           }
         },
-        "operationId": "get-dolar-oficial",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/oficial"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/oficial\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/oficial\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/oficial\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/oficial\")"
-          }
-        ]
+        "operationId": "get-dolar-oficial"
       }
     },
     "/v1/dolares/blue": {
       "get": {
         "summary": "Dólar Blue",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Cotización del dólar estadounidense en el mercado paralelo o informal. Es decir, el precio de compra y venta de dólares en cuevas o casas de cambio no autorizadas por el Banco Central de la República Argentina (BCRA).",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Blue",
@@ -131,42 +79,17 @@
             }
           }
         },
-        "operationId": "get-dolar-blue",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/blue"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/blue\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/blue\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/blue\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/blue\")"
-          }
-        ]
+        "operationId": "get-dolar-blue"
       },
       "parameters": []
     },
     "/v1/dolares/bolsa": {
       "get": {
         "summary": "Dólar Bolsa",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Cotización del dólar estadounidense en el mercado bursátil. Es decir, el precio de compra y venta de dólares en el mercado de valores. También conocido como **Dólar MEP**.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Bolsa",
@@ -179,42 +102,17 @@
             }
           }
         },
-        "operationId": "get-dolar-bolsa",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/bolsa"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/bolsa\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/bolsa\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/bolsa\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/bolsa\")"
-          }
-        ]
+        "operationId": "get-dolar-bolsa"
       },
       "parameters": []
     },
     "/v1/dolares/contadoconliqui": {
       "get": {
         "summary": "Dólar Contado con Liquidación",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Cotización del dólar estadounidense en el mercado bursátil. Es decir, el precio de compra y venta de dólares en el mercado de valores. También conocido como **Dólar CCL**.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Contado con liquidación",
@@ -228,42 +126,17 @@
           }
         },
         "operationId": "get-dolar-contadoconliqui",
-        "x-sidebar-title": "Dólar CCL",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/contadoconliqui"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/contadoconliqui\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/contadoconliqui\")"
-          }
-        ]
+        "x-sidebar-title": "Dólar CCL"
       },
       "parameters": []
     },
     "/v1/dolares/tarjeta": {
       "get": {
         "summary": "Dólar Tarjeta",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Es el valor de la cotización del dólar estadounidense en el mercado oficial, más el impuesto a las ganancias (30%).",
         "responses": {
           "200": {
             "description": "Devuelve el valor del Dólar Tarjeta",
@@ -276,42 +149,17 @@
             }
           }
         },
-        "operationId": "get-dolar-tarjeta",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/tarjeta"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/tarjeta\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/tarjeta\")"
-          }
-        ]
+        "operationId": "get-dolar-tarjeta"
       },
       "parameters": []
     },
     "/v1/dolares/mayorista": {
       "get": {
         "summary": "Dólar Mayorista",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Cotización del dólar estadounidense en el mercado mayorista. Es decir, el precio de compra y venta de dólares en el mercado interbancario.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Mayorista",
@@ -324,42 +172,17 @@
             }
           }
         },
-        "operationId": "get-dolar-mayorista",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/mayorista"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/mayorista\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/mayorista\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/mayorista\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/mayorista\")"
-          }
-        ]
+        "operationId": "get-dolar-mayorista"
       },
       "parameters": []
     },
     "/v1/dolares/cripto": {
       "get": {
         "summary": "Dólar Cripto",
-        "tags": ["Cotización actual Dólares"],
-        "description": "",
+        "tags": [
+          "Cotización actual Dólares"
+        ],
+        "description": "Cotización del dólar estadounidense en el mercado de criptomonedas. Es decir, el precio de compra y venta de dólares en el mercado de criptoactivos.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Dólar Cripto",
@@ -372,41 +195,204 @@
             }
           }
         },
-        "operationId": "get-dolar-cripto",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/dolares/cripto"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/dolares/cripto\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/dolares/cripto\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/dolares/cripto\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/dolares/cripto\")"
+        "operationId": "get-dolar-cripto"
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares": {
+      "get": {
+        "summary": "Dólares Ámbito",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve todas las cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionAmbito"
+                  }
+                }
+              }
+            }
           }
-        ]
+        },
+        "operationId": "get-ambito-dolares"
+      }
+    },
+    "/v1/ambito/dolares/oficial": {
+      "get": {
+        "summary": "Dólar Oficial",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Oficial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionAmbito"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-ambito-dolar-oficial"
+      }
+    },
+    "/v1/ambito/dolares/blue": {
+      "get": {
+        "summary": "Dólar Blue",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Blue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionAmbito"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-blue"
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/bolsa": {
+      "get": {
+        "summary": "Dólar Bolsa",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Bolsa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionAmbito"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-bolsa"
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/contadoconliqui": {
+      "get": {
+        "summary": "Dólar Contado con Liquidación",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Contado con liquidación",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionAmbito"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-contadoconliqui",
+        "x-sidebar-title": "Dólar CCL"
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/tarjeta": {
+      "get": {
+        "summary": "Dólar Tarjeta",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve el valor del Dólar Tarjeta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionAmbito"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-tarjeta"
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/mayorista": {
+      "get": {
+        "summary": "Dólar Mayorista",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Mayorista",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionAmbito"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-mayorista"
+      },
+      "parameters": []
+    },
+    "/v1/ambito/dolares/cripto": {
+      "get": {
+        "summary": "Dólar Cripto",
+        "tags": [
+          "Dólares Ámbito"
+        ],
+        "description": "Devuelve la cotización según Ámbito Financiero.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Dólar Cripto",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionAmbito"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-ambito-dolar-cripto"
       },
       "parameters": []
     },
     "/v1/estado": {
       "get": {
         "summary": "Estado de la API",
-        "tags": ["API"],
+        "tags": [
+          "API"
+        ],
+        "description": "Devuelve el estado de la API.",
         "responses": {
           "200": {
             "description": "Devuelve el estado de la API",
@@ -419,41 +405,41 @@
             }
           }
         },
-        "operationId": "get-estado",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/estado"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/estado\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/estado\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/estado\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/estado\")"
+        "operationId": "get-estado"
+      }
+    },
+    "/v1/cotizaciones": {
+      "get": {
+        "summary": "Cotizaciones",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "Devuelve la cotización de todas las monedas.",
+        "responses": {
+          "200": {
+            "description": "Devuelve todas las cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cotizacion"
+                  }
+                }
+              }
+            }
           }
-        ]
+        },
+        "operationId": "get-cotizaciones"
       }
     },
     "/v1/cotizaciones/eur": {
       "get": {
         "summary": "Euro",
-        "tags": ["Cotización actual Monedas"],
-        "description": "",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "Cotización del Euro en el mercado.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Euro",
@@ -467,41 +453,16 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-eur",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/eur"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/eur\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/eur\")"
-          }
-        ]
+        "operationId": "get-cotizacion-eur"
       }
     },
     "/v1/cotizaciones/brl": {
       "get": {
         "summary": "Real Brasileño",
-        "tags": ["Cotización actual Monedas"],
-        "description": "",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "Cotización del Real Brasileño en el mercado.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Real Brasileño",
@@ -515,41 +476,16 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-brl",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/brl"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/brl\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/brl\")"
-          }
-        ]
+        "operationId": "get-cotizacion-brl"
       }
     },
     "/v1/cotizaciones/clp": {
       "get": {
         "summary": "Peso Chileno",
-        "tags": ["Cotización actual Monedas"],
-        "description": "",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "Cotización del Peso Chileno en el mercado.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Peso Chileno",
@@ -563,41 +499,16 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-clp",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/clp"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/clp\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/clp\")"
-          }
-        ]
+        "operationId": "get-cotizacion-clp"
       }
     },
     "/v1/cotizaciones/uyu": {
       "get": {
         "summary": "Peso Uruguayo",
-        "tags": ["Cotización actual Monedas"],
-        "description": "",
+        "tags": [
+          "Cotización actual Monedas"
+        ],
+        "description": "Cotización del Peso Uruguayo en el mercado.",
         "responses": {
           "200": {
             "description": "Devuelve la cotización del Peso Uruguayo",
@@ -611,34 +522,7 @@
             "headers": {}
           }
         },
-        "operationId": "get-cotizacion-uyu",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "label": "cURL",
-            "source": "curl -X GET https://dolarapi.com/v1/cotizaciones/uyu"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (fetch)",
-            "source": "fetch(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => response.json())\n  .then(data => console.log(data));"
-          },
-          {
-            "lang": "javascript",
-            "label": "JavaScript (axios)",
-            "source": "axios.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\n  .then(response => console.log(response.data));"
-          },
-          {
-            "lang": "python",
-            "label": "Python",
-            "source": "import requests\nresponse = requests.get(\"https://dolarapi.com/v1/cotizaciones/uyu\")\nprint(response.json())"
-          },
-          {
-            "lang": "php",
-            "label": "PHP",
-            "source": "file_get_contents(\"https://dolarapi.com/v1/cotizaciones/uyu\")"
-          }
-        ]
+        "operationId": "get-cotizacion-uyu"
       }
     }
   },
@@ -677,7 +561,48 @@
             "type": "string"
           }
         },
-        "required": ["venta", "casa", "nombre", "moneda", "fechaActualizacion"]
+        "required": [
+          "venta",
+          "casa",
+          "nombre",
+          "moneda",
+          "fechaActualizacion"
+        ]
+      },
+      "CotizacionAmbito": {
+        "title": "CotizacionAmbito",
+        "type": "object",
+        "properties": {
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          },
+          "casa": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "moneda": {
+            "type": "string"
+          },
+          "variacion": {
+            "type": "number"
+          },
+          "fechaActualizacion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "venta",
+          "casa",
+          "nombre",
+          "moneda",
+          "variacion",
+          "fechaActualizacion"
+        ]
       },
       "Estado": {
         "title": "Estado",
