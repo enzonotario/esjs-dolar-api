@@ -5,8 +5,8 @@
     "nombre": "Oficial",
     "compra": 1414.11,
     "venta": 1465.01,
-    "fechaActualizacion": "2026-01-30T10:58:00.000Z",
-    "variacion": -0.01
+    "fechaActualizacion": "2026-02-02T10:47:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -14,44 +14,44 @@
     "nombre": "Blue",
     "compra": 1450,
     "venta": 1470,
-    "fechaActualizacion": "2026-01-30T10:00:00.000Z",
-    "variacion": -0.34
+    "fechaActualizacion": "2026-02-02T11:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1460.32,
-    "venta": 1460.32,
-    "fechaActualizacion": "2026-02-02T10:00:00.000Z",
-    "variacion": 0
+    "compra": 1463.24,
+    "venta": 1463.24,
+    "fechaActualizacion": "2026-02-02T11:00:00.000Z",
+    "variacion": 0.2
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1493.78,
-    "venta": 1493.78,
-    "fechaActualizacion": "2026-02-02T10:00:00.000Z",
-    "variacion": 0
+    "compra": 1509.16,
+    "venta": 1509.16,
+    "fechaActualizacion": "2026-02-02T11:00:00.000Z",
+    "variacion": 1
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1438,
-    "venta": 1447,
-    "fechaActualizacion": "2026-01-30T15:09:00.000Z",
+    "compra": 1440.5,
+    "venta": 1449.5,
+    "fechaActualizacion": "2026-02-02T10:39:00.000Z",
     "variacion": 0.17
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1504.34,
-    "venta": 1504.34,
-    "fechaActualizacion": "2026-02-02T10:00:00.000Z",
-    "variacion": 0.01
+    "compra": 1509.58,
+    "venta": 1509.58,
+    "fechaActualizacion": "2026-02-02T11:00:00.000Z",
+    "variacion": 0.09
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1415,
     "venta": 1904.5,
-    "fechaActualizacion": "2026-02-02T10:00:00.000Z",
+    "fechaActualizacion": "2026-02-02T11:00:00.000Z",
     "variacion": 0
   }
 ]
