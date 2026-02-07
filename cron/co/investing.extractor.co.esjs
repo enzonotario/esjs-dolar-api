@@ -30,12 +30,8 @@ exportar porDefecto asincrono funcion () {
               type: 'number',
               description: 'Valor de cierre anterior (prevClose) de la moneda',
             },
-            fechaActualizacion: {
-              type: 'string',
-              description: 'Fecha y hora de actualización en formato ISO 8601',
-            },
           },
-          required: ['compra', 'venta', 'ultimoCierre', 'fechaActualizacion'],
+          required: ['compra', 'venta', 'ultimoCierre'],
         })
 
         si (error) {
@@ -49,7 +45,7 @@ exportar porDefecto asincrono funcion () {
           compra: datos.compra,
           venta: datos.venta,
           ultimoCierre: datos.ultimoCierre,
-          fechaActualizacion: interpretarFecha(datos.fechaActualizacion),
+          fechaActualizacion: crear Fecha().aCadenaISO(),
         }
       }),
   )
@@ -57,10 +53,3 @@ exportar porDefecto asincrono funcion () {
   retornar resultados.filtrar((resultado) => resultado !== nulo);
 }
 
-funcion interpretarFecha(fecha) {
-  intentar {
-    retornar crear Fecha(fecha).aCadenaISO();
-  } capturar (error) {
-    retornar fecha
-  }
-}

@@ -44,12 +44,8 @@ exportar porDefecto asincrono funcion () {
             type: 'number',
             description: 'Valor de cierre anterior (prevClose) de la moneda',
           },
-          dataAtualizacao: {
-            type: 'string',
-            description: 'Fecha y hora de actualización en formato ISO 8601',
-          },
         },
-        required: ['compra', 'venda', 'fechoAnterior', 'dataAtualizacao'],
+        required: ['compra', 'venda', 'fechoAnterior'],
       })
 
       si (error) {
@@ -61,7 +57,7 @@ exportar porDefecto asincrono funcion () {
           compra: datos.compra,
           venda: datos.venda,
           fechoAnterior: datos.fechoAnterior,
-          dataAtualizacao: interpretarFecha(datos.dataAtualizacao),
+          dataAtualizacao: crear Fecha().aCadenaISO(),
         })
       } sino {
         log.warn(`No se pudo extraer cotización ${moneda.codigo}`)
@@ -72,10 +68,3 @@ exportar porDefecto asincrono funcion () {
   retornar cotizaciones
 }
 
-funcion interpretarFecha(fecha) {
-  intentar {
-    retornar crear Fecha(fecha).aCadenaISO();
-  } capturar (error) {
-    retornar fecha
-  }
-}
