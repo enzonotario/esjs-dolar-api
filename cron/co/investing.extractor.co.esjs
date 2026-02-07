@@ -1,5 +1,4 @@
-importar axios desde 'axios'
-importar cheerio desde 'cheerio'
+importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
 importar { monedas } desde '@/co/constantes.co.esjs'
 importar tryToCatch desde 'try-to-catch'
 importar { grupo, logError } desde '@/log.esjs'
@@ -12,52 +11,50 @@ exportar porDefecto asincrono funcion () {
 
   const resultados = esperar Promesa.todos(
     monedas.filtrar((moneda) => moneda.codigo !== 'COP').mapear(asincrono (moneda) => {
-        const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda)
+        const monedaEnMinusculas = moneda.codigo.aMinusculas()
+        const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-cop`
+
+        const [error, datos] = esperar tryToCatch(scrapearConFirecrawl, log, {
+          url,
+          prompt: 'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
+          schema: {
+            compra: {
+              type: 'number',
+              description: 'Valor de compra (bid) de la moneda',
+            },
+            venta: {
+              type: 'number',
+              description: 'Valor de venta (ask) de la moneda',
+            },
+            ultimoCierre: {
+              type: 'number',
+              description: 'Valor de cierre anterior (prevClose) de la moneda',
+            },
+            fechaActualizacion: {
+              type: 'string',
+              description: 'Fecha y hora de actualización en formato ISO 8601',
+            },
+          },
+          required: ['compra', 'venta', 'ultimoCierre', 'fechaActualizacion'],
+        })
 
         si (error) {
           logError(log, error, { moneda: moneda.codigo })
           retornar nulo
         }
 
-        retornar cotizacion
+        retornar {
+          moneda: moneda.codigo.aMayusculas(),
+          nombre: moneda.nombre,
+          compra: datos.compra,
+          venta: datos.venta,
+          ultimoCierre: datos.ultimoCierre,
+          fechaActualizacion: interpretarFecha(datos.fechaActualizacion),
+        }
       }),
   )
 
   retornar resultados.filtrar((resultado) => resultado !== nulo);
-}
-
-funcion obtenerRespuesta(moneda) {
-  const monedaEnMinusculas = moneda.codigo.aMinusculas()
-  const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-cop`
-
-  retornar axios.get(url)
-}
-
-asincrono funcion extraerCotizacion(moneda) {
-  const response = esperar obtenerRespuesta(moneda)
-
-  const $ = cheerio.load(response.data)
-
-  const cotizacion = {
-    moneda: moneda.codigo.aMayusculas(),
-    nombre: moneda.nombre,
-    compra: interpretarValorMonetario($('dd[data-test=bid]').text()),
-    venta: interpretarValorMonetario($('dd[data-test=ask]').text()),
-    ultimoCierre: interpretarValorMonetario(
-      $('dd[data-test=prevClose]').text(),
-    ),
-    fechaActualizacion: interpretarFecha(
-      $('time[data-test=trading-time-label]').attr('datetime'),
-    ),
-  }
-
-  retornar cotizacion
-}
-
-exportar { extraerCotizacion }
-
-funcion interpretarValorMonetario(valor) {
-  retornar Numero.interpretarDecimal(valor.reemplazar(',', '.'));
 }
 
 funcion interpretarFecha(fecha) {

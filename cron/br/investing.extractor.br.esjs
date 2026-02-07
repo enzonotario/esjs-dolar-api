@@ -1,6 +1,4 @@
-importar axios desde 'axios'
-importar cheerio desde 'cheerio'
-importar { chromium } desde 'playwright'
+importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
 importar { monedas } desde '@/br/constantes.br.esjs'
 importar tryToCatch desde 'try-to-catch'
 importar { grupo, logError } desde '@/log.esjs'
@@ -20,23 +18,51 @@ exportar porDefecto asincrono funcion () {
       const [error, cotizacion] = esperar tryToCatch(extraerUsdBrl)
 
       si (error) {
-        logError(log, error, {
-          response: error.response?.data,
-        })
+        logError(log, error)
       } sino si (cotizacion) {
         cotizaciones.agregar(cotizacion)
       } sino {
         log.warn('No se pudo extraer cotización USD')
       }
     } sino {
-      const [error, cotizacion] = esperar tryToCatch(extraerCotizacion, moneda)
+      const monedaEnMinusculas = moneda.codigo.aMinusculas()
+      const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-brl`
+
+      const [error, datos] = esperar tryToCatch(scrapearConFirecrawl, log, {
+        url,
+        prompt: 'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
+        schema: {
+          compra: {
+            type: 'number',
+            description: 'Valor de compra (bid) de la moneda',
+          },
+          venda: {
+            type: 'number',
+            description: 'Valor de venta (ask) de la moneda',
+          },
+          fechoAnterior: {
+            type: 'number',
+            description: 'Valor de cierre anterior (prevClose) de la moneda',
+          },
+          dataAtualizacao: {
+            type: 'string',
+            description: 'Fecha y hora de actualización en formato ISO 8601',
+          },
+        },
+        required: ['compra', 'venda', 'fechoAnterior', 'dataAtualizacao'],
+      })
 
       si (error) {
-        logError(log, error, {
-          response: error.response?.data,
+        logError(log, error)
+      } sino si (datos) {
+        cotizaciones.agregar({
+          moeda: moneda.codigo.aMayusculas(),
+          nome: moneda.nombre,
+          compra: datos.compra,
+          venda: datos.venda,
+          fechoAnterior: datos.fechoAnterior,
+          dataAtualizacao: interpretarFecha(datos.dataAtualizacao),
         })
-      } sino si (cotizacion) {
-        cotizaciones.agregar(cotizacion)
       } sino {
         log.warn(`No se pudo extraer cotización ${moneda.codigo}`)
       }
@@ -44,38 +70,6 @@ exportar porDefecto asincrono funcion () {
   }
 
   retornar cotizaciones
-}
-
-funcion obtenerRespuesta(moneda) {
-  const monedaEnMinusculas = moneda.codigo.aMinusculas()
-  const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-brl`
-
-  retornar axios.get(url)
-}
-
-asincrono funcion extraerCotizacion(moneda) {
-  const response = esperar obtenerRespuesta(moneda)
-
-  const $ = cheerio.load(response.data)
-
-  const cotizacion = {
-    moeda: moneda.codigo.aMayusculas(),
-    nome: moneda.nombre,
-    compra: interpretarValorMonetario($('dd[data-test=bid]').text()),
-    venda: interpretarValorMonetario($('dd[data-test=ask]').text()),
-    fechoAnterior: interpretarValorMonetario(
-      $('dd[data-test=prevClose]').text(),
-    ),
-    dataAtualizacao: interpretarFecha(
-      $('time[data-test=trading-time-label]').attr('datetime'),
-    ),
-  }
-
-  retornar cotizacion
-}
-
-funcion interpretarValorMonetario(valor) {
-  retornar Numero.interpretarDecimal(valor.reemplazar(',', '.'));
 }
 
 funcion interpretarFecha(fecha) {
