@@ -5,7 +5,7 @@ import {
   setRegionForSidebar,
 } from './sidebar.utils.js'
 
-const region = useRegion().regions.find((region) => region.code === 've')
+const region = useRegion().regions.find(region => region.code === 've')
 
 setRegionForSidebar(region.code)
 
@@ -30,6 +30,13 @@ export default function () {
     {
       text: 'Cotización actual',
       items: [
+        addRegionPrefixToSidebarItems(
+          region.prefix,
+          sidebar.generateSidebarGroup({
+            tag: 'Cotizaciones',
+            text: '',
+          }),
+        ),
         {
           text: 'Dólares',
           ...addRegionPrefixToSidebarItems(
