@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import extraerBcv from '@/ve/bcv.extractor.esjs'
 import cron from '@/ve/cron.ve.esjs'
-import extraerYadio from '@/ve/yadio.extractor.esjs'
+import extraerYadio, { extraerEurYadio } from '@/ve/yadio.extractor.esjs'
 
 describe('ve.dolarapi.com', () => {
   it('extraer dolar paralelo de Yadio', async () => {
@@ -19,6 +19,17 @@ describe('ve.dolarapi.com', () => {
 
     expect(cotizacion.fuente).toBe('oficial')
     expect(cotizacion.promedio).toBeGreaterThan(0)
+  }, 10000)
+
+  it('extraer euro de Yadio', async () => {
+    const cotizacion = await extraerEurYadio()
+
+    expect(cotizacion).not.toBeNull()
+    expect(cotizacion.fuente).toBe('euro')
+    expect(cotizacion.nombre).toBe('Euro')
+    expect(cotizacion.moneda).toBe('EUR')
+    expect(cotizacion.promedio).toBeGreaterThan(0)
+    expect(cotizacion.fechaActualizacion).toBeTruthy()
   }, 10000)
 
   it('ejecutar cron completo', async () => {
@@ -41,6 +52,29 @@ describe('ve.dolarapi.com', () => {
       {
         fuente: 'paralelo',
         nombre: 'Paralelo',
+        compra: null,
+        venta: null,
+        promedio: expect.any(Number),
+        fechaActualizacion: expect.any(String),
+      },
+    ])
+
+    const rutaCotizaciones = resolve('datos/ve/v1/cotizaciones/index.json')
+    const cotizaciones = JSON.parse(readFileSync(rutaCotizaciones, 'utf-8'))
+
+    expect(cotizaciones).toMatchObject([
+      {
+        fuente: 'oficial',
+        nombre: 'Oficial',
+        compra: null,
+        venta: null,
+        promedio: expect.any(Number),
+        fechaActualizacion: expect.any(String),
+      },
+      {
+        fuente: 'euro',
+        nombre: 'Euro',
+        moneda: 'EUR',
         compra: null,
         venta: null,
         promedio: expect.any(Number),
