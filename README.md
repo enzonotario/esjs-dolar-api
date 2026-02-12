@@ -38,6 +38,7 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [Cobrix Venezuela](https://www.cobrix.co/): Cobrix es el Gestor de pagos y cobros de recurrencias más completo de Venezuela, usamos la API para el cálculo del cobro en bolívares
 - [Supermercado HI](https://supermercadoshi.my.canva.site/bcv): Supermercado HI es una organización nueva en Venezuela, en el sector retail; manejamos precios al cambio REF de la actualización diaria.
 - [DolarAPI Windows Tray Application](https://github.com/aletrotta/DolarAPI): Una aplicación para la bandeja de Windows que muestra las diferentes cotizaciones.
+- [DolarBase](https://dolar-base.vercel.app/): App web para convertir rápidamente entre dólares y bolívares desde el dólar oficial BCV.
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
