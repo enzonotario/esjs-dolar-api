@@ -148,6 +148,46 @@
         "operationId": "get-euros"
       }
     },
+    "/v1/euros/oficial": {
+      "get": {
+        "summary": "Euro Oficial",
+        "tags": ["Cotización actual Euros"],
+        "description": "Cotización del Euro oficial (BCV) en Venezuela",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Euro oficial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionMoneda"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-euro-oficial"
+      }
+    },
+    "/v1/euros/paralelo": {
+      "get": {
+        "summary": "Euro Paralelo",
+        "tags": ["Cotización actual Euros"],
+        "description": "Cotización del Euro paralelo (Yadio) en Venezuela",
+        "responses": {
+          "200": {
+            "description": "Devuelve la cotización del Euro paralelo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionMoneda"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-euro-paralelo"
+      }
+    },
     "/v1/estado": {
       "get": {
         "summary": "Estado de la API",

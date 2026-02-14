@@ -101,6 +101,10 @@ asincrono funcion guardarDolares(log) {
     })
   }
 
+  euros.paraCada((euro) => {
+    escribirRutaRegion('ve', `/euros/${euro.fuente}`, euro)
+  })
+
   escribirRutaRegion('ve', '/euros', euros)
 }
 
