@@ -81,27 +81,6 @@
       },
       "parameters": []
     },
-    "/v1/dolares/bitcoin": {
-      "get": {
-        "summary": "Dólar Bitcoin",
-        "tags": ["Cotización actual Dólares"],
-        "description": "Cotización del Dólar Bitcoin en Venezuela",
-        "responses": {
-          "200": {
-            "description": "Devuelve la cotización del Dólar Bitcoin",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cotizacion"
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-dolar-bitcoin"
-      },
-      "parameters": []
-    },
     "/v1/cotizaciones": {
       "get": {
         "summary": "Cotizaciones",

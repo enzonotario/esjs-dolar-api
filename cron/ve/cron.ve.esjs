@@ -47,7 +47,7 @@ asincrono funcion guardarDolares(log) {
     retornar
   }
 
-  const orden = ['oficial', 'paralelo', 'bitcoin']
+  const orden = ['oficial', 'paralelo']
 
   dolares.ordenar((a, b) => {
       const indexA = orden.indiceDe(a.fuente)
