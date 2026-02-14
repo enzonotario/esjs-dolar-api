@@ -1,5 +1,5 @@
 importar extraerDolarYadio, { extraerEurYadio } desde '@/ve/yadio.extractor.esjs'
-importar extraerDolarBcv desde '@/ve/bcv.extractor.esjs'
+importar extraerDolarBcv, { extraerEurBcv } desde '@/ve/bcv.extractor.esjs'
 importar { escribirRutaRegion } desde '@/utils/rutas.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 importar tryToCatch desde 'try-to-catch'
@@ -31,11 +31,7 @@ asincrono funcion guardarDolares(log) {
     logError(log, errorBcv, { extractor: 'bcv.extractor.esjs' })
   }
 
-  const [errorEur, euroYadio] = esperar tryToCatch(extraerEurYadio)
-
-  si (errorEur) {
-    logError(log, errorEur, { extractor: 'yadio.extractor.esjs (EUR)' })
-  }
+  const { oficial: euroBcv, paralelo: euroYadio } = esperar extraerEuros(log)
 
   const dolares = []
 
@@ -77,9 +73,49 @@ asincrono funcion guardarDolares(log) {
     })
   }
 
-  si (euroYadio) {
-    cotizaciones.agregar(euroYadio)
+  si (euroBcv) {
+    cotizaciones.agregar({
+      fuente: euroBcv.fuente,
+      nombre: euroBcv.nombre,
+      moneda: euroBcv.moneda,
+      compra: euroBcv.compra,
+      venta: euroBcv.venta,
+      promedio: euroBcv.promedio,
+      fechaActualizacion: euroBcv.fechaActualizacion,
+    })
   }
 
   escribirRutaRegion('ve', '/cotizaciones', cotizaciones)
+
+  const euros = []
+
+  si (euroBcv) {
+    euros.agregar(euroBcv)
+  }
+
+  si (euroYadio) {
+    euros.agregar({
+      ...euroYadio,
+      fuente: 'paralelo',
+      nombre: 'Paralelo',
+    })
+  }
+
+  escribirRutaRegion('ve', '/euros', euros)
+}
+
+asincrono funcion extraerEuros(log) {
+  const [errorEurBcv, oficial] = esperar tryToCatch(extraerEurBcv)
+
+  si (errorEurBcv) {
+    logError(log, errorEurBcv, { extractor: 'bcv.extractor.esjs (EUR)' })
+  }
+
+  const [errorEurYadio, paralelo] = esperar tryToCatch(extraerEurYadio)
+
+  si (errorEurYadio) {
+    logError(log, errorEurYadio, { extractor: 'yadio.extractor.esjs (EUR)' })
+  }
+
+  retornar { oficial, paralelo }
 }

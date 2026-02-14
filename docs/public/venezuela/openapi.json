@@ -106,7 +106,7 @@
       "get": {
         "summary": "Cotizaciones",
         "tags": ["Cotizaciones"],
-        "description": "Devuelve las cotizaciones del Dólar Oficial y Euro en Venezuela",
+        "description": "Devuelve las cotizaciones del Dólar Oficial y Euro oficial en Venezuela",
         "responses": {
           "200": {
             "description": "Devuelve todas las cotizaciones",
@@ -123,6 +123,29 @@
           }
         },
         "operationId": "get-cotizaciones"
+      }
+    },
+    "/v1/euros": {
+      "get": {
+        "summary": "Euros",
+        "tags": ["Cotización actual Euros"],
+        "description": "Devuelve las cotizaciones del Euro oficial (BCV) y paralelo (Yadio) en Venezuela",
+        "responses": {
+          "200": {
+            "description": "Devuelve todas las cotizaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionMoneda"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-euros"
       }
     },
     "/v1/estado": {

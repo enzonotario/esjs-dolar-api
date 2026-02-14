@@ -20,6 +20,22 @@ exportar porDefecto asincrono funcion () {
   retornar extraerCotizacion(html)
 }
 
+exportar asincrono funcion extraerEurBcv() {
+  const log = grupo({
+    cron: 'cron.ve.esjs',
+    extractor: 'bcv.extractor.esjs',
+  })
+
+  const [error, html] = esperar tryToCatch(obtenerHtml)
+
+  si (error) {
+    logError(log, error)
+    retornar nulo
+  }
+
+  retornar extraerCotizacionEur(html)
+}
+
 asincrono funcion obtenerHtml() {
   const httpsAgent = crear https.Agent({
     rejectUnauthorized: falso,
@@ -76,6 +92,58 @@ funcion extraerCotizacion(html) {
   retornar {
     fuente: 'oficial',
     nombre: 'Oficial',
+    compra: nulo,
+    venta: nulo,
+    promedio: valorNumerico,
+    fechaActualizacion: crear Fecha().aCadenaISO(),
+  };
+}
+
+funcion extraerCotizacionEur(html) {
+  const $ = cheerio.load(html)
+
+  var valorEur = nulo
+
+  $('span').each((i, el) => {
+    const texto = $(el).text().recortarEspacios()
+    si (texto === 'EUR') {
+      const contenedor = $(el).closest('.recuadrotsmc')
+      const strong = contenedor.buscar('strong')
+      si (strong.longitud > 0) {
+        valorEur = strong.text().recortarEspacios()
+      }
+    }
+  })
+
+  si (!valorEur) {
+    $('*').each((i, el) => {
+      const texto = $(el).text()
+      si (texto.incluye('EUR') && !valorEur) {
+        const strong = $(el).closest('div').buscar('strong')
+        si (strong.longitud > 0) {
+          const posibleValor = strong.text().recortarEspacios()
+          si (/^\d/.test(posibleValor)) {
+            valorEur = posibleValor
+          }
+        }
+      }
+    })
+  }
+
+  si (!valorEur) {
+    retornar nulo
+  }
+
+  const valorNumerico = interpretarValorMonetario(valorEur)
+
+  si (!valorNumerico) {
+    retornar nulo
+  }
+
+  retornar {
+    fuente: 'oficial',
+    nombre: 'Euro',
+    moneda: 'EUR',
     compra: nulo,
     venta: nulo,
     promedio: valorNumerico,

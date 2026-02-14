@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Cotizaciones
+title: Euros
 head:
   - [
     'meta',
@@ -57,17 +57,17 @@ import { setRegionForSidebar } from '../../.vitepress/sidebar/sidebar.utils.js'
 const spec = setRegionForSidebar('ve')
 </script>
 
-<OAOperation :spec="spec" operationId="get-cotizaciones" :hide-branding="false">
+<OAOperation :spec="spec" operationId="get-euros" :hide-branding="false">
 
 <template #description="description">
 
-Devuelve las cotizaciones del Dólar Oficial y Euro oficial en Venezuela
+Devuelve las cotizaciones del Euro oficial (BCV) y paralelo (Yadio) en Venezuela
 
 </template>
 
 <template #footer>
 
-<!--@include: ./parts/get-cotizaciones-footer.md -->
+<!--@include: ./parts/get-euros-footer.md -->
 
 </template>
 
