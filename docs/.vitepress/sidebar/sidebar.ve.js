@@ -47,6 +47,16 @@ export default function () {
             }),
           ),
         },
+        {
+          text: 'Euros',
+          ...addRegionPrefixToSidebarItems(
+            region.prefix,
+            sidebar.generateSidebarGroup({
+              tag: 'Cotización actual Euros',
+              text: '',
+            }),
+          ),
+        }
       ],
     },
     addRegionPrefixToSidebarItems(
