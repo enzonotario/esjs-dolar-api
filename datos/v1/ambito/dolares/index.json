@@ -14,7 +14,7 @@
     "nombre": "Blue",
     "compra": 1420,
     "venta": 1440,
-    "fechaActualizacion": "2026-02-13T11:00:00.000Z",
+    "fechaActualizacion": "2026-02-13T12:00:00.000Z",
     "variacion": 0
   },
   {
@@ -23,17 +23,17 @@
     "nombre": "Bolsa",
     "compra": 1423.6,
     "venta": 1423.6,
-    "fechaActualizacion": "2026-02-17T11:00:00.000Z",
+    "fechaActualizacion": "2026-02-17T12:00:00.000Z",
     "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1473.69,
-    "venta": 1473.69,
-    "fechaActualizacion": "2026-02-17T11:00:00.000Z",
-    "variacion": 0
+    "compra": 1462.72,
+    "venta": 1462.72,
+    "fechaActualizacion": "2026-02-17T12:00:00.000Z",
+    "variacion": -0.7
   },
   {
     "moneda": "USD",
@@ -48,10 +48,10 @@
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1475.69,
-    "venta": 1475.69,
-    "fechaActualizacion": "2026-02-17T11:00:00.000Z",
-    "variacion": 0.12
+    "compra": 1474.16,
+    "venta": 1474.16,
+    "fechaActualizacion": "2026-02-17T12:00:00.000Z",
+    "variacion": -0.04
   },
   {
     "moneda": "USD",
