@@ -5,9 +5,10 @@ funcion obtenerValores($, href, titulo) {
   si (titulo) {
     const tituloLower = titulo.aMinusculas()
     const enlace = $('.titleText').filtrar((_, elemento) => {
-      const texto = $(elemento).text().recortarEspacios().aMinusculas()
-      retornar texto === tituloLower
-    }).first()
+        const texto = $(elemento).text().recortarEspacios().aMinusculas()
+        retornar texto === tituloLower
+      })
+      .first()
 
     si (enlace.longitud > 0) {
       const tituloElemento = enlace.parent()

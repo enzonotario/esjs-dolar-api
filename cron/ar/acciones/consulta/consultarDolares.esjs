@@ -12,7 +12,8 @@ asincrono funcion nuevosValores() {
     accion: 'consultarDolares',
   })
 
-  const [errorCotizaciones, cotizaciones] = esperar tryToCatch(extraerCotizaciones)
+  const [errorCotizaciones, cotizaciones] =
+    esperar tryToCatch(extraerCotizaciones)
   si (errorCotizaciones) {
     logError(log, errorCotizaciones, { extractor: 'extraerCotizaciones' })
   }
@@ -29,7 +30,9 @@ asincrono funcion nuevosValores() {
 
   const dolares = [
     ...(cotizaciones || []).filtrar((cotizacion) => cotizacion.moneda === 'USD'),
-    ...(dolaresNoCalculados || []).filtrar((dolar) => !['oficial', 'mayorista'].incluye(dolar.casa)),
+    ...(dolaresNoCalculados || []).filtrar(
+      (dolar) => !['oficial', 'mayorista'].incluye(dolar.casa),
+    ),
     ...(cotizaciones || []).filtrar((cotizacion) => cotizacion.moneda === 'USD').mapear((dolarOficial) => {
         const impuestos = 0.3
 

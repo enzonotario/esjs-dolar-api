@@ -20,7 +20,11 @@ exportar asincrono funcion extraerDolares() {
 
   const resultados = esperar Promesa.todos(
     casas.filtrar((casa) => !casa.calculado).mapear(asincrono (casa) => {
-        const [error, valores] = esperar tryToCatch(obtenerValoresParaCasa, $, casa)
+        const [error, valores] = esperar tryToCatch(
+          obtenerValoresParaCasa,
+          $,
+          casa,
+        )
 
         si (error) {
           logError(log, error, { casa: casa.identificador })
@@ -50,11 +54,19 @@ asincrono funcion obtenerValoresParaCasa($, casa) {
 
   elegir (casaConfiguracion.extractor) {
     caso 'cabecera': {
-      retornar esperar extraerCabecera($, casaConfiguracion.href, casaConfiguracion.titulo)
+      retornar esperar extraerCabecera(
+        $,
+        casaConfiguracion.href,
+        casaConfiguracion.titulo,
+      )
     }
     caso 'pie':
       {
-        retornar esperar extraerPie($, casaConfiguracion.href, casaConfiguracion.titulo)
+        retornar esperar extraerPie(
+          $,
+          casaConfiguracion.href,
+          casaConfiguracion.titulo,
+        )
       }
       porDefecto: {
         lanzar crear Error(

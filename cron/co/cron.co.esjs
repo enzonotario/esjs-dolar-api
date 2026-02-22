@@ -11,7 +11,7 @@ exportar porDefecto asincrono funcion () {
   intentar {
     log.info('Inicio')
 
-    const valoresActuales = esperar leerRutaRegion('co', '/cotizaciones') || []
+    const valoresActuales = (esperar leerRutaRegion('co', '/cotizaciones')) || []
 
     const valoresNuevos = esperar extraer()
 
@@ -33,7 +33,10 @@ exportar porDefecto asincrono funcion () {
     })
 
     valoresNuevos.paraCada((cotizacionNueva) => {
-      si (cotizacionNueva && !cotizaciones.buscar((c) => c.moneda === cotizacionNueva.moneda)) {
+      si (
+        cotizacionNueva &&
+        !cotizaciones.buscar((c) => c.moneda === cotizacionNueva.moneda)
+      ) {
         cotizaciones.agregar(cotizacionNueva)
       }
     })
@@ -60,4 +63,3 @@ exportar porDefecto asincrono funcion () {
     logError(log, error)
   }
 }
-

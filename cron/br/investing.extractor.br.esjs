@@ -30,7 +30,8 @@ exportar porDefecto asincrono funcion () {
 
       const [error, datos] = esperar tryToCatch(scrapearConFirecrawl, log, {
         url,
-        prompt: 'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
+        prompt:
+          'Extrae los valores de compra (bid), venta (ask), cierre anterior (prevClose) y fecha de actualización de la cotización de la moneda.',
         schema: {
           compra: {
             type: 'number',
@@ -67,4 +68,3 @@ exportar porDefecto asincrono funcion () {
 
   retornar cotizaciones
 }
-
