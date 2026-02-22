@@ -3,6 +3,14 @@ importar { logError } desde '@/log.esjs'
 const FIRECRAWL_API_URL = `${import.meta.env.VITE_FIRECRAWL_BASE_URL}/v2/scrape`
 const FIRECRAWL_API_KEY = import.meta.env.VITE_FIRECRAWL_API_KEY
 
+const HORA_MAÑANA_UTC = 12
+const HORA_TARDE_UTC = 20
+
+exportar funcion debeEjecutarFirecrawlAhora() {
+  const hora = crear Fecha().obtenerHorasUTC()
+  retornar hora === HORA_MAÑANA_UTC || hora === HORA_TARDE_UTC
+}
+
 exportar asincrono funcion scrapearConFirecrawl(log, configuracion) {
   const { url, prompt, schema, required } = configuracion
 

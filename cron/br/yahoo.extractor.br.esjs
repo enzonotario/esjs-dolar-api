@@ -1,8 +1,14 @@
-importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
+importar {
+  scrapearConFirecrawl,
+  debeEjecutarFirecrawlAhora,
+} desde '@/utils/firecrawl.esjs'
 importar { grupo, logError } desde '@/log.esjs'
 importar tryToCatch desde 'try-to-catch'
 
 exportar porDefecto asincrono funcion () {
+  si (!debeEjecutarFirecrawlAhora()) {
+    retornar nulo
+  }
   const log = grupo({
     cron: 'cron.br.esjs',
     extractor: 'yahoo.extractor.br.esjs',

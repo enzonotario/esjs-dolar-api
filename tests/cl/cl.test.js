@@ -1,5 +1,14 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import extraer from '@/cl/investing.extractor.cl.esjs'
+
+vi.mock('@/utils/firecrawl.esjs', () => ({
+  debeEjecutarFirecrawlAhora: vi.fn().mockReturnValue(true),
+  scrapearConFirecrawl: vi.fn().mockResolvedValue({
+    compra: 5.5,
+    venta: 5.6,
+    ultimoCierre: 5.4,
+  }),
+}))
 
 describe('extraer cotizaciones', () => {
   it('extraer cotizaciones de un texto', async () => {

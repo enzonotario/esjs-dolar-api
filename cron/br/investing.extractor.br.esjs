@@ -1,4 +1,7 @@
-importar { scrapearConFirecrawl } desde '@/utils/firecrawl.esjs'
+importar {
+  scrapearConFirecrawl,
+  debeEjecutarFirecrawlAhora,
+} desde '@/utils/firecrawl.esjs'
 importar { monedas } desde '@/br/constantes.br.esjs'
 importar tryToCatch desde 'try-to-catch'
 importar { grupo, logError } desde '@/log.esjs'
@@ -25,6 +28,9 @@ exportar porDefecto asincrono funcion () {
         log.warn('No se pudo extraer cotización USD')
       }
     } sino {
+      si (!debeEjecutarFirecrawlAhora()) {
+        continuar
+      }
       const monedaEnMinusculas = moneda.codigo.aMinusculas()
       const url = `https://es.investing.com/currencies/${monedaEnMinusculas}-brl`
 

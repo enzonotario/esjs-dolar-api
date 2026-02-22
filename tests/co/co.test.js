@@ -1,7 +1,16 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { monedas } from '@/co/constantes.co.esjs'
 import extraer from '@/co/investing.extractor.co.esjs'
 import extraerTrm from '@/co/trm.extractor.co.esjs'
+
+vi.mock('@/utils/firecrawl.esjs', () => ({
+  debeEjecutarFirecrawlAhora: vi.fn().mockReturnValue(true),
+  scrapearConFirecrawl: vi.fn().mockResolvedValue({
+    compra: 5.5,
+    venta: 5.6,
+    ultimoCierre: 5.4,
+  }),
+}))
 
 describe('investing.extractor.co.esjs', () => {
   it('extrae cotizaciones de monedas usando Firecrawl', {
