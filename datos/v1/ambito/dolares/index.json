@@ -3,63 +3,63 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1348.91,
-    "venta": 1399.15,
-    "fechaActualizacion": "2026-02-23T09:24:00.000Z",
-    "variacion": 0
+    "compra": 1349.63,
+    "venta": 1399.88,
+    "fechaActualizacion": "2026-02-23T11:45:00.000Z",
+    "variacion": 0.05
   },
   {
     "moneda": "USD",
     "casa": "blue",
     "nombre": "Blue",
-    "compra": 1410,
-    "venta": 1430,
-    "fechaActualizacion": "2026-02-23T11:00:00.000Z",
-    "variacion": 0
+    "compra": 1405,
+    "venta": 1425,
+    "fechaActualizacion": "2026-02-23T12:00:00.000Z",
+    "variacion": -0.35
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1394.28,
-    "venta": 1394.28,
-    "fechaActualizacion": "2026-02-23T11:00:00.000Z",
+    "compra": 1394.17,
+    "venta": 1394.17,
+    "fechaActualizacion": "2026-02-23T12:00:00.000Z",
     "variacion": -0.6
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1437.25,
-    "venta": 1437.25,
-    "fechaActualizacion": "2026-02-23T11:00:00.000Z",
-    "variacion": -0.2
+    "compra": 1435.43,
+    "venta": 1435.43,
+    "fechaActualizacion": "2026-02-23T12:00:00.000Z",
+    "variacion": -0.3
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1361,
-    "venta": 1370,
-    "fechaActualizacion": "2026-02-23T10:43:00.000Z",
-    "variacion": -0.44
+    "compra": 1359,
+    "venta": 1368,
+    "fechaActualizacion": "2026-02-23T11:03:00.000Z",
+    "variacion": -0.58
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1447.05,
-    "venta": 1447.05,
-    "fechaActualizacion": "2026-02-23T11:00:00.000Z",
-    "variacion": 0.04
+    "compra": 1441.72,
+    "venta": 1441.72,
+    "fechaActualizacion": "2026-02-23T12:00:00.000Z",
+    "variacion": -0.17
   },
   {
     "moneda": "USD",
     "casa": "tarjeta",
     "nombre": "Tarjeta",
-    "compra": 1345,
-    "venta": 1813.5,
-    "fechaActualizacion": "2026-02-23T11:00:00.000Z",
-    "variacion": 0
+    "compra": 1340,
+    "venta": 1807,
+    "fechaActualizacion": "2026-02-23T12:00:00.000Z",
+    "variacion": -0.36
   }
 ]
