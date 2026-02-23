@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 37.25,
-    "venta": 39.75,
-    "fechaActualizacion": "2026-02-23T13:01:27.191Z"
+    "compra": 37.1,
+    "venta": 39.6,
+    "fechaActualizacion": "2026-02-23T14:01:22.568Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 42.84,
-    "venta": 48.18,
-    "fechaActualizacion": "2026-02-23T13:01:27.192Z"
+    "compra": 42.7,
+    "venta": 48.03,
+    "fechaActualizacion": "2026-02-23T14:01:22.568Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.02,
     "venta": 0.2,
-    "fechaActualizacion": "2026-02-23T13:01:27.192Z"
+    "fechaActualizacion": "2026-02-23T14:01:22.568Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
     "compra": 6.9,
     "venta": 8.6,
-    "fechaActualizacion": "2026-02-23T13:01:27.192Z"
+    "fechaActualizacion": "2026-02-23T14:01:22.568Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 49.07,
-    "venta": 55.7,
-    "fechaActualizacion": "2026-02-23T13:01:27.192Z"
+    "compra": 48.9,
+    "venta": 55.53,
+    "fechaActualizacion": "2026-02-23T14:01:22.569Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 47.2,
-    "venta": 52.22,
-    "fechaActualizacion": "2026-02-23T13:01:27.192Z"
+    "compra": 46.99,
+    "venta": 52.02,
+    "fechaActualizacion": "2026-02-23T14:01:22.569Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
-    "compra": 0.00564,
-    "venta": 0.00628,
-    "fechaActualizacion": "2026-02-23T13:01:27.192Z"
+    "compra": 0.00562,
+    "venta": 0.00626,
+    "fechaActualizacion": "2026-02-23T14:01:22.569Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.457,
-    "fechaActualizacion": "2026-02-23T13:01:27.193Z"
+    "fechaActualizacion": "2026-02-23T14:01:22.569Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 185592.91,
-    "venta": 201778.5525,
-    "fechaActualizacion": "2026-02-23T13:01:27.193Z"
+    "compra": 189358.4,
+    "venta": 204985.44,
+    "fechaActualizacion": "2026-02-23T14:01:22.569Z"
   }
 ]
