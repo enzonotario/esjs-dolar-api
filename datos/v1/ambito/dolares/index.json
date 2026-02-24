@@ -3,63 +3,63 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1342.39,
-    "venta": 1392.75,
-    "fechaActualizacion": "2026-02-24T09:01:00.000Z",
-    "variacion": 0
+    "compra": 1342.76,
+    "venta": 1393.27,
+    "fechaActualizacion": "2026-02-24T11:48:00.000Z",
+    "variacion": 0.04
   },
   {
     "moneda": "USD",
     "casa": "blue",
     "nombre": "Blue",
-    "compra": 1405,
-    "venta": 1425,
-    "fechaActualizacion": "2026-02-24T11:00:00.000Z",
-    "variacion": 0
+    "compra": 1410,
+    "venta": 1430,
+    "fechaActualizacion": "2026-02-24T12:00:00.000Z",
+    "variacion": 0.35
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1399.38,
-    "venta": 1399.38,
-    "fechaActualizacion": "2026-02-24T11:00:00.000Z",
-    "variacion": 0.3
+    "compra": 1406.52,
+    "venta": 1406.52,
+    "fechaActualizacion": "2026-02-24T12:00:00.000Z",
+    "variacion": 0.8
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1444.27,
-    "venta": 1444.27,
-    "fechaActualizacion": "2026-02-24T11:00:00.000Z",
-    "variacion": 0
+    "compra": 1449.15,
+    "venta": 1449.15,
+    "fechaActualizacion": "2026-02-24T12:00:00.000Z",
+    "variacion": 0.6
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1366,
-    "venta": 1375,
-    "fechaActualizacion": "2026-02-24T11:00:00.000Z",
-    "variacion": 0.33
+    "compra": 1368,
+    "venta": 1377,
+    "fechaActualizacion": "2026-02-24T11:49:00.000Z",
+    "variacion": 0.47
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1440,
-    "venta": 1440,
-    "fechaActualizacion": "2026-02-24T11:00:00.000Z",
-    "variacion": 0
+    "compra": 1446.94,
+    "venta": 1446.94,
+    "fechaActualizacion": "2026-02-24T12:00:00.000Z",
+    "variacion": 0.11
   },
   {
     "moneda": "USD",
     "casa": "tarjeta",
     "nombre": "Tarjeta",
-    "compra": 1340,
-    "venta": 1807,
-    "fechaActualizacion": "2026-02-24T11:00:00.000Z",
-    "variacion": 0
+    "compra": 1345,
+    "venta": 1813.5,
+    "fechaActualizacion": "2026-02-24T12:00:00.000Z",
+    "variacion": 0.36
   }
 ]
