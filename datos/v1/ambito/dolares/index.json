@@ -3,10 +3,10 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1349.34,
-    "venta": 1399.59,
-    "fechaActualizacion": "2026-02-24T13:45:00.000Z",
-    "variacion": 0.49
+    "compra": 1349.87,
+    "venta": 1400.12,
+    "fechaActualizacion": "2026-02-24T17:13:00.000Z",
+    "variacion": 0.53
   },
   {
     "moneda": "USD",
@@ -14,7 +14,7 @@
     "nombre": "Blue",
     "compra": 1410,
     "venta": 1430,
-    "fechaActualizacion": "2026-02-24T17:00:00.000Z",
+    "fechaActualizacion": "2026-02-24T18:00:00.000Z",
     "variacion": 0.35
   },
   {
@@ -23,35 +23,35 @@
     "nombre": "Bolsa",
     "compra": 1405.08,
     "venta": 1405.08,
-    "fechaActualizacion": "2026-02-24T17:00:00.000Z",
+    "fechaActualizacion": "2026-02-24T18:00:00.000Z",
     "variacion": 0.7
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1438.31,
-    "venta": 1438.31,
-    "fechaActualizacion": "2026-02-24T17:00:00.000Z",
-    "variacion": -0.2
+    "compra": 1436.53,
+    "venta": 1436.53,
+    "fechaActualizacion": "2026-02-24T18:00:00.000Z",
+    "variacion": -0.3
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1369,
-    "venta": 1378,
-    "fechaActualizacion": "2026-02-24T13:46:00.000Z",
-    "variacion": 0.55
+    "compra": 1371.5,
+    "venta": 1380.5,
+    "fechaActualizacion": "2026-02-24T17:16:00.000Z",
+    "variacion": 0.73
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1442.94,
-    "venta": 1442.94,
-    "fechaActualizacion": "2026-02-24T17:00:00.000Z",
-    "variacion": -0.05
+    "compra": 1443.33,
+    "venta": 1443.33,
+    "fechaActualizacion": "2026-02-24T18:00:00.000Z",
+    "variacion": -0.1
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1350,
     "venta": 1820,
-    "fechaActualizacion": "2026-02-24T17:00:00.000Z",
+    "fechaActualizacion": "2026-02-24T18:00:00.000Z",
     "variacion": 0.72
   }
 ]
