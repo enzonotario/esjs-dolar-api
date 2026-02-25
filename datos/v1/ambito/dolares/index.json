@@ -5,8 +5,8 @@
     "nombre": "Oficial",
     "compra": 1349.87,
     "venta": 1400.12,
-    "fechaActualizacion": "2026-02-24T17:13:00.000Z",
-    "variacion": 0.53
+    "fechaActualizacion": "2026-02-25T10:01:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -14,44 +14,44 @@
     "nombre": "Blue",
     "compra": 1410,
     "venta": 1430,
-    "fechaActualizacion": "2026-02-24T10:00:00.000Z",
-    "variacion": 0.35
+    "fechaActualizacion": "2026-02-25T11:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1405.08,
-    "venta": 1405.08,
-    "fechaActualizacion": "2026-02-25T10:00:00.000Z",
-    "variacion": 0.7
+    "compra": 1408.96,
+    "venta": 1408.96,
+    "fechaActualizacion": "2026-02-25T10:40:00.000Z",
+    "variacion": 0.3
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1444.5,
-    "venta": 1444.5,
-    "fechaActualizacion": "2026-02-25T10:00:00.000Z",
-    "variacion": 0
+    "compra": 1442.02,
+    "venta": 1442.02,
+    "fechaActualizacion": "2026-02-25T10:40:00.000Z",
+    "variacion": -0.2
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1371.5,
-    "venta": 1380.5,
-    "fechaActualizacion": "2026-02-24T17:16:00.000Z",
-    "variacion": 0.73
+    "compra": 1374,
+    "venta": 1383,
+    "fechaActualizacion": "2026-02-25T10:56:00.000Z",
+    "variacion": 0.18
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1442.42,
-    "venta": 1442.42,
-    "fechaActualizacion": "2026-02-25T10:00:00.000Z",
-    "variacion": -0.16
+    "compra": 1443.21,
+    "venta": 1443.21,
+    "fechaActualizacion": "2026-02-25T11:00:00.000Z",
+    "variacion": 0.03
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1350,
     "venta": 1820,
-    "fechaActualizacion": "2026-02-25T10:00:00.000Z",
+    "fechaActualizacion": "2026-02-25T11:00:00.000Z",
     "variacion": 0
   }
 ]
