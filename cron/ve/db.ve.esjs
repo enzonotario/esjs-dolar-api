@@ -14,11 +14,11 @@ exportar funcion guardarCotizacionesVe(cotizaciones, rutaDb) {
   const db = abrirBD(rutaDb ? rutaDb : `${directorio}/ve.sqlite`)
   asegurarTabla(
     db,
-    'CREATE TABLE IF NOT EXISTS cotizaciones (moneda TEXT, fuente TEXT, nombre TEXT, compra REAL, venta REAL, promedio REAL, fechaActualizacion TEXT, PRIMARY KEY (moneda, fuente))',
+    'CREATE TABLE IF NOT EXISTS cotizaciones (moneda TEXT, fuente TEXT, nombre TEXT, compra REAL, venta REAL, promedio REAL, fechaActualizacion TEXT, PRIMARY KEY (moneda, fuente, fechaActualizacion))',
   )
   const stmt = prepararUpsert(
     db,
-    'INSERT INTO cotizaciones (moneda, fuente, nombre, compra, venta, promedio, fechaActualizacion) VALUES (@moneda, @fuente, @nombre, @compra, @venta, @promedio, @fechaActualizacion) ON CONFLICT(moneda, fuente) DO UPDATE SET nombre=excluded.nombre, compra=excluded.compra, venta=excluded.venta, promedio=excluded.promedio, fechaActualizacion=excluded.fechaActualizacion',
+    'INSERT OR IGNORE INTO cotizaciones (moneda, fuente, nombre, compra, venta, promedio, fechaActualizacion) VALUES (@moneda, @fuente, @nombre, @compra, @venta, @promedio, @fechaActualizacion)',
   )
   ejecutarTransaccion(db, stmt, cotizaciones)
   cerrarBD(db)

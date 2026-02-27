@@ -20,6 +20,7 @@
     "docs:gen": "node --experimental-loader esjs-loader scripts/generadores/generar.esjs",
     "format": "prettier --write '**/*.esjs'",
     "data:copy": "node --experimental-loader esjs-loader scripts/datos.esjs",
+    "seed:ve": "node --experimental-loader esjs-loader scripts/seed-ve-db.esjs",
     "cron:build": "vite build --config vite.config.js --ssr --mode=production",
     "cron:run": "node ./dist/cron/index.js",
     "cron:test": "vitest --config vite.config.js",

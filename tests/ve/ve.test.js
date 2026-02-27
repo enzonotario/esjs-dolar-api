@@ -124,21 +124,30 @@ describe('ve.dolarapi.com', () => {
 
     const archivoBD = resolve('datos/ve/ve.sqlite')
     const db = new Database(archivoBD)
-    const filas = db.prepare('SELECT moneda, fuente, nombre, compra, venta, promedio, fechaActualizacion FROM cotizaciones ORDER BY moneda').all()
+    const usd = db.prepare('SELECT * FROM cotizaciones WHERE moneda = ? AND fuente = ? ORDER BY fechaActualizacion DESC LIMIT 1').get('USD', 'oficial')
+    const eur = db.prepare('SELECT * FROM cotizaciones WHERE moneda = ? AND fuente = ? ORDER BY fechaActualizacion DESC LIMIT 1').get('EUR', 'oficial')
     db.close()
 
-    expect(filas).toHaveLength(2)
-    expect(filas[0]).toMatchObject({
-      moneda: 'EUR',
-      fuente: 'oficial',
-      nombre: 'Euro',
-    })
-    expect(filas[1]).toMatchObject({
+    expect(usd).toMatchObject({
       moneda: 'USD',
       fuente: 'oficial',
       nombre: 'Dólar',
     })
-    expect(filas[0].promedio).toBeGreaterThan(0)
-    expect(filas[1].promedio).toBeGreaterThan(0)
+    expect(eur).toMatchObject({
+      moneda: 'EUR',
+      fuente: 'oficial',
+      nombre: 'Euro',
+    })
+    expect(usd.promedio).toBeGreaterThan(0)
+    expect(eur.promedio).toBeGreaterThan(0)
+
+    const historicoOficial = JSON.parse(readFileSync(resolve('datos/ve/v1/historicos/dolares/oficial/index.json'), 'utf-8'))
+    expect(Array.isArray(historicoOficial)).toBe(true)
+    expect(historicoOficial.length).toBeGreaterThan(0)
+    expect(historicoOficial[0]).toMatchObject({
+      fuente: 'oficial',
+      promedio: expect.any(Number),
+      fecha: expect.any(String),
+    })
   }, 60000)
 })

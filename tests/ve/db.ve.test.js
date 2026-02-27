@@ -50,7 +50,7 @@ describe('guardarCotizacionesVe con SQLite real', () => {
     expect(usd.compra).toBeCloseTo(compra, 2)
   })
 
-  it('realiza upsert en ejecuciones sucesivas sin duplicar filas', async () => {
+  it('acumula historial en ejecuciones sucesivas', async () => {
     const { guardarCotizacionesVe } = await import('@/ve/db.ve.esjs')
 
     const compra1 = faker.number.float()
@@ -84,10 +84,10 @@ describe('guardarCotizacionesVe con SQLite real', () => {
 
     const db = new Database(archivoBD)
     const count = db.prepare('SELECT COUNT(*) as c FROM cotizaciones').get().c
-    const usd = db.prepare('SELECT * FROM cotizaciones WHERE moneda = ? AND fuente = ?').get('USD', 'oficial')
+    const usd = db.prepare('SELECT * FROM cotizaciones WHERE moneda = ? AND fuente = ? ORDER BY fechaActualizacion DESC LIMIT 1').get('USD', 'oficial')
     db.close()
 
-    expect(count).toBe(1)
+    expect(count).toBe(2)
     expect(usd).toBeTruthy()
     expect(usd.compra).toBeCloseTo(compra2, 2)
     expect(usd.venta).toBeCloseTo(venta2, 2)
