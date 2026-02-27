@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import Database from 'better-sqlite3'
 import { describe, expect, it } from 'vitest'
 import extraerBcv from '@/ve/bcv.extractor.esjs'
 import { extraerEurBcv } from '@/ve/bcv.extractor.esjs'
@@ -120,5 +121,24 @@ describe('ve.dolarapi.com', () => {
         fechaActualizacion: expect.any(String),
       })
     }
-  }, 20000)
+
+    const archivoBD = resolve('datos/ve/ve.sqlite')
+    const db = new Database(archivoBD)
+    const filas = db.prepare('SELECT moneda, fuente, nombre, compra, venta, promedio, fechaActualizacion FROM cotizaciones ORDER BY moneda').all()
+    db.close()
+
+    expect(filas).toHaveLength(2)
+    expect(filas[0]).toMatchObject({
+      moneda: 'EUR',
+      fuente: 'oficial',
+      nombre: 'Euro',
+    })
+    expect(filas[1]).toMatchObject({
+      moneda: 'USD',
+      fuente: 'oficial',
+      nombre: 'Dólar',
+    })
+    expect(filas[0].promedio).toBeGreaterThan(0)
+    expect(filas[1].promedio).toBeGreaterThan(0)
+  }, 60000)
 })
