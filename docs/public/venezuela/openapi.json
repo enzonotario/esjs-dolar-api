@@ -185,10 +185,206 @@
         },
         "operationId": "get-estado"
       }
+    },
+    "/v1/historicos/dolares": {
+      "get": {
+        "summary": "Histórico Dólares",
+        "tags": ["Históricos"],
+        "description": "Devuelve el último valor de cada día para Dólar oficial y paralelo, ordenados por fecha",
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas (oficial y paralelo por día)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistorico"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-dolares"
+      }
+    },
+    "/v1/historicos/dolares/oficial": {
+      "get": {
+        "summary": "Histórico Dólar Oficial",
+        "tags": ["Históricos"],
+        "description": "Devuelve el último valor de cada día del Dólar Oficial",
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistorico"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-dolar-oficial"
+      }
+    },
+    "/v1/historicos/dolares/paralelo": {
+      "get": {
+        "summary": "Histórico Dólar Paralelo",
+        "tags": ["Históricos"],
+        "description": "Devuelve el último valor de cada día del Dólar Paralelo",
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistorico"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-dolar-paralelo"
+      }
+    },
+    "/v1/historicos/euros": {
+      "get": {
+        "summary": "Histórico Euros",
+        "tags": ["Históricos"],
+        "description": "Devuelve el último valor de cada día para Euro oficial y paralelo, ordenados por fecha",
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas (oficial y paralelo por día)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistoricoEur"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-euros"
+      }
+    },
+    "/v1/historicos/euros/oficial": {
+      "get": {
+        "summary": "Histórico Euro Oficial",
+        "tags": ["Históricos"],
+        "description": "Devuelve el último valor de cada día del Euro Oficial",
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistoricoEur"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-euro-oficial"
+      }
+    },
+    "/v1/historicos/euros/paralelo": {
+      "get": {
+        "summary": "Histórico Euro Paralelo",
+        "tags": ["Históricos"],
+        "description": "Devuelve el último valor de cada día del Euro Paralelo",
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistoricoEur"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-euro-paralelo"
+      }
     }
   },
   "components": {
     "schemas": {
+      "CotizacionHistorico": {
+        "title": "CotizacionHistorico",
+        "type": "object",
+        "properties": {
+          "fuente": {
+            "type": "string",
+            "enum": ["oficial", "paralelo"]
+          },
+          "compra": {
+            "type": "number",
+            "nullable": true
+          },
+          "venta": {
+            "type": "number",
+            "nullable": true
+          },
+          "promedio": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha en formato YYYY-MM-DD"
+          }
+        },
+        "required": ["fuente", "promedio", "fecha"]
+      },
+      "CotizacionHistoricoEur": {
+        "title": "CotizacionHistoricoEur",
+        "type": "object",
+        "properties": {
+          "fuente": {
+            "type": "string",
+            "enum": ["oficial", "paralelo"]
+          },
+          "moneda": {
+            "type": "string",
+            "enum": ["EUR"]
+          },
+          "compra": {
+            "type": "number",
+            "nullable": true
+          },
+          "venta": {
+            "type": "number",
+            "nullable": true
+          },
+          "promedio": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha en formato YYYY-MM-DD"
+          }
+        },
+        "required": ["fuente", "moneda", "promedio", "fecha"]
+      },
       "Cotizacion": {
         "title": "Cotizacion",
         "type": "object",
