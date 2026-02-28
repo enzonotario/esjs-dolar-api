@@ -189,7 +189,7 @@
     "/v1/historicos/dolares": {
       "get": {
         "summary": "Histórico Dólares",
-        "tags": ["Históricos"],
+        "tags": ["Históricos Dólares"],
         "description": "Devuelve el último valor de cada día para Dólar oficial y paralelo, ordenados por fecha",
         "responses": {
           "200": {
@@ -212,7 +212,7 @@
     "/v1/historicos/dolares/oficial": {
       "get": {
         "summary": "Histórico Dólar Oficial",
-        "tags": ["Históricos"],
+        "tags": ["Históricos Dólares"],
         "description": "Devuelve el último valor de cada día del Dólar Oficial",
         "responses": {
           "200": {
@@ -235,7 +235,7 @@
     "/v1/historicos/dolares/paralelo": {
       "get": {
         "summary": "Histórico Dólar Paralelo",
-        "tags": ["Históricos"],
+        "tags": ["Históricos Dólares"],
         "description": "Devuelve el último valor de cada día del Dólar Paralelo",
         "responses": {
           "200": {
@@ -258,7 +258,7 @@
     "/v1/historicos/euros": {
       "get": {
         "summary": "Histórico Euros",
-        "tags": ["Históricos"],
+        "tags": ["Históricos Euros"],
         "description": "Devuelve el último valor de cada día para Euro oficial y paralelo, ordenados por fecha",
         "responses": {
           "200": {
@@ -281,7 +281,7 @@
     "/v1/historicos/euros/oficial": {
       "get": {
         "summary": "Histórico Euro Oficial",
-        "tags": ["Históricos"],
+        "tags": ["Históricos Euros"],
         "description": "Devuelve el último valor de cada día del Euro Oficial",
         "responses": {
           "200": {
@@ -304,7 +304,7 @@
     "/v1/historicos/euros/paralelo": {
       "get": {
         "summary": "Histórico Euro Paralelo",
-        "tags": ["Históricos"],
+        "tags": ["Históricos Euros"],
         "description": "Devuelve el último valor de cada día del Euro Paralelo",
         "responses": {
           "200": {

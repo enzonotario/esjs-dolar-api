@@ -61,13 +61,28 @@ export default function () {
     },
     {
       text: 'Históricos',
-      ...addRegionPrefixToSidebarItems(
-        region.prefix,
-        sidebar.generateSidebarGroup({
-          tag: 'Históricos',
-          text: '',
-        }),
-      ),
+      items: [
+        {
+          text: 'Dólares',
+          ...addRegionPrefixToSidebarItems(
+            region.prefix,
+            sidebar.generateSidebarGroup({
+              tag: 'Históricos Dólares',
+              text: '',
+            }),
+          ),
+        },
+        {
+          text: 'Euros',
+          ...addRegionPrefixToSidebarItems(
+            region.prefix,
+            sidebar.generateSidebarGroup({
+              tag: 'Históricos Euros',
+              text: '',
+            }),
+          ),
+        },
+      ],
     },
     addRegionPrefixToSidebarItems(
       region.prefix,
