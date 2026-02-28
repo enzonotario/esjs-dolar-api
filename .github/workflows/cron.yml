@@ -1,8 +1,23 @@
 name: CRON
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      region:
+        description: 'Región a ejecutar (vacío = todas)'
+        required: false
+        type: choice
+        options:
+          - ''
+          - ar
+          - cl
+          - ve
+          - uy
+          - mx
+          - bo
+          - br
+          - co
+        default: ''
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -71,6 +86,8 @@ jobs:
 
       - name: Run cron
         run: pnpm run cron:run
+        env:
+          CRON_REGION: ${{ inputs.region }}
 
       - name: Run og
         run: pnpm run og:png
