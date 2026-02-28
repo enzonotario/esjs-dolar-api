@@ -59,6 +59,16 @@ export default function () {
         }
       ],
     },
+    {
+      text: 'Históricos',
+      ...addRegionPrefixToSidebarItems(
+        region.prefix,
+        sidebar.generateSidebarGroup({
+          tag: 'Históricos',
+          text: '',
+        }),
+      ),
+    },
     addRegionPrefixToSidebarItems(
       region.prefix,
       sidebar.generateSidebarGroup({
