@@ -37,10 +37,10 @@ const banners = [
 ]
 
 const playlist = [
-  { bannerId: 10, duration: 10000 },
-  { bannerId: 20, duration: 10000 },
-  { bannerId: 30, duration: 10000 },
-  { bannerId: 20, duration: 6000 },
+  { bannerId: 10, duration: 5000 },
+  { bannerId: 20, duration: 5000 },
+  { bannerId: 30, duration: 5000 },
+  { bannerId: 40, duration: 3000 },
 ]
 
 const isMobile = ref(false)
