@@ -18,7 +18,8 @@ const options = region.regions
       @change="region.onRegionChange($event, router)"
     >
       <option
-        v-for="option in options" :key="option.code"
+        v-for="option in options"
+        :key="option.code"
         :value="option.code"
         :selected="option.code === region.currentRegion.value.code"
       >

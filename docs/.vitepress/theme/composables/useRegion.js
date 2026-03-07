@@ -1,13 +1,13 @@
-import { ref } from 'vue'
 import { useOpenapi } from 'vitepress-openapi/client'
-import arSpec from '../../../public/openapi.json'
-import clSpec from '../../../public/chile/openapi.json'
-import veSpec from '../../../public/venezuela/openapi.json'
-import uySpec from '../../../public/uruguay/openapi.json'
-import mxSpec from '../../../public/mexico/openapi.json'
+import { ref } from 'vue'
 import boSpec from '../../../public/bolivia/openapi.json'
 import brSpec from '../../../public/brasil/openapi.json'
+import clSpec from '../../../public/chile/openapi.json'
 import coSpec from '../../../public/colombia/openapi.json'
+import mxSpec from '../../../public/mexico/openapi.json'
+import arSpec from '../../../public/openapi.json'
+import uySpec from '../../../public/uruguay/openapi.json'
+import veSpec from '../../../public/venezuela/openapi.json'
 
 const regions = [
   {

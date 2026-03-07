@@ -1,8 +1,8 @@
 <script setup>
 import { useRouter } from 'vitepress'
 import { useRegion } from '../composables/useRegion.js'
-import LatamMap from './LatamMap.vue'
 import Ads from './Ads.vue'
+import LatamMap from './LatamMap.vue'
 import SponsorsAvatars from './sponsors/SponsorsAvatars.vue'
 
 const region = useRegion()
