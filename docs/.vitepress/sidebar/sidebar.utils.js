@@ -8,7 +8,11 @@ export function setRegionForSidebar(regionCode) {
 
   useTheme({
     i18n: {
-      locale: regionCode === 'br' ? 'pt-BR' : regionCode === 'co' ? 'es-CO' : 'es',
+      locale:
+        regionCode === 'br' ? 'pt-BR' : regionCode === 'co' ? 'es-CO' : 'es',
+    },
+    storage: {
+      prefix: `--${region.currentRegion.value.code}-`,
     },
   })
 
