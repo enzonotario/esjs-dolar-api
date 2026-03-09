@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "fuente": "oficial",
+    "nombre": "Dólar",
+    "moneda": "USD",
+    "compra": null,
+    "venta": null,
+    "promedio": 433.1664,
+    "fechaActualizacion": "2026-03-09T15:01:07.139Z"
+  },
+  {
+    "fuente": "oficial",
+    "nombre": "Euro",
+    "moneda": "EUR",
+    "compra": null,
+    "venta": null,
+    "promedio": 501.72797779,
+    "fechaActualizacion": "2026-03-09T15:01:07.855Z"
+  }
+]
