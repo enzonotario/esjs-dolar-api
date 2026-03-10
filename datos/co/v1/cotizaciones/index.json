@@ -2,57 +2,57 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 3762.02,
-    "venta": 3765.52,
+    "compra": 3706.37,
+    "venta": 3709.87,
     "ultimoCierre": 3761,
-    "fechaActualizacion": "2026-03-10T12:02:56.182Z"
+    "fechaActualizacion": "2026-03-10T20:02:48.818Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 4308.7,
-    "venta": 4408.7,
+    "compra": 4329.2,
+    "venta": 4429.2,
     "ultimoCierre": 4358.7,
-    "fechaActualizacion": "2026-03-10T12:03:05.736Z"
+    "fechaActualizacion": "2026-03-10T20:02:51.916Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real Brasileño",
-    "compra": 728.97,
-    "venta": 729.65,
-    "ultimoCierre": 728.72,
-    "fechaActualizacion": "2026-03-10T12:03:05.611Z"
+    "compra": 0,
+    "venta": 0,
+    "ultimoCierre": 0,
+    "fechaActualizacion": "2026-03-10T20:02:42.712Z"
   },
   {
     "moneda": "MXN",
     "nombre": "Peso Mexicano",
-    "compra": 214.32,
-    "venta": 214.52,
+    "compra": 210.67,
+    "venta": 210.87,
     "ultimoCierre": 213.62,
-    "fechaActualizacion": "2026-03-10T12:03:01.157Z"
+    "fechaActualizacion": "2026-03-10T20:02:46.823Z"
   },
   {
     "moneda": "CLP",
     "nombre": "Peso Chileno",
-    "compra": 4.1829,
-    "venta": 4.1868,
+    "compra": 4.1598,
+    "venta": 4.1637,
     "ultimoCierre": 4.1245,
-    "fechaActualizacion": "2026-03-10T12:02:55.660Z"
+    "fechaActualizacion": "2026-03-10T20:02:45.028Z"
   },
   {
     "moneda": "PEN",
     "nombre": "Sol Peruano",
-    "compra": 1086.06,
-    "venta": 1087.08,
+    "compra": 1079.47,
+    "venta": 1080.49,
     "ultimoCierre": 1078.07,
-    "fechaActualizacion": "2026-03-10T12:03:04.798Z"
+    "fechaActualizacion": "2026-03-10T20:02:58.468Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
-    "compra": 2.66,
-    "venta": 2.66,
+    "compra": 2.65,
+    "venta": 2.65,
     "ultimoCierre": 2.66,
-    "fechaActualizacion": "2026-03-10T12:03:09.692Z"
+    "fechaActualizacion": "2026-03-10T20:02:56.725Z"
   }
 ]
