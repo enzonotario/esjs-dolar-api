@@ -5,8 +5,8 @@
     "nombre": "Oficial",
     "compra": 1372.02,
     "venta": 1421.51,
-    "fechaActualizacion": "2026-03-10T15:52:00.000Z",
-    "variacion": -1.35
+    "fechaActualizacion": "2026-03-11T10:06:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -14,44 +14,44 @@
     "nombre": "Blue",
     "compra": 1405,
     "venta": 1425,
-    "fechaActualizacion": "2026-03-10T10:00:00.000Z",
+    "fechaActualizacion": "2026-03-11T11:00:00.000Z",
     "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1422.12,
-    "venta": 1422.12,
-    "fechaActualizacion": "2026-03-11T10:00:00.000Z",
-    "variacion": -0.6
+    "compra": 1419.02,
+    "venta": 1419.02,
+    "fechaActualizacion": "2026-03-11T11:00:00.000Z",
+    "variacion": -0.2
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1462.51,
-    "venta": 1462.51,
-    "fechaActualizacion": "2026-03-11T10:00:00.000Z",
-    "variacion": -0.8
+    "compra": 1450.31,
+    "venta": 1450.31,
+    "fechaActualizacion": "2026-03-11T11:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1391,
-    "venta": 1400,
-    "fechaActualizacion": "2026-03-10T15:39:00.000Z",
-    "variacion": -1.13
+    "compra": 1393,
+    "venta": 1402,
+    "fechaActualizacion": "2026-03-11T10:41:00.000Z",
+    "variacion": 0.14
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1454,
-    "venta": 1454,
-    "fechaActualizacion": "2026-03-11T10:00:00.000Z",
-    "variacion": -0.01
+    "compra": 1452.5,
+    "venta": 1452.5,
+    "fechaActualizacion": "2026-03-11T11:00:00.000Z",
+    "variacion": 0.16
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1370,
     "venta": 1846,
-    "fechaActualizacion": "2026-03-11T10:00:00.000Z",
+    "fechaActualizacion": "2026-03-11T11:00:00.000Z",
     "variacion": 0
   }
 ]
