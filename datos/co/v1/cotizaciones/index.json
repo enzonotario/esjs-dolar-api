@@ -2,57 +2,57 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 3703.31,
-    "venta": 3706.81,
+    "compra": 3692.56,
+    "venta": 3696.06,
     "ultimoCierre": 3706.46,
-    "fechaActualizacion": "2026-03-12T12:03:24.588Z"
+    "fechaActualizacion": "2026-03-12T20:02:43.663Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 4236.3,
-    "venta": 4336.3,
+    "compra": 4231.2,
+    "venta": 4331.2,
     "ultimoCierre": 4286.3,
-    "fechaActualizacion": "2026-03-12T12:03:19.633Z"
+    "fechaActualizacion": "2026-03-12T20:02:41.679Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real Brasileño",
-    "compra": 718.06,
-    "venta": 718.74,
+    "compra": 703.41,
+    "venta": 704.08,
     "ultimoCierre": 718.49,
-    "fechaActualizacion": "2026-03-12T12:03:28.289Z"
+    "fechaActualizacion": "2026-03-12T20:02:44.731Z"
   },
   {
     "moneda": "MXN",
     "nombre": "Peso Mexicano",
-    "compra": 208.96,
-    "venta": 209.16,
+    "compra": 206.94,
+    "venta": 207.14,
     "ultimoCierre": 209.68,
-    "fechaActualizacion": "2026-03-12T12:03:19.965Z"
+    "fechaActualizacion": "2026-03-12T20:02:38.688Z"
   },
   {
     "moneda": "CLP",
     "nombre": "Peso Chileno",
-    "compra": 4.1168,
-    "venta": 4.1207,
+    "compra": 4.0263,
+    "venta": 4.0302,
     "ultimoCierre": 4.1309,
-    "fechaActualizacion": "2026-03-12T12:03:15.606Z"
+    "fechaActualizacion": "2026-03-12T20:02:34.995Z"
   },
   {
     "moneda": "PEN",
     "nombre": "Sol Peruano",
-    "compra": 1076.48,
-    "venta": 1077.5,
+    "compra": 1070.77,
+    "venta": 1071.79,
     "ultimoCierre": 1084.24,
-    "fechaActualizacion": "2026-03-12T12:03:17.462Z"
+    "fechaActualizacion": "2026-03-12T20:02:42.565Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 2.65,
-    "venta": 2.66,
+    "venta": 2.65,
     "ultimoCierre": 2.66,
-    "fechaActualizacion": "2026-03-12T12:03:32.464Z"
+    "fechaActualizacion": "2026-03-12T20:02:37.295Z"
   }
 ]
