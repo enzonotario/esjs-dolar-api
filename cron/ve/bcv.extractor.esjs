@@ -95,7 +95,7 @@ funcion extraerCotizacion(html) {
     compra: nulo,
     venta: nulo,
     promedio: valorNumerico,
-    fechaActualizacion: crear Fecha().aCadenaISO(),
+    fechaActualizacion: extraerFechaValor($),
   };
 }
 
@@ -147,8 +147,37 @@ funcion extraerCotizacionEur(html) {
     compra: nulo,
     venta: nulo,
     promedio: valorNumerico,
-    fechaActualizacion: crear Fecha().aCadenaISO(),
+    fechaActualizacion: extraerFechaValor($),
   };
+}
+
+funcion extraerFechaValor($) {
+  const meses = {
+    'enero': 0, 'febrero': 1, 'marzo': 2, 'abril': 3,
+    'mayo': 4, 'junio': 5, 'julio': 6, 'agosto': 7,
+    'septiembre': 8, 'octubre': 9, 'noviembre': 10, 'diciembre': 11,
+  }
+
+  var fechaTexto = nulo
+  $('*').each((i, el) => {
+    const texto = $(el).text().recortarEspacios()
+    si (texto.incluye('Fecha Valor:') && !fechaTexto) {
+      fechaTexto = texto
+    }
+  })
+
+  si (!fechaTexto) retornar crear Fecha().aCadenaISO()
+
+  const coincidencia = fechaTexto.match(/Fecha\s+Valor:\s+\w+,\s+(\d{1,2})\s+(\w+)\s+(\d{4})/)
+  si (!coincidencia) retornar crear Fecha().aCadenaISO()
+
+  const dia = parseInt(coincidencia[1])
+  const mes = meses[coincidencia[2].toLowerCase()]
+  const anio = parseInt(coincidencia[3])
+
+  si (mes === undefined) retornar crear Fecha().aCadenaISO()
+
+  retornar crear Fecha(Date.UTC(anio, mes, dia)).aCadenaISO()
 }
 
 funcion interpretarValorMonetario(valor) {
