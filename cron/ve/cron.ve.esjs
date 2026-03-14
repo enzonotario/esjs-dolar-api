@@ -35,10 +35,73 @@ asincrono funcion guardarDolares(log) {
 
   const { oficial: euroBcv, paralelo: euroYadio } = esperar extraerEuros(log)
 
-  const dolares = []
+  // Guardar en DB primero con las fechas reales del BCV (pueden ser futuras)
+  // para que los históricos queden correctos
+  const cotizacionesDb = []
 
   si (dolarBcv) {
-    dolares.agregar(dolarBcv)
+    cotizacionesDb.agregar({
+      fuente: dolarBcv.fuente,
+      nombre: 'Dólar',
+      moneda: 'USD',
+      compra: dolarBcv.compra,
+      venta: dolarBcv.venta,
+      promedio: dolarBcv.promedio,
+      fechaActualizacion: dolarBcv.fechaActualizacion,
+    })
+  }
+
+  si (euroBcv) {
+    cotizacionesDb.agregar({
+      fuente: euroBcv.fuente,
+      nombre: euroBcv.nombre,
+      moneda: euroBcv.moneda,
+      compra: euroBcv.compra,
+      venta: euroBcv.venta,
+      promedio: euroBcv.promedio,
+      fechaActualizacion: euroBcv.fechaActualizacion,
+    })
+  }
+
+  const [errorDb] = esperar tryToCatch(guardarCotizacionesVe, cotizacionesDb)
+  si (errorDb) {
+    logError(log, errorDb, { accion: 'guardarCotizacionesVe' })
+  }
+
+  // Consultar la tasa efectiva para hoy en Venezuela (UTC-4):
+  // si el BCV publicó la tasa del lunes en viernes, se usa la del viernes
+  const db = abrirBD('./datos/ve/ve.sqlite')
+  const filaDolar = dolarBcv ? obtenerTasaEfectivaDeDb(db, 'USD', 'oficial') : nulo
+  const filaEur = euroBcv ? obtenerTasaEfectivaDeDb(db, 'EUR', 'oficial') : nulo
+  cerrarBD(db)
+
+  const dolarBcvEfectivo = filaDolar
+    ? {
+        fuente: 'oficial',
+        nombre: 'Oficial',
+        compra: filaDolar.compra,
+        venta: filaDolar.venta,
+        promedio: filaDolar.promedio,
+        fechaActualizacion: filaDolar.fechaActualizacion,
+      }
+    : dolarBcv
+
+  const euroBcvEfectivo = filaEur
+    ? {
+        fuente: 'oficial',
+        nombre: 'Euro',
+        moneda: 'EUR',
+        compra: filaEur.compra,
+        venta: filaEur.venta,
+        promedio: filaEur.promedio,
+        fechaActualizacion: filaEur.fechaActualizacion,
+      }
+    : euroBcv
+
+  const dolares = []
+
+  si (dolarBcvEfectivo) {
+    dolares.agregar(dolarBcvEfectivo)
   }
 
   si (dolaresYadio && dolaresYadio.longitud > 0) {
@@ -63,41 +126,36 @@ asincrono funcion guardarDolares(log) {
 
   const cotizaciones = []
 
-  si (dolarBcv) {
+  si (dolarBcvEfectivo) {
     cotizaciones.agregar({
-      fuente: dolarBcv.fuente,
+      fuente: dolarBcvEfectivo.fuente,
       nombre: 'Dólar',
       moneda: 'USD',
-      compra: dolarBcv.compra,
-      venta: dolarBcv.venta,
-      promedio: dolarBcv.promedio,
-      fechaActualizacion: dolarBcv.fechaActualizacion,
+      compra: dolarBcvEfectivo.compra,
+      venta: dolarBcvEfectivo.venta,
+      promedio: dolarBcvEfectivo.promedio,
+      fechaActualizacion: dolarBcvEfectivo.fechaActualizacion,
     })
   }
 
-  si (euroBcv) {
+  si (euroBcvEfectivo) {
     cotizaciones.agregar({
-      fuente: euroBcv.fuente,
-      nombre: euroBcv.nombre,
-      moneda: euroBcv.moneda,
-      compra: euroBcv.compra,
-      venta: euroBcv.venta,
-      promedio: euroBcv.promedio,
-      fechaActualizacion: euroBcv.fechaActualizacion,
+      fuente: euroBcvEfectivo.fuente,
+      nombre: euroBcvEfectivo.nombre,
+      moneda: euroBcvEfectivo.moneda,
+      compra: euroBcvEfectivo.compra,
+      venta: euroBcvEfectivo.venta,
+      promedio: euroBcvEfectivo.promedio,
+      fechaActualizacion: euroBcvEfectivo.fechaActualizacion,
     })
   }
 
   escribirRutaRegion('ve', '/cotizaciones', cotizaciones)
 
-  const [errorDb] = esperar tryToCatch(guardarCotizacionesVe, cotizaciones)
-  si (errorDb) {
-    logError(log, errorDb, { accion: 'guardarCotizacionesVe' })
-  }
-
   const euros = []
 
-  si (euroBcv) {
-    euros.agregar(euroBcv)
+  si (euroBcvEfectivo) {
+    euros.agregar(euroBcvEfectivo)
   }
 
   si (euroYadio) {
@@ -200,6 +258,15 @@ asincrono funcion generarHistoricos(log) {
 
   esperar escribirRutaRegion('ve', '/historicos/dolares', aplanarPorDia(dolaresHistoricos))
   esperar escribirRutaRegion('ve', '/historicos/euros', aplanarPorDia(eurosHistoricos).mapear((e) => ({ ...e, moneda: 'EUR' })))
+}
+
+funcion obtenerTasaEfectivaDeDb(db, moneda, fuente) {
+  retornar db.prepare(
+    `SELECT * FROM cotizaciones
+     WHERE moneda = ? AND fuente = ?
+     AND date(fechaActualizacion) <= date('now', '-4 hours')
+     ORDER BY fechaActualizacion DESC LIMIT 1`,
+  ).get(moneda, fuente)
 }
 
 asincrono funcion extraerEuros(log) {
