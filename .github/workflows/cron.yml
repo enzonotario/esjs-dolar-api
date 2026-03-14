@@ -90,7 +90,7 @@ jobs:
       - name: Run cron
         run: pnpm run cron:run
         env:
-          CRON_REGION: ${{ inputs.region || 've' }}
+          CRON_REGION: ${{ inputs.region || '' }}
 
       - name: Run og
         run: pnpm run og:png

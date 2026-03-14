@@ -70,10 +70,18 @@ asincrono funcion guardarDolares(log) {
 
   // Consultar la tasa efectiva para hoy en Venezuela (UTC-4):
   // si el BCV publicó la tasa del lunes en viernes, se usa la del viernes
-  const db = abrirBD('./datos/ve/ve.sqlite')
-  const filaDolar = dolarBcv ? obtenerTasaEfectivaDeDb(db, 'USD', 'oficial') : nulo
-  const filaEur = euroBcv ? obtenerTasaEfectivaDeDb(db, 'EUR', 'oficial') : nulo
-  cerrarBD(db)
+  var filaDolar = nulo
+  var filaEur = nulo
+  var db = nulo
+  intentar {
+    db = abrirBD('./datos/ve/ve.sqlite')
+    filaDolar = dolarBcv ? obtenerTasaEfectivaDeDb(db, 'USD', 'oficial') : nulo
+    filaEur = euroBcv ? obtenerTasaEfectivaDeDb(db, 'EUR', 'oficial') : nulo
+  } capturar (err) {
+    logError(log, err, { accion: 'obtenerTasaEfectivaDeDb' })
+  } finalmente {
+    si (db) cerrarBD(db)
+  }
 
   const dolarBcvEfectivo = filaDolar
     ? {
