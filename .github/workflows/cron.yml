@@ -1,6 +1,9 @@
 name: CRON
 
 on:
+  schedule:
+    - cron: '0 4 * * *'      # 12:00 AM Venezuela (UTC-4), todos los días
+    - cron: '40 19 * * 1-5'  # 3:40 PM Venezuela (UTC-4), lunes a viernes
   workflow_dispatch:
     inputs:
       region:
@@ -87,7 +90,7 @@ jobs:
       - name: Run cron
         run: pnpm run cron:run
         env:
-          CRON_REGION: ${{ inputs.region }}
+          CRON_REGION: ${{ inputs.region || '' }}
 
       - name: Run og
         run: pnpm run og:png
