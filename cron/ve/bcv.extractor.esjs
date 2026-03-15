@@ -48,10 +48,11 @@ asincrono funcion obtenerHtml() {
   retornar respuesta.data
 }
 
-funcion extraerCotizacion(html) {
+exportar funcion extraerCotizacion(html) {
   const $ = cheerio.load(html)
 
   var valorUsd = nulo
+  var fechaBcv = nulo
 
   $('span').each((i, el) => {
     const texto = $(el).text().recortarEspacios()
@@ -60,6 +61,7 @@ funcion extraerCotizacion(html) {
       const strong = contenedor.buscar('strong')
       si (strong.longitud > 0) {
         valorUsd = strong.text().recortarEspacios()
+        fechaBcv = contenedor.buscar('.date-display-single').attr('content')
       }
     }
   })
@@ -68,11 +70,13 @@ funcion extraerCotizacion(html) {
     $('*').each((i, el) => {
       const texto = $(el).text()
       si (texto.incluye('USD') && !valorUsd) {
-        const strong = $(el).closest('div').buscar('strong')
+        const contenedor = $(el).closest('div')
+        const strong = contenedor.buscar('strong')
         si (strong.longitud > 0) {
           const posibleValor = strong.text().recortarEspacios()
           si (/^\d/.test(posibleValor)) {
             valorUsd = posibleValor
+            fechaBcv = contenedor.buscar('.date-display-single').attr('content')
           }
         }
       }
@@ -80,6 +84,10 @@ funcion extraerCotizacion(html) {
   }
 
   si (!valorUsd) {
+    retornar nulo
+  }
+
+  si (!fechaBcv || !esFechaHoy(fechaBcv)) {
     retornar nulo
   }
 
@@ -99,10 +107,11 @@ funcion extraerCotizacion(html) {
   };
 }
 
-funcion extraerCotizacionEur(html) {
+exportar funcion extraerCotizacionEur(html) {
   const $ = cheerio.load(html)
 
   var valorEur = nulo
+  var fechaBcv = nulo
 
   $('span').each((i, el) => {
     const texto = $(el).text().recortarEspacios()
@@ -111,6 +120,7 @@ funcion extraerCotizacionEur(html) {
       const strong = contenedor.buscar('strong')
       si (strong.longitud > 0) {
         valorEur = strong.text().recortarEspacios()
+        fechaBcv = contenedor.buscar('.date-display-single').attr('content')
       }
     }
   })
@@ -119,11 +129,13 @@ funcion extraerCotizacionEur(html) {
     $('*').each((i, el) => {
       const texto = $(el).text()
       si (texto.incluye('EUR') && !valorEur) {
-        const strong = $(el).closest('div').buscar('strong')
+        const contenedor = $(el).closest('div')
+        const strong = contenedor.buscar('strong')
         si (strong.longitud > 0) {
           const posibleValor = strong.text().recortarEspacios()
           si (/^\d/.test(posibleValor)) {
             valorEur = posibleValor
+            fechaBcv = contenedor.buscar('.date-display-single').attr('content')
           }
         }
       }
@@ -131,6 +143,10 @@ funcion extraerCotizacionEur(html) {
   }
 
   si (!valorEur) {
+    retornar nulo
+  }
+
+  si (!fechaBcv || !esFechaHoy(fechaBcv)) {
     retornar nulo
   }
 
@@ -149,6 +165,16 @@ funcion extraerCotizacionEur(html) {
     promedio: valorNumerico,
     fechaActualizacion: crear Fecha().aCadenaISO(),
   };
+}
+
+funcion esFechaHoy(contenidoFecha) {
+  si (!contenidoFecha) retornar falso
+
+  const fechaISO = contenidoFecha.rodaja(0, 10)
+  const ahora = crear Fecha()
+  const hoy = crear Fecha(ahora - 4 * 60 * 60 * 1000).aCadenaISO().rodaja(0, 10)
+
+  retornar fechaISO === hoy
 }
 
 funcion interpretarValorMonetario(valor) {

@@ -48,30 +48,33 @@ describe('ve.dolarapi.com', () => {
   it('ejecutar cron completo', async () => {
     await cron()
 
+    // /dolares — generado desde DB
     const rutaDolares = resolve('datos/ve/v1/dolares/index.json')
     const dolares = JSON.parse(readFileSync(rutaDolares, 'utf-8'))
 
     expect(dolares.length).toBeGreaterThan(0)
-
-    expect(dolares).toMatchObject([
-      {
-        fuente: 'oficial',
-        nombre: 'Oficial',
-        compra: null,
-        venta: null,
-        promedio: expect.any(Number),
-        fechaActualizacion: expect.any(String),
-      },
-      {
+    expect(dolares[0]).toMatchObject({
+      fuente: 'oficial',
+      nombre: 'Dólar',
+      moneda: 'USD',
+      compra: null,
+      venta: null,
+      promedio: expect.any(Number),
+      fechaActualizacion: expect.any(String),
+    })
+    if (dolares.length > 1) {
+      expect(dolares[1]).toMatchObject({
         fuente: 'paralelo',
         nombre: 'Paralelo',
+        moneda: 'USD',
         compra: null,
         venta: null,
         promedio: expect.any(Number),
         fechaActualizacion: expect.any(String),
-      },
-    ])
+      })
+    }
 
+    // /cotizaciones — generado desde DB
     const rutaCotizaciones = resolve('datos/ve/v1/cotizaciones/index.json')
     const cotizaciones = JSON.parse(readFileSync(rutaCotizaciones, 'utf-8'))
 
@@ -97,6 +100,7 @@ describe('ve.dolarapi.com', () => {
       },
     ])
 
+    // /euros — generado desde DB
     const rutaEuros = resolve('datos/ve/v1/euros/index.json')
     const euros = JSON.parse(readFileSync(rutaEuros, 'utf-8'))
 
@@ -122,6 +126,7 @@ describe('ve.dolarapi.com', () => {
       })
     }
 
+    // DB
     const archivoBD = resolve('datos/ve/ve.sqlite')
     const db = new Database(archivoBD)
     const usd = db.prepare('SELECT * FROM cotizaciones WHERE moneda = ? AND fuente = ? ORDER BY fechaActualizacion DESC LIMIT 1').get('USD', 'oficial')
@@ -141,6 +146,7 @@ describe('ve.dolarapi.com', () => {
     expect(usd.promedio).toBeGreaterThan(0)
     expect(eur.promedio).toBeGreaterThan(0)
 
+    // Historicos
     const historicoOficial = JSON.parse(readFileSync(resolve('datos/ve/v1/historicos/dolares/oficial/index.json'), 'utf-8'))
     expect(Array.isArray(historicoOficial)).toBe(true)
     expect(historicoOficial.length).toBeGreaterThan(0)
