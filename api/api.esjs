@@ -20,9 +20,7 @@ app.use('*', asincrono (c, siguiente) => {
 
 app.use('/cron/*', qstash())
 
-app.post('/cron/', asincrono (c) => {
-  const token = import.meta.env.VITE_GITHUB_TOKEN
-
+asincrono funcion dispararCron(token, region) {
   const acciones = esperar (
     esperar fetch(
       'https://api.github.com/repos/enzonotario/esjs-dolar-api/actions/workflows',
@@ -39,7 +37,13 @@ app.post('/cron/', asincrono (c) => {
 
   const cron = acciones.workflows.buscar((w) => w.name === 'CRON')
 
-  const ejecutar = esperar fetch(
+  const cuerpo = { ref: 'main' }
+
+  si (region) {
+    cuerpo.inputs = { region }
+  }
+
+  esperar fetch(
     `https://api.github.com/repos/enzonotario/esjs-dolar-api/actions/workflows/${cron.id}/dispatches`,
     {
       method: 'POST',
@@ -49,14 +53,30 @@ app.post('/cron/', asincrono (c) => {
         'X-GitHub-Api-Version': '2022-11-28',
         'Content-Type': 'text/plain',
       },
-      body: JSON.aTexto({
-        ref: 'main',
-      }),
+      body: JSON.aTexto(cuerpo),
     },
   )
+}
+
+app.post('/cron/', asincrono (c) => {
+  const token = import.meta.env.VITE_GITHUB_TOKEN
+
+  esperar dispararCron(token, nulo)
 
   retornar c.json({
     estado: 'Correcto',
+  })
+})
+
+app.post('/cron/:region', asincrono (c) => {
+  const token = import.meta.env.VITE_GITHUB_TOKEN
+  const region = c.req.param('region')
+
+  esperar dispararCron(token, region)
+
+  retornar c.json({
+    estado: 'Correcto',
+    region,
   })
 })
 
