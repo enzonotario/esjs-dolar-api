@@ -6272,10 +6272,18 @@
     "moneda": "EUR"
   },
   {
+    "fuente": "oficial",
+    "compra": null,
+    "venta": null,
+    "promedio": 514.97823921,
+    "fecha": "2026-03-17",
+    "moneda": "EUR"
+  },
+  {
     "fuente": "paralelo",
     "compra": null,
     "venta": null,
-    "promedio": 764.561063,
+    "promedio": 764.496435,
     "fecha": "2026-03-17",
     "moneda": "EUR"
   }
