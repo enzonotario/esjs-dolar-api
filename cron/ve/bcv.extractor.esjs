@@ -52,7 +52,7 @@ exportar funcion extraerCotizacion(html) {
   const $ = cheerio.load(html)
 
   var valorUsd = nulo
-  var fechaBcv = nulo
+  const fechaBcv = $('.date-display-single').first().attr('content')
 
   $('span').each((i, el) => {
     const texto = $(el).text().recortarEspacios()
@@ -61,7 +61,6 @@ exportar funcion extraerCotizacion(html) {
       const strong = contenedor.buscar('strong')
       si (strong.longitud > 0) {
         valorUsd = strong.text().recortarEspacios()
-        fechaBcv = contenedor.buscar('.date-display-single').attr('content')
       }
     }
   })
@@ -76,7 +75,6 @@ exportar funcion extraerCotizacion(html) {
           const posibleValor = strong.text().recortarEspacios()
           si (/^\d/.test(posibleValor)) {
             valorUsd = posibleValor
-            fechaBcv = contenedor.buscar('.date-display-single').attr('content')
           }
         }
       }
@@ -111,7 +109,7 @@ exportar funcion extraerCotizacionEur(html) {
   const $ = cheerio.load(html)
 
   var valorEur = nulo
-  var fechaBcv = nulo
+  const fechaBcv = $('.date-display-single').first().attr('content')
 
   $('span').each((i, el) => {
     const texto = $(el).text().recortarEspacios()
@@ -120,7 +118,6 @@ exportar funcion extraerCotizacionEur(html) {
       const strong = contenedor.buscar('strong')
       si (strong.longitud > 0) {
         valorEur = strong.text().recortarEspacios()
-        fechaBcv = contenedor.buscar('.date-display-single').attr('content')
       }
     }
   })
@@ -135,7 +132,6 @@ exportar funcion extraerCotizacionEur(html) {
           const posibleValor = strong.text().recortarEspacios()
           si (/^\d/.test(posibleValor)) {
             valorEur = posibleValor
-            fechaBcv = contenedor.buscar('.date-display-single').attr('content')
           }
         }
       }
