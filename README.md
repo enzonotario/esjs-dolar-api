@@ -39,6 +39,8 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 - [Supermercado HI](https://supermercadoshi.my.canva.site/bcv): Supermercado HI es una organización nueva en Venezuela, en el sector retail; manejamos precios al cambio REF de la actualización diaria.
 - [DolarAPI Windows Tray Application](https://github.com/aletrotta/DolarAPI): Una aplicación para la bandeja de Windows que muestra las diferentes cotizaciones.
 - [DolarBase](https://dolar-base.vercel.app/): App web para convertir rápidamente entre dólares y bolívares desde el dólar oficial BCV.
+- [DolarHoy](https://apps.apple.com/app/id6759761997): iOS app para tener las divisas de Venezuela a la mano, usa DolarAPI para la referencia BCV de Euros y Dólar.
+
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
