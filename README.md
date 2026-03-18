@@ -42,3 +42,14 @@ La documentación de la API está disponible en [DolarApi.com](https://dolarapi.
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-dolar-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-dolar-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
+
+---
+
+### ❤️ Sponsors & Backers
+
+<a href="https://github.com/sponsors/enzonotario">
+  <img src="https://raw.githubusercontent.com/enzonotario/enzonotario/main/sponsors.png" alt="Sponsors & Backers" />
+</a>
+
+> [Become a sponsor](https://github.com/sponsors/enzonotario)
+
