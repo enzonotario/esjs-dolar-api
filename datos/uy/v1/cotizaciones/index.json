@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 39.3,
+    "compra": 39.5,
     "venta": 41.7,
-    "fechaActualizacion": "2026-03-18T17:01:32.986Z"
+    "fechaActualizacion": "2026-03-18T18:01:32.554Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 44.18,
-    "venta": 49.41,
-    "fechaActualizacion": "2026-03-18T17:01:32.987Z"
+    "compra": 44.37,
+    "venta": 49.36,
+    "fechaActualizacion": "2026-03-18T18:01:32.554Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.02,
     "venta": 0.2,
-    "fechaActualizacion": "2026-03-18T17:01:32.987Z"
+    "fechaActualizacion": "2026-03-18T18:01:32.554Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
     "compra": 7.3,
     "venta": 9,
-    "fechaActualizacion": "2026-03-18T17:01:32.987Z"
+    "fechaActualizacion": "2026-03-18T18:01:32.554Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 51.14,
-    "venta": 57.71,
-    "fechaActualizacion": "2026-03-18T17:01:32.987Z"
+    "compra": 51.41,
+    "venta": 57.72,
+    "fechaActualizacion": "2026-03-18T18:01:32.555Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 48.99,
-    "venta": 53.88,
-    "fechaActualizacion": "2026-03-18T17:01:32.987Z"
+    "compra": 49.12,
+    "venta": 53.76,
+    "fechaActualizacion": "2026-03-18T18:01:32.555Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
     "compra": 0.00596,
-    "venta": 0.00658,
-    "fechaActualizacion": "2026-03-18T17:01:32.988Z"
+    "venta": 0.00655,
+    "fechaActualizacion": "2026-03-18T18:01:32.555Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.4877,
-    "fechaActualizacion": "2026-03-18T17:01:32.988Z"
+    "fechaActualizacion": "2026-03-18T18:01:32.555Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 190023.36,
+    "compra": 190990.4,
     "venta": 209165.949,
-    "fechaActualizacion": "2026-03-18T17:01:32.988Z"
+    "fechaActualizacion": "2026-03-18T18:01:32.555Z"
   }
 ]
