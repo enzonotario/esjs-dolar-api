@@ -85,7 +85,7 @@ exportar funcion extraerCotizacion(html) {
     retornar nulo
   }
 
-  si (!fechaBcv || !esFechaHoy(fechaBcv)) {
+  si (!fechaBcv || esFechaAnteriorAHoy(fechaBcv)) {
     retornar nulo
   }
 
@@ -101,7 +101,7 @@ exportar funcion extraerCotizacion(html) {
     compra: nulo,
     venta: nulo,
     promedio: valorNumerico,
-    fechaActualizacion: crear Fecha().aCadenaISO(),
+    fechaActualizacion: fechaBcv,
   };
 }
 
@@ -142,7 +142,7 @@ exportar funcion extraerCotizacionEur(html) {
     retornar nulo
   }
 
-  si (!fechaBcv || !esFechaHoy(fechaBcv)) {
+  si (!fechaBcv || esFechaAnteriorAHoy(fechaBcv)) {
     retornar nulo
   }
 
@@ -159,18 +159,18 @@ exportar funcion extraerCotizacionEur(html) {
     compra: nulo,
     venta: nulo,
     promedio: valorNumerico,
-    fechaActualizacion: crear Fecha().aCadenaISO(),
+    fechaActualizacion: fechaBcv,
   };
 }
 
-funcion esFechaHoy(contenidoFecha) {
-  si (!contenidoFecha) retornar falso
+funcion esFechaAnteriorAHoy(contenidoFecha) {
+  si (!contenidoFecha) retornar verdadero
 
   const fechaISO = contenidoFecha.rodaja(0, 10)
   const ahora = crear Fecha()
   const hoy = crear Fecha(ahora - 4 * 60 * 60 * 1000).aCadenaISO().rodaja(0, 10)
 
-  retornar fechaISO === hoy
+  retornar fechaISO < hoy
 }
 
 funcion interpretarValorMonetario(valor) {
