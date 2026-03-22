@@ -1,6 +1,4 @@
 importar axios desde 'axios'
-importar cheerio desde 'cheerio'
-importar { parse } desde 'date-fns'
 importar tryToCatch desde 'try-to-catch'
 importar { grupo, logError } desde '@/log.esjs'
 
@@ -10,24 +8,40 @@ exportar porDefecto asincrono funcion () {
     extractor: 'binance-bo.extractor.esjs',
   })
 
-  const [error, respuesta] = esperar tryToCatch(obtenerRespuesta)
+  const [errorCompra, resCompra] = esperar tryToCatch(
+    () => obtenerRespuesta('SELL'),
+  )
 
-  si (error) {
-    logError(log, error)
+  const [errorVenta, resVenta] = esperar tryToCatch(
+    () => obtenerRespuesta('BUY'),
+  )
+
+  si (errorCompra || errorVenta) {
+    logError(log, errorCompra || errorVenta)
     retornar nulo
   }
 
-  retornar extraerDolar(respuesta)
+  const compra = extraerPrecioModa(resCompra)
+  const venta = extraerPrecioModa(resVenta)
+
+  retornar {
+    moneda: 'USD',
+    casa: 'binance',
+    nombre: 'Binance',
+    compra,
+    venta,
+    fechaActualizacion: crear Fecha(),
+  };
 }
 
-asincrono funcion obtenerRespuesta() {
+asincrono funcion obtenerRespuesta(tradeType) {
   const respuesta = esperar axios.post(
     'https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search',
     {
       fiat: 'BOB',
       page: 1,
       rows: 10,
-      tradeType: 'BUY',
+      tradeType,
       asset: 'USDT',
       countries: [],
       proMerchantAds: falso,
@@ -44,28 +58,25 @@ asincrono funcion obtenerRespuesta() {
   retornar respuesta.data
 }
 
-funcion extraerDolar(json) {
+funcion extraerPrecioModa(json) {
+  si (!json || !json.data || !json.data.longitud) {
+    retornar nulo
+  }
+
   const precios = json.data.mapear((cotizacion) =>
     interpretarValorMonetario(cotizacion.adv.price),
   )
 
-  const precioModa = precios.reducir((acc, val) => {
+  const frecuencia = precios.reducir((acc, val) => {
     acc[val] = acc[val] ? acc[val] + 1 : 1
     retornar acc
   }, {})
 
-  const precioMasRepetido = Object.claves(precioModa).reducir((a, b) =>
-    precioModa[a] > precioModa[b] ? a : b,
+  const precioMasRepetido = Object.claves(frecuencia).reducir((a, b) =>
+    frecuencia[a] > frecuencia[b] ? a : b,
   )
 
-  retornar {
-    moneda: 'USD',
-    casa: 'binance',
-    nombre: 'Binance',
-    compra: nulo,
-    venta: interpretarValorMonetario(precioMasRepetido),
-    fechaActualizacion: crear Fecha(),
-  };
+  retornar interpretarValorMonetario(precioMasRepetido)
 }
 
 funcion interpretarValorMonetario(valor) {

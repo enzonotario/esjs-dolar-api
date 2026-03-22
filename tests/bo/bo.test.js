@@ -21,13 +21,14 @@ describe('bo.dolarapi.com', () => {
 
   it('dolar binance-bo', async () => {
     const dolar = await extraerBinance()
+    console.log({ dolar })
 
     if (dolar) {
       expect(dolar).toBeTypeOf('object')
       expect(dolar.moneda).toBe('USD')
       expect(dolar.casa).toBe('binance')
       expect(dolar.nombre).toBe('Binance')
-      expect(dolar.compra).toBe(null)
+      expect(dolar.compra).toBeTypeOf('number')
       expect(dolar.venta).toBeTypeOf('number')
       expect(dolar.fechaActualizacion).toBeTypeOf('object')
     }
