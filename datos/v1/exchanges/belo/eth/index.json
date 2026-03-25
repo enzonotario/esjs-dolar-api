@@ -3,36 +3,43 @@
     "exchange": "belo",
     "moneda": "ARS",
     "monedaBase": "ETH",
-    "compra": 3219607.3,
-    "venta": 3112872.3549
+    "compra": 3213034.5533,
+    "venta": 3106517.4756
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "ETH",
-    "compra": 11528.342,
-    "venta": 11171.10852
+    "compra": 11504.807182,
+    "venta": 11148.30288
   },
   {
     "exchange": "belo",
     "moneda": "ARGt",
     "monedaBase": "ETH",
-    "compra": 3219607.3,
-    "venta": 3112872.3549
+    "compra": 3213034.5533,
+    "venta": 3106517.4756
   },
   {
     "exchange": "belo",
     "moneda": "MEXt",
     "monedaBase": "ETH",
-    "compra": 41514.39766982475,
-    "venta": 35556.751776869925
+    "compra": 41431.85701845633,
+    "venta": 35471.453912264304
   },
   {
     "exchange": "belo",
     "moneda": "CHLt",
     "monedaBase": "ETH",
-    "compra": 2050986.256628562,
-    "venta": 1923782.6890612915
+    "compra": 2049921.1757571301,
+    "venta": 1922784.9884520078
+  },
+  {
+    "exchange": "belo",
+    "moneda": "COLt",
+    "monedaBase": "ETH",
+    "compra": 8225684.735638965,
+    "venta": 7614793.784134152
   },
   {
     "exchange": "belo",
@@ -40,8 +47,8 @@
     "monedaBase": "ETH",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 2191.7,
-    "venta": 2148.2901
+    "compra": 2187.2257,
+    "venta": 2143.9044
   },
   {
     "exchange": "belo",
@@ -49,21 +56,21 @@
     "monedaBase": "ETH",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 2191.3667,
-    "venta": 2147.9634
+    "compra": 2187.0237,
+    "venta": 2143.7064
   },
   {
     "exchange": "belo",
     "moneda": "SOL",
     "monedaBase": "ETH",
-    "compra": 24.157991966809078,
-    "venta": 23.20807311500381
+    "compra": 24.161405171575776,
+    "venta": 23.211346350600067
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "ETH",
-    "compra": 11528.342,
-    "venta": 11171.10852
+    "compra": 11504.807182,
+    "venta": 11148.30288
   }
 ]
