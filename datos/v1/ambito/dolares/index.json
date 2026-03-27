@@ -3,10 +3,10 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1347.68,
-    "venta": 1398.72,
-    "fechaActualizacion": "2026-03-27T11:45:00.000Z",
-    "variacion": 0.45
+    "compra": 1348.39,
+    "venta": 1399.21,
+    "fechaActualizacion": "2026-03-27T13:45:00.000Z",
+    "variacion": 0.49
   },
   {
     "moneda": "USD",
@@ -14,43 +14,43 @@
     "nombre": "Blue",
     "compra": 1400,
     "venta": 1420,
-    "fechaActualizacion": "2026-03-27T13:00:00.000Z",
+    "fechaActualizacion": "2026-03-27T14:00:00.000Z",
     "variacion": -0.35
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1410.58,
-    "venta": 1410.58,
-    "fechaActualizacion": "2026-03-27T13:00:00.000Z",
-    "variacion": 0.7
+    "compra": 1416.49,
+    "venta": 1416.49,
+    "fechaActualizacion": "2026-03-27T14:00:00.000Z",
+    "variacion": 1.1
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1461.26,
-    "venta": 1461.26,
-    "fechaActualizacion": "2026-03-27T13:00:00.000Z",
-    "variacion": 1
+    "compra": 1467.56,
+    "venta": 1467.56,
+    "fechaActualizacion": "2026-03-27T14:00:00.000Z",
+    "variacion": 1.4
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1364,
-    "venta": 1375,
-    "fechaActualizacion": "2026-03-27T12:39:00.000Z",
-    "variacion": 0.51
+    "compra": 1370,
+    "venta": 1379,
+    "fechaActualizacion": "2026-03-27T13:57:00.000Z",
+    "variacion": 0.8
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1450.28,
-    "venta": 1450.28,
-    "fechaActualizacion": "2026-03-27T13:00:00.000Z",
+    "compra": 1455.44,
+    "venta": 1455.44,
+    "fechaActualizacion": "2026-03-27T14:00:00.000Z",
     "variacion": 0
   },
   {
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1345,
     "venta": 1813.5,
-    "fechaActualizacion": "2026-03-27T13:00:00.000Z",
+    "fechaActualizacion": "2026-03-27T14:00:00.000Z",
     "variacion": 0.36
   }
 ]
