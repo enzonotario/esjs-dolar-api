@@ -3,10 +3,10 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1366.25,
-    "venta": 1417.08,
-    "fechaActualizacion": "2026-04-06T12:04:00.000Z",
-    "variacion": 0.09
+    "compra": 1365.34,
+    "venta": 1416.6,
+    "fechaActualizacion": "2026-04-06T15:52:00.000Z",
+    "variacion": 0.06
   },
   {
     "moneda": "USD",
@@ -14,26 +14,26 @@
     "nombre": "Blue",
     "compra": 1380,
     "venta": 1400,
-    "fechaActualizacion": "2026-04-06T15:00:00.000Z",
+    "fechaActualizacion": "2026-04-06T16:00:00.000Z",
     "variacion": -0.36
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1428.08,
-    "venta": 1428.08,
-    "fechaActualizacion": "2026-04-06T15:00:00.000Z",
+    "compra": 1428.53,
+    "venta": 1428.53,
+    "fechaActualizacion": "2026-04-06T16:00:00.000Z",
     "variacion": -0.4
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1482.83,
-    "venta": 1482.83,
-    "fechaActualizacion": "2026-04-06T15:00:00.000Z",
-    "variacion": 0.4
+    "compra": 1480.81,
+    "venta": 1480.81,
+    "fechaActualizacion": "2026-04-06T16:00:00.000Z",
+    "variacion": 0.2
   },
   {
     "moneda": "USD",
@@ -41,17 +41,17 @@
     "nombre": "Mayorista",
     "compra": 1384,
     "venta": 1393,
-    "fechaActualizacion": "2026-04-06T14:10:00.000Z",
+    "fechaActualizacion": "2026-04-06T15:52:00.000Z",
     "variacion": -0.07
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1460.38,
-    "venta": 1460.38,
-    "fechaActualizacion": "2026-04-06T15:00:00.000Z",
-    "variacion": 0.12
+    "compra": 1457.43,
+    "venta": 1457.43,
+    "fechaActualizacion": "2026-04-06T16:00:00.000Z",
+    "variacion": -0.11
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1365,
     "venta": 1839.5,
-    "fechaActualizacion": "2026-04-06T15:00:00.000Z",
+    "fechaActualizacion": "2026-04-06T16:00:00.000Z",
     "variacion": 0
   }
 ]
