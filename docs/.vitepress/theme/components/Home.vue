@@ -15,55 +15,69 @@ function handleRegionSelect(selectedRegion) {
 </script>
 
 <template>
-  <div class="home-container">
-    <div class="background-pattern" />
+  <div>
+    <div class="home-container">
+      <div class="background-pattern" />
 
-    <div class="content">
-      <header class="hero">
-        <div class="logo-wrapper">
-          <img
-            src="/assets/logo.png"
-            alt="DolarApi"
-            class="logo"
-          >
-        </div>
+      <div class="content">
+        <header class="hero">
+          <div class="logo-wrapper">
+            <img src="/assets/logo.png" alt="DolarApi" class="logo">
+          </div>
 
-        <div class="titles">
-          <h1 class="title select-all">
-            DolarApi<span class="title-accent">.com</span>
-          </h1>
-          <p class="subtitle">
-            API desarrollada en <a
-              href="https://es.js.org/?ref=dolarapi.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="esjs-link"
-            >EsJS</a> de Cotizaciones de Dólar y Monedas de América Latina
-          </p>
-        </div>
-      </header>
+          <div class="titles">
+            <h1 class="title select-all">
+              DolarApi<span class="title-accent">.com</span>
+            </h1>
+            <p class="subtitle">
+              API desarrollada en
+              <a
+                href="https://es.js.org/?ref=dolarapi.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="esjs-link"
+              >EsJS</a>
+              de Cotizaciones de Dólar y Monedas de América Latina
+            </p>
+          </div>
+        </header>
 
-      <main class="main">
-        <LatamMap
-          :regions="region.regions"
-          @select="handleRegionSelect"
-        />
-      </main>
+        <main class="main">
+          <LatamMap :regions="region.regions" @select="handleRegionSelect" />
+        </main>
 
-      <section class="footer-section">
-        <div class="sponsors-wrapper">
-          <h2 class="section-title !border-t-0 !mt-0">
-            <span class="i-mdi-heart text-rose-500" />
-            Sponsors
-          </h2>
-          <SponsorsAvatars :size="52" />
-        </div>
+        <section class="footer-section">
+          <div class="sponsors-wrapper">
+            <h2 class="section-title !border-t-0 !mt-0">
+              <span class="i-mdi-heart text-rose-500" />
+              Sponsors
+            </h2>
+            <SponsorsAvatars :size="52" />
+          </div>
 
-        <div class="banner-wrapper">
-          <Ads />
-        </div>
-      </section>
+          <div class="banner-wrapper">
+            <Ads />
+          </div>
+        </section>
+      </div>
     </div>
+
+    <hr>
+    <section class="mt-24 -mb-24 flex justify-center">
+      <a
+        href="https://malvinas.argentinadatos.com/"
+        target="_blank"
+        rel="noreferrer"
+        class="block"
+      >
+        <img
+          src="https://malvinas.argentinadatos.com/strip.png"
+          width="800"
+          height="130"
+          alt="Islas Malvinas Argentinas — Franja"
+        >
+      </a>
+    </section>
   </div>
 </template>
 
@@ -74,17 +88,35 @@ function handleRegionSelect(selectedRegion) {
 
 .background-pattern {
   @apply absolute inset-0 -z-10;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(99, 102, 241, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(139, 92, 246, 0.06) 0%,
+      transparent 50%
+    ),
     radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 100%);
 }
 
 .dark .background-pattern {
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.01) 0%, transparent 100%);
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(99, 102, 241, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(139, 92, 246, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.01) 0%,
+      transparent 100%
+    );
 }
 
 .content {
