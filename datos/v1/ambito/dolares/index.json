@@ -3,10 +3,10 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1357.37,
-    "venta": 1412.41,
-    "fechaActualizacion": "2026-04-24T12:19:00.000Z",
-    "variacion": 0.9
+    "compra": 1366.99,
+    "venta": 1418.45,
+    "fechaActualizacion": "2026-04-24T16:08:00.000Z",
+    "variacion": 1.34
   },
   {
     "moneda": "USD",
@@ -14,26 +14,26 @@
     "nombre": "Blue",
     "compra": 1400,
     "venta": 1420,
-    "fechaActualizacion": "2026-04-24T16:00:00.000Z",
+    "fechaActualizacion": "2026-04-24T17:00:00.000Z",
     "variacion": 0.35
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1438.66,
-    "venta": 1438.66,
-    "fechaActualizacion": "2026-04-24T16:00:00.000Z",
-    "variacion": 1
+    "compra": 1440.3,
+    "venta": 1440.3,
+    "fechaActualizacion": "2026-04-24T17:00:00.000Z",
+    "variacion": 1.1
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1493.66,
-    "venta": 1493.66,
-    "fechaActualizacion": "2026-04-24T16:00:00.000Z",
-    "variacion": 0.8
+    "compra": 1473.27,
+    "venta": 1473.27,
+    "fechaActualizacion": "2026-04-24T17:00:00.000Z",
+    "variacion": -0.6
   },
   {
     "moneda": "USD",
@@ -41,17 +41,17 @@
     "nombre": "Mayorista",
     "compra": 1390.5,
     "venta": 1399.5,
-    "fechaActualizacion": "2026-04-24T15:25:00.000Z",
+    "fechaActualizacion": "2026-04-24T16:11:00.000Z",
     "variacion": 1.56
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1489,
-    "venta": 1489,
-    "fechaActualizacion": "2026-04-24T16:00:00.000Z",
-    "variacion": 0
+    "compra": 1476.01,
+    "venta": 1476.01,
+    "fechaActualizacion": "2026-04-24T17:00:00.000Z",
+    "variacion": 0.04
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1370,
     "venta": 1846,
-    "fechaActualizacion": "2026-04-24T16:00:00.000Z",
+    "fechaActualizacion": "2026-04-24T17:00:00.000Z",
     "variacion": 0.35
   }
 ]
