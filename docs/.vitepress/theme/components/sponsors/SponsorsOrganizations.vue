@@ -78,7 +78,7 @@
         <img
           src="https://argentinadatos.com/assets/sponsors/firecrawl.svg"
           alt="Firecrawl Logo"
-          class="w-16 h-16 rounded bg-gray-100 dark:bg-gray-800 object-cover"
+          class="h-16 w-16 shrink-0 overflow-hidden rounded bg-gray-100 object-contain p-1.5 dark:bg-gray-800"
         />
         <div class="flex flex-col flex-grow">
           <div class="font-medium">Firecrawl</div>

@@ -22,7 +22,7 @@ function isImageUrl(s) {
 }
 
 function parseItem(entry) {
-  // Returns normalized object: { type, href, imgSrc, iconClass, label, alt }
+  // Returns normalized object: { type, href, imgSrc, iconClass, label, alt, logoContain }
   if (!entry)
     return null
 
@@ -170,7 +170,9 @@ function parseItem(entry) {
     alt = name || 'Logo'
   }
 
-  return { type, href: href || '#', imgSrc, iconClass, label, alt }
+  const logoContain = !isStr && type === 'logo' && Boolean(raw.logoContain)
+
+  return { type, href: href || '#', imgSrc, iconClass, label, alt, logoContain }
 }
 
 const items = computed(() =>
@@ -206,6 +208,7 @@ const items = computed(() =>
       logoUrl: 'https://argentinadatos.com/assets/sponsors/firecrawl.svg',
       url: 'https://www.firecrawl.dev/',
       name: 'Firecrawl',
+      logoContain: true,
     },
     { type: 'logo', url: '/docs/sponsors', name: 'Tu Logo' },
   ]
@@ -245,7 +248,9 @@ const items = computed(() =>
               v-if="it.imgSrc"
               :src="it.imgSrc"
               :alt="it.alt"
-              class="w-full h-full object-cover"
+              :class="it.logoContain
+                ? 'max-h-full max-w-full object-contain p-1'
+                : 'h-full w-full object-cover'"
               loading="lazy"
             >
             <span v-else class="i-mdi-image text-gray-400 text-xl" />
