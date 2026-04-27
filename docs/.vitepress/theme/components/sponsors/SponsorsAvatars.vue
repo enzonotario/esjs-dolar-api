@@ -201,6 +201,12 @@ const items = computed(() =>
       url: 'https://vzlalegal.com/',
       name: 'VZLA Legal',
     },
+    {
+      type: 'logo',
+      logoUrl: 'https://argentinadatos.com/assets/sponsors/firecrawl.svg',
+      url: 'https://www.firecrawl.dev/',
+      name: 'Firecrawl',
+    },
     { type: 'logo', url: '/docs/sponsors', name: 'Tu Logo' },
   ]
     .map(parseItem)
