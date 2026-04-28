@@ -5,7 +5,7 @@
     "nombre": "Oficial",
     "compra": 1383.63,
     "venta": 1440.61,
-    "fechaActualizacion": "2026-04-27T15:42:00.000Z",
+    "fechaActualizacion": "2026-04-28T10:48:00.000Z",
     "variacion": 1.56
   },
   {
@@ -14,52 +14,52 @@
     "nombre": "Blue",
     "compra": 1410,
     "venta": 1430,
-    "fechaActualizacion": "2026-04-27T10:00:00.000Z",
+    "fechaActualizacion": "2026-04-28T11:00:00.000Z",
     "variacion": 0.7
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1461.73,
-    "venta": 1461.73,
-    "fechaActualizacion": "2026-04-28T10:00:00.000Z",
-    "variacion": 1.6
+    "compra": 1455.97,
+    "venta": 1455.97,
+    "fechaActualizacion": "2026-04-28T11:00:00.000Z",
+    "variacion": -0.4
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1522.4,
-    "venta": 1522.4,
-    "fechaActualizacion": "2026-04-28T10:00:00.000Z",
-    "variacion": 1.6
+    "compra": 1515.48,
+    "venta": 1515.48,
+    "fechaActualizacion": "2026-04-28T11:00:00.000Z",
+    "variacion": -0.5
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1408,
+    "compra": 1412,
     "venta": 1417,
-    "fechaActualizacion": "2026-04-27T15:42:00.000Z",
+    "fechaActualizacion": "2026-04-28T10:47:00.000Z",
     "variacion": 1.25
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1500.36,
-    "venta": 1500.36,
-    "fechaActualizacion": "2026-04-28T10:00:00.000Z",
-    "variacion": -0.05
+    "compra": 1506.8,
+    "venta": 1506.8,
+    "fechaActualizacion": "2026-04-28T11:00:00.000Z",
+    "variacion": -0.34
   },
   {
     "moneda": "USD",
     "casa": "tarjeta",
     "nombre": "Tarjeta",
-    "compra": 1390,
-    "venta": 1872,
-    "fechaActualizacion": "2026-04-28T10:00:00.000Z",
-    "variacion": 0
+    "compra": 1395,
+    "venta": 1878.5,
+    "fechaActualizacion": "2026-04-28T11:00:00.000Z",
+    "variacion": 0.35
   }
 ]
