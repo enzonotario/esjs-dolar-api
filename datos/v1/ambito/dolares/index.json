@@ -5,8 +5,8 @@
     "nombre": "Oficial",
     "compra": 1373.17,
     "venta": 1424.64,
-    "fechaActualizacion": "2026-05-04T16:00:00.000Z",
-    "variacion": 0.62
+    "fechaActualizacion": "2026-05-05T10:33:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -14,26 +14,26 @@
     "nombre": "Blue",
     "compra": 1385,
     "venta": 1405,
-    "fechaActualizacion": "2026-05-04T10:00:00.000Z",
-    "variacion": 0.36
+    "fechaActualizacion": "2026-05-05T11:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1440.54,
-    "venta": 1440.54,
-    "fechaActualizacion": "2026-05-05T10:00:00.000Z",
-    "variacion": -0.1
+    "compra": 1433.96,
+    "venta": 1433.96,
+    "fechaActualizacion": "2026-05-05T11:00:00.000Z",
+    "variacion": -0.5
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1496.99,
-    "venta": 1496.99,
-    "fechaActualizacion": "2026-05-05T10:00:00.000Z",
-    "variacion": -0.5
+    "compra": 1493.07,
+    "venta": 1493.07,
+    "fechaActualizacion": "2026-05-05T11:00:00.000Z",
+    "variacion": -0.3
   },
   {
     "moneda": "USD",
@@ -41,17 +41,17 @@
     "nombre": "Mayorista",
     "compra": 1393.5,
     "venta": 1402.5,
-    "fechaActualizacion": "2026-05-04T15:59:00.000Z",
-    "variacion": 0.79
+    "fechaActualizacion": "2026-05-05T10:32:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1469.98,
-    "venta": 1469.98,
-    "fechaActualizacion": "2026-05-05T10:00:00.000Z",
-    "variacion": 0.11
+    "compra": 1483.12,
+    "venta": 1483.12,
+    "fechaActualizacion": "2026-05-05T11:00:00.000Z",
+    "variacion": -0.21
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1375,
     "venta": 1852.5,
-    "fechaActualizacion": "2026-05-05T10:00:00.000Z",
+    "fechaActualizacion": "2026-05-05T11:00:00.000Z",
     "variacion": 0
   }
 ]
