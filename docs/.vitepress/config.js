@@ -1,9 +1,9 @@
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
-import { defineConfig, loadEnv } from 'vitepress'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
-import { SitemapStream } from 'sitemap'
 import { genjiAttrs } from 'genji-theme-vitepress/config'
+import { SitemapStream } from 'sitemap'
+import { defineConfig, loadEnv } from 'vitepress'
 import { generateSidebar } from './sidebar/sidebar.js'
 
 const links = []
@@ -95,6 +95,9 @@ export default defineConfig({
         rel: 'stylesheet',
       },
     ],
+
+    // Favicon
+    ['link', { rel: 'icon', href: '/docs/favicon.ico' }],
   ],
 
   /**
@@ -108,9 +111,9 @@ export default defineConfig({
         url: pageData.relativePath.endsWith('index.md')
           ? '/'
           : `${pageData.relativePath.replace(
-              /((^|\/)index)?\.md$/,
-              '$2',
-            )}.html`,
+            /((^|\/)index)?\.md$/,
+            '$2',
+          )}.html`,
         lastmod: pageData.lastUpdated,
       })
     }
