@@ -61,7 +61,7 @@ const spec = setRegionForSidebar('ve')
 
 <template #description="description">
 
-Devuelve la cotización del Dólar Paralelo para una fecha específica
+Devuelve la cotización del Dólar Paralelo para una fecha específica (en formato `YYYY/MM/DD`)
 
 </template>
 

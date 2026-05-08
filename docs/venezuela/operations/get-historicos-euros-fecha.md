@@ -61,7 +61,7 @@ const spec = setRegionForSidebar('ve')
 
 <template #description="description">
 
-Devuelve las cotizaciones del Euro oficial y paralelo para una fecha específica
+Devuelve las cotizaciones del Euro oficial y paralelo para una fecha específica (en formato `YYYY/MM/DD`)
 
 </template>
 
