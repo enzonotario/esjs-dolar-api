@@ -255,6 +255,165 @@
         "operationId": "get-historicos-dolar-paralelo"
       }
     },
+    "/v1/historicos/dolares/{yyyy}/{mm}/{dd}": {
+      "get": {
+        "summary": "Histórico Dólares por Fecha",
+        "tags": ["Históricos Dólares"],
+        "description": "Devuelve las cotizaciones del Dólar oficial y paralelo para una fecha específica",
+        "parameters": [
+          {
+            "name": "yyyy",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{4}$"
+            },
+            "description": "Año en formato YYYY"
+          },
+          {
+            "name": "mm",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])$"
+            },
+            "description": "Mes en formato MM"
+          },
+          {
+            "name": "dd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|[12][0-9]|3[01])$"
+            },
+            "description": "Día en formato DD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas para la fecha indicada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistorico"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-dolares-fecha"
+      }
+    },
+    "/v1/historicos/dolares/oficial/{yyyy}/{mm}/{dd}": {
+      "get": {
+        "summary": "Histórico Dólar Oficial por Fecha",
+        "tags": ["Históricos Dólares"],
+        "description": "Devuelve la cotización del Dólar Oficial para una fecha específica",
+        "parameters": [
+          {
+            "name": "yyyy",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{4}$"
+            },
+            "description": "Año en formato YYYY"
+          },
+          {
+            "name": "mm",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])$"
+            },
+            "description": "Mes en formato MM"
+          },
+          {
+            "name": "dd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|[12][0-9]|3[01])$"
+            },
+            "description": "Día en formato DD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotización histórica para la fecha indicada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionHistorico"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-dolar-oficial-fecha"
+      }
+    },
+    "/v1/historicos/dolares/paralelo/{yyyy}/{mm}/{dd}": {
+      "get": {
+        "summary": "Histórico Dólar Paralelo por Fecha",
+        "tags": ["Históricos Dólares"],
+        "description": "Devuelve la cotización del Dólar Paralelo para una fecha específica",
+        "parameters": [
+          {
+            "name": "yyyy",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{4}$"
+            },
+            "description": "Año en formato YYYY"
+          },
+          {
+            "name": "mm",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])$"
+            },
+            "description": "Mes en formato MM"
+          },
+          {
+            "name": "dd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|[12][0-9]|3[01])$"
+            },
+            "description": "Día en formato DD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotización histórica para la fecha indicada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionHistorico"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-dolar-paralelo-fecha"
+      }
+    },
     "/v1/historicos/euros": {
       "get": {
         "summary": "Histórico Euros",
@@ -322,6 +481,165 @@
           }
         },
         "operationId": "get-historicos-euro-paralelo"
+      }
+    },
+    "/v1/historicos/euros/{yyyy}/{mm}/{dd}": {
+      "get": {
+        "summary": "Histórico Euros por Fecha",
+        "tags": ["Históricos Euros"],
+        "description": "Devuelve las cotizaciones del Euro oficial y paralelo para una fecha específica",
+        "parameters": [
+          {
+            "name": "yyyy",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{4}$"
+            },
+            "description": "Año en formato YYYY"
+          },
+          {
+            "name": "mm",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])$"
+            },
+            "description": "Mes en formato MM"
+          },
+          {
+            "name": "dd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|[12][0-9]|3[01])$"
+            },
+            "description": "Día en formato DD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array de cotizaciones históricas para la fecha indicada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionHistoricoEur"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-euros-fecha"
+      }
+    },
+    "/v1/historicos/euros/oficial/{yyyy}/{mm}/{dd}": {
+      "get": {
+        "summary": "Histórico Euro Oficial por Fecha",
+        "tags": ["Históricos Euros"],
+        "description": "Devuelve la cotización del Euro Oficial para una fecha específica",
+        "parameters": [
+          {
+            "name": "yyyy",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{4}$"
+            },
+            "description": "Año en formato YYYY"
+          },
+          {
+            "name": "mm",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])$"
+            },
+            "description": "Mes en formato MM"
+          },
+          {
+            "name": "dd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|[12][0-9]|3[01])$"
+            },
+            "description": "Día en formato DD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotización histórica para la fecha indicada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionHistoricoEur"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-euro-oficial-fecha"
+      }
+    },
+    "/v1/historicos/euros/paralelo/{yyyy}/{mm}/{dd}": {
+      "get": {
+        "summary": "Histórico Euro Paralelo por Fecha",
+        "tags": ["Históricos Euros"],
+        "description": "Devuelve la cotización del Euro Paralelo para una fecha específica",
+        "parameters": [
+          {
+            "name": "yyyy",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{4}$"
+            },
+            "description": "Año en formato YYYY"
+          },
+          {
+            "name": "mm",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])$"
+            },
+            "description": "Mes en formato MM"
+          },
+          {
+            "name": "dd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|[12][0-9]|3[01])$"
+            },
+            "description": "Día en formato DD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cotización histórica para la fecha indicada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CotizacionHistoricoEur"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-historicos-euro-paralelo-fecha"
       }
     }
   },
