@@ -188,6 +188,8 @@ asincrono funcion generarEndpoints(log) {
 
   const dolaresHistoricos = []
   const eurosHistoricos = []
+  const dolaresPorFecha = {}
+  const eurosPorFecha = {}
 
   para (const { moneda, fuente, ruta } de rutas) {
     const filas = db
@@ -203,7 +205,9 @@ asincrono funcion generarEndpoints(log) {
       )
       .all(moneda, fuente)
 
-    const historico = filas.mapear((f) => {
+    const historico = []
+
+    para (const f de filas) {
       const item = {
         fuente,
         compra: f.compra,
@@ -212,8 +216,21 @@ asincrono funcion generarEndpoints(log) {
         fecha: f.fechaActualizacion.rodaja(0, 10),
       }
       si (moneda === 'EUR') item.moneda = 'EUR'
-      retornar item
-    })
+
+      historico.agregar(item)
+
+      const fecha = item.fecha
+      const [yyyy, mm, dd] = fecha.dividir('-')
+      esperar escribirRutaRegion('ve', `${ruta}/${yyyy}/${mm}/${dd}`, item)
+
+      si (moneda === 'USD') {
+        si (!dolaresPorFecha[fecha]) dolaresPorFecha[fecha] = []
+        dolaresPorFecha[fecha].agregar(item)
+      } sino {
+        si (!eurosPorFecha[fecha]) eurosPorFecha[fecha] = []
+        eurosPorFecha[fecha].agregar(item)
+      }
+    }
 
     esperar escribirRutaRegion('ve', ruta, historico)
 
@@ -225,6 +242,20 @@ asincrono funcion generarEndpoints(log) {
   }
 
   cerrarBD(db)
+
+  para (const fecha de Object.claves(dolaresPorFecha)) {
+    const [yyyy, mm, dd] = fecha.dividir('-')
+    const items = dolaresPorFecha[fecha]
+    items.ordenar((a, b) => orden.indiceDe(a.fuente) - orden.indiceDe(b.fuente))
+    esperar escribirRutaRegion('ve', `/historicos/dolares/${yyyy}/${mm}/${dd}`, items)
+  }
+
+  para (const fecha de Object.claves(eurosPorFecha)) {
+    const [yyyy, mm, dd] = fecha.dividir('-')
+    const items = eurosPorFecha[fecha]
+    items.ordenar((a, b) => orden.indiceDe(a.fuente) - orden.indiceDe(b.fuente))
+    esperar escribirRutaRegion('ve', `/historicos/euros/${yyyy}/${mm}/${dd}`, items)
+  }
 
   funcion aplanarPorDia(historicos) {
     const porFecha = {}
