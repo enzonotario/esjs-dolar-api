@@ -3,10 +3,10 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1360.98,
-    "venta": 1412.45,
-    "fechaActualizacion": "2026-05-14T11:34:00.000Z",
-    "variacion": 0
+    "compra": 1366.8,
+    "venta": 1418.9,
+    "fechaActualizacion": "2026-05-14T12:41:00.000Z",
+    "variacion": 0.46
   },
   {
     "moneda": "USD",
@@ -14,43 +14,43 @@
     "nombre": "Blue",
     "compra": 1400,
     "venta": 1420,
-    "fechaActualizacion": "2026-05-14T12:05:00.000Z",
+    "fechaActualizacion": "2026-05-14T13:00:00.000Z",
     "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1426.91,
-    "venta": 1426.91,
-    "fechaActualizacion": "2026-05-14T12:05:00.000Z",
-    "variacion": 0.1
+    "compra": 1425.48,
+    "venta": 1425.48,
+    "fechaActualizacion": "2026-05-14T13:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1485.46,
-    "venta": 1485.46,
-    "fechaActualizacion": "2026-05-14T12:05:00.000Z",
+    "compra": 1484.78,
+    "venta": 1484.78,
+    "fechaActualizacion": "2026-05-14T13:00:00.000Z",
     "variacion": 0.1
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1387.5,
-    "venta": 1396.5,
-    "fechaActualizacion": "2026-05-14T11:33:00.000Z",
-    "variacion": 0.32
+    "compra": 1387,
+    "venta": 1396,
+    "fechaActualizacion": "2026-05-14T12:37:00.000Z",
+    "variacion": 0.29
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1480,
-    "venta": 1480,
-    "fechaActualizacion": "2026-05-14T12:05:00.000Z",
+    "compra": 1481,
+    "venta": 1481,
+    "fechaActualizacion": "2026-05-14T13:00:00.000Z",
     "variacion": 0
   },
   {
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1370,
     "venta": 1846,
-    "fechaActualizacion": "2026-05-14T12:05:00.000Z",
+    "fechaActualizacion": "2026-05-14T13:00:00.000Z",
     "variacion": 0.35
   }
 ]
