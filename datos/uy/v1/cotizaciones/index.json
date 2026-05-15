@@ -2,64 +2,64 @@
   {
     "moneda": "USD",
     "nombre": "Dólar",
-    "compra": 39,
+    "compra": 39.2,
     "venta": 41.4,
-    "fechaActualizacion": "2026-05-15T14:01:20.582Z"
+    "fechaActualizacion": "2026-05-15T15:01:08.611Z"
   },
   {
     "moneda": "EUR",
     "nombre": "Euro",
-    "compra": 44.25,
-    "venta": 49.51,
-    "fechaActualizacion": "2026-05-15T14:01:20.582Z"
+    "compra": 44.49,
+    "venta": 49.53,
+    "fechaActualizacion": "2026-05-15T15:01:08.611Z"
   },
   {
     "moneda": "ARS",
     "nombre": "Peso Argentino",
     "compra": 0.02,
     "venta": 0.2,
-    "fechaActualizacion": "2026-05-15T14:01:20.582Z"
+    "fechaActualizacion": "2026-05-15T15:01:08.611Z"
   },
   {
     "moneda": "BRL",
     "nombre": "Real",
     "compra": 7.2,
     "venta": 8.9,
-    "fechaActualizacion": "2026-05-15T14:01:20.582Z"
+    "fechaActualizacion": "2026-05-15T15:01:08.611Z"
   },
   {
     "moneda": "GBP",
     "nombre": "Libra Esterlina",
-    "compra": 50.85,
+    "compra": 51.08,
     "venta": 57.4,
-    "fechaActualizacion": "2026-05-15T14:01:20.583Z"
+    "fechaActualizacion": "2026-05-15T15:01:08.612Z"
   },
   {
     "moneda": "CHF",
     "nombre": "Franco Suizo",
-    "compra": 48.7,
-    "venta": 53.59,
-    "fechaActualizacion": "2026-05-15T14:01:20.583Z"
+    "compra": 48.97,
+    "venta": 53.61,
+    "fechaActualizacion": "2026-05-15T15:01:08.612Z"
   },
   {
     "moneda": "PYG",
     "nombre": "Guaraní",
-    "compra": 0.00627,
+    "compra": 0.0063,
     "venta": 0.00694,
-    "fechaActualizacion": "2026-05-15T14:01:20.583Z"
+    "fechaActualizacion": "2026-05-15T15:01:08.612Z"
   },
   {
     "moneda": "UI",
     "nombre": "Unidad Indexada",
     "compra": null,
     "venta": 6.5389,
-    "fechaActualizacion": "2026-05-15T14:01:20.583Z"
+    "fechaActualizacion": "2026-05-15T15:01:08.612Z"
   },
   {
     "moneda": "XAU",
     "nombre": "Onza Troy De Oro",
-    "compra": 176765.55,
+    "compra": 176879.808,
     "venta": 193137.21,
-    "fechaActualizacion": "2026-05-15T14:01:20.583Z"
+    "fechaActualizacion": "2026-05-15T15:01:08.612Z"
   }
 ]
