@@ -5,8 +5,8 @@
     "nombre": "Oficial",
     "compra": 1367.7,
     "venta": 1418.57,
-    "fechaActualizacion": "2026-05-15T16:04:00.000Z",
-    "variacion": 0.32
+    "fechaActualizacion": "2026-05-18T10:56:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -14,26 +14,26 @@
     "nombre": "Blue",
     "compra": 1395,
     "venta": 1415,
-    "fechaActualizacion": "2026-05-15T10:00:00.000Z",
-    "variacion": -0.35
+    "fechaActualizacion": "2026-05-18T11:05:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1426.5,
-    "venta": 1426.5,
-    "fechaActualizacion": "2026-05-18T10:00:00.000Z",
-    "variacion": 0
+    "compra": 1428.48,
+    "venta": 1428.48,
+    "fechaActualizacion": "2026-05-18T11:05:00.000Z",
+    "variacion": 0.1
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1487.87,
-    "venta": 1487.87,
-    "fechaActualizacion": "2026-05-18T10:00:00.000Z",
-    "variacion": 0
+    "compra": 1484.84,
+    "venta": 1484.84,
+    "fechaActualizacion": "2026-05-18T11:05:00.000Z",
+    "variacion": -0.2
   },
   {
     "moneda": "USD",
@@ -41,17 +41,17 @@
     "nombre": "Mayorista",
     "compra": 1385.5,
     "venta": 1394.5,
-    "fechaActualizacion": "2026-05-15T16:19:00.000Z",
-    "variacion": -0.11
+    "fechaActualizacion": "2026-05-18T10:55:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1481.68,
-    "venta": 1481.68,
-    "fechaActualizacion": "2026-05-18T10:00:00.000Z",
-    "variacion": 0.15
+    "compra": 1481.12,
+    "venta": 1481.12,
+    "fechaActualizacion": "2026-05-18T11:05:00.000Z",
+    "variacion": -0.14
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1370,
     "venta": 1846,
-    "fechaActualizacion": "2026-05-18T10:00:00.000Z",
+    "fechaActualizacion": "2026-05-18T11:05:00.000Z",
     "variacion": 0
   }
 ]
