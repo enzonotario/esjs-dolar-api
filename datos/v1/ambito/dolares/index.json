@@ -5,53 +5,53 @@
     "nombre": "Oficial",
     "compra": 1367.59,
     "venta": 1418.66,
-    "fechaActualizacion": "2026-05-19T14:10:00.000Z",
+    "fechaActualizacion": "2026-05-19T15:47:00.000Z",
     "variacion": 0.17
   },
   {
     "moneda": "USD",
     "casa": "blue",
     "nombre": "Blue",
-    "compra": 1410,
-    "venta": 1430,
-    "fechaActualizacion": "2026-05-19T15:00:00.000Z",
-    "variacion": 0.7
+    "compra": 1415,
+    "venta": 1435,
+    "fechaActualizacion": "2026-05-19T16:00:00.000Z",
+    "variacion": 1.06
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1432.41,
-    "venta": 1432.41,
-    "fechaActualizacion": "2026-05-19T15:00:00.000Z",
+    "compra": 1432.79,
+    "venta": 1432.79,
+    "fechaActualizacion": "2026-05-19T16:00:00.000Z",
     "variacion": 0.3
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1489.75,
-    "venta": 1489.75,
-    "fechaActualizacion": "2026-05-19T15:00:00.000Z",
-    "variacion": 0.2
+    "compra": 1491.69,
+    "venta": 1491.69,
+    "fechaActualizacion": "2026-05-19T16:00:00.000Z",
+    "variacion": 0.4
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1390,
-    "venta": 1399,
-    "fechaActualizacion": "2026-05-19T14:11:00.000Z",
-    "variacion": 0.14
+    "compra": 1389,
+    "venta": 1398,
+    "fechaActualizacion": "2026-05-19T15:50:00.000Z",
+    "variacion": 0.07
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1487.16,
-    "venta": 1487.16,
-    "fechaActualizacion": "2026-05-19T15:00:00.000Z",
-    "variacion": -0.01
+    "compra": 1487.62,
+    "venta": 1487.62,
+    "fechaActualizacion": "2026-05-19T16:00:00.000Z",
+    "variacion": -0.07
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1370,
     "venta": 1846,
-    "fechaActualizacion": "2026-05-19T15:00:00.000Z",
+    "fechaActualizacion": "2026-05-19T16:00:00.000Z",
     "variacion": 0
   }
 ]
