@@ -3,55 +3,55 @@
     "moneda": "USD",
     "casa": "oficial",
     "nombre": "Oficial",
-    "compra": 1367.59,
-    "venta": 1418.66,
-    "fechaActualizacion": "2026-05-20T11:35:00.000Z",
-    "variacion": 0
+    "compra": 1370.66,
+    "venta": 1420.86,
+    "fechaActualizacion": "2026-05-20T12:16:00.000Z",
+    "variacion": 0.16
   },
   {
     "moneda": "USD",
     "casa": "blue",
     "nombre": "Blue",
-    "compra": 1415,
-    "venta": 1435,
-    "fechaActualizacion": "2026-05-20T12:00:00.000Z",
-    "variacion": 0
+    "compra": 1410,
+    "venta": 1430,
+    "fechaActualizacion": "2026-05-20T13:00:00.000Z",
+    "variacion": -0.35
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1430.5,
-    "venta": 1430.5,
-    "fechaActualizacion": "2026-05-20T12:00:00.000Z",
+    "compra": 1431.69,
+    "venta": 1431.69,
+    "fechaActualizacion": "2026-05-20T13:00:00.000Z",
     "variacion": -0.2
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1486.21,
-    "venta": 1486.21,
-    "fechaActualizacion": "2026-05-20T12:00:00.000Z",
-    "variacion": -0.3
+    "compra": 1490.19,
+    "venta": 1490.19,
+    "fechaActualizacion": "2026-05-20T13:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1391,
-    "venta": 1400,
-    "fechaActualizacion": "2026-05-20T11:34:00.000Z",
-    "variacion": 0.14
+    "compra": 1390,
+    "venta": 1399,
+    "fechaActualizacion": "2026-05-20T12:13:00.000Z",
+    "variacion": 0.07
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1485.74,
-    "venta": 1485.74,
-    "fechaActualizacion": "2026-05-20T12:00:00.000Z",
-    "variacion": 0.05
+    "compra": 1484.14,
+    "venta": 1484.14,
+    "fechaActualizacion": "2026-05-20T13:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1370,
     "venta": 1846,
-    "fechaActualizacion": "2026-05-20T12:00:00.000Z",
+    "fechaActualizacion": "2026-05-20T13:00:00.000Z",
     "variacion": 0
   }
 ]
