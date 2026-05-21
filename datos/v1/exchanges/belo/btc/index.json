@@ -3,22 +3,50 @@
     "exchange": "belo",
     "moneda": "ARS",
     "monedaBase": "BTC",
-    "compra": 116560122.1655,
-    "venta": 112723531.47
+    "compra": 116749349.0995,
+    "venta": 112906530
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "BTC",
-    "compra": 393042.76452,
-    "venta": 379908.860562
+    "compra": 393589.778904,
+    "venta": 379672.128
   },
   {
     "exchange": "belo",
     "moneda": "ARGt",
     "monedaBase": "BTC",
-    "compra": 116612321.137,
-    "venta": 112774012.3125
+    "compra": 116721913.308,
+    "venta": 112879997.2575
+  },
+  {
+    "exchange": "belo",
+    "moneda": "MEXt",
+    "monedaBase": "BTC",
+    "compra": 1382228.3806134118,
+    "venta": 1299122.1721776465
+  },
+  {
+    "exchange": "belo",
+    "moneda": "CHLt",
+    "monedaBase": "BTC",
+    "compra": 71734124.42170498,
+    "venta": 67285935.91846599
+  },
+  {
+    "exchange": "belo",
+    "moneda": "COLt",
+    "monedaBase": "BTC",
+    "compra": 296089959.72635335,
+    "venta": 274103100.991724
+  },
+  {
+    "exchange": "belo",
+    "moneda": "BOLt",
+    "monedaBase": "BTC",
+    "compra": 800533.5575756504,
+    "venta": 750139.886034
   },
   {
     "exchange": "belo",
@@ -33,8 +61,8 @@
     "monedaBase": "BTC",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 77984.6755,
-    "venta": 76440.4146
+    "compra": 78093.2101,
+    "venta": 76546.8
   },
   {
     "exchange": "belo",
@@ -42,21 +70,21 @@
     "monedaBase": "BTC",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 77947.7095,
-    "venta": 76404.1806
+    "compra": 78033.2868,
+    "venta": 76488.0633
   },
   {
     "exchange": "belo",
     "moneda": "SOL",
     "monedaBase": "BTC",
-    "compra": 910.985759470608,
-    "venta": 892.8659120759222
+    "compra": 909.7550302630011,
+    "venta": 891.6597711644363
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "BTC",
-    "compra": 392951.849976,
-    "venta": 379820.984004
+    "compra": 393589.778904,
+    "venta": 379672.128
   }
 ]

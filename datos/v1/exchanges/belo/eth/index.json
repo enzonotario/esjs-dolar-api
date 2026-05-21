@@ -3,22 +3,50 @@
     "exchange": "belo",
     "moneda": "ARS",
     "monedaBase": "ETH",
-    "compra": 3193967.036,
-    "venta": 3088823.0175
+    "compra": 3199780.3435,
+    "venta": 3094444.98
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "ETH",
-    "compra": 10772.355384,
-    "venta": 10412.33886
+    "compra": 10787.219352,
+    "venta": 10405.726848
   },
   {
     "exchange": "belo",
     "moneda": "ARGt",
     "monedaBase": "ETH",
-    "compra": 3195371.2895,
-    "venta": 3089801.385
+    "compra": 3199191.463,
+    "venta": 3093875.4825
+  },
+  {
+    "exchange": "belo",
+    "moneda": "MEXt",
+    "monedaBase": "ETH",
+    "compra": 37885.03040989529,
+    "venta": 35607.03698551438
+  },
+  {
+    "exchange": "belo",
+    "moneda": "CHLt",
+    "monedaBase": "ETH",
+    "compra": 1966136.3659292355,
+    "venta": 1844209.0052529343
+  },
+  {
+    "exchange": "belo",
+    "moneda": "COLt",
+    "monedaBase": "ETH",
+    "compra": 8115429.610350981,
+    "venta": 7512764.745209724
+  },
+  {
+    "exchange": "belo",
+    "moneda": "BOLt",
+    "monedaBase": "ETH",
+    "compra": 21936.397444566206,
+    "venta": 20555.4045620385
   },
   {
     "exchange": "belo",
@@ -26,8 +54,8 @@
     "monedaBase": "ETH",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 2137.3721,
-    "venta": 2095.038
+    "compra": 2140.3213,
+    "venta": 2097.9288
   },
   {
     "exchange": "belo",
@@ -35,21 +63,21 @@
     "monedaBase": "ETH",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 2135.9177,
-    "venta": 2093.6124
+    "compra": 2138.675,
+    "venta": 2096.3151
   },
   {
     "exchange": "belo",
     "moneda": "SOL",
     "monedaBase": "ETH",
-    "compra": 25.215623886611972,
-    "venta": 24.223929107847137
+    "compra": 25.17690354105866,
+    "venta": 24.18673995951062
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "ETH",
-    "compra": 10767.621312,
-    "venta": 10407.762981
+    "compra": 10787.219352,
+    "venta": 10405.726848
   }
 ]
