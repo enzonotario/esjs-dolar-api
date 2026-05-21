@@ -3,22 +3,50 @@
     "exchange": "belo",
     "moneda": "ARS",
     "monedaBase": "ETH",
-    "compra": 3199390.1603,
-    "venta": 3094011.459
+    "compra": 3199118.7329,
+    "venta": 3093748.9704
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "ETH",
-    "compra": 10827.64743,
-    "venta": 10487.091285
+    "compra": 10820.863765,
+    "venta": 10480.520952
   },
   {
     "exchange": "belo",
     "moneda": "ARGt",
     "monedaBase": "ETH",
-    "compra": 3199390.1603,
-    "venta": 3094011.459
+    "compra": 3199118.7329,
+    "venta": 3093748.9704
+  },
+  {
+    "exchange": "belo",
+    "moneda": "MEXt",
+    "monedaBase": "ETH",
+    "compra": 37923.879583364855,
+    "venta": 35643.551658952405
+  },
+  {
+    "exchange": "belo",
+    "moneda": "CHLt",
+    "monedaBase": "ETH",
+    "compra": 1968725.4143546876,
+    "venta": 1846637.5087076717
+  },
+  {
+    "exchange": "belo",
+    "moneda": "COLt",
+    "monedaBase": "ETH",
+    "compra": 8136704.538178028,
+    "venta": 7624218.84281442
+  },
+  {
+    "exchange": "belo",
+    "moneda": "BOLt",
+    "monedaBase": "ETH",
+    "compra": 21921.571673031205,
+    "venta": 20541.512300531413
   },
   {
     "exchange": "belo",
@@ -26,8 +54,8 @@
     "monedaBase": "ETH",
     "criptomoneda": "USDT",
     "criptomonedaBase": null,
-    "compra": 2144.0886,
-    "venta": 2101.6215
+    "compra": 2142.7453,
+    "venta": 2100.3048
   },
   {
     "exchange": "belo",
@@ -35,21 +63,21 @@
     "monedaBase": "ETH",
     "criptomoneda": "USDC",
     "criptomonedaBase": null,
-    "compra": 2142.008,
-    "venta": 2099.1267
+    "compra": 2141.8464,
+    "venta": 2099.4237
   },
   {
     "exchange": "belo",
     "moneda": "SOL",
     "monedaBase": "ETH",
-    "compra": 25.142435736838895,
-    "venta": 24.1536360532605
+    "compra": 25.167316185106884,
+    "venta": 24.17753404220785
   },
   {
     "exchange": "belo",
     "moneda": "BRAt",
     "monedaBase": "ETH",
-    "compra": 10827.64743,
-    "venta": 10487.091285
+    "compra": 10820.863765,
+    "venta": 10480.520952
   }
 ]
