@@ -7155,8 +7155,16 @@
     "fuente": "paralelo",
     "compra": null,
     "venta": null,
-    "promedio": 830.705925,
+    "promedio": 830.770518,
     "fecha": "2026-05-22",
+    "moneda": "EUR"
+  },
+  {
+    "fuente": "oficial",
+    "compra": null,
+    "venta": null,
+    "promedio": 615.50216303,
+    "fecha": "2026-05-25",
     "moneda": "EUR"
   }
 ]
