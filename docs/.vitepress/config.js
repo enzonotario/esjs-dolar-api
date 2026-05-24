@@ -54,7 +54,8 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/enzonotario/esjs-dolar-api' },
     ],
     footer: {
-      message: 'Liberado bajo la <a href="https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE">Licencia MIT</a>.',
+      message:
+        'Liberado bajo la <a href="https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE">Licencia MIT</a>.',
       copyright: '<a href="/docs/legal">Aviso Legal</a>',
     },
     search: {
@@ -111,9 +112,9 @@ export default defineConfig({
         url: pageData.relativePath.endsWith('index.md')
           ? '/'
           : `${pageData.relativePath.replace(
-            /((^|\/)index)?\.md$/,
-            '$2',
-          )}.html`,
+              /((^|\/)index)?\.md$/,
+              '$2',
+            )}.html`,
         lastmod: pageData.lastUpdated,
       })
     }
@@ -124,9 +125,9 @@ export default defineConfig({
     })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
-    links.forEach(link => sitemap.write(link))
+    links.forEach((link) => sitemap.write(link))
     sitemap.end()
-    await new Promise(resolve => writeStream.on('finish', resolve))
+    await new Promise((resolve) => writeStream.on('finish', resolve))
   },
 
   vite: {
@@ -147,5 +148,15 @@ export default defineConfig({
     config: (md) => {
       md.use(genjiAttrs)
     },
+  },
+
+  transformPageData(pageData) {
+    const pageTitle = pageData.params?.pageTitle
+
+    if (pageTitle) {
+      pageData.title = pageTitle
+      pageData.frontmatter ??= {}
+      pageData.frontmatter.title = pageTitle
+    }
   },
 })
