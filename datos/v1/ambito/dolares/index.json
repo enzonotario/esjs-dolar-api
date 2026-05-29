@@ -5,8 +5,8 @@
     "nombre": "Oficial",
     "compra": 1378.96,
     "venta": 1430.45,
-    "fechaActualizacion": "2026-05-28T15:48:00.000Z",
-    "variacion": 0.04
+    "fechaActualizacion": "2026-05-29T10:15:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -14,44 +14,44 @@
     "nombre": "Blue",
     "compra": 1410,
     "venta": 1430,
-    "fechaActualizacion": "2026-05-28T10:00:00.000Z",
-    "variacion": -0.69
+    "fechaActualizacion": "2026-05-29T11:00:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1432.63,
-    "venta": 1432.63,
-    "fechaActualizacion": "2026-05-29T10:00:00.000Z",
-    "variacion": 0.2
+    "compra": 1434.02,
+    "venta": 1434.02,
+    "fechaActualizacion": "2026-05-29T11:00:00.000Z",
+    "variacion": 0.1
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1485.51,
-    "venta": 1485.51,
-    "fechaActualizacion": "2026-05-29T10:00:00.000Z",
-    "variacion": 0.3
+    "compra": 1486.72,
+    "venta": 1486.72,
+    "fechaActualizacion": "2026-05-29T11:00:00.000Z",
+    "variacion": 0.1
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1401,
-    "venta": 1410,
-    "fechaActualizacion": "2026-05-28T15:48:00.000Z",
-    "variacion": -0.18
+    "compra": 1397,
+    "venta": 1406,
+    "fechaActualizacion": "2026-05-29T10:15:00.000Z",
+    "variacion": -0.28
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1476.65,
-    "venta": 1476.65,
-    "fechaActualizacion": "2026-05-29T10:00:00.000Z",
-    "variacion": 0.05
+    "compra": 1480.01,
+    "venta": 1480.01,
+    "fechaActualizacion": "2026-05-29T11:00:00.000Z",
+    "variacion": -0.08
   },
   {
     "moneda": "USD",
@@ -59,7 +59,7 @@
     "nombre": "Tarjeta",
     "compra": 1380,
     "venta": 1859,
-    "fechaActualizacion": "2026-05-29T10:00:00.000Z",
+    "fechaActualizacion": "2026-05-29T11:00:00.000Z",
     "variacion": 0
   }
 ]
