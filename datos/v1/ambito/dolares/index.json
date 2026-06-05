@@ -5,8 +5,8 @@
     "nombre": "Oficial",
     "compra": 1406.33,
     "venta": 1458.02,
-    "fechaActualizacion": "2026-06-04T16:05:00.000Z",
-    "variacion": -0.11
+    "fechaActualizacion": "2026-06-05T10:09:00.000Z",
+    "variacion": 0
   },
   {
     "moneda": "USD",
@@ -14,52 +14,52 @@
     "nombre": "Blue",
     "compra": 1415,
     "venta": 1435,
-    "fechaActualizacion": "2026-06-04T10:00:00.000Z",
+    "fechaActualizacion": "2026-06-05T11:00:00.000Z",
     "variacion": 0
   },
   {
     "moneda": "USD",
     "casa": "bolsa",
     "nombre": "Bolsa",
-    "compra": 1456.92,
-    "venta": 1456.92,
-    "fechaActualizacion": "2026-06-05T10:00:00.000Z",
-    "variacion": -0.3
+    "compra": 1461.62,
+    "venta": 1461.62,
+    "fechaActualizacion": "2026-06-05T11:00:00.000Z",
+    "variacion": 0.3
   },
   {
     "moneda": "USD",
     "casa": "contadoconliqui",
     "nombre": "Contado con liquidación",
-    "compra": 1515.23,
-    "venta": 1515.23,
-    "fechaActualizacion": "2026-06-05T10:00:00.000Z",
-    "variacion": 0.03
+    "compra": 1518.39,
+    "venta": 1518.39,
+    "fechaActualizacion": "2026-06-05T11:00:00.000Z",
+    "variacion": 0.2
   },
   {
     "moneda": "USD",
     "casa": "mayorista",
     "nombre": "Mayorista",
-    "compra": 1427.5,
-    "venta": 1436.5,
-    "fechaActualizacion": "2026-06-03T16:08:00.000Z",
-    "variacion": -0.14
+    "compra": 1432,
+    "venta": 1441,
+    "fechaActualizacion": "2026-06-05T10:34:00.000Z",
+    "variacion": 0.31
   },
   {
     "moneda": "USD",
     "casa": "cripto",
     "nombre": "Cripto",
-    "compra": 1511.95,
-    "venta": 1511.95,
-    "fechaActualizacion": "2026-06-05T10:00:00.000Z",
-    "variacion": 0.03
+    "compra": 1508.25,
+    "venta": 1508.25,
+    "fechaActualizacion": "2026-06-05T11:00:00.000Z",
+    "variacion": 0.2
   },
   {
     "moneda": "USD",
     "casa": "tarjeta",
     "nombre": "Tarjeta",
-    "compra": 1405,
-    "venta": 1891.5,
-    "fechaActualizacion": "2026-06-05T10:00:00.000Z",
-    "variacion": 0
+    "compra": 1410,
+    "venta": 1898,
+    "fechaActualizacion": "2026-06-05T11:00:00.000Z",
+    "variacion": 0.34
   }
 ]
