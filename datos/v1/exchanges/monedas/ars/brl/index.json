@@ -10,21 +10,21 @@
     "exchange": "fiwind",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.00331882871326213,
-    "venta": 0.003557117854364723
+    "compra": 0.0033272883048501203,
+    "venta": 0.003566167150305501
   },
   {
     "exchange": "dolarapp",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.0034120613594451283,
+    "compra": 0.003411227992154323,
     "venta": null
   },
   {
     "exchange": "satoshitango",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.0034118048447628795,
+    "compra": 0.0033770093205457248,
     "venta": null
   },
   {
@@ -38,7 +38,7 @@
     "exchange": "lemon",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.0032997855139415937,
+    "compra": 0.0033079722130334105,
     "venta": null
   },
   {
@@ -52,7 +52,7 @@
     "exchange": "astropay",
     "moneda": "BRL",
     "monedaBase": "ARS",
-    "compra": 0.0033953409547484025,
+    "compra": 0.003404460192667488,
     "venta": null
   }
 ]
