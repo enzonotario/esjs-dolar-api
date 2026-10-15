@@ -16,3 +16,5 @@ DolarApi.com y sus colaboradores declinan toda responsabilidad respecto al uso q
 Los usuarios reconocen que los datos proporcionados por DolarApi.com son meramente informativos y pueden no reflejar con exactitud las cotizaciones reales o actuales de las divisas en los mercados correspondientes.
 
 El uso de DolarApi.com implica la aceptación de estos términos y condiciones. DolarApi.com se reserva el derecho de modificar, suspender o interrumpir el servicio en cualquier momento sin previo aviso.
+
+El tratamiento de la dirección IP y de otros datos de conexión está en [Privacidad](/privacidad).

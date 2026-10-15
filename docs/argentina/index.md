@@ -102,7 +102,7 @@ La fuente de verdad de paths y schemas es el OpenAPI. Las páginas Markdown son 
 
 ## Aviso Legal
 
-DolarApi.com es un proyecto de código abierto que brinda datos de fuentes públicas. Para más información, consulta la seción de [Aviso Legal](/legal).
+DolarApi.com es un proyecto de código abierto que brinda datos de fuentes públicas. Para más información, consulta la seción de [Aviso Legal](/legal). El tratamiento de la IP y de otros datos de conexión está en [Privacidad](/privacidad).
 
 ## Sponsors
 
