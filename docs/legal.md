@@ -17,4 +17,6 @@ Los usuarios reconocen que los datos proporcionados por DolarApi.com son meramen
 
 El uso de DolarApi.com implica la aceptación de estos términos y condiciones. DolarApi.com se reserva el derecho de modificar, suspender o interrumpir el servicio en cualquier momento sin previo aviso.
 
+Las condiciones de uso de los datos están en [Uso de los datos](/uso).
+
 El tratamiento de la dirección IP y de otros datos de conexión está en [Privacidad](/privacidad).

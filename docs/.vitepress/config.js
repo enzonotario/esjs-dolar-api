@@ -64,7 +64,7 @@ export default defineConfig({
     footer: {
       message:
         'Liberado bajo la <a href="https://github.com/enzonotario/esjs-dolar-api/blob/main/LICENSE">Licencia MIT</a>.',
-      copyright: '<a href="/docs/legal">Aviso Legal</a> · <a href="/docs/privacidad">Privacidad</a>',
+      copyright: '<a href="/docs/legal">Aviso Legal</a> · <a href="/docs/uso">Uso de los datos</a> · <a href="/docs/privacidad">Privacidad</a>',
     },
     search: {
       provider: 'algolia',
@@ -152,6 +152,7 @@ export default defineConfig({
           'sponsors.md',
           'legal.md',
           'privacidad.md',
+          'uso.md',
           '**/operations/parts/*',
         ],
         excludeIndexPage: false,

@@ -10,7 +10,7 @@ next: false
 
 # Privacidad
 
-**Actualización:** 14 de octubre de 2026.
+**Actualización:** 15 de octubre de 2026.
 
 ## Qué es esta página
 
@@ -48,7 +48,11 @@ Estos servicios también tratan datos de conexión. Pueden tratarlos fuera de Ar
 
 ## Cuánto tiempo
 
-Cloudflare conserva los registros de la API según su [política de privacidad](https://www.cloudflare.com/privacypolicy/).
+DolarApi no guarda un access log propio de la API ni copias rotadas de cada consulta. Tampoco conserva estadísticas de 30 ni de 395 días, ni un conteo de direcciones con la IP completa.
+
+Cloudflare conserva los registros de la API según su [política de privacidad](https://www.cloudflare.com/privacypolicy/). El proyecto no fija ese plazo.
+
+Google Analytics, en la documentación y en la app, usa la IP para una ubicación aproximada y no la guarda en los informes.
 
 No prometemos un borrado manual de cada log de infraestructura.
 
