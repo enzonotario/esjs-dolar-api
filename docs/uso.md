@@ -36,7 +36,7 @@ Parte de las series proviene de terceros. Recomendamos citar también la fuente 
 
 ## Frecuencia
 
-No hay un máximo numérico de consultas. Conviene conservar una copia local y no repetir la misma consulta en un bucle. Una consulta por día y por serie es una medida adecuada.
+No hay un máximo numérico de consultas. Conviene conservar una copia local y no repetir la misma consulta en un bucle. Una consulta cada 3 horas y por serie es una medida adecuada.
 
 ## Cambios
 
